@@ -61,6 +61,15 @@
         "env": {
           "jest": true
         }
+      },
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
       }
     ]
   },
@@ -72,5 +81,7 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
-  }
+  },
+  "_id": "viog-ui@0.1.0",
+  "readme": "ERROR: No README data found!"
 }
