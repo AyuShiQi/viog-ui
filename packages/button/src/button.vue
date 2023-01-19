@@ -21,12 +21,12 @@ export default defineComponent({
       type: String,
       default: 'grey',
       validator (value: string): boolean {
-        const colors = ['grey', 'purple', 'red', 'green', 'yellow', 'pink', 'blue', 'sgrey', 'spurple', 'sred', 'sgreen', 'syellow', 'spink', 'sblue']
+        const colors = ['black', 'grey', 'purple', 'red', 'green', 'yellow', 'pink', 'blue', 'sgrey', 'spurple', 'sred', 'sgreen', 'syellow', 'spink', 'sblue']
         // The value must match one of these strings
         if (colors.includes(value)) return true
         else {
           console.error('[viog] color=' + value)
-          console.error('[viog]button: 你应该为color参数传入[grey/purple/red/green/yellow/pink/blue/sgrey/spurple/sred/sgreen/syellow/spink/sblue]中的一个值')
+          console.error('[viog]button: 你应该为color参数传入[grey/black/purple/red/green/yellow/pink/blue/sgrey/spurple/sred/sgreen/syellow/spink/sblue]中的一个值')
           return false
         }
       }

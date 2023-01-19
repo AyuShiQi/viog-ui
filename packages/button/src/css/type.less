@@ -1,5 +1,5 @@
 .vi-button.is-plain {
-    background: @white;
+    background: transparent;
     border: 1px solid #000;
     color: #000;
     &:hover {
@@ -87,6 +87,16 @@
     }
 }
 
+.vi-button--black.is-plain {
+    color: @black-background;
+    border-color: @black-background;
+    &:hover {
+      color: @white;
+      border-color: @black-background;
+      background: @black-background;
+    }
+}
+
 .vi-button--spink.is-plain {
     color: @pink;
     border-color: @pink;
@@ -165,6 +175,13 @@
     }
 }
 
+.vi-button--black.is-transparent {
+    color: @black-background;
+    &:hover {
+        background: transparent;
+    }
+}
+
 .vi-button--red.is-transparent {
     color: @red;
     &:hover {
@@ -204,6 +221,63 @@
     color: @green;
     &:hover {
         background: @sgreen-o3;
+    }
+}
+
+
+.vi-button--grey.is-transparent {
+    color: @grey;
+    &:hover {
+        background: @s-o3;
+    }
+}
+
+.vi-button--black.is-transparent {
+    color: @black-background;
+    &:hover {
+        background: transparent;
+    }
+}
+
+.vi-button--sred.is-transparent {
+    color: @red;
+    &:hover {
+        background: @sred-background-hover;
+    }
+}
+
+.vi-button--spink.is-transparent {
+    color: @pink;
+    &:hover {
+        background: @spink-background-hover;
+    }
+}
+
+.vi-button--sblue.is-transparent {
+    color: @blue;
+    &:hover {
+        background: @sblue-background-hover;
+    }
+}
+
+.vi-button--syellow.is-transparent {
+    color: @yellow;
+    &:hover {
+        background: @syellow-background-hover;
+    }
+}
+
+.vi-button--spurple.is-transparent {
+    color: @purple;
+    &:hover {
+        background: @spurple-background-hover;
+    }
+}
+
+.vi-button--sgreen.is-transparent {
+    color: @green;
+    &:hover {
+        background: @sgreen-background-hover;
     }
 }
 

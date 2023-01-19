@@ -150,6 +150,7 @@
   <div id="div">
     <ViLoading/>
   </div>
+  <ViDialog></ViDialog>
 </template>
 
 <script lang="ts">

@@ -5,6 +5,7 @@ import App from './App.vue'
 import ViButton from '../packages/button'
 import ViIcon from '../packages/icon'
 import ViLoading from '../packages/loading'
+import ViDialog from '../packages/dialog'
 
 const app = createApp(App)
 
@@ -12,5 +13,6 @@ const app = createApp(App)
 app.use(ViButton)
 app.use(ViIcon)
 app.use(ViLoading)
+app.use(ViDialog)
 
 app.mount('#app')
