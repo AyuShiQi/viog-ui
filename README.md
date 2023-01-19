@@ -1,29 +1,37 @@
 # viog-ui
 
-## Project setup
-```
-npm install
-```
+基于vue3的元宇宙风格ui组件库
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+特点：活力性  可玩性  原子性
 
-### Compiles and minifies for production
-```
-npm run build
-```
+> 组件库使用方式参考elementUI
 
-### Run your unit tests
-```
-npm run test:unit
-```
+## 组件
 
-### Lints and fixes files
-```
-npm run lint
-```
+### button
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+` <ViButton/>` 
+
+#### props参数
+
+- color ：string  按钮颜色
+
+  > 参数：grey(default)/red/green/yellow/pink/blue
+  >
+  > sgrey/sred/sgreen/syellow/spink/sblue
+
+- type ：string  按钮风格
+
+  > 参数：default/plain/transparent
+
+- radius：string  按钮边框弧度
+
+  > 参数：default/round/circle
+
+- disabled ：boolean 是否禁用
+
+#### 事件支持
+
+- click点击事件
+
+\#f5d395
