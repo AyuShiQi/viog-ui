@@ -16,7 +16,7 @@
 
 - color ：string  按钮颜色
 
-  > 参数：grey(default)/red/green/yellow/pink/blue
+  > 参数：grey(default)/black/red/green/yellow/pink/blue
   >
   > sgrey/sred/sgreen/syellow/spink/sblue
 
@@ -34,7 +34,11 @@
 
 #### 事件支持
 
-- click点击事件
+- click 点击事件
+
+#### 插槽
+
+- 默认插槽，按钮内容
 
 ### Icon
 
@@ -66,8 +70,107 @@
 
 #### props参数
 
+- title：string 标题
+
+  > 参数： 默认为空字符串
+
+- mask：boolean 是否有遮罩层
+
+  > 参数： true/false(default)
+
+- maskColor：string 遮罩层颜色
+
+  > 参数：black(default)/white/golden
+
+- maskFilter：boolean 遮罩层是否进行模糊
+
+  > 参数： true/false(default)
+
+- background：string 对话框背景色
+
+  > 参数：black/white(default)/golden
+
+- color：string 字体颜色
+
+  > 参数：black(default)/white/golden
+
+- filter：boolean 对话框是否进行模糊
+
+  > 参数： true/false(default)
+
+- shadow：boolean 对话框是否添加阴影
+
+  > 参数： true/false(default)
+
+- top：string 对话框距顶部位置
+
+  > 参数：一个可以被识别的长度单位值
+
+- sure：boolean 是否有确认按键
+
+  > 参数： true(default)/false
+
+- unsure：boolean 是否有取消按键
+
+  > 参数： true(default)/false
+
+- shutdown：boolean 是否有叉叉
+
+  > 参数： true(default)/false
+
+- contentTextAlign：string 内容对齐方式
+
+  > 参数： left(default)/center/right
+
+- optionTextAlign：string 确认取消按键对齐方式
+
+  > 参数： left/center/right(default)
+  
+- toSure：()=>boolean 控制按下确认按键是否关闭对话框
+
+  > 参数： 默认函数返回true，暂不支持异步函数
+
+- toUnsure：()=>boolean 控制按下取消按键是否关闭对话框
+
+  > 参数： 默认函数返回true，暂不支持异步函数
+
+- toShutDown：()=>boolean 控制按下叉叉按键是否关闭对话框
+
+  > 参数：默认函数返回true，暂不支持异步函数
+
 #### 事件支持
 
-- sure：确认事件
-- delete：取消事件
-- forceDelete：取消事件
+- Sure：确认事件
+
+  > @sure(不支持控制关闭)   or      :toSure="()=>boolean"(函数返回值true or false可以控制是否关闭)
+
+- unSure：取消事件
+
+  > @unSure(不支持控制关闭)    or     :toUnsure="()=>boolean"(函数返回值true or false可以控制是否关闭)
+
+- shutDown：关闭事件
+
+  > @shutDown(不支持控制关闭)    or     :toShutDown="()=>boolean)"(函数返回值true or false可以控制是否关闭)
+
+#### 方法调用
+
+- open  打开对话框
+- close 关闭对话框
+
+```typescript
+<!-- 父子组件中 -->
+<ViDialog ref="child"><ViDialog/>
+
+<!-- mounted -->   - ts -
+type ViDialogType = {
+  open: () => void,
+  close: () => void
+}
+
+(this.$refs.child as ViDialogType).open()
+(this.$refs.child as ViDialogType).close()
+```
+
+#### 插槽
+
+- 默认插槽，对话框内容

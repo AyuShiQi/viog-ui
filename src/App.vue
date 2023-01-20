@@ -150,24 +150,37 @@
   <div id="div">
     <ViLoading/>
   </div>
-  <ViDialog></ViDialog>
+  <ViDialog ref="child" mask maskFilter filter shadow title="提示" :shutdown="false" @sure="hello">你确认支付吗？</ViDialog>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
+
+type ViDialogType = {
+  open: () => void,
+  close: () => void
+}
 
 export default defineComponent({
   name: 'App',
   components: {
   },
   setup () {
+    const open = ref(true)
+
     function hello () {
       alert('hello')
+      open.value = false
     }
 
     return {
-      hello
+      hello,
+      open
     }
+  },
+  mounted () {
+    // console.log()
+    (this.$refs.child as ViDialogType).open()
   }
 })
 </script>

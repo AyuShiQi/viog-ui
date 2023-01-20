@@ -1,0 +1,205 @@
+<template>
+  <teleport to='body'>
+    <div class="vi-dialog" :class="[`vi-dialog--${maskColor}`,{
+      'has-mask': mask,
+      'is-filter': maskFilter
+    }]"
+    v-show="isOpen">
+      <div class="vi-dialog-content"
+      :class="[
+      `vi-content-background--${background}`,
+      `vi-content--${color}`,
+      {
+        'has-shadow': shadow,
+        'is-filter': filter
+      }]"
+      :style="{
+        top
+      }">
+        <div class="top">
+            <h3 class="title">
+                {{title}}
+            </h3>
+            <span class="delete-point" @click="shutDown">
+                <svg v-if="shutdown" class="icon" width="16px" height="16.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                  <path :fill="currentColor" d="M842.947458 778.116917 576.847937 512.013303 842.946434 245.883083c8.67559-8.674567 13.447267-20.208251 13.43908-32.477692-0.008186-12.232602-4.7727-23.715121-13.414521-32.332383-8.655124-8.677637-20.149922-13.450337-32.384571-13.4575-12.286838 0-23.808242 4.771677-32.474622 13.434987L512.019443 447.143876 245.88206 181.050496c-8.66331-8.66331-20.175505-13.434987-32.416294-13.434987-12.239765 0-23.75196 4.770653-32.414247 13.43294-8.66024 8.636704-13.428847 20.12434-13.437034 32.356942-0.008186 12.269441 4.76349 23.803125 13.437034 32.476669l266.135336 266.13022L181.050496 778.11794c-8.664334 8.66331-13.43601 20.173458-13.43601 32.41527 0 12.239765 4.7727 23.752983 13.437034 32.417317 8.662287 8.66331 20.173458 13.43294 32.413224 13.43294 12.240789 0 23.754007-4.770653 32.416294-13.43294l266.134313-266.100544 266.101567 266.100544c8.66331 8.66331 20.185738 13.43294 32.4429 13.43294 12.265348-0.008186 23.74889-4.771677 32.369222-13.412474C860.81643 825.081555 860.821547 795.991006 842.947458 778.116917z"/>
+                </svg>
+            </span>
+        </div>
+        <p class="content"
+        :style="{
+          textAlign: contentTextAlign
+        }">
+            <slot>
+                there is content
+            </slot>
+        </p>
+        <div class="bottom"
+        :style="{
+          textAlign: optionTextAlign
+        }">
+            <span v-if="unsure" class="unsure" @click="beUnsure">取消</span>
+            <span v-if="sure" class="sure"
+            :class="{
+              single: !unsure
+            }"
+            @click="beSure">确认</span>
+        </div>
+      </div>
+    </div>
+  </teleport>
+</template>
+
+<script lang="ts">
+import { defineComponent, ref } from 'vue'
+
+import { dialogProps, dialogColor, dialogOpen } from '@/types/dialog-types'
+import { VueContext } from '@/types/vue-types'
+
+export default defineComponent({
+  name: 'ViDialog',
+  emits: ['sure', 'unSure', 'shutDown'],
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    sure: {
+      type: Boolean,
+      default: true
+    },
+    unsure: {
+      type: Boolean,
+      default: true
+    },
+    shutdown: {
+      type: Boolean,
+      default: true
+    },
+    mask: {
+      type: Boolean,
+      default: false
+    },
+    maskColor: {
+      type: String,
+      default: 'black'
+    },
+    maskFilter: {
+      type: Boolean,
+      default: false
+    },
+    background: {
+      type: String,
+      default: 'white'
+    },
+    color: {
+      type: String,
+      default: 'black'
+    },
+    filter: {
+      type: Boolean,
+      default: false
+    },
+    shadow: {
+      type: Boolean,
+      default: false
+    },
+    top: {
+      type: String,
+      default: '20vh'
+    },
+    contentTextAlign: {
+      type: String,
+      default: 'left'
+    },
+    optionTextAlign: {
+      type: String,
+      default: 'right'
+    },
+    toSure: {
+      type: Function,
+      default: (): boolean => {
+        return true
+      }
+    },
+    toUnSure: {
+      type: Function,
+      default: (): boolean => {
+        return true
+      }
+    },
+    toShutDown: {
+      type: Function,
+      default: (): boolean => {
+        return true
+      }
+    }
+  },
+  setup (props: dialogProps, context: VueContext): any {
+    const colors: dialogColor = {
+      black: '#0f0b28',
+      white: '#fff',
+      golden: '#B79069'
+    }
+
+    const currentColor = ref(colors[props.color as keyof dialogColor])
+    const isOpen: dialogOpen = ref(false)
+
+    function beSure (): void {
+      context.emit('sure')
+      if (props.toSure()) {
+        isOpen.value = false
+      }
+    }
+
+    function beUnsure (): void {
+      context.emit('unSure')
+      if (props.toUnSure()) {
+        isOpen.value = false
+      }
+    }
+
+    function shutDown (): void {
+      context.emit('shutDown')
+      if (props.toShutDown()) {
+        isOpen.value = false
+      }
+    }
+
+    function open (): void {
+      isOpen.value = true
+    }
+
+    function close () : void {
+      isOpen.value = false
+    }
+
+    return {
+      currentColor,
+      isOpen,
+      beSure,
+      beUnsure,
+      shutDown,
+      open,
+      close
+    }
+  }
+})
+</script>
+
+<style lang="less">
+    @path: '../../../';
+    @import '@{path}public/css/basecolor.less';
+
+    .vi-dialog {
+      overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+    @import './css/mask.less';
+    @import './css/content.less';
+</style>
