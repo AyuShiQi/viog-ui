@@ -150,7 +150,20 @@
   <div id="div">
     <ViLoading/>
   </div>
-  <ViDialog ref="child" maskFilter mask filter background="black" color="purple" shadow title="提示" :shutdown="false" @sure="hello">你确认支付吗？</ViDialog>
+  <ViDialog ref="child"
+  maskFilter
+  mask
+  filter
+  background="black"
+  color="purple"
+  shadow
+  title="提示"
+  @sure="hello">
+    是否支付？
+  </ViDialog>
+  <ViScroll>
+    <div class="li" v-for="item in arr" :key="item">{{item}}</div>
+  </ViScroll>
 </template>
 
 <script lang="ts">
@@ -167,6 +180,7 @@ export default defineComponent({
   },
   setup () {
     const open = ref(true)
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
     function hello () {
       alert('hello')
@@ -175,17 +189,23 @@ export default defineComponent({
 
     return {
       hello,
+      arr,
       open
     }
   },
   mounted () {
     // console.log()
-    (this.$refs.child as ViDialogType).open()
+    // (this.$refs.child as ViDialogType).open()
   }
 })
 </script>
 
 <style lang="less">
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background-color: #0f0b28;
 }
@@ -201,5 +221,12 @@ body {
 
 #div button {
   margin: 5px;
+}
+
+.li {
+  width: 100%;
+  padding: 5px 0;
+  margin: 5px 0;
+  background-color: pink;
 }
 </style>

@@ -6,6 +6,7 @@ import ViButton from '../packages/button'
 import ViIcon from '../packages/icon'
 import ViLoading from '../packages/loading'
 import ViDialog from '../packages/dialog'
+import ViScroll from '../packages/scroll'
 
 const app = createApp(App)
 
@@ -14,5 +15,6 @@ app.use(ViButton)
 app.use(ViIcon)
 app.use(ViLoading)
 app.use(ViDialog)
+app.use(ViScroll)
 
 app.mount('#app')

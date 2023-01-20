@@ -4,3 +4,7 @@ export interface VueContext {
     expose: Function,
     slots: object
 } 
+
+export type DOMType = {
+    addEventListenner: (event: string,rb: Function) => void
+}

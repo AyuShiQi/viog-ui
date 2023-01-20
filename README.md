@@ -94,7 +94,7 @@
 
 - color：string 字体颜色
 
-  > 参数：black(default)/white/golden
+  > 参数：black(default)/white/golden/purple
 
 - filter：boolean 对话框是否进行模糊
 
@@ -106,7 +106,7 @@
 
 - top：string 对话框距顶部位置
 
-  > 参数：一个可以被识别的长度单位值
+  > 参数：一个可以被识别的长度单位值，默认20vh
 
 - sure：boolean 是否有确认按键
 
@@ -150,7 +150,7 @@
 
   > @unSure(不支持控制关闭)    or     :toUnsure="()=>boolean"(函数返回值true or false可以控制是否关闭)
 
-- shutDown：关闭事件
+- shutDown：叉叉关闭事件
 
   > @shutDown(不支持控制关闭)    or     :toShutDown="()=>boolean)"(函数返回值true or false可以控制是否关闭)
 
@@ -161,7 +161,7 @@
 
 ```typescript
 <!-- 父子组件中 -->
-<ViDialog ref="child"><ViDialog/>
+<ViDialog ref="child">这里是对话框内容<ViDialog/>
 
 <!-- mounted -->   - ts -
 type ViDialogType = {
@@ -182,3 +182,40 @@ type ViDialogType = {
 #### 插槽
 
 - 默认插槽，对话框内容
+
+### Scroll
+
+`<ViScroll>`
+
+定义一个滚动区域，区域内容不会被滚动条遮盖
+
+当滚动区域内容超过可视区，自动添加滚动条
+
+#暂未实现：实现虚拟滚动，支持大数据渲染
+
+#### props参数
+
+- width：string 滚动区域宽度（含滚动条）
+
+  > 参数：一个可以被识别的长度单位值，默认为100%
+
+- height：string 滚动区域高度
+
+  > 参数：一个可以被识别的长度单位值，默认为0
+
+- scroll：boolean 是否显示滚动条
+
+  > 参数：false/true(default)
+
+- color：string 滚动条颜色
+
+  > 参数：grey(default)/black/white/golden/purple
+
+- background：string 滚动区域背景颜色
+
+  > 参数：任意一个background-color参数，默认为transparent
+
+#### 插槽内容
+
+- 默认插槽，滚动区域内容
+
