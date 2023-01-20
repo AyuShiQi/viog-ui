@@ -1,0 +1,46 @@
+.vi-dialog-enter-from {
+    opacity: 0;
+
+    .vi-dialog-content {
+        transform: translateY(-20px);
+    }
+}
+
+.vi-dialog-enter-to {
+    opacity: 1;
+
+    .vi-dialog-content {
+        transform: translateY(0px);
+    }
+}
+
+.vi-dialog-enter-active {
+    transition: all 0.3s ease 0s;
+    .vi-dialog-content {
+        transition:  all 0.3s ease 0s;
+    }
+}
+
+.vi-dialog-leave {
+    opacity: 1;
+
+    .vi-dialog-content {
+        transform: translateY(0px);
+    }
+}
+
+.vi-dialog-leave-to {
+    opacity: 0;
+
+    .vi-dialog-content {
+        transform: translateY(-20px);
+    }
+}
+
+.vi-dialog-leave-active {
+    transition: all .3s ease 0s;
+
+    .vi-dialog-content {
+        transition:  all 0.3s ease 0s;
+    }
+}

@@ -1,52 +1,54 @@
 <template>
   <teleport to='body'>
-    <div class="vi-dialog" :class="[`vi-dialog--${maskColor}`,{
-      'has-mask': mask,
-      'is-filter': maskFilter
-    }]"
-    v-show="isOpen">
-      <div class="vi-dialog-content"
-      :class="[
-      `vi-content-background--${background}`,
-      `vi-content--${color}`,
-      {
-        'has-shadow': shadow,
-        'is-filter': filter
+    <transition name="vi-dialog">
+      <div class="vi-dialog" :class="[`vi-dialog--${maskColor}`,{
+        'has-mask': mask,
+        'is-filter': maskFilter
       }]"
-      :style="{
-        top
-      }">
-        <div class="top">
-            <h3 class="title">
-                {{title}}
-            </h3>
-            <span class="delete-point" @click="shutDown">
-                <svg v-if="shutdown" class="icon" width="16px" height="16.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                  <path :fill="currentColor" d="M842.947458 778.116917 576.847937 512.013303 842.946434 245.883083c8.67559-8.674567 13.447267-20.208251 13.43908-32.477692-0.008186-12.232602-4.7727-23.715121-13.414521-32.332383-8.655124-8.677637-20.149922-13.450337-32.384571-13.4575-12.286838 0-23.808242 4.771677-32.474622 13.434987L512.019443 447.143876 245.88206 181.050496c-8.66331-8.66331-20.175505-13.434987-32.416294-13.434987-12.239765 0-23.75196 4.770653-32.414247 13.43294-8.66024 8.636704-13.428847 20.12434-13.437034 32.356942-0.008186 12.269441 4.76349 23.803125 13.437034 32.476669l266.135336 266.13022L181.050496 778.11794c-8.664334 8.66331-13.43601 20.173458-13.43601 32.41527 0 12.239765 4.7727 23.752983 13.437034 32.417317 8.662287 8.66331 20.173458 13.43294 32.413224 13.43294 12.240789 0 23.754007-4.770653 32.416294-13.43294l266.134313-266.100544 266.101567 266.100544c8.66331 8.66331 20.185738 13.43294 32.4429 13.43294 12.265348-0.008186 23.74889-4.771677 32.369222-13.412474C860.81643 825.081555 860.821547 795.991006 842.947458 778.116917z"/>
-                </svg>
-            </span>
-        </div>
-        <p class="content"
+      v-show="isOpen">
+        <div class="vi-dialog-content"
+        :class="[
+        `vi-content-background--${background}`,
+        `vi-content--${color}`,
+        {
+          'has-shadow': shadow,
+          'is-filter': filter
+        }]"
         :style="{
-          textAlign: contentTextAlign
+          top
         }">
-            <slot>
-                there is content
-            </slot>
-        </p>
-        <div class="bottom"
-        :style="{
-          textAlign: optionTextAlign
-        }">
-            <span v-if="unsure" class="unsure" @click="beUnsure">取消</span>
-            <span v-if="sure" class="sure"
-            :class="{
-              single: !unsure
-            }"
-            @click="beSure">确认</span>
+          <div class="top">
+              <h3 class="title">
+                  {{title}}
+              </h3>
+              <span class="delete-point" @click="shutDown">
+                  <svg v-if="shutdown" class="icon" width="16px" height="16.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <path :fill="currentColor" d="M842.947458 778.116917 576.847937 512.013303 842.946434 245.883083c8.67559-8.674567 13.447267-20.208251 13.43908-32.477692-0.008186-12.232602-4.7727-23.715121-13.414521-32.332383-8.655124-8.677637-20.149922-13.450337-32.384571-13.4575-12.286838 0-23.808242 4.771677-32.474622 13.434987L512.019443 447.143876 245.88206 181.050496c-8.66331-8.66331-20.175505-13.434987-32.416294-13.434987-12.239765 0-23.75196 4.770653-32.414247 13.43294-8.66024 8.636704-13.428847 20.12434-13.437034 32.356942-0.008186 12.269441 4.76349 23.803125 13.437034 32.476669l266.135336 266.13022L181.050496 778.11794c-8.664334 8.66331-13.43601 20.173458-13.43601 32.41527 0 12.239765 4.7727 23.752983 13.437034 32.417317 8.662287 8.66331 20.173458 13.43294 32.413224 13.43294 12.240789 0 23.754007-4.770653 32.416294-13.43294l266.134313-266.100544 266.101567 266.100544c8.66331 8.66331 20.185738 13.43294 32.4429 13.43294 12.265348-0.008186 23.74889-4.771677 32.369222-13.412474C860.81643 825.081555 860.821547 795.991006 842.947458 778.116917z"/>
+                  </svg>
+              </span>
+          </div>
+          <p class="content"
+          :style="{
+            textAlign: contentTextAlign
+          }">
+              <slot>
+                  there is content
+              </slot>
+          </p>
+          <div class="bottom"
+          :style="{
+            textAlign: optionTextAlign
+          }">
+              <span v-if="unsure" class="unsure" @click="beUnsure">{{unsureTitle}}</span>
+              <span v-if="sure" class="sure"
+              :class="{
+                single: !unsure
+              }"
+              @click="beSure">{{sureTitle}}</span>
+          </div>
         </div>
       </div>
-    </div>
+    </transition>
   </teleport>
 </template>
 
@@ -63,6 +65,14 @@ export default defineComponent({
     title: {
       type: String,
       default: ''
+    },
+    sureTitle: {
+      type: String,
+      default: '确认'
+    },
+    unsureTitle: {
+      type: String,
+      default: '取消'
     },
     sure: {
       type: Boolean,
@@ -139,7 +149,8 @@ export default defineComponent({
     const colors: dialogColor = {
       black: '#0f0b28',
       white: '#fff',
-      golden: '#B79069'
+      golden: '#B79069',
+      purple: '#b498d5'
     }
 
     const currentColor = ref(colors[props.color as keyof dialogColor])
@@ -166,12 +177,24 @@ export default defineComponent({
       }
     }
 
-    function open (): void {
-      isOpen.value = true
+    function open (time: number | undefined): void {
+      if (typeof time === 'number') {
+        setTimeout(() => {
+          isOpen.value = true
+        }, time)
+      } else {
+        isOpen.value = true
+      }
     }
 
-    function close () : void {
-      isOpen.value = false
+    function close (time: number | undefined) : void {
+      if (typeof time === 'number') {
+        setTimeout(() => {
+          isOpen.value = false
+        }, time)
+      } else {
+        isOpen.value = false
+      }
     }
 
     return {
@@ -200,6 +223,7 @@ export default defineComponent({
         height: 100vh;
     }
 
+    @import './css/transition.less';
     @import './css/mask.less';
     @import './css/content.less';
 </style>

@@ -68,6 +68,8 @@
 
 `<ViDialog/>`
 
+该组件处于默认关闭状态，请调用相关方法打开
+
 #### props参数
 
 - title：string 标题
@@ -163,12 +165,18 @@
 
 <!-- mounted -->   - ts -
 type ViDialogType = {
-  open: () => void,
-  close: () => void
+  open: (time?: number) => void,
+  close: (time?: number) => void
 }
 
+// 即刻打开
 (this.$refs.child as ViDialogType).open()
+// 延迟200ms打开
+(this.$refs.child as ViDialogType).open(200)
+// 即刻关闭
 (this.$refs.child as ViDialogType).close()
+// 延迟200ms关闭
+(this.$refs.child as ViDialogType).close(200)
 ```
 
 #### 插槽

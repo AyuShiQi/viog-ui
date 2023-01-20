@@ -150,15 +150,15 @@
   <div id="div">
     <ViLoading/>
   </div>
-  <ViDialog ref="child" mask maskFilter filter shadow title="提示" :shutdown="false" @sure="hello">你确认支付吗？</ViDialog>
+  <ViDialog ref="child" maskFilter mask filter background="black" color="purple" shadow title="提示" :shutdown="false" @sure="hello">你确认支付吗？</ViDialog>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 
 type ViDialogType = {
-  open: () => void,
-  close: () => void
+  open: (time?: number) => void,
+  close: (time?: number) => void
 }
 
 export default defineComponent({
