@@ -211,10 +211,6 @@ type ViDialogType = {
 
   > 参数：grey(default)/black/white/golden/purple
 
-- background：string 滚动区域背景颜色
-
-  > 参数：任意一个background-color参数，默认为transparent
-
 - lazy: function  滚动区域懒加载回调函数，传入该参数默认实现无限滚动
 
   > 参数：默认为空
@@ -222,6 +218,10 @@ type ViDialogType = {
 - smooth: boolean  瞬间滚动是否为平滑效果
 
   > 参数：false(default)/true
+
+- wait: string  等待缺省样式，前提传入无限滚动回调函数开启懒加载
+
+  > 参数：default/diamond/ball/circle    (参数对应ViLoading)
 
 #### 插槽内容
 

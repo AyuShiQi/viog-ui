@@ -145,7 +145,7 @@
     <ViButton color="sblue" disabled>点击进入</ViButton>
     <ViButton color="syellow" disabled>点击进入</ViButton>
     <ViButton color="spurple" disabled>点击进入</ViButton>
-    <ViButton color="sgreen" disabled>点击进入</ViButton>
+    <ViButton color="sgreen" @click="scr">点击进入</ViButton>
   </div>
   <div id="div">
     <ViLoading/>
@@ -161,13 +161,13 @@
   @sure="hello">
     是否支付？
   </ViDialog>
-  <ViScroll color="white" hidden :lazy="ok" ref="scroll" @scroll="ok">
+  <ViScroll color="white" hidden :lazy="ok" ref="scroll" smooth>
     <div class="li" v-for="item in arr" :key="item">{{item}}</div>
   </ViScroll>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, getCurrentInstance, ref, ComponentInternalInstance } from 'vue'
 
 type ViDialogType = {
   open: (time?: number) => void,
@@ -183,6 +183,7 @@ export default defineComponent({
   components: {
   },
   setup () {
+    const { proxy } = getCurrentInstance() as ComponentInternalInstance
     const open = ref(true)
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
@@ -195,17 +196,21 @@ export default defineComponent({
       console.log('ok')
     }
 
+    function scr () {
+      (proxy?.$refs.scroll as scrollType).scrollTo(0, 140)
+    }
+
     return {
       hello,
       ok,
       arr,
-      open
+      open,
+      scr
     }
   },
   mounted () {
     // console.log()
     // (this.$refs.child as ViDialogType).open()
-    (this.$refs.scroll as scrollType).scrollTo(0, 140)
   }
 })
 </script>

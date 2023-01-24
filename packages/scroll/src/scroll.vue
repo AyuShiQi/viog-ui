@@ -6,7 +6,8 @@
   }"
   :class="[
   `scroll-${color}`,{
-    'is-hidden': hidden
+    'is-hidden': hidden,
+    'is-smooth': smooth
   }]"
   ref="content">
     <slot></slot>
@@ -40,6 +41,10 @@ export default defineComponent({
     lazy: {
       type: Function,
       default: null
+    },
+    smooth: {
+      type: Boolean,
+      default: false
     }
   },
   setup () {
