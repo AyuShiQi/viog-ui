@@ -1,18 +1,20 @@
 <template>
-  <div class="vi-scroll" @mouseenter="mouseEnter" @mouseleave="mouseLeave" @mousewheel="mouseWheel"
+  <div class="vi-scroll"
   :style="{
     width,
-    height,
-    backgroundColor: background
+    height
   }"
   :class="[
-  `scroll-${color}`]">
+  `scroll-${color}`,{
+    'is-hidden': hidden
+  }]"
+  ref="content">
     <slot></slot>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, getCurrentInstance, ComponentInternalInstance } from 'vue'
 
 import { DOMType } from '@/types/vue-types'
 
@@ -27,52 +29,50 @@ export default defineComponent({
       type: String,
       default: '100%'
     },
-    scroll: {
-      type: Boolean,
-      default: true
-    },
     color: {
       type: String,
-      default: 'purple'
+      default: 'grey'
     },
-    background: {
-      type: String,
-      default: 'transparent'
+    hidden: {
+      type: Boolean,
+      default: false
+    },
+    lazy: {
+      type: Function,
+      default: null
     }
   },
   setup () {
+    const { proxy } = (getCurrentInstance() as ComponentInternalInstance)
     const isShow = ref(true)
-    const hidden = ref(false)
 
-    function mouseEnter (): void {
-      hidden.value = false
-    }
-
-    function mouseLeave (): void {
-      hidden.value = true
-    }
-
-    function mouseWheel (): void {
-      console.log('ok')
+    function scrollTo (x: number, y: number) {
+      (proxy?.$refs.content as DOMType).scrollTo(x, y)
     }
 
     return {
       isShow,
-      hidden,
-      mouseEnter,
-      mouseLeave,
-      mouseWheel
+      scrollTo
     }
+  },
+  mounted ():void {
+    if (this.$props.lazy != null) {
+      (this.$refs.content as DOMType).addEventListener('scroll', (e: any) => {
+        const { scrollHeight, scrollTop, clientHeight } = e.target
+
+        if (scrollTop + clientHeight === scrollHeight) {
+          this.$props.lazy()
+        }
+      })
+    }
+  },
+  unmounted (): void {
+    if (this.$props.lazy != null) (this.$refs.content as DOMType).removeEventListener('scroll')
   }
-// mounted ():void {
-//   (this.$refs.content as DOMType).addEventListenner('hover', () => {
-//   })
-// }
 })
 </script>
 
 <style lang="less">
   @import './css/scroll.less';
-  @import './css/transition.less';
   @import './css/content.less';
 </style>

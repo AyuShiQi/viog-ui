@@ -203,9 +203,9 @@ type ViDialogType = {
 
   > 参数：一个可以被识别的长度单位值，默认为0
 
-- scroll：boolean 是否显示滚动条
+- hidden：boolean 是否隐藏滚动条,隐藏后保持滚动效果
 
-  > 参数：false/true(default)
+  > 参数：false(default)/true
 
 - color：string 滚动条颜色
 
@@ -215,7 +215,36 @@ type ViDialogType = {
 
   > 参数：任意一个background-color参数，默认为transparent
 
+- lazy: function  滚动区域懒加载回调函数，传入该参数默认实现无限滚动
+
+  > 参数：默认为空
+
+- smooth: boolean  瞬间滚动是否为平滑效果
+
+  > 参数：false(default)/true
+
 #### 插槽内容
 
 - 默认插槽，滚动区域内容
 
+#### 事件支持
+
+- scroll：滚动事件
+
+#### 方法调用
+
+- scrollTo  滚动到响应位置
+
+```typescript
+<!-- 父子组件中 -->
+<ViScroll ref="child">这里是对话框内容<ViDialog/>
+
+<!-- mounted -->   - ts -
+interface scrollType {
+    scrollTo: (x: number, y: number) => void
+}
+
+(this.$refs.child as scrollType).scrollTo(0, 140)
+```
+
+#### 

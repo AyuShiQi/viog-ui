@@ -6,5 +6,16 @@ export interface VueContext {
 } 
 
 export type DOMType = {
-    addEventListenner: (event: string,rb: Function) => void
+    addEventListener: (event: string,rb: Function) => void
+    removeEventListener: (event: string) => void
+    scrollTo: (x: number, y: number) => void
+}
+
+export type Event = {
+  isTrusted: string,
+  target: DOMType
+}
+
+export interface VueInstace {
+    ctx: any
 }

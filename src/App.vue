@@ -161,7 +161,7 @@
   @sure="hello">
     是否支付？
   </ViDialog>
-  <ViScroll>
+  <ViScroll color="white" hidden :lazy="ok" ref="scroll" @scroll="ok">
     <div class="li" v-for="item in arr" :key="item">{{item}}</div>
   </ViScroll>
 </template>
@@ -172,6 +172,10 @@ import { defineComponent, ref } from 'vue'
 type ViDialogType = {
   open: (time?: number) => void,
   close: (time?: number) => void
+}
+
+export interface scrollType {
+    scrollTo: (x: number, y: number) => void
 }
 
 export default defineComponent({
@@ -187,8 +191,13 @@ export default defineComponent({
       open.value = false
     }
 
+    function ok () {
+      console.log('ok')
+    }
+
     return {
       hello,
+      ok,
       arr,
       open
     }
@@ -196,6 +205,7 @@ export default defineComponent({
   mounted () {
     // console.log()
     // (this.$refs.child as ViDialogType).open()
+    (this.$refs.scroll as scrollType).scrollTo(0, 140)
   }
 })
 </script>
