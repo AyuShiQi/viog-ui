@@ -1,16 +1,15 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <div id="div">
-    <ViButton>
-      <ViIcon/>
-      点击进入
-    </ViButton>
+    <ViButton @click="openDialog">
+      <ViIcon/>打开对话框</ViButton>
     <ViButton color="pink" small @click="hello">点击进入</ViButton>
     <ViButton color="red">点击进入</ViButton>
     <ViButton color="blue">点击进入</ViButton>
     <ViButton color="yellow">点击进入</ViButton>
     <ViButton color="purple">点击进入</ViButton>
     <ViButton color="green">点击进入</ViButton>
+    <ViButton color="black">点击进入</ViButton>
   </div>
   <div id="div">
     <ViButton color="sgrey">点击进入</ViButton>
@@ -257,13 +256,18 @@ export default defineComponent({
       })
     }
 
+    function openDialog () {
+      (proxy?.$refs.child as ViDialogType).open()
+    }
+
     return {
       hello,
       ok,
       arr,
       open,
       scr,
-      pf
+      pf,
+      openDialog
     }
   },
   mounted () {
