@@ -208,7 +208,7 @@
   @sure="hello">
     是否支付？
   </ViDialog>
-  <ViScroll color="white" :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
+  <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
     <div class="li" v-for="item in arr" :key="item">{{item}}</div>
   </ViScroll>
 </template>
@@ -221,8 +221,9 @@ type ViDialogType = {
   close: (time?: number) => void
 }
 
-export interface scrollType {
+interface scrollType {
     scrollTo: (x: number, y: number) => void
+    finish: boolean
 }
 
 export default defineComponent({
@@ -273,6 +274,7 @@ export default defineComponent({
   mounted () {
     // console.log()
     // (this.$refs.child as ViDialogType).open()
+    (this.$refs.scroll as scrollType).finish = true
   }
 })
 </script>

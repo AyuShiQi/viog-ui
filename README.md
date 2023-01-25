@@ -310,6 +310,7 @@ type ViDialogType = {
 <!-- mounted -->   - ts -
 interface scrollType {
     scrollTo: (x: number, y: number) => void
+    finish: boolean
 }
 
 (this.$refs.child as scrollType).scrollTo(0, 140)
