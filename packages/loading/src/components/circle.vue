@@ -55,7 +55,7 @@ export default defineComponent({
     }
 
     .normal-circle.is-grey {
-        stroke: @grey
+        stroke: @grey-o7
     }
 
     .normal-circle.is-blue {
@@ -64,6 +64,14 @@ export default defineComponent({
 
     .normal-circle.is-green {
         stroke: @sgreen-background-hover
+    }
+
+    .normal-circle.is-red {
+        stroke: @red
+    }
+
+    .normal-circle.is-pink {
+        stroke: @pink
     }
  }
 

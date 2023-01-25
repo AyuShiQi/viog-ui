@@ -148,17 +148,55 @@
     <ViButton color="sgreen" @click="scr">点击进入</ViButton>
   </div>
   <div id="div">
-    <ViLoading/>
-    <ViLoading color="purple"/>
-    <ViLoading color="plain"/>
-    <ViLoading type="ball"/>
-    <ViLoading type="plain"/>
+    <div id="div">
+      <ViLoading/>
+    </div>
+    <div id="div">
+      <ViLoading color="purple"/>
+    </div>
+    <div id="div">
+     <ViLoading color="plain"/>
+    </div>
+  </div>
+  <div id="div">
+    <ViLoading type="ball"/><br/>
+    <ViLoading type="ball" color="purple"/><br/>
+    <ViLoading type="ball" color="golden"/><br/>
+    <ViLoading type="ball" color="grey"/><br/>
+    <ViLoading type="ball" color="green"/><br/>
+    <ViLoading type="ball" color="blue"/><br>
+    <ViLoading type="ball" color="red"/><br/>
+    <ViLoading type="ball" color="pink"/>
+  </div>
+  <div id="div">
     <ViLoading type="circle"/>
     <ViLoading type="circle" color="purple"/>
     <ViLoading type="circle" color="golden"/>
     <ViLoading type="circle" color="grey"/>
     <ViLoading type="circle" color="green"/>
     <ViLoading type="circle" color="blue"/>
+    <ViLoading type="circle" color="red"/>
+    <ViLoading type="circle" color="pink"/>
+  </div>
+  <div id="div">
+    <ViLoading type="disk"/>
+    <ViLoading type="disk" color="purple"/>
+    <ViLoading type="disk" color="golden"/>
+    <ViLoading type="disk" color="grey"/>
+    <ViLoading type="disk" color="green"/>
+    <ViLoading type="disk" color="blue"/>
+    <ViLoading type="disk" color="red"/>
+    <ViLoading type="disk" color="pink"/>
+  </div>
+  <div id="div">
+    <ViLoading type="star"/>
+    <ViLoading type="star" color="purple"/>
+    <ViLoading type="star" color="golden"/>
+    <ViLoading type="star" color="grey"/>
+    <ViLoading type="star" color="green"/>
+    <ViLoading type="star" color="blue"/>
+    <ViLoading type="star" color="red"/>
+    <ViLoading type="star" color="pink"/>
   </div>
   <ViDialog ref="child"
   maskFilter
@@ -242,6 +280,10 @@ body {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#div {
+  margin: 10px 0;
 }
 
 #div button {
