@@ -11,16 +11,24 @@
   }]"
   ref="content">
     <slot></slot>
+    <div v-if="lazy!==null&&wait!=='none'" class="lazy-loading">
+      <ViLoading :type="wait" color="grey" size="35px"></ViLoading>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, getCurrentInstance, ComponentInternalInstance } from 'vue'
 
+import { loading } from '../../loading'
+
 import { DOMType } from '@/types/vue-types'
 
 export default defineComponent({
   name: 'ViScroll',
+  components: {
+    ViLoading: loading
+  },
   props: {
     height: {
       type: String,
@@ -45,6 +53,10 @@ export default defineComponent({
     smooth: {
       type: Boolean,
       default: false
+    },
+    wait: {
+      type: String,
+      default: 'none'
     }
   },
   setup () {
@@ -62,11 +74,23 @@ export default defineComponent({
   },
   mounted ():void {
     if (this.$props.lazy != null) {
-      (this.$refs.content as DOMType).addEventListener('scroll', (e: any) => {
-        const { scrollHeight, scrollTop, clientHeight } = e.target
+      let lock = true
+      let lazyHeight = 0
 
-        if (scrollTop + clientHeight === scrollHeight) {
-          this.$props.lazy()
+      if (this.lazy !== null && this.wait !== 'none') {
+        lazyHeight = 35
+      }
+
+      (this.$refs.content as DOMType).addEventListener('scroll', (e: any) => {
+        const { scrollTop, clientHeight, scrollHeight } = e.target
+
+        if (lock && scrollTop + clientHeight >= scrollHeight - lazyHeight) {
+          lock = false
+          this.$props.lazy().then(() => {
+            lock = true
+          }).catch(() => {
+            lock = false
+          })
         }
       })
     }

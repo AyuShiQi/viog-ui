@@ -209,7 +209,7 @@
   @sure="hello">
     是否支付？
   </ViDialog>
-  <ViScroll color="white" :lazy="ok" ref="scroll" smooth>
+  <ViScroll color="white" :lazy="pf" ref="scroll" smooth wait="circle">
     <div class="li" v-for="item in arr" :key="item">{{item}}</div>
   </ViScroll>
 </template>
@@ -248,12 +248,22 @@ export default defineComponent({
       (proxy?.$refs.scroll as scrollType).scrollTo(0, 140)
     }
 
+    function pf () {
+      return new Promise((resolve, reject) => {
+        console.log('pf')
+        setTimeout(() => {
+          resolve('ok')
+        }, 3000)
+      })
+    }
+
     return {
       hello,
       ok,
       arr,
       open,
-      scr
+      scr,
+      pf
     }
   },
   mounted () {
