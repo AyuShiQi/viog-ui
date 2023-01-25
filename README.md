@@ -283,7 +283,7 @@ type ViDialogType = {
 
 - wait: string  等待缺省加载动画，前提传入无限滚动回调函数开启懒加载
 
-  > 参数：无缺省样式(default)/circle/diamond/ball/disk/star   (参数对应ViLoading)
+  > 参数：无缺省样式(default)/circle/ball/disk/star
   >
   > 建议使用circle与ball样式，更合适
 
@@ -315,4 +315,11 @@ interface scrollType {
 (this.$refs.child as scrollType).scrollTo(0, 140)
 ```
 
-#### 
+- finsh  布尔值,默认为false，更改布尔值为true，代表加载数据已完成
+
+  > 用于懒加载中，将该参数置为true，结束懒加载监听与加载动画展示
+
+```typescript
+(this.$refs.child as scrollType).finish = true
+```
+

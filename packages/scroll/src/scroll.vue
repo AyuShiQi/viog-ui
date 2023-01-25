@@ -11,7 +11,7 @@
   }]"
   ref="content">
     <slot></slot>
-    <div v-if="lazy!==null&&wait!=='none'" class="lazy-loading">
+    <div v-if="lazy!==null&&wait!=='none'" v-show="!finish" class="lazy-loading">
       <ViLoading :type="wait" color="grey" size="35px"></ViLoading>
       <span class="text">{{waitText}}</span>
     </div>
@@ -66,14 +66,14 @@ export default defineComponent({
   },
   setup () {
     const { proxy } = (getCurrentInstance() as ComponentInternalInstance)
-    const isShow = ref(true)
+    const finish = ref(false)
 
     function scrollTo (x: number, y: number) {
       (proxy?.$refs.content as DOMType).scrollTo(x, y)
     }
 
     return {
-      isShow,
+      finish,
       scrollTo
     }
   },
@@ -89,7 +89,7 @@ export default defineComponent({
       (this.$refs.content as DOMType).addEventListener('scroll', (e: any) => {
         const { scrollTop, clientHeight, scrollHeight } = e.target
 
-        if (lock && scrollTop + clientHeight >= scrollHeight - lazyHeight) {
+        if (lock && !this.finish && scrollTop + clientHeight >= scrollHeight - lazyHeight) {
           lock = false
           this.$props.lazy().then(() => {
             lock = true
