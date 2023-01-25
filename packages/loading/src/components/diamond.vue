@@ -56,7 +56,7 @@ export default defineComponent({
   setup (props: loadingProps) {
     const colorTeam: ColorTeamType = {
       colorful: ['#A0FFD5', '#FFCDC9', '#ABD2FF', '#80ECBC', '#FCB2AC', '#88B2E0'],
-      plain: ['#eafdff', '#ecf3ff', '#ecfffa', '#eafdff', '#ecf3ff', '#ecfffa'],
+      white: ['#eafdff', '#ecf3ff', '#ecfffa', '#eafdff', '#ecf3ff', '#ecfffa'],
       purple: ['#f4d1e0', '#dccaf0', '#edcaf0', '#f4d1e0', '#dccaf0', '#edcaf0']
     }
 

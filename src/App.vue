@@ -149,13 +149,13 @@
   </div>
   <div id="div">
     <div id="div">
-      <ViLoading/>
+      <ViLoading type="diamond"/>
     </div>
     <div id="div">
-      <ViLoading color="purple"/>
+      <ViLoading type="diamond" color="purple"/>
     </div>
     <div id="div">
-     <ViLoading color="plain"/>
+     <ViLoading type="diamond" color="white"/>
     </div>
   </div>
   <div id="div">

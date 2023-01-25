@@ -17,7 +17,7 @@ export default defineComponent({
   props: {
     color: {
       type: String,
-      default: 'white'
+      default: 'grey'
     },
     size: {
       type: String,
@@ -49,7 +49,7 @@ export default defineComponent({
 }
 
 .vi-star {
-    display: inline-block;background-color: #fff;
+    display: inline-block;
 
     .moon-circle {
         transform-origin: center;

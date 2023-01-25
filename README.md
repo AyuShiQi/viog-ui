@@ -46,11 +46,11 @@
 
 #### props参数
 
-- type：icon样式
+- type：string    icon样式
 
   > 参数：详解icon样式表
 
-- size：icon大小
+- size：string     icon大小
 
   > 参数：small/middle(default)/big
 
@@ -60,9 +60,69 @@
 
 #### props参数
 
-- type：加载动画样式
+- type：string 加载动画样式
 
-  > 参数：diamond(default)/plain/ball/circle
+  > 参数：circle(default)/diamond/ball/disk/star
+  
+- color：string 加载动画颜色
+
+  > 参数：详情见下表
+
+- size：string 加载动画大小
+
+  > 参数：详情见下表
+
+#### 加载动画props详解
+
+##### circle
+
+- color：string 颜色
+
+  > 参数：grey(default)/white/purple/golden/blue/green/red/pink
+
+- size：string 大小
+
+  > 参数：默认为50px
+
+##### ball
+
+- color：string 颜色
+
+  > 参数：grey(default)/white/purple/golden/blue/green/red/pink
+
+- size：string 大小
+
+  > 参数：默认为50px
+
+##### disk
+
+- color：string 颜色
+
+  > 参数：grey(default)/white/purple/golden/blue/green/red/pink
+
+- size：string 大小
+
+  > 参数：默认为200px
+
+##### star
+
+- color：string 颜色
+
+  > 参数：grey(default)/white/purple/golden/blue/green/red/pink
+
+- size：string 大小
+
+  > 参数：默认为200px
+
+##### diamond
+
+- color：string 颜色
+
+  > 参数：colorful(default)/white/purple
+
+- diamond无size参数，默认大小为60*120
+
+
 
 ### Dialog
 

@@ -5,7 +5,7 @@ export interface loadingProps {
 
 export type ColorTeamType = {
     colorful: Colors,
-    plain: Colors,
+    white: Colors,
     purple: Colors
 }
 
