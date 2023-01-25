@@ -209,7 +209,7 @@
   @sure="hello">
     是否支付？
   </ViDialog>
-  <ViScroll color="white" :lazy="pf" ref="scroll" smooth wait="circle">
+  <ViScroll color="white" :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
     <div class="li" v-for="item in arr" :key="item">{{item}}</div>
   </ViScroll>
 </template>

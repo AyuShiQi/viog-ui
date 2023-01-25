@@ -273,7 +273,7 @@ type ViDialogType = {
 
 - lazy: function  滚动区域懒加载回调函数，传入该参数默认实现无限滚动
 
-  注意：请传入一个异步函数，懒加载自动实现节流，待lazy函数返回值后，才将再次触发lazy函数
+  注意：请传入一个异步函数，懒加载自动实现节流，待lazy函数返回值后，才将再次监听事件触发lazy函数
 
   > 参数：默认为空
 
@@ -281,9 +281,15 @@ type ViDialogType = {
 
   > 参数：false(default)/true
 
-- wait: string  等待缺省样式，前提传入无限滚动回调函数开启懒加载
+- wait: string  等待缺省加载动画，前提传入无限滚动回调函数开启懒加载
 
   > 参数：无缺省样式(default)/circle/diamond/ball/disk/star   (参数对应ViLoading)
+  >
+  > 建议使用circle与ball样式，更合适
+
+- waitText: string  等待缺省文字，若有加载动画，传入文字将跟在加载动画后面
+
+  > 参数：默认为空字符串
 
 #### 插槽内容
 

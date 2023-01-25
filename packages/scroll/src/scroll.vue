@@ -13,6 +13,7 @@
     <slot></slot>
     <div v-if="lazy!==null&&wait!=='none'" class="lazy-loading">
       <ViLoading :type="wait" color="grey" size="35px"></ViLoading>
+      <span class="text">{{waitText}}</span>
     </div>
   </div>
 </template>
@@ -57,6 +58,10 @@ export default defineComponent({
     wait: {
       type: String,
       default: 'none'
+    },
+    waitText: {
+      type: String,
+      default: ''
     }
   },
   setup () {

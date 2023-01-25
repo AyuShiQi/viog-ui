@@ -1,5 +1,5 @@
 <template>
-  <svg class="vi-ball" viewBox="0 0 18 8" :height="size">
+  <svg class="vi-ball" viewBox="0 0 18 8" :width="size">
     <circle
     class="normal-ball"
     :class="[`is-${color}`]"
@@ -35,7 +35,7 @@ export default defineComponent({
     },
     size: {
       type: String,
-      default: '20px'
+      default: '50px'
     }
   }
 })
