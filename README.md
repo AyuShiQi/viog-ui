@@ -54,7 +54,7 @@
 
   > 参数：small/middle(default)/big
 
-### Load
+### Loading
 
 `<ViLoading/>`
 
@@ -62,7 +62,7 @@
 
 - type：加载动画样式
 
-  > 参数：diamond(default)
+  > 参数：diamond(default)/plain/ball/circle
 
 ### Dialog
 
@@ -221,7 +221,7 @@ type ViDialogType = {
 
 - wait: string  等待缺省样式，前提传入无限滚动回调函数开启懒加载
 
-  > 参数：default/diamond/ball/circle    (参数对应ViLoading)
+  > 参数：default/diamond/plain/ball/circle    (参数对应ViLoading)
 
 #### 插槽内容
 

@@ -149,6 +149,16 @@
   </div>
   <div id="div">
     <ViLoading/>
+    <ViLoading color="purple"/>
+    <ViLoading color="plain"/>
+    <ViLoading type="ball"/>
+    <ViLoading type="plain"/>
+    <ViLoading type="circle"/>
+    <ViLoading type="circle" color="purple"/>
+    <ViLoading type="circle" color="golden"/>
+    <ViLoading type="circle" color="grey"/>
+    <ViLoading type="circle" color="green"/>
+    <ViLoading type="circle" color="blue"/>
   </div>
   <ViDialog ref="child"
   maskFilter
@@ -161,7 +171,7 @@
   @sure="hello">
     是否支付？
   </ViDialog>
-  <ViScroll color="white" hidden :lazy="ok" ref="scroll" smooth>
+  <ViScroll color="white" :lazy="ok" ref="scroll" smooth>
     <div class="li" v-for="item in arr" :key="item">{{item}}</div>
   </ViScroll>
 </template>
@@ -242,6 +252,6 @@ body {
   width: 100%;
   padding: 5px 0;
   margin: 5px 0;
-  background-color: pink;
+  // background-color: pink;
 }
 </style>
