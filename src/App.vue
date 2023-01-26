@@ -146,7 +146,7 @@
     <ViButton color="spurple" disabled>点击进入</ViButton>
     <ViButton color="sgreen" @click="scr">点击进入</ViButton>
   </div>
-  <div id="div">
+  <!-- <div id="div">
     <div id="div">
       <ViLoading type="diamond"/>
     </div>
@@ -161,7 +161,7 @@
     <ViLoading type="ball"/><br/>
     <ViLoading type="ball" color="purple"/><br/>
     <ViLoading type="ball" color="golden"/><br/>
-    <ViLoading type="ball" color="grey"/><br/>
+    <ViLoading type="ball" color="white"/><br/>
     <ViLoading type="ball" color="green"/><br/>
     <ViLoading type="ball" color="blue"/><br>
     <ViLoading type="ball" color="red"/><br/>
@@ -171,7 +171,7 @@
     <ViLoading type="circle"/>
     <ViLoading type="circle" color="purple"/>
     <ViLoading type="circle" color="golden"/>
-    <ViLoading type="circle" color="grey"/>
+    <ViLoading type="circle" color="white"/>
     <ViLoading type="circle" color="green"/>
     <ViLoading type="circle" color="blue"/>
     <ViLoading type="circle" color="red"/>
@@ -181,7 +181,7 @@
     <ViLoading type="disk"/>
     <ViLoading type="disk" color="purple"/>
     <ViLoading type="disk" color="golden"/>
-    <ViLoading type="disk" color="grey"/>
+    <ViLoading type="disk" color="white"/>
     <ViLoading type="disk" color="green"/>
     <ViLoading type="disk" color="blue"/>
     <ViLoading type="disk" color="red"/>
@@ -191,12 +191,12 @@
     <ViLoading type="star"/>
     <ViLoading type="star" color="purple"/>
     <ViLoading type="star" color="golden"/>
-    <ViLoading type="star" color="grey"/>
+    <ViLoading type="star" color="white"/>
     <ViLoading type="star" color="green"/>
     <ViLoading type="star" color="blue"/>
     <ViLoading type="star" color="red"/>
     <ViLoading type="star" color="pink"/>
-  </div>
+  </div> -->
   <ViDialog ref="child"
   maskFilter
   mask
@@ -211,6 +211,9 @@
   <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
     <div class="li" v-for="item in arr" :key="item">{{item}}</div>
   </ViScroll>
+  <ViVirtualScroll>
+    <div class="li" v-for="item in arr" :key="item">{{item}}</div>
+  </ViVirtualScroll>
 </template>
 
 <script lang="ts">

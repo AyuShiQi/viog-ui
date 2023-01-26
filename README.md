@@ -251,7 +251,7 @@ type ViDialogType = {
 
 当滚动区域内容超过可视区，自动添加滚动条
 
-#暂未实现：实现虚拟滚动，支持大数据渲染
+
 
 #### props参数
 
@@ -324,3 +324,34 @@ interface scrollType {
 (this.$refs.child as scrollType).finish = true
 ```
 
+### VirtualScroll
+
+`<ViVirtualScroll>`
+
+虚拟滚动，支持大数据与长列表快速渲染
+
+#### props参数
+
+- width：string 滚动区域宽度（含滚动条）
+
+  > 参数：一个可以被识别的长度单位值，默认为100%
+
+- height：string 滚动区域高度
+
+  > 参数：一个可以被识别的长度单位值，默认为0
+
+- backgroundcolor：string 背景颜色
+
+  > 参数：默认为transparent
+
+- hidden：boolean 是否隐藏滚动条,隐藏后保持滚动效果
+
+  > 参数：false(default)/true
+
+- color：string 滚动条颜色
+
+  > 参数：grey(default)/black/white/golden/purple
+
+- smooth: boolean  瞬间滚动是否为平滑效果
+
+  > 参数：false(default)/true

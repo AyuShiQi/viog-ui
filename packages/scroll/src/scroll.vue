@@ -108,5 +108,4 @@ export default defineComponent({
 
 <style lang="less">
   @import './css/scroll.less';
-  @import './css/content.less';
 </style>

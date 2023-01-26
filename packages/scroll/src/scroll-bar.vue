@@ -23,14 +23,14 @@ export default defineComponent({
   @import '../../../public/css/basecolor.less';
 
   .vi-scroll-bar {
-    width: 10px;
+    width: 6px;
     opacity: 1;
     transition: all.3s;
 
     .bar {
         width: 100%;
         height: 100px;
-        border-radius: 8px;
+        border-radius: 3px;
         cursor: pointer;
     }
 

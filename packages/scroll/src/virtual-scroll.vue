@@ -1,5 +1,5 @@
 <template>
-  <div class="vi-scroll" @mouseenter="mouseEnter" @mouseleave="mouseLeave" @mousewheel="mouseWheel"
+  <div class="vi-virtual-scroll" @mouseenter="mouseEnter" @mouseleave="mouseLeave" @mousewheel="mouseWheel"
   :style="{
     width,
     height,
@@ -20,7 +20,7 @@ import ScrollBar from './scroll-bar.vue'
 import { DOMType } from '@/types/vue-types'
 
 export default defineComponent({
-  name: 'ViScroll',
+  name: 'ViVirtualScroll',
   components: {
     ScrollBar
   },
@@ -43,7 +43,7 @@ export default defineComponent({
     },
     background: {
       type: String,
-      default: '#fff'
+      default: 'transparent'
     }
   },
   setup () {
@@ -79,31 +79,5 @@ export default defineComponent({
 
 <style lang="less">
   @import './css/transition.less';
-  @import './css/content.less';
-
-  .vi-scroll {
-    overflow: hidden;
-    display: flex;
-    background-color: transparent;
-    background-color: #fff;
-    justify-content: space-between;
-  }
-
-  .vi-scroll .scroll-content {
-    overflow: auto;
-    height: 100%;
-    flex: 1;
-
-    &::-webkit-scrollbar {
-      width: 10px;
-      height: 100%;
-      background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-      background: #535353;
-    }
-  }
+  @import './css/virtual-scroll.less';
 </style>
