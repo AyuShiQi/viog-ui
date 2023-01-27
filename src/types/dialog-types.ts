@@ -22,7 +22,8 @@ export interface dialogProps {
   title: string,
   toSure: Function,
   toUnSure: Function,
-  toShutDown: Function 
+  toShutDown: Function,
+  defaultOpen: boolean
 }
 
 export interface dialogColor {

@@ -198,6 +198,7 @@
     <ViLoading type="star" color="pink"/>
   </div> -->
   <ViDialog ref="child"
+  defaultOpen
   maskFilter
   mask
   filter

@@ -132,6 +132,10 @@
 
 #### props参数
 
+- defaultOpen：boolean 对话框初始状态
+
+  > 参数： 默认为false，请不要在该prop上绑定响应式数据，对对话框的操作请调用相关方法
+
 - title：string 标题
 
   > 参数： 默认为空字符串
@@ -364,6 +368,10 @@ interface ScrollType {
 > 父组件内对template 等 v-slot="vi" 绑定作用域
 >
 > 通过vi.data可以用于表示传入的datas中的某个对象
+
+#### 事件支持
+
+- scroll：滚动事件
 
 #### 方法调用
 

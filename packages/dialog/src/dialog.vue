@@ -143,6 +143,10 @@ export default defineComponent({
       default: (): boolean => {
         return true
       }
+    },
+    defaultOpen: {
+      type: Boolean,
+      default: false
     }
   },
   setup (props: dialogProps, context: VueContext): any {
@@ -154,7 +158,7 @@ export default defineComponent({
     }
 
     const currentColor = ref(colors[props.color as keyof dialogColor])
-    const isOpen: dialogOpen = ref(false)
+    const isOpen: dialogOpen = ref(props.defaultOpen)
 
     function beSure (): void {
       context.emit('sure')
