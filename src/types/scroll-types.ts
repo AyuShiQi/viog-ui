@@ -1,6 +1,10 @@
-export interface scrollType {
+export interface ScrollType {
     scrollTo: (x: number, y: number) => void
     finish: boolean
+}
+
+export interface VirtualScrollType {
+    scrollTo: (x: number, y: number) => void
 }
 
 export interface VirtualScrollPlusProps {

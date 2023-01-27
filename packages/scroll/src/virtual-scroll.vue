@@ -7,7 +7,6 @@
   :class="[
   `scroll-${color}`,{
     'is-hidden': hidden,
-    'is-smooth': smooth
   }]"
   ref="content">
     <div class="list-brace" :style="{
@@ -47,10 +46,6 @@ export default defineComponent({
       default: 'grey'
     },
     hidden: {
-      type: Boolean,
-      default: false
-    },
-    smooth: {
       type: Boolean,
       default: false
     },

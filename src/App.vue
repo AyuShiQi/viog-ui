@@ -143,10 +143,10 @@
     <ViButton color="sred" disabled>点击进入</ViButton>
     <ViButton color="sblue" disabled>点击进入</ViButton>
     <ViButton color="syellow" disabled>点击进入</ViButton>
-    <ViButton color="spurple" disabled>点击进入</ViButton>
+    <ViButton color="spurple" @click="scr">点击进入</ViButton>
     <ViButton color="sgreen" @click="scr">点击进入</ViButton>
   </div>
-  <div id="div">
+  <!-- <div id="div">
     <div id="div">
       <ViLoading type="diamond"/>
     </div>
@@ -196,7 +196,7 @@
     <ViLoading type="star" color="blue"/>
     <ViLoading type="star" color="red"/>
     <ViLoading type="star" color="pink"/>
-  </div>
+  </div> -->
   <ViDialog ref="child"
   maskFilter
   mask
@@ -211,7 +211,7 @@
   <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
     <div class="li" v-for="item in arr" :key="item">{{item}}</div>
   </ViScroll>
-  <ViVirtualScroll :itemHeight="100" :datas="obj">
+  <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" hidden>
     <template v-slot="vi">
       <div class="lili">
         {{vi.data.number}}
@@ -231,6 +231,10 @@ type ViDialogType = {
 interface scrollType {
     scrollTo: (x: number, y: number) => void
     finish: boolean
+}
+
+interface VirtualScrollType {
+    scrollTo: (x: number, y: number) => void
 }
 
 export default defineComponent({
@@ -253,7 +257,8 @@ export default defineComponent({
     }
 
     function scr () {
-      (proxy?.$refs.scroll as scrollType).scrollTo(0, 140)
+      (proxy?.$refs.scroll as scrollType).scrollTo(0, 140);
+      (proxy?.$refs.vscroll as VirtualScrollType).scrollTo(0, 140)
     }
 
     function pf () {
