@@ -1,11 +1,13 @@
 <template>
   <div class="vi-scroll-bar" :class="{'is-hidden': hidden}">
-    <div class="bar" :class="[`is-${color}`]"></div>
+    <div class="bar" :class="[`is-${color}`]" :style="{height: `${barHeight}px`}"></div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+
+import { VirtualScrollPlusProps } from '@/types/scroll-types'
 
 export default defineComponent({
   name: 'ViScrollBar',
@@ -14,7 +16,28 @@ export default defineComponent({
       type: String,
       default: 'grey'
     },
-    hidden: Boolean
+    hidden: {
+      type: Boolean,
+      default: false
+    },
+    totalHeight: {
+      type: Number,
+      default: 1
+    },
+    clientHeight: {
+      type: Number,
+      default: 1
+    }
+  },
+  setup (props: VirtualScrollPlusProps) {
+    const barRatio = props.clientHeight / props.totalHeight
+    const barHeight = barRatio >= 1 ? 0 : props.clientHeight * barRatio
+    console.log(barRatio, barHeight)
+
+    return {
+      barRatio,
+      barHeight
+    }
   }
 })
 </script>
@@ -29,7 +52,6 @@ export default defineComponent({
 
     .bar {
         width: 100%;
-        height: 100px;
         border-radius: 3px;
         cursor: pointer;
     }

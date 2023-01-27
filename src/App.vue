@@ -146,7 +146,7 @@
     <ViButton color="spurple" disabled>点击进入</ViButton>
     <ViButton color="sgreen" @click="scr">点击进入</ViButton>
   </div>
-  <!-- <div id="div">
+  <div id="div">
     <div id="div">
       <ViLoading type="diamond"/>
     </div>
@@ -196,7 +196,7 @@
     <ViLoading type="star" color="blue"/>
     <ViLoading type="star" color="red"/>
     <ViLoading type="star" color="pink"/>
-  </div> -->
+  </div>
   <ViDialog ref="child"
   maskFilter
   mask
@@ -211,8 +211,12 @@
   <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
     <div class="li" v-for="item in arr" :key="item">{{item}}</div>
   </ViScroll>
-  <ViVirtualScroll>
-    <div class="li" v-for="item in arr" :key="item">{{item}}</div>
+  <ViVirtualScroll :itemHeight="100" :datas="obj">
+    <template v-slot="vi">
+      <div class="lili">
+        {{vi.data.number}}
+      </div>
+    </template>
   </ViVirtualScroll>
 </template>
 
@@ -236,7 +240,8 @@ export default defineComponent({
   setup () {
     const { proxy } = getCurrentInstance() as ComponentInternalInstance
     const open = ref(true)
-    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+    const obj = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 }, { number: 11 }, { number: 12 }]
 
     function hello () {
       alert('hello')
@@ -252,7 +257,7 @@ export default defineComponent({
     }
 
     function pf () {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         console.log('pf')
         setTimeout(() => {
           resolve('ok')
@@ -271,13 +276,14 @@ export default defineComponent({
       open,
       scr,
       pf,
-      openDialog
+      openDialog,
+      obj
     }
   },
   mounted () {
     // console.log()
     // (this.$refs.child as ViDialogType).open()
-    (this.$refs.scroll as scrollType).finish = true
+    // (this.$refs.scroll as scrollType).finish = true
   }
 })
 </script>
@@ -312,7 +318,14 @@ body {
 .li {
   width: 100%;
   padding: 5px 0;
-  margin: 5px 0;
-  // background-color: pink;
+  margin: 10px 0;
+}
+
+.lili {
+  width: 100%;
+  height: 100px;
+  line-height: 50px;
+  text-align: center;
+  // background-color: #fff;
 }
 </style>

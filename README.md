@@ -273,7 +273,7 @@ type ViDialogType = {
 
 - lazy: function  滚动区域懒加载回调函数，传入该参数默认实现无限滚动
 
-  注意：请传入一个异步函数，懒加载自动实现节流，待lazy函数返回值后，才将再次监听事件触发lazy函数
+  注意：请传入一个异步函数，懒加载自动实现节流，待lazy函数返回结果后，才将再次监听事件触发lazy函数
 
   > 参数：默认为空
 
@@ -330,15 +330,19 @@ interface scrollType {
 
 虚拟滚动，支持大数据与长列表快速渲染
 
+仅支持数组数据列表渲染
+
+不支持平滑滚动，若有需要请使用普通滚动
+
 #### props参数
 
 - width：string 滚动区域宽度（含滚动条）
 
   > 参数：一个可以被识别的长度单位值，默认为100%
 
-- height：string 滚动区域高度
+- height：Number 滚动区域高度
 
-  > 参数：一个可以被识别的长度单位值，默认为0
+  > 参数：单位只能为px，传入参数时请不要带单位
 
 - backgroundcolor：string 背景颜色
 
@@ -351,7 +355,3 @@ interface scrollType {
 - color：string 滚动条颜色
 
   > 参数：grey(default)/black/white/golden/purple
-
-- smooth: boolean  瞬间滚动是否为平滑效果
-
-  > 参数：false(default)/true

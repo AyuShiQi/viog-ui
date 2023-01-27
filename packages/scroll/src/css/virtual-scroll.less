@@ -1,15 +1,14 @@
-@import '../../../../public/css/basecolor.less';
-
 .vi-virtual-scroll {
-    overflow: hidden;
-    display: flex;
-    background-color: transparent;
-    background-color: #fff;
-    justify-content: space-between;
+    overflow: auto;
+    position: relative;
 
-    .scroll-content {
-        overflow: hidden;
-        height: 100%;
-        flex: 1;
+    .list {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .list-brace {
+        background-color: pink;
     }
 }
