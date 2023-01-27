@@ -290,6 +290,10 @@ type ViDialogType = {
 - waitText: string  等待缺省文字，若有加载动画，传入文字将跟在加载动画后面
 
   > 参数：默认为空字符串
+  
+- finish: boolean  用于懒加载中，代表加载数据是否完成
+
+  > 参数：默认为false，未加载完成
 
 #### 插槽内容
 
@@ -308,20 +312,11 @@ type ViDialogType = {
 <ViScroll ref="child">这里是对话框内容<ViDialog/>
 
 <!-- mounted -->   - ts -
-interface scrollType {
+interface ScrollType {
     scrollTo: (x: number, y: number) => void
-    finish: boolean
 }
 
 (this.$refs.child as scrollType).scrollTo(0, 140)
-```
-
-- finsh  布尔值,默认为false，更改布尔值为true，代表加载数据已完成
-
-  > 用于懒加载中，将该参数置为true，结束懒加载监听与加载动画展示
-
-```typescript
-(this.$refs.child as scrollType).finish = true
 ```
 
 ### VirtualScroll
@@ -330,7 +325,7 @@ interface scrollType {
 
 虚拟滚动，支持大数据与长列表快速渲染
 
-仅支持数组数据列表渲染
+仅支持数组数据列表渲染，同一高度只允许存在一个节点
 
 不支持平滑滚动，若有需要请使用普通滚动
 
@@ -340,13 +335,9 @@ interface scrollType {
 
   > 参数：一个可以被识别的长度单位值，默认为100%
 
-- height：Number 滚动区域高度
+- height：number 滚动区域高度
 
   > 参数：单位只能为px，传入参数时请不要带单位
-
-- backgroundcolor：string 背景颜色
-
-  > 参数：默认为transparent
 
 - hidden：boolean 是否隐藏滚动条,隐藏后保持滚动效果
 
@@ -355,3 +346,37 @@ interface scrollType {
 - color：string 滚动条颜色
 
   > 参数：grey(default)/black/white/golden/purple
+
+- itemHeight：number 列表元组高度
+
+  > 参数：必传，单位为px，传入参数是不要带单位
+
+- datas：object[] 列表数据数组
+
+  > 参数：必传
+
+#### 插槽内容
+
+- 默认插槽，传入数据渲染模板
+
+> 插槽暴露了一个对象data 
+>
+> 父组件内对template 等 v-slot="vi" 绑定作用域
+>
+> 通过vi.data可以用于表示传入的datas中的某个对象
+
+#### 方法调用
+
+- scrollTo  滚动到响应位置
+
+```typescript
+<!-- 父子组件中 -->
+<ViVirtualScroll ref="child">这里是对话框内容<ViDialog/>
+
+<!-- mounted -->   - ts -
+interface VirtualScrollType {
+    scrollTo: (x: number, y: number) => void
+}
+
+(this.$refs.child as VirtualScrollType).scrollTo(0, 140)
+```

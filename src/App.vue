@@ -208,7 +208,7 @@
   @sure="hello">
     是否支付？
   </ViDialog>
-  <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
+  <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中" finish>
     <div class="li" v-for="item in arr" :key="item">{{item}}</div>
   </ViScroll>
   <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" hidden>

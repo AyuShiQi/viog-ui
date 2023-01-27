@@ -26,6 +26,7 @@ import { defineComponent, ref, getCurrentInstance, ComponentInternalInstance } f
 import { loading } from '../../loading'
 
 import { DOMType } from '@/types/vue-types'
+import { ScrollProps } from '@/types/scroll-types'
 
 export default defineComponent({
   name: 'ViScroll',
@@ -64,23 +65,25 @@ export default defineComponent({
     waitText: {
       type: String,
       default: ''
+    },
+    finish: {
+      type: Boolean,
+      default: false
     }
   },
   setup () {
     const { proxy } = (getCurrentInstance() as ComponentInternalInstance)
-    const finish = ref(false)
 
     function scrollTo (x: number, y: number) {
       (proxy?.$refs.content as DOMType).scrollTo(x, y)
     }
 
     return {
-      finish,
       scrollTo
     }
   },
   mounted ():void {
-    if (this.$props.lazy != null) {
+    if (this.lazy != null) {
       let lock = true
       let lazyHeight = 0
 
