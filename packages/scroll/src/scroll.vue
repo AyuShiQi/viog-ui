@@ -12,7 +12,9 @@
   ref="content">
     <slot></slot>
     <div v-if="lazy!==null&&wait!=='none'" v-show="!finish" class="lazy-loading">
-      <ViLoading :type="wait" color="grey" size="35px"></ViLoading>
+      <div class="loading-animation">
+        <ViLoading :type="wait" color="grey" size="35px"></ViLoading>
+      </div>
       <span class="text">{{waitText}}</span>
     </div>
   </div>
