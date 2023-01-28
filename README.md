@@ -218,7 +218,7 @@
 
   > @shutDown(不支持控制关闭)    or     :toShutDown="()=>boolean)"(函数返回值true or false可以控制是否关闭)
 
-#### 方法调用
+#### 对外暴露方法调用
 
 - open  打开对话框
 - close 关闭对话框
@@ -373,7 +373,7 @@ interface ScrollType {
 
 - scroll：滚动事件
 
-#### 方法调用
+#### 对外暴露方法调用
 
 - scrollTo  滚动到响应位置
 
@@ -388,3 +388,9 @@ interface VirtualScrollType {
 
 (this.$refs.child as VirtualScrollType).scrollTo(0, 140)
 ```
+
+### ViInput
+
+`<ViInput>`
+
+输入框组件

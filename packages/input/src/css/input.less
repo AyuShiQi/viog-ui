@@ -1,0 +1,32 @@
+@import '../../../../public/css/basecolor.less';
+@import '../../../../public/css/base.less';
+
+.vi-input {
+    padding: 5px 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: transparent;
+    // 光标颜色
+    caret-color: @white;
+
+    &::-webkit-input-placeholder {
+        font-size: @font-size;
+        color: @white;
+    }
+
+    &:-moz-placeholder {
+        font-size: @font-size;
+        color: @white;
+    }
+
+    &:-ms-input-placeholder {
+        font-size: @font-size;
+        color: @white;
+    }
+
+    &::placeholder {
+        font-size: @font-size;
+        color: @white;
+    }
+}

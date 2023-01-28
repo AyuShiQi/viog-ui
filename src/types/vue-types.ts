@@ -2,7 +2,7 @@ export interface VueContext {
     attrs: object,
     emit: Function,
     expose: Function,
-    slots: object
+    slots: any
 } 
 
 export type DOMType = {
