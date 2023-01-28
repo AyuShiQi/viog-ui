@@ -199,7 +199,7 @@ export default defineComponent({
       beUnsure,
       shutDown,
       open,
-      close,
+      close
     }
   }
 })
