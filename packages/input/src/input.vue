@@ -1,13 +1,25 @@
 <template>
-  <input
-  class="vi-input"
-  :placeholder="placeholder"
-  :type="password? 'password' : 'text'"
-  :name="name"/>
+  <span
+  class="vi-input-apperance"
+  :class="[
+  {
+    'is-focus': isFocus
+  }]">
+    <input
+    class="vi-input"
+    :class="[
+    `is-${color}`
+    ]"
+    :placeholder="placeholder"
+    :type="password? 'password' : 'text'"
+    :name="name"
+    @focus="focus"
+    @blur="blur"/>
+  </span>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 import { VueContext } from '@/types/vue-types'
 import { ViInputProps } from '@/types/input-types'
@@ -24,22 +36,41 @@ export default defineComponent({
     },
     showClear: {
       type: Boolean,
-      defualt: false
+      default: false
     },
     disabled: {
       type: Boolean,
-      defualt: false
+      default: false
     },
     name: {
       type: String,
-      defualt: ''
+      default: ''
+    },
+    type: {
+      type: String,
+      default: 'default'
+    },
+    color: {
+      type: String,
+      default: 'black'
     }
   },
   setup (props: ViInputProps, context: VueContext) {
     const placeholder = context.slots?.default !== undefined ? context.slots?.default()[0].children : ''
+    const isFocus = ref(false)
+
+    function focus () {
+      isFocus.value = true
+    }
+    function blur () {
+      isFocus.value = false
+    }
 
     return {
-      placeholder
+      placeholder,
+      isFocus,
+      focus,
+      blur
     }
   }
 })

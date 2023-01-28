@@ -3,5 +3,7 @@ export interface ViInputProps {
   showPassword: boolean,
   showClear: boolean,
   disabled: boolean,
-  name: string | undefined
+  name: string,
+  type: string,
+  color: string
 }

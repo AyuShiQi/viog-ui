@@ -218,8 +218,11 @@
       </div>
     </template>
   </ViVirtualScroll> -->
-  <div id="div">
-    <ViInput password>kdjfsd</ViInput>
+  <div id="div" style="padding: 10px 0;">
+    <ViInput>placeholder</ViInput>
+  </div>
+  <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
+    <ViInput>placeholder</ViInput>
   </div>
 </template>
 

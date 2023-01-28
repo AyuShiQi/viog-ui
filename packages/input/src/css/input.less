@@ -1,32 +1,48 @@
 @import '../../../../public/css/basecolor.less';
 @import '../../../../public/css/base.less';
 
-.vi-input {
-    padding: 5px 8px;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    background-color: transparent;
-    // 光标颜色
-    caret-color: @white;
+.vi-input-apperance {
+    display: inline-block;
+    box-sizing: border-box;
 
-    &::-webkit-input-placeholder {
-        font-size: @font-size;
-        color: @white;
+    .vi-input {
+        padding: 8px 10px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+    
+        &::-webkit-input-placeholder,
+        &:-moz-placeholder,
+        &:-ms-input-placeholder,
+        &::placeholder {
+            font-size: @font-size;
+        }
     }
+    
+    .vi-input.is-big {
+        font-size: @big-font-size;
+    }
+    
+    .vi-input.is-small {
+        font-size: @small-font-size;
+    }
+    
+    .vi-input.is-black {
+        border-bottom: 2px solid @black-background;
+        color: @black-background;
+        // 光标颜色
+        caret-color: @black-background;
+        transition: all .3s ease 0s;
+    
+        &::-webkit-input-placeholder,
+        &:-moz-placeholder,
+        &:-ms-input-placeholder,
+        &::placeholder {
+            color: @black-background-hover;
+        }
+    }
+}
 
-    &:-moz-placeholder {
-        font-size: @font-size;
-        color: @white;
-    }
-
-    &:-ms-input-placeholder {
-        font-size: @font-size;
-        color: @white;
-    }
-
-    &::placeholder {
-        font-size: @font-size;
-        color: @white;
-    }
+.vi-input-apperance.is-focus {
+    background-color: #000;
 }
