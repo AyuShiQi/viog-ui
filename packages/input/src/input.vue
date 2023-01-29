@@ -2,13 +2,18 @@
   <span
   class="vi-input-apperance"
   :class="[
+  `is-${color}`,
   {
-    'is-focus': isFocus
+    'is-focus': isFocus,
+    'is-dark': dark,
+    'info-right': right,
+    'info-error': error,
+    'info-warn': warn
   }]">
     <input
     class="vi-input"
     :class="[
-    `is-${color}`
+    `is-${size}`
     ]"
     :placeholder="placeholder"
     :type="password? 'password' : 'text'"
@@ -52,7 +57,27 @@ export default defineComponent({
     },
     color: {
       type: String,
-      default: 'black'
+      default: 'default'
+    },
+    size: {
+      type: String,
+      default: 'middle'
+    },
+    dark: {
+      type: Boolean,
+      default: false
+    },
+    right: {
+      type: Boolean,
+      default: false
+    },
+    error: {
+      type: Boolean,
+      default: false
+    },
+    warn: {
+      type: Boolean,
+      default: false
     }
   },
   setup (props: ViInputProps, context: VueContext) {

@@ -5,5 +5,10 @@ export interface ViInputProps {
   disabled: boolean,
   name: string,
   type: string,
-  color: string
+  color: string,
+  size: string,
+  dark: boolean,
+  right: boolean,
+  error: boolean,
+  warn: boolean
 }

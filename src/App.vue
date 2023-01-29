@@ -219,10 +219,36 @@
     </template>
   </ViVirtualScroll> -->
   <div id="div" style="padding: 10px 0;">
-    <ViInput>placeholder</ViInput>
+    <ViInput error>placeholder</ViInput><br/>
+    <ViInput error dark>placeholder</ViInput><br>
+    <ViInput color="pink" warn>placeholder</ViInput><br/>
+    <ViInput color="pink" dark warn>placeholder</ViInput><br>
+    <ViInput color="golden" right>placeholder</ViInput><br/>
+    <ViInput color="golden" dark right>placeholder</ViInput><br>
+    <ViInput color="green">placeholder</ViInput><br/>
+    <ViInput color="green" dark>placeholder</ViInput><br>
+    <ViInput color="yellow">placeholder</ViInput><br/>
+    <ViInput color="yellow" dark>placeholder</ViInput><br>
+    <ViInput color="blue">placeholder</ViInput><br/>
+    <ViInput color="blue" dark>placeholder</ViInput><br>
+    <ViInput color="red">placeholder</ViInput><br/>
+    <ViInput color="red" dark>placeholder</ViInput><br>
   </div>
   <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
-    <ViInput>placeholder</ViInput>
+    <ViInput>placeholder</ViInput><br/>
+    <ViInput dark>placeholder</ViInput><br>
+    <ViInput color="pink">placeholder</ViInput><br/>
+    <ViInput color="pink" dark>placeholder</ViInput><br>
+    <ViInput color="golden">placeholder</ViInput><br/>
+    <ViInput color="golden" dark>placeholder</ViInput><br>
+    <ViInput color="green">placeholder</ViInput><br/>
+    <ViInput color="green" dark>placeholder</ViInput><br>
+    <ViInput color="yellow" right>placeholder</ViInput><br/>
+    <ViInput color="yellow" dark right>placeholder</ViInput><br>
+    <ViInput color="blue" warn>placeholder</ViInput><br/>
+    <ViInput color="blue" dark warn>placeholder</ViInput><br>
+    <ViInput color="red" error>placeholder</ViInput><br/>
+    <ViInput color="red" dark error>placeholder</ViInput><br>
   </div>
 </template>
 
