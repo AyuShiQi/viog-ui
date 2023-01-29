@@ -219,12 +219,12 @@
     </template>
   </ViVirtualScroll> -->
   <div id="div" style="padding: 10px 0;">
-    <ViInput error>placeholder</ViInput><br/>
-    <ViInput error dark>placeholder</ViInput><br>
-    <ViInput color="pink" warn>placeholder</ViInput><br/>
-    <ViInput color="pink" dark warn>placeholder</ViInput><br>
-    <ViInput color="golden" right>placeholder</ViInput><br/>
-    <ViInput color="golden" dark right>placeholder</ViInput><br>
+    <ViInput size="big" @change="change">placeholder</ViInput><br/>
+    <ViInput dark>placeholder</ViInput><br>
+    <ViInput color="pink">placeholder</ViInput><br/>
+    <ViInput color="pink" dark>placeholder</ViInput><br>
+    <ViInput color="golden">placeholder</ViInput><br/>
+    <ViInput color="golden" dark>placeholder</ViInput><br>
     <ViInput color="green">placeholder</ViInput><br/>
     <ViInput color="green" dark>placeholder</ViInput><br>
     <ViInput color="yellow">placeholder</ViInput><br/>
@@ -232,7 +232,7 @@
     <ViInput color="blue">placeholder</ViInput><br/>
     <ViInput color="blue" dark>placeholder</ViInput><br>
     <ViInput color="red">placeholder</ViInput><br/>
-    <ViInput color="red" dark>placeholder</ViInput><br>
+    <ViInput color="red" dark password>placeholder</ViInput><br>
   </div>
   <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
     <ViInput>placeholder</ViInput><br/>
@@ -306,6 +306,10 @@ export default defineComponent({
       (proxy?.$refs.child as ViDialogType).open()
     }
 
+    function change (n: string) {
+      console.log(n)
+    }
+
     return {
       hello,
       ok,
@@ -314,7 +318,8 @@ export default defineComponent({
       scr,
       pf,
       openDialog,
-      obj
+      obj,
+      change
     }
   },
   mounted () {

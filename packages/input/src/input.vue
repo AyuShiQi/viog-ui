@@ -3,6 +3,7 @@
   class="vi-input-apperance"
   :class="[
   `is-${color}`,
+  `vi-input-${type}`,
   {
     'is-focus': isFocus,
     'is-dark': dark,
@@ -11,10 +12,15 @@
     'info-warn': warn
   }]">
     <input
+    v-model="value"
+    @input="handleInput"
     class="vi-input"
     :class="[
     `is-${size}`
     ]"
+    :style="{
+      width
+    }"
     :placeholder="placeholder"
     :type="password? 'password' : 'text'"
     :name="name"
@@ -26,60 +32,14 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 
+import props from './props'
+
 import { VueContext } from '@/types/vue-types'
 import { ViInputProps } from '@/types/input-types'
 export default defineComponent({
   name: 'ViInput',
-  props: {
-    password: {
-      type: Boolean,
-      default: false
-    },
-    showPassword: {
-      type: Boolean,
-      default: false
-    },
-    showClear: {
-      type: Boolean,
-      default: false
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    name: {
-      type: String,
-      default: ''
-    },
-    type: {
-      type: String,
-      default: 'default'
-    },
-    color: {
-      type: String,
-      default: 'default'
-    },
-    size: {
-      type: String,
-      default: 'middle'
-    },
-    dark: {
-      type: Boolean,
-      default: false
-    },
-    right: {
-      type: Boolean,
-      default: false
-    },
-    error: {
-      type: Boolean,
-      default: false
-    },
-    warn: {
-      type: Boolean,
-      default: false
-    }
-  },
+  emit: ['change'],
+  props,
   setup (props: ViInputProps, context: VueContext) {
     const placeholder = context.slots?.default !== undefined ? context.slots?.default()[0].children : ''
     const isFocus = ref(false)
@@ -91,7 +51,14 @@ export default defineComponent({
       isFocus.value = false
     }
 
+    const value = ref('')
+    function handleInput () {
+      context.emit('change', value.value)
+    }
+
     return {
+      value,
+      handleInput,
       placeholder,
       isFocus,
       focus,

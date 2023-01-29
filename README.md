@@ -394,3 +394,10 @@ interface VirtualScrollType {
 `<ViInput>`
 
 输入框组件
+
+#### 事件支持
+
+- change：input内容改变事件
+
+  > 该事件向回调函数传入一个参数newValue，是当前输入框的value
+

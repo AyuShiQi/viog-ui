@@ -8,6 +8,7 @@
     display: inline-block;
     box-sizing: border-box;
     transition: all .3s ease 0s;
+    user-select: none;
 
     &::after {
         content: "";
@@ -30,6 +31,7 @@
         // 光标颜色
         caret-color: @grey;
         border-bottom: 1px solid @grey;
+        box-sizing: border-box;
     
         &::placeholder {
             font-size: @font-size;
