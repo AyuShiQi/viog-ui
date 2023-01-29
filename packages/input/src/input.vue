@@ -23,15 +23,21 @@
       width
     }"
     :placeholder="placeholder"
-    :type="password? 'password' : 'text'"
+    :type="passwordOrText"
     :name="name"
     @focus="focus"
     @blur="blur"/>
+    <span class="vi-option-button-home">
+      <span class="vi-option-clear" v-show="showClear">
+      </span>
+      <span class="vi-option-password" v-show="showPassword && password">
+      </span>
+    </span>
   </span>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, computed } from 'vue'
 
 import props from './props'
 
@@ -39,7 +45,7 @@ import { VueContext, Event } from '@/types/vue-types'
 import { ViInputProps } from '@/types/input-types'
 export default defineComponent({
   name: 'ViInput',
-  emit: ['changeValue', 'inputValue'],
+  emits: ['changeValue', 'inputValue'],
   props,
   setup (props: ViInputProps, context: VueContext) {
     const placeholder = context.slots?.default !== undefined ? context.slots?.default()[0].children : ''
@@ -51,6 +57,13 @@ export default defineComponent({
     function blur () {
       isFocus.value = false
     }
+
+    // 密码展示部分
+    // 是否展示密码
+    const ifShowPassword = ref(false)
+    const passwordOrText = computed((): string => {
+      return props.password && !ifShowPassword.value ? 'password' : 'text'
+    })
 
     // change与input与数字区
     const value = ref('')
@@ -77,6 +90,8 @@ export default defineComponent({
       value,
       handleInput,
       handleChange,
+      ifShowPassword,
+      passwordOrText,
       placeholder,
       isFocus,
       focus,
