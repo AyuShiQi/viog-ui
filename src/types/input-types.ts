@@ -10,5 +10,6 @@ export interface ViInputProps {
   dark: boolean,
   right: boolean,
   error: boolean,
-  warn: boolean
+  warn: boolean,
+  number: boolean
 }

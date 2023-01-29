@@ -13,7 +13,7 @@ export type DOMType = {
 
 export type Event = {
   isTrusted: string,
-  target: DOMType
+  target: any
 }
 
 export interface VueInstace {

@@ -219,8 +219,8 @@
     </template>
   </ViVirtualScroll> -->
   <div id="div" style="padding: 10px 0;">
-    <ViInput size="big" @change="change">placeholder</ViInput><br/>
-    <ViInput dark>placeholder</ViInput><br>
+    <ViInput size="big"  number>placeholder</ViInput><br/>
+    <ViInput dark @changeValue="change">placeholder</ViInput><br>
     <ViInput color="pink">placeholder</ViInput><br/>
     <ViInput color="pink" dark>placeholder</ViInput><br>
     <ViInput color="golden">placeholder</ViInput><br/>

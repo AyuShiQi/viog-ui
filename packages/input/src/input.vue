@@ -12,8 +12,9 @@
     'info-warn': warn
   }]">
     <input
-    v-model="value"
+    :value="value"
     @input="handleInput"
+    @change="handleChange"
     class="vi-input"
     :class="[
     `is-${size}`
@@ -34,11 +35,11 @@ import { defineComponent, ref } from 'vue'
 
 import props from './props'
 
-import { VueContext } from '@/types/vue-types'
+import { VueContext, Event } from '@/types/vue-types'
 import { ViInputProps } from '@/types/input-types'
 export default defineComponent({
   name: 'ViInput',
-  emit: ['change'],
+  emit: ['changeValue', 'inputValue'],
   props,
   setup (props: ViInputProps, context: VueContext) {
     const placeholder = context.slots?.default !== undefined ? context.slots?.default()[0].children : ''
@@ -51,14 +52,31 @@ export default defineComponent({
       isFocus.value = false
     }
 
+    // change与input与数字区
     const value = ref('')
-    function handleInput () {
-      context.emit('change', value.value)
+    function toUpdateValue (newValue: string) {
+      if (props.number) {
+        const nowValue = Number.parseInt(newValue)
+        if (!Number.isNaN(nowValue)) {
+          value.value = nowValue.toString()
+        }
+      } else {
+        value.value = newValue
+      }
+    }
+    function handleInput (e: Event): void {
+      toUpdateValue(e.target.value)
+      context.emit('inputValue', value.value)
+    }
+    function handleChange (e: Event): void {
+      toUpdateValue(e.target.value)
+      context.emit('changeValue', value.value)
     }
 
     return {
       value,
       handleInput,
+      handleChange,
       placeholder,
       isFocus,
       focus,
