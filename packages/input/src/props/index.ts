@@ -35,6 +35,10 @@ export default {
     type: String,
     default: 'middle'
   },
+  round: {
+    type: Boolean,
+    default: false
+  },
   dark: {
     type: Boolean,
     default: false
@@ -52,6 +56,10 @@ export default {
     default: false
   },
   number: {
+    type: Boolean,
+    default: false
+  },
+  autofocus: {
     type: Boolean,
     default: false
   },

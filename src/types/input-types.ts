@@ -12,5 +12,14 @@ export interface ViInputProps {
   error: boolean,
   warn: boolean,
   number: boolean,
-  maxLength: number | undefined
+  maxLength: number | undefined,
+  round: boolean,
+  width: string,
+  autofocus: boolean
+}
+
+export interface ViInputType {
+  toClear: () => void,
+  toFocus: () => void,
+  toBlur: () => void
 }

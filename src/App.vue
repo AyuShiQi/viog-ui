@@ -221,13 +221,13 @@
   <div id="div" style="padding: 10px 0;">
     <ViInput size="big" number showClear width="400px" :maxLength="10">账号</ViInput><br/>
     <ViInput dark size="big" password showPassword showClear>密码</ViInput><br/>
-    <ViInput color="pink" password showPassword showClear>密码</ViInput><br/>
+    <ViInput round color="pink" password showPassword showClear>密码</ViInput><br/>
     <ViInput color="pink" dark>placeholder</ViInput><br>
     <ViInput color="golden">placeholder</ViInput><br/>
     <ViInput color="golden" dark>placeholder</ViInput><br>
     <ViInput color="green">placeholder</ViInput><br/>
     <ViInput color="green" dark>placeholder</ViInput><br>
-    <ViInput color="yellow">placeholder</ViInput><br/>
+    <ViInput disabled color="yellow">placeholder</ViInput><br/>
     <ViInput color="yellow" dark>placeholder</ViInput><br>
     <ViInput color="blue">placeholder</ViInput><br/>
     <ViInput color="blue" dark>placeholder</ViInput><br>
@@ -248,7 +248,7 @@
     <ViInput color="blue" warn>placeholder</ViInput><br/>
     <ViInput color="blue" dark warn>placeholder</ViInput><br>
     <ViInput color="red" error>placeholder</ViInput><br/>
-    <ViInput color="red" dark error>placeholder</ViInput><br>
+    <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br>
   </div>
 </template>
 
@@ -267,6 +267,12 @@ interface scrollType {
 
 interface VirtualScrollType {
     scrollTo: (x: number, y: number) => void
+}
+
+interface ViInputType {
+  toClear: () => void,
+  toFocus: () => void,
+  toBlur: () => void
 }
 
 export default defineComponent({
@@ -326,6 +332,7 @@ export default defineComponent({
     // console.log()
     // (this.$refs.child as ViDialogType).open()
     // (this.$refs.scroll as scrollType).finish = true
+    (this.$refs.ipt as ViInputType).toFocus()
   }
 })
 </script>

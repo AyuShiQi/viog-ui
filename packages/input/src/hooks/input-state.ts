@@ -109,6 +109,8 @@ export default function (props: ViInputProps, context: VueContext) {
     changeShowPassword,
     // clear控制
     toClear,
+    toFocus,
+    toBlur,
     // input聚焦事件
     isFocus,
     focus,

@@ -8,6 +8,7 @@
   {
     'is-focus': isFocus || isEnter,
     'is-dark': dark,
+    'is-round': round,
     'info-right': right,
     'info-error': error,
     'info-warn': warn,
@@ -35,6 +36,7 @@
       :style="{
         width
       }"
+      :disabled="disabled"
       ref="input"/>
 
       <transition name="vi-option-home">
@@ -71,11 +73,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed, getCurrentInstance, ComponentInternalInstance } from 'vue'
+import { defineComponent } from 'vue'
 
 import props from './props'
 
-import { VueContext, InputEvent, InputDOM } from '@/types/vue-types'
+import { VueContext } from '@/types/vue-types'
 import { ViInputProps } from '@/types/input-types'
 
 import inputState from './hooks/input-state'
@@ -92,6 +94,9 @@ export default defineComponent({
       placeholder,
       ...mainInput
     }
+  },
+  mounted () {
+    if (this.autofocus) this.toFocus()
   }
 })
 </script>

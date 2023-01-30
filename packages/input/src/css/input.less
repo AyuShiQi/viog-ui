@@ -34,6 +34,10 @@
         }
     }
 
+    .vi-input:disabled {
+        cursor: no-drop;
+    }
+
     .vi-option-button-home {
         fill: @grey-o7;
     }
@@ -159,6 +163,10 @@
         width: 100%;
         box-shadow: 0 0 5px 0 @grey-o7;
     }
+}
+
+.vi-input-plain.is-round {
+    border-radius: 1em;
 }
 
 @import './status.less';

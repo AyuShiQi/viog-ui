@@ -313,14 +313,14 @@ type ViDialogType = {
 
 ```typescript
 <!-- 父子组件中 -->
-<ViScroll ref="child">这里是对话框内容<ViDialog/>
+<ViScroll ref="child">这里是scroll里的内容<ViScroll/>
 
 <!-- mounted -->   - ts -
-interface ScrollType {
+interface ViScrollType {
     scrollTo: (x: number, y: number) => void
 }
 
-(this.$refs.child as scrollType).scrollTo(0, 140)
+(this.$refs.child as ViScrollType).scrollTo(0, 140)
 ```
 
 ### VirtualScroll
@@ -379,7 +379,7 @@ interface ScrollType {
 
 ```typescript
 <!-- 父子组件中 -->
-<ViVirtualScroll ref="child">这里是对话框内容<ViDialog/>
+<ViVirtualScroll ref="child">这里是scroll里的内容<ViVirtualScroll/>
 
 <!-- mounted -->   - ts -
 interface VirtualScrollType {
@@ -393,11 +393,104 @@ interface VirtualScrollType {
 
 `<ViInput>`
 
-输入框组件
+基础输入框组件
+
+#### props参数
+
+- width：string input宽度
+
+  > 参数：一个可以被识别的长度单位值，默认为200px
+
+- password：boolean 是否为password输入框
+
+  > 参数：false(default)/true
+
+- showPassword：boolean 是否显示密码隐藏显示按钮
+
+  > 参数：false(default)/true
+
+- showClear：boolean 是否显示清除内容按钮
+
+  > 参数：false(default)/true
+
+- disabled：boolean 是否禁用
+
+  > 参数：false(default)/true
+
+- name：string input原生属性name
+
+  > 参数：无
+
+- type：string 输入框样式
+
+  > 参数：default/plain
+
+- round：boolean input边框是否为round，仅在type为plain时生效
+
+  > 参数：false(default)/true
+
+- dark：boolean 输入框基础色调是否为暗色调
+
+  > 参数：false(default)/true
+
+- color：string 输入框focus后颜色
+
+  > 参数：default/purple/golden/blue/green/red/pink/yellow
+
+- right：boolean 输入框是否展示正确状态样式
+
+  > 参数：false(default)/true
+
+- warn：boolean 输入框是否展示警示状态样式
+
+  > 参数：false(default)/true
+
+- error：boolean 输入框是否展示错误状态样式
+
+  > 参数：false(default)/true
+
+- number：boolean 输入框是否只能输入数字
+
+  > 参数：false(default)/true
+
+- autofocus：boolean 是否初次聚焦，一个界面中只能存在一个
+
+  > 参数：false(default)/true
+
+- maxLength：number 输入的最大长度
+
+  > 参数：默认为不限定
+
+#### 插槽内容
+
+- 默认插槽，placeholder内容
 
 #### 事件支持
 
-- change：input内容改变事件
+- inputValue：input内容改变事件
+
+  > 该事件向回调函数传入一个参数newValue，是当前输入框的value
+  
+- changeValue：input内容改变事件，仅在输入框失去焦点和按下回车后触发
 
   > 该事件向回调函数传入一个参数newValue，是当前输入框的value
 
+#### 对外暴露方法调用
+
+```typescript
+<!-- 父子组件中 -->
+<ViInput ref="child">placeholder<ViInput/>
+
+<!-- mounted -->   - ts -
+interface ViInputType {
+  toClear: () => void,
+  toFocus: () => void,
+  toBlur: () => void
+}
+
+(this.$refs.child as ViInputType).toClear()
+```
+
+- toClear 清除输入框内容
+- toFocus 获取焦点
+- toBlur 失去焦点
