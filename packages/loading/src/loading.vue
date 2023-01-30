@@ -9,6 +9,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+import props from './props'
+
 import ViCircleLoad from './components/circle.vue'
 import ViBallLoad from './components/ball.vue'
 import ViDiskLoad from './components/disk.vue'
@@ -24,15 +26,7 @@ export default defineComponent({
     ViStarLoad,
     ViDiamondLoad
   },
-  props: {
-    type: {
-      type: String,
-      default: 'circle'
-    },
-    color: {
-      type: String
-    }
-  }
+  props
 })
 </script>
 
