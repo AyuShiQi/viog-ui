@@ -26,38 +26,15 @@
 <script lang="ts">
 import { defineComponent, ref, getCurrentInstance, ComponentInternalInstance, shallowReactive } from 'vue'
 
+import props from './props/virtual-scroll'
+
 import { VirtualScrollProps } from '@/types/scroll-types'
 
 import { DOMType } from '@/types/vue-types'
 
 export default defineComponent({
   name: 'ViVirtualScroll',
-  props: {
-    height: {
-      type: Number,
-      default: 400
-    },
-    width: {
-      type: String,
-      default: '100%'
-    },
-    color: {
-      type: String,
-      default: 'grey'
-    },
-    hidden: {
-      type: Boolean,
-      default: false
-    },
-    datas: {
-      type: Array,
-      defualt: []
-    },
-    itemHeight: {
-      type: Number,
-      default: 0
-    }
-  },
+  props,
   setup (props: VirtualScrollProps) {
     const restItem = 2
     const datas = shallowReactive(props.datas as any[])

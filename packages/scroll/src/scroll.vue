@@ -23,6 +23,8 @@
 <script lang="ts">
 import { defineComponent, ref, getCurrentInstance, ComponentInternalInstance } from 'vue'
 
+import props from './props/scroll'
+
 import { loading } from '../../loading'
 
 import { DOMType } from '@/types/vue-types'
@@ -33,44 +35,7 @@ export default defineComponent({
   components: {
     ViLoading: loading
   },
-  props: {
-    height: {
-      type: String,
-      default: '400px'
-    },
-    width: {
-      type: String,
-      default: '100%'
-    },
-    color: {
-      type: String,
-      default: 'grey'
-    },
-    hidden: {
-      type: Boolean,
-      default: false
-    },
-    lazy: {
-      type: Function,
-      default: null
-    },
-    smooth: {
-      type: Boolean,
-      default: false
-    },
-    wait: {
-      type: String,
-      default: 'none'
-    },
-    waitText: {
-      type: String,
-      default: ''
-    },
-    finish: {
-      type: Boolean,
-      default: false
-    }
-  },
+  props,
   setup () {
     const { proxy } = (getCurrentInstance() as ComponentInternalInstance)
 
