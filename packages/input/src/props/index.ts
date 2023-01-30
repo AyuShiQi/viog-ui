@@ -25,7 +25,7 @@ export default {
   },
   type: {
     type: String,
-    default: 'default'
+    default: 'plain'
   },
   color: {
     type: String,
@@ -54,5 +54,6 @@ export default {
   number: {
     type: Boolean,
     default: false
-  }
+  },
+  maxLength: Number
 }

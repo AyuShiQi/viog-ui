@@ -2,35 +2,30 @@
 @import '../../../../public/css/base.less';
 
 .vi-input-apperance {
-    // background-color: pink;
-    position: relative;
     overflow: hidden;
+    position: relative;
     display: inline-block;
-    box-sizing: border-box;
     transition: all .3s ease 0s;
     user-select: none;
 
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: @grey;
-        transition: all .3s ease 0s;
+    .input-box {
+        position: relative;
+        display: inline-block;
     }
 
     .vi-input {
-        padding: 8px 10px;
+        width: 100%;
+        height: 100%;
+        padding: 8px 0;
         border: none;
         outline: none;
         font-size: @font-size;
         background-color: transparent;
+        // background-color: rgba(255, 255, 255, 0.356);
         color: @grey;
         // 光标颜色
         caret-color: @grey;
-        border-bottom: 1px solid @grey;
+        flex: 1;
         box-sizing: border-box;
     
         &::placeholder {
@@ -44,6 +39,39 @@
     }
 }
 
+.vi-input-default {
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: @grey;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: @grey;
+        transition: all .3s ease 0s;
+    }
+}
+
+.vi-input-plain {
+    border: 1px solid @grey-o7;
+    border-radius: 5px;
+
+    .vi-input {
+        box-sizing: border-box;
+        padding: 8px 10px;
+    }
+}
+
 .vi-input-apperance.is-big {
     .vi-input {
         font-size: @big-font-size;
@@ -51,6 +79,13 @@
         &::placeholder {
             font-size: @big-font-size;
         }
+    }
+
+    .clear-option,
+    .view-option,
+    .noview-option {
+        width: 20px;
+        height: 20px;
     }
 }
 
@@ -62,6 +97,13 @@
             font-size: @font-size;
         }
     }
+
+    .clear-option,
+    .view-option,
+    .noview-option {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 .vi-input-apperance.is-small {
@@ -70,20 +112,23 @@
     
         &::placeholder {
             font-size: @small-font-size;
+            height: @small-font-size;
         }
+    }
+
+    .clear-option,
+    .view-option,
+    .noview-option {
+        width: @font-size;
+        height: @font-size;
     }
 }
 
-.vi-input-apperance.is-dark {
-    &::after {
-        background-color: @mblack-background;
-    }
-    
+.vi-input-apperance.is-dark { 
     .vi-input {
         color: @mblack-background;
         // 光标颜色
         caret-color: @mblack-background;
-        border-bottom: 1px solid @mblack-background;
     
         &::placeholder {
             color: @mblack-background-o7;
@@ -95,7 +140,21 @@
     }
 }
 
-.vi-input-apperance.is-focus {
+.vi-input-default.is-dark {
+    &::before {
+        background-color: @mblack-background;
+    }
+
+    &::after {
+        background-color: @mblack-background;
+    }
+}
+
+.vi-input-plain.is-dark {
+    border-color: @mblack-background-o7;
+}
+
+.vi-input-default.is-focus {
     &::after {
         width: 100%;
         box-shadow: 0 0 5px 0 @grey-o7;
@@ -105,4 +164,4 @@
 @import './status.less';
 @import './color.less';
 @import './option.less';
-
+@import './transition.less';

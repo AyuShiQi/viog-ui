@@ -11,5 +11,6 @@ export interface ViInputProps {
   right: boolean,
   error: boolean,
   warn: boolean,
-  number: boolean
+  number: boolean,
+  maxLength: number | undefined
 }

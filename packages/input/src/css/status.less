@@ -1,7 +1,11 @@
 .vi-input-apperance.info-right {
+    border-color: @green;
+    &::before {
+        background-color: @green;
+    }
+
     .vi-input {
         color: @green;
-        border-bottom: 1px solid @green;
     
         &::placeholder {
             color: @green-o5;
@@ -10,9 +14,13 @@
 }
 
 .vi-input-apperance.info-error {
+    border-color: @red;
+    &::before {
+        background-color: @red;
+    }
+    
     .vi-input {
         color: @red;
-        border-bottom: 1px solid @red;
     
         &::placeholder {
             color: @red-o5;
@@ -21,9 +29,13 @@
 }
 
 .vi-input-apperance.info-warn {
+    border-color: @yellow;
+    &::before {
+        background-color: @yellow;
+    }
+
     .vi-input {
         color: @yellow;
-        border-bottom: 1px solid @yellow;
     
         &::placeholder {
             color: @yellow-o5;

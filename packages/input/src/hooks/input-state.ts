@@ -31,6 +31,10 @@ export default function (props: ViInputProps, context: VueContext) {
   function toFocus () {
     (proxy?.$refs.input as InputDOM).focus()
   }
+  // input聚焦
+  function toBlur () {
+    (proxy?.$refs.input as InputDOM).blur()
+  }
   // #endregion
 
   /* change与input与数字区 */
@@ -39,7 +43,6 @@ export default function (props: ViInputProps, context: VueContext) {
   // 输入的value是否有效
   let isValid = true
   function toUpdateValue (e: InputEvent) {
-    console.log(e)
     if (props.number) {
       if (e.inputType === undefined) {
         isValid = true
@@ -54,7 +57,6 @@ export default function (props: ViInputProps, context: VueContext) {
     } else {
       value.value = e.target.value
     }
-    console.log(isValid, value.value)
   }
   function handleInput (e: InputEvent): void {
     toUpdateValue(e)

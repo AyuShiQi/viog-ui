@@ -13,7 +13,8 @@ export type DOMType = {
 
 export interface InputDOM {
   focus: Function,
-  value: string
+  value: string,
+  blur: Function
 }
 
 export type Event = {

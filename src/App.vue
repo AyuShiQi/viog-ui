@@ -219,9 +219,9 @@
     </template>
   </ViVirtualScroll> -->
   <div id="div" style="padding: 10px 0;">
-    <ViInput size="big" number showClear width="400px">placeholder</ViInput><br/>
-    <ViInput dark @changeValue="change" password showPassword>placeholder</ViInput><br>
-    <ViInput color="pink" password showPassword showClear>placeholder</ViInput><br/>
+    <ViInput size="big" number showClear width="400px">账号</ViInput><br/>
+    <ViInput dark size="big" password showPassword showClear>密码</ViInput><br/>
+    <ViInput color="pink" password showPassword showClear>密码</ViInput><br/>
     <ViInput color="pink" dark>placeholder</ViInput><br>
     <ViInput color="golden">placeholder</ViInput><br/>
     <ViInput color="golden" dark>placeholder</ViInput><br>
@@ -350,7 +350,12 @@ body {
 }
 
 #div {
-  margin: 10px 0;
+  text-align: center;
+  margin: 10px auto;
+}
+
+#div > span {
+  margin: 0 auto;
 }
 
 #div button {

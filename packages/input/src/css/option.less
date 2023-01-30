@@ -1,16 +1,9 @@
 .vi-input-apperance {
     .vi-option-button-home {
-        display: flex;
         position: absolute;
-        bottom: 0;
-        right: 10px;
-        height: 100%;
-        align-items: center;
-
-        .vi-option-clear,
-        .vi-option-password {
-            cursor: pointer;
-        }
+        bottom: 4px;
+        right: 0px;
+        box-sizing: border-box;
 
         .vi-option-password {
             padding-left: 2px;
@@ -19,20 +12,47 @@
         .clear-option,
         .view-option,
         .noview-option {
-            width: 16px;
+            cursor: pointer;
+            height: 100%;
         }
     }
 }
 
-.vi-input-apperance.show-clear,
-.vi-input-apperance.show-password {
+.vi-input-default {
+    .vi-option-button-home {
+        padding-right: 4px;
+    }
+}
+
+.vi-input-plain {
+    .vi-option-button-home {
+        padding-right: 10px;
+    }
+}
+
+
+.vi-input-default.show-password,
+.vi-input-default.show-clear {
     .vi-input {
         padding-right: 28px;
     }
 }
 
-.vi-input-apperance.show-clear.show-password {
+.vi-input-default.show-password.show-clear {
     .vi-input {
-        padding-right: 46px;
+        padding-right: 48px;
     }
 }
+
+.vi-input-plain.show-password,
+.vi-input-plain.show-clear {
+    .vi-input {
+        padding-right: 38px;
+    }
+}
+
+.vi-input-plain.show-password.show-clear {
+    .vi-input {
+        padding-right: 55px;
+    }
+} 
