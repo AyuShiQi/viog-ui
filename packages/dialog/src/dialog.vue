@@ -55,100 +55,15 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 
+import props from './props'
+
 import { dialogProps, dialogColor, dialogOpen } from '@/types/dialog-types'
 import { VueContext } from '@/types/vue-types'
 
 export default defineComponent({
   name: 'ViDialog',
   emits: ['sure', 'unSure', 'shutDown'],
-  props: {
-    title: {
-      type: String,
-      default: ''
-    },
-    sureTitle: {
-      type: String,
-      default: '确认'
-    },
-    unsureTitle: {
-      type: String,
-      default: '取消'
-    },
-    sure: {
-      type: Boolean,
-      default: true
-    },
-    unsure: {
-      type: Boolean,
-      default: true
-    },
-    shutdown: {
-      type: Boolean,
-      default: true
-    },
-    mask: {
-      type: Boolean,
-      default: false
-    },
-    maskColor: {
-      type: String,
-      default: 'black'
-    },
-    maskFilter: {
-      type: Boolean,
-      default: false
-    },
-    background: {
-      type: String,
-      default: 'white'
-    },
-    color: {
-      type: String,
-      default: 'black'
-    },
-    filter: {
-      type: Boolean,
-      default: false
-    },
-    shadow: {
-      type: Boolean,
-      default: false
-    },
-    top: {
-      type: String,
-      default: '20vh'
-    },
-    contentTextAlign: {
-      type: String,
-      default: 'left'
-    },
-    optionTextAlign: {
-      type: String,
-      default: 'right'
-    },
-    toSure: {
-      type: Function,
-      default: (): boolean => {
-        return true
-      }
-    },
-    toUnSure: {
-      type: Function,
-      default: (): boolean => {
-        return true
-      }
-    },
-    toShutDown: {
-      type: Function,
-      default: (): boolean => {
-        return true
-      }
-    },
-    defaultOpen: {
-      type: Boolean,
-      default: false
-    }
-  },
+  props,
   setup (props: dialogProps, context: VueContext): any {
     const isOpen: dialogOpen = ref(props.defaultOpen)
 
@@ -206,19 +121,5 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-    @path: '../../../';
-    @import '@{path}public/css/basecolor.less';
-
-    .vi-dialog {
-      overflow: hidden;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-    }
-
-    @import './css/transition.less';
-    @import './css/mask.less';
-    @import './css/content.less';
+  @import './css/dialog.less';
 </style>
