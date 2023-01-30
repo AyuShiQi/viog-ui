@@ -1,0 +1,39 @@
+@path: '../../../../';
+@import '@{path}public/css/basecolor';
+@import '@{path}public/css/base';
+
+.vi-button {
+    overflow: hidden;
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: @white;
+    border: 1px solid @black;
+    // -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    transition: all 0.2s ease 0s;
+    font-weight: 500;
+    // 禁止元素的文字被选中
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 12px 20px;
+    font-size: @font-size;
+    border-radius: 4px;
+}
+
+.vi-button > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}
+
+@import './color';
+@import './type';
+@import './size';
+@import './disabled';

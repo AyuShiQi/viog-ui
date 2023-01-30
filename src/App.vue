@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <!-- <div id="div">
+  <div id="div">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
     <ViButton color="pink" small @click="hello">点击进入</ViButton>
@@ -145,8 +145,8 @@
     <ViButton color="syellow" disabled>点击进入</ViButton>
     <ViButton color="spurple" @click="scr">点击进入</ViButton>
     <ViButton color="sgreen" @click="scr">点击进入</ViButton>
-  </div> -->
-  <!-- <div id="div">
+  </div>
+  <div id="div">
     <div id="div">
       <ViLoading type="diamond"/>
     </div>
@@ -196,8 +196,8 @@
     <ViLoading type="star" color="blue"/>
     <ViLoading type="star" color="red"/>
     <ViLoading type="star" color="pink"/>
-  </div> -->
-  <!-- <ViDialog ref="child"
+  </div>
+  <ViDialog ref="child"
   maskFilter
   mask
   filter
@@ -217,7 +217,7 @@
         {{vi.data.number}}
       </div>
     </template>
-  </ViVirtualScroll> -->
+  </ViVirtualScroll>
   <div id="div" style="padding: 10px 0;">
     <ViInput size="big"  number>placeholder</ViInput><br/>
     <ViInput dark @changeValue="change">placeholder</ViInput><br>
