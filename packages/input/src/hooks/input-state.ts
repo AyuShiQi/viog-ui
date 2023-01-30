@@ -42,7 +42,18 @@ export default function (props: ViInputProps, context: VueContext) {
   const value = ref('')
   // 输入的value是否有效
   let isValid = true
-  function toUpdateValue (e: InputEvent) {
+  // 验证最大长度下
+  function isMaxLength (value: string): boolean {
+    if (props.maxLength === undefined) return false
+    if (value.length > props.maxLength) return true
+    return false
+  }
+  // 验证数字状态下
+  function toUpdateValue (e: InputEvent): void {
+    if (isMaxLength(e.target.value)) {
+      e.target.value = value.value
+      return
+    }
     if (props.number) {
       if (e.inputType === undefined) {
         isValid = true

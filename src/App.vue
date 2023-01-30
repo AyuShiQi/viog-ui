@@ -219,7 +219,7 @@
     </template>
   </ViVirtualScroll> -->
   <div id="div" style="padding: 10px 0;">
-    <ViInput size="big" number showClear width="400px">账号</ViInput><br/>
+    <ViInput size="big" number showClear width="400px" :maxLength="10">账号</ViInput><br/>
     <ViInput dark size="big" password showPassword showClear>密码</ViInput><br/>
     <ViInput color="pink" password showPassword showClear>密码</ViInput><br/>
     <ViInput color="pink" dark>placeholder</ViInput><br>
