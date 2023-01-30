@@ -1,0 +1,38 @@
+.vi-input-apperance {
+    .vi-option-button-home {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+        height: 100%;
+        align-items: center;
+
+        .vi-option-clear,
+        .vi-option-password {
+            cursor: pointer;
+        }
+
+        .vi-option-password {
+            padding-left: 2px;
+        }
+
+        .clear-option,
+        .view-option,
+        .noview-option {
+            width: 16px;
+        }
+    }
+}
+
+.vi-input-apperance.show-clear,
+.vi-input-apperance.show-password {
+    .vi-input {
+        padding-right: 28px;
+    }
+}
+
+.vi-input-apperance.show-clear.show-password {
+    .vi-input {
+        padding-right: 46px;
+    }
+}

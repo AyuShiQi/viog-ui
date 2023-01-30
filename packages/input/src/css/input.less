@@ -2,6 +2,7 @@
 @import '../../../../public/css/base.less';
 
 .vi-input-apperance {
+    // background-color: pink;
     position: relative;
     overflow: hidden;
     display: inline-block;
@@ -37,25 +38,36 @@
             color: @grey-o7;
         }
     }
-    
-    .vi-input.is-big {
-        font-size: @big-font-size;
 
+    .vi-option-button-home {
+        fill: @grey-o7;
+    }
+}
+
+.vi-input-apperance.is-big {
+    .vi-input {
+        font-size: @big-font-size;
+    
         &::placeholder {
             font-size: @big-font-size;
         }
     }
+}
 
-    .vi-input.is-middle {
+.vi-input-apperance.is-middle {
+    .vi-input {
         font-size: @font-size;
+    
         &::placeholder {
             font-size: @font-size;
         }
     }
-    
-    .vi-input.is-small {
-        font-size: @small-font-size;
+}
 
+.vi-input-apperance.is-small {
+    .vi-input {
+        font-size: @small-font-size;
+    
         &::placeholder {
             font-size: @small-font-size;
         }
@@ -77,6 +89,10 @@
             color: @mblack-background-o7;
         }
     }
+
+    .vi-option-button-home {
+        fill: @mblack-background-o7;
+    }
 }
 
 .vi-input-apperance.is-focus {
@@ -88,4 +104,5 @@
 
 @import './status.less';
 @import './color.less';
+@import './option.less';
 
