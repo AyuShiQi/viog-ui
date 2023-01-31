@@ -3,9 +3,13 @@
   class="vi-switch-appreance"
   :class="[
   `is-${size}`,
-  `vi-switch-${type}`]">
+  `vi-switch-${type}`,
+  {
+    'vi-switch-dark': dark,
+    'disbaled': disabled
+  }]">
     <span class="vi-switch-slot">
-      <slot name="left-choice">左边内容</slot>
+      <slot name="left-choice"></slot>
     </span>
     <span
     class="vi-switch-content"
@@ -19,8 +23,8 @@
     }">
       <span
       class="switch-circle"
-      @click="toSwitch">
-        <slot name="switch-circle">对</slot>
+      @click="toChange">
+        <slot name="switch-circle"></slot>
       </span>
       <input
       class="vi-switch"
@@ -28,7 +32,7 @@
       :checked="checked">
     </span>
     <span class="vi-switch-slot">
-      <slot name="right-choice">aaaa</slot>
+      <slot name="right-choice"></slot>
     </span>
   </span>
 </template>
@@ -39,40 +43,19 @@ import { defineComponent, ref } from 'vue'
 import props from './props'
 
 import { VueContext } from '@/types/vue-types'
+import { switchProps } from '@/types/switch-types'
+
+import { switchState } from './hooks'
 
 export default defineComponent({
   name: 'ViSwitch',
-  emits: ['off', 'on', 'switch'],
+  emits: ['off', 'on', 'change'],
   props,
-  setup (props: any, context: VueContext) {
-    const checked = ref(false)
-
-    function toSwitch () {
-      checked.value = !checked.value
-
-      changeNowColor()
-      if (checked.value) {
-        context.emit('change')
-        context.emit('on')
-      } else {
-        context.emit('change')
-        context.emit('off')
-      }
-    }
-
-    const nowColor = ref('')
-    function changeNowColor () {
-      if (checked.value) {
-        nowColor.value = props.rightColor
-      } else {
-        nowColor.value = props.leftColor
-      }
-    }
+  setup (props: switchProps, context: VueContext) {
+    const mainSwitch = switchState(props, context)
 
     return {
-      checked,
-      toSwitch,
-      nowColor
+      ...mainSwitch
     }
   }
 })

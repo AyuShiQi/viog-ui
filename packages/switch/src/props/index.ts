@@ -5,7 +5,7 @@ export default {
   },
   type: {
     type: String,
-    default: 'default' // dark
+    default: 'default' // 到时候想
   },
   rightColor: {
     type: String,
@@ -15,8 +15,12 @@ export default {
     type: String,
     default: '#dae1ea'
   },
-  mode: {
-    type: String,
-    default: 'default'
+  dark: {
+    type: Boolean,
+    default: false
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   }
 }

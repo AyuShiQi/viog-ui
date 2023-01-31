@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <div id="div">
+  <!-- <div id="div">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
     <ViButton color="pink" small @click="hello">点击进入</ViButton>
@@ -253,12 +253,14 @@
     <ViInput color="blue" dark warn>placeholder</ViInput><br>
     <ViInput color="red" error>placeholder</ViInput><br/>
     <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br>
-  </div>
+  </div> -->
   <div id="div" style="padding: 10px 0;">
-    <ViSwitch></ViSwitch>
+    <ViSwitch></ViSwitch><br><br>
+    <ViSwitch dark></ViSwitch>
   </div>
   <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
-    <ViSwitch></ViSwitch>
+    <ViSwitch></ViSwitch><br><br>
+    <ViSwitch dark></ViSwitch>
   </div>
 </template>
 
@@ -356,7 +358,7 @@ export default defineComponent({
 }
 
 body {
-  // background-color: #0f0b28;
+  background-color: #0f0b28;
 }
 
 #app {

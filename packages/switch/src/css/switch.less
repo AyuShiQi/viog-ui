@@ -4,13 +4,13 @@
 .vi-switch-appreance {
     display: inline-flex;
     align-items: center;
-    color: @black-background-hover;
+    color: @grey;
 
     .vi-switch-content {
         position: relative;
         display: inline-block;
         box-sizing: border-box;
-        margin: 0 2px;
+        margin: 0 4px;
         background-color: @mgrey;
         box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.1);
         transition: all .2s linear 0s;
@@ -19,10 +19,12 @@
             overflow: hidden;
             position: absolute;
             display: inline-flex;
-            top: 1px;
+            top: 2px;
             border-radius: 50%;
             transition: all .2s linear 0s;
             cursor: pointer;
+            opacity: .8;
+            backdrop-filter: blur(5px);
             justify-content: center;
             align-items: center;
         }
@@ -34,7 +36,7 @@
 
     .vi-switch-content.left-choice {
         .switch-circle {
-            left: 1px;
+            left: 2px;
         }
     }
 
@@ -45,11 +47,15 @@
     }
 }
 
+.vi-switch-appreance.disabled {
+    cursor: no-drop;
+}
+
 .vi-switch-appreance.is-middle {
     font-size: @font-size;
     .vi-switch-content {
         width: 40px;
-        height: 20px;
+        height: 22px;
         border-radius: 10px;
 
         .switch-circle {
@@ -61,7 +67,7 @@
 
     .vi-switch-content.right-choice {
         .switch-circle {
-            left: 21px;
+            left: 20px;
         }
     }
 }
@@ -70,7 +76,7 @@
     font-size: @small-font-size;
     .vi-switch-content {
         width: 30px;
-        height: 15px;
+        height: 17px;
         border-radius: 8px;
 
         .switch-circle {
@@ -83,7 +89,7 @@
 
     .vi-switch-content.right-choice {
         .switch-circle {
-            left: 16px;
+            left: 15px;
         }
     }
 }
@@ -92,7 +98,7 @@
     font-size: @big-font-size;
     .vi-switch-content {
         width: 50px;
-        height: 25px;
+        height: 27px;
         border-radius: 13px;
 
         .switch-circle {
@@ -104,7 +110,7 @@
 
     .vi-switch-content.right-choice {
         .switch-circle {
-            left: 26px;
+            left: 25px;
         }
     }
 }

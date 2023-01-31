@@ -225,7 +225,7 @@
 
 ```typescript
 <!-- 父子组件中 -->
-<ViDialog ref="child">这里是对话框内容<ViDialog/>
+<ViDialog ref="child">这里是对话框内容</ViDialog>
 
 <!-- mounted -->   - ts -
 type ViDialogType = {
@@ -313,7 +313,7 @@ type ViDialogType = {
 
 ```typescript
 <!-- 父子组件中 -->
-<ViScroll ref="child">这里是scroll里的内容<ViScroll/>
+<ViScroll ref="child">这里是scroll里的内容</ViScroll>
 
 <!-- mounted -->   - ts -
 interface ViScrollType {
@@ -379,7 +379,7 @@ interface ViScrollType {
 
 ```typescript
 <!-- 父子组件中 -->
-<ViVirtualScroll ref="child">这里是scroll里的内容<ViVirtualScroll/>
+<ViVirtualScroll ref="child">这里是scroll里的内容</ViVirtualScroll>
 
 <!-- mounted -->   - ts -
 interface VirtualScrollType {
@@ -487,7 +487,7 @@ interface VirtualScrollType {
 
 ```typescript
 <!-- 父子组件中 -->
-<ViInput ref="child">placeholder<ViInput/>
+<ViInput ref="child">placeholder</ViInput>
 
 <!-- mounted -->   - ts -
 interface ViInputType {
@@ -502,3 +502,78 @@ interface ViInputType {
 - toClear 清除输入框内容 （同时触发changeValue和inputValue事件）
 - toFocus 获取焦点
 - toBlur 失去焦点
+
+### ViSwitch
+
+`<ViSwitch>`
+
+开关
+
+#### props参数
+
+- size：string 按钮大小
+
+  > 参数：middle(default)/big
+
+- disabled：boolean 是否禁用
+
+  > 参数：false(default)/true
+
+- type：string 按钮样式
+
+  > 参数：default
+
+- dark：boolean 基础色调是否为暗色调
+
+  > 参数：false(default)/true
+
+- leftColor：string  off的颜色
+
+  > 参数：任意颜色，默认灰色调
+
+- rightColor：string  on的颜色
+
+  > 参数：任意颜色，默认紫色调
+
+#### 插槽内容
+
+- left-choice: 左边选项插槽
+- right-choice：右边选项插槽
+- switch-circle：开关按钮内容插槽
+
+#### 事件支持
+
+- off：关闭开关触发事件
+
+- on：打开开关触发事件
+- change：开闭状态变换触发事件
+
+#### 对外暴露方法调用
+
+```typescript
+<!-- 父子组件中 -->
+<ViSwitch ref="child">
+    <template v-slot:left-choice>
+    	关闭
+    </template>
+    <template v-slot:switch-circle>
+    	哈
+    </template>
+	<template v-slot:left-choice>
+    	打开
+    </template>
+</ViSwitch>
+
+<!-- mounted -->   - ts -
+interface ViSwitchType {
+  toOn: () => void,
+  toOff: () => void,
+  toChange: () => void
+}
+
+(this.$refs.child as ViSwitchType).toOn()
+```
+
+- toOn 去打开开关
+- toOff 去关闭开关
+- toChange 去改变开关
