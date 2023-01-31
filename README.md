@@ -405,6 +405,10 @@ interface VirtualScrollType {
 
   > 参数：一个可以被识别的长度单位值，默认为200px
 
+- size：string 字体大小
+
+  > 参数：middle(default)/big
+
 - password：boolean 是否为password输入框
 
   > 参数：false(default)/true

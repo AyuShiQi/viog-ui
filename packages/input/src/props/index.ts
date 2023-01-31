@@ -29,7 +29,7 @@ export default {
   },
   type: {
     type: String,
-    default: 'plain'
+    default: 'default'
   },
   color: {
     type: String,
