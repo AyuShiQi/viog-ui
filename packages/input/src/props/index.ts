@@ -1,4 +1,8 @@
 export default {
+  value: {
+    type: String,
+    default: ''
+  },
   width: {
     type: String,
     default: '200px'

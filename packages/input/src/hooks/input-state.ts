@@ -1,6 +1,6 @@
 import { ref, computed, getCurrentInstance, ComponentInternalInstance } from 'vue'
 
-import { VueContext, InputEvent, InputDOM } from '@/types/vue-types'
+import { VueContext, InputDOM } from '@/types/vue-types'
 import { ViInputProps } from '@/types/input-types'
 
 export default function (props: ViInputProps, context: VueContext) {
@@ -37,48 +37,6 @@ export default function (props: ViInputProps, context: VueContext) {
   }
   // #endregion
 
-  /* change与input与数字区 */
-  // #region
-  const value = ref('')
-  // 输入的value是否有效
-  let isValid = true
-  // 验证最大长度下
-  function isMaxLength (value: string): boolean {
-    if (props.maxLength === undefined) return false
-    if (value.length > props.maxLength) return true
-    return false
-  }
-  // 验证数字状态下
-  function toUpdateValue (e: InputEvent): void {
-    if (isMaxLength(e.target.value)) {
-      e.target.value = value.value
-      return
-    }
-    if (props.number) {
-      if (e.inputType === undefined) {
-        isValid = true
-      } else if (e?.inputType !== 'insertText') {
-        isValid = true
-        value.value = e.target.value
-      } else if (!Number.isNaN(parseInt(e.data)) && isValid) {
-        value.value = e.target.value
-      } else {
-        isValid = false
-      }
-    } else {
-      value.value = e.target.value
-    }
-  }
-  function handleInput (e: InputEvent): void {
-    toUpdateValue(e)
-    context.emit('inputValue', value.value)
-  }
-  function handleChange (e: InputEvent): void {
-    toUpdateValue(e)
-    context.emit('changeValue', value.value)
-  }
-  // #endregion
-
   /* 密码展示部分 */
   // 是否展示密码
   // #region
@@ -95,14 +53,11 @@ export default function (props: ViInputProps, context: VueContext) {
   /* 清除区 */
   function toClear () {
     toFocus()
-    value.value = ''
+    context.emit('inputValue', '')
+    context.emit('changeValue', '')
   }
 
   return {
-    // change与input事件
-    value,
-    handleInput,
-    handleChange,
     // password 显示控制
     ifShowPassword,
     passwordOrText,

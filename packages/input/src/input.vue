@@ -80,7 +80,7 @@ import props from './props'
 import { VueContext } from '@/types/vue-types'
 import { ViInputProps } from '@/types/input-types'
 
-import inputState from './hooks/input-state'
+import { inputState, valueState } from './hooks'
 
 export default defineComponent({
   name: 'ViInput',
@@ -88,11 +88,13 @@ export default defineComponent({
   props,
   setup (props: ViInputProps, context: VueContext) {
     const mainInput = inputState(props, context)
+    const inputEvent = valueState(props, context)
     const placeholder = context.slots?.default !== undefined ? context.slots?.default()[0].children : ''
 
     return {
       placeholder,
-      ...mainInput
+      ...mainInput,
+      ...inputEvent
     }
   },
   mounted () {

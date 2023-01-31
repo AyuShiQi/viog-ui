@@ -219,8 +219,8 @@
     </template>
   </ViVirtualScroll> -->
   <div id="div" style="padding: 10px 0;">
-    <ViInput size="big" number showClear width="400px" :maxLength="10">账号</ViInput><br/>
-    <ViInput dark size="big" password showPassword showClear>密码</ViInput><br/>
+    <ViInput :value="value" @inputValue="change" size="big" number showClear width="400px" :maxLength="10">账号</ViInput><br/>
+    <ViInput :value="value" dark size="big" password showPassword showClear>密码</ViInput><br/>
     <ViInput round color="pink" password showPassword showClear>密码</ViInput><br/>
     <ViInput color="pink" dark>placeholder</ViInput><br>
     <ViInput color="golden">placeholder</ViInput><br/>
@@ -280,6 +280,7 @@ export default defineComponent({
   components: {
   },
   setup () {
+    const value = ref('')
     const { proxy } = getCurrentInstance() as ComponentInternalInstance
     const open = ref(true)
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
@@ -313,10 +314,11 @@ export default defineComponent({
     }
 
     function change (n: string) {
-      console.log(n)
+      value.value = n
     }
 
     return {
+      value,
       hello,
       ok,
       arr,

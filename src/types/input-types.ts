@@ -1,4 +1,5 @@
 export interface ViInputProps {
+  value: string,
   password: boolean,
   showPassword: boolean,
   showClear: boolean,

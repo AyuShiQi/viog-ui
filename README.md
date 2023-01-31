@@ -397,6 +397,10 @@ interface VirtualScrollType {
 
 #### props参数
 
+- value：string input绑定的value，需通过相关的事件获取新的值完成双向绑定
+
+  > 参数：必传
+
 - width：string input宽度
 
   > 参数：一个可以被识别的长度单位值，默认为200px
@@ -467,11 +471,11 @@ interface VirtualScrollType {
 
 #### 事件支持
 
-- inputValue：input内容改变事件
+- inputValue：input内容正确改变事件
 
   > 该事件向回调函数传入一个参数newValue，是当前输入框的value
   
-- changeValue：input内容改变事件，仅在输入框失去焦点和按下回车后触发
+- changeValue：input内容正确改变事件，仅在输入框失去焦点和按下回车后触发
 
   > 该事件向回调函数传入一个参数newValue，是当前输入框的value
 
@@ -491,6 +495,6 @@ interface ViInputType {
 (this.$refs.child as ViInputType).toClear()
 ```
 
-- toClear 清除输入框内容
+- toClear 清除输入框内容 （同时触发changeValue和inputValue事件）
 - toFocus 获取焦点
 - toBlur 失去焦点
