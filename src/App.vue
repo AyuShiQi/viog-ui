@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <!-- <div id="div">
+  <div id="div">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
     <ViButton color="pink" small @click="hello">点击进入</ViButton>
@@ -19,6 +19,7 @@
     <ViButton color="syellow">点击进入</ViButton>
     <ViButton color="spurple">点击进入</ViButton>
     <ViButton color="sgreen">点击进入</ViButton>
+    <ViButton color="black">点击进入</ViButton>
   </div>
   <div id="div">
     <ViButton type="plain" small>点击进入</ViButton>
@@ -28,6 +29,8 @@
     <ViButton color="yellow" type="plain">点击进入</ViButton>
     <ViButton color="purple" type="plain">点击进入</ViButton>
     <ViButton color="green" type="plain">点击进入</ViButton>
+    <ViButton color="black" type="plain">点击进入</ViButton>
+
   </div>
   <div id="div">
     <ViButton color="sgrey" type="plain">点击进入</ViButton>
@@ -46,6 +49,7 @@
     <ViButton color="yellow" type="transparent">点击进入</ViButton>
     <ViButton color="purple" type="transparent">点击进入</ViButton>
     <ViButton color="green" type="transparent">点击进入</ViButton>
+    <ViButton color="black" type="transparent">点击进入</ViButton>
   </div>
   <div id="div">
     <ViButton color="sgrey" type="transparent">点击进入</ViButton>
@@ -217,8 +221,8 @@
         {{vi.data.number}}
       </div>
     </template>
-  </ViVirtualScroll> -->
-  <!-- <div id="div" style="padding: 10px 0;">
+  </ViVirtualScroll>
+  <div id="div" style="padding: 10px 0;">
     <ViInput :value="value" @inputValue="change" size="big" number showClear width="400px" :maxLength="10">账号</ViInput><br/>
     <ViInput :value="value" dark size="big" password showPassword showClear>密码</ViInput><br/>
     <ViInput round color="pink" password showPassword showClear>密码</ViInput><br/>
@@ -249,7 +253,7 @@
     <ViInput color="blue" dark warn>placeholder</ViInput><br>
     <ViInput color="red" error>placeholder</ViInput><br/>
     <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br>
-  </div> -->
+  </div>
   <div id="div" style="padding: 10px 0;">
     <ViSwitch></ViSwitch>
   </div>
@@ -352,7 +356,7 @@ export default defineComponent({
 }
 
 body {
-  background-color: #0f0b28;
+  // background-color: #0f0b28;
 }
 
 #app {

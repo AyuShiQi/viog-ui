@@ -42,6 +42,7 @@ import { VueContext } from '@/types/vue-types'
 
 export default defineComponent({
   name: 'ViSwitch',
+  emits: ['off', 'on', 'switch'],
   props,
   setup (props: any, context: VueContext) {
     const checked = ref(false)
@@ -51,9 +52,11 @@ export default defineComponent({
 
       changeNowColor()
       if (checked.value) {
-        context.emit('toRight')
+        context.emit('change')
+        context.emit('on')
       } else {
-        context.emit('toLeft')
+        context.emit('change')
+        context.emit('off')
       }
     }
 

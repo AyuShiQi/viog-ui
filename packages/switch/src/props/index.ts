@@ -1,11 +1,11 @@
 export default {
   size: {
     type: String,
-    default: 'small'
+    default: 'big'
   },
   type: {
     type: String,
-    default: 'dark' // dark
+    default: 'default' // dark
   },
   rightColor: {
     type: String,
