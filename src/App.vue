@@ -218,7 +218,7 @@
       </div>
     </template>
   </ViVirtualScroll> -->
-  <div id="div" style="padding: 10px 0;">
+  <!-- <div id="div" style="padding: 10px 0;">
     <ViInput :value="value" @inputValue="change" size="big" number showClear width="400px" :maxLength="10">账号</ViInput><br/>
     <ViInput :value="value" dark size="big" password showPassword showClear>密码</ViInput><br/>
     <ViInput round color="pink" password showPassword showClear>密码</ViInput><br/>
@@ -249,6 +249,12 @@
     <ViInput color="blue" dark warn>placeholder</ViInput><br>
     <ViInput color="red" error>placeholder</ViInput><br/>
     <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br>
+  </div> -->
+  <div id="div" style="padding: 10px 0;">
+    <ViSwitch></ViSwitch>
+  </div>
+  <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
+    <ViSwitch></ViSwitch>
   </div>
 </template>
 
@@ -334,7 +340,7 @@ export default defineComponent({
     // console.log()
     // (this.$refs.child as ViDialogType).open()
     // (this.$refs.scroll as scrollType).finish = true
-    (this.$refs.ipt as ViInputType).toFocus()
+    // (this.$refs.ipt as ViInputType).toFocus()
   }
 })
 </script>

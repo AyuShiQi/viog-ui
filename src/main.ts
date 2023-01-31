@@ -8,8 +8,9 @@ import ViLoading from '../packages/loading'
 import ViDialog from '../packages/dialog'
 // scroll 组
 import ViScroll from '../packages/scroll'
-// input 表单组
-import Viform from '../packages/input'
+// 表单组
+import Viinput from '../packages/input'
+import ViSwitch from '../packages/switch'
 
 const app = createApp(App)
 
@@ -19,6 +20,7 @@ app.use(ViIcon)
 app.use(ViLoading)
 app.use(ViDialog)
 app.use(ViScroll)
-app.use(Viform)
+app.use(Viinput)
+app.use(ViSwitch)
 
 app.mount('#app')

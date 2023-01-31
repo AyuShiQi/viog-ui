@@ -1,0 +1,111 @@
+@import '../../../../public/css/basecolor.less';
+@import '../../../../public/css/base.less';
+
+.vi-switch-appreance {
+    display: inline-flex;
+    align-items: center;
+
+    .vi-switch-content {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        margin: 0 2px;
+        background-color: @mgrey;
+        box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.1);
+        transition: all .2s linear 0s;
+
+        .switch-circle {
+            overflow: hidden;
+            position: absolute;
+            display: inline-flex;
+            top: 1px;
+            border-radius: 50%;
+            transition: all .2s linear 0s;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .vi-switch {
+            display: none;
+        }
+    }
+
+    .vi-switch-content.left-choice {
+        .switch-circle {
+            left: 1px;
+        }
+    }
+
+    .vi-switch-slot {
+        display: inline-flex;
+        height: 100%;
+        align-items: center;
+    }
+}
+
+.vi-switch-appreance.is-middle {
+    font-size: @font-size;
+    .vi-switch-content {
+        width: 40px;
+        height: 20px;
+        border-radius: 10px;
+
+        .switch-circle {
+            width: 18px;
+            height: 18px;
+            background-color: @white;
+        }
+    }
+
+    .vi-switch-content.right-choice {
+        .switch-circle {
+            left: 21px;
+        }
+    }
+}
+
+.vi-switch-appreance.is-small {
+    font-size: @small-font-size;
+    .vi-switch-content {
+        width: 30px;
+        height: 15px;
+        border-radius: 8px;
+
+        .switch-circle {
+            width: 13px;
+            height: 13px;
+            font-size: @small-font-size;
+            background-color: @white;
+        }
+    }
+
+    .vi-switch-content.right-choice {
+        .switch-circle {
+            left: 16px;
+        }
+    }
+}
+
+.vi-switch-appreance.is-big {
+    font-size: @big-font-size;
+    .vi-switch-content {
+        width: 50px;
+        height: 25px;
+        border-radius: 13px;
+
+        .switch-circle {
+            width: 23px;
+            height: 23px;
+            background-color: @white;
+        }
+    }
+
+    .vi-switch-content.right-choice {
+        .switch-circle {
+            left: 26px;
+        }
+    }
+}
+
+@import './type.less';
