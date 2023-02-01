@@ -1,5 +1,5 @@
-import switchState from "./switch-state"
+import switchState from './switch-state'
 
 export {
-    switchState
+  switchState
 }
