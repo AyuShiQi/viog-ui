@@ -1,0 +1,60 @@
+@import '../../../../public/css/basecolor.less';
+
+.vi-radio-appreance {
+    display: inline-flex;
+    color: @grey;
+    user-select: none;
+    transition: all .3s linear 0s;
+    align-items: center;
+
+    .vi-radio {
+        display: none;
+    }
+
+    .vi-radio-circle {
+        position: relative;
+        display: inline-flex;
+        box-sizing: border-box;
+        border: 1px solid @grey;
+        margin: 0 2px;
+        background-color: transparent;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all .2s linear 0s;
+
+        &::before {
+            opacity: 0;
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            border-radius: 50%;
+            background-color: @mpurple;
+            transition: all .2s linear 0s;
+        }
+    }
+}
+
+.vi-radio-appreance.is-middle {
+    .vi-radio-circle {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.vi-radio-appreance.is-small {
+    .vi-radio-circle {
+        width: 13px;
+        height: 13px;
+    }
+}
+
+.vi-radio-appreance.is-big {
+    .vi-radio-circle {
+        width: 23px;
+        height: 23px;
+    }
+}
+
+@import './dark.less';
+@import './checked.less';

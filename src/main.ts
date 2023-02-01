@@ -11,6 +11,7 @@ import ViScroll from '../packages/scroll'
 // 表单组
 import Viinput from '../packages/input'
 import ViSwitch from '../packages/switch'
+import ViRadio from '../packages/radio'
 
 const app = createApp(App)
 
@@ -22,5 +23,6 @@ app.use(ViDialog)
 app.use(ViScroll)
 app.use(Viinput)
 app.use(ViSwitch)
+app.use(ViRadio)
 
 app.mount('#app')

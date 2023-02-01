@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <div id="div">
+  <!-- <div id="div">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
     <ViButton color="pink" small @click="hello">点击进入</ViButton>
@@ -211,6 +211,7 @@
   title="提示"
   @sure="hello">
     是否支付？
+    <ViSwitch dark size="small" filter></ViSwitch>
   </ViDialog>
   <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
     <div class="li" v-for="item in arr" :key="item">{{item}}</div>
@@ -253,14 +254,30 @@
     <ViInput color="blue" dark warn>placeholder</ViInput><br>
     <ViInput color="red" error>placeholder</ViInput><br/>
     <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br>
-  </div>
+  </div> -->
   <div id="div" style="padding: 10px 0;">
-    <ViSwitch></ViSwitch><br><br>
-    <ViSwitch dark></ViSwitch>
+    <ViSwitch disabled></ViSwitch><br><br>
+    <ViSwitch size="small" dark></ViSwitch><br><br>
+    <ViSwitch size="big" filter></ViSwitch><br><br>
+    <ViSwitch dark filter></ViSwitch>
   </div>
   <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
     <ViSwitch></ViSwitch><br><br>
-    <ViSwitch dark></ViSwitch>
+    <ViSwitch dark></ViSwitch><br><br>
+    <ViSwitch filter></ViSwitch><br><br>
+    <ViSwitch dark filter leftColor="#0f0b286c"></ViSwitch>
+  </div>
+  <div id="div" style="padding: 10px 0;">
+    <ViRadio @changeChoice="change" rid="#123" value="吃饭" name="haha" :picked="value"></ViRadio>
+    <ViRadio @changeChoice="change" dark rid="#124" value="睡觉" name="haha" :picked="value"></ViRadio>
+    <ViRadio @changeChoice="change" dark size="small" rid="#125" value="打豆豆"  name="haha" :picked="value">打豆豆</ViRadio>
+    <ViRadio @changeChoice="change" size="big" rid="#126" value="飞翔" name="haha" :picked="value">飞翔</ViRadio>
+  </div>
+  <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
+    <ViRadio @changeChoice="change" rid="#127" value="吃饭" name="haha" :picked="value"></ViRadio>
+    <ViRadio @changeChoice="change" dark rid="#128" value="睡觉" name="haha" :picked="value"></ViRadio>
+    <ViRadio @changeChoice="change" dark size="small" rid="#129" value="打豆豆"  name="haha" :picked="value">打豆豆</ViRadio>
+    <ViRadio @changeChoice="change" size="big" rid="#130" value="飞翔" name="haha" :picked="value">飞翔</ViRadio>
   </div>
 </template>
 
@@ -326,6 +343,7 @@ export default defineComponent({
     }
 
     function change (n: string) {
+      console.log(n)
       value.value = n
     }
 

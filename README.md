@@ -509,6 +509,8 @@ interface ViInputType {
 
 开关
 
+样式种类待完善中
+
 #### props参数
 
 - size：string 按钮大小
