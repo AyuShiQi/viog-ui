@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 import { VueContext } from '@/types/vue-types'
 import { switchProps } from '@/types/switch-types'
@@ -44,6 +44,10 @@ export default function (props: switchProps, context: VueContext) {
     context.emit('change')
     context.emit('off')
   }
+
+  onMounted(() => {
+    toOff()
+  })
 
   return {
     checked,

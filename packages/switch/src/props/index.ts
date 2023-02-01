@@ -1,7 +1,7 @@
 export default {
   size: {
     type: String,
-    default: 'big'
+    default: 'middle'
   },
   type: {
     type: String,
@@ -20,6 +20,10 @@ export default {
     default: false
   },
   disabled: {
+    type: Boolean,
+    default: false
+  },
+  filter: {
     type: Boolean,
     default: false
   }

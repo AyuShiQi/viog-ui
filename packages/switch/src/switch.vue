@@ -6,6 +6,7 @@
   `vi-switch-${type}`,
   {
     'vi-switch-dark': dark,
+    'is-filter': filter,
     'disabled': disabled
   }]">
     <span class="vi-switch-slot">
