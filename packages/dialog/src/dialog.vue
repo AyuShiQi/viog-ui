@@ -53,68 +53,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 
 import props from './props'
 
-import { dialogProps, dialogColor, dialogOpen } from '@/types/dialog-types'
+import { dialogProps } from '@/types/dialog-types'
 import { VueContext } from '@/types/vue-types'
+
+import { dialogState } from './hooks'
 
 export default defineComponent({
   name: 'ViDialog',
   emits: ['sure', 'unSure', 'shutDown'],
   props,
   setup (props: dialogProps, context: VueContext): any {
-    const isOpen: dialogOpen = ref(props.defaultOpen)
-
-    function beSure (): void {
-      context.emit('sure')
-      if (props.toSure()) {
-        isOpen.value = false
-      }
-    }
-
-    function beUnsure (): void {
-      context.emit('unSure')
-      if (props.toUnSure()) {
-        isOpen.value = false
-      }
-    }
-
-    function shutDown (): void {
-      context.emit('shutDown')
-      if (props.toShutDown()) {
-        isOpen.value = false
-      }
-    }
-
-    function open (time: number | undefined): void {
-      if (typeof time === 'number') {
-        setTimeout(() => {
-          isOpen.value = true
-        }, time)
-      } else {
-        isOpen.value = true
-      }
-    }
-
-    function close (time: number | undefined) : void {
-      if (typeof time === 'number') {
-        setTimeout(() => {
-          isOpen.value = false
-        }, time)
-      } else {
-        isOpen.value = false
-      }
-    }
+    const mainDialog = dialogState(props, context)
 
     return {
-      isOpen,
-      beSure,
-      beUnsure,
-      shutDown,
-      open,
-      close
+      ...mainDialog
     }
   }
 })
