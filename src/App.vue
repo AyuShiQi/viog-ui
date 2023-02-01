@@ -268,16 +268,16 @@
     <ViSwitch dark filter leftColor="#0f0b286c"></ViSwitch>
   </div>
   <div id="div" style="padding: 10px 0;">
-    <ViRadio @changeChoice="change" rid="#123" value="吃饭" name="haha" :picked="value"></ViRadio>
-    <ViRadio @changeChoice="change" dark rid="#124" value="睡觉" name="haha" :picked="value"></ViRadio>
-    <ViRadio @changeChoice="change" dark size="small" rid="#125" value="打豆豆"  name="haha" :picked="value">打豆豆</ViRadio>
-    <ViRadio @changeChoice="change" size="big" rid="#126" value="飞翔" name="haha" :picked="value">飞翔</ViRadio>
+    <ViRadio @changePick="change" rid="#123" value="吃饭" name="haha" :picked="value"></ViRadio>
+    <ViRadio @changePick="change" dark rid="#124" value="睡觉" name="haha" :picked="value"></ViRadio>
+    <ViRadio @changePick="change" dark size="small" rid="#125" value="打豆豆"  name="haha" :picked="value">打豆豆</ViRadio>
+    <ViRadio @changePick="change" size="big" rid="#126" value="飞翔" name="haha" :picked="value">飞翔</ViRadio>
   </div>
   <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
-    <ViRadio @changeChoice="change" rid="#127" value="吃饭" name="haha" :picked="value"></ViRadio>
-    <ViRadio @changeChoice="change" dark rid="#128" value="睡觉" name="haha" :picked="value"></ViRadio>
-    <ViRadio @changeChoice="change" dark size="small" rid="#129" value="打豆豆"  name="haha" :picked="value">打豆豆</ViRadio>
-    <ViRadio @changeChoice="change" size="big" rid="#130" value="飞翔" name="haha" :picked="value">飞翔</ViRadio>
+    <ViRadio @changePick="change" rid="#127" value="吃饭" name="haha" :picked="value"></ViRadio>
+    <ViRadio @changePick="change" dark rid="#128" value="睡觉" name="haha" :picked="value"></ViRadio>
+    <ViRadio @changePick="change" dark size="small" rid="#129" value="打豆豆"  name="haha" :picked="value">打豆豆</ViRadio>
+    <ViRadio @changePick="change" size="big" rid="#130" value="飞翔" name="haha" :picked="value">飞翔</ViRadio>
   </div>
 </template>
 

@@ -18,5 +18,9 @@ export default {
   color: {
     type: String,
     default: 'purple'
+  },
+  disabled: {
+    type: String,
+    default: false
   }
 }

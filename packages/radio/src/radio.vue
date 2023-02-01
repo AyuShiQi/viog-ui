@@ -32,13 +32,13 @@ import { VueContext } from '@/types/vue-types'
 
 export default defineComponent({
   name: 'ViRadio',
-  emits: ['changeChoice'],
+  emits: ['changePick'],
   props,
   setup (props: any, context: VueContext) {
     const nowPicked = ref(props.picked)
     function handleChange () {
       console.log(nowPicked)
-      context.emit('changeChoice', nowPicked.value)
+      context.emit('changePick', nowPicked.value)
     }
     return {
       nowPicked,

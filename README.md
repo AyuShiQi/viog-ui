@@ -407,7 +407,7 @@ interface VirtualScrollType {
 
 - size：string 字体大小
 
-  > 参数：middle(default)/big
+  > 参数：middle(default)/big/small(small有点小bug)
 
 - password：boolean 是否为password输入框
 
@@ -515,7 +515,7 @@ interface ViInputType {
 
 - size：string 按钮大小
 
-  > 参数：middle(default)/big
+  > 参数：middle(default)/big/small
 
 - disabled：boolean 是否禁用
 
@@ -579,3 +579,77 @@ interface ViSwitchType {
 - toOn 去打开开关
 - toOff 去关闭开关
 - toChange 去改变开关
+
+### ViRadio
+
+`<ViRadio>`
+
+单选框
+
+样式种类待完善中
+
+#### props参数
+
+- picked：string | number | boolean  当前单选框组选中的value
+
+  > 参数：必传，需要通过事件changePick完成双向绑定
+
+- name：string | number | boolean 原生属性
+
+  > 参数：默认无
+
+- value：string | number | boolean  该单选框对应的value
+
+  > 参数：必传
+
+- id：该单选框的id值
+
+  > 参数：必传
+
+- size：string 按钮大小
+
+  > 参数：middle(default)/big/small
+
+- disabled：boolean 是否禁用
+
+  > 参数：false(default)/true
+
+- type：string 单选框样式
+
+  > 参数：default/button
+
+- dark：boolean 基础色调是否为暗色调
+
+  > 参数：false(default)/true
+
+- color：string  选中后的颜色
+
+  > 参数：purple(default)
+
+#### 插槽内容
+
+- 默认插槽，label的值，默认值为value的值
+
+#### 事件支持
+
+- changePick：当单选结果发生改变时调用
+
+  > 该事件向回调函数传入一个参数newPicked，是当前被选中的value
+
+#### 对外暴露方法调用
+
+```typescript
+<!-- 父子组件中 -->
+<ViRadio ref="child">
+  睡觉
+</ViSwitch>
+
+<!-- mounted -->   - ts -
+interface ViRadioType {
+  toPick: () => void,
+}
+
+(this.$refs.child as ViRadioType).toPick()
+```
+
+- toPick 去选择当前选项
