@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <!-- <div id="div">
+  <div id="div">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
     <ViButton color="pink" small @click="hello">点击进入</ViButton>
@@ -212,7 +212,7 @@
   @sure="hello">
     是否支付？
   </ViDialog>
-  <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中" finish>
+  <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
     <div class="li" v-for="item in arr" :key="item">{{item}}</div>
   </ViScroll>
   <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" hidden>
@@ -253,7 +253,7 @@
     <ViInput color="blue" dark warn>placeholder</ViInput><br>
     <ViInput color="red" error>placeholder</ViInput><br/>
     <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br>
-  </div> -->
+  </div>
   <div id="div" style="padding: 10px 0;">
     <ViSwitch></ViSwitch><br><br>
     <ViSwitch dark></ViSwitch>
