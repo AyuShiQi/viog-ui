@@ -6,7 +6,7 @@
   `vi-switch-${type}`,
   {
     'vi-switch-dark': dark,
-    'disbaled': disabled
+    'disabled': disabled
   }]">
     <span class="vi-switch-slot">
       <slot name="left-choice"></slot>
