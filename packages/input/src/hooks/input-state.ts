@@ -53,8 +53,7 @@ export default function (props: ViInputProps, context: VueContext) {
   /* 清除区 */
   function toClear () {
     toFocus()
-    context.emit('inputValue', '')
-    context.emit('changeValue', '')
+    context.emit('update:modelValue', '')
   }
 
   return {

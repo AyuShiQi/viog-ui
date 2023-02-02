@@ -1,5 +1,5 @@
 export default {
-  value: {
+  modelValue: {
     type: String,
     default: ''
   },

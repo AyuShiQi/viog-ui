@@ -24,7 +24,7 @@
       width
     }">
       <input
-      :value="value"
+      :value="modelValue"
       @input="handleInput"
       @change="handleChange"
       class="vi-input"
@@ -84,7 +84,7 @@ import { inputState, valueState } from './hooks'
 
 export default defineComponent({
   name: 'ViInput',
-  emits: ['changeValue', 'inputValue'],
+  emits: ['change', 'input', 'update:modelValue'],
   props,
   setup (props: ViInputProps, context: VueContext) {
     const mainInput = inputState(props, context)

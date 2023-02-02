@@ -222,11 +222,11 @@
         {{vi.data.number}}
       </div>
     </template>
-  </ViVirtualScroll>
+  </ViVirtualScroll> -->
   <div id="div" style="padding: 10px 0;">
-    <ViInput :value="value" @inputValue="change" size="big" number showClear width="400px" :maxLength="10">账号</ViInput><br/>
-    <ViInput :value="value" dark size="big" password showPassword showClear>密码</ViInput><br/>
-    <ViInput round color="pink" password showPassword showClear>密码</ViInput><br/>
+    <ViInput v-model="value" size="big" number showClear width="400px" :maxLength="10" @change="ok">账号</ViInput><br/>
+    <ViInput v-model="value" dark size="big" password showPassword showClear>密码</ViInput><br/>
+    <!-- <ViInput round color="pink" password showPassword showClear>密码</ViInput><br/>
     <ViInput color="pink" dark>placeholder</ViInput><br>
     <ViInput color="golden">placeholder</ViInput><br/>
     <ViInput color="golden" dark>placeholder</ViInput><br>
@@ -237,10 +237,10 @@
     <ViInput color="blue">placeholder</ViInput><br/>
     <ViInput color="blue" dark>placeholder</ViInput><br>
     <ViInput color="red">placeholder</ViInput><br/>
-    <ViInput color="red" dark password>placeholder</ViInput><br>
+    <ViInput color="red" dark password>placeholder</ViInput><br> -->
   </div>
   <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
-    <ViInput>placeholder</ViInput><br/>
+    <!-- <ViInput>placeholder</ViInput><br/>
     <ViInput dark>placeholder</ViInput><br>
     <ViInput color="pink">placeholder</ViInput><br/>
     <ViInput color="pink" dark>placeholder</ViInput><br>
@@ -253,8 +253,8 @@
     <ViInput color="blue" warn>placeholder</ViInput><br/>
     <ViInput color="blue" dark warn>placeholder</ViInput><br>
     <ViInput color="red" error>placeholder</ViInput><br/>
-    <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br>
-  </div> -->
+    <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br> -->
+  </div>
   <div id="div" style="padding: 10px 0;">
     <ViSwitch disabled></ViSwitch><br><br>
     <ViSwitch size="small" dark></ViSwitch><br><br>
@@ -267,7 +267,7 @@
     <ViSwitch filter></ViSwitch><br><br>
     <ViSwitch dark filter leftColor="#0f0b286c"></ViSwitch>
   </div>
-  <div id="div" style="padding: 10px 0;">
+  <!-- <div id="div" style="padding: 10px 0;">
     <ViRadio @changePick="change" rid="#123" value="吃饭" name="haha" :picked="value"></ViRadio>
     <ViRadio @changePick="change" dark rid="#124" value="睡觉" name="haha" :picked="value"></ViRadio>
     <ViRadio @changePick="change" dark size="small" rid="#125" value="打豆豆"  name="haha" :picked="value">打豆豆</ViRadio>
@@ -278,7 +278,7 @@
     <ViRadio @changePick="change" dark rid="#128" value="睡觉" name="haha" :picked="value"></ViRadio>
     <ViRadio @changePick="change" dark size="small" rid="#129" value="打豆豆"  name="haha" :picked="value">打豆豆</ViRadio>
     <ViRadio @changePick="change" size="big" rid="#130" value="飞翔" name="haha" :picked="value">飞翔</ViRadio>
-  </div>
+  </div> -->
 </template>
 
 <script lang="ts">
@@ -309,7 +309,7 @@ export default defineComponent({
   components: {
   },
   setup () {
-    const value = ref('')
+    const value = ref('12345')
     const { proxy } = getCurrentInstance() as ComponentInternalInstance
     const open = ref(true)
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]

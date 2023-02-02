@@ -397,9 +397,9 @@ interface VirtualScrollType {
 
 #### props参数
 
-- value：string input绑定的value，需通过相关的事件获取新的值完成双向绑定
+- modelValue：string input绑定的value，支持v-model （v-mode=“value”  或  ：modelValue=“value”）
 
-  > 参数：必传
+  > 参数：必传（若不使用v-model语法糖，请绑定@update:modeValue事件对绑定值进行更新）
 
 - width：string input宽度
 
@@ -475,13 +475,10 @@ interface VirtualScrollType {
 
 #### 事件支持
 
-- inputValue：input内容正确改变事件
+- input：input内容正确改变事件
 
-  > 该事件向回调函数传入一个参数newValue，是当前输入框的value
-  
-- changeValue：input内容正确改变事件，仅在输入框失去焦点和按下回车后触发
+- change：input内容正确改变事件，仅在输入框失去焦点和按下回车后触发
 
-  > 该事件向回调函数传入一个参数newValue，是当前输入框的value
 
 #### 对外暴露方法调用
 
