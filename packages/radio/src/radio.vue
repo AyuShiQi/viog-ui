@@ -32,12 +32,13 @@ import { defineComponent, ref, getCurrentInstance, ComponentInternalInstance } f
 import props from './props'
 
 import { VueContext, RadioDOM } from '@/types/vue-types'
+import { RadioProps } from '@/types/radio-types'
 
 export default defineComponent({
   name: 'ViRadio',
   emits: ['change', 'update:modelValue'],
   props,
-  setup (props: any, context: VueContext) {
+  setup (props: RadioProps, context: VueContext) {
     const nowPick = ref(props.modelValue)
     const { proxy } = getCurrentInstance() as ComponentInternalInstance
     function handleChange () {
