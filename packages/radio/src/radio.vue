@@ -8,7 +8,7 @@
   {
     'is-disabled': disabled,
     'is-dark': dark,
-    'be-checked': (value === modelValue)
+    'be-checked': isChecked
   }
   ]">
     <input
@@ -27,30 +27,51 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, getCurrentInstance, ComponentInternalInstance } from 'vue'
+import { defineComponent, ref, getCurrentInstance, ComponentInternalInstance, inject, computed } from 'vue'
 
 import props from './props'
 
 import { VueContext, RadioDOM } from '@/types/vue-types'
-import { RadioProps } from '@/types/radio-types'
+import { RadioProps, ViRadioInject } from '@/types/radio-types'
 
 export default defineComponent({
   name: 'ViRadio',
   emits: ['change', 'update:modelValue'],
+  inject: {
+    'radio-group': {
+      default: undefined
+    }
+  },
   props,
   setup (props: RadioProps, context: VueContext) {
-    const nowPick = ref(props.modelValue)
     const { proxy } = getCurrentInstance() as ComponentInternalInstance
-    function handleChange () {
-      context.emit('update:modelValue', props.value)
+
+    const hasGroup = (function (): boolean {
+      return inject('radio-group', undefined) !== undefined
+    })()
+
+    let nowPick = hasGroup ? inject('radio-group') : ref(props.modelValue)
+
+    function handleChange (): void {
+      hasGroup ? (nowPick = props.value) : context.emit('update:modelValue', props.value)
       context.emit('change')
     }
 
-    function toPick () {
+    function toPick (): void {
       (proxy?.$refs.radio as RadioDOM).click()
     }
 
+    const pickValue = computed((): string | number | boolean | undefined => {
+      return hasGroup ? inject('radio-group') : props.modelValue
+    })
+
+    const isChecked = computed<boolean>((): boolean => {
+      return props.value === pickValue.value
+    })
+
     return {
+      isChecked,
+      pickValue,
       nowPick,
       handleChange,
       toPick

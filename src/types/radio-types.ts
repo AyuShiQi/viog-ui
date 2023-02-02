@@ -12,3 +12,10 @@ export interface RadioProps {
 export interface ViRadioType {
     toPick: () => void,
 }
+
+export interface ViRadioInject {
+    groupModelValue: {
+        default: any,
+        type: any
+    }
+}

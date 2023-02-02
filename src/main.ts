@@ -1,6 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
+// [Vue warn]: injected property "radio-group" is a ref and will be auto-unwrapped and no longer needs
+// `.value` in the next minor release. To opt-in to the new behavior now, set `app.config.unwrapInjectedRef = true` (this config is temporary and will not be needed in the future.)
+// at <ViRadio type="button" color="purple" dark=""  ... >
+// at <ViRadioGroup modelValue="12345" onUpdate:modelValue=fn >
+// at <App>
+
 // 暂时性全局导入组件
 import ViButton from '../packages/button'
 import ViIcon from '../packages/icon'
@@ -14,6 +20,7 @@ import ViSwitch from '../packages/switch'
 import ViRadio from '../packages/radio'
 
 const app = createApp(App)
+app.config.unwrapInjectedRef = true
 
 // 暂时性全局导入组件
 app.use(ViButton)

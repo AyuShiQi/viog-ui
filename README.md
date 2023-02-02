@@ -642,7 +642,7 @@ interface ViSwitchType {
 <!-- 父子组件中 -->
 <ViRadio ref="child">
   睡觉
-</ViSwitch>
+</ViRadio>
 
 <!-- mounted -->   - ts -
 interface ViRadioType {
@@ -653,3 +653,4 @@ interface ViRadioType {
 ```
 
 - toPick 去选择当前选项
+

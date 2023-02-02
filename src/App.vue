@@ -291,6 +291,14 @@
     <ViRadio type="button" color="purple" dark size="small" rid="#129" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
     <ViRadio type="button" size="big" rid="#130" value="飞翔" name="haha" v-model="value">飞翔</ViRadio>
   </div>
+  <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
+    <ViRadioGroup v-model="value">
+      <ViRadio type="button" color="yellow" rid="#127" value="吃饭" name="haha"></ViRadio>
+      <ViRadio type="button" color="green" dark rid="#128" value="睡觉" name="haha"></ViRadio>
+      <ViRadio type="button" color="purple" dark size="small" rid="#129" value="打豆豆"  name="haha">打豆豆</ViRadio>
+      <ViRadio type="button" size="big" rid="#130" value="飞翔" name="haha">飞翔</ViRadio>
+    </ViRadioGroup>
+  </div>
 </template>
 
 <script lang="ts">
