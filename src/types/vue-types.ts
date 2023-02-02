@@ -17,6 +17,11 @@ export interface InputDOM {
   blur: Function
 }
 
+export interface RadioDOM {
+  click: Function,
+  value: string
+}
+
 export type Event = {
   isTrusted: string,
   target: any
@@ -38,5 +43,5 @@ export interface KeyEvent {
 }
 
 export interface VueInstace {
-    ctx: any
+  ctx: any
 }

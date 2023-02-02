@@ -255,7 +255,7 @@
     <ViInput color="red" error>placeholder</ViInput><br/>
     <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br>
   </div> -->
-  <div id="div" style="padding: 10px 0;">
+  <!-- <div id="div" style="padding: 10px 0;">
     <ViSwitch v-model="res" disabled></ViSwitch><br><br>
     <ViSwitch v-model="res" size="small" dark></ViSwitch><br><br>
     <ViSwitch v-model="res" size="big" filter></ViSwitch><br><br>
@@ -266,19 +266,31 @@
     <ViSwitch dark></ViSwitch><br><br>
     <ViSwitch filter></ViSwitch><br><br>
     <ViSwitch dark filter leftColor="#0f0b286c"></ViSwitch>
-  </div>
-  <!-- <div id="div" style="padding: 10px 0;">
-    <ViRadio @changePick="change" rid="#123" value="吃饭" name="haha" :picked="value"></ViRadio>
-    <ViRadio @changePick="change" dark rid="#124" value="睡觉" name="haha" :picked="value"></ViRadio>
-    <ViRadio @changePick="change" dark size="small" rid="#125" value="打豆豆"  name="haha" :picked="value">打豆豆</ViRadio>
-    <ViRadio @changePick="change" size="big" rid="#126" value="飞翔" name="haha" :picked="value">飞翔</ViRadio>
+  </div> -->
+  <div id="div" style="padding: 10px 0;">
+    <ViRadio color="yellow" @change="change" rid="#123" value="吃饭" name="haha" v-model="value"></ViRadio>
+    <ViRadio color="blue" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio>
+    <ViRadio color="red" dark size="small" rid="#125" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
+    <ViRadio color="pink" size="big" rid="#126" value="飞翔" name="haha" v-model="value">飞翔</ViRadio>
   </div>
   <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
-    <ViRadio @changePick="change" rid="#127" value="吃饭" name="haha" :picked="value"></ViRadio>
-    <ViRadio @changePick="change" dark rid="#128" value="睡觉" name="haha" :picked="value"></ViRadio>
-    <ViRadio @changePick="change" dark size="small" rid="#129" value="打豆豆"  name="haha" :picked="value">打豆豆</ViRadio>
-    <ViRadio @changePick="change" size="big" rid="#130" value="飞翔" name="haha" :picked="value">飞翔</ViRadio>
-  </div> -->
+    <ViRadio color="green" rid="#127" value="吃饭" name="haha" v-model="value"></ViRadio>
+    <ViRadio color="purple" dark rid="#128" value="睡觉" name="haha" v-model="value"></ViRadio>
+    <ViRadio dark size="small" rid="#129" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
+    <ViRadio size="big" rid="#130" value="飞翔" name="haha" v-model="value">飞翔</ViRadio>
+  </div>
+    <div id="div" style="padding: 10px 0;">
+    <ViRadio type="button" color="yellow" @change="change" rid="#123" value="吃饭" name="haha" v-model="value"></ViRadio>
+    <ViRadio color="blue" type="button" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio>
+    <ViRadio type="button" color="red" dark size="small" rid="#125" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
+    <ViRadio type="button" color="pink" size="big" rid="#126" value="飞翔" name="haha" v-model="value">飞翔</ViRadio>
+  </div>
+  <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
+    <ViRadio type="button" color="yellow" rid="#127" value="吃饭" name="haha" v-model="value"></ViRadio>
+    <ViRadio type="button" color="green" dark rid="#128" value="睡觉" name="haha" v-model="value"></ViRadio>
+    <ViRadio type="button" color="purple" dark size="small" rid="#129" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
+    <ViRadio type="button" size="big" rid="#130" value="飞翔" name="haha" v-model="value">飞翔</ViRadio>
+  </div>
 </template>
 
 <script lang="ts">
@@ -343,9 +355,8 @@ export default defineComponent({
       (proxy?.$refs.child as ViDialogType).open()
     }
 
-    function change (n: string) {
-      console.log(n)
-      value.value = n
+    function change () {
+      console.log(value.value)
     }
 
     return {

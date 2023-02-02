@@ -3,46 +3,56 @@
   class="vi-radio-appreance"
   :class="[
   `is-${size}`,
+  `vi-radio-${color}`,
+  `is-${type}`,
   {
+    'is-disabled': disabled,
     'is-dark': dark,
-    'be-checked': (value === picked)
+    'be-checked': (value === modelValue)
   }
   ]">
     <input
-    :id="rid"
+    ref="radio"
     class="vi-radio"
     :value="value"
     :name="name"
-    v-model="nowPicked"
+    v-model="nowPick"
     @change="handleChange"
     type="radio">
-    <label :for="rid" class="vi-radio-circle"></label>
-    <label :for="rid">
+    <span class="vi-radio-circle" @click="toPick"></span>
+    <span class="vi-radio-text" @click="toPick">
         <slot>{{value}}</slot>
-    </label>
+    </span>
   </span>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, VueElement } from 'vue'
+import { defineComponent, ref, getCurrentInstance, ComponentInternalInstance } from 'vue'
 
 import props from './props'
 
-import { VueContext } from '@/types/vue-types'
+import { VueContext, RadioDOM } from '@/types/vue-types'
 
 export default defineComponent({
   name: 'ViRadio',
-  emits: ['changePick'],
+  emits: ['change', 'update:modelValue'],
   props,
   setup (props: any, context: VueContext) {
-    const nowPicked = ref(props.picked)
+    const nowPick = ref(props.modelValue)
+    const { proxy } = getCurrentInstance() as ComponentInternalInstance
     function handleChange () {
-      console.log(nowPicked)
-      context.emit('changePick', nowPicked.value)
+      context.emit('update:modelValue', props.value)
+      context.emit('change')
     }
+
+    function toPick () {
+      (proxy?.$refs.radio as RadioDOM).click()
+    }
+
     return {
-      nowPicked,
-      handleChange
+      nowPick,
+      handleChange,
+      toPick
     }
   }
 })

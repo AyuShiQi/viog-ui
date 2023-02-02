@@ -595,19 +595,15 @@ interface ViSwitchType {
 
 #### props参数
 
-- picked：string | number | boolean  当前单选框组选中的value
+- modelValue：string | number | boolean  当前单选框组选中的value
 
-  > 参数：必传，需要通过事件changePick完成双向绑定
+  > 参数：必传 (v-model形式)
 
 - name：string | number | boolean 原生属性
 
   > 参数：默认无
 
 - value：string | number | boolean  该单选框对应的value
-
-  > 参数：必传
-
-- id：该单选框的id值
 
   > 参数：必传
 
@@ -629,7 +625,7 @@ interface ViSwitchType {
 
 - color：string  选中后的颜色
 
-  > 参数：purple(default)
+  > 参数：spurple(default)/purple/red/green/yellow/pink/blue/sred/sgreen/syellow/spink/sblue
 
 #### 插槽内容
 
@@ -637,9 +633,8 @@ interface ViSwitchType {
 
 #### 事件支持
 
-- changePick：当单选结果发生改变时调用
+- change：当单选结果发生改变时调用
 
-  > 该事件向回调函数传入一个参数newPicked，是当前被选中的value
 
 #### 对外暴露方法调用
 

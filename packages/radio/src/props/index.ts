@@ -1,8 +1,10 @@
 export default {
-  picked: [String, Number, Boolean],
-  name: [String, Number, Boolean],
+  modelValue: [String, Number, Boolean],
   value: [String, Number, Boolean],
-  rid: String,
+  name: {
+    type: String,
+    default: ''
+  },
   size: {
     type: String,
     default: 'middle'
@@ -17,10 +19,10 @@ export default {
   },
   color: {
     type: String,
-    default: 'purple'
+    default: 'spurple'
   },
   disabled: {
-    type: String,
+    type: Boolean,
     default: false
   }
 }

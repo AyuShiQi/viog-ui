@@ -1,4 +1,5 @@
 @import '../../../../public/css/basecolor.less';
+@import '../../../../public/css/base.less';
 
 .vi-radio-appreance {
     display: inline-flex;
@@ -20,7 +21,6 @@
         background-color: transparent;
         border-radius: 50%;
         cursor: pointer;
-        transition: all .2s linear 0s;
 
         &::before {
             opacity: 0;
@@ -33,9 +33,14 @@
             transition: all .2s linear 0s;
         }
     }
+
+    .vi-radio-text {
+        margin: 0 2px;
+    }
 }
 
 .vi-radio-appreance.is-middle {
+    font-size: @font-size;
     .vi-radio-circle {
         width: 18px;
         height: 18px;
@@ -43,6 +48,7 @@
 }
 
 .vi-radio-appreance.is-small {
+    font-size: @small-font-size;
     .vi-radio-circle {
         width: 13px;
         height: 13px;
@@ -50,11 +56,28 @@
 }
 
 .vi-radio-appreance.is-big {
+    font-size: @big-font-size;
     .vi-radio-circle {
         width: 23px;
         height: 23px;
     }
 }
 
+.vi-radio-appreance.is-button {
+    .vi-radio-circle {
+        display: none;
+    }
+
+    .vi-radio-text {
+        display: inline-block;
+        padding: 6px 20px;
+        border: 1px solid @grey;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all .2s linear 0s;
+    }
+}
+
 @import './dark.less';
 @import './checked.less';
+@import './color.less';
