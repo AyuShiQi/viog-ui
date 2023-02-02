@@ -1,4 +1,8 @@
 export default {
+  modelValue: {
+    type: Boolean,
+    default: false
+  },
   size: {
     type: String,
     default: 'middle'
@@ -26,5 +30,9 @@ export default {
   filter: {
     type: Boolean,
     default: false
+  },
+  name: {
+    type: String,
+    default: ''
   }
 }

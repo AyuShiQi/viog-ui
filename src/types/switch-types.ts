@@ -5,11 +5,13 @@ export interface ViSwitchType {
 }
 
 export interface switchProps {
+  modelValue: boolean,
   size: string,
   type: string,
   rightColor: string,
   leftColor: string,
   dark: boolean,
   disabled: boolean,
-  filter: boolean
+  filter: boolean,
+  name: string
 }

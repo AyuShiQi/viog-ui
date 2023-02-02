@@ -222,11 +222,11 @@
         {{vi.data.number}}
       </div>
     </template>
-  </ViVirtualScroll> -->
+  </ViVirtualScroll>
   <div id="div" style="padding: 10px 0;">
     <ViInput v-model="value" size="big" number showClear width="400px" :maxLength="10" @change="ok">账号</ViInput><br/>
     <ViInput v-model="value" dark size="big" password showPassword showClear>密码</ViInput><br/>
-    <!-- <ViInput round color="pink" password showPassword showClear>密码</ViInput><br/>
+    <ViInput round color="pink" password showPassword showClear>密码</ViInput><br/>
     <ViInput color="pink" dark>placeholder</ViInput><br>
     <ViInput color="golden">placeholder</ViInput><br/>
     <ViInput color="golden" dark>placeholder</ViInput><br>
@@ -237,10 +237,10 @@
     <ViInput color="blue">placeholder</ViInput><br/>
     <ViInput color="blue" dark>placeholder</ViInput><br>
     <ViInput color="red">placeholder</ViInput><br/>
-    <ViInput color="red" dark password>placeholder</ViInput><br> -->
+    <ViInput color="red" dark password>placeholder</ViInput><br>
   </div>
   <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
-    <!-- <ViInput>placeholder</ViInput><br/>
+    <ViInput>placeholder</ViInput><br/>
     <ViInput dark>placeholder</ViInput><br>
     <ViInput color="pink">placeholder</ViInput><br/>
     <ViInput color="pink" dark>placeholder</ViInput><br>
@@ -253,12 +253,12 @@
     <ViInput color="blue" warn>placeholder</ViInput><br/>
     <ViInput color="blue" dark warn>placeholder</ViInput><br>
     <ViInput color="red" error>placeholder</ViInput><br/>
-    <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br> -->
-  </div>
+    <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br>
+  </div> -->
   <div id="div" style="padding: 10px 0;">
-    <ViSwitch disabled></ViSwitch><br><br>
-    <ViSwitch size="small" dark></ViSwitch><br><br>
-    <ViSwitch size="big" filter></ViSwitch><br><br>
+    <ViSwitch v-model="res" disabled></ViSwitch><br><br>
+    <ViSwitch v-model="res" size="small" dark></ViSwitch><br><br>
+    <ViSwitch v-model="res" size="big" filter></ViSwitch><br><br>
     <ViSwitch dark filter></ViSwitch>
   </div>
   <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
@@ -309,6 +309,7 @@ export default defineComponent({
   components: {
   },
   setup () {
+    const res = ref(false)
     const value = ref('12345')
     const { proxy } = getCurrentInstance() as ComponentInternalInstance
     const open = ref(true)
@@ -357,7 +358,8 @@ export default defineComponent({
       pf,
       openDialog,
       obj,
-      change
+      change,
+      res
     }
   },
   mounted () {

@@ -510,6 +510,10 @@ interface ViInputType {
 
 #### props参数
 
+- modelValue： boolean    开关绑定的value，支持v-model （v-mode=“value”  或  ：modelValue=“value”）
+
+  > 参数：必传（若不使用v-model语法糖，请绑定@update:modeValue事件对绑定值进行更新）
+
 - size：string 按钮大小
 
   > 参数：middle(default)/big/small
@@ -533,6 +537,10 @@ interface ViInputType {
 - rightColor：string  on的颜色
 
   > 参数：任意颜色，默认紫色调
+  
+- name：string input原生属性name
+
+  > 参数：无
 
 #### 插槽内容
 
@@ -570,11 +578,11 @@ interface ViSwitchType {
   toChange: () => void
 }
 
-(this.$refs.child as ViSwitchType).toOn()
+(this.$refs.child as ViSwitchType).toChange()
 ```
 
-- toOn 去打开开关
-- toOff 去关闭开关
+- toOn 去打开开关(一般用不到)
+- toOff 去关闭开关(一般用不到)
 - toChange 去改变开关
 
 ### ViRadio

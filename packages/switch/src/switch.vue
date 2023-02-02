@@ -16,8 +16,8 @@
     class="vi-switch-content"
     :class="[
     {
-      'left-choice': !checked,
-      'right-choice': checked
+      'left-choice': !modelValue,
+      'right-choice': modelValue
     }]"
     :style="{
       backgroundColor: nowColor
@@ -30,7 +30,8 @@
       <input
       class="vi-switch"
       type="checkbox"
-      :checked="checked">
+      :checked="modelValue"
+      :name="name">
     </span>
     <span class="vi-switch-slot">
       <slot name="right-choice"></slot>
@@ -50,7 +51,7 @@ import { switchState } from './hooks'
 
 export default defineComponent({
   name: 'ViSwitch',
-  emits: ['off', 'on', 'change'],
+  emits: ['off', 'on', 'change', 'update:modelValue'],
   props,
   setup (props: switchProps, context: VueContext) {
     const mainSwitch = switchState(props, context)
