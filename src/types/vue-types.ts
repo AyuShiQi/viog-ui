@@ -45,3 +45,7 @@ export interface KeyEvent {
 export interface VueInstace {
   ctx: any
 }
+
+export interface GroupValueProps {
+  modelValue: string | number | boolean
+}
