@@ -299,6 +299,9 @@
       <ViRadio type="button" size="big" rid="#130" value="飞翔" name="haha">飞翔</ViRadio>
     </ViRadioGroup>
   </div>
+  <ViCheckbox size="small" v-model="value" value="唱歌"></ViCheckbox>
+  <ViCheckbox size="middle" v-model="value" value="跳舞"></ViCheckbox>
+  <ViCheckbox size="big"></ViCheckbox>
 </template>
 
 <script lang="ts">

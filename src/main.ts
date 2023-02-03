@@ -18,6 +18,7 @@ import ViScroll from '../packages/scroll'
 import Viinput from '../packages/input'
 import ViSwitch from '../packages/switch'
 import ViRadio from '../packages/radio'
+import ViCheckbox from '../packages/checkbox'
 
 const app = createApp(App)
 app.config.unwrapInjectedRef = true
@@ -31,5 +32,6 @@ app.use(ViScroll)
 app.use(Viinput)
 app.use(ViSwitch)
 app.use(ViRadio)
+app.use(ViCheckbox)
 
 app.mount('#app')

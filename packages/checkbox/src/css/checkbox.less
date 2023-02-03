@@ -1,0 +1,92 @@
+@import '../../../../public/css/basecolor.less';
+@import '../../../../public/css/base.less';
+
+.vi-checkbox-appreance {
+    display: inline-flex;
+    color: @grey;
+    user-select: none;
+    align-items: center;
+
+    .vi-checkbox {
+        display: none;
+    }
+
+    .vi-checkbox-box {
+        position: relative;
+        display: inline-flex;
+        box-sizing: border-box;
+        border: 1px solid @grey;
+        margin: 0 2px;
+        background-color: transparent;
+        border-radius: 2px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all .2s linear 0s;
+
+        .vi-gougou-path {
+            stroke-opacity: 0;
+            stroke-dasharray: 0 25.7;
+            stroke-linecap: round;
+            transition: all .3s ease-in 0s;
+        }
+    }
+
+    .vi-checkbox-text {
+        margin: 0 2px;
+    }
+}
+
+.vi-checkbox-appreance.is-middle {
+    font-size: @font-size;
+    .vi-checkbox-box {
+        width: 12px;
+        height: 12px;
+
+        .vi-checkbox-gougou {
+            width: 10px;
+        }
+    }
+}
+
+.vi-checkbox-appreance.is-small {
+    font-size: @small-font-size;
+    .vi-checkbox-box {
+        width: 10px;
+        height: 10px;
+
+        .vi-checkbox-gougou {
+            width: 8px;
+        }
+    }
+}
+
+.vi-checkbox-appreance.is-big {
+    font-size: @big-font-size;
+    .vi-checkbox-box {
+        width: 18px;
+        height: 18px;
+
+        .vi-checkbox-gougou {
+            width: 16px;
+        }
+    }
+}
+
+.vi-checkbox-appreance.is-button {
+    .vi-checkbox-box {
+        display: none;
+    }
+
+    .vi-checkbox-text {
+        display: inline-block;
+        padding: 6px 20px;
+        border: 1px solid @grey;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all .2s linear 0s;
+    }
+}
+
+@import './checked.less';
+@import './color.less';
