@@ -20,16 +20,23 @@
         margin: 0 2px;
         background-color: transparent;
         border-radius: 50%;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
 
-        &::before {
+        // &::before {
+        //     opacity: 0;
+        //     content: "";
+        //     position: absolute;
+        //     top: 2px;
+        //     left: 2px;
+        //     border-radius: 50%;
+        //     background-color: @mpurple;
+        //     transition: all .2s linear 0s;
+        // }
+        .vi-radio-ball {
             opacity: 0;
-            content: "";
-            position: absolute;
-            top: 2px;
-            left: 2px;
             border-radius: 50%;
-            background-color: @mpurple;
             transition: all .2s linear 0s;
         }
     }
@@ -44,6 +51,11 @@
     .vi-radio-circle {
         width: 18px;
         height: 18px;
+
+        .vi-radio-ball {
+          width: 14px;
+          height: 14px;
+        }
     }
 }
 
@@ -52,6 +64,11 @@
     .vi-radio-circle {
         width: 13px;
         height: 13px;
+
+        .vi-radio-ball {
+            width: 9px;
+            height: 9px;
+        }
     }
 }
 
@@ -60,6 +77,11 @@
     .vi-radio-circle {
         width: 23px;
         height: 23px;
+
+        .vi-radio-ball {
+            width: 19px;
+            height: 19px;
+        }
     }
 }
 

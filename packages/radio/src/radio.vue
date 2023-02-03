@@ -19,7 +19,7 @@
     v-model="nowPick"
     @change="handleChange"
     type="radio">
-    <span class="vi-radio-circle" @click="toPick"></span>
+    <span class="vi-radio-circle" @click="toPick"><span class="vi-radio-ball"></span></span>
     <span class="vi-radio-text" @click="toPick">
         <slot>{{value}}</slot>
     </span>
@@ -39,9 +39,6 @@ export default defineComponent({
   name: 'ViRadio',
   emits: ['change', 'update:modelValue'],
   inject: {
-    'radio-group': {
-      default: undefined
-    },
     'radio-group-value': {
       default: undefined
     }
