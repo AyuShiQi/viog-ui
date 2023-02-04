@@ -299,13 +299,21 @@
       <ViRadio type="button" size="big" rid="#130" value="飞翔" name="haha">飞翔</ViRadio>
     </ViRadioGroup>
   </div>
-  <ViCheckbox size="small" v-model="value" value="唱歌"></ViCheckbox>
-  <ViCheckbox size="middle" v-model="value" value="跳舞"></ViCheckbox>
-  <ViCheckbox size="big"></ViCheckbox>
+  <ViCheckbox @change="change" v-model="ar" value="唱歌" dark size="small"></ViCheckbox>
+  <ViCheckbox v-model="ar" value="跳舞" size="middle"></ViCheckbox>
+  <ViCheckbox v-model="ar" value="打豆豆" size="big"></ViCheckbox>
+  <ViCheckbox v-model="ar" value="吃饭" size="big" color="purple"></ViCheckbox>
+  <ViCheckbox v-model="ar" value="睡觉" size="big" color="green"></ViCheckbox>
+  <ViCheckbox v-model="ar" value="划水" size="big" color="sgreen"></ViCheckbox>
+  <ViCheckbox v-model="ar" value="飞翔" size="big" color="syellow"></ViCheckbox>
+  <ViCheckbox v-model="ar" value="这个" size="big" color="yellow"></ViCheckbox>
+  <ViCheckbox v-model="ar" value="唱歌" size="big" color="pink"></ViCheckbox>
+  <ViCheckbox v-model="ar" value="妈妈" size="big" color="pink" type="button"></ViCheckbox>
+  <ViCheckbox v-model="ar" value="米亚" dark size="big" color="pink" type="button"></ViCheckbox>
 </template>
 
 <script lang="ts">
-import { defineComponent, getCurrentInstance, ref, ComponentInternalInstance } from 'vue'
+import { defineComponent, getCurrentInstance, ref, ComponentInternalInstance, reactive } from 'vue'
 
 type ViDialogType = {
   open: (time?: number) => void,
@@ -334,6 +342,7 @@ export default defineComponent({
   setup () {
     const res = ref(false)
     const value = ref('12345')
+    const ar = reactive([])
     const { proxy } = getCurrentInstance() as ComponentInternalInstance
     const open = ref(true)
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
@@ -368,9 +377,11 @@ export default defineComponent({
 
     function change () {
       console.log(value.value)
+      console.log(ar)
     }
 
     return {
+      ar,
       value,
       hello,
       ok,

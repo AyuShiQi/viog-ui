@@ -8,7 +8,7 @@
   {
     'is-disabled': disabled,
     'is-dark': dark,
-    'be-checked': value === pickValue
+    'be-checked': containsValue
   }
   ]">
     <input
@@ -16,10 +16,10 @@
     class="vi-checkbox"
     :value="value"
     :name="name"
-    v-model="nowPick"
+    :checked="containsValue"
     @change="handleChange"
     type="checkbox">
-    <span class="vi-checkbox-box" @click="toPick">
+    <span v-if="type==='default'" class="vi-checkbox-box" @click="toPick">
       <svg class="vi-checkbox-gougou" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <path class="vi-gougou-path" stroke="#fff" stroke-width="2" fill="none" d="M2.6 8.5l7 8 7.6-13"/>
       </svg>
@@ -31,34 +31,46 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, getCurrentInstance, ComponentInternalInstance, inject, computed } from 'vue'
-import type { Ref } from 'vue'
+import { defineComponent, ref, getCurrentInstance, ComponentInternalInstance, inject, computed, reactive } from 'vue'
 
 import props from './props'
 
 import { VueContext, RadioDOM } from '@/types/vue-types'
-import { RadioProps } from '@/types/radio-types'
+import { CheckboxProps } from '@/types/checkbox-types'
 
 export default defineComponent({
   name: 'ViCheckbox',
   emits: ['change', 'update:modelValue'],
   inject: {
     'checkbox-group-value': {
-      default: undefined
+      default: []
     }
   },
   props,
-  setup (props: RadioProps, context: VueContext) {
+  setup (props: CheckboxProps, context: VueContext) {
     const { proxy } = getCurrentInstance() as ComponentInternalInstance
 
     const hasGroup = (function (): boolean {
       return inject('checkbox-group-value', undefined) !== undefined
     })()
 
-    const nowPick: Ref = inject('checkbox-group-value', ref())
+    let nowPick = inject('checkbox-group-value', reactive(props.modelValue))
+    const containsValue = computed((): boolean => {
+      return props.modelValue.includes(props.value)
+    })
+    const check = ref(containsValue)
 
     function handleChange (): void {
-      hasGroup ? (nowPick.value = props.value) : context.emit('update:modelValue', props.value)
+      nowPick = props.modelValue
+      // 存在就剔除，那么就从那个队列里把它剔除
+      if (containsValue.value) {
+        const index = nowPick.indexOf(props.value)
+        nowPick.splice(index, 1)
+      } else {
+        // 没有就加进去
+        nowPick.push(props.value)
+      }
+      hasGroup ? console.log('no option') : context.emit('update:modelValue', nowPick)
       context.emit('change')
     }
 
@@ -66,15 +78,11 @@ export default defineComponent({
       (proxy?.$refs.checkbox as RadioDOM).click()
     }
 
-    const pickValue = computed((): string | number | boolean | undefined => {
-      return hasGroup ? nowPick.value : props.modelValue
-    })
-
     return {
       nowPick,
-      pickValue,
       handleChange,
-      toPick
+      toPick,
+      containsValue
     }
   }
 })
