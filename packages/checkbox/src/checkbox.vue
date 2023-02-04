@@ -32,6 +32,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, getCurrentInstance, ComponentInternalInstance, inject, computed, reactive } from 'vue'
+import type { Ref } from 'vue'
 
 import props from './props'
 
@@ -54,23 +55,23 @@ export default defineComponent({
       return inject('checkbox-group-value', undefined) !== undefined
     })()
 
-    let nowPick = inject('checkbox-group-value', reactive(props.modelValue))
+    const nowPick: Ref = inject('checkbox-group-value', ref())
+
     const containsValue = computed((): boolean => {
-      return props.modelValue.includes(props.value)
+      return hasGroup ? nowPick.value.includes(props.value) : props.modelValue.includes(props.value)
     })
-    const check = ref(containsValue)
 
     function handleChange (): void {
-      nowPick = props.modelValue
+      if (!hasGroup) nowPick.value = props.modelValue
       // 存在就剔除，那么就从那个队列里把它剔除
       if (containsValue.value) {
-        const index = nowPick.indexOf(props.value)
-        nowPick.splice(index, 1)
+        const index = nowPick.value.indexOf(props.value)
+        nowPick.value.splice(index, 1)
       } else {
         // 没有就加进去
-        nowPick.push(props.value)
+        nowPick.value.push(props.value)
       }
-      hasGroup ? console.log('no option') : context.emit('update:modelValue', nowPick)
+      if (!hasGroup) context.emit('update:modelValue', nowPick)
       context.emit('change')
     }
 

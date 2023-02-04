@@ -310,6 +310,21 @@
   <ViCheckbox v-model="ar" value="唱歌" size="big" color="pink"></ViCheckbox>
   <ViCheckbox v-model="ar" value="妈妈" size="big" color="pink" type="button"></ViCheckbox>
   <ViCheckbox v-model="ar" value="米亚" dark size="big" color="pink" type="button"></ViCheckbox>
+  <div class="div">
+    <ViCheckboxGroup v-model="ar">
+    <ViCheckbox @change="change" value="唱歌" dark size="small"></ViCheckbox>
+    <ViCheckbox value="跳舞" size="middle"></ViCheckbox>
+    <ViCheckbox value="打豆豆" size="big"></ViCheckbox>
+    <ViCheckbox value="吃饭" size="big" color="purple"></ViCheckbox>
+    <ViCheckbox value="睡觉" size="big" color="green"></ViCheckbox>
+    <ViCheckbox value="划水" size="big" color="sgreen"></ViCheckbox>
+    <ViCheckbox value="飞翔" size="big" color="syellow"></ViCheckbox>
+    <ViCheckbox value="这个" size="big" color="yellow"></ViCheckbox>
+    <ViCheckbox value="唱歌" size="big" color="pink"></ViCheckbox>
+    <ViCheckbox value="妈妈" size="big" color="pink" type="button"></ViCheckbox>
+    <ViCheckbox value="米亚" dark size="big" color="pink" type="button"></ViCheckbox>
+  </ViCheckboxGroup>
+  </div>
 </template>
 
 <script lang="ts">
