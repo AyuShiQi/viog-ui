@@ -9,7 +9,7 @@ import props from './props/group'
 
 import { VueContext, GroupValueProps } from '@/types/vue-types'
 
-import groupValueState from '@/hooks/group-value-state'
+import { groupValueState } from './hooks'
 
 export default defineComponent({
   name: 'ViRadioGroup',
