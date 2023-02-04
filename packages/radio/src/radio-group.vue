@@ -7,7 +7,8 @@ import { defineComponent, computed, provide, ref, watch } from 'vue'
 
 import props from './props/group'
 
-import { VueContext, GroupValueProps } from '@/types/vue-types'
+import { VueContext } from '@/types/vue-types'
+import { GroupValueProps } from '@/types/radio-types'
 
 import { groupValueState } from './hooks'
 
