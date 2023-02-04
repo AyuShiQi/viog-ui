@@ -1,0 +1,34 @@
+// 基础组件
+import ViButton from './button'
+import ViIcon from './icon'
+import ViLoading from './loading'
+// 交互组件
+import ViDialog from './dialog'
+// scroll 组
+import ViScroll from './scroll'
+// 表单组
+import ViInput from './input'
+import ViSwitch from './switch'
+import ViRadio from './radio'
+import ViCheckbox from './checkbox'
+
+const components = [
+  ViButton,
+  ViIcon,
+  ViLoading,
+  ViDialog,
+  ViScroll,
+  ViInput,
+  ViSwitch,
+  ViRadio,
+  ViCheckbox
+]
+
+export default {
+  install (app: any) {
+    app.config.unwrapInjectedRef = true
+    components.forEach((component) => {
+      component.install(app)
+    })
+  }
+}

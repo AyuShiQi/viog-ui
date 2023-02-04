@@ -6,7 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib packages/index.ts",
+    "lib-vue": "vue-cli-service build --target lib --inline-vue"
   },
   "dependencies": {
     "core-js": "^3.8.3",
