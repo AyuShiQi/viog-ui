@@ -1,7 +1,9 @@
+import { App } from 'vue'
+
 import dialog from './src/dialog.vue'
 
 export default {
-  install (app: any) {
+  install (app: App) {
     app.component(dialog.name, dialog)
   }
 }

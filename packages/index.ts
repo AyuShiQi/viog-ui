@@ -1,3 +1,5 @@
+import { App } from 'vue'
+
 // 基础组件
 import ViButton from './button'
 import ViIcon from './icon'
@@ -25,7 +27,7 @@ const components = [
 ]
 
 export default {
-  install (app: any) {
+  install: (app: App) => {
     app.config.unwrapInjectedRef = true
     components.forEach((component) => {
       component.install(app)
