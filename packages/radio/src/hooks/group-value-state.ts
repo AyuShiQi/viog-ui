@@ -1,13 +1,14 @@
 import { ref, computed, provide } from 'vue'
 
-import { GroupValueProps, VueContext } from '@/types/vue-types'
+import { VueContext } from '@/types/vue-types'
+import { RadioProps } from '@/types/radio-types'
 
-export default function (props: GroupValueProps, context: VueContext, valueName: string) {
+export default function (props: RadioProps, context: VueContext, valueName: string) {
   const groupValue = computed({
-    get: (): number | string | boolean => {
+    get: (): number | string | boolean | undefined => {
       return props.modelValue
     },
-    set: (newPick: number | string | boolean) => {
+    set: (newPick: number | string | boolean | undefined) => {
       context.emit('update:modelValue', newPick)
     }
   })
