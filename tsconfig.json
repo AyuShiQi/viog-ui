@@ -39,6 +39,7 @@
     "packages/**/*.tsx",
     "packages/**/*.vue",
     "packages/**/*.d.ts",
+    "packages/index.ts"
   ],
   "exclude": [
     "node_modules"
