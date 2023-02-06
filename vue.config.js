@@ -13,15 +13,8 @@ module.exports = defineConfig({
       libraryExport: 'default'
     }
   },
-  // chainWebpack: config => {
-  //   config.module.rule('js')
-  //   .include.add(path.resolve(__dirname, 'packages')).end()
-  //   .use('babel')
-  //   .loader('babel-loader')
-  //   .tap(options => {
-  //     // 暂时没哟
-  //     return options
-  //   })
-  // },
-  parallel: false
+  parallel: false,
+  css: {
+    extract: false
+  }
 })

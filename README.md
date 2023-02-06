@@ -6,6 +6,12 @@
 
 > 组件库使用方式参考elementUI
 
+## 使用
+
+```
+npm install viog-ui --save
+```
+
 ## 组件
 
 ### button
@@ -395,6 +401,8 @@ interface VirtualScrollType {
 
 基础输入框组件
 
+功能完善中
+
 #### props参数
 
 - modelValue：string input绑定的value，支持v-model （v-mode=“value”  或  ：modelValue=“value”）
@@ -591,8 +599,6 @@ interface ViSwitchType {
 
 单选框
 
-样式种类待完善中
-
 #### props参数
 
 - modelValue：string | number | boolean  当前单选框组选中的value
@@ -654,3 +660,105 @@ interface ViRadioType {
 
 - toPick 去选择当前选项
 
+### ViRadioGroup
+
+`<ViRadioGroup>`
+
+功能完善中
+
+#### props参数
+
+- modelValue：string | number | boolean  当前单选框组选中的value
+
+  > 参数：必传 (v-model形式)
+
+#### 插槽内容
+
+- 默认插槽，用于包裹需要简写v-model的所有radio组件，支持插槽内多级dom结构定位
+
+### ViCheckbox
+
+`<ViCheckbox>`
+
+复选框
+
+#### props参数
+
+- modelValue：undefined[]  当前单选框组选中的value
+
+  > 参数：必传 (v-model形式)
+
+- name：string | number | boolean 原生属性
+
+  > 参数：默认无
+
+- value：string | number | boolean  该单选框对应的value
+
+  > 参数：必传
+
+- size：string 按钮大小
+
+  > 参数：middle(default)/big/small
+
+- disabled：boolean 是否禁用
+
+  > 参数：false(default)/true
+
+- type：string 单选框样式
+
+  > 参数：default/button
+
+- dark：boolean 基础色调是否为暗色调
+
+  > 参数：false(default)/true
+
+- color：string  选中后的颜色
+
+  > 参数：spurple(default)/purple/red/green/yellow/pink/blue/sred/sgreen/syellow/spink/sblue
+
+#### 插槽内容
+
+- 默认插槽，label的值，默认值为value的值
+
+#### 事件支持
+
+- change：当复选选结果发生改变时调用
+
+
+#### 对外暴露方法调用
+
+```typescript
+<!-- 父子组件中 -->
+<ViCheckbox ref="child">
+  睡觉
+</ViCheckbox>
+
+<!-- mounted -->   - ts -
+interface ViCheckboxType {
+  toPick: () => void,
+}
+
+(this.$refs.child as ViCheckbox).toPick()
+```
+
+- toPick 去选择当前选项
+
+### ViCheckGroup
+
+`<ViCheckboxGroup>`
+
+功能完善中
+
+#### props参数
+
+- modelValue：undefined[]  当前单选框组选中的value
+
+  > 参数：必传 (v-model形式)
+
+#### 插槽内容
+
+- 默认插槽，用于包裹需要简写v-model的所有checkbox组件，支持插槽内多级dom结构定位
+
+
+
+select，message，toast，骨架框，form，layout，navigation。。。
