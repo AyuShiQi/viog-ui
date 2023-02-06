@@ -10,4 +10,5 @@ tests/
 # 文件忽略
 vue.config.js
 babel.config.js
+tsconfig.json
 *.map
