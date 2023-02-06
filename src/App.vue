@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <!-- <div id="div">
+  <div id="div">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
     <ViButton color="pink" small @click="hello">点击进入</ViButton>
@@ -150,17 +150,17 @@
     <ViButton color="spurple" @click="scr">点击进入</ViButton>
     <ViButton color="sgreen" @click="scr">点击进入</ViButton>
   </div>
-  <div id="div">
+  <!-- <div id="div"> -->
     <div id="div">
       <ViLoading type="diamond"/>
     </div>
     <div id="div">
       <ViLoading type="diamond" color="purple"/>
     </div>
-    <div id="div">
+    <!-- <div id="div"> -->
      <ViLoading type="diamond" color="white"/>
-    </div>
-  </div>
+    <!-- </div> -->
+  <!-- </div> -->
   <div id="div">
     <ViLoading type="ball"/><br/>
     <ViLoading type="ball" color="purple"/><br/>
@@ -254,8 +254,8 @@
     <ViInput color="blue" dark warn>placeholder</ViInput><br>
     <ViInput color="red" error>placeholder</ViInput><br/>
     <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br>
-  </div> -->
-  <!-- <div id="div" style="padding: 10px 0;">
+  </div>
+  <div id="div" style="padding: 10px 0;">
     <ViSwitch v-model="res" disabled></ViSwitch><br><br>
     <ViSwitch v-model="res" size="small" dark></ViSwitch><br><br>
     <ViSwitch v-model="res" size="big" filter></ViSwitch><br><br>
@@ -266,7 +266,7 @@
     <ViSwitch dark></ViSwitch><br><br>
     <ViSwitch filter></ViSwitch><br><br>
     <ViSwitch dark filter leftColor="#0f0b286c"></ViSwitch>
-  </div> -->
+  </div>
   <div id="div" style="padding: 10px 0;">
     <ViRadio color="yellow" @change="change" rid="#123" value="吃饭" name="haha" v-model="value"></ViRadio>
     <ViRadio color="blue" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio>
