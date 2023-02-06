@@ -79,8 +79,8 @@ export default defineComponent({
 
 .vi-diamond {
     display: inline-block;
-    position: relative;
     text-align: center;
+    position: relative;
     width: 60px;
     height: 120px;
     margin: 0 auto;
