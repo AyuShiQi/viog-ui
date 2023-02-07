@@ -343,17 +343,16 @@
       </ViCheckboxGroup>
     </vi-row>
   </vi-row>
-  <vi-grid :row="2" :col="20">
-    <vi-col :row="1" :col="5" class="okk">1</vi-col>
-    <vi-col :row="1" :col="4" class="okk">2</vi-col>
+  <vi-grid :row="2" :col="11" gap="10px" height="500px">
+    <vi-col :row="1" :col="2" class="okk">1</vi-col>
+    <vi-col :row="1" :col="3" class="okk">2</vi-col>
     <vi-col :row="1" :col="2" class="okk">3</vi-col>
-    <vi-col :row="1" :col="4" class="okk">4</vi-col>
-    <vi-col :row="1" :col="5" class="okk">5</vi-col>
+    <vi-col :row="1" :col="3" class="okk">4</vi-col>
+    <vi-col :row="1" :col="2" class="okk">5</vi-col>
     <vi-col :row="1" :col="4" class="okk">6</vi-col>
     <vi-col :row="1" :col="2" class="okk">7</vi-col>
-    <vi-col :row="1" :col="3" class="okk">8</vi-col>
-    <vi-col :row="1" :col="4" class="okk">9</vi-col>
-    <vi-col :row="1" :col="2" class="okk">10</vi-col>
+    <vi-col :row="1" :col="4" class="okk">8</vi-col>
+    <vi-col :row="1" :col="2" class="okk">9</vi-col>
   </vi-grid>
 </template>
 
@@ -492,12 +491,11 @@ div > button {
   height: 100px;
   line-height: 50px;
   text-align: center;
-  // background-color: #fff;
 }
 
 .okk {
   box-sizing: border-box;
-  background-color: pink;
+  background-color: #0d1869;
   border: 1px solid #000;
 }
 </style>

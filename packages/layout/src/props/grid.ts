@@ -27,8 +27,8 @@ export default {
     type: Number,
     default: 1
   },
-  colHeight: {
+  gap: {
     type: String,
-    default: ''
+    default: '0'
   }
 }

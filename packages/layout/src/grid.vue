@@ -5,7 +5,8 @@
     width,
     height,
     gridTemplateColumns: `repeat(${row}, 1fr)`,
-    gridTemplateRows: `repeat(${col}, 1fr)`
+    gridTemplateRows: `repeat(${col}, 1fr)`,
+    gap
   }">
     <slot></slot>
   </div>
