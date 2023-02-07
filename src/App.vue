@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <div id="div">
+  <vi-row justify="center">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
     <ViButton color="pink" small @click="hello">点击进入</ViButton>
@@ -10,8 +10,8 @@
     <ViButton color="purple">点击进入</ViButton>
     <ViButton color="green">点击进入</ViButton>
     <ViButton color="black">点击进入</ViButton>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViButton color="sgrey">点击进入</ViButton>
     <ViButton color="spink" disabled>点击进入</ViButton>
     <ViButton color="sred">点击进入</ViButton>
@@ -20,8 +20,8 @@
     <ViButton color="spurple">点击进入</ViButton>
     <ViButton color="sgreen">点击进入</ViButton>
     <ViButton color="black">点击进入</ViButton>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViButton type="plain" small>点击进入</ViButton>
     <ViButton color="pink" disabled type="plain">点击进入</ViButton>
     <ViButton color="red" type="plain">点击进入</ViButton>
@@ -31,8 +31,8 @@
     <ViButton color="green" type="plain">点击进入</ViButton>
     <ViButton color="black" type="plain">点击进入</ViButton>
 
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViButton color="sgrey" type="plain">点击进入</ViButton>
     <ViButton color="spink" type="plain">点击进入</ViButton>
     <ViButton color="sred" type="plain">点击进入</ViButton>
@@ -40,8 +40,8 @@
     <ViButton color="syellow" type="plain">点击进入</ViButton>
     <ViButton color="spurple" type="plain">点击进入</ViButton>
     <ViButton color="sgreen" type="plain">点击进入</ViButton>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViButton type="transparent" small>点击进入</ViButton>
     <ViButton color="pink" type="transparent">点击进入</ViButton>
     <ViButton color="red" type="transparent">点击进入</ViButton>
@@ -50,8 +50,8 @@
     <ViButton color="purple" type="transparent">点击进入</ViButton>
     <ViButton color="green" type="transparent">点击进入</ViButton>
     <ViButton color="black" type="transparent">点击进入</ViButton>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViButton color="sgrey" type="transparent">点击进入</ViButton>
     <ViButton color="spink" type="transparent">点击进入</ViButton>
     <ViButton color="sred" type="transparent">点击进入</ViButton>
@@ -59,8 +59,8 @@
     <ViButton color="syellow" type="transparent">点击进入</ViButton>
     <ViButton color="spurple" type="transparent">点击进入</ViButton>
     <ViButton color="sgreen" type="transparent">点击进入</ViButton>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViButton radius="round" small>点击xxxxx</ViButton>
     <ViButton color="pink" radius="round">点击xx</ViButton>
     <ViButton color="red" radius="round">点击xxx</ViButton>
@@ -70,8 +70,8 @@
     </ViButton>
     <ViButton color="purple" radius="round">点击xxx</ViButton>
     <ViButton color="green" radius="round">点击xxx</ViButton>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViButton color="sgrey" radius="circle" >
       <ViIcon type="renzheng"/>
     </ViButton>
@@ -83,8 +83,8 @@
     </ViButton>
     <ViButton color="spurple" radius="circle">点击</ViButton>
     <ViButton color="sgreen" radius="circle">点击</ViButton>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViButton type="plain" radius="circle">点击</ViButton>
     <ViButton color="pink" type="plain" radius="circle">点击</ViButton>
     <ViButton color="red" type="plain" radius="circle">点击</ViButton>
@@ -94,8 +94,8 @@
     </ViButton>
     <ViButton color="purple" type="plain" radius="circle">点击</ViButton>
     <ViButton color="green" type="plain" radius="circle">点击</ViButton>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViButton color="sgrey" type="plain" radius="circle">点击</ViButton>
     <ViButton color="spink" type="plain" radius="circle">点击</ViButton>
     <ViButton color="sred" type="plain" radius="circle">点击</ViButton>
@@ -105,8 +105,8 @@
     </ViButton>
     <ViButton color="spurple" type="plain" radius="circle">点击</ViButton>
     <ViButton color="sgreen" type="plain" radius="circle">点击</ViButton>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViButton type="transparent" radius="circle">点击</ViButton>
     <ViButton color="pink" type="transparent" radius="circle">点击</ViButton>
     <ViButton color="red" type="transparent" radius="circle">点击</ViButton>
@@ -116,8 +116,8 @@
     </ViButton>
     <ViButton color="purple" type="transparent" radius="circle">点击</ViButton>
     <ViButton color="green" type="transparent" radius="circle">点击</ViButton>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViButton color="sgrey" type="transparent" radius="circle">
       <ViIcon type="renzheng"/>
     </ViButton>
@@ -129,8 +129,8 @@
     </ViButton>
     <ViButton color="spurple" type="transparent" radius="circle">点击</ViButton>
     <ViButton color="sgreen" type="transparent" radius="circle">点击</ViButton>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViButton disabled>点击进入</ViButton>
     <ViButton color="pink" disabled>
       点击进入
@@ -140,8 +140,8 @@
     <ViButton color="yellow" disabled>点击进入</ViButton>
     <ViButton color="purple" disabled>点击进入</ViButton>
     <ViButton color="green" disabled>点击进入</ViButton>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViButton color="sgrey" disabled>点击进入</ViButton>
     <ViButton color="spink" disabled>点击进入</ViButton>
     <ViButton color="sred" disabled>点击进入</ViButton>
@@ -149,19 +149,19 @@
     <ViButton color="syellow" disabled>点击进入</ViButton>
     <ViButton color="spurple" @click="scr">点击进入</ViButton>
     <ViButton color="sgreen" @click="scr">点击进入</ViButton>
-  </div>
+  </vi-row>
   <!-- <div id="div"> -->
-    <div id="div">
+    <vi-row justify="center">
       <ViLoading type="diamond"/>
-    </div>
-    <div id="div">
+    </vi-row>
+    <vi-row justify="center">
       <ViLoading type="diamond" color="purple"/>
-    </div>
+    </vi-row>
     <!-- <div id="div"> -->
      <ViLoading type="diamond" color="white"/>
     <!-- </div> -->
   <!-- </div> -->
-  <div id="div">
+  <vi-row justify="center">
     <ViLoading type="ball"/><br/>
     <ViLoading type="ball" color="purple"/><br/>
     <ViLoading type="ball" color="golden"/><br/>
@@ -170,8 +170,8 @@
     <ViLoading type="ball" color="blue"/><br>
     <ViLoading type="ball" color="red"/><br/>
     <ViLoading type="ball" color="pink"/>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViLoading type="circle"/>
     <ViLoading type="circle" color="purple"/>
     <ViLoading type="circle" color="golden"/>
@@ -180,8 +180,8 @@
     <ViLoading type="circle" color="blue"/>
     <ViLoading type="circle" color="red"/>
     <ViLoading type="circle" color="pink"/>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViLoading type="disk"/>
     <ViLoading type="disk" color="purple"/>
     <ViLoading type="disk" color="golden"/>
@@ -190,8 +190,8 @@
     <ViLoading type="disk" color="blue"/>
     <ViLoading type="disk" color="red"/>
     <ViLoading type="disk" color="pink"/>
-  </div>
-  <div id="div">
+  </vi-row>
+  <vi-row justify="center">
     <ViLoading type="star"/>
     <ViLoading type="star" color="purple"/>
     <ViLoading type="star" color="golden"/>
@@ -200,7 +200,7 @@
     <ViLoading type="star" color="blue"/>
     <ViLoading type="star" color="red"/>
     <ViLoading type="star" color="pink"/>
-  </div>
+  </vi-row>
   <ViDialog ref="child"
   maskFilter
   mask
@@ -214,16 +214,16 @@
     <ViSwitch dark size="small" filter></ViSwitch>
   </ViDialog>
   <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
-    <div class="li" v-for="item in arr" :key="item">{{item}}</div>
+    <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
   </ViScroll>
   <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" hidden>
     <template v-slot="vi">
-      <div class="lili">
+      <vi-row class="lili">
         {{vi.data.number}}
-      </div>
+      </vi-row>
     </template>
   </ViVirtualScroll>
-  <div id="div" style="padding: 10px 0;">
+  <vi-row id="div" style="padding: 10px 0;">
     <ViInput v-model="value" size="big" number showClear width="400px" :maxLength="10" @change="ok">账号</ViInput><br/>
     <ViInput v-model="value" dark size="big" password showPassword showClear>密码</ViInput><br/>
     <ViInput round color="pink" password showPassword showClear>密码</ViInput><br/>
@@ -238,8 +238,8 @@
     <ViInput color="blue" dark>placeholder</ViInput><br>
     <ViInput color="red">placeholder</ViInput><br/>
     <ViInput color="red" dark password>placeholder</ViInput><br>
-  </div>
-  <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
+  </vi-row>
+  <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
     <ViInput>placeholder</ViInput><br/>
     <ViInput dark>placeholder</ViInput><br>
     <ViInput color="pink">placeholder</ViInput><br/>
@@ -254,77 +254,107 @@
     <ViInput color="blue" dark warn>placeholder</ViInput><br>
     <ViInput color="red" error>placeholder</ViInput><br/>
     <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br>
-  </div>
-  <div id="div" style="padding: 10px 0;">
+  </vi-row>
+  <vi-row id="div" style="padding: 10px 0;">
     <ViSwitch v-model="res" disabled></ViSwitch><br><br>
     <ViSwitch v-model="res" size="small" dark></ViSwitch><br><br>
     <ViSwitch v-model="res" size="big" filter></ViSwitch><br><br>
     <ViSwitch dark filter></ViSwitch>
-  </div>
-  <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
+  </vi-row>
+  <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
     <ViSwitch></ViSwitch><br><br>
     <ViSwitch dark></ViSwitch><br><br>
     <ViSwitch filter></ViSwitch><br><br>
     <ViSwitch dark filter leftColor="#0f0b286c"></ViSwitch>
-  </div>
-  <div id="div" style="padding: 10px 0;">
+  </vi-row>
+  <vi-row id="div" style="padding: 10px 0;">
     <ViRadio color="yellow" @change="change" rid="#123" value="吃饭" name="haha" v-model="value"></ViRadio>
     <ViRadio color="blue" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio>
     <ViRadio color="red" dark size="small" rid="#125" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
     <ViRadio color="pink" size="big" rid="#126" value="飞翔" name="haha" v-model="value">飞翔</ViRadio>
-  </div>
-  <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
+  </vi-row>
+  <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
     <ViRadio color="green" rid="#127" value="吃饭" name="haha" v-model="value"></ViRadio>
     <ViRadio color="purple" dark rid="#128" value="睡觉" name="haha" v-model="value"></ViRadio>
     <ViRadio dark size="small" rid="#129" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
     <ViRadio size="big" rid="#130" value="飞翔" name="haha" v-model="value">飞翔</ViRadio>
-  </div>
-    <div id="div" style="padding: 10px 0;">
+  </vi-row>
+    <vi-row id="div" style="padding: 10px 0;">
     <ViRadio type="button" color="yellow" @change="change" rid="#123" value="吃饭" name="haha" v-model="value"></ViRadio>
     <ViRadio color="blue" type="button" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio>
     <ViRadio type="button" color="red" dark size="small" rid="#125" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
     <ViRadio type="button" color="pink" size="big" rid="#126" value="飞翔" name="haha" v-model="value">飞翔</ViRadio>
-  </div>
-  <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
+  </vi-row>
+  <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
     <ViRadio type="button" color="yellow" rid="#127" value="吃饭" name="haha" v-model="value"></ViRadio>
     <ViRadio type="button" color="green" dark rid="#128" value="睡觉" name="haha" v-model="value"></ViRadio>
     <ViRadio type="button" color="purple" dark size="small" rid="#129" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
     <ViRadio type="button" size="big" rid="#130" value="飞翔" name="haha" v-model="value">飞翔</ViRadio>
-  </div>
-  <div id="div" style="backgroundColor: #fff; padding: 10px 0;">
+  </vi-row>
+  <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
     <ViRadioGroup v-model="value">
       <ViRadio type="button" color="yellow" rid="#127" value="吃饭" name="haha"></ViRadio>
       <ViRadio type="button" color="green" dark rid="#128" value="睡觉" name="haha"></ViRadio>
       <ViRadio type="button" color="purple" dark size="small" rid="#129" value="打豆豆"  name="haha">打豆豆</ViRadio>
       <ViRadio type="button" size="big" rid="#130" value="飞翔" name="haha">飞翔</ViRadio>
     </ViRadioGroup>
-  </div>
-  <ViCheckbox @change="change" v-model="ar" value="唱歌" dark size="small"></ViCheckbox>
-  <ViCheckbox v-model="ar" value="跳舞" size="middle"></ViCheckbox>
-  <ViCheckbox v-model="ar" value="打豆豆" size="big"></ViCheckbox>
-  <ViCheckbox v-model="ar" value="吃饭" size="big" color="purple"></ViCheckbox>
-  <ViCheckbox v-model="ar" value="睡觉" size="big" color="green"></ViCheckbox>
-  <ViCheckbox v-model="ar" value="划水" size="big" color="sgreen"></ViCheckbox>
-  <ViCheckbox v-model="ar" value="飞翔" size="big" color="syellow"></ViCheckbox>
-  <ViCheckbox v-model="ar" value="这个" size="big" color="yellow"></ViCheckbox>
-  <ViCheckbox v-model="ar" value="唱歌" size="big" color="pink"></ViCheckbox>
-  <ViCheckbox v-model="ar" value="妈妈" size="big" color="pink" type="button"></ViCheckbox>
-  <ViCheckbox v-model="ar" value="米亚" dark size="big" color="pink" type="button"></ViCheckbox>
-  <div class="div">
-    <ViCheckboxGroup v-model="ar">
-    <ViCheckbox @change="change" value="唱歌" dark size="small"></ViCheckbox>
-    <ViCheckbox value="跳舞" size="middle"></ViCheckbox>
-    <ViCheckbox value="打豆豆" size="big"></ViCheckbox>
-    <ViCheckbox value="吃饭" size="big" color="purple"></ViCheckbox>
-    <ViCheckbox value="睡觉" size="big" color="green"></ViCheckbox>
-    <ViCheckbox value="划水" size="big" color="sgreen"></ViCheckbox>
-    <ViCheckbox value="飞翔" size="big" color="syellow"></ViCheckbox>
-    <ViCheckbox value="这个" size="big" color="yellow"></ViCheckbox>
-    <ViCheckbox value="唱歌" size="big" color="pink"></ViCheckbox>
-    <ViCheckbox value="妈妈" size="big" color="pink" type="button"></ViCheckbox>
-    <ViCheckbox value="米亚" dark size="big" color="pink" type="button"></ViCheckbox>
-  </ViCheckboxGroup>
-  </div>
+  </vi-row>
+
+  <vi-row height="200px">
+    <vi-row>
+      <ViCheckbox size="small" @change="change" v-model="ar" value="唱歌" dark></ViCheckbox>
+      <ViCheckbox size="small" v-model="ar" value="跳舞"></ViCheckbox>
+      <ViCheckbox size="small" v-model="ar" value="打豆豆"></ViCheckbox>
+      <ViCheckbox size="small" v-model="ar" value="吃饭" color="purple"></ViCheckbox>
+      <ViCheckbox size="small" v-model="ar" value="睡觉" color="green"></ViCheckbox>
+      <ViCheckbox size="small" v-model="ar" value="划水" color="sgreen"></ViCheckbox>
+      <ViCheckbox size="small" v-model="ar" value="飞翔" color="syellow"></ViCheckbox>
+      <ViCheckbox size="small" v-model="ar" value="这个" color="yellow"></ViCheckbox>
+      <ViCheckbox size="small" v-model="ar" value="唱歌" color="pink"></ViCheckbox>
+      <ViCheckbox size="small" v-model="ar" value="妈妈" color="pink" type="button"></ViCheckbox>
+      <ViCheckbox size="small" v-model="ar" value="米亚" dark color="pink" type="button"></ViCheckbox>
+    </vi-row>
+    <vi-row>
+      <ViCheckbox @change="change" v-model="ar" value="唱歌" dark></ViCheckbox>
+      <ViCheckbox v-model="ar" value="跳舞"></ViCheckbox>
+      <ViCheckbox v-model="ar" value="打豆豆"></ViCheckbox>
+      <ViCheckbox v-model="ar" value="吃饭" color="purple"></ViCheckbox>
+      <ViCheckbox v-model="ar" value="睡觉" color="green"></ViCheckbox>
+      <ViCheckbox v-model="ar" value="划水" color="sgreen"></ViCheckbox>
+      <ViCheckbox v-model="ar" value="飞翔" color="syellow"></ViCheckbox>
+      <ViCheckbox v-model="ar" value="这个" color="yellow"></ViCheckbox>
+      <ViCheckbox v-model="ar" value="唱歌" color="pink"></ViCheckbox>
+      <ViCheckbox v-model="ar" value="妈妈" color="pink" type="button"></ViCheckbox>
+      <ViCheckbox v-model="ar" value="米亚" dark color="pink" type="button"></ViCheckbox>
+    </vi-row>
+    <vi-row>
+      <ViCheckboxGroup v-model="ar">
+        <ViCheckbox @change="change" value="唱歌" dark size="big"></ViCheckbox>
+        <ViCheckbox value="跳舞" size="big"></ViCheckbox>
+        <ViCheckbox value="打豆豆" size="big"></ViCheckbox>
+        <ViCheckbox value="吃饭" size="big" color="purple"></ViCheckbox>
+        <ViCheckbox value="睡觉" size="big" color="green"></ViCheckbox>
+        <ViCheckbox value="划水" size="big" color="sgreen"></ViCheckbox>
+        <ViCheckbox value="飞翔" size="big" color="syellow"></ViCheckbox>
+        <ViCheckbox value="这个" size="big" color="yellow"></ViCheckbox>
+        <ViCheckbox value="唱歌" size="big" color="pink"></ViCheckbox>
+        <ViCheckbox value="妈妈" size="big" color="pink" type="button"></ViCheckbox>
+        <ViCheckbox value="米亚" dark size="big" color="pink" type="button"></ViCheckbox>
+      </ViCheckboxGroup>
+    </vi-row>
+  </vi-row>
+  <vi-grid :row="2" :col="20">
+    <vi-col :row="1" :col="5" class="okk">1</vi-col>
+    <vi-col :row="1" :col="4" class="okk">2</vi-col>
+    <vi-col :row="1" :col="2" class="okk">3</vi-col>
+    <vi-col :row="1" :col="4" class="okk">4</vi-col>
+    <vi-col :row="1" :col="5" class="okk">5</vi-col>
+    <vi-col :row="1" :col="4" class="okk">6</vi-col>
+    <vi-col :row="1" :col="2" class="okk">7</vi-col>
+    <vi-col :row="1" :col="3" class="okk">8</vi-col>
+    <vi-col :row="1" :col="4" class="okk">9</vi-col>
+    <vi-col :row="1" :col="2" class="okk">10</vi-col>
+  </vi-grid>
 </template>
 
 <script lang="ts">
@@ -438,16 +468,16 @@ body {
   margin-top: 60px;
 }
 
-#div {
-  text-align: center;
-  margin: 10px auto;
-}
+// div > * {
+//   text-align: center;
+//   margin: 10px auto;
+// }
 
-#div > span {
-  margin: 0 auto;
-}
+// div > span {
+//   margin: 0 auto;
+// }
 
-#div button {
+div > button {
   margin: 5px;
 }
 
@@ -463,5 +493,11 @@ body {
   line-height: 50px;
   text-align: center;
   // background-color: #fff;
+}
+
+.okk {
+  box-sizing: border-box;
+  background-color: pink;
+  border: 1px solid #000;
 }
 </style>

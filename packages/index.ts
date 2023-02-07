@@ -4,6 +4,7 @@ import { App } from 'vue'
 import ViButton from './button'
 import ViIcon from './icon'
 import ViLoading from './loading'
+import ViLayout from './layout'
 // 交互组件
 import ViDialog from './dialog'
 // scroll 组
@@ -23,7 +24,8 @@ const components = [
   ViInput,
   ViSwitch,
   ViRadio,
-  ViCheckbox
+  ViCheckbox,
+  ViLayout
 ]
 
 export default {
