@@ -1,0 +1,68 @@
+@import '../../../../../public/css/basecolor.less';
+
+.vi-select {
+    .vi-select-item {
+        display: inline-flex;
+        box-sizing: border-box;
+        padding: 2px 4px;
+        margin: 0 2px 2px 0;
+        background-color: @spurple-o3;
+        border-radius: 3px;
+        justify-content: space-between;
+        align-items: center;
+
+        .vi-select-chacha {
+            cursor: pointer;
+            margin-left: 8px;
+            path {
+                fill: @lblack-background;
+            }
+
+            &:hover {
+                path {
+                    fill: @mblack-background;
+                }
+            }
+        }
+    }
+}
+
+.vi-select.is-middle {
+    .vi-select-item {
+        .vi-select-chacha {
+            margin-left: 8px;
+            width: 12px;
+        }
+    }
+}
+
+.vi-select.is-small {
+    .vi-select-item {
+        .vi-select-chacha {
+            margin-left: 6px;
+            width: 10px;
+        }
+    }
+}
+
+.vi-select.is-big {
+    .vi-select-item {
+        margin: 0 4px 4px 0;
+        .vi-select-chacha {
+            margin-left: 10px;
+            width: 14px;
+        }
+    }
+}
+
+.vi-select.is-dark {
+    .vi-select-item {
+        .vi-select-chacha {
+            &:hover {
+                path {
+                    fill: @purple
+                }
+            }
+        }
+    }
+}

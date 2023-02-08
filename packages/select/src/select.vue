@@ -15,8 +15,21 @@
       width
     }">
         <span class="vi-select-choose">
-          <template v-if="!multi || selectedMulti.length ==0">{{selected}}</template>
-          <template v-else></template>
+          <template
+          v-if="!multi || modelValue.length === 0">
+            {{isPlaceholder? placeholder : modelValue}}
+          </template>
+          <span
+          class="vi-select-multi"
+          v-else>
+            <ViSelectItem
+            v-for="item in selectedMulti"
+            :key="item"
+            :data="item"
+            @delete="toDelete">
+              {{item}}
+            </ViSelectItem>
+          </span>
         </span>
         <svg
         class="vi-select-arrow"
@@ -28,43 +41,83 @@
         </svg>
     </span>
     <span class="vi-select-list">
-        <ViSelectBox v-show="open" :datas="datas"></ViSelectBox>
+        <ViSelectBox
+        v-show="open"
+        :datas="datas"
+        :selected="modelValue"
+        :selectedMulti="modelValue"
+        :multi="multi"
+        @update="toUpdate"></ViSelectBox>
     </span>
   </span>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { computed, defineComponent, ref } from 'vue'
 import type { SetupContext } from 'vue'
 
 import props from './props'
 
 import { SelectDOM } from '@/types/select-types'
+
 import ViSelectBox from './components/select-box.vue'
+import ViSelectItem from './components/select-item.vue'
 
 export default defineComponent({
   name: 'ViSelect',
   emits: ['update:modelValue'],
   components: {
-    ViSelectBox
+    ViSelectBox,
+    ViSelectItem
   },
   props,
   setup (props: any, context: SetupContext) {
     let listener: any
     const selected = ref(props.placeholder)
-    const selectedMulti = ref([])
+    const selectedMulti = ref(props.modelValue)
     const open = ref(false)
 
     function toSelect () {
       open.value = !open.value
     }
 
+    function toUpdate (item: any) {
+      if (props.multi) {
+        if (selectedMulti.value.includes(item)) {
+          const index = selectedMulti.value.indexOf(item)
+          selectedMulti.value.splice(index, 1)
+        } else {
+          selectedMulti.value.push(item)
+        }
+      } else {
+        context.emit('update:modelValue', item)
+        selected.value = item
+      }
+    }
+
+    function toDelete (item: any) {
+      const index = selectedMulti.value.indexOf(item)
+      selectedMulti.value.splice(index, 1)
+    }
+
+    const isPlaceholder = computed((): boolean => {
+      if (props.multi) {
+        if (props.modelValue.length === 0) return true
+      } else {
+        if (props.modelValue === '') return true
+      }
+      return false
+    })
+
     return {
       listener,
       open,
       toSelect,
       selected,
-      selectedMulti
+      selectedMulti,
+      toUpdate,
+      isPlaceholder,
+      toDelete
     }
   },
   mounted () {

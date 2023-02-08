@@ -353,9 +353,10 @@
     <vi-col :row="1" :col="2" class="okk">9</vi-col>
   </vi-grid> -->
   <vi-row justify="center">
-    <ViSelect dark size="big"></ViSelect>
-    <ViSelect></ViSelect>
-    <ViSelect placeholder="123" size="small" :datas="arr"></ViSelect>
+    <ViSelect dark size="big" :datas="arr" v-model="value"></ViSelect>
+    <ViSelect dark size="big" :datas="arr" multi v-model="ar"></ViSelect>
+    <ViSelect :datas="arr" multi v-model="ar"></ViSelect>
+    <ViSelect placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
   </vi-row>
 </template>
 
@@ -388,7 +389,7 @@ export default defineComponent({
   },
   setup () {
     const res = ref(false)
-    const value = ref('12345')
+    const value = ref('')
     const ar = reactive([])
     const { proxy } = getCurrentInstance() as ComponentInternalInstance
     const open = ref(true)

@@ -1,7 +1,6 @@
 export default {
   modelValue: {
-    type: Boolean,
-    default: false
+    default: ''
   },
   size: {
     type: String,

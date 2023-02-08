@@ -49,3 +49,7 @@ export interface VueInstace {
 export interface GroupValueProps {
   modelValue: string | number | boolean
 }
+
+export interface RefArray {
+  includes: (item: any) => boolean
+}

@@ -1,3 +1,5 @@
+@import '../../../../../public/css/basecolor.less';
+
 .vi-select-box-enter-from {
     transform: translateY(-2px);
     opacity: 0;
@@ -31,7 +33,6 @@
     top: 5px;
     left: 0;
     z-index: 998;
-    padding: 8px;
     background-color: #fff;
     width: 100%;
     max-height: 400px;
@@ -40,7 +41,34 @@
 
     .vi-select-ul {
         .vi-select-li {
-            padding: 4px 0;
+            padding: 4px 8px;
+            box-sizing: border-box;
+            cursor: pointer;
+
+            &:hover {
+              background-color: @grey-o3;
+            }
+        }
+
+        .vi-select-li.be-choosed {
+            color: @black-background-hover;
+            background-color: @spurple-o3;
+        }
+    }
+}
+
+.vi-select.is-dark {
+    .vi-select-box {
+        .vi-select-ul {
+            .vi-select-li {
+                &:hover {
+                  background-color: @mblack-background-o7;
+                }
+            }
+
+            .vi-select-li.be-choosed {
+                color: @purple
+            }
         }
     }
 }

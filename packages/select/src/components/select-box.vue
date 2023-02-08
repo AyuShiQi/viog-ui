@@ -2,9 +2,16 @@
   <transition name="vi-select-box">
     <span
     class="vi-select-box">
-        <Scroll height="100%" maxHeight="300px">
+        <Scroll height="100%" maxHeight="300px" hidden>
             <ul class="vi-select-ul">
-              <li class="vi-select-li" v-for="item in datas" :key="item">
+              <li
+              class="vi-select-li"
+              :class="{
+                'be-choosed': isChoose(item)
+              }"
+              v-for="item in datas"
+              :key="item"
+              @click="toChoose(item)">
                 {{item}}
               </li>
             </ul>
@@ -14,20 +21,42 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 import type { SetupContext } from 'vue'
 
 import { scroll } from '../../../scroll'
 
 export default defineComponent({
   name: 'ViSelectBox',
-  emits: ['update:modelValue'],
+  emits: ['update'],
   components: { Scroll: scroll },
   props: {
-    datas: Array
+    datas: Array,
+    multi: Boolean,
+    selected: {
+      default: ''
+    },
+    selectedMulti: {
+      default: []
+    }
   },
   setup (props: any, context: SetupContext) {
-    const open = ref(false)
+    function isChoose (item: any) {
+      if (props.multi) {
+        return props.selectedMulti.includes(item)
+      } else {
+        return props.selected === item
+      }
+    }
+
+    function toChoose (item: any) {
+      context.emit('update', item)
+    }
+
+    return {
+      isChoose,
+      toChoose
+    }
   }
 })
 </script>
