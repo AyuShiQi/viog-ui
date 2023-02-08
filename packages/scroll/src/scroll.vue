@@ -2,7 +2,8 @@
   <div class="vi-scroll"
   :style="{
     width,
-    height
+    height,
+    maxHeight
   }"
   :class="[
   `scroll-${color}`,{

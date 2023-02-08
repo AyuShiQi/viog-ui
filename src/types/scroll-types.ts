@@ -16,7 +16,8 @@ export interface ScrollProps {
     smooth: boolean,
     wait: string,
     waitText: string,
-    finish: boolean
+    finish: boolean,
+    maxHeight: string
 }
 
 export interface VirtualScrollPlusProps {

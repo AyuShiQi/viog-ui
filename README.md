@@ -269,7 +269,7 @@ type ViDialogType = {
 
   > 参数：一个可以被识别的长度单位值，默认为100%
 
-- maxHeight：string 滚动区域高度
+- maxHeight：string 滚动区域最大高度
 
   > 参数：一个可以被识别的长度单位值，默认为0
 

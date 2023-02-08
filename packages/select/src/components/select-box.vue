@@ -2,7 +2,7 @@
   <transition name="vi-select-box">
     <span
     class="vi-select-box">
-        <Scroll height="100%">
+        <Scroll height="100%" maxHeight="300px">
             <ul class="vi-select-ul">
               <li class="vi-select-li" v-for="item in datas" :key="item">
                 {{item}}

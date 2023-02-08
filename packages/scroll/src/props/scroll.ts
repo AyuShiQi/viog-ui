@@ -34,5 +34,9 @@ export default {
   finish: {
     type: Boolean,
     default: false
+  },
+  maxHeight: {
+    type: String,
+    default: ''
   }
 }
