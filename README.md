@@ -763,6 +763,168 @@ interface ViCheckboxType {
 
 - 默认插槽，用于包裹需要简写v-model的所有checkbox组件，支持插槽内多级dom结构定位
 
+### ViRow
 
+`<ViRow>`
 
-select，message，toast，骨架框，form，layout，navigation。。。
+功能完善中
+
+#### props参数
+
+- align：string  主轴布局
+
+  > 参数：默认center
+
+- justify：string  副轴布局
+
+  > 参数：默认space-between
+
+- direction:  string 主轴方向
+
+  > 参数：默认row
+
+- height：string 高度
+
+  > 参数：一个可以被识别的长度单位值，默认为无
+
+- width：string 宽度
+
+  > 参数：一个可以被识别的长度单位值，默认无
+
+#### 插槽内容
+
+- 默认插槽
+
+### ViCol
+
+`<ViCol>`
+
+功能完善中
+
+#### props参数
+
+- align：string  主轴布局
+
+  > 参数：默认center
+
+- justify：string  副轴布局
+
+  > 参数：默认space-between
+
+- direction:  string 主轴方向
+
+  > 参数：默认row
+
+- height：string 高度
+
+  > 参数：一个可以被识别的长度单位值，默认为无
+
+- width：string 宽度
+
+  > 参数：一个可以被识别的长度单位值，默认无
+
+- row：number 在ViGrid中生效，列占位格数
+
+  > 参数：默认1
+
+- col：number 在ViGrid中生效，行占位格数
+
+  > 参数：默认1
+
+#### 插槽内容
+
+- 默认插槽
+
+### ViGrid
+
+`<ViGrid>`
+
+功能完善中
+
+#### props参数
+
+- align：string  主轴布局
+
+  > 参数：默认center
+
+- justify：string  副轴布局
+
+  > 参数：默认space-between
+
+- direction:  string 主轴方向
+
+  > 参数：默认row
+
+- height：string 高度
+
+  > 参数：一个可以被识别的长度单位值，默认为无
+
+- width：string 宽度
+
+  > 参数：一个可以被识别的长度单位值，默认无
+
+- row：number 总列数
+
+  > 参数：默认1
+
+- col：number 总行数
+
+  > 参数：默认1
+
+- gap：string  gap大小
+
+  > 参数：默认0
+
+#### 插槽内容
+
+- 默认插槽
+
+### ViSelect
+
+`<ViSelect>`
+
+选择器
+
+#### props参数
+
+- modelValue：undefined[] | string  当前单选框组选中的value
+
+  > 参数：必传 (v-model形式) ，除多选传入数组，其余都为一个值
+
+- datas：string[] 可供选择的选项
+
+  > 参数：必传
+
+- size：string select大小
+
+  > 参数：middle(default)/big/small
+
+- disabled：boolean 是否禁用 // 暂未实现
+
+  > 参数：false(default)/true
+
+- type：string 单选框样式
+
+  > 参数：default/button/plain
+
+- dark：boolean 基础色调是否为暗色调
+
+  > 参数：false(default)/true
+
+- placeholder: string 未选择时缺省值
+
+  > 参数：默认请选择
+
+- multi：boolean 是否为多选
+
+  > 参数：false(default)/true
+
+- width：string 宽度
+
+  > 参数：一个可以被识别的长度单位值，默认无
+
+#### 事件支持
+
+- 暂未实现
+
+message，toast，骨架框，form, navigation。。。
