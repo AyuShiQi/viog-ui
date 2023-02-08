@@ -14,6 +14,7 @@ import ViInput from './input'
 import ViSwitch from './switch'
 import ViRadio from './radio'
 import ViCheckbox from './checkbox'
+import ViSelect from './select'
 
 const components = [
   ViButton,
@@ -25,7 +26,8 @@ const components = [
   ViSwitch,
   ViRadio,
   ViCheckbox,
-  ViLayout
+  ViLayout,
+  ViSelect
 ]
 
 export default {

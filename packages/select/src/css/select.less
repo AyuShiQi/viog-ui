@@ -1,0 +1,93 @@
+@import '../../../../public/css/base.less';
+@import '../../../../public/css/basecolor.less';
+
+.vi-select {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+    .vi-select-input {
+        z-index: 999;
+        display: inline-flex;
+        padding: 8px;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+
+        .vi-select-choose {
+            overflow: hidden;
+            word-wrap: break-word;
+            text-align: left;
+            flex: 1;
+        }
+
+        .vi-select-arrow {
+            display: inline-flex;
+            align-items: flex-start;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            cursor: pointer;
+            transform: rotateX(180deg);
+            transition: all .2s linear 0s;
+        }
+    }
+
+    .vi-select-list {
+        position: relative;
+        width: 100%;
+        height: 0;
+    }
+}
+
+.vi-select.is-middle {
+    font-size: @font-size;
+    .vi-select-input {
+        .vi-select-arrow {
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+.vi-select.is-big {
+    font-size: @big-font-size;
+    .vi-select-input {
+        .vi-select-arrow {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
+.vi-select.is-small {
+    font-size: @small-font-size;
+    .vi-select-input {
+        .vi-select-arrow {
+            width: 10px;
+            height: 10px;
+        }
+    }
+}
+
+.vi-select.is-dark {
+    color: @black-background;
+    // .vi-select-input {
+    //     .vi-select-arrow {
+    //         path {
+    //             fill: @lblack-background
+    //         }
+    //     }
+    // }
+}
+
+.vi-select.be-open {
+    .vi-select-input {
+        .vi-select-arrow {
+            transform: rotateX(0deg);
+        }
+    }
+}
+
+@import './type.less';

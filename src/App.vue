@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <vi-row justify="center">
+  <!-- <vi-row justify="center">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
     <ViButton color="pink" small @click="hello">点击进入</ViButton>
@@ -150,18 +150,14 @@
     <ViButton color="spurple" @click="scr">点击进入</ViButton>
     <ViButton color="sgreen" @click="scr">点击进入</ViButton>
   </vi-row>
-  <!-- <div id="div"> -->
     <vi-row justify="center">
       <ViLoading type="diamond"/>
     </vi-row>
     <vi-row justify="center">
       <ViLoading type="diamond" color="purple"/>
     </vi-row>
-    <!-- <div id="div"> -->
-     <ViLoading type="diamond" color="white"/>
-    <!-- </div> -->
-  <!-- </div> -->
-  <vi-row justify="center">
+     <ViLoading type="diamond" color="white"/> -->
+  <!-- <vi-row justify="center">
     <ViLoading type="ball"/><br/>
     <ViLoading type="ball" color="purple"/><br/>
     <ViLoading type="ball" color="golden"/><br/>
@@ -210,8 +206,10 @@
   shadow
   title="提示"
   @sure="hello">
-    是否支付？
-    <ViSwitch dark size="small" filter></ViSwitch>
+    <vi-row>
+      是否支付？
+      <ViSwitch dark size="small" filter></ViSwitch>
+    </vi-row>
   </ViDialog>
   <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
     <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
@@ -353,7 +351,12 @@
     <vi-col :row="1" :col="2" class="okk">7</vi-col>
     <vi-col :row="1" :col="4" class="okk">8</vi-col>
     <vi-col :row="1" :col="2" class="okk">9</vi-col>
-  </vi-grid>
+  </vi-grid> -->
+  <vi-row justify="center">
+    <ViSelect dark size="big"></ViSelect>
+    <ViSelect></ViSelect>
+    <ViSelect placeholder="123" size="small" :datas="arr"></ViSelect>
+  </vi-row>
 </template>
 
 <script lang="ts">
