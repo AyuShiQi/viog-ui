@@ -4,8 +4,8 @@
   :style="{
     width,
     height,
-    gridTemplateColumns: `repeat(${row}, 1fr)`,
-    gridTemplateRows: `repeat(${col}, 1fr)`,
+    gridTemplateColumns: `repeat(${col}, 1fr)`,
+    gridTemplateRows: `repeat(${row}, 1fr)`,
     gap
   }">
     <slot></slot>

@@ -7,8 +7,8 @@
     justifyContent: justify,
     width,
     height,
-    gridColumnStart: `span ${row}`,
-    gridRowStart: `span ${col}`
+    gridColumnStart: `span ${col}`,
+    gridRowStart: `span ${row}`
   }">
     <slot></slot>
   </span>
