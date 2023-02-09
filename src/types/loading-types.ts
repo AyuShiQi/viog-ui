@@ -1,7 +1,8 @@
-export interface loadingProps {
+export interface LoadingProps {
   color: string
 }
 
+export interface ViLoadingType {}
 
 export type ColorTeamType = {
     colorful: Colors,

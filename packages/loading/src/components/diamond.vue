@@ -43,7 +43,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import { loadingProps, ColorTeamType } from '@/types/loading-types'
+import { LoadingProps, ColorTeamType } from '@/types/loading-types'
 
 export default defineComponent({
   name: 'ViDiamondLoad',
@@ -53,7 +53,7 @@ export default defineComponent({
       default: 'colorful'
     }
   },
-  setup (props: loadingProps) {
+  setup (props: LoadingProps) {
     const colorTeam: ColorTeamType = {
       colorful: ['#A0FFD5', '#FFCDC9', '#ABD2FF', '#80ECBC', '#FCB2AC', '#88B2E0'],
       white: ['#eafdff', '#ecf3ff', '#ecfffa', '#eafdff', '#ecf3ff', '#ecfffa'],
