@@ -1,4 +1,5 @@
-import { ref, getCurrentInstance, ComponentInternalInstance, shallowReactive } from 'vue'
+import { ref, getCurrentInstance, shallowReactive } from 'vue'
+import type { ComponentInternalInstance } from 'vue'
 
 import { VirtualScrollProps } from '@/types/scroll-types'
 

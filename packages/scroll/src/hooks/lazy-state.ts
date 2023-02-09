@@ -1,11 +1,13 @@
-import { onMounted, onUnmounted, getCurrentInstance, ComponentInternalInstance } from 'vue'
+import { onMounted, onUnmounted, getCurrentInstance } from 'vue'
+import type { ComponentInternalInstance } from 'vue'
 
 import { DOMType } from '@/types/vue-types'
 import { ScrollProps } from '@/types/scroll-types'
 
 export default function (props: ScrollProps) {
+  let listener: any
   const { proxy } = getCurrentInstance() as ComponentInternalInstance
-  const monted = onMounted(() => {
+  onMounted(() => {
     if (props.lazy != null) {
       let lock = true
       let lazyHeight = 0
@@ -15,7 +17,7 @@ export default function (props: ScrollProps) {
         lazyHeight = 35
       }
 
-      (proxy?.$refs.content as DOMType).addEventListener('scroll', (e: any) => {
+      listener = (proxy?.$refs.content as DOMType).addEventListener('scroll', (e: any) => {
         const { scrollTop, clientHeight, scrollHeight } = e.target
 
         if (lock && !props.finish && scrollTop + clientHeight >= scrollHeight - lazyHeight) {
@@ -30,7 +32,7 @@ export default function (props: ScrollProps) {
     }
   })
 
-  const unmounted = onUnmounted(() => {
-    if (props.lazy != null) (proxy?.$refs.content as DOMType).removeEventListener('scroll')
+  onUnmounted(() => {
+    if (props.lazy != null) (proxy?.$refs.content as DOMType).removeEventListener('scroll', listener)
   })
 }

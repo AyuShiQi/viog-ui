@@ -7,7 +7,7 @@ export interface VueContext {
 
 export type DOMType = {
   addEventListener: (event: string,rb: Function) => void
-  removeEventListener: (event: string) => void
+  removeEventListener: (event: string, rb: any) => void
   scrollTo: (x: number, y: number) => void
 }
 

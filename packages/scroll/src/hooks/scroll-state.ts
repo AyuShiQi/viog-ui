@@ -1,4 +1,5 @@
-import { ComponentInternalInstance, getCurrentInstance } from 'vue'
+import { getCurrentInstance } from 'vue'
+import type { ComponentInternalInstance } from 'vue'
 
 import { DOMType } from '@/types/vue-types'
 
