@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'vi-icon';
+    src: url('../icons/iconfont.ttf?t=1673944113256') format('truetype');
+}
+
+.vi-icon {
+    font-family: "vi-icon" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
