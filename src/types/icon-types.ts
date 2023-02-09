@@ -1,11 +1,12 @@
 /**
  * Icon Props类型接口
  */
-export interface iconProps {
+export interface IconProps {
   type: string,
   size: string
 }
 
+export interface ViIconType {}
 
 export interface Icons {
     haoyourenzheng: string,
