@@ -3,7 +3,7 @@ export type ViDialogType = {
   close: (time?: number) => void
 }
 
-export interface dialogProps {
+export interface DialogProps {
   mask: boolean,
   maskColor: string,
   maskFilter: boolean,
@@ -26,13 +26,13 @@ export interface dialogProps {
   defaultOpen: boolean
 }
 
-export interface dialogColor {
+export interface DialogColor {
   black: string,
   white: string,
   golden: string,
   purple: string
 }
 
-export type dialogOpen = {
+export type DialogOpen = {
   value: boolean
 }

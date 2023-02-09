@@ -54,11 +54,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import type { SetupContext } from 'vue'
 
 import props from './props'
 
-import { dialogProps } from '@/types/dialog-types'
-import { VueContext } from '@/types/vue-types'
+import { DialogProps } from '@/types/dialog-types'
 
 import { dialogState } from './hooks'
 
@@ -66,7 +66,7 @@ export default defineComponent({
   name: 'ViDialog',
   emits: ['sure', 'unSure', 'shutDown'],
   props,
-  setup (props: dialogProps, context: VueContext): any {
+  setup (props: DialogProps, context: SetupContext): any {
     const mainDialog = dialogState(props, context)
 
     return {

@@ -1,10 +1,10 @@
 import { ref } from 'vue'
+import type { SetupContext } from 'vue'
 
-import { dialogProps, dialogOpen } from '@/types/dialog-types'
-import { VueContext } from '@/types/vue-types'
+import type { DialogProps, DialogOpen } from '@/types/dialog-types'
 
-export default function (props: dialogProps, context: VueContext) {
-  const isOpen: dialogOpen = ref(props.defaultOpen)
+export default function (props: DialogProps, context: SetupContext) {
+  const isOpen: DialogOpen = ref(props.defaultOpen)
 
   function beSure (): void {
     context.emit('sure')
