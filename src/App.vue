@@ -384,6 +384,10 @@
     <ViSelect filter placeholder="123" size="small" :datas="arr" v-model="value" disabled></ViSelect>
   </vi-row>
   </div>
+  <vi-input password show-password></vi-input>
+  <vi-input width="100%" type="plain" password show-password></vi-input>
+  <vi-input type="plain" password show-password size="big"></vi-input>
+  <vi-input type="plain" password show-password show-clear size="small"></vi-input>
 </template>
 
 <script lang="ts">
@@ -488,14 +492,14 @@ body {
   background-color: #0f0b28;
 }
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+// #app {
+//   font-family: Avenir, Helvetica, Arial, sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   text-align: center;
+//   color: #2c3e50;
+//   margin-top: 60px;
+// }
 
 // div > * {
 //   text-align: center;

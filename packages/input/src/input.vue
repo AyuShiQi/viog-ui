@@ -1,6 +1,9 @@
 <template>
   <span
   class="vi-input-apperance"
+  :style="{
+    width
+  }"
   :class="[
   `is-${color}`,
   `vi-input-${type}`,
