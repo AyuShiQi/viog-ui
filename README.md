@@ -921,7 +921,11 @@ interface ViCheckboxType {
 
 - width：string 宽度
 
-  > 参数：一个可以被识别的长度单位值，默认无
+  > 参数：一个可以被识别的长度单位值，默认200px
+  
+- filter：boolean 是否为毛玻璃效果
+
+  > 参数：false(default)/true
 
 #### 事件支持
 

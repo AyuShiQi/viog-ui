@@ -221,7 +221,7 @@
       </vi-row>
     </template>
   </ViVirtualScroll> -->
-  <vi-row id="div" style="padding: 10px 0;">
+  <!-- <vi-row id="div" style="padding: 10px 0;">
     <ViInput v-model="value" size="big" number showClear width="400px" :maxLength="10" @change="ok">账号</ViInput><br/>
     <ViInput v-model="value" dark size="big" password showPassword showClear>密码</ViInput><br/>
     <ViInput round color="pink" password showPassword showClear>密码</ViInput><br/>
@@ -252,8 +252,8 @@
     <ViInput color="blue" dark warn>placeholder</ViInput><br>
     <ViInput color="red" error>placeholder</ViInput><br/>
     <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br>
-  </vi-row>
-  <vi-row id="div" style="padding: 10px 0;">
+  </vi-row> -->
+  <!-- <vi-row id="div" style="padding: 10px 0;">
     <ViSwitch v-model="res" disabled></ViSwitch><br><br>
     <ViSwitch v-model="res" size="small" dark></ViSwitch><br><br>
     <ViSwitch v-model="res" size="big" filter></ViSwitch><br><br>
@@ -264,8 +264,8 @@
     <ViSwitch dark></ViSwitch><br><br>
     <ViSwitch filter></ViSwitch><br><br>
     <ViSwitch dark filter leftColor="#0f0b286c"></ViSwitch>
-  </vi-row>
-  <vi-row id="div" style="padding: 10px 0;">
+  </vi-row> -->
+  <!-- <vi-row id="div" style="padding: 10px 0;">
     <ViRadio color="yellow" @change="change" rid="#123" value="吃饭" name="haha" v-model="value"></ViRadio>
     <ViRadio color="blue" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio>
     <ViRadio color="red" dark size="small" rid="#125" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
@@ -296,9 +296,9 @@
       <ViRadio type="button" color="purple" dark size="small" rid="#129" value="打豆豆"  name="haha">打豆豆</ViRadio>
       <ViRadio type="button" size="big" rid="#130" value="飞翔" name="haha">飞翔</ViRadio>
     </ViRadioGroup>
-  </vi-row>
+  </vi-row> -->
 
-  <vi-row height="200px">
+  <!-- <vi-row height="200px">
     <vi-row>
       <ViCheckbox size="small" @change="change" v-model="ar" value="唱歌" dark></ViCheckbox>
       <ViCheckbox size="small" v-model="ar" value="跳舞"></ViCheckbox>
@@ -340,7 +340,7 @@
         <ViCheckbox value="米亚" dark size="big" color="pink" type="button"></ViCheckbox>
       </ViCheckboxGroup>
     </vi-row>
-  </vi-row>
+  </vi-row> -->
   <!-- <vi-grid :row="2" :col="11" gap="10px" height="500px">
     <vi-col :row="1" :col="2" class="okk">1</vi-col>
     <vi-col :row="1" :col="3" class="okk">2</vi-col>
@@ -353,35 +353,35 @@
     <vi-col :row="1" :col="2" class="okk">9</vi-col>
   </vi-grid> -->
   <vi-row justify="center">
-    <ViSelect dark size="big" :datas="arr" v-model="value"></ViSelect>
+    <ViSelect filter dark size="big" :datas="arr" v-model="value"></ViSelect>
   </vi-row>
   <vi-row justify="center">
-    <ViSelect dark size="big" :datas="arr" multi v-model="ar"></ViSelect>
+    <ViSelect filter dark size="big" :datas="arr" multi v-model="ar"></ViSelect>
   </vi-row>
   <vi-row justify="center">
-    <ViSelect :datas="arr" multi v-model="ar"></ViSelect>
+    <ViSelect filter :datas="arr" multi v-model="ar"></ViSelect>
   </vi-row>
   <vi-row justify="center">
-    <ViSelect placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
+    <ViSelect filter placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
   </vi-row>
   <vi-row justify="center">
-    <ViSelect placeholder="123" size="small" :datas="arr" v-model="value" disabled></ViSelect>
+    <ViSelect filter placeholder="123" size="small" :datas="arr" v-model="value" disabled></ViSelect>
   </vi-row>
   <div style="background-color: #fff">
     <vi-row justify="center">
-    <ViSelect dark size="big" :datas="arr" v-model="value"></ViSelect>
+    <ViSelect filter dark size="big" :datas="arr" v-model="value"></ViSelect>
   </vi-row>
   <vi-row justify="center">
-    <ViSelect dark size="big" :datas="arr" multi v-model="ar"></ViSelect>
+    <ViSelect filter dark size="big" :datas="arr" multi v-model="ar"></ViSelect>
   </vi-row>
   <vi-row justify="center">
-    <ViSelect :datas="arr" multi v-model="ar"></ViSelect>
+    <ViSelect filter :datas="arr" multi v-model="ar"></ViSelect>
   </vi-row>
   <vi-row justify="center">
-    <ViSelect placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
+    <ViSelect filter placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
   </vi-row>
   <vi-row justify="center">
-    <ViSelect placeholder="123" size="small" :datas="arr" v-model="value" disabled></ViSelect>
+    <ViSelect filter placeholder="123" size="small" :datas="arr" v-model="value" disabled></ViSelect>
   </vi-row>
   </div>
 </template>

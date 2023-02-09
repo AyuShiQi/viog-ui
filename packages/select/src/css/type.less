@@ -32,6 +32,30 @@
     }
 }
 
+.vi-select.is-button.is-filter {
+    .vi-select-input {
+        background-color: #ffffffdd;
+        backdrop-filter: blur(5px);
+    }
+
+    .vi-select-box {
+        background-color: #ffffffdd;
+        backdrop-filter: blur(5px);
+    }
+}
+
+.vi-select.is-button.is-dark.is-filter {
+    .vi-select-input {
+        background-color: @black-background-hover-o7;
+        backdrop-filter: blur(5px);
+    }
+
+    .vi-select-box {
+        background-color: @black-background-hover-o7;
+        backdrop-filter: blur(5px);
+    }
+}
+
 .vi-select.is-default {
     position: relative;
     color: @grey;
@@ -154,5 +178,21 @@
         .vi-select-arrow {
             transform: rotateX(0deg);
         }
+    }
+}
+
+
+.vi-select.is-plain.is-filter,
+.vi-select.is-default.is-filter {
+    .vi-select-box {
+        background-color: #ffffffdd;
+        backdrop-filter: blur(5px);
+    }
+}
+
+.vi-select.is-plain.is-dark.is-filter,
+.vi-select.is-default.is-dark.is-filter {
+    .vi-select-box {
+        background-color: @mblack-background-o8;
     }
 }

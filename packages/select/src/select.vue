@@ -7,7 +7,8 @@
     {
       'is-dark': dark,
       'be-open': open,
-      'is-disabled': disabled
+      'is-disabled': disabled,
+      'is-filter': filter
     }
   ]"
   ref="select">

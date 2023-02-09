@@ -8,7 +8,7 @@ export default {
   },
   type: {
     type: String,
-    default: 'plain'//  default/plain/button
+    default: 'default'//  default/plain/button
   },
   dark: {
     type: Boolean,
