@@ -899,7 +899,7 @@ interface ViCheckboxType {
 
   > 参数：middle(default)/big/small
 
-- disabled：boolean 是否禁用 // 暂未实现
+- disabled：boolean 是否禁用
 
   > 参数：false(default)/true
 
@@ -926,5 +926,23 @@ interface ViCheckboxType {
 #### 事件支持
 
 - 暂未实现
+
+#### 对外暴露方法调用
+
+```typescript
+<!-- 父子组件中 -->
+<ViSelect ref="child">
+  睡觉
+</ViSelect>
+
+<!-- mounted -->   - ts -
+interface ViSelectType {
+  toClear: () => void,
+}
+
+(this.$refs.child as ViSelectType).toPick()
+```
+
+- toClear 清空所有选择
 
 message，toast，骨架框，form, navigation。。。

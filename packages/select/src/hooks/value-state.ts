@@ -1,7 +1,7 @@
 import type { Ref, SetupContext } from 'vue'
 
 export default function (multi: boolean, selectedMulti: Ref, context: SetupContext) {
-  function toUpdate (item: any) {
+  function toUpdate (item: any): void {
     if (multi) {
       if (selectedMulti.value.includes(item)) {
         const index = selectedMulti.value.indexOf(item)
@@ -14,13 +14,22 @@ export default function (multi: boolean, selectedMulti: Ref, context: SetupConte
     }
   }
 
-  function toDelete (item: any) {
+  function toDelete (item: any): void {
     const index = selectedMulti.value.indexOf(item)
     selectedMulti.value.splice(index, 1)
   }
 
+  function toClear (): void {
+    if (multi) {
+      selectedMulti.value.length = 0
+    } else {
+      context.emit('update:modelValue', '')
+    }
+  }
+
   return {
     toUpdate,
-    toDelete
+    toDelete,
+    toClear
   }
 }

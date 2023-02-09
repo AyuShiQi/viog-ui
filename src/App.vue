@@ -210,8 +210,8 @@
       是否支付？
       <ViSwitch dark size="small" filter></ViSwitch>
     </vi-row>
-  </ViDialog>
-  <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
+  </ViDialog> -->
+  <!-- <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
     <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
   </ViScroll>
   <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" hidden>
@@ -220,7 +220,7 @@
         {{vi.data.number}}
       </vi-row>
     </template>
-  </ViVirtualScroll>
+  </ViVirtualScroll> -->
   <vi-row id="div" style="padding: 10px 0;">
     <ViInput v-model="value" size="big" number showClear width="400px" :maxLength="10" @change="ok">账号</ViInput><br/>
     <ViInput v-model="value" dark size="big" password showPassword showClear>密码</ViInput><br/>
@@ -238,8 +238,8 @@
     <ViInput color="red" dark password>placeholder</ViInput><br>
   </vi-row>
   <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
-    <ViInput>placeholder</ViInput><br/>
-    <ViInput dark>placeholder</ViInput><br>
+    <ViInput type="plain">placeholder</ViInput><br/>
+    <ViInput type="plain" dark>placeholder</ViInput><br>
     <ViInput color="pink">placeholder</ViInput><br/>
     <ViInput color="pink" dark>placeholder</ViInput><br>
     <ViInput color="golden">placeholder</ViInput><br/>
@@ -341,7 +341,7 @@
       </ViCheckboxGroup>
     </vi-row>
   </vi-row>
-  <vi-grid :row="2" :col="11" gap="10px" height="500px">
+  <!-- <vi-grid :row="2" :col="11" gap="10px" height="500px">
     <vi-col :row="1" :col="2" class="okk">1</vi-col>
     <vi-col :row="1" :col="3" class="okk">2</vi-col>
     <vi-col :row="1" :col="2" class="okk">3</vi-col>
@@ -354,11 +354,36 @@
   </vi-grid> -->
   <vi-row justify="center">
     <ViSelect dark size="big" :datas="arr" v-model="value"></ViSelect>
+  </vi-row>
+  <vi-row justify="center">
     <ViSelect dark size="big" :datas="arr" multi v-model="ar"></ViSelect>
+  </vi-row>
+  <vi-row justify="center">
     <ViSelect :datas="arr" multi v-model="ar"></ViSelect>
+  </vi-row>
+  <vi-row justify="center">
     <ViSelect placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
+  </vi-row>
+  <vi-row justify="center">
     <ViSelect placeholder="123" size="small" :datas="arr" v-model="value" disabled></ViSelect>
   </vi-row>
+  <div style="background-color: #fff">
+    <vi-row justify="center">
+    <ViSelect dark size="big" :datas="arr" v-model="value"></ViSelect>
+  </vi-row>
+  <vi-row justify="center">
+    <ViSelect dark size="big" :datas="arr" multi v-model="ar"></ViSelect>
+  </vi-row>
+  <vi-row justify="center">
+    <ViSelect :datas="arr" multi v-model="ar"></ViSelect>
+  </vi-row>
+  <vi-row justify="center">
+    <ViSelect placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
+  </vi-row>
+  <vi-row justify="center">
+    <ViSelect placeholder="123" size="small" :datas="arr" v-model="value" disabled></ViSelect>
+  </vi-row>
+  </div>
 </template>
 
 <script lang="ts">

@@ -14,3 +14,7 @@ export interface SelectProps {
   filter: boolean,
   datas: unknown[] | undefined
 }
+
+export interface ViSelectType {
+  toClear: () => void,
+}

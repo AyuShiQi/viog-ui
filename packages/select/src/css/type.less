@@ -31,3 +31,128 @@
         background-color: @black-background-hover;
     }
 }
+
+.vi-select.is-default {
+    position: relative;
+    color: @grey;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0px;
+        height: 2px;
+        background-color: @grey;
+        box-shadow: 0 0 5px 0 #d1d1d196;
+        transition: all .3s ease 0s;
+    }
+
+    .vi-select-input {
+        border-bottom: 1px solid @grey;
+        .vi-select-arrow {
+            path {
+                fill: @grey;
+            }
+        }
+    }
+
+    .vi-select-box {
+        color: @grey;
+        border: 1px solid @grey;
+    }
+}
+
+.vi-select.is-default.is-dark {
+    color: @black-background-hover;
+
+    &::before {
+        box-shadow: 0 0 5px 0 #d1d1d121;
+        background-color: @black-background-hover;
+    }
+    .vi-select-input {
+        border-bottom: 1px solid @black-background-hover;
+        .vi-select-arrow {
+            path {
+                fill: @black-background-hover;
+            }
+        }
+    }
+
+    .vi-select-box {
+        color: @lblack-background;
+        border: 1px solid @black-background-hover;
+        background-color: @mblack-background;
+
+        .vi-select-li {
+            &:hover {
+                background-color: @spurple-o5;
+            }
+        }
+    }
+}
+
+.vi-select.is-default.be-open {
+    &::before {
+        width: 100%;
+    }
+
+    .vi-select-input {
+        .vi-select-arrow {
+            transform: rotateX(0deg);
+        }
+    }
+}
+
+.vi-select.is-plain {
+    color: @grey;
+
+    .vi-select-input {
+        border: 1px solid @grey;
+        border-radius: 5px;
+        .vi-select-arrow {
+            path {
+                fill: @grey;
+            }
+        }
+    }
+
+    .vi-select-box {
+        color: @grey;
+        border: 1px solid @grey;
+    }
+}
+
+.vi-select.is-plain.is-dark {
+    color: @black-background-hover;
+
+    .vi-select-input {
+        border: 1px solid @black-background-hover;
+        border-radius: 5px;
+        .vi-select-arrow {
+            path {
+                fill: @black-background-hover;
+            }
+        }
+    }
+
+    .vi-select-box {
+        color: @lblack-background;
+        border: 1px solid @black-background-hover;
+        background-color: @mblack-background;
+
+        .vi-select-li {
+            &:hover {
+                background-color: @spurple-o5;
+            }
+        }
+    }
+}
+
+.vi-select.is-plain.be-open {
+    .vi-select-input {
+        .vi-select-arrow {
+            transform: rotateX(0deg);
+        }
+    }
+}

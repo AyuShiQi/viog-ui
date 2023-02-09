@@ -66,3 +66,42 @@
         }
     }
 }
+
+.vi-select.is-default,
+.vi-select.is-plain {
+    .vi-select-item {
+        background-color: @grey-o3;
+
+        .vi-select-chacha {
+            path {
+                fill: @grey;
+            }
+
+            &:hover {
+                path {
+                    fill: @black-background-hover;
+                }
+            }
+        }
+    }
+}
+
+.vi-select.is-default.is-dark,
+.vi-select.is-plain.is-dark {
+    .vi-select-item {
+        color: @mblack-background;
+        background-color: @black-background-hover-o3;
+
+        .vi-select-chacha {
+            path {
+                fill: @mblack-background;
+            }
+
+            &:hover {
+                path {
+                    fill: @purple;
+                }
+            }
+        }
+    }
+}
