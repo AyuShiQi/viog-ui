@@ -1,9 +1,9 @@
-export interface ScrollType {
+export interface ViScrollType {
     scrollTo: (x: number, y: number) => void
     finish: boolean
 }
 
-export interface VirtualScrollType {
+export interface ViVirtualScrollType {
     scrollTo: (x: number, y: number) => void
 }
 
