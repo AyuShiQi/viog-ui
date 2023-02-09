@@ -30,5 +30,9 @@ export default {
     type: String,
     default: '请选择'
   },
+  filter: {
+    type: Boolean,
+    default: false
+  },
   datas: Array
 }

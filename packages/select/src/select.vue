@@ -6,14 +6,16 @@
     `is-${type}`,
     {
       'is-dark': dark,
-      'be-open': open
+      'be-open': open,
+      'is-disabled': disabled
     }
   ]"
   ref="select">
     <span class="vi-select-input"
     :style="{
       width
-    }">
+    }"
+    @click="toSelect">
         <span class="vi-select-choose">
           <template
           v-if="!multi || modelValue.length === 0">
@@ -35,8 +37,7 @@
         class="vi-select-arrow"
         viewBox="0 0 40 35"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        @click="toSelect">
+        xmlns="http://www.w3.org/2000/svg">
             <path d="M17.4019 1.5C18.5566 -0.5 21.4434 -0.5 22.5981 1.5L39.0526 30C40.2073 32 38.7639 34.5 36.4545 34.5H3.54552C1.23612 34.5 -0.207259 32 0.947441 30L17.4019 1.5Z"/>
         </svg>
     </span>
@@ -58,7 +59,9 @@ import type { SetupContext } from 'vue'
 
 import props from './props'
 
-import { SelectDOM } from '@/types/select-types'
+import { SelectProps } from '@/types/select-types'
+
+import { openState, valueState } from './hooks'
 
 import ViSelectBox from './components/select-box.vue'
 import ViSelectItem from './components/select-item.vue'
@@ -71,34 +74,10 @@ export default defineComponent({
     ViSelectItem
   },
   props,
-  setup (props: any, context: SetupContext) {
-    let listener: any
-    const selected = ref(props.placeholder)
+  setup (props: SelectProps, context: SetupContext) {
     const selectedMulti = ref(props.modelValue)
-    const open = ref(false)
-
-    function toSelect () {
-      open.value = !open.value
-    }
-
-    function toUpdate (item: any) {
-      if (props.multi) {
-        if (selectedMulti.value.includes(item)) {
-          const index = selectedMulti.value.indexOf(item)
-          selectedMulti.value.splice(index, 1)
-        } else {
-          selectedMulti.value.push(item)
-        }
-      } else {
-        context.emit('update:modelValue', item)
-        selected.value = item
-      }
-    }
-
-    function toDelete (item: any) {
-      const index = selectedMulti.value.indexOf(item)
-      selectedMulti.value.splice(index, 1)
-    }
+    const open = openState()
+    const value = valueState(props.multi, selectedMulti, context)
 
     const isPlaceholder = computed((): boolean => {
       if (props.multi) {
@@ -110,23 +89,11 @@ export default defineComponent({
     })
 
     return {
-      listener,
-      open,
-      toSelect,
-      selected,
+      ...open,
+      ...value,
       selectedMulti,
-      toUpdate,
-      isPlaceholder,
-      toDelete
+      isPlaceholder
     }
-  },
-  mounted () {
-    this.listener = document.addEventListener('click', (e: any) => {
-      if (!(this.$refs.select as SelectDOM)?.contains(e.target)) this.open = false
-    })
-  },
-  unmounted () {
-    document.removeEventListener('click', this.listener)
   }
 })
 </script>

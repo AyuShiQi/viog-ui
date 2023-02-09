@@ -357,6 +357,7 @@
     <ViSelect dark size="big" :datas="arr" multi v-model="ar"></ViSelect>
     <ViSelect :datas="arr" multi v-model="ar"></ViSelect>
     <ViSelect placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
+    <ViSelect placeholder="123" size="small" :datas="arr" v-model="value" disabled></ViSelect>
   </vi-row>
 </template>
 
