@@ -1,9 +1,9 @@
-import { ref, computed, provide, reactive } from 'vue'
+import { ref, computed, provide } from 'vue'
+import type { SetupContext } from 'vue'
 
-import { VueContext } from '@/types/vue-types'
-import { GroupValueProps } from '@/types/checkbox-types'
+import type { GroupValueProps } from '@/types/checkbox-types'
 
-export default function (props: GroupValueProps, context: VueContext, valueName: string) {
+export default function (props: GroupValueProps, context: SetupContext, valueName: string) {
   const groupValue = computed({
     get: (): unknown[] => {
       return props.modelValue

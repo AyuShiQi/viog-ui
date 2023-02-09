@@ -13,6 +13,8 @@ export interface ViCheckboxType {
   toPick: () => void,
 }
 
+export interface ViCheckboxGroupType {}
+
 export interface ViCheckboxInject {
   groupModelValue: {
     default: any,

@@ -31,12 +31,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, getCurrentInstance, ComponentInternalInstance, inject, computed, reactive } from 'vue'
-import type { Ref } from 'vue'
+import { defineComponent, ref, getCurrentInstance, inject, computed } from 'vue'
+import type { SetupContext, ComponentInternalInstance, Ref } from 'vue'
 
 import props from './props'
 
-import { VueContext, RadioDOM } from '@/types/vue-types'
+import { RadioDOM } from '@/types/vue-types'
 import { CheckboxProps } from '@/types/checkbox-types'
 
 export default defineComponent({
@@ -48,7 +48,7 @@ export default defineComponent({
     }
   },
   props,
-  setup (props: CheckboxProps, context: VueContext) {
+  setup (props: CheckboxProps, context: SetupContext) {
     const { proxy } = getCurrentInstance() as ComponentInternalInstance
 
     const hasGroup = (function (): boolean {
