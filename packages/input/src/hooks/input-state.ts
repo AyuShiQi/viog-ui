@@ -1,9 +1,10 @@
-import { ref, computed, getCurrentInstance, ComponentInternalInstance } from 'vue'
+import { ref, computed, getCurrentInstance } from 'vue'
+import type { SetupContext, ComponentInternalInstance } from 'vue'
 
-import { VueContext, InputDOM } from '@/types/vue-types'
-import { ViInputProps } from '@/types/input-types'
+import { InputDOM } from '@/types/vue-types'
+import { InputProps } from '@/types/input-types'
 
-export default function (props: ViInputProps, context: VueContext) {
+export default function (props: InputProps, context: SetupContext) {
   const { proxy } = (getCurrentInstance() as ComponentInternalInstance)
 
   /* 鼠标进出input框事件 */

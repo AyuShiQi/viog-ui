@@ -1,9 +1,10 @@
 import { onMounted } from 'vue'
+import type { SetupContext } from 'vue'
 
-import { VueContext, InputEvent } from '@/types/vue-types'
-import { ViInputProps } from '@/types/input-types'
+import { InputEvent } from '@/types/vue-types'
+import { InputProps } from '@/types/input-types'
 
-export default function (props: ViInputProps, context: VueContext) {
+export default function (props: InputProps, context: SetupContext) {
   onMounted(() => {
     if (props.number && Number.isNaN(Number.parseInt(props.modelValue))) {
       context.emit('update:modelValue', '')

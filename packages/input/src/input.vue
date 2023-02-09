@@ -74,11 +74,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import type { SetupContext } from 'vue'
 
 import props from './props'
 
-import { VueContext } from '@/types/vue-types'
-import { ViInputProps } from '@/types/input-types'
+import { InputProps } from '@/types/input-types'
 
 import { inputState, valueState } from './hooks'
 
@@ -86,7 +86,7 @@ export default defineComponent({
   name: 'ViInput',
   emits: ['change', 'input', 'update:modelValue'],
   props,
-  setup (props: ViInputProps, context: VueContext) {
+  setup (props: InputProps, context: SetupContext) {
     const mainInput = inputState(props, context)
     const inputEvent = valueState(props, context)
     const placeholder = context.slots?.default !== undefined ? context.slots?.default()[0].children : ''
