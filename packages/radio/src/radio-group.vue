@@ -3,11 +3,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, provide, ref, watch } from 'vue'
+import { defineComponent } from 'vue'
+import type { SetupContext } from 'vue'
 
 import props from './props/group'
 
-import { VueContext } from '@/types/vue-types'
 import { GroupValueProps } from '@/types/radio-types'
 
 import { groupValueState } from './hooks'
@@ -15,7 +15,7 @@ import { groupValueState } from './hooks'
 export default defineComponent({
   name: 'ViRadioGroup',
   props,
-  setup (props: GroupValueProps, context: VueContext) {
+  setup (props: GroupValueProps, context: SetupContext) {
     groupValueState(props, context, 'radio-group-value')
   }
 })

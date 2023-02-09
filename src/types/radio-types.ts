@@ -13,6 +13,9 @@ export interface ViRadioType {
   toPick: () => void,
 }
 
+export interface ViRadioGroupType {
+}
+
 export interface ViRadioInject {
   groupModelValue: {
     default: any,

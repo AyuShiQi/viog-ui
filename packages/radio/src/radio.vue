@@ -27,12 +27,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, getCurrentInstance, ComponentInternalInstance, inject, computed } from 'vue'
-import type { Ref } from 'vue'
+import { defineComponent, ref, getCurrentInstance, inject, computed } from 'vue'
+import type { Ref, SetupContext, ComponentInternalInstance } from 'vue'
 
 import props from './props'
 
-import { VueContext, RadioDOM } from '@/types/vue-types'
+import { RadioDOM } from '@/types/vue-types'
 import { RadioProps } from '@/types/radio-types'
 
 export default defineComponent({
@@ -44,7 +44,7 @@ export default defineComponent({
     }
   },
   props,
-  setup (props: RadioProps, context: VueContext) {
+  setup (props: RadioProps, context: SetupContext) {
     const { proxy } = getCurrentInstance() as ComponentInternalInstance
 
     const hasGroup = (function (): boolean {
