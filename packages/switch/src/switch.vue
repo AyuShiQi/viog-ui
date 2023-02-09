@@ -40,12 +40,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
+import type { SetupContext } from 'vue'
 
 import props from './props'
 
-import { VueContext } from '@/types/vue-types'
-import { switchProps } from '@/types/switch-types'
+import { SwitchProps } from '@/types/switch-types'
 
 import { switchState } from './hooks'
 
@@ -53,7 +53,7 @@ export default defineComponent({
   name: 'ViSwitch',
   emits: ['off', 'on', 'change', 'update:modelValue'],
   props,
-  setup (props: switchProps, context: VueContext) {
+  setup (props: SwitchProps, context: SetupContext) {
     const mainSwitch = switchState(props, context)
 
     return {

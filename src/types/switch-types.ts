@@ -4,7 +4,7 @@ export interface ViSwitchType {
   toChange: () => void
 }
 
-export interface switchProps {
+export interface SwitchProps {
   modelValue: boolean,
   size: string,
   type: string,

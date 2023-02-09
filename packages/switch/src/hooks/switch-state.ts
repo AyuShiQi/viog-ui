@@ -1,9 +1,9 @@
 import { onMounted, computed } from 'vue'
+import type { SetupContext } from 'vue'
 
-import { VueContext } from '@/types/vue-types'
-import { switchProps } from '@/types/switch-types'
+import { SwitchProps } from '@/types/switch-types'
 
-export default function (props: switchProps, context: VueContext) {
+export default function (props: SwitchProps, context: SetupContext) {
   const nowColor = computed((): string => {
     return props.modelValue ? props.rightColor : props.leftColor
   })
