@@ -411,6 +411,7 @@
     </vi-form-item>
     <vi-form-item label="你觉得呢">
       <ViSelect filter placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
+      <ViSelect type="plain" filter placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
     </vi-form-item>
     <vi-form-item label="你觉得呢">
       <ViRadioGroup v-model="value">
