@@ -1,0 +1,108 @@
+@import '../../../../public/css/basecolor.less';
+@import '../../../../public/css/base.less';
+
+.vi-form-item {
+    display: flex;
+    margin-bottom: 16px;
+    color: @grey;
+    font-size: @font-size;
+    align-items: start;
+
+    .vi-form-label {
+        padding: 8px;
+        padding-left: 0;
+        text-align: right;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+    }
+
+    .vi-form-input {
+        position: relative;
+        display: flex;
+        height: 100%;
+        flex: 1;
+        align-items: center;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+
+        .vi-checkbox-appreance,
+        .vi-radio-appreance {
+            margin-top: 8px;
+            margin-right: 8px;
+        }
+
+        .vi-form-attention {
+            position: absolute;
+        }
+    }
+}
+
+.vi-form-item.default {
+    display: flex;
+}
+
+.vi-form-item.is-inline {
+    display: inline-flex;
+}
+
+.vi-form-item.is-middle {
+    margin-bottom: @font-size;
+    font-size: @font-size;
+    .vi-form-input {
+        .vi-form-attention {
+            position: absolute;
+            left: -8px;
+            bottom: -18px;
+            transform: scale(80%);
+        }
+    }
+}
+
+.vi-form-item.is-big {
+    margin-bottom: @big-font-size;
+    font-size: @big-font-size;
+    .vi-form-input {
+        .vi-form-attention {
+            position: absolute;
+            left: -10px;
+            bottom: -20px;
+            transform: scale(80%);
+        }
+    }
+}
+
+.vi-form-item.is-small{
+    margin-bottom: @small-font-size;
+    font-size: @small-font-size;
+    .vi-form-input {
+        .vi-form-attention {
+            position: absolute;
+            left: -8px;
+            bottom: -16px;
+            transform: scale(80%);
+        }
+    }
+}
+
+.vi-form-item.is-dark {
+    color: @black-background-hover
+}
+
+.vi-form-item.align-right {
+    .vi-form-label {
+        text-align: right;
+    }
+}
+
+.vi-form-item.align-left {
+    .vi-form-label {
+        text-align: left;
+    }
+}
+
+.vi-form-item.align-updown {
+    flex-direction: column;
+    .vi-form-label {
+        text-align: left;
+    }
+}

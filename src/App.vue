@@ -352,7 +352,7 @@
     <vi-col :row="1" :col="4" class="okk">8</vi-col>
     <vi-col :row="1" :col="2" class="okk">9</vi-col>
   </vi-grid> -->
-  <vi-row justify="center">
+  <!-- <vi-row justify="center">
     <ViSelect filter dark size="big" :datas="arr" v-model="value"></ViSelect>
   </vi-row>
   <vi-row justify="center">
@@ -387,7 +387,39 @@
   <vi-input password show-password></vi-input>
   <vi-input width="100%" type="plain" password show-password></vi-input>
   <vi-input type="plain" password show-password size="big"></vi-input>
-  <vi-input type="plain" password show-password show-clear size="small"></vi-input>
+  <vi-input type="plain" password show-password show-clear size="small"></vi-input> -->
+
+  <vi-form>
+    <vi-form-item label="姓名">
+      <vi-input password show-password>123</vi-input>
+    </vi-form-item>
+    <vi-form-item label="你觉得呢">
+      <vi-input>123</vi-input>
+    </vi-form-item>
+    <vi-form-item dark label="你觉得呢">
+      <ViCheckboxGroup v-model="ar">
+        <ViCheckbox @change="change" value="唱歌" dark></ViCheckbox>
+        <ViCheckbox value="跳舞"></ViCheckbox>
+        <ViCheckbox value="打豆豆"></ViCheckbox>
+        <ViCheckbox value="吃饭" color="purple"></ViCheckbox>
+        <ViCheckbox value="睡觉" color="green"></ViCheckbox>
+        <ViCheckbox value="划水" color="sgreen"></ViCheckbox>
+        <ViCheckbox value="飞翔" color="syellow"></ViCheckbox>
+        <ViCheckbox value="这个" color="yellow"></ViCheckbox>
+        <ViCheckbox value="唱歌" color="pink"></ViCheckbox>
+      </ViCheckboxGroup>
+    </vi-form-item>
+    <vi-form-item label="你觉得呢">
+      <ViSelect filter placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
+    </vi-form-item>
+    <vi-form-item label="你觉得呢">
+      <ViRadioGroup v-model="value">
+      <ViRadio type="button" color="yellow" rid="#127" value="吃饭" name="haha"></ViRadio>
+      <ViRadio type="button" color="green" dark rid="#128" value="睡觉" name="haha"></ViRadio>
+      <ViRadio type="button" color="purple" dark size="small" rid="#129" value="打豆豆"  name="haha">打豆豆</ViRadio>
+      </ViRadioGroup>
+    </vi-form-item>
+  </vi-form>
 </template>
 
 <script lang="ts">

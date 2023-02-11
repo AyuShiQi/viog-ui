@@ -10,6 +10,7 @@ import ViDialog from './dialog'
 // scroll 组
 import ViScroll from './scroll'
 // 表单组
+import ViForm from './form'
 import ViInput from './input'
 import ViSwitch from './switch'
 import ViRadio from './radio'
@@ -29,7 +30,8 @@ const components = [
   ViRadio,
   ViCheckbox,
   ViLayout,
-  ViSelect
+  ViSelect,
+  ViForm
 ]
 
 export default {
