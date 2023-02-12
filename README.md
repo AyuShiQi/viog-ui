@@ -46,6 +46,12 @@ npm install viog-ui --save
 
 - 默认插槽，按钮内容
 
+#### ts类型
+
+````typescript
+export { ViButtonType } from 'viog-ui'
+````
+
 ### Icon
 
 `<ViIcon/>`
@@ -59,6 +65,16 @@ npm install viog-ui --save
 - size：string     icon大小
 
   > 参数：small/middle(default)/big
+
+#### ts类型
+
+````typescript
+export type { ViIconType } from 'viog-ui'
+````
+
+#### bug
+
+- 在dev环境下，icon字体无法得到正确的映射，生产环境下无bug
 
 ### Loading
 
@@ -128,7 +144,11 @@ npm install viog-ui --save
 
 - diamond无size参数，默认大小为60*120
 
+#### ts类型
 
+````typescript
+export type { ViLoadingType } from 'viog-ui'
+````
 
 ### Dialog
 
@@ -224,7 +244,11 @@ npm install viog-ui --save
 
   > @shutDown(不支持控制关闭)    or     :toShutDown="()=>boolean)"(函数返回值true or false可以控制是否关闭)
 
-#### 对外暴露方法调用
+#### ts类型
+
+````typescript
+export type { ViDialogType } from 'viog-ui'
+````
 
 - open  打开对话框
 - close 关闭对话框
@@ -233,12 +257,7 @@ npm install viog-ui --save
 <!-- 父子组件中 -->
 <ViDialog ref="child">这里是对话框内容</ViDialog>
 
-<!-- mounted -->   - ts -
-type ViDialogType = {
-  open: (time?: number) => void,
-  close: (time?: number) => void
-}
-
+<!-- mounted -->
 // 即刻打开
 (this.$refs.child as ViDialogType).open()
 // 延迟200ms打开
@@ -317,6 +336,12 @@ type ViDialogType = {
 
 - scroll：滚动事件
 
+#### ts类型
+
+````typescript
+export type { ViScrollType } from 'viog-ui'
+````
+
 #### 方法调用
 
 - scrollTo  滚动到响应位置
@@ -326,10 +351,6 @@ type ViDialogType = {
 <ViScroll ref="child">这里是scroll里的内容</ViScroll>
 
 <!-- mounted -->   - ts -
-interface ViScrollType {
-    scrollTo: (x: number, y: number) => void
-}
-
 (this.$refs.child as ViScrollType).scrollTo(0, 140)
 ```
 
@@ -383,6 +404,12 @@ interface ViScrollType {
 
 - scroll：滚动事件
 
+#### ts类型
+
+````typescript
+export type { ViVirtualScrollType } from 'viog-ui'
+````
+
 #### 对外暴露方法调用
 
 - scrollTo  滚动到响应位置
@@ -392,10 +419,6 @@ interface ViScrollType {
 <ViVirtualScroll ref="child">这里是scroll里的内容</ViVirtualScroll>
 
 <!-- mounted -->   - ts -
-interface VirtualScrollType {
-    scrollTo: (x: number, y: number) => void
-}
-
 (this.$refs.child as VirtualScrollType).scrollTo(0, 140)
 ```
 
@@ -488,8 +511,13 @@ interface VirtualScrollType {
 #### 事件支持
 
 - input：input内容正确改变事件
-
 - change：input内容正确改变事件，仅在输入框失去焦点和按下回车后触发
+
+#### ts类型
+
+````typescript
+export type { ViInputType } from 'viog-ui'
+````
 
 
 #### 对外暴露方法调用
@@ -499,12 +527,6 @@ interface VirtualScrollType {
 <ViInput ref="child">placeholder</ViInput>
 
 <!-- mounted -->   - ts -
-interface ViInputType {
-  toClear: () => void,
-  toFocus: () => void,
-  toBlur: () => void
-}
-
 (this.$refs.child as ViInputType).toClear()
 ```
 
@@ -563,9 +585,14 @@ interface ViInputType {
 #### 事件支持
 
 - off：关闭开关触发事件
-
 - on：打开开关触发事件
 - change：开闭状态变换触发事件
+
+#### ts类型
+
+````typescript
+export type { ViSwitchType } from 'viog-ui'
+````
 
 #### 对外暴露方法调用
 
@@ -576,7 +603,7 @@ interface ViInputType {
     	关闭
     </template>
     <template v-slot:switch-circle>
-    	哈
+    	哈 // 此插槽适合插入一个icon
     </template>
 	<template v-slot:left-choice>
     	打开
@@ -584,12 +611,6 @@ interface ViInputType {
 </ViSwitch>
 
 <!-- mounted -->   - ts -
-interface ViSwitchType {
-  toOn: () => void,
-  toOff: () => void,
-  toChange: () => void
-}
-
 (this.$refs.child as ViSwitchType).toChange()
 ```
 
@@ -645,6 +666,12 @@ interface ViSwitchType {
 
 - change：当单选结果发生改变时调用
 
+#### ts类型
+
+````typescript
+export type { ViRadioType } from 'viog-ui'
+````
+
 
 #### 对外暴露方法调用
 
@@ -655,10 +682,6 @@ interface ViSwitchType {
 </ViRadio>
 
 <!-- mounted -->   - ts -
-interface ViRadioType {
-  toPick: () => void,
-}
-
 (this.$refs.child as ViRadioType).toPick()
 ```
 
@@ -679,6 +702,12 @@ interface ViRadioType {
 #### 插槽内容
 
 - 默认插槽，用于包裹需要简写v-model的所有radio组件，支持插槽内多级dom结构定位
+
+#### ts类型
+
+````typescript
+export type { ViRadioGroupType } from 'viog-ui'
+````
 
 ### ViCheckbox
 
@@ -728,6 +757,12 @@ interface ViRadioType {
 
 - change：当复选选结果发生改变时调用
 
+#### ts类型
+
+````typescript
+export type { ViCheckboxType } from 'viog-ui'
+````
+
 
 #### 对外暴露方法调用
 
@@ -738,10 +773,6 @@ interface ViRadioType {
 </ViCheckbox>
 
 <!-- mounted -->   - ts -
-interface ViCheckboxType {
-  toPick: () => void,
-}
-
 (this.$refs.child as ViCheckbox).toPick()
 ```
 
@@ -762,6 +793,12 @@ interface ViCheckboxType {
 #### 插槽内容
 
 - 默认插槽，用于包裹需要简写v-model的所有checkbox组件，支持插槽内多级dom结构定位
+
+#### ts类型
+
+````typescript
+export type { ViCheckboxGroupType } from 'viog-ui'
+````
 
 ### ViRow
 
@@ -795,6 +832,12 @@ interface ViCheckboxType {
 
 - 默认插槽
 
+#### ts类型
+
+````typescript
+export type { ViRowType } from 'viog-ui'
+````
+
 ### ViCol
 
 `<ViCol>`
@@ -823,17 +866,23 @@ interface ViCheckboxType {
 
   > 参数：一个可以被识别的长度单位值，默认无
 
-- row：number 在ViGrid中生效，列占位格数
+- row：number 在ViGrid中生效，行占位格数
 
   > 参数：默认1
 
-- col：number 在ViGrid中生效，行占位格数
+- col：number 在ViGrid中生效 列占位格数
 
   > 参数：默认1
 
 #### 插槽内容
 
 - 默认插槽
+
+#### ts类型
+
+````typescript
+export type { ViColType } from 'viog-ui'
+````
 
 ### ViGrid
 
@@ -863,11 +912,11 @@ interface ViCheckboxType {
 
   > 参数：一个可以被识别的长度单位值，默认无
 
-- row：number 总列数
+- row：number 总行数
 
   > 参数：默认1
 
-- col：number 总行数
+- col：number 总列数
 
   > 参数：默认1
 
@@ -878,6 +927,12 @@ interface ViCheckboxType {
 #### 插槽内容
 
 - 默认插槽
+
+#### ts类型
+
+````typescript
+export type { ViGridType } from 'viog-ui'
+````
 
 ### ViSelect
 
@@ -931,6 +986,12 @@ interface ViCheckboxType {
 
 - 暂未实现
 
+#### ts类型
+
+````typescript
+export type { ViSelectType } from 'viog-ui'
+````
+
 #### 对外暴露方法调用
 
 ```typescript
@@ -940,13 +1001,8 @@ interface ViCheckboxType {
 </ViSelect>
 
 <!-- mounted -->   - ts -
-interface ViSelectType {
-  toClear: () => void,
-}
-
 (this.$refs.child as ViSelectType).toPick()
 ```
 
 - toClear 清空所有选择
 
-message，toast，骨架框，form, navigation。。。
