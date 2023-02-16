@@ -16,6 +16,7 @@ import ViSwitch from './switch'
 import ViRadio from './radio'
 import ViCheckbox from './checkbox'
 import ViSelect from './select'
+import ViDateSelect from './date-select'
 // type
 export * from '@/types'
 
@@ -31,7 +32,8 @@ const components = [
   ViCheckbox,
   ViLayout,
   ViSelect,
-  ViForm
+  ViForm,
+  ViDateSelect
 ]
 
 export default {

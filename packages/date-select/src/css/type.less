@@ -1,0 +1,195 @@
+.vi-date-select.is-button {
+    color: @lblack-background;
+    .vi-date-select-input {
+        background-color: #fff;
+        border-radius: 5px;
+
+        .vi-date-select-icon {
+            path {
+                fill: @lblack-background;
+            }
+        }
+    }
+
+    .vi-select-box {
+        background-color: #fff;
+    }
+}
+
+.vi-date-select.is-button.is-dark {
+    color: @lblack-background;
+    .vi-date-select-input {
+        background-color: @black-background-hover;
+        .vi-date-select-icon {
+            path {
+                fill: @lblack-background;
+            }
+        }
+    }
+
+    .vi-date-select-box {
+        background-color: @black-background-hover;
+    }
+}
+
+.vi-date-select.is-button.is-filter {
+    .vi-date-select-input {
+        background-color: #ffffffdd;
+        backdrop-filter: blur(5px);
+    }
+
+    .vi-date-select-box {
+        background-color: #ffffffdd;
+        backdrop-filter: blur(5px);
+    }
+}
+
+.vi-date-select.is-button.is-dark.is-filter {
+    .vi-date-select-input {
+        background-color: @black-background-hover-o7;
+        backdrop-filter: blur(5px);
+    }
+
+    .vi-date-select-box {
+        background-color: @black-background-hover-o7;
+        backdrop-filter: blur(5px);
+    }
+}
+
+.vi-date-select.is-default {
+    position: relative;
+    color: @grey;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0px;
+        height: 2px;
+        background-color: @grey;
+        box-shadow: 0 0 5px 0 #d1d1d196;
+        transition: all .3s ease 0s;
+    }
+
+    .vi-date-select-input {
+        padding-left: 0;
+        border-bottom: 1px solid @grey;
+        .vi-date-select-icon {
+            path {
+                fill: @grey;
+            }
+        }
+    }
+
+    .vi-date-select-box {
+        color: @grey;
+        border: 1px solid @grey;
+    }
+}
+
+.vi-date-select.is-default.is-dark {
+    color: @black-background-hover;
+
+    &::before {
+        box-shadow: 0 0 5px 0 #d1d1d121;
+        background-color: @black-background-hover;
+    }
+    .vi-date-select-input {
+        border-bottom: 1px solid @black-background-hover;
+        .vi-date-select-icon {
+            path {
+                fill: @black-background-hover;
+            }
+        }
+    }
+
+    .vi-date-select-box {
+        color: @lblack-background;
+        border: 1px solid @black-background-hover;
+        background-color: @mblack-background;
+
+        .vi-date-select-li {
+            &:hover {
+                background-color: @spurple-o5;
+            }
+        }
+    }
+}
+
+.vi-date-select.is-default.be-open {
+    &::before {
+        width: 100%;
+    }
+}
+
+.vi-date-select.is-plain {
+    color: @grey;
+
+    .vi-date-select-input {
+        padding-left: 10px;
+        padding-right: 10px;
+        border: 1px solid @grey;
+        border-radius: 5px;
+        .vi-date-select-icon {
+            path {
+                fill: @grey;
+            }
+        }
+    }
+
+    .vi-date-select-box {
+        color: @grey;
+        border: 1px solid @grey;
+    }
+}
+
+.vi-date-select.is-plain.is-dark {
+    color: @black-background-hover;
+
+    .vi-date-select-input {
+        border: 1px solid @black-background-hover;
+        border-radius: 5px;
+        .vi-date-select-icon {
+            path {
+                fill: @black-background-hover;
+            }
+        }
+    }
+
+    .vi-date-select-box {
+        color: @lblack-background;
+        border: 1px solid @black-background-hover;
+        background-color: @mblack-background;
+
+        .vi-date-select-li {
+            &:hover {
+                background-color: @spurple-o5;
+            }
+        }
+    }
+}
+
+// .vi-date-select.is-plain.be-open {
+//     .vi-date-select-input {
+//         .vi-date-select-icon {
+//             transform: rotateX(0deg);
+//         }
+//     }
+// }
+
+
+.vi-date-select.is-plain.is-filter,
+.vi-date-select.is-default.is-filter {
+    .vi-date-select-box {
+        background-color: #ffffffdd;
+        backdrop-filter: blur(5px);
+    }
+}
+
+.vi-date-select.is-plain.is-dark.is-filter,
+.vi-date-select.is-default.is-dark.is-filter {
+    .vi-date-select-box {
+        background-color: @mblack-background-o8;
+    }
+}

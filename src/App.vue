@@ -420,6 +420,9 @@
       <ViRadio type="button" color="purple" dark size="small" rid="#129" value="打豆豆"  name="haha">打豆豆</ViRadio>
       </ViRadioGroup>
     </vi-form-item>
+    <vi-form-item label="生日">
+      <ViDateSelect></ViDateSelect>
+    </vi-form-item>
   </vi-form>
 </template>
 

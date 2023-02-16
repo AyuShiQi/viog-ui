@@ -1,0 +1,101 @@
+@import '../../../../public/css/base.less';
+@import '../../../../public/css/basecolor.less';
+
+.vi-date-select {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    box-sizing: border-box;
+
+    .vi-date-select-input {
+        display: inline-flex;
+        padding: 8px;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+
+        .vi-date-select-choose {
+            overflow: hidden;
+            word-wrap: break-word;
+            text-align: left;
+            flex: 1;
+        }
+
+        .vi-date-select-icon {
+            display: inline-flex;
+            align-items: flex-start;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            cursor: pointer;
+            transform: scale(120%);
+            transition: all .2s linear 0s;
+        }
+    }
+
+    .vi-date-select-list {
+        position: relative;
+        width: 100%;
+        height: 0;
+    }
+}
+
+.vi-date-select.is-middle {
+    font-size: @font-size;
+    .vi-date-select-input {
+        .vi-date-select-icon {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
+.vi-date-select.is-big {
+    font-size: @big-font-size;
+    .vi-date-select-input {
+        .vi-date-select-icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+
+.vi-date-select.is-small {
+    font-size: @small-font-size;
+    .vi-date-select-input {
+        .vi-date-select-icon {
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+.vi-date-select.is-dark {
+    color: @black-background;
+}
+
+// .vi-date-select.be-open {
+//     .vi-date-select-input {
+//         .vi-date-select-icon {
+//             transform: rotateX(0deg);
+//         }
+//     }
+// }
+
+.vi-date-select.is-disabled {
+    position: relative;
+    cursor: no-drop;
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+}
+
+@import './type.less';
