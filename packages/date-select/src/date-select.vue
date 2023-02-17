@@ -30,11 +30,21 @@
     <span class="vi-date-select-list">
       <ViDateSelectBox
         v-show="open"
-        :datas="datas"
-        :selected="modelValue"
-        :selectedMulti="modelValue"
-        :multi="multi"
-        @update="toUpdate"></ViDateSelectBox>
+        :datas="renderDays"
+        :before="renderBefore"
+        :after="renderAfter"
+        :viewYear="viewYear"
+        :viewMonth="viewMonth"
+        :choosed="{
+          year,
+          month,
+          date
+        }"
+        @yearBack="yearBack"
+        @yearForward="yearForward"
+        @monthBack="monthBack"
+        @monthForward="monthForward"
+        @update="update"></ViDateSelectBox>
     </span>
   </span>
 </template>
@@ -47,6 +57,7 @@ import props from './props'
 import ViDateSelectBox from './components/select-box.vue'
 
 import openState from '@/hooks/open-state'
+import dateState from './hooks/date-state'
 
 export default defineComponent({
   name: 'ViDateSelect',
@@ -54,9 +65,11 @@ export default defineComponent({
   components: { ViDateSelectBox },
   setup () {
     const open = openState()
+    const date = dateState()
 
     return {
-      ...open
+      ...open,
+      ...date
     }
   }
 })

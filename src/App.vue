@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <!-- <vi-row justify="center">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
@@ -411,7 +411,7 @@
     </vi-form-item>
     <vi-form-item label="你觉得呢">
       <ViSelect filter placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
-      <ViSelect type="plain" filter placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
+      <ViSelect dark type="plain" filter placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
     </vi-form-item>
     <vi-form-item label="你觉得呢">
       <ViRadioGroup v-model="value">
@@ -422,6 +422,7 @@
     </vi-form-item>
     <vi-form-item label="生日">
       <ViDateSelect></ViDateSelect>
+      <ViDateSelect dark></ViDateSelect>
     </vi-form-item>
   </vi-form>
 </template>

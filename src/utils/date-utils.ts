@@ -1,24 +1,24 @@
 /**
- * 判断某天是星期几,返回1~7, 可能有bug
+ * 判断某天是星期几,返回0~6, 可能有bug
  * @param y 年
  * @param m 月
  * @param d 日
  * @returns 周数
  */
-function theWeekOfDay(y: number, m: number, d: number): number {
+function theWeekOfDay (y: number, m: number, d: number): number {
   // 公式信息初始化,zeller
-  if(m === 1 || m === 2) {
+  if (m === 1 || m === 2) {
     y--
     m += 12
   }
   // 世纪
-  const c = Math.trunc(y/100)
+  const c = Math.trunc(y / 100)
   // 年
   y %= 100
   // 0 ~ 6
   let week = (y + Math.trunc(y / 4) + Math.trunc(c / 4) - 2 * c + Math.trunc(26 * (m + 1) / 10) + d - 1) % 7
 
-  if(week <= 0) week = Math.abs(week+=7)
+  if (week < 0) week = Math.abs(week += 7)
   return week
 }
 
@@ -28,8 +28,8 @@ function theWeekOfDay(y: number, m: number, d: number): number {
  * @param month 月份
  * @returns {Number} 月份天数
  */
-function theDays(year: number, month: number): 29 | 30 | 31 {
-  switch(year) {
+function theDays (year: number, month: number): 28 | 29 | 30 | 31 {
+  switch (month) {
     case 1:
     case 3:
     case 5:
@@ -39,7 +39,8 @@ function theDays(year: number, month: number): 29 | 30 | 31 {
     case 12:
       return 31
     case 2:
-      if(isLeapYear(year)) return 29
+      if (isLeapYear(year)) return 29
+      return 28
     default:
       return 30
   }
@@ -50,7 +51,7 @@ function theDays(year: number, month: number): 29 | 30 | 31 {
  * @param year 年份
  * @returns true or false
  */
-function isLeapYear(year: number): boolean {
+function isLeapYear (year: number): boolean {
   return year % 4 === 0 && year % 100 !== 0
 }
 
@@ -59,13 +60,12 @@ function isLeapYear(year: number): boolean {
  * @param digit 待格式化的数字
  * @returns 格式化好后的字符串
  */
-function formatTimeDigit(digit: number): string {
-  if(digit / 10 < 1){
-    return '0' + digit;
+function formatTimeDigit (digit: number): string {
+  if (digit / 10 < 1) {
+    return '0' + digit
   }
-  return '' + digit;
+  return '' + digit
 }
-
 
 export {
   theWeekOfDay,
