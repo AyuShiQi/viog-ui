@@ -421,8 +421,8 @@
       </ViRadioGroup>
     </vi-form-item>
     <vi-form-item label="生日">
-      <ViDateSelect></ViDateSelect>
-      <ViDateSelect dark></ViDateSelect>
+      <ViDateSelect v-model="date"></ViDateSelect>
+      <ViDateSelect v-model="date" dark></ViDateSelect>
     </vi-form-item>
   </vi-form>
 </template>
@@ -455,6 +455,7 @@ export default defineComponent({
   components: {
   },
   setup () {
+    let date = reactive(new Date())
     const res = ref(false)
     const value = ref('')
     const ar = reactive([])
@@ -495,6 +496,12 @@ export default defineComponent({
       console.log(ar)
     }
 
+    function up (item: Date) {
+      console.log(item)
+      date = item
+      console.log(date)
+    }
+
     return {
       ar,
       value,
@@ -507,7 +514,9 @@ export default defineComponent({
       openDialog,
       obj,
       change,
-      res
+      res,
+      date,
+      up
     }
   },
   mounted () {

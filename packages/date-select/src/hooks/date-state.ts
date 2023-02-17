@@ -1,8 +1,9 @@
 import { ref, computed } from 'vue'
+import type { SetupContext } from 'vue'
 
 import { theWeekOfDay, theDays } from '@/utils/date-utils'
 // 这是用于控制日期状态的hooks
-export default function () {
+export default function (localDate: Date, context: SetupContext) {
   // 被选择的，需要上层传过来， 暂时初始化
   const year = ref(2023)
   const month = ref(2)
@@ -58,6 +59,9 @@ export default function () {
     month.value = viewMonth.value
     date.value = d
     week.value = theWeekOfDay(year.value, month.value, date.value)
+    localDate.setFullYear(year.value)
+    localDate.setMonth(viewMonth.value - 1)
+    localDate.setDate(date.value)
   }
 
   // 初始化日期区域

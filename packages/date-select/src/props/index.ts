@@ -1,6 +1,7 @@
 export default {
   modelValue: {
-    default: ''
+    type: Date,
+    default: new Date()
   },
   size: {
     type: String,

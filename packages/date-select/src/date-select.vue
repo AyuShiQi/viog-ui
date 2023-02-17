@@ -18,6 +18,7 @@
     }"
     @click="toSelect">
       <span class="vi-date-select-choose">
+        {{modelValue}}
       </span>
       <svg
       class="vi-date-select-icon"
@@ -51,6 +52,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import type { SetupContext } from 'vue'
 
 import props from './props'
 
@@ -63,9 +65,9 @@ export default defineComponent({
   name: 'ViDateSelect',
   props,
   components: { ViDateSelectBox },
-  setup () {
+  setup (props: any, context: SetupContext) {
     const open = openState()
-    const date = dateState()
+    const date = dateState(props.modelValue, context)
 
     return {
       ...open,
