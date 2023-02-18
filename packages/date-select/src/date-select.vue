@@ -59,6 +59,8 @@ import ViDateSelectBox from './components/select-box.vue'
 import openState from '@/hooks/open-state'
 import dateState from './hooks/date-state'
 
+import { formatTimeDigit } from '@/utils/date-utils'
+
 export default defineComponent({
   name: 'ViDateSelect',
   props,
@@ -75,6 +77,9 @@ export default defineComponent({
       format = format.replace('YYYY', year + '')
       format = format.replace('MM', month + '')
       format = format.replace('DD', date + '')
+      format = format.replace('hh', formatTimeDigit(hour as number))
+      format = format.replace('mm', formatTimeDigit(minute as number))
+      format = format.replace('ss', formatTimeDigit(second as number))
 
       return format
     })

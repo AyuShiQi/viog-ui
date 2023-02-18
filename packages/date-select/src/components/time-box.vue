@@ -1,39 +1,9 @@
 <template>
   <div
   class="vi-time-select-part">
-    <div class="vi-time-hour">
-      <ul>
-        <li
-        v-for="(item, i) in hours"
-        :key="item"
-        :class="{
-          'be-choosed': isChoosed(i, 2)
-        }">{{item}}</li>
-      </ul>
-    </div>
-    <div class="vi-time-minute" v-if="needMinute">
-      <ul>
-        <li
-        v-for="(item, i) in minutes"
-        :key="item"
-        :class="{
-          'be-choosed': isChoosed(i, 2)
-        }">{{item}}</li>
-      </ul>
-    </div>
-    <div class="vi-time-second" v-if="needSecond">
-      <ul
-      :style="{
-        transform: 'translateY(80px)'
-      }">
-        <li
-        v-for="(item, i) in seconds"
-        :key="item"
-        :class="{
-          'be-choosed': isChoosed(i, 2)
-        }">{{item}}</li>
-      </ul>
-    </div>
+    <time-scroll></time-scroll>
+    <time-scroll></time-scroll>
+    <time-scroll></time-scroll>
   </div>
 </template>
 
@@ -41,11 +11,14 @@
 import { defineComponent, ref, computed, reactive } from 'vue'
 import type { SetupContext } from 'vue'
 
+import TimeScroll from '@/components/time-scroll.vue'
+
 import { formatTimeDigit } from '@/utils/date-utils'
 
 export default defineComponent({
   name: 'ViTimeBox',
   emits: ['update', 'yearBack', 'yearForward', 'monthBack', 'monthForward'],
+  components: { TimeScroll },
   props: {
     unit: {
       type: String,
@@ -59,6 +32,7 @@ export default defineComponent({
     }
   },
   setup (props: any, context: SetupContext) {
+    const first = 80
     // 是否展示选择分钟的框框
     const needMinute = computed((): boolean => {
       return props.unit === 'minute' || props.unit === 'second'
@@ -67,10 +41,10 @@ export default defineComponent({
     const needSecond = computed((): boolean => {
       return props.unit === 'second'
     })
+
     const hours: string[] = []
     const minutes: string[] = []
     const seconds: string[] = []
-
     // 初始化时间
     for (let i = 0; i < 24; i++) {
       hours.push(formatTimeDigit(i))
@@ -85,19 +59,39 @@ export default defineComponent({
     if (choosed.minute === undefined) choosed.minute = 0
     if (choosed.second === undefined) choosed.second = 0
 
+    // 判断当前是否是被选择的
     function isChoosed (index: number, type: number): boolean {
       if (type === 0 && index === props.choosed.hour) return true
       else if (type === 1 && index === props.choosed.minute) return true
       else if (type === 2 && index === props.choosed.second) return true
       return false
     }
+
+    const hTranslate = ref(first)
+    const mTranslate = ref(first)
+    const sTranslate = ref(first)
+
+    function mouseWheel (e: any) {
+      if (e.wheelDelta < 0) {
+        choosed.hour += 1
+        hTranslate.value -= 20
+      } else {
+        choosed.hour--
+        hTranslate.value += 20
+      }
+    }
+
     return {
       needMinute,
       needSecond,
       hours,
       minutes,
       seconds,
-      isChoosed
+      isChoosed,
+      hTranslate,
+      mTranslate,
+      sTranslate,
+      mouseWheel
     }
   }
 })

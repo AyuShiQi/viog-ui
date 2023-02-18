@@ -14,7 +14,6 @@
       @monthForward="toMonthForward"
       @update="toChoose"></DateBox>
       <TimeBox
-      :unit="timeUnit"
       :choosed="choosed"></TimeBox>
     </span>
   </transition>
