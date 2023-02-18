@@ -31,14 +31,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, getCurrentInstance, inject, computed } from 'vue'
-import type { SetupContext, ComponentInternalInstance, Ref } from 'vue'
+import { defineComponent } from 'vue'
+import type { SetupContext } from 'vue'
 
 import props from './props'
 
-import { RadioDOM } from '@/types/vue-types'
-import { CheckboxProps } from '@/types/checkbox-types'
+import type { CheckboxProps } from '@/types/checkbox-types'
 
+import { checkboxState } from './hooks'
 export default defineComponent({
   name: 'ViCheckbox',
   emits: ['change', 'update:modelValue'],
@@ -49,41 +49,9 @@ export default defineComponent({
   },
   props,
   setup (props: CheckboxProps, context: SetupContext) {
-    const { proxy } = getCurrentInstance() as ComponentInternalInstance
-
-    const hasGroup = (function (): boolean {
-      return inject('checkbox-group-value', undefined) !== undefined
-    })()
-
-    const nowPick: Ref = inject('checkbox-group-value', ref())
-
-    const containsValue = computed((): boolean => {
-      return hasGroup ? nowPick.value.includes(props.value) : props.modelValue.includes(props.value)
-    })
-
-    function handleChange (): void {
-      if (!hasGroup) nowPick.value = props.modelValue
-      // 存在就剔除，那么就从那个队列里把它剔除
-      if (containsValue.value) {
-        const index = nowPick.value.indexOf(props.value)
-        nowPick.value.splice(index, 1)
-      } else {
-        // 没有就加进去
-        nowPick.value.push(props.value)
-      }
-      if (!hasGroup) context.emit('update:modelValue', nowPick)
-      context.emit('change')
-    }
-
-    function toPick (): void {
-      (proxy?.$refs.checkbox as RadioDOM).click()
-    }
-
+    const checkbox = checkboxState(props, context)
     return {
-      nowPick,
-      handleChange,
-      toPick,
-      containsValue
+      ...checkbox
     }
   }
 })
