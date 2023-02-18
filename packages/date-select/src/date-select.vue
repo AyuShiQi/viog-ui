@@ -18,7 +18,7 @@
     }"
     @click="toSelect">
       <span class="vi-date-select-choose">
-        {{modelValue}}
+        {{formatDateTime}}
       </span>
       <svg
       class="vi-date-select-icon"
@@ -36,11 +36,7 @@
         :after="renderAfter"
         :viewYear="viewYear"
         :viewMonth="viewMonth"
-        :choosed="{
-          year,
-          month,
-          date
-        }"
+        :choosed="modelValue"
         @yearBack="yearBack"
         @yearForward="yearForward"
         @monthBack="monthBack"
@@ -51,10 +47,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
 import type { SetupContext } from 'vue'
 
 import props from './props'
+
+import type { DateSelectProps } from '@/types/date-select-types'
 
 import ViDateSelectBox from './components/select-box.vue'
 
@@ -65,13 +63,26 @@ export default defineComponent({
   name: 'ViDateSelect',
   props,
   components: { ViDateSelectBox },
-  setup (props: any, context: SetupContext) {
+  setup (props: DateSelectProps, context: SetupContext) {
     const open = openState()
     const date = dateState(props.modelValue, context)
 
+    const formatDateTime = computed((): string => {
+      let format = props.format.slice(0)
+      const { year, month, date, hour, minute, second } = props.modelValue
+      // 以最小单位为界限返回对应值
+      if (!year || !month || !date) return ''
+      format = format.replace('YYYY', year + '')
+      format = format.replace('MM', month + '')
+      format = format.replace('DD', date + '')
+
+      return format
+    })
+
     return {
       ...open,
-      ...date
+      ...date,
+      formatDateTime
     }
   }
 })

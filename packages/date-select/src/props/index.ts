@@ -1,7 +1,14 @@
 export default {
   modelValue: {
-    type: Date,
-    default: new Date()
+    type: Object,
+    default: {
+      year: undefined,
+      month: undefined,
+      date: undefined,
+      hour: undefined,
+      minute: undefined,
+      second: undefined
+    }
   },
   size: {
     type: String,
@@ -31,7 +38,6 @@ export default {
     type: Boolean,
     default: false
   },
-  datas: Array,
   range: { // 日期是否开启范围选择
     type: Boolean,
     default: false
@@ -43,5 +49,9 @@ export default {
   timeUnit: { // 时间显示单位  hour/minute/second
     type: String,
     default: 'minute'
+  },
+  format: {
+    type: String,
+    default: 'YYYY-MM-DD'
   }
 }

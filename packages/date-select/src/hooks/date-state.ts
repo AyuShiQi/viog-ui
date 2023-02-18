@@ -1,17 +1,18 @@
 import { ref, computed } from 'vue'
 import type { SetupContext } from 'vue'
 
+import { ModelValueDate } from '@/types/date-select-types'
+
 import { theWeekOfDay, theDays } from '@/utils/date-utils'
 // 这是用于控制日期状态的hooks
-export default function (localDate: Date, context: SetupContext) {
+export default function (localDate: ModelValueDate, context: SetupContext) {
   // 被选择的，需要上层传过来， 暂时初始化
-  const year = ref(2023)
-  const month = ref(2)
-  const date = ref(1)
-  const week = ref(theWeekOfDay(year.value, month.value, date.value))
+  // const week = computed((): number => {
+  //   return theWeekOfDay(year.value, month.value, date.value)
+  // })
   // 当前展示的年份和月份
-  const viewYear = ref(year.value)
-  const viewMonth = ref(month.value)
+  const viewYear = ref(localDate.year ? localDate.year : 2023)
+  const viewMonth = ref(localDate.month ? localDate.month : 2)
   // 该月第一天的周数
   const viewFirstWeek = ref(theWeekOfDay(viewYear.value, viewMonth.value, 1))
   // 该月天数
@@ -55,13 +56,9 @@ export default function (localDate: Date, context: SetupContext) {
    * @param d date天数
    */
   function update (d: number): void {
-    year.value = viewYear.value
-    month.value = viewMonth.value
-    date.value = d
-    week.value = theWeekOfDay(year.value, month.value, date.value)
-    localDate.setFullYear(year.value)
-    localDate.setMonth(viewMonth.value - 1)
-    localDate.setDate(date.value)
+    localDate.year = viewYear.value
+    localDate.month = viewMonth.value
+    localDate.date = d
   }
 
   // 初始化日期区域
@@ -118,10 +115,6 @@ export default function (localDate: Date, context: SetupContext) {
   })
 
   return {
-    year,
-    month,
-    date,
-    week,
     viewYear,
     viewMonth,
     // 该月第一天的周数

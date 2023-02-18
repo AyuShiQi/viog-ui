@@ -1,48 +1,35 @@
 @import '../../../../../public/css/basecolor.less';
+@import '../../../../../public/css/base.less';
 
-.vi-date-select-box-enter-from {
-    transform: translateY(-2px);
-    opacity: 0;
-}
-
-.vi-date-select-box-enter-to {
-    opacity: 1;
-}
-
-.vi-date-select-box-enter-active {
-    transition: all .2s linear 0s;
-}
-
-.vi-date-select-box-leave {
-    opacity: 1;
-}
-
-.vi-date-select-box-leave-to {
-    transform: translateY(-2px);
-    opacity: 0;
-}
-
-.vi-date-select-box-leave-active {
-    transition: all .2s linear 0s;
-}
-
-.vi-date-select-box {
+.vi-time-select-part {
     display: flex;
-    position: absolute;
-    overflow: hidden;
-    text-align: left;
-    top: 5px;
-    left: 0;
-    z-index: 2;
-    background-color: #fff;
-    height: 238px;
+    height: 100%;
     align-items: center;
-    border-radius: 5px;
-    box-sizing: border-box;
+    // background: linear-gradient(to bottom, transparent 0px, transparent 50%, #aaa 50%, #aaa 100%);
+
+    .vi-time-hour,
+    .vi-time-minute,
+    .vi-time-second {
+        overflow: hidden;
+        width: 36px;
+        height: 200px;
+        border-left: 1px solid @grey-o3;
+        color: @black-background-hover;
+        text-align: center;
+        box-sizing: border-box;
+
+        li.be-choosed {
+            color: @spurple-background;
+        }
+    }
+
+    .vi-time-scroll {
+        width: 100%;
+    }
 }
 
 .vi-date-select.is-dark {
-    .vi-date-select-box {
+    .vi-date-select-top {
         background-color: @mblack-background;
         .vi-date-select-top {
             border-bottom: 1px solid @lblack-background;

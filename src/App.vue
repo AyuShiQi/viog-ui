@@ -455,7 +455,11 @@ export default defineComponent({
   components: {
   },
   setup () {
-    let date = reactive(new Date())
+    const date = reactive({
+      year: undefined,
+      month: undefined,
+      date: undefined
+    })
     const res = ref(false)
     const value = ref('')
     const ar = reactive([])
@@ -496,10 +500,8 @@ export default defineComponent({
       console.log(ar)
     }
 
-    function up (item: Date) {
-      console.log(item)
-      date = item
-      console.log(date)
+    function up () {
+      console.log('up')
     }
 
     return {
