@@ -32,8 +32,10 @@ import type { Ref, SetupContext, ComponentInternalInstance } from 'vue'
 
 import props from './props'
 
-import { RadioDOM } from '@/types/vue-types'
-import { RadioProps } from '@/types/radio-types'
+import type { RadioDOM } from '@/types/vue-types'
+import type { RadioProps } from '@/types/radio-types'
+
+import { radioState } from './hooks'
 
 export default defineComponent({
   name: 'ViRadio',
@@ -45,32 +47,10 @@ export default defineComponent({
   },
   props,
   setup (props: RadioProps, context: SetupContext) {
-    const { proxy } = getCurrentInstance() as ComponentInternalInstance
-
-    const hasGroup = (function (): boolean {
-      return inject('radio-group-value', undefined) !== undefined
-    })()
-
-    const nowPick: Ref = inject('radio-group-value', ref())
-
-    function handleChange (): void {
-      hasGroup ? (nowPick.value = props.value) : context.emit('update:modelValue', props.value)
-      context.emit('change')
-    }
-
-    function toPick (): void {
-      (proxy?.$refs.radio as RadioDOM).click()
-    }
-
-    const pickValue = computed((): string | number | boolean | undefined => {
-      return hasGroup ? nowPick.value : props.modelValue
-    })
+    const mainRadio = radioState(props, context)
 
     return {
-      nowPick,
-      pickValue,
-      handleChange,
-      toPick
+      ...mainRadio
     }
   }
 })
