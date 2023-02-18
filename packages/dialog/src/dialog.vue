@@ -32,7 +32,7 @@
             textAlign: contentTextAlign
           }">
               <slot>
-                  there is content
+                  <!-- there is content -->
               </slot>
           </p>
           <div class="bottom"

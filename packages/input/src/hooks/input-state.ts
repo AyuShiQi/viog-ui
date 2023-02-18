@@ -1,12 +1,10 @@
-import { ref, computed, getCurrentInstance } from 'vue'
-import type { SetupContext, ComponentInternalInstance } from 'vue'
+import { ref, computed } from 'vue'
+import type { SetupContext } from 'vue'
 
 import { InputDOM } from '@/types/vue-types'
 import { InputProps } from '@/types/input-types'
 
 export default function (props: InputProps, context: SetupContext) {
-  const { proxy } = (getCurrentInstance() as ComponentInternalInstance)
-
   /* 鼠标进出input框事件 */
   // #region
   const isEnter = ref(false)
@@ -28,13 +26,15 @@ export default function (props: InputProps, context: SetupContext) {
     if (!isEnter.value) ifShowPassword.value = false
     isFocus.value = false
   }
+  // input dom
+  const input = ref()
   // input聚焦
   function toFocus () {
-    (proxy?.$refs.input as InputDOM).focus()
+    (input.value as InputDOM).focus()
   }
   // input聚焦
   function toBlur () {
-    (proxy?.$refs.input as InputDOM).blur()
+    (input.value as InputDOM).blur()
   }
   // #endregion
 
@@ -62,6 +62,7 @@ export default function (props: InputProps, context: SetupContext) {
     ifShowPassword,
     passwordOrText,
     changeShowPassword,
+    input,
     // clear控制
     toClear,
     toFocus,
