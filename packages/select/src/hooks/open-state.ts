@@ -1,16 +1,14 @@
-import { ref, onMounted, onUnmounted, getCurrentInstance } from 'vue'
-import type { ComponentInternalInstance } from 'vue'
-
-import { SelectDOM } from '@/types/select-types'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 export default function () {
-  const { proxy } = getCurrentInstance() as ComponentInternalInstance
   let listener: any
   const open = ref(false)
 
+  // select DOM
+  const select = ref()
   onMounted(() => {
     listener = document.addEventListener('click', (e: any) => {
-      if (!(proxy?.$refs.select as SelectDOM)?.contains(e.target)) open.value = false
+      if (select.value.contains(e.target)) open.value = false
     })
   })
 
