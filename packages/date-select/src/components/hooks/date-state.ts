@@ -7,12 +7,14 @@ import { theWeekOfDay, theDays } from '@/utils/date-utils'
 // 这是用于控制日期状态的hooks
 export default function (localDate: ModelValueDate, context: SetupContext) {
   // 当前展示的年份和月份
+  // #region
   const viewYear = ref(localDate.year ? localDate.year : 2023)
   const viewMonth = ref(localDate.month ? localDate.month : 2)
   // 该月第一天的周数
   const viewFirstWeek = ref(theWeekOfDay(viewYear.value, viewMonth.value, 1))
   // 该月天数
   const viewDays = ref(theDays(viewYear.value, viewMonth.value))
+  // #endregion
 
   // 年份后退
   function yearBack (): void {
@@ -131,6 +133,7 @@ export default function (localDate: ModelValueDate, context: SetupContext) {
     monthBack,
     // 年份前进
     monthForward,
+    // 选择更新
     update
   }
 }

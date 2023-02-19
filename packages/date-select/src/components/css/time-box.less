@@ -12,12 +12,13 @@
         width: 36px;
         height: 200px;
         border-left: 1px solid @grey-o3;
-        color: @black-background-hover;
+        color: @grey-o7;
         text-align: center;
         box-sizing: border-box;
 
         li {
-          height: 30px;
+            list-style: none;
+            height: 30px;
         }
 
         li.be-choosed {
@@ -27,32 +28,12 @@
 }
 
 .vi-date-select.is-dark {
-    .vi-date-select-top {
-        background-color: @mblack-background;
-        .vi-date-select-top {
-            border-bottom: 1px solid @lblack-background;
+    .vi-time-select-part {
+        .vi-time-scroll {
+            color: @black-background-hover;
 
-            .vi-date-show {
-                color: @grey-o7;
-            }
-        }
-    
-        .vi-date-select-content {    
-            .vi-canlendary-title {
-                color: @grey-o7;
-            }
-    
-            .vi-canlendary-days {
-                color: @grey-o7;
-                .vi-canlenddary-day {
-                    &:hover {
-                        color: @spurple-background
-                    }
-                }
-
-                .vi-canlendary-default {
-                    color: @lblack-background;
-                }
+            li.be-choosed {
+                color: @spurple-background;
             }
         }
     }
