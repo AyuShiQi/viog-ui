@@ -46,6 +46,10 @@ export default {
     type: String,
     default: 'date'
   },
+  time: {
+    type: Boolean,
+    default: true
+  },
   timeUnit: { // 时间显示单位  hour/minute/second
     type: String,
     default: 'minute'

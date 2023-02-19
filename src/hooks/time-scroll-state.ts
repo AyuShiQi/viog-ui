@@ -1,7 +1,10 @@
 import { ref, reactive, computed } from 'vue'
 import { formatTimeDigit } from '@/utils/date-utils'
 
-export default function (props: any, need: number, first: number, target: string) {
+import type { ModelValueDate } from '@/types/date-select-types'
+import type { TimeScrollProps } from '@/types/date-select-types/time-scroll-types'
+
+export default function (props: TimeScrollProps, need: number, first: number, target: string) {
   // 滚轮选择内容
   const lists: string[] = []
   // 滚动的DOM
@@ -16,25 +19,26 @@ export default function (props: any, need: number, first: number, target: string
     lists.push(formatTimeDigit(i))
   }
 
+  const t = target as keyof ModelValueDate
   const choosed = reactive(props.choosed)
-  if (choosed[target] === undefined) choosed[target] = 0
-
+  // 初始化时间
+  if (choosed[t] === undefined) choosed[t] = 0
   // 判断当前是否是被选择的
   function isChoosed (index: number): boolean {
-    return index === choosed[target]
+    return index === choosed[t]
   }
   // 滚轮偏移量
   const translate = computed(() => {
-    return first - choosed[target] * 30
+    return first - (choosed[t] as number) * 30
   })
   // 鼠标滚动事件
   function mouseWheel (e: any) {
     if (e.wheelDelta < 0) {
-      if (choosed[target] >= need - 1) return
-      choosed[target]++
+      if ((choosed[t] as number) >= need - 1) return
+      (choosed[t] as number)++
     } else {
-      if (choosed[target] <= 0) return
-      choosed[target]--
+      if ((choosed[t] as number) <= 0) return
+      (choosed[t] as number)--
     }
   }
 

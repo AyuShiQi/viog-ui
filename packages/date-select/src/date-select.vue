@@ -31,24 +31,13 @@
     <span class="vi-date-select-list">
       <ViDateSelectBox
         v-show="open"
-        :datas="renderDays"
-        :before="renderBefore"
-        :after="renderAfter"
-        :viewYear="viewYear"
-        :viewMonth="viewMonth"
-        :choosed="modelValue"
-        @yearBack="yearBack"
-        @yearForward="yearForward"
-        @monthBack="monthBack"
-        @monthForward="monthForward"
-        @update="update"></ViDateSelectBox>
+        :choosed="modelValue"></ViDateSelectBox>
     </span>
   </span>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import type { SetupContext } from 'vue'
+import { defineComponent } from 'vue'
 
 import props from './props'
 
@@ -57,37 +46,19 @@ import type { DateSelectProps } from '@/types/date-select-types'
 import ViDateSelectBox from './components/select-box.vue'
 
 import openState from '@/hooks/open-state'
-import dateState from './hooks/date-state'
-
-import { formatTimeDigit } from '@/utils/date-utils'
+import { dateSelectState } from './hooks'
 
 export default defineComponent({
   name: 'ViDateSelect',
   props,
   components: { ViDateSelectBox },
-  setup (props: DateSelectProps, context: SetupContext) {
+  setup (props: DateSelectProps) {
+    const mainDateSelect = dateSelectState(props)
     const open = openState()
-    const date = dateState(props.modelValue, context)
-
-    const formatDateTime = computed((): string => {
-      let format = props.format.slice(0)
-      const { year, month, date, hour, minute, second } = props.modelValue
-      // 以最小单位为界限返回对应值
-      if (!year || !month || !date) return ''
-      format = format.replace('YYYY', year + '')
-      format = format.replace('MM', month + '')
-      format = format.replace('DD', date + '')
-      format = format.replace('hh', formatTimeDigit(hour as number))
-      format = format.replace('mm', formatTimeDigit(minute as number))
-      format = format.replace('ss', formatTimeDigit(second as number))
-
-      return format
-    })
 
     return {
-      ...open,
-      ...date,
-      formatDateTime
+      ...mainDateSelect,
+      ...open
     }
   }
 })

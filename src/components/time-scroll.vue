@@ -24,15 +24,14 @@ import type { SetupContext } from 'vue'
 
 import timeScrollState from '@/hooks/time-scroll-state'
 
+import { TimeScrollProps } from '@/types/date-select-types/time-scroll-types'
+
 export default defineComponent({
   name: 'ViTimeScroll',
   emits: [],
   props: {
     choosed: {
-      type: Object,
-      default: () => {
-        return {}
-      }
+      default: {}
     },
     target: {
       type: String,
@@ -47,7 +46,7 @@ export default defineComponent({
       default: 60
     }
   },
-  setup (props: any, context: SetupContext) {
+  setup (props: TimeScrollProps, context: SetupContext) {
     const first = 80
     const mainScroll = timeScrollState(props, props.need, first, props.target)
 
@@ -61,7 +60,6 @@ export default defineComponent({
 <style lang="less">
   @import '../../public/css/basecolor.less';
   @import '../../public/css/base.less';
-//   @import './css/time-box.less';
   .vi-time-scroll {
     position: relative;
     .vi-time-scroll-information {

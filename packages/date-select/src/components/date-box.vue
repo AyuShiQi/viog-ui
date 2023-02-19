@@ -73,12 +73,16 @@ import type { SetupContext } from 'vue'
 
 import { dateViewState, dateState } from './hooks'
 
+import { DateBoxProps } from '@/types/date-select-types/date-box-types'
+
 export default defineComponent({
   name: 'ViDateBox',
   props: {
-    choosed: Object
+    choosed: {
+      default: {}
+    }
   },
-  setup (props: any, context: SetupContext) {
+  setup (props: DateBoxProps, context: SetupContext) {
     const mainDate = dateState(props.choosed, context)
     const { viewYear, viewMonth } = mainDate
     const dateBoxView = dateViewState(props, viewYear, viewMonth)
