@@ -26,10 +26,10 @@
 
         .vi-date-show {
             display: flex;
-            width: 100px;
             align-items: center;
             justify-content: center;
             color: @black-background-hover;
+            flex: 1;
         }
     }
 
@@ -76,7 +76,7 @@
             .vi-canlendary-day.be-choosed {
                 color: @spurple-background;
                 background-color: @spurple-o5;
-                border-radius: 50%;
+                border-radius: 5px;
             }
 
             .vi-canlendary-default {
@@ -95,7 +95,6 @@
     .vi-date-select-bottom {
         width: 100%;
         height: 28px;
-        // background-color: @spurple-o3;
         border-top: 1px solid @grey-o7;
     }
 }
@@ -103,30 +102,28 @@
 .vi-date-select.is-dark {
     .vi-date-select-top {
         background-color: @mblack-background;
-        .vi-date-select-top {
-            border-bottom: 1px solid @lblack-background;
+        border-bottom: 1px solid @lblack-background;
 
-            .vi-date-show {
-                color: @grey-o7;
-            }
+        .vi-date-show {
+            color: @lgrey;
         }
-    
-        .vi-date-select-content {    
-            .vi-canlendary-title {
-                color: @grey-o7;
-            }
-    
-            .vi-canlendary-days {
-                color: @grey-o7;
-                .vi-canlenddary-day {
-                    &:hover {
-                        color: @spurple-background
-                    }
-                }
+    }
 
-                .vi-canlendary-default {
-                    color: @lblack-background;
+    .vi-date-select-content {    
+        .vi-canlendary-title {
+            color: @lgrey;
+        }
+
+        .vi-canlendary-days {
+            color: @lgrey;
+            .vi-canlenddary-day {
+                &:hover {
+                    color: @spurple-background
                 }
+            }
+
+            .vi-canlendary-default {
+                color: @black-background-o3;
             }
         }
     }

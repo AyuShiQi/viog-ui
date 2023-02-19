@@ -1,0 +1,22 @@
+@import '../../../../../public/css/basecolor.less'; 
+
+.vi-month-select-content {
+    display: flex;
+    flex-wrap: wrap;
+    .vi-month-select {
+        display: flex;
+        width: 25%;
+        height: 55px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: transparent;
+        transition: all .2s linear 0s;
+    }
+
+    .vi-month-select.be-choosed {
+        color: @spurple-background;
+        background-color: @spurple-o3;
+        border-radius: 10px;
+    }
+}

@@ -421,7 +421,7 @@
       </ViRadioGroup>
     </vi-form-item>
     <vi-form-item label="生日">
-      <ViDateSelect v-model="date"></ViDateSelect>
+      <ViDateSelect v-model="date" timeUnit="hour" time></ViDateSelect>
       <ViDateSelect v-model="date" dark></ViDateSelect>
     </vi-form-item>
   </vi-form>

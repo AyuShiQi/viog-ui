@@ -42,13 +42,13 @@ export default {
     type: Boolean,
     default: false
   },
-  unit: { // 日期显示单位  year/month/week/date
+  unit: { // 日期显示单位  year/month/week/date (暂未实现)
     type: String,
     default: 'date'
   },
   time: {
     type: Boolean,
-    default: true
+    default: false
   },
   timeUnit: { // 时间显示单位  hour/minute/second
     type: String,

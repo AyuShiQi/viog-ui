@@ -31,7 +31,10 @@
     <span class="vi-date-select-list">
       <ViDateSelectBox
         v-show="open"
-        :choosed="modelValue"></ViDateSelectBox>
+        :choosed="modelValue"
+        :time="time"
+        :unit="unit"
+        :timeUnit="timeUnit"></ViDateSelectBox>
     </span>
   </span>
 </template>

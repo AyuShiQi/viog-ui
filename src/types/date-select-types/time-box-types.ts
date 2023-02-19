@@ -1,6 +1,6 @@
 import type { ModelValueDate } from './index'
 
-export interface DateBoxProps {
+export interface TimeBoxProps {
   choosed: ModelValueDate,
   unit: string
 }

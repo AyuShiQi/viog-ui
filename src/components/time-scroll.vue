@@ -62,6 +62,23 @@ export default defineComponent({
   @import '../../public/css/base.less';
   .vi-time-scroll {
     position: relative;
+    overflow: hidden;
+    width: 36px;
+    height: 200px;
+    border-left: 1px solid @grey-o3;
+    color: @grey-o7;
+    text-align: center;
+    box-sizing: border-box;
+
+    li {
+        list-style: none;
+        height: 30px;
+    }
+
+    li.be-choosed {
+        color: @spurple-background;
+    }
+
     .vi-time-scroll-information {
       position: absolute;
       top: 65px;

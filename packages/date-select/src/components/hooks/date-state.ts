@@ -59,6 +59,16 @@ export default function (localDate: ModelValueDate, context: SetupContext) {
     localDate.date = d
   }
 
+  /**
+   * 选择月份更换
+   * @param d date天数
+   */
+  function updateMonth (m: number): void {
+    console.log('ok', m)
+    localDate.year = viewYear.value
+    localDate.month = m
+  }
+
   // 初始化日期区域
   const day28: string[] = []
   const day29: string[] = []
@@ -134,6 +144,7 @@ export default function (localDate: ModelValueDate, context: SetupContext) {
     // 年份前进
     monthForward,
     // 选择更新
-    update
+    update,
+    updateMonth
   }
 }
