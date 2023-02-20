@@ -68,7 +68,7 @@ export default {
   // 起始年份
   beginYear: {
     type: Number,
-    default: 1000
+    default: 1970
   },
   // 结束年份
   endYear: {

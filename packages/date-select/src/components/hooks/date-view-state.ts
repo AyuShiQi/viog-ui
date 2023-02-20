@@ -2,6 +2,12 @@ import type { Ref } from 'vue'
 
 export default function (props: any, viewYear: Ref, viewMonth: Ref) {
   const dates = ['日', '一', '二', '三', '四', '五', '六']
+  const selectYears: number[] = []
+
+  const endYear = props.endYear ? props.endYear : 2100
+  for (let i = props.beginYear; i <= endYear; i++) {
+    selectYears.push(i)
+  }
 
   function isChoose (viewDate: string | number): boolean {
     if (typeof viewDate === 'string') viewDate = parseInt(viewDate)
@@ -14,6 +20,7 @@ export default function (props: any, viewYear: Ref, viewMonth: Ref) {
 
   return {
     dates,
+    selectYears,
     isChoose
   }
 }

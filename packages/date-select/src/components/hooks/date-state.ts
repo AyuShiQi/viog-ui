@@ -27,22 +27,22 @@ export default function (localDate: ModelValueDate, defaultUnit: ModelValueDate)
   const viewYear = ref(localDate.year ? localDate.year : nowDate.getFullYear())
   const viewMonth = ref(localDate.month ? localDate.month : nowDate.getMonth() + 1)
   // 该月第一天的周数
-  const viewFirstWeek = ref(theWeekOfDay(viewYear.value, viewMonth.value, 1))
+  const viewFirstWeek = computed((): number => {
+    return theWeekOfDay(viewYear.value, viewMonth.value, 1)
+  })
   // 该月天数
-  const viewDays = ref(theDays(viewYear.value, viewMonth.value))
+  const viewDays = computed(() => {
+    return theDays(viewYear.value, viewMonth.value)
+  })
   // #endregion
 
   // 年份后退
   function yearBack (): void {
     viewYear.value--
-    viewFirstWeek.value = theWeekOfDay(viewYear.value, viewMonth.value, 1)
-    viewDays.value = theDays(viewYear.value, viewMonth.value)
   }
   // 年份前进
   function yearForward (): void {
     viewYear.value++
-    viewFirstWeek.value = theWeekOfDay(viewYear.value, viewMonth.value, 1)
-    viewDays.value = theDays(viewYear.value, viewMonth.value)
   }
   // 月份后退
   function monthBack (): void {
@@ -50,9 +50,6 @@ export default function (localDate: ModelValueDate, defaultUnit: ModelValueDate)
       viewYear.value--
       viewMonth.value = 12
     } else viewMonth.value--
-
-    viewFirstWeek.value = theWeekOfDay(viewYear.value, viewMonth.value, 1)
-    viewDays.value = theDays(viewYear.value, viewMonth.value)
   }
   // 年份前进
   function monthForward (): void {
@@ -60,9 +57,6 @@ export default function (localDate: ModelValueDate, defaultUnit: ModelValueDate)
       viewYear.value++
       viewMonth.value = 1
     } else viewMonth.value++
-
-    viewFirstWeek.value = theWeekOfDay(viewYear.value, viewMonth.value, 1)
-    viewDays.value = theDays(viewYear.value, viewMonth.value)
   }
 
   /**

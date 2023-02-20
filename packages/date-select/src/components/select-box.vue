@@ -1,10 +1,10 @@
 <template>
   <transition name="vi-date-select-box">
     <span class="vi-date-select-box">
-      <DateBox v-if="unit === 'date'" :choosed="choosed" :unit="unit"></DateBox>
-      <MonthBox v-if="unit === 'month'" :choosed="choosed" :unit="unit"></MonthBox>
-      <YearBox v-if="unit === 'year'" :choosed="choosed" :unit="unit" :beginYear="beginYear" :endYear="endYear"></YearBox>
-      <TimeBox v-if="time" :choosed="choosed" :unit="timeUnit"></TimeBox>
+      <DateBox :beginYear="beginYear" :endYear="endYear" v-if="unit === 'date'" :choosed="choosed" :unit="unit"></DateBox>
+      <MonthBox :beginYear="beginYear" :endYear="endYear" v-if="unit === 'month'" :choosed="choosed" :unit="unit"></MonthBox>
+      <YearBox :beginYear="beginYear" :endYear="endYear" v-if="unit === 'year'" :choosed="choosed" :unit="unit"></YearBox>
+      <TimeBox :beginYear="beginYear" :endYear="endYear" v-if="time" :choosed="choosed" :unit="timeUnit"></TimeBox>
     </span>
   </transition>
 </template>
