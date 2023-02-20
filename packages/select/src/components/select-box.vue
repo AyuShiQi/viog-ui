@@ -2,7 +2,7 @@
   <transition name="vi-select-box">
     <span
     class="vi-select-box">
-        <Scroll height="100%" maxHeight="300px" hidden>
+        <Scroll maxHeight="maxHeight" hidden>
             <ul class="vi-select-ul">
               <li
               class="vi-select-li"
@@ -38,6 +38,10 @@ export default defineComponent({
     },
     selectedMulti: {
       default: []
+    },
+    maxHeight: {
+      type: String,
+      default: '100px'
     }
   },
   setup (props: any, context: SetupContext) {

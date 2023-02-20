@@ -12,6 +12,7 @@ export interface SelectProps {
   width: string,
   placeholder: string,
   filter: boolean,
+  maxHeight: string,
   datas: unknown[] | undefined
 }
 
