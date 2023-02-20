@@ -14,6 +14,7 @@ export default {
     type: String,
     default: 'middle'
   },
+  // 未实现
   type: {
     type: String,
     default: 'default'//  default/plain/button
@@ -34,28 +35,56 @@ export default {
     type: String,
     default: '请选择'
   },
+  // 未实现
   filter: {
     type: Boolean,
     default: false
   },
-  range: { // 日期是否开启范围选择
+  // 日期是否开启范围选择
+  range: {
     type: Boolean,
     default: false
   },
-  unit: { // 日期显示单位  year/month/week/date (暂未实现)
+  // 日期最小显示单位  year/month/week/date
+  unit: {
     type: String,
     default: 'date'
   },
+  // 是否启用时间选择
   time: {
     type: Boolean,
     default: false
   },
-  timeUnit: { // 时间显示单位  hour/minute/second
+  // 时间显示最小单位  hour/minute/second
+  timeUnit: {
     type: String,
     default: 'minute'
   },
+  // 格式化显示格式
   format: {
     type: String,
     default: 'YYYY-MM-DD hh:mm:ss'
+  },
+  // 起始年份
+  beginYear: {
+    type: Number,
+    default: 1000
+  },
+  // 结束年份
+  endYear: {
+    type: Number,
+    default: undefined
+  },
+  // 当没有被选择的单位，可以指定默认值
+  defaultUnit: {
+    type: Object,
+    default: {
+      year: 2000,
+      month: 1,
+      date: 1,
+      hour: 0,
+      minute: 0,
+      second: 0
+    }
   }
 }

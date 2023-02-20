@@ -19,5 +19,6 @@ export interface DateSelectProps {
   range: boolean,
   unit: string,
   timeUnit: string,
-  format: string
+  format: string,
+  defaultUnit: ModelValueDate
 }

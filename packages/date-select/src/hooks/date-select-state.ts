@@ -27,9 +27,10 @@ export default function (props: DateSelectProps) {
   function dateInit (unit: number | undefined, target: string): number | undefined {
     // 那么需要初始化date和month为1
     if (props.unit === 'year') {
-      if (target === 'date' || target === 'month') return 1
+      if (target === 'date') return props.defaultUnit.date ? props.defaultUnit.date : 1
+      if (target === 'month') return props.defaultUnit.month ? props.defaultUnit.date : 1
     } else if (props.unit === 'month') {
-      if (target === 'date') return 1
+      if (target === 'date') return props.defaultUnit.date ? props.defaultUnit.date : 1
     }
     return unit
   }

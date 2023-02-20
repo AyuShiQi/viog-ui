@@ -17,7 +17,8 @@
     </svg>
     <!-- 当前显示年月标识 -->
     <span class="vi-date-show">
-        {{viewYear}}年 {{viewMonth}}月
+      <ViSelect width="" type="button" :datas="[2021, 2022]" v-model="viewYear"></ViSelect>年
+      <ViSelect width="" type="button" :datas="[2021, 2022]" v-model="viewMonth"></ViSelect>月
     </span>
     <!-- 月份前进 -->
     <svg
@@ -84,10 +85,13 @@ export default defineComponent({
     unit: {
       type: String,
       default: 'date'
+    },
+    defaultUnit: {
+      default: {}
     }
   },
   setup (props: DateBoxProps, context: SetupContext) {
-    const mainDate = dateState(props.choosed, context)
+    const mainDate = dateState(props.choosed, props.defaultUnit)
     const { viewYear, viewMonth } = mainDate
     const dateBoxView = dateViewState(props, viewYear, viewMonth)
 

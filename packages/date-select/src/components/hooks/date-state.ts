@@ -4,12 +4,25 @@ import type { SetupContext } from 'vue'
 import { ModelValueDate } from '@/types/date-select-types'
 
 import { theWeekOfDay, theDays } from '@/utils/date-utils'
+
+// 初始化日期区域
+const day28: string[] = []
+const day29: string[] = []
+const day30: string[] = []
+const day31: string[] = []
+for (let i = 1; i <= 28; i++) {
+  day28.push(i + '')
+}
+day29.push(...day28, '29')
+day30.push(...day29, '30')
+day31.push(...day30, '31')
 // 这是用于控制日期状态的hooks
-export default function (localDate: ModelValueDate, context: SetupContext) {
+export default function (localDate: ModelValueDate, defaultUnit: ModelValueDate) {
+  const nowDate: Date = new Date()
   // 当前展示的年份和月份
   // #region
-  const viewYear = ref(localDate.year ? localDate.year : 2023)
-  const viewMonth = ref(localDate.month ? localDate.month : 2)
+  const viewYear = ref(localDate.year ? localDate.year : nowDate.getFullYear())
+  const viewMonth = ref(localDate.month ? localDate.month : nowDate.getMonth() + 1)
   // 该月第一天的周数
   const viewFirstWeek = ref(theWeekOfDay(viewYear.value, viewMonth.value, 1))
   // 该月天数
@@ -61,25 +74,30 @@ export default function (localDate: ModelValueDate, context: SetupContext) {
 
   /**
    * 选择月份更换
-   * @param d date天数
+   * @param m 月份
    */
   function updateMonth (m: number): void {
-    console.log('ok', m)
     localDate.year = viewYear.value
     localDate.month = m
   }
 
-  // 初始化日期区域
-  const day28: string[] = []
-  const day29: string[] = []
-  const day30: string[] = []
-  const day31: string[] = []
-  for (let i = 1; i <= 28; i++) {
-    day28.push(i + '')
+  /**
+   * 选择今天的日期
+   */
+  function today (): void {
+    localDate.year = nowDate.getFullYear()
+    localDate.month = nowDate.getMonth() + 1
+    localDate.date = nowDate.getDate()
   }
-  day29.push(...day28, '29')
-  day30.push(...day29, '30')
-  day31.push(...day30, '31')
+
+  /**
+   * 选择年份更换
+   * @param y year 年份
+   */
+  function updateYear (y: number): void {
+    localDate.year = y
+  }
+
   // 用于视图渲染的天数数组
   const renderDays = computed((): string[] => {
     let nowDays: string[]
@@ -145,6 +163,7 @@ export default function (localDate: ModelValueDate, context: SetupContext) {
     monthForward,
     // 选择更新
     update,
-    updateMonth
+    updateMonth,
+    updateYear
   }
 }

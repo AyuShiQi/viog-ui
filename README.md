@@ -1,10 +1,20 @@
-# viog-ui
+# viog-ui 0.2.3
 
 基于vue3的元宇宙风格ui组件库
 
 特点：活力性  可玩性  原子性
 
 > 组件库使用方式参考elementUI
+
+未来版本bug修复及功能添加：
+
+- 删除表单组件width等操控style样式的属性，提供更好的css样式修改环境（目前绝大部分适配失败来源） ^0.6.0
+- 调整虚拟滚动识别，支持不等高子元素的判别 ^0.7.0
+- 调整select框为虚拟滚动，更好的支持大数据渲染。 对最长选择宽度进行适配  ~0.7.0
+- 支持select框远程搜索、分类选择、多级选择, composition事件处理输入优化 ~0.7.0
+- 添加form组件的rule检查 ~0.7.0
+- input框解耦合，新增默认头尾部输入功能 ~0.8.0
+- 增添loading，progress， toast，information全局响应功能，更好的支持中间件使用 ~0.9.0
 
 ## 使用
 
@@ -940,6 +950,8 @@ export type { ViGridType } from 'viog-ui'
 
 选择器
 
+bug：暂时未适配跟随最长字长变换input框长款的样式，在0.5.0版本前会进行修复
+
 #### props参数
 
 - modelValue：undefined[] | string  当前单选框组选中的value
@@ -1006,3 +1018,100 @@ export type { ViSelectType } from 'viog-ui'
 
 - toClear 清空所有选择
 
+### ViDateSelect
+
+`<ViSelect>`
+
+日期时间选择器
+
+#### props参数
+
+- modelValue：{
+
+  ​	year?: number,
+
+  ​	month?: number,
+
+  ​	date?: number,
+
+  ​	hour?: number,
+
+  ​	minute?: number,
+
+  ​	second?: number
+
+  }  当前选择的日期和时间
+
+  > 参数：必传 (v-model形式) ，属性可根据单位值进行选择传入
+
+- size：string dateSelect 大小  // 暂未实现
+
+  > 参数：middle(default)/big/small
+
+- disabled：boolean 是否禁用
+
+  > 参数：false(default)/true
+
+- type：string 单选框样式 // 暂无
+
+  > 参数：default/button/plain
+
+- dark：boolean 基础色调是否为暗色调
+
+  > 参数：false(default)/true
+
+- placeholder: string 未选择时缺省值
+
+  > 参数：默认请选择
+
+- width：string 宽度
+
+  > 参数：一个可以被识别的长度单位值，默认200px
+
+- filter：boolean 是否为毛玻璃效果  // 暂未实现
+
+  > 参数：false(default)/true
+
+- range：boolean 是否开启范围选择 // 暂未实现
+
+  > 参数：false(default)/true
+
+- unit：string 日期选择器最小单位
+
+  > 参数：date(default)/week(暂时不做)/month/year
+
+- timeUnit：string 时间选择器最小单位，前提为开启时间选择
+
+  > 参数：second(default)/minute/hour
+  
+- time：boolean 是否启用时间选择器
+
+  > 参数：false(default)/true
+
+#### 事件支持
+
+- 暂未实现
+
+#### ts类型
+
+````typescript
+export type { ViSelectType } from 'viog-ui'
+````
+
+#### 对外暴露方法调用
+
+```typescript
+<!-- 父子组件中 -->
+<ViSelect ref="child">
+  睡觉
+</ViSelect>
+
+<!-- mounted -->   - ts -
+(this.$refs.child as ViSelectType).toPick()
+```
+
+- toClear 清空所有选择
+
+### ViForm
+
+### ViFormItem

@@ -52,10 +52,13 @@ export default defineComponent({
     unit: {
       type: String,
       default: 'date'
+    },
+    defaultUnit: {
+      default: {}
     }
   },
   setup (props: DateBoxProps, context: SetupContext) {
-    const mainDate = dateState(props.choosed, context)
+    const mainDate = dateState(props.choosed, props.defaultUnit)
     const { viewYear } = mainDate
     const dateBoxView = monthViewState(props, viewYear)
 
