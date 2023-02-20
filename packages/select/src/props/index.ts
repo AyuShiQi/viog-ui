@@ -34,5 +34,9 @@ export default {
     type: Boolean,
     default: false
   },
+  maxHeight: {
+    type: String,
+    default: '300px'
+  },
   datas: Array
 }

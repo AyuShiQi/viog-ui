@@ -1,5 +1,4 @@
 import { ref, computed } from 'vue'
-import type { SetupContext } from 'vue'
 
 import { ModelValueDate } from '@/types/date-select-types'
 
@@ -16,6 +15,10 @@ for (let i = 1; i <= 28; i++) {
 day29.push(...day28, '29')
 day30.push(...day29, '30')
 day31.push(...day30, '31')
+const selectMonths: number[] = []
+for (let i = 1; i <= 12; i++) {
+  selectMonths.push(i)
+}
 // 这是用于控制日期状态的hooks
 export default function (localDate: ModelValueDate, defaultUnit: ModelValueDate) {
   const nowDate: Date = new Date()
@@ -66,7 +69,8 @@ export default function (localDate: ModelValueDate, defaultUnit: ModelValueDate)
    * 选择日期更换
    * @param d date天数
    */
-  function update (d: number): void {
+  function update (d: string | number): void {
+    if (typeof d === 'string') d = parseInt(d)
     localDate.year = viewYear.value
     localDate.month = viewMonth.value
     localDate.date = d
@@ -76,7 +80,8 @@ export default function (localDate: ModelValueDate, defaultUnit: ModelValueDate)
    * 选择月份更换
    * @param m 月份
    */
-  function updateMonth (m: number): void {
+  function updateMonth (m: number | string): void {
+    if (typeof m === 'string') m = parseInt(m)
     localDate.year = viewYear.value
     localDate.month = m
   }
@@ -85,16 +90,33 @@ export default function (localDate: ModelValueDate, defaultUnit: ModelValueDate)
    * 选择今天的日期
    */
   function today (): void {
+    viewYear.value = nowDate.getFullYear()
+    viewMonth.value = nowDate.getMonth() + 1
+    localDate.date = nowDate.getDate()
+    localDate.year = viewYear.value
+    localDate.month = viewMonth.value
+  }
+  /**
+   * 选择本月
+   */
+  function thisMonth (): void {
+    viewYear.value = nowDate.getFullYear()
     localDate.year = nowDate.getFullYear()
     localDate.month = nowDate.getMonth() + 1
-    localDate.date = nowDate.getDate()
+  }
+  /**
+   * 选择今年
+   */
+  function thisYear (): void {
+    localDate.year = nowDate.getFullYear()
   }
 
   /**
    * 选择年份更换
    * @param y year 年份
    */
-  function updateYear (y: number): void {
+  function updateYear (y: number | string): void {
+    if (typeof y === 'string') y = parseInt(y)
     localDate.year = y
   }
 
@@ -164,6 +186,11 @@ export default function (localDate: ModelValueDate, defaultUnit: ModelValueDate)
     // 选择更新
     update,
     updateMonth,
-    updateYear
+    updateYear,
+    nowDate,
+    today,
+    thisMonth,
+    thisYear,
+    selectMonths
   }
 }

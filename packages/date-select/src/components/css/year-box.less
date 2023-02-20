@@ -1,0 +1,37 @@
+@import '../../../../../public/css/basecolor.less'; 
+
+.vi-year-select-content {
+    display: flex;
+    flex-wrap: wrap;
+    .vi-year-select {
+        display: flex;
+        width: 25%;
+        height: 55px;
+        color: @black-background;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: transparent;
+        transition: all .2s linear 0s;
+    }
+
+    .vi-year-select.be-choosed {
+        color: @spurple-background;
+        background-color: @spurple-o3;
+        border-radius: 10px;
+    }
+}
+
+.vi-date-select.is-dark {
+    .vi-year-select-content {
+        .vi-year-select {
+            color: @lgrey;
+        }
+    
+        .vi-year-select.be-choosed {
+            color: @spurple-background;
+            background-color: @spurple-o3;
+            border-radius: 10px;
+        }
+    }
+}

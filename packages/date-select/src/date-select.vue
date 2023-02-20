@@ -34,7 +34,9 @@
         :choosed="modelValue"
         :time="time"
         :unit="unit"
-        :timeUnit="timeUnit"></ViDateSelectBox>
+        :timeUnit="timeUnit"
+        :beginYear="beginYear"
+        :endYear="endYear"></ViDateSelectBox>
     </span>
   </span>
 </template>

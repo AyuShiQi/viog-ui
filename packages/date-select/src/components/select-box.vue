@@ -1,8 +1,9 @@
 <template>
   <transition name="vi-date-select-box">
     <span class="vi-date-select-box">
-      <DateBox :choosed="choosed" :unit="unit"></DateBox>
-      <MonthBox :choosed="choosed" :unit="unit"></MonthBox>
+      <DateBox v-if="unit === 'date'" :choosed="choosed" :unit="unit"></DateBox>
+      <MonthBox v-if="unit === 'month'" :choosed="choosed" :unit="unit"></MonthBox>
+      <YearBox v-if="unit === 'year'" :choosed="choosed" :unit="unit" :beginYear="beginYear" :endYear="endYear"></YearBox>
       <TimeBox v-if="time" :choosed="choosed" :unit="timeUnit"></TimeBox>
     </span>
   </transition>
@@ -14,10 +15,11 @@ import { defineComponent } from 'vue'
 import DateBox from './date-box.vue'
 import MonthBox from './month-box.vue'
 import TimeBox from './time-box.vue'
+import YearBox from './year-box.vue'
 
 export default defineComponent({
   name: 'ViDateSelectBox',
-  components: { DateBox, TimeBox, MonthBox },
+  components: { DateBox, TimeBox, MonthBox, YearBox },
   props: {
     choosed: Object,
     time: {
@@ -31,6 +33,12 @@ export default defineComponent({
     timeUnit: {
       type: String,
       default: 'second'
+    },
+    beginYear: {
+      type: Number
+    },
+    endYear: {
+      type: Number
     }
   }
 })
