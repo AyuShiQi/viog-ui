@@ -2,7 +2,7 @@
   <transition name="vi-select-box">
     <span
     class="vi-select-box">
-        <Scroll maxHeight="maxHeight" hidden>
+        <Scroll :maxHeight="maxHeight" hidden>
             <ul class="vi-select-ul">
               <li
               class="vi-select-li"
