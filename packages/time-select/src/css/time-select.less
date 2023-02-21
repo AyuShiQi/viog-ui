@@ -1,0 +1,140 @@
+@import '../../../../public/css/base.less';
+@import '../../../../public/css/basecolor.less';
+
+.vi-time-select {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    box-sizing: border-box;
+
+    .vi-time-select-input {
+        display: inline-flex;
+        padding: 8px;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+
+        .vi-time-select-choose {
+            overflow: hidden;
+            word-wrap: break-word;
+            text-align: left;
+            flex: 1;
+        }
+
+        .vi-time-select-icon {
+            display: inline-flex;
+            align-items: flex-start;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            cursor: pointer;
+            transform: scale(120%);
+            transition: all .2s linear 0s;
+        }
+    }
+
+    .vi-time-select-list {
+        position: relative;
+        width: 100%;
+        height: 0;
+
+        .vi-time-select-box {
+            display: flex;
+            position: absolute;
+            overflow: hidden;
+            text-align: left;
+            top: 5px;
+            left: 0;
+            z-index: 2;
+            background-color: #fff;
+            height: 220px;
+            align-items: center;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        .vi-time-select.is-dark {
+            .vi-date-select-box {
+                background-color: @mblack-background;
+            }
+        }
+    }
+}
+
+.vi-time-select.is-middle {
+    font-size: @font-size;
+    .vi-time-select-input {
+        .vi-time-select-icon {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
+.vi-time-select.is-big {
+    font-size: @big-font-size;
+    .vi-time-select-input {
+        .vi-time-select-icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+
+.vi-time-select.is-small {
+    font-size: @small-font-size;
+    .vi-time-select-input {
+        .vi-time-select-icon {
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+.vi-time-select.is-dark {
+    color: @black-background;
+}
+
+.vi-time-select.is-disabled {
+    position: relative;
+    cursor: no-drop;
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+}
+
+@import './type.less';
+
+.vi-time-select-box-enter-from {
+    transform: translateY(-2px);
+    opacity: 0;
+}
+
+.vi-time-select-box-enter-to {
+    opacity: 1;
+}
+
+.vi-time-select-box-enter-active {
+    transition: all .2s linear 0s;
+}
+
+.vi-time-select-box-leave {
+    opacity: 1;
+}
+
+.vi-time-select-box-leave-to {
+    transform: translateY(-2px);
+    opacity: 0;
+}
+
+.vi-time-select-box-leave-active {
+    transition: all .2s linear 0s;
+}

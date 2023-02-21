@@ -429,6 +429,10 @@
       <ViDateSelect v-model="date" dark unit="year"></ViDateSelect>
       <ViDateSelect v-model="date" dark unit="month"></ViDateSelect>
     </vi-form-item>
+    <vi-form-item label="生日">
+      <ViTimeSelect v-model="date"></ViTimeSelect>
+      <ViTimeSelect v-model="date" dark></ViTimeSelect>
+    </vi-form-item>
   </vi-form>
 </template>
 
