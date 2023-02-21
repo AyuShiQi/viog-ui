@@ -64,7 +64,7 @@ export default defineComponent({
     endYear: Number
   },
   setup (props: DateBoxProps, context: SetupContext) {
-    const mainDate = dateState(props.choosed, props.defaultUnit)
+    const mainDate = dateState(props, props.choosed)
     const { nowDate } = mainDate
     const yearBoxView = yearViewState(props, nowDate)
 

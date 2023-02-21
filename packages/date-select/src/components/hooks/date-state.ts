@@ -20,7 +20,13 @@ for (let i = 1; i <= 12; i++) {
   selectMonths.push(i)
 }
 // 这是用于控制日期状态的hooks
-export default function (localDate: ModelValueDate, defaultUnit: ModelValueDate) {
+export default function (props: any, localDate: ModelValueDate) {
+  const selectYears: number[] = []
+
+  const endYear = props.endYear ? props.endYear : 2100
+  for (let i = props.beginYear; i <= endYear; i++) {
+    selectYears.push(i)
+  }
   const nowDate: Date = new Date()
   // 当前展示的年份和月份
   // #region
@@ -185,6 +191,7 @@ export default function (localDate: ModelValueDate, defaultUnit: ModelValueDate)
     today,
     thisMonth,
     thisYear,
-    selectMonths
+    selectMonths,
+    selectYears
   }
 }

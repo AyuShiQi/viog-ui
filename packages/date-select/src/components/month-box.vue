@@ -11,7 +11,7 @@
     </svg>
     <!-- 当前显示年月标识 -->
     <span class="vi-date-show">
-        {{viewYear}}年
+        <ViSelect width="" maxHeight="100px" type="button" :datas="selectYears" v-model="viewYear"></ViSelect>年
     </span>
     <!-- 年份前进 -->
     <svg
@@ -60,10 +60,12 @@ export default defineComponent({
     },
     defaultUnit: {
       default: {}
-    }
+    },
+    beginYear: Number,
+    endYear: Number
   },
   setup (props: DateBoxProps, context: SetupContext) {
-    const mainDate = dateState(props.choosed, props.defaultUnit)
+    const mainDate = dateState(props, props.choosed)
     const { viewYear } = mainDate
     const dateBoxView = monthViewState(props, viewYear)
 

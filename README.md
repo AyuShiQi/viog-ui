@@ -8,6 +8,8 @@
 
 未来版本bug修复及功能添加：
 
+- 修复dateSelect time组件对于mousewheel事件阻止的优化（已修复）^0.2.4
+- 修复scroll组件组maxHeight等判别问题，向表单组件暴露属性修复样式不适配问题
 - 删除表单组件width等操控style样式的属性，提供更好的css样式修改环境（目前绝大部分适配失败来源） ^0.6.0
 - 调整虚拟滚动识别，支持不等高子元素的判别 ^0.7.0
 - 调整select框为虚拟滚动，更好的支持大数据渲染。 对最长选择宽度进行适配  ~0.7.0
@@ -1115,3 +1117,29 @@ export type { ViSelectType } from 'viog-ui'
 ### ViForm
 
 ### ViFormItem
+
+select更新一下虚拟滚动的算法，mounted获取到代码的长度，完成虚拟滚动渲染
+
+- 支持一下多级选项
+- 选项分组
+- search处理
+- 远程搜索处理
+- composition事件处理输入优化
+
+input框更新解耦合
+
+form表单的正则以及代码规范
+
+处理一下input的bug
+
+日期选择器的解耦的做好优化处理
+
+文件上传组件
+
+进度条
+
+table
+
+list
+
+message，toast，骨架框，navigation。。。
