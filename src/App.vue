@@ -211,10 +211,13 @@
       <ViSwitch dark size="small" filter></ViSwitch>
     </vi-row>
   </ViDialog> -->
-  <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中" class="scroll-style">
+  <!-- <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中" class="scroll-style">
     <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
   </ViScroll>
-  <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" hidden>
+  <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
+    <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
+  </ViScroll> -->
+  <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" class="virtual-scroll">
     <template v-slot="vi">
       <vi-row class="lili">
         {{vi.data.number}}
@@ -475,7 +478,7 @@ export default defineComponent({
     const { proxy } = getCurrentInstance() as ComponentInternalInstance
     const open = ref(true)
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
-    const obj = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 }, { number: 11 }, { number: 12 }]
+    const obj = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 }]
 
     function hello () {
       alert('hello')
@@ -588,5 +591,15 @@ div > button {
   box-sizing: border-box;
   background-color: #0d1869;
   border: 1px solid #000;
+}
+
+.scroll-style {
+  --vi-scroll-width: 100px;
+  background-color: #fff;
+}
+
+.virtual-scroll {
+  --vi-virtual-scroll-height: 400px;
+  // --vi-virtual-scroll-max-height: 300px;
 }
 </style>

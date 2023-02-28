@@ -12,10 +12,10 @@
 
 - 修复scroll组件组maxHeight等判别问题，向表单组件暴露属性修复样式不适配问题
 
-  修复清单：
+  已修复清单：
 
-  - 删除scroll组件width、heigth、maxHeight  props，删除style操作样式方法
-  - css重写--viog-scroll-width、--viog-scroll-height、--viog-scroll-max-height变量值修改scroll组件样式
+  - 删除scroll组件width、heigth、maxHeight  props，删除style操作样式方法 ^0.2.4
+  - css重写--viog-scroll-width、--viog-scroll-height、--viog-scroll-max-height变量值修改scroll组件样式^0.2.4
 
 - 删除表单组件width等操控style样式的属性，提供更好的css样式修改环境（目前绝大部分适配失败来源） ^0.6.0
 
@@ -36,6 +36,8 @@
 ```
 npm install viog-ui --save
 ```
+
+- 特殊标注样式属性请添加前缀--viog-组件名-属性名：如Scroll组件width：--viog-scroll-width
 
 ## 组件
 
@@ -371,15 +373,15 @@ export type { ViScrollType } from 'viog-ui'
 
 - width： scroll组件的宽度，默认为100%
 
-  覆写变量：--viog-scroll-width
+  覆写变量：--vi-scroll-width
 
 - height：scroll组件的宽度，默认为400px
 
-  覆写变量：--viog-scroll-height
+  覆写变量：--vi-scroll-height
 
 - max-height：scroll组件的max-height属性，默认状态下未定义
 
-  覆写变量：--viog-scroll-max-height
+  覆写变量：--vi-scroll-max-height
 
 ```
 <ViScroll class="scroll">这里是scroll里的内容</ViScroll>
@@ -387,9 +389,9 @@ export type { ViScrollType } from 'viog-ui'
 <!-- css -->
 // 重写方式
 .scroll {
-	--viog-scroll-width: 400px;
-	--viog-scroll-height: 400px;
-	--viog-scroll-max-height: 400px;  // 重写max-height会覆盖height的样式
+	--vi-scroll-width: 400px;
+	--vi-scroll-height: 400px;
+	--vi-scroll-max-height: 400px;  // 重写max-height会覆盖height的样式
 }
 ```
 

@@ -1,5 +1,8 @@
 :root {
-    --viog-scroll-height: 400px;
-    --viog-scroll-width: 100%;
-    --viog-scroll-max-height: ;
+    --vi-scroll-height: 400px;
+    --vi-scroll-width: 100%;
+    --vi-scroll-max-height: ;
+    --vi-virtual-scroll-width: 100%;
+    --vi-virtual-scroll-height: ;
+    --vi-virtual-scroll-max-height: 400px;
 }

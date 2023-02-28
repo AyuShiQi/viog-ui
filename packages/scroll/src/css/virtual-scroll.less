@@ -1,6 +1,14 @@
+@import '../../../../public/css/default-style.css';
+@import '../../../../public/css/basecolor.less';
+@import '../../../../public/css/default-style.css';
+
 .vi-virtual-scroll {
     overflow: auto;
     position: relative;
+    width: var(--vi-virtual-scroll-width);
+    height: var(--vi-virtual-scroll-height);
+    max-height: var(--vi-virtual-scroll-max-height);
+    background-color: pink;
 
     .list {
         position: absolute;
@@ -8,7 +16,79 @@
         width: 100%;
     }
 
-    .list-brace {
-        background-color: pink;
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 100%;
+        opacity: 1;
+        transition: all 0.2s;
     }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        transition: all .2s ease-in-out
+    }
+
+    &:-webkit-window-inactive::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+}
+
+.vi-virtual-scroll.scroll-white {
+    &::-webkit-scrollbar-thumb {
+        background-color: @white;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: @lgrey;
+    }
+}
+
+.vi-virtual-scroll.scroll-grey {
+    &::-webkit-scrollbar-thumb {
+        background-color: @grey-o7;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: @grey-o9;
+    }
+}
+
+.vi-virtual-scroll.scroll-black {
+    &::-webkit-scrollbar-thumb {
+        background-color: @black-background;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: @black-background-hover;
+    }
+}
+
+.vi-virtual-scroll.scroll-purple {
+    &::-webkit-scrollbar-thumb {
+        background-color: @mpurple;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: @mpurple-hover;
+    }
+}
+
+.vi-virtual-scroll.scroll-golden {
+    &::-webkit-scrollbar-thumb {
+        background-color: @golden;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: @golden-hover;
+    }
+}
+
+.vi-virtual-scroll.is-hidden {
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
+}
+
+.vi-virtual-scroll.is-smooth {
+    scroll-behavior: smooth;
 }

@@ -1,9 +1,5 @@
 <template>
   <div class="vi-virtual-scroll vi-scroll" @scroll="lookScroll"
-  :style="{
-    width,
-    height: `${height}px`
-  }"
   :class="[
   `scroll-${color}`,{
     'is-hidden': hidden,
@@ -47,5 +43,4 @@ export default defineComponent({
 
 <style lang="less">
   @import './css/virtual-scroll.less';
-  @import './css/scroll.less';
 </style>
