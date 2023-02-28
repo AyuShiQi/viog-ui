@@ -2,11 +2,13 @@ import { computed } from 'vue'
 
 import { formatTimeDigit } from '@/utils/date-utils'
 
-export default function (props: any) {
+import { TimeSelectProps } from '@/types/time-select-types'
+
+export default function (props: TimeSelectProps) {
   // 是否需要展示
-  function needShow (year: number | undefined, month: number | undefined, date: number | undefined): boolean {
+  function needShow (hour: number | undefined, minute: number | undefined, second: number | undefined): boolean {
     // 是否有显示时间的需求
-    return true
+    return !(hour === undefined && minute === undefined && second === undefined)
   }
 
   function timeInit (unit: number | undefined): number {
@@ -19,7 +21,7 @@ export default function (props: any) {
     const { year, month, date, hour, minute, second } = props.modelValue
     let format = props.format.slice(0)
     // 以最小单位为界限返回对应值
-    if (!needShow(year, month, date)) return props.placeholder
+    if (!needShow(hour, minute, second)) return props.placeholder
     format = format.replace('hh', formatTimeDigit(timeInit(hour)))
     format = format.replace('mm', formatTimeDigit(timeInit(minute)))
     format = format.replace('ss', formatTimeDigit(timeInit(second)))
@@ -31,10 +33,10 @@ export default function (props: any) {
     return true
   }
   function needMinute () {
-    return true
+    return props.unit !== 'hour'
   }
   function needSecond () {
-    return true
+    return props.unit === 'second'
   }
 
   return {

@@ -42,10 +42,10 @@ export default {
     type: Boolean,
     default: false
   },
-  // 最小显示单位  year/month/week/date
+  // 最小显示单位  hour/minute/second
   unit: {
     type: String,
-    default: 'date'
+    default: 'second'
   },
   // 格式化显示格式
   format: {

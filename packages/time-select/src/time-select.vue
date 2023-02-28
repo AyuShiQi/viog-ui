@@ -50,11 +50,13 @@ import openState from '@/hooks/open-state'
 import TimeScroll from '@/components/time-scroll.vue'
 import { timeSelectState } from './hooks'
 
+import { TimeSelectProps } from '@/types/time-select-types'
+
 export default defineComponent({
   name: 'ViTimeSelect',
   props,
   components: { TimeScroll },
-  setup (props: any) {
+  setup (props: TimeSelectProps) {
     const mainTimeSelect = timeSelectState(props)
     const open = openState()
 
