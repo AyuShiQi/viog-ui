@@ -8,16 +8,13 @@ export interface ViVirtualScrollType {
 }
 
 export interface ScrollProps {
-    width: string,
-    height: string,
     color: string,
     hidden: boolean,
     lazy: Function,
     smooth: boolean,
     wait: string,
     waitText: string,
-    finish: boolean,
-    maxHeight: string
+    finish: boolean
 }
 
 export interface VirtualScrollPlusProps {

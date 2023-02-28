@@ -1,10 +1,5 @@
 <template>
   <div class="vi-scroll"
-  :style="{
-    width,
-    height,
-    maxHeight
-  }"
   :class="[
   `scroll-${color}`,{
     'is-hidden': hidden,

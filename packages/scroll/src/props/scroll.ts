@@ -1,12 +1,4 @@
 export default {
-  height: {
-    type: String,
-    default: '400px'
-  },
-  width: {
-    type: String,
-    default: '100%'
-  },
   color: {
     type: String,
     default: 'grey'
@@ -34,9 +26,5 @@ export default {
   finish: {
     type: Boolean,
     default: false
-  },
-  maxHeight: {
-    type: String,
-    default: ''
   }
 }

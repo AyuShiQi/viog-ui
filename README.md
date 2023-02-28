@@ -9,13 +9,26 @@
 未来版本bug修复及功能添加：
 
 - 修复dateSelect time组件对于mousewheel事件阻止的优化（已修复）^0.2.4
+
 - 修复scroll组件组maxHeight等判别问题，向表单组件暴露属性修复样式不适配问题
+
+  修复清单：
+
+  - 删除scroll组件width、heigth、maxHeight  props，删除style操作样式方法
+  - css重写--viog-scroll-width、--viog-scroll-height、--viog-scroll-max-height变量值修改scroll组件样式
+
 - 删除表单组件width等操控style样式的属性，提供更好的css样式修改环境（目前绝大部分适配失败来源） ^0.6.0
+
 - 调整虚拟滚动识别，支持不等高子元素的判别 ^0.7.0
+
 - 调整select框为虚拟滚动，更好的支持大数据渲染。 对最长选择宽度进行适配  ~0.7.0
+
 - 支持select框远程搜索、分类选择、多级选择, composition事件处理输入优化 ~0.7.0
+
 - 添加form组件的rule检查 ~0.7.0
+
 - input框解耦合，新增默认头尾部输入功能 ~0.8.0
+
 - 增添loading，progress， toast，information全局响应功能，更好的支持中间件使用 ~0.9.0
 
 ## 使用
@@ -296,18 +309,6 @@ export type { ViDialogType } from 'viog-ui'
 
 #### props参数
 
-- width：string 滚动区域宽度（含滚动条）
-
-  > 参数：一个可以被识别的长度单位值，默认为100%
-
-- maxHeight：string 滚动区域最大高度
-
-  > 参数：一个可以被识别的长度单位值，默认为0
-
-- height：string 滚动区域高度
-
-  > 参数：一个可以被识别的长度单位值，默认为0
-
 - hidden：boolean 是否隐藏滚动条,隐藏后保持滚动效果
 
   > 参数：false(default)/true
@@ -335,7 +336,7 @@ export type { ViDialogType } from 'viog-ui'
 - waitText: string  等待缺省文字，若有加载动画，传入文字将跟在加载动画后面
 
   > 参数：默认为空字符串
-  
+
 - finish: boolean  用于懒加载中，代表加载数据是否完成
 
   > 参数：默认为false，未加载完成
@@ -364,6 +365,32 @@ export type { ViScrollType } from 'viog-ui'
 
 <!-- mounted -->   - ts -
 (this.$refs.child as ViScrollType).scrollTo(0, 140)
+```
+
+#### 样式修改
+
+- width： scroll组件的宽度，默认为100%
+
+  覆写变量：--viog-scroll-width
+
+- height：scroll组件的宽度，默认为400px
+
+  覆写变量：--viog-scroll-height
+
+- max-height：scroll组件的max-height属性，默认状态下未定义
+
+  覆写变量：--viog-scroll-max-height
+
+```
+<ViScroll class="scroll">这里是scroll里的内容</ViScroll>
+
+<!-- css -->
+// 重写方式
+.scroll {
+	--viog-scroll-width: 400px;
+	--viog-scroll-height: 400px;
+	--viog-scroll-max-height: 400px;  // 重写max-height会覆盖height的样式
+}
 ```
 
 ### VirtualScroll
