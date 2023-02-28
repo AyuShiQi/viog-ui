@@ -13,9 +13,6 @@
   ]"
   ref="select">
     <span class="vi-select-input"
-    :style="{
-      width
-    }"
     @click="toSelect">
         <span class="vi-select-choose">
           <template
