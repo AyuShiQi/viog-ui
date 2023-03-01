@@ -14,21 +14,22 @@
 
   已修复清单：
 
-  - 删除scroll组件width、heigth、maxHeight  props，删除style操作样式方法 ^0.2.4
-  - css重写--viog-scroll-width、--viog-scroll-height、--viog-scroll-max-height变量值修改scroll组件样式^0.2.4
+  - 删除scroll及virtual-scroll组件width、heigth、maxHeight  props，删除style操作样式方法 ^0.2.4
+  - css重写--vi-scroll-width、--vi-scroll-height、--vi-scroll-max-height变量值修改scroll组件样式^0.2.4
+  - css重写--vi-virtual-scroll-width、--vi--virtual-scroll-height、--vi-virtual-scroll-max-height变量值修改virtual-scroll组件样式 ^0.2.4
+  - 修复virtual-scroll组件max-height样式判别，调整虚拟滚动算法逻辑（暂未支持修改datas数据）
 
 - 删除表单组件width等操控style样式的属性，提供更好的css样式修改环境（目前绝大部分适配失败来源） ^0.6.0
 
+  已修复清单：
+
+  - 调整select组件为虚拟滚动列表
+
 - 调整虚拟滚动识别，支持不等高子元素的判别 ^0.7.0
-
 - 调整select框为虚拟滚动，更好的支持大数据渲染。 对最长选择宽度进行适配  ~0.7.0
-
 - 支持select框远程搜索、分类选择、多级选择, composition事件处理输入优化 ~0.7.0
-
 - 添加form组件的rule检查 ~0.7.0
-
 - input框解耦合，新增默认头尾部输入功能 ~0.8.0
-
 - 增添loading，progress， toast，information全局响应功能，更好的支持中间件使用 ~0.9.0
 
 ## 使用

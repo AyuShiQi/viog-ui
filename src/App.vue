@@ -605,5 +605,7 @@ div > button {
 
 .select-style {
   --vi-select-width: 100px;
+  --vi-select-scroll-width: 200px;
+  --vi-select-max-height: 100px;
 }
 </style>

@@ -1,9 +1,12 @@
 :root {
     --vi-scroll-height: 400px;
-    --vi-scroll-width: 100%;
+    --vi-scroll-width: ;
     --vi-scroll-max-height: ;
-    --vi-virtual-scroll-width: 100%;
+    --vi-virtual-scroll-width: ;
     --vi-virtual-scroll-height: ;
     --vi-virtual-scroll-max-height: 400px;
     --vi-select-width: ;
+    --vi-select-height: ;
+    --vi-select-scroll-width: ;
+    --vi-select-max-height: ;
 }
