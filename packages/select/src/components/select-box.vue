@@ -2,19 +2,21 @@
   <transition name="vi-select-box">
     <span
     class="vi-select-box">
-        <Scroll class="vi-select-scroll" hidden>
-            <ul class="vi-select-ul">
+        <Scroll
+        class="vi-select-scroll"
+        hidden
+        :datas="datas"
+        :itemHeight="16">
+            <template v-slot="vi">
               <li
               class="vi-select-li"
               :class="{
-                'be-choosed': isChoose(item)
+                'be-choosed': isChoose(vi.data)
               }"
-              v-for="item in datas"
-              :key="item"
-              @click="toChoose(item)">
-                {{item}}
+              @click="toChoose(vi.data)">
+                {{vi.data}}
               </li>
-            </ul>
+            </template>
         </Scroll>
     </span>
   </transition>
@@ -24,12 +26,12 @@
 import { defineComponent } from 'vue'
 import type { SetupContext } from 'vue'
 
-import { scroll } from '../../../scroll'
+import { scroll, virtualScroll } from '../../../scroll'
 
 export default defineComponent({
   name: 'ViSelectBox',
   emits: ['update'],
-  components: { Scroll: scroll },
+  components: { Scroll: virtualScroll },
   props: {
     datas: Array,
     multi: Boolean,

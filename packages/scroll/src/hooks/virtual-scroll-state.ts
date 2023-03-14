@@ -7,6 +7,7 @@ export default function (props: VirtualScrollProps) {
   // 现在就是要改这个地方，封装一下，作为数据结构无关
   const useDatas = reactive(packageArray(props.datas as any[]))
   const totalHeight = computed((): number => {
+    console.log(useDatas.length * props.itemHeight)
     return useDatas.length * props.itemHeight
   })
   const beginIndex = ref(0)
