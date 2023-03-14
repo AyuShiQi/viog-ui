@@ -217,13 +217,13 @@
   <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
     <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
   </ViScroll> -->
-  <!-- <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" class="virtual-scroll">
+  <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" class="virtual-scroll">
     <template v-slot="vi">
       <vi-row class="lili">
         {{vi.data.number}}
       </vi-row>
     </template>
-  </ViVirtualScroll> -->
+  </ViVirtualScroll>
   <!-- <vi-row id="div" style="padding: 10px 0;">
     <ViInput v-model="value" size="big" number showClear width="400px" :maxLength="10" @change="ok">账号</ViInput><br/>
     <ViInput v-model="value" dark size="big" password showPassword showClear>密码</ViInput><br/>

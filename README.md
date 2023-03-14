@@ -18,12 +18,14 @@
   - css重写--vi-scroll-width、--vi-scroll-height、--vi-scroll-max-height变量值修改scroll组件样式^0.2.4
   - css重写--vi-virtual-scroll-width、--vi--virtual-scroll-height、--vi-virtual-scroll-max-height变量值修改virtual-scroll组件样式 ^0.2.4
   - 修复virtual-scroll组件max-height样式判别，调整虚拟滚动算法逻辑（暂未支持修改datas数据）
+  - 修复virtual-scroll组件对于传入的datas的修改与破坏, 对数据进行进一步的封装隔离^0.2.4
+  - 支持virtual-scroll组件传入非对象数组，支持基本类型数组渲染
 
 - 删除表单组件width等操控style样式的属性，提供更好的css样式修改环境（目前绝大部分适配失败来源） ^0.6.0
 
   已修复清单：
 
-  - 调整select组件为虚拟滚动列表
+  - 调整select组件为虚拟滚动列表（未完成）
 
 - 调整虚拟滚动识别，支持不等高子元素的判别 ^0.7.0
 - 调整select框为虚拟滚动，更好的支持大数据渲染。 对最长选择宽度进行适配  ~0.7.0

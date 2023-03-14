@@ -1,12 +1,13 @@
-import { ref, shallowReactive, computed, onMounted } from 'vue'
+import { ref, reactive, computed, onMounted } from 'vue'
 
 import { VirtualScrollProps } from '@/types/scroll-types'
 
 export default function (props: VirtualScrollProps) {
   const restItem = 2
-  const datas = shallowReactive(props.datas as any[])
+  // 现在就是要改这个地方，封装一下，作为数据结构无关
+  const useDatas = reactive(packageArray(props.datas as any[]))
   const totalHeight = computed((): number => {
-    return datas.length * props.itemHeight
+    return useDatas.length * props.itemHeight
   })
   const beginIndex = ref(0)
   const endIndex = ref(0)
@@ -18,8 +19,8 @@ export default function (props: VirtualScrollProps) {
   onMounted(() => {
     contentHeight.value = content.value.clientHeight
     const end = Math.ceil(contentHeight.value / props.itemHeight + restItem)
-    console.log(contentHeight.value, end)
-    endIndex.value = end <= datas.length ? end : datas.length
+    // console.log(contentHeight.value, end)
+    endIndex.value = end <= useDatas.length ? end : useDatas.length
   })
 
   function scrollTo (x: number, y: number) {
@@ -34,20 +35,31 @@ export default function (props: VirtualScrollProps) {
 
     if (!(begin === beginIndex.value)) {
       beginIndex.value = begin
-      endIndex.value = end <= datas.length - restItem ? end + restItem : end
-      nowHeight.value = datas[begin].scrollTop
+      endIndex.value = end <= useDatas.length - restItem ? end + restItem : end
+      nowHeight.value = useDatas[begin].scrollTop
     }
   }
 
   // 这一步在挂载之前
   (function computeLenAndTop () {
     let currentHeight = 0
-    for (const data of datas) {
+    for (const data of useDatas) {
       data.scrollTop = currentHeight
       data.itemHeight = props.itemHeight
       currentHeight += props.itemHeight
     }
   })()
+
+  // 如果数组里是基本数据类型，需要做进一步的封装
+  function packageArray (datas: any): any {
+    const newArray: any[] = []
+    for (const data of datas) {
+      newArray.push({
+        value: data
+      })
+    }
+    return newArray
+  }
 
   return {
     scrollTo,
