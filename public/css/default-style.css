@@ -7,6 +7,6 @@
     --vi-virtual-scroll-max-height: 400px;
     --vi-select-width: ;
     --vi-select-height: ;
-    --vi-select-scroll-width: ;
+    --vi-select-scroll-width: 100%;
     --vi-select-max-height: ;
 }

@@ -6,7 +6,7 @@
         class="vi-select-scroll"
         hidden
         :datas="datas"
-        :itemHeight="16">
+        :itemHeight="24">
             <template v-slot="vi">
               <li
               class="vi-select-li"
