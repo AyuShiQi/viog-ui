@@ -34,9 +34,9 @@ export default {
     type: Boolean,
     default: false
   },
-  maxHeight: {
-    type: String,
-    default: '300px'
-  },
-  datas: Array
+  datas: Array,
+  itemHeight: {
+    type: Number,
+    default: 24
+  }
 }

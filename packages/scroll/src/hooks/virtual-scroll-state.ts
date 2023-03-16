@@ -18,6 +18,7 @@ export default function (props: VirtualScrollProps) {
   const contentHeight = ref(0)
   const content = ref()
   onMounted(() => {
+    console.log(content.value.children[1].children)
     contentHeight.value = content.value.clientHeight
     const end = Math.ceil(contentHeight.value / props.itemHeight + restItem)
     // console.log(contentHeight.value, end)

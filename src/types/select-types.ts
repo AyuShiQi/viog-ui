@@ -12,8 +12,8 @@ export interface SelectProps {
   width: string,
   placeholder: string,
   filter: boolean,
-  maxHeight: string,
-  datas: unknown[] | undefined
+  datas: unknown[] | undefined,
+  itemHeight: number
 }
 
 export interface ViSelectType {

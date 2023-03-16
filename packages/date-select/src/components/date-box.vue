@@ -17,8 +17,8 @@
     </svg>
     <!-- 当前显示年月标识 -->
     <span class="vi-date-show">
-      <ViSelect width="" maxHeight="100px" type="button" :datas="selectYears" v-model="viewYear"></ViSelect>年
-      <ViSelect width="" maxHeight="100px" type="button" :datas="selectMonths" v-model="viewMonth"></ViSelect>月
+      <ViSelect :itemHeight="27" type="button" :datas="selectYears" v-model="viewYear"></ViSelect>年
+      <ViSelect :itemHeight="27" type="button" :datas="selectMonths" v-model="viewMonth"></ViSelect>月
     </span>
     <!-- 月份前进 -->
     <svg

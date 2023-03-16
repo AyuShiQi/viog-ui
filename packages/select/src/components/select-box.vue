@@ -6,16 +6,16 @@
         class="vi-select-scroll"
         hidden
         :datas="datas"
-        :itemHeight="24">
+        :itemHeight="itemHeight">
             <template v-slot="vi">
-              <li
+              <div
               class="vi-select-li"
               :class="{
                 'be-choosed': isChoose(vi.data)
               }"
               @click="toChoose(vi.data)">
                 {{vi.data}}
-              </li>
+              </div>
             </template>
         </Scroll>
     </span>
@@ -40,7 +40,8 @@ export default defineComponent({
     },
     selectedMulti: {
       default: []
-    }
+    },
+    itemHeight: Number
   },
   setup (props: any, context: SetupContext) {
     function isChoose (item: any) {

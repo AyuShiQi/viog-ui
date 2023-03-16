@@ -46,6 +46,7 @@
         :selected="modelValue"
         :selectedMulti="modelValue"
         :multi="multi"
+        :itemHeight="itemHeight"
         @update="toUpdate"></ViSelectBox>
     </span>
   </span>
