@@ -18,9 +18,5 @@ export default {
   datas: {
     type: Array,
     defualt: []
-  },
-  itemHeight: {
-    type: Number,
-    default: 0
   }
 }

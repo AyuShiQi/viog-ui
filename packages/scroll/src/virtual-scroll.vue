@@ -12,7 +12,7 @@
     :style="{
       transform: `translateY(${nowHeight}px)`
     }">
-    <template v-for="data in datas.slice(beginIndex,endIndex)" :key="data.scrollTop">
+    <template v-for="data in datas.slice(beginIndex,endIndex + 1)" :key="data.scrollTop">
       <slot :data="data"></slot>
     </template>
     </div>

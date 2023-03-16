@@ -27,6 +27,5 @@ export interface VirtualScrollPlusProps {
 export interface VirtualScrollProps {
     color: string,
     hidden: boolean,
-    datas: unknown[] | undefined,
-    itemHeight: number
+    datas: unknown[] | undefined
 }
