@@ -19,13 +19,14 @@
   - css重写--vi-virtual-scroll-width、--vi--virtual-scroll-height、--vi-virtual-scroll-max-height变量值修改virtual-scroll组件样式 ^0.2.4
   - 修复virtual-scroll组件max-height样式判别，调整虚拟滚动算法逻辑（暂未支持修改datas数据）
   - 修复virtual-scroll组件对于传入的datas的修改与破坏, 对数据进行进一步的封装隔离^0.2.4
-  - 支持virtual-scroll组件传入非对象数组，支持基本类型数组渲染
+  - 支持virtual-scroll组件传入非对象数组，支持基本类型数组渲染^0.2.4
+  - 删除virtual-scroll组件itemHeight属性，内部自动计算itemHeight，详情请看下方说明^0.2.4
 
 - 删除表单组件width等操控style样式的属性，提供更好的css样式修改环境（目前绝大部分适配失败来源） ^0.6.0
 
   已修复清单：
 
-  - 调整select组件为虚拟滚动列表（未完成）
+  - 调整select组件为虚拟滚动列表 ^0.2.4
 
 - 调整虚拟滚动识别，支持不等高子元素的判别 ^0.7.0
 - 调整select框为虚拟滚动，更好的支持大数据渲染。 对最长选择宽度进行适配  ~0.7.0
@@ -314,6 +315,14 @@ export type { ViDialogType } from 'viog-ui'
 
 #### props参数
 
+- width：number 滚动区域宽度（含滚动条）（已弃用，请通过css修改样式）
+
+  > 参数：一个可以被识别的长度单位值，默认为100%
+
+- height：number 滚动区域高度 （已弃用，请通过css修改样式）
+
+  > 参数：单位只能为px，传入参数时请不要带单位
+
 - hidden：boolean 是否隐藏滚动条,隐藏后保持滚动效果
 
   > 参数：false(default)/true
@@ -408,13 +417,15 @@ export type { ViScrollType } from 'viog-ui'
 
 不支持平滑滚动，若有需要请使用普通滚动
 
+**注：组件内部会计算获取scroll容器和item的高度，但由于js特性，无法获取到auto相关属性所渲染出的节点高度，请一定通过--vi-virtual-height或者--vi-virtual-max-height给定容器一个px单位的值，item请给定一个px单位的值**
+
 #### props参数
 
-- width：string 滚动区域宽度（含滚动条）
+- width：string 滚动区域宽度（含滚动条）（已弃用，请通过css修改样式）
 
   > 参数：一个可以被识别的长度单位值，默认为100%
 
-- height：number 滚动区域高度
+- height：number 滚动区域高度 （已弃用，请通过css修改样式）
 
   > 参数：单位只能为px，传入参数时请不要带单位
 
@@ -426,11 +437,7 @@ export type { ViScrollType } from 'viog-ui'
 
   > 参数：grey(default)/black/white/golden/purple
 
-- itemHeight：number 列表元组高度
-
-  > 参数：必传，单位为px，传入参数是不要带单位
-
-- datas：object[] 列表数据数组
+- datas：any[]  item列表数据数组
 
   > 参数：必传
 
@@ -464,6 +471,32 @@ export type { ViVirtualScrollType } from 'viog-ui'
 
 <!-- mounted -->   - ts -
 (this.$refs.child as VirtualScrollType).scrollTo(0, 140)
+```
+
+#### 样式修改
+
+- width： scroll组件的宽度，默认为100%
+
+  覆写变量：--vi-virtual-scroll-width
+
+- height：virtual-scroll组件的宽度，默认为400px
+
+  覆写变量：--vi-virtual-scroll--height
+
+- max-height：virtual-scroll组件的max-height属性，默认状态下未定义
+
+  覆写变量：--vi-virtual-scroll-max-height
+
+```html
+<ViScroll class="scroll">这里是scroll里的内容</ViScroll>
+
+<!-- css -->
+// 重写方式
+.scroll {
+	--vi-virtual-scroll-width: 400px;
+	--vi-virtual-scroll-height: 400px;
+	--vi-virtual-scroll-max-height: 400px;  // 重写max-height会覆盖height的样式
+}
 ```
 
 ### ViInput
