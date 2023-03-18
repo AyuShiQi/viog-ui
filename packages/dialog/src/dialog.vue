@@ -5,7 +5,7 @@
         'has-mask': mask,
         'is-filter': maskFilter
       }]"
-      v-show="isOpen">
+      v-show="modelValue">
         <div class="vi-dialog-content"
         :class="[
         `vi-content-background--${background}`,
@@ -13,10 +13,7 @@
         {
           'has-shadow': shadow,
           'is-filter': filter
-        }]"
-        :style="{
-          top
-        }">
+        }]">
           <div class="top">
               <h3 class="title">
                   {{title}}
@@ -27,18 +24,12 @@
                   </svg>
               </span>
           </div>
-          <p class="content"
-          :style="{
-            textAlign: contentTextAlign
-          }">
+          <p class="content">
               <slot>
                   <!-- there is content -->
               </slot>
           </p>
-          <div class="bottom"
-          :style="{
-            textAlign: optionTextAlign
-          }">
+          <div class="bottom">
               <span v-if="unsure" class="unsure" @click="beUnsure">{{unsureTitle}}</span>
               <span v-if="sure" class="sure"
               :class="{
@@ -64,7 +55,7 @@ import { dialogState } from './hooks'
 
 export default defineComponent({
   name: 'ViDialog',
-  emits: ['sure', 'unSure', 'shutDown'],
+  emits: ['sure', 'unSure', 'shutDown', 'update:modelValue'],
   props,
   setup (props: DialogProps, context: SetupContext): any {
     const mainDialog = dialogState(props, context)

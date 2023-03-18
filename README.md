@@ -1,5 +1,7 @@
 # viog-ui 0.2.3
 
+https://ayushiqi.github.io/viog-ui/
+
 基于vue3的元宇宙风格ui组件库
 
 特点：活力性  可玩性  原子性
@@ -189,9 +191,13 @@ export type { ViLoadingType } from 'viog-ui'
 
 #### props参数
 
-- defaultOpen：boolean 对话框初始状态
+- defaultOpen：boolean 对话框初始状态 （已弃用该属性，请勿使用）
 
   > 参数： 默认为false，请不要在该prop上绑定响应式数据，对对话框的操作请调用相关方法
+
+- modelValue: boolean 对话框开闭状态 （可使用v-model语法糖）
+
+  > 参数：默认为false
 
 - title：string 标题
 
@@ -209,7 +215,7 @@ export type { ViLoadingType } from 'viog-ui'
 
   > 参数： true/false(default)
 
-- background：string 对话框背景色
+- background：string 对话框背景色 
 
   > 参数：black/white(default)/golden
 
@@ -225,7 +231,7 @@ export type { ViLoadingType } from 'viog-ui'
 
   > 参数： true/false(default)
 
-- top：string 对话框距顶部位置
+- top：string 对话框距顶部位置 （已弃用，请使用css修改样式）
 
   > 参数：一个可以被识别的长度单位值，默认20vh
 
@@ -241,11 +247,11 @@ export type { ViLoadingType } from 'viog-ui'
 
   > 参数： true(default)/false
 
-- contentTextAlign：string 内容对齐方式
+- contentTextAlign：string 内容对齐方式 （已弃用，请使用css修改样式）
 
   > 参数： left(default)/center/right
 
-- optionTextAlign：string 确认取消按键对齐方式
+- optionTextAlign：string 确认取消按键对齐方式（已弃用，请使用css修改样式）
 
   > 参数： left/center/right(default)
   
@@ -281,8 +287,8 @@ export type { ViLoadingType } from 'viog-ui'
 export type { ViDialogType } from 'viog-ui'
 ````
 
-- open  打开对话框
-- close 关闭对话框
+- open  打开对话框 （已过时，不推荐使用）
+- close 关闭对话框 （已过时，不推荐使用）
 
 ```typescript
 <!-- 父子组件中 -->
@@ -302,6 +308,35 @@ export type { ViDialogType } from 'viog-ui'
 #### 插槽
 
 - 默认插槽，对话框内容
+
+#### 样式修改
+
+- width： dialog组件的宽度，默认为400px
+
+  覆写变量：--vi-dialog-width
+
+- height：scroll组件的宽度，默认为auto
+
+  覆写变量：--vi-dialog-height
+
+- content-text-align： dialog组件对话部分的文本对齐方向，默认为left
+
+  覆写变量：--vi-dialog-content-text-align
+
+- option-text-align： dialog组件确认取消的对齐方向，默认为right
+
+  覆写变量：--vi-dialog-option-text-align
+
+```
+<ViDialog class="dialog">这里是dialog里的对话内容</ViDialog>
+
+<!-- css -->
+// 重写方式
+.dialog {
+	--vi-dialog-width: 400px;
+	--vi-dialog-height: 400px;
+}
+```
 
 ### Scroll
 

@@ -1,4 +1,8 @@
 export default {
+  modelValue: {
+    type: Boolean,
+    default: false
+  },
   title: {
     type: String,
     default: ''
@@ -80,9 +84,5 @@ export default {
     default: (): boolean => {
       return true
     }
-  },
-  defaultOpen: {
-    type: Boolean,
-    default: false
   }
 }

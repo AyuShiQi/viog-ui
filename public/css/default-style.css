@@ -1,4 +1,5 @@
 :root {
+    /* 组件样式们 */
     --vi-scroll-height: 400px;
     --vi-scroll-width: ;
     --vi-scroll-max-height: ;
@@ -9,4 +10,10 @@
     --vi-select-height: ;
     --vi-select-scroll-width: 100%;
     --vi-select-max-height: 400px;
+    --vi-dialog-width: 400px;
+    --vi-dialog-height: auto;
+    --vi-dialog-top: 20vh;
+    --vi-dialog-content-text-align: left;
+    --vi-dialog-option-text-align: right;
+    /* 颜色样式们 */
 }

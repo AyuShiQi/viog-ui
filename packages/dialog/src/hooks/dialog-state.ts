@@ -1,54 +1,50 @@
-import { ref } from 'vue'
 import type { SetupContext } from 'vue'
 
 import type { DialogProps, DialogOpen } from '@/types/dialog-types'
 
 export default function (props: DialogProps, context: SetupContext) {
-  const isOpen: DialogOpen = ref(props.defaultOpen)
-
   function beSure (): void {
     context.emit('sure')
     if (props.toSure()) {
-      isOpen.value = false
+      context.emit('update:modelValue', false)
     }
   }
 
   function beUnsure (): void {
     context.emit('unSure')
     if (props.toUnSure()) {
-      isOpen.value = false
+      context.emit('update:modelValue', false)
     }
   }
 
   function shutDown (): void {
     context.emit('shutDown')
     if (props.toShutDown()) {
-      isOpen.value = false
+      context.emit('update:modelValue', false)
     }
   }
 
   function open (time: number | undefined): void {
     if (typeof time === 'number') {
       setTimeout(() => {
-        isOpen.value = true
+        context.emit('update:modelValue', true)
       }, time)
     } else {
-      isOpen.value = true
+      context.emit('update:modelValue', true)
     }
   }
 
   function close (time: number | undefined) : void {
     if (typeof time === 'number') {
       setTimeout(() => {
-        isOpen.value = false
+        context.emit('update:modelValue', false)
       }, time)
     } else {
-      isOpen.value = false
+      context.emit('update:modelValue', false)
     }
   }
 
   return {
-    isOpen,
     beSure,
     beUnsure,
     shutDown,

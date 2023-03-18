@@ -4,6 +4,7 @@ export type ViDialogType = {
 }
 
 export interface DialogProps {
+  modelValue: boolean,
   mask: boolean,
   maskColor: string,
   maskFilter: boolean,
@@ -22,8 +23,7 @@ export interface DialogProps {
   title: string,
   toSure: Function,
   toUnSure: Function,
-  toShutDown: Function,
-  defaultOpen: boolean
+  toShutDown: Function
 }
 
 export interface DialogColor {

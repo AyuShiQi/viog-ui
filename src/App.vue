@@ -1,6 +1,6 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <!-- <vi-row justify="center">
+  <vi-row justify="center">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
     <ViButton color="pink" small @click="hello">点击进入</ViButton>
@@ -156,7 +156,7 @@
     <vi-row justify="center">
       <ViLoading type="diamond" color="purple"/>
     </vi-row>
-     <ViLoading type="diamond" color="white"/> -->
+     <ViLoading type="diamond" color="white"/>
   <!-- <vi-row justify="center">
     <ViLoading type="ball"/><br/>
     <ViLoading type="ball" color="purple"/><br/>
@@ -196,8 +196,9 @@
     <ViLoading type="star" color="blue"/>
     <ViLoading type="star" color="red"/>
     <ViLoading type="star" color="pink"/>
-  </vi-row>
+  </vi-row> -->
   <ViDialog ref="child"
+  v-model="open"
   maskFilter
   mask
   filter
@@ -210,20 +211,20 @@
       是否支付？
       <ViSwitch dark size="small" filter></ViSwitch>
     </vi-row>
-  </ViDialog> -->
+  </ViDialog>
   <!-- <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中" class="scroll-style">
     <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
   </ViScroll>
   <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
     <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
   </ViScroll> -->
-  <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" class="virtual-scroll">
+  <!-- <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" class="virtual-scroll">
     <template v-slot="vi">
       <vi-row class="lili">
         {{vi.data.number}}
       </vi-row>
     </template>
-  </ViVirtualScroll>
+  </ViVirtualScroll> -->
   <!-- <vi-row id="div" style="padding: 10px 0;">
     <ViInput v-model="value" size="big" number showClear width="400px" :maxLength="10" @change="ok">账号</ViInput><br/>
     <ViInput v-model="value" dark size="big" password showPassword showClear>密码</ViInput><br/>
@@ -393,13 +394,13 @@
   <vi-input type="plain" password show-password show-clear size="small"></vi-input> -->
 
   <vi-form>
-    <vi-form-item label="姓名">
+    <!-- <vi-form-item label="姓名">
       <vi-input password show-password>123</vi-input>
     </vi-form-item>
     <vi-form-item label="你觉得呢">
       <vi-input>123</vi-input>
-    </vi-form-item>
-    <vi-form-item dark label="你觉得呢">
+    </vi-form-item> -->
+    <!-- <vi-form-item dark label="你觉得呢">
       <ViCheckboxGroup v-model="ar">
         <ViCheckbox @change="change" value="唱歌" dark></ViCheckbox>
         <ViCheckbox value="跳舞"></ViCheckbox>
@@ -435,7 +436,7 @@
     <vi-form-item label="生日">
       <ViTimeSelect v-model="date"></ViTimeSelect>
       <ViTimeSelect v-model="date" dark></ViTimeSelect>
-    </vi-form-item>
+    </vi-form-item> -->
   </vi-form>
 </template>
 
