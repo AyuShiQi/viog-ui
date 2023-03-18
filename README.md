@@ -12,7 +12,7 @@ https://ayushiqi.github.io/viog-ui/
 
 - 修复dateSelect time组件对于mousewheel事件阻止的优化（已修复）^0.2.4
 
-- 修复scroll组件组maxHeight等判别问题，向表单组件暴露属性修复样式不适配问题
+- 修复scroll组件组maxHeight等判别问题，向表单组件暴露属性修复样式不适配问题 （已修复）
 
   已修复清单：
 
@@ -24,11 +24,12 @@ https://ayushiqi.github.io/viog-ui/
   - 支持virtual-scroll组件传入非对象数组，支持基本类型数组渲染^0.2.4
   - 删除virtual-scroll组件itemHeight属性，内部自动计算itemHeight，详情请看下方说明^0.2.4
 
-- 删除表单组件width等操控style样式的属性，提供更好的css样式修改环境（目前绝大部分适配失败来源） ^0.6.0
+- 删除组件width等操控style样式的属性，提供更好的css样式修改环境（目前绝大部分适配失败来源） ^0.6.0
 
   已修复清单：
 
   - 调整select组件为虚拟滚动列表 ^0.2.4
+  - 增加--vi-dialog-width等一系列css变量，支持复写变量值灵活修改dialog样式，详情见下表 ^0.2.4
 
 - 调整虚拟滚动识别，支持不等高子元素的判别 ^0.7.0
 - 调整select框为虚拟滚动，更好的支持大数据渲染。 对最长选择宽度进行适配  ~0.7.0
