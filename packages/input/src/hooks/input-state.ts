@@ -5,6 +5,26 @@ import { InputDOM } from '@/types/vue-types'
 import { InputProps } from '@/types/input-types'
 
 export default function (props: InputProps, context: SetupContext) {
+  // input dom
+  const input = ref()
+
+  /* 密码展示部分 */
+  // 是否展示密码
+  // #region
+  const ifShowPassword = ref(false)
+  const passwordOrText = computed((): string => {
+    return props.password && !ifShowPassword.value ? 'password' : 'text'
+  })
+  function changeShowPassword () {
+    ifShowPassword.value = !ifShowPassword.value
+  }
+  // #endregion
+
+  /* 清除区 */
+  function toClear () {
+    context.emit('update:modelValue', '')
+  }
+
   /* 鼠标进出input框事件 */
   // #region
   const isEnter = ref(false)
@@ -23,11 +43,13 @@ export default function (props: InputProps, context: SetupContext) {
     isFocus.value = true
   }
   function blur () {
-    if (!isEnter.value) ifShowPassword.value = false
-    isFocus.value = false
+    // blur后需要还原所有状态
+    if (!isEnter.value) {
+      isFocus.value = false
+      ifShowPassword.value = false
+    }
   }
-  // input dom
-  const input = ref()
+
   // input聚焦
   function toFocus () {
     (input.value as InputDOM).focus()
@@ -37,25 +59,6 @@ export default function (props: InputProps, context: SetupContext) {
     (input.value as InputDOM).blur()
   }
   // #endregion
-
-  /* 密码展示部分 */
-  // 是否展示密码
-  // #region
-  const ifShowPassword = ref(false)
-  const passwordOrText = computed((): string => {
-    return props.password && !ifShowPassword.value ? 'password' : 'text'
-  })
-  function changeShowPassword () {
-    toFocus()
-    ifShowPassword.value = !ifShowPassword.value
-  }
-  // #endregion
-
-  /* 清除区 */
-  function toClear () {
-    toFocus()
-    context.emit('update:modelValue', '')
-  }
 
   return {
     // password 显示控制
@@ -71,8 +74,6 @@ export default function (props: InputProps, context: SetupContext) {
     isFocus,
     focus,
     blur,
-    // 鼠标进入input区域事件
-    isEnter,
     mouseEnter,
     mouseLeave
   }

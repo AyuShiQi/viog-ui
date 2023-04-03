@@ -3,16 +3,20 @@
 
 .vi-input-apperance {
     overflow: hidden;
+    position: relative;
     display: inline-flex;
     width: var(--vi-input-width);
-    padding: 8px;
+    height: var(--vi-input-height);
+    padding: var(--vi-input-padding);
     transition: all .3s ease 0s;
     user-select: none;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    cursor: text;
 
     .vi-input {
+        width: 150px;
         height: 100%;
         border: none;
         outline: none;
@@ -22,7 +26,6 @@
         // 光标颜色
         caret-color: @grey;
         flex: 1;
-        box-sizing: border-box;
     
         &::placeholder {
             font-size: @font-size;
@@ -32,12 +35,6 @@
 
     .vi-input:disabled {
         cursor: no-drop;
-    }
-
-    .vi-option-button-home {
-        display: inline-flex;
-        height: 100%;
-        fill: @grey-o7;
     }
 }
 
@@ -67,11 +64,6 @@
 .vi-input-plain {
     border: 1px solid @grey-o7;
     border-radius: 5px;
-
-    .vi-input {
-        box-sizing: border-box;
-        // padding: 8px 10px;
-    }
 }
 
 .vi-input-apperance.is-big {
@@ -86,12 +78,8 @@
     .clear-option,
     .view-option,
     .noview-option {
-        width: 20px;
-        height: 20px;
-    }
-
-    .vi-option-button-home {
-        line-height: -10px;
+        width: @big-font-size;
+        height: @big-font-size;
     }
 }
 
@@ -107,12 +95,8 @@
     .clear-option,
     .view-option,
     .noview-option {
-        width: 18px;
-        height: 18px;
-    }
-
-    .vi-option-button-home {
-        line-height: -10px;
+        width: @font-size;
+        height: @font-size;
     }
 }
 
@@ -129,12 +113,8 @@
     .clear-option,
     .view-option,
     .noview-option {
-        width: @font-size;
-        height: @font-size;
-    }
-
-    .vi-option-button-home {
-        line-height: -10px;
+        width: @small-font-size;
+        height: @small-font-size;
     }
 }
 
