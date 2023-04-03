@@ -16,7 +16,9 @@ export interface InputProps {
   maxLength: number | undefined,
   round: boolean,
   width: string,
-  autofocus: boolean
+  autofocus: boolean,
+  suffix: any[] | string,
+  postfix: any[] | string
 }
 
 export interface ViInputType {

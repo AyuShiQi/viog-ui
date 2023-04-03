@@ -1089,7 +1089,7 @@ bug：暂时未适配跟随最长字长变换input框长款的样式，在0.5.0�
 
   > 参数：false(default)/true
 
-- width：string 宽度
+- width：string 宽度  （已弃用）
 
   > 参数：一个可以被识别的长度单位值，默认200px
   

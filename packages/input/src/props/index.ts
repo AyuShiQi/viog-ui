@@ -67,5 +67,13 @@ export default {
     type: Boolean,
     default: false
   },
-  maxLength: Number
+  maxLength: Number,
+  suffix: {
+    type: [Array, String],
+    default: ''
+  },
+  postfix: {
+    type: [Array, String],
+    default: ''
+  }
 }

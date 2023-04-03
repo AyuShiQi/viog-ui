@@ -14,8 +14,9 @@
 # 0.2.5（当前迭代开发版本）
 
 - 新增--vi-font-size,--vi-small-font-size,--vi-big-font-size css变量灵活定义项目大中小字体，建议在:root中修改变量值，也支持修改单个font-size
-- 重构vi-input组件实现，支持前后缀添加
-- 调整vi-input组件样式调控，支持修改总width、height，padding等租件内部属性
+- 调整vi-select组件样式调控，支持修改width、height，等组件内部属性
+- 调整vi-input组件样式调控，支持修改width、height，padding组件内部属性
+- 重构vi-input组件实现，支持前后缀添加（未完成）
 
 # 0.3.0
 

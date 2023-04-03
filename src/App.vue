@@ -391,7 +391,7 @@
   <vi-input password show-password></vi-input>
   <vi-input width="100%" type="plain" password show-password></vi-input>
   <vi-input type="plain" password show-password size="big"></vi-input>
-  <vi-input v-model="value" type="plain" password show-password show-clear size="small"></vi-input>
+  <vi-input v-model="value" :suffix="arr" type="plain" password show-password show-clear size="small"></vi-input>
 
   <vi-form>
     <vi-form-item label="姓名">

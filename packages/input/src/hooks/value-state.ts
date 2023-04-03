@@ -1,4 +1,4 @@
-import { onMounted } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import type { SetupContext } from 'vue'
 
 import { InputEvent } from '@/types/vue-types'
@@ -9,6 +9,14 @@ export default function (props: InputProps, context: SetupContext) {
     if (props.number && Number.isNaN(Number.parseInt(props.modelValue))) {
       context.emit('update:modelValue', '')
     }
+  })
+
+  const suf = ref('')
+  const post = ref('')
+  const value = ref('')
+
+  watch([suf, post], () => {
+    context.emit('update:modelValue', suf.value + value.value + post.value)
   })
 
   /* change与input与数字区 */
@@ -50,14 +58,16 @@ export default function (props: InputProps, context: SetupContext) {
 
   function handleInput (e: InputEvent): void {
     if (toUpdateValue(e)) {
-      context.emit('update:modelValue', e.target.value)
+      value.value = e.target.value
+      context.emit('update:modelValue', suf.value + e.target.value + post.value)
       context.emit('input')
     }
   }
 
   function handleChange (e: InputEvent): void {
     if (toUpdateValue(e)) {
-      context.emit('update:modelValue', e.target.value)
+      value.value = e.target.value
+      context.emit('update:modelValue', suf.value + e.target.value + post.value)
     }
     if (e.inputType === undefined) context.emit('change')
   }
@@ -65,6 +75,8 @@ export default function (props: InputProps, context: SetupContext) {
   return {
     // change与input事件
     handleInput,
-    handleChange
+    handleChange,
+    suf,
+    post
   }
 }
