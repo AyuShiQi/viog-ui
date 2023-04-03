@@ -1,19 +1,29 @@
 :root {
+    /* 基础配置 */
+    --vi-font-size: 14px;
+    --vi-small-font-size: 12px;
+    --vi-big-font-size: 18px;
     /* 组件样式们 */
     --vi-scroll-height: 400px;
     --vi-scroll-width: ;
     --vi-scroll-max-height: ;
+
     --vi-virtual-scroll-width: ;
     --vi-virtual-scroll-height: ;
     --vi-virtual-scroll-max-height: 400px;
+
     --vi-select-width: ;
     --vi-select-height: ;
     --vi-select-scroll-width: 100%;
     --vi-select-max-height: 400px;
+
     --vi-dialog-width: 400px;
     --vi-dialog-height: auto;
     --vi-dialog-top: 20vh;
     --vi-dialog-content-text-align: left;
     --vi-dialog-option-text-align: right;
+
+    --vi-input-width: 200px;
+    --vi-input-height: ;
     /* 颜色样式们 */
 }

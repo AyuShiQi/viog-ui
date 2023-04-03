@@ -197,7 +197,7 @@
     <ViLoading type="star" color="red"/>
     <ViLoading type="star" color="pink"/>
   </vi-row> -->
-  <ViDialog ref="child"
+  <!-- <ViDialog ref="child"
   v-model="open"
   maskFilter
   mask
@@ -211,7 +211,7 @@
       是否支付？
       <ViSwitch dark size="small" filter></ViSwitch>
     </vi-row>
-  </ViDialog>
+  </ViDialog> -->
   <!-- <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中" class="scroll-style">
     <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
   </ViScroll>
@@ -356,7 +356,7 @@
     <vi-col :row="1" :col="4" class="okk">8</vi-col>
     <vi-col :row="1" :col="2" class="okk">9</vi-col>
   </vi-grid> -->
-  <!-- <vi-row justify="center">
+  <vi-row justify="center">
     <ViSelect filter dark size="big" :datas="arr" v-model="value"></ViSelect>
   </vi-row>
   <vi-row justify="center">
@@ -391,15 +391,15 @@
   <vi-input password show-password></vi-input>
   <vi-input width="100%" type="plain" password show-password></vi-input>
   <vi-input type="plain" password show-password size="big"></vi-input>
-  <vi-input type="plain" password show-password show-clear size="small"></vi-input> -->
+  <vi-input type="plain" password show-password show-clear size="small"></vi-input>
 
   <vi-form>
-    <!-- <vi-form-item label="姓名">
+    <vi-form-item label="姓名">
       <vi-input password show-password>123</vi-input>
     </vi-form-item>
     <vi-form-item label="你觉得呢">
       <vi-input>123</vi-input>
-    </vi-form-item> -->
+    </vi-form-item>
     <!-- <vi-form-item dark label="你觉得呢">
       <ViCheckboxGroup v-model="ar">
         <ViCheckbox @change="change" value="唱歌" dark></ViCheckbox>

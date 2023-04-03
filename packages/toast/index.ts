@@ -9,7 +9,7 @@ export default {
   },
   open () {
     // 挂载一个toast
-    if(first) {
+    if (first) {
       first = false
       const container = document.createElement('div')
       container.id = 'viToastContainer'

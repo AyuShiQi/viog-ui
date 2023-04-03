@@ -4,20 +4,18 @@
 .vi-input-apperance {
     overflow: hidden;
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    width: var(--vi-input-width);
     transition: all .3s ease 0s;
     user-select: none;
+    justify-content: space-between;
+    align-items: center;
     box-sizing: border-box;
 
-    .input-box {
-        position: relative;
-        display: inline-block;
-        box-sizing: border-box;
-    }
-
     .vi-input {
-        width: 100%;
+        width: var(100%);
         height: 100%;
+        flex: 1;
         padding: 8px 0;
         border: none;
         outline: none;

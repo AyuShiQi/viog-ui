@@ -1,4 +1,4 @@
-# viog-ui 0.2.3
+# viog-ui 0.2.4
 
 https://ayushiqi.github.io/viog-ui/
 
@@ -549,7 +549,7 @@ export type { ViVirtualScrollType } from 'viog-ui'
 
   > 参数：必传（若不使用v-model语法糖，请绑定@update:modeValue事件对绑定值进行更新）
 
-- width：string input宽度
+- width：string input宽度 （已弃用）
 
   > 参数：一个可以被识别的长度单位值，默认为200px
 
