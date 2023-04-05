@@ -31,11 +31,60 @@
 
     /* 颜色样式们 */
     /* 字体样式 */
+    /* default */
     --vi-font-color: #262626;
     --vi-link-color: rgb(38, 38, 38, 0.75);
-    --vi-icon-color: #8C8C8C;
+    --vi-icon-color: #8C8C8C;  /*default*/
     --vi-background-color-deep: #E5E5E5;
+    /* 该颜色作用于所有disabled组件样式颜色 */
     --vi-background-color: rgb(0, 10, 32, 0.05);
     --vi-border-color: #E2E8F0;
     /* 规则配色 */
+    /* dark mode*/
+    --vi-dark-color1: #0F0B28;
+    --vi-dark-color2: #322C4A;
+    --vi-dark-color3: #5A5278;
+    --vi-dark-color4: #8A82A6;
+    /* purple */
+    --vi-purple-color1: #A486C6;
+    --vi-purple-color2: #B588E9;
+    --vi-purple-color3: #B498D5;
+    --vi-purple-color4: #F1E5FF;
+    --vi-purple-color5: rgba(181, 136, 233, 0.1);
+    --vi-purple-background: linear-gradient(-225deg, #b588e9 0%, #a053ff 48%, #4254f2 100%);
+    /* red */
+    --vi-red-color1: #FF7D70;
+    --vi-red-color2: #FF7D70;
+    --vi-red-color3: #FA948A;
+    --vi-red-color4: #FFE9E7;
+    --vi-red-color5: rgba(255, 125, 112, 0.1);
+    --vi-red-background: linear-gradient(to left, #ff4c43 0%, #ff7a69 100%);
+    /* pink */
+    --vi-pink-color1: #FFB2AE;
+    --vi-pink-color2: #FFB2AE;
+    --vi-pink-color3: #F9BFBB;
+    --vi-pink-color4: #FFF7FA;
+    --vi-pink-color5: rgba(255, 178, 174, 0.1);
+    --vi-pink-background: linear-gradient(to left, #ff8b85 0%, #ffbcb0 100%);
+    /* blue */
+    --vi-blue-color1: #6CB4C2;
+    --vi-blue-color2: #8ACFDC;
+    --vi-blue-color3: #A9E2EE;
+    --vi-blue-color4: #E8FBFF;
+    --vi-blue-color5: rgba(108, 180, 194, 0.1);
+    --vi-blue-background: linear-gradient(to left, #7dbbd4 0%, #96e1e4 100%);
+    /* yellow */
+    --vi-yellow-color1: #FEC60E;
+    --vi-yellow-color2: #FFC837;
+    --vi-yellow-color3: #FED264;
+    --vi-yellow-color4: #FFF8E5;
+    --vi-yellow-color5: rgba(254, 198, 14, .05);
+    --vi-yellow-background: linear-gradient(-225deg, #ffe641 0%, #ff8120 100%);
+    /* green */
+    --vi-green-color1: #6AC573;
+    --vi-green-color2: #73DA7E;
+    --vi-green-color3: #86DA8F;
+    --vi-green-color4: #E0FFE3;
+    --vi-green-color5: rgba(115, 218, 126, 0.1);
+    --vi-green-background: linear-gradient(to left, #31cf58 0%, #6bf0ad 100%);
 }

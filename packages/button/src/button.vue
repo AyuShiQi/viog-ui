@@ -1,11 +1,16 @@
 <template>
   <button class="vi-button" type="button" :disabled="disabled"
-    :class="[`vi-button--${color}`,`is-${type}`,`is-${radius}`,{
-        'is-small': small,
-        'is-disabled': disabled
-    }]">
+  :class="
+  [`vi-button--${color}`,
+  `is-${type}`,
+  `is-${radius}`,
+  {
+    'is-small': small,
+    'is-mutate': mutate,
+    'is-disabled': disabled
+  }]">
     <span>
-        <slot>button</slot>
+        <slot></slot>
     </span>
   </button>
 </template>

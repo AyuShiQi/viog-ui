@@ -6,7 +6,8 @@ export interface ButtonProps {
     type: string,
     radius: string,
     small: boolean,
-    disabled: boolean
+    disabled: boolean,
+    gradient: boolean
 }
 
 export interface ViButtonType {}

@@ -1,14 +1,14 @@
 export default {
   color: {
     type: String,
-    default: 'grey',
+    default: 'default',
     validator (value: string): boolean {
-      const colors = ['black', 'grey', 'purple', 'red', 'green', 'yellow', 'pink', 'blue', 'sgrey', 'spurple', 'sred', 'sgreen', 'syellow', 'spink', 'sblue']
+      const colors = ['black', 'default', 'purple', 'red', 'green', 'yellow', 'pink', 'blue', 'dark']
       // The value must match one of these strings
       if (colors.includes(value)) return true
       else {
         console.error('[viog] color=' + value)
-        console.error('[viog]button: 你应该为color参数传入[grey/black/purple/red/green/yellow/pink/blue/sgrey/spurple/sred/sgreen/syellow/spink/sblue]中的一个值')
+        console.error('[viog]button: 你应该为color参数传入[default/black/purple/red/green/yellow/pink/blue/dark]中的一个值')
         return false
       }
     }
@@ -64,5 +64,9 @@ export default {
         return false
       }
     }
+  },
+  mutate: {
+    type: Boolean,
+    default: false
   }
 }
