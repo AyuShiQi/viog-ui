@@ -17,7 +17,15 @@
 - 调整vi-select组件样式调控，支持修改width、height，等组件内部属性
 - 调整vi-input组件样式调控，支持修改width、height，padding组件内部属性
 - 重构vi-input组件实现，支持前后缀添加（未完成）
+- 修复select组件自适应最长属性，预防抖动
 
 # 0.3.0
 
 - 新增toast组件，支持全局响应
+
+- 新增postfix固钉组件
+- 新增message组件，支持全局响应
+
+# 0.3.1
+
+- 修改dialog组件为全局响应模式，支持组件样式全局配置与一次性配置，弃用其component使用形式

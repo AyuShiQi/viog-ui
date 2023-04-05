@@ -1,6 +1,6 @@
 <template>
   <span class="vi-input-fix">
-    <vi-select v-if="isArray" :datas="data" v-model="value"></vi-select>
+    <vi-select v-if="isArray" :datas="data" v-model="value" :size="size"></vi-select>
     <p v-else>{{data}}</p>
   </span>
 </template>
@@ -23,6 +23,10 @@ export default defineComponent({
     dark: {
       type: Boolean,
       default: false
+    },
+    size: {
+      type: String,
+      default: 'middle'
     }
   },
   setup (props: any, context: SetupContext) {

@@ -12,18 +12,18 @@ export default function (props: InputProps, context: SetupContext) {
   })
 
   const suf = ref('')
-  const post = ref('')
+  const pre = ref('')
   const value = ref('')
 
-  watch([suf, post], () => {
-    context.emit('update:modelValue', suf.value + value.value + post.value)
-  })
+  // watch([suf, post], () => {
+  //   context.emit('update:modelValue', suf.value + value.value + post.value)
+  // })
 
   /* change与input与数字区 */
   // 验证最大长度下
   function isMaxLength (value: string): boolean {
-    if (props.maxLength === undefined) return false
-    if (value.length > props.maxLength) return true
+    if (props.maxlength === undefined) return false
+    if (value.length > props.maxlength) return true
     return false
   }
 
@@ -59,7 +59,7 @@ export default function (props: InputProps, context: SetupContext) {
   function handleInput (e: InputEvent): void {
     if (toUpdateValue(e)) {
       value.value = e.target.value
-      context.emit('update:modelValue', suf.value + e.target.value + post.value)
+      context.emit('update:modelValue', suf.value + e.target.value + pre.value)
       context.emit('input')
     }
   }
@@ -67,7 +67,7 @@ export default function (props: InputProps, context: SetupContext) {
   function handleChange (e: InputEvent): void {
     if (toUpdateValue(e)) {
       value.value = e.target.value
-      context.emit('update:modelValue', suf.value + e.target.value + post.value)
+      context.emit('update:modelValue', suf.value + e.target.value + pre.value)
     }
     if (e.inputType === undefined) context.emit('change')
   }
@@ -77,6 +77,6 @@ export default function (props: InputProps, context: SetupContext) {
     handleInput,
     handleChange,
     suf,
-    post
+    pre
   }
 }

@@ -19,8 +19,11 @@
   @mouseenter="mouseEnter"
   @mouseleave="mouseLeave">
     <InputFix
-    class="vi-input-suffix"
-    :data="suffix" v-model="suf"></InputFix>
+    v-show="prefix!==''"
+    class="vi-input-prefix"
+    :data="prefix"
+    :size="size"
+    v-model="pre"></InputFix>
     <input
     :value="modelValue"
     @input="handleInput"
@@ -31,9 +34,10 @@
     :name="name"
     @focus="focus"
     @blur="blur"
+    :maxlength="maxlength"
+    :minlength="minlength"
     :disabled="disabled"
     ref="input"/>
-
     <span class="vi-option-button-home">
       <span class="vi-option-clear" v-show="showClear" @click="toClear">
         <svg class="clear-option"
@@ -59,7 +63,13 @@
         </svg>
       </span>
     </span>
-    <InputFix class="vi-input-postfix"></InputFix>
+    <InputFix
+    v-show="suffix!==''"
+    class="vi-input-suffix"
+    :data="suffix"
+    :size="size"
+    v-model="suf">
+    </InputFix>
   </span>
 </template>
 

@@ -23,9 +23,10 @@
     --vi-dialog-content-text-align: left;
     --vi-dialog-option-text-align: right;
 
-    --vi-input-width: 200px;
+    --vi-input-width: 300px;
     --vi-input-height: ;
     --vi-input-padding: 8px;
-    --vi-input-suffix-width: 50px;
+    --vi-input-inner-padding: 8px;
+    --vi-input-suffix-width: ;
     /* 颜色样式们 */
 }

@@ -13,12 +13,13 @@ export interface InputProps {
   error: boolean,
   warn: boolean,
   number: boolean,
-  maxLength: number | undefined,
+  maxlength: number | undefined,
+  minlength: number | undefined,
   round: boolean,
   width: string,
   autofocus: boolean,
   suffix: any[] | string,
-  postfix: any[] | string
+  prefix: any[] | string
 }
 
 export interface ViInputType {
