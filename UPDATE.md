@@ -16,13 +16,14 @@
 - 新增--vi-font-size,--vi-small-font-size,--vi-big-font-size css变量灵活定义项目大中小字体，建议在:root中修改变量值，也支持修改单个font-size
 - 调整vi-select组件样式调控，支持修改width、height，等组件内部属性
 - 调整vi-input组件样式调控，支持修改width、height，padding组件内部属性
-- 重构vi-input组件实现，支持前后缀添加（未完成）
+- 重构vi-input组件实现，支持前后缀添加
+- 修复select样式判别
 - 修复select组件自适应最长属性，预防抖动
 
 # 0.3.0
 
+- 重构组件库配色系统
 - 新增toast组件，支持全局响应
-
 - 新增postfix固钉组件
 - 新增message组件，支持全局响应
 

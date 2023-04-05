@@ -1,10 +1,10 @@
 import { onMounted, ref, watch } from 'vue'
-import type { SetupContext } from 'vue'
+import type { SetupContext, Ref } from 'vue'
 
 import { InputEvent } from '@/types/vue-types'
 import { InputProps } from '@/types/input-types'
 
-export default function (props: InputProps, context: SetupContext) {
+export default function (props: InputProps, context: SetupContext, value: Ref) {
   onMounted(() => {
     if (props.number && Number.isNaN(Number.parseInt(props.modelValue))) {
       context.emit('update:modelValue', '')
@@ -13,11 +13,10 @@ export default function (props: InputProps, context: SetupContext) {
 
   const suf = ref('')
   const pre = ref('')
-  const value = ref('')
 
-  // watch([suf, post], () => {
-  //   context.emit('update:modelValue', suf.value + value.value + post.value)
-  // })
+  watch([suf, pre], () => {
+    if (value.value) context.emit('update:modelValue', pre.value + value.value + suf.value)
+  })
 
   /* change与input与数字区 */
   // 验证最大长度下
@@ -31,7 +30,7 @@ export default function (props: InputProps, context: SetupContext) {
   function toUpdateValue (e: InputEvent): boolean {
     // 长度超过，不理睬
     if (isMaxLength(e.target.value)) {
-      e.target.value = props.modelValue
+      e.target.value = value.value
       return false
     }
     // 数字辨别区域
@@ -42,7 +41,7 @@ export default function (props: InputProps, context: SetupContext) {
         return false
         // 按下的按键是数字或者是删除键才行
       } else if (e.inputType === 'insertCompositionText') {
-        e.target.value = props.modelValue
+        e.target.value = value.value
         return false
       } else if (e?.inputType !== 'insertText' || (!Number.isNaN(parseInt(e.data)))) {
         // 合规才传
@@ -59,7 +58,7 @@ export default function (props: InputProps, context: SetupContext) {
   function handleInput (e: InputEvent): void {
     if (toUpdateValue(e)) {
       value.value = e.target.value
-      context.emit('update:modelValue', suf.value + e.target.value + pre.value)
+      context.emit('update:modelValue', pre.value + value.value + suf.value)
       context.emit('input')
     }
   }
@@ -67,7 +66,7 @@ export default function (props: InputProps, context: SetupContext) {
   function handleChange (e: InputEvent): void {
     if (toUpdateValue(e)) {
       value.value = e.target.value
-      context.emit('update:modelValue', suf.value + e.target.value + pre.value)
+      context.emit('update:modelValue', pre.value + value.value + suf.value)
     }
     if (e.inputType === undefined) context.emit('change')
   }

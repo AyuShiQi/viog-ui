@@ -150,13 +150,13 @@
     <ViButton color="spurple" @click="scr">点击进入</ViButton>
     <ViButton color="sgreen" @click="scr">点击进入</ViButton>
   </vi-row>
-    <vi-row justify="center">
+    <!-- <vi-row justify="center">
       <ViLoading type="diamond"/>
     </vi-row>
     <vi-row justify="center">
       <ViLoading type="diamond" color="purple"/>
     </vi-row>
-     <ViLoading type="diamond" color="white"/>
+     <ViLoading type="diamond" color="white"/> -->
   <!-- <vi-row justify="center">
     <ViLoading type="ball"/><br/>
     <ViLoading type="ball" color="purple"/><br/>
@@ -356,7 +356,7 @@
     <vi-col :row="1" :col="4" class="okk">8</vi-col>
     <vi-col :row="1" :col="2" class="okk">9</vi-col>
   </vi-grid> -->
-  <vi-row justify="center">
+  <!-- <vi-row justify="center">
     <ViSelect filter dark size="big" :datas="arr" v-model="value"></ViSelect>
   </vi-row>
   <vi-row justify="center">
@@ -391,16 +391,16 @@
   <vi-input password show-password></vi-input>
   <vi-input width="100%" type="plain" password show-password></vi-input>
   <vi-input type="plain" password show-password size="big"></vi-input>
-  <vi-input v-model="value" :maxlength="10" :suffix="arr" type="plain" password show-password show-clear size="small"></vi-input>
+  <vi-input v-model="value" :maxlength="10" :suffix="arr" type="plain" password show-password show-clear size="small"></vi-input> -->
 
-  <vi-form>
+  <!-- <vi-form>
     <vi-form-item label="姓名">
       <vi-input password show-password>123</vi-input>
     </vi-form-item>
     <vi-form-item label="你觉得呢">
       <vi-input>123</vi-input>
     </vi-form-item>
-    <!-- <vi-form-item dark label="你觉得呢">
+    <vi-form-item dark label="你觉得呢">
       <ViCheckboxGroup v-model="ar">
         <ViCheckbox @change="change" value="唱歌" dark></ViCheckbox>
         <ViCheckbox value="跳舞"></ViCheckbox>
@@ -436,8 +436,8 @@
     <vi-form-item label="生日">
       <ViTimeSelect v-model="date"></ViTimeSelect>
       <ViTimeSelect v-model="date" dark></ViTimeSelect>
-    </vi-form-item> -->
-  </vi-form>
+    </vi-form-item>
+  </vi-form> -->
 </template>
 
 <script lang="ts">
@@ -550,7 +550,8 @@ export default defineComponent({
 }
 
 body {
-  background-color: #0f0b28;
+  // background-color: #0f0b28;
+  background-color: #fff;
 }
 
 // #app {

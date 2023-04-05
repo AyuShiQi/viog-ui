@@ -27,6 +27,10 @@ export default defineComponent({
     size: {
       type: String,
       default: 'middle'
+    },
+    color: {
+      type: String,
+      default: 'default'
     }
   },
   setup (props: any, context: SetupContext) {

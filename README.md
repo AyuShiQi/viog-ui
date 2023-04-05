@@ -613,9 +613,21 @@ export type { ViVirtualScrollType } from 'viog-ui'
 
   > 参数：false(default)/true
 
-- maxLength：number 输入的最大长度
+- maxlength：number 输入的最大长度 (曾用名maxLength)
 
   > 参数：默认为不限定
+  
+- minlength：原生属性，number 输入的最小长度
+
+  > 参数：默认为不限定
+
+- prefix： string | number | any[]  前缀内容/选项
+
+  > 参数：默认为空字符串
+
+- suffix： string | number | any[]  后缀内容/选项
+
+  > 参数：默认为空字符串
 
 #### 插槽内容
 

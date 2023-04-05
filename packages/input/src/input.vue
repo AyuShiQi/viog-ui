@@ -25,7 +25,7 @@
     :size="size"
     v-model="pre"></InputFix>
     <input
-    :value="modelValue"
+    :value="value"
     @input="handleInput"
     @change="handleChange"
     class="vi-input"
@@ -91,14 +91,16 @@ export default defineComponent({
   emits: ['change', 'input', 'update:modelValue'],
   props,
   setup (props: InputProps, context: SetupContext) {
+    const value = ref()
     const mainInput = inputState(props, context)
-    const inputEvent = valueState(props, context)
+    const inputEvent = valueState(props, context, value)
     const placeholder = context.slots?.default !== undefined ? context.slots?.default()[0].children : ''
 
     return {
       placeholder,
       ...mainInput,
-      ...inputEvent
+      ...inputEvent,
+      value
     }
   },
   mounted () {
