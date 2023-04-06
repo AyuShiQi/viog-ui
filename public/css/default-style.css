@@ -42,9 +42,9 @@
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */
-    --vi-font-color: #262626;
-    --vi-link-color: rgb(38, 38, 38, 0.75);
-    --vi-icon-color: #8C8C8C;  /*default*/
+    --vi-font-color: #262626; /* dark */
+    --vi-link-color: rgb(38, 38, 38, 0.75); /*default*/
+    --vi-icon-color: #8C8C8C;  
     --vi-background-color-deep: #E5E5E5;
     /* 该颜色作用于所有disabled组件样式颜色 */
     --vi-background-color: rgb(0, 10, 32, 0.05);

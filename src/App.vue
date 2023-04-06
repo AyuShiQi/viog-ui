@@ -242,7 +242,8 @@
     <ViLoading type="star" color="red"/>
     <ViLoading type="star" color="pink"/>
   </vi-row> -->
-  <ViDialog ref="child"
+
+  <!-- <ViDialog ref="child"
   v-model="open"
   maskBlur
   mask
@@ -254,7 +255,8 @@
       是否支付？
       <ViSwitch dark size="small" filter></ViSwitch>
     </vi-row>
-  </ViDialog>
+  </ViDialog> -->
+
   <!-- <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中" class="scroll-style">
     <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
   </ViScroll>
@@ -268,7 +270,8 @@
       </vi-row>
     </template>
   </ViVirtualScroll> -->
-  <!-- <vi-row id="div" style="padding: 10px 0;">
+
+  <vi-row id="div" style="padding: 10px 0;">
     <ViInput v-model="value" size="big" number showClear width="400px" :maxLength="10" @change="ok">账号</ViInput><br/>
     <ViInput v-model="value" dark size="big" password showPassword showClear>密码</ViInput><br/>
     <ViInput round color="pink" password showPassword showClear>密码</ViInput><br/>
@@ -299,7 +302,7 @@
     <ViInput color="blue" dark warn>placeholder</ViInput><br>
     <ViInput color="red" error>placeholder</ViInput><br/>
     <ViInput ref="ipt" color="red" dark error>placeholder</ViInput><br>
-  </vi-row> -->
+  </vi-row>
   <!-- <vi-row id="div" style="padding: 10px 0;">
     <ViSwitch v-model="res" disabled></ViSwitch><br><br>
     <ViSwitch v-model="res" size="small" dark></ViSwitch><br><br>

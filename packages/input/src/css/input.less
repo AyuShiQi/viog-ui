@@ -21,14 +21,14 @@
         outline: none;
         font-size: @font-size;
         background-color: transparent;
-        color: @grey;
+        color: var(--vi-icon-color);
         // 光标颜色
-        caret-color: @grey;
+        caret-color: var(--vi-icon-color);
         flex: 1;
     
         &::placeholder {
             font-size: @font-size;
-            color: @grey-o7;
+            color: var(--vi-background-color-deep);
         }
     }
 
@@ -45,7 +45,7 @@
         left: 0;
         width: 100%;
         height: 1px;
-        background-color: @grey;
+        background-color: var(--vi-icon-color);
     }
 
     &::after {
@@ -55,13 +55,14 @@
         left: 0;
         width: 0;
         height: 2px;
-        background-color: @grey;
+        background-color: var(--vi-icon-color);
+        background-color: transparent;
         transition: all .3s ease 0s;
     }
 }
 
 .vi-input-plain {
-    border: 1px solid @grey-o7;
+    border: 1px solid var(--vi-icon-color);
     border-radius: 5px;
 }
 
@@ -119,38 +120,38 @@
 
 .vi-input-apperance.is-dark { 
     .vi-input {
-        color: @mblack-background;
+        color: var(--vi-font-color);
         // 光标颜色
-        caret-color: @mblack-background;
+        caret-color: var(--vi-font-color);
     
         &::placeholder {
-            color: @mblack-background-o7;
+            color: var(--vi-icon-color);
         }
     }
 
     .vi-option-button-home {
-        fill: @mblack-background-o7;
+        fill: var(--vi-icon-color);
     }
 }
 
 .vi-input-default.is-dark {
     &::before {
-        background-color: @mblack-background;
+        background-color: var(--vi-font-color);
     }
 
     &::after {
-        background-color: @mblack-background;
+        background-color: var(--vi-font-color);
     }
 }
 
 .vi-input-plain.is-dark {
-    border-color: @mblack-background-o7;
+    border-color: var(--vi-font-color);
 }
 
 .vi-input-default.is-focus {
     &::after {
         width: 100%;
-        box-shadow: 0 0 5px 0 @grey-o7;
+        box-shadow: none;
     }
 }
 
