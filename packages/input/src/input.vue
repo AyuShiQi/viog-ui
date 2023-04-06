@@ -13,7 +13,8 @@
     'info-error': error,
     'info-warn': warn,
     'show-password': showPassword,
-    'show-clear': showClear
+    'show-clear': showClear,
+    'is-disabled': disabled
   }]"
   @click="toFocus"
   @mouseenter="mouseEnter"
@@ -23,7 +24,8 @@
     class="vi-input-prefix"
     :data="prefix"
     :size="size"
-    v-model="pre"></InputFix>
+    v-model="pre"
+    :disabled="disabled"></InputFix>
     <input
     :value="value"
     @input="handleInput"
@@ -68,7 +70,8 @@
     class="vi-input-suffix"
     :data="suffix"
     :size="size"
-    v-model="suf">
+    v-model="suf"
+    :disabled="disabled">
     </InputFix>
   </span>
 </template>
@@ -91,8 +94,8 @@ export default defineComponent({
   emits: ['change', 'input', 'update:modelValue'],
   props,
   setup (props: InputProps, context: SetupContext) {
-    const value = ref()
-    const mainInput = inputState(props, context)
+    const value = ref('')
+    const mainInput = inputState(props, context, value)
     const inputEvent = valueState(props, context, value)
     const placeholder = context.slots?.default !== undefined ? context.slots?.default()[0].children : ''
 

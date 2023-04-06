@@ -38,105 +38,6 @@
     }
 }
 
-.vi-input-default {
-    &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-color: var(--vi-background-color-deep);
-        transition: all .3s ease 0s;
-    }
-
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: var(--vi-background-color-deep);
-        background-color: transparent;
-        transition: all .3s ease 0s;
-    }
-
-    &:hover::before {
-        background-color: var(--vi-icon-color);
-    }
-}
-
-.vi-input-default.is-focus {
-    &::after {
-        width: 100%;
-        box-shadow: none;
-    }
-}
-
-.vi-input-plain {
-    border: 1px solid var(--vi-background-color-deep);
-    border-radius: var(--vi-card-radius);
-}
-
-.vi-input-apperance.is-big {
-    .vi-input {
-        font-size: @big-font-size;
-    
-        &::placeholder {
-            font-size: @big-font-size;
-        }
-    }
-
-    .clear-option,
-    .view-option,
-    .noview-option {
-        width: @big-font-size;
-        height: @big-font-size;
-    }
-}
-
-.vi-input-apperance.is-middle {
-    .vi-input {
-        font-size: @font-size;
-    
-        &::placeholder {
-            font-size: @font-size;
-        }
-    }
-
-    .clear-option,
-    .view-option,
-    .noview-option {
-        width: @font-size;
-        height: @font-size;
-    }
-}
-
-.vi-input-apperance.is-small {
-    .vi-input {
-        font-size: @small-font-size;
-    
-        &::placeholder {
-            font-size: @small-font-size;
-            height: @small-font-size;
-        }
-    }
-
-    .clear-option,
-    .view-option,
-    .noview-option {
-        width: @small-font-size;
-        height: @small-font-size;
-    }
-}
-
-.vi-input-default.is-dark {
-    &:hover::before {
-        background-color: var(--vi-link-color);
-    }
-}
-
 .vi-input-apperance.is-dark { 
     .vi-input {
         color: var(--vi-font-color);
@@ -153,21 +54,65 @@
     }
 }
 
-.vi-input-default.is-dark {
-    &::before {
-        background-color: var(--vi-icon-color);
-    }
-}
-
-.vi-input-plain.is-dark {
-    border-color: var(--vi-icon-color);
-}
-
-.vi-input-plain.is-round {
-    border-radius: 1em;
-}
-
+@import './default.less';
+@import './plain.less';
+@import './button.less';
+@import './size.less';
 @import './status.less';
 @import './color.less';
 @import './option.less';
 @import './transition.less';
+
+.vi-input-apperance.is-disabled {
+    cursor: no-drop;
+    border-color: var(--vi-background-color);
+    &::before {
+        background-color: var(--vi-background-color);
+    }
+    &:hover::before {
+        background-color: var(--vi-background-color);
+    }
+    &:hover {
+        border-color: var(--vi-background-color);
+    }
+
+    .vi-input-fix {
+        border-color: var(--vi-background-color);
+        &:hover {
+            border-color: var(--vi-background-color);
+        }
+    }
+
+    .vi-input {
+        &::placeholder {
+            color: var(--vi-background-color);
+        }
+    }
+}
+
+.vi-input-apperance.is-dark.is-disabled {
+    cursor: no-drop;
+    border-color: var(--vi-background-color);
+    &::before {
+        background-color: var(--vi-background-color);
+    }
+    &:hover::before {
+        background-color: var(--vi-background-color);
+    }
+    &:hover {
+        border-color: var(--vi-background-color);
+    }
+
+    .vi-input-fix {
+        border-color: var(--vi-background-color);
+        &:hover {
+            border-color: var(--vi-background-color);
+        }
+    }
+
+    .vi-input {
+        &::placeholder {
+            color: var(--vi-background-color);
+        }
+    }
+}

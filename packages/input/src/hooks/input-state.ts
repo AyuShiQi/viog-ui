@@ -1,10 +1,10 @@
 import { ref, computed } from 'vue'
-import type { SetupContext } from 'vue'
+import type { SetupContext, Ref } from 'vue'
 
 import { InputDOM } from '@/types/vue-types'
 import { InputProps } from '@/types/input-types'
 
-export default function (props: InputProps, context: SetupContext) {
+export default function (props: InputProps, context: SetupContext, value: Ref) {
   // input dom
   const input = ref()
 
@@ -23,6 +23,7 @@ export default function (props: InputProps, context: SetupContext) {
   /* 清除区 */
   function toClear () {
     context.emit('update:modelValue', '')
+    value.value = ''
   }
 
   /* 鼠标进出input框事件 */

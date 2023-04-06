@@ -6,6 +6,7 @@
         height: 100%;
         justify-self: center;
         align-items: center;
+        transition: var(--vi-transition-slow);
 
         .vi-select {
             &::after,
@@ -21,13 +22,35 @@
     }
     .vi-input-prefix {
         padding-right: var(--vi-input-inner-padding);
-        border-right: 1px solid #aaa;
+        border-right: 1px solid var(--vi-background-color-deep);
         margin-right: var(--vi-input-inner-padding);
     }
 
     .vi-input-suffix {
         padding-left: 8px;
-        border-left: 1px solid #aaa;
+        border-left: 1px solid var(--vi-background-color-deep);
         margin-left: 8px;
+    }
+}
+
+.vi-input-apperance {
+    .vi-input-fix {
+        border-color: var(--vi-background-color-deep);
+    }
+    &:hover {
+        .vi-input-fix {
+            border-color: var(--vi-icon-color);
+        }
+    }
+}
+
+.vi-input-apperance.is-dark {
+    .vi-input-fix {
+        border-color: var(--vi-icon-color);
+    }
+    &:hover {
+        .vi-input-fix {
+            border-color: var(--vi-link-color);
+        }   
     }
 }

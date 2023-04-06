@@ -287,10 +287,10 @@
     <ViInput color="blue">placeholder</ViInput><br/>
     <ViInput color="blue" dark>placeholder</ViInput><br>
     <ViInput color="red">placeholder</ViInput><br/>
-    <ViInput color="red" dark password>placeholder</ViInput><br>
+    <ViInput :suffix="arr" color="red" dark password :prefix="arr">placeholder</ViInput><br>
   </vi-row>
     <vi-row id="div" style="padding: 10px 0;">
-    <ViInput type="plain" v-model="value" number showClear width="400px" :maxLength="10" @change="ok">账号</ViInput><br/>
+    <ViInput round :suffix="arr" type="plain" v-model="value" number showClear :maxlength="10" @change="ok">账号</ViInput><br/>
     <ViInput type="plain" v-model="value" dark password showPassword showClear>密码</ViInput><br/>
     <ViInput type="plain" round color="pink" password showPassword showClear>密码</ViInput><br/>
     <ViInput type="plain" color="purple">placeholder</ViInput><br/>
@@ -305,10 +305,10 @@
     <ViInput type="plain" color="blue">placeholder</ViInput><br/>
     <ViInput type="plain" color="blue" dark>placeholder</ViInput><br>
     <ViInput type="plain" color="red">placeholder</ViInput><br/>
-    <ViInput type="plain" color="red" dark password>placeholder</ViInput><br>
+    <ViInput disabled :suffix="arr" type="plain" color="red" dark password :prefix="arr">placeholder</ViInput><br>
   </vi-row>
   <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
-    <ViInput type="plain">placeholder</ViInput><br/>
+    <ViInput disabled type="plain">placeholder</ViInput><br/>
     <ViInput type="plain" dark>placeholder</ViInput><br>
     <ViInput type="plain" color="pink">placeholder</ViInput><br/>
     <ViInput type="plain" color="pink" dark>placeholder</ViInput><br>
@@ -322,6 +322,22 @@
     <ViInput type="plain" color="blue" dark warn>placeholder</ViInput><br>
     <ViInput type="plain" color="red" error>placeholder</ViInput><br/>
     <ViInput type="plain" ref="ipt" color="red" dark error>placeholder</ViInput><br>
+  </vi-row>
+    <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
+    <ViInput round type="button">placeholder</ViInput><br/>
+    <ViInput type="button" dark>placeholder</ViInput><br>
+    <ViInput type="button" color="pink">placeholder</ViInput><br/>
+    <ViInput type="button" color="pink" dark>placeholder</ViInput><br>
+    <ViInput type="button" color="golden">placeholder</ViInput><br/>
+    <ViInput type="button" color="golden" dark>placeholder</ViInput><br>
+    <ViInput type="button" color="green">placeholder</ViInput><br/>
+    <ViInput type="button" color="green" dark>placeholder</ViInput><br>
+    <ViInput type="button" color="yellow" right>placeholder</ViInput><br/>
+    <ViInput type="button" color="yellow" dark right>placeholder</ViInput><br>
+    <ViInput type="button" color="blue" warn>placeholder</ViInput><br/>
+    <ViInput type="button" color="blue" dark warn>placeholder</ViInput><br>
+    <ViInput type="button" color="red" error>placeholder</ViInput><br/>
+    <ViInput type="button" ref="ipt" color="red" dark error>placeholder</ViInput><br>
   </vi-row>
   <!-- <vi-row id="div" style="padding: 10px 0;">
     <ViSwitch v-model="res" disabled></ViSwitch><br><br>

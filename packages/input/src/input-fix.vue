@@ -1,6 +1,6 @@
 <template>
   <span class="vi-input-fix">
-    <vi-select v-if="isArray" :datas="data" v-model="value" :size="size"></vi-select>
+    <vi-select v-if="isArray" :datas="data" v-model="value" :size="size" :disabled="disabled"></vi-select>
     <p v-else>{{data}}</p>
   </span>
 </template>
@@ -31,6 +31,10 @@ export default defineComponent({
     color: {
       type: String,
       default: 'default'
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   setup (props: any, context: SetupContext) {

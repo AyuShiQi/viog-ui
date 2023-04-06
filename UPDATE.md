@@ -21,6 +21,7 @@
 - 修复select组件自适应最长属性，预防抖动
 - 重构button样式组
 - 新增button组件size属性，弃用small属性
+- 新增input组件type样式
 
 # 0.3.0
 

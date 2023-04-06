@@ -582,7 +582,7 @@ export type { ViVirtualScrollType } from 'viog-ui'
 
 - type：string 输入框样式
 
-  > 参数：default/plain
+  > 参数：default/plain/button
 
 - round：boolean input边框是否为round，仅在type为plain时生效
 
