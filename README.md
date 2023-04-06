@@ -56,10 +56,9 @@ npm install viog-ui --save
 
 - color ：string  按钮颜色
 
-  > 参数：grey(default)/black/red/green/yellow/pink/blue
+  > 参数：default/dark/red/green/yellow/pink/blue/purple
   >
-  > sgrey/sred/sgreen/syellow/spink/sblue
-
+  
 - type ：string  按钮风格
 
   > 参数：default/plain/transparent
@@ -70,7 +69,11 @@ npm install viog-ui --save
 
 - disabled ：boolean 是否禁用
 
-- small：bolean 是否使用小尺寸
+- small：bolean 是否使用小尺寸 （已弃用，请使用size属性控制）
+
+- size：string   按钮大小
+
+  > 参数：small/middle(default)/big
 
 #### 事件支持
 

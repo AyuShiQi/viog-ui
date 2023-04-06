@@ -4,8 +4,8 @@
   [`vi-button--${color}`,
   `is-${type}`,
   `is-${radius}`,
+  `is-${size}`,
   {
-    'is-small': small,
     'is-mutate': mutate,
     'is-disabled': disabled
   }]">

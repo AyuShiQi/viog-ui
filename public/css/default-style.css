@@ -4,6 +4,8 @@
     --vi-small-font-size: 12px;
     --vi-big-font-size: 18px;
     /* 组件样式们 */
+    --vi-button-padding: .8em .6em;
+
     --vi-scroll-height: 400px;
     --vi-scroll-width: ;
     --vi-scroll-max-height: ;

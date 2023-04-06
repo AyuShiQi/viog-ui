@@ -3,7 +3,7 @@ export default {
     type: String,
     default: 'default',
     validator (value: string): boolean {
-      const colors = ['black', 'default', 'purple', 'red', 'green', 'yellow', 'pink', 'blue', 'dark']
+      const colors = ['default', 'purple', 'red', 'green', 'yellow', 'pink', 'blue', 'dark']
       // The value must match one of these strings
       if (colors.includes(value)) return true
       else {
@@ -21,7 +21,7 @@ export default {
       // The value must match one of these strings
       if (types.includes(value)) return true
       else {
-        console.error('[viog]button: 你应该为type参数传入[plain/transparent]中的一个值')
+        console.error('[viog]button: 你应该为type参数传入[default/plain/transparent]中的一个值')
         return false
       }
     }
@@ -39,15 +39,15 @@ export default {
       }
     }
   },
-  small: {
-    type: Boolean,
-    default: false,
-    validator (value: boolean): boolean {
-      const radius = [true, false]
+  size: {
+    type: String,
+    default: 'middle',
+    validator (value: string): boolean {
+      const radius = ['small', 'middle', 'big']
       // The value must match one of these strings
       if (radius.includes(value)) return true
       else {
-        console.error('[viog]button: 你应该为small参数传入一个布尔值')
+        console.error('[viog]button: 你应该为size参数传入[small/middle/big]其中一个值')
         return false
       }
     }

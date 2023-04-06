@@ -19,6 +19,8 @@
 - 重构vi-input组件实现，支持前后缀添加
 - 修复select样式判别
 - 修复select组件自适应最长属性，预防抖动
+- 重构button样式组
+- 新增button组件size属性，弃用small属性
 
 # 0.3.0
 

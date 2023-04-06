@@ -1,21 +1,39 @@
-.vi-button.is-disabled {
-    cursor: no-drop;
+.vi-button {
     &:disabled {
-        background: @mgrey;
+        cursor: no-drop;
+        color: #fff;
+        background: var(--vi-background-color);
+    }
+
+    &:hover:disabled {
+        cursor: no-drop;
+        color: #fff;
+        background: var(--vi-background-color);
     }
 }
 
-.vi-button.is-disabled.is-plain {
+.vi-button.is-plain {
     &:disabled {
-        border-color: @mgrey;
-        color: @mgrey;
-        background: @white;
+        border-color: var(--vi-background-color);
+        color: var(--vi-background-color);
+        background: transparent;
+    }
+
+    &:hover:disabled {
+        border-color: var(--vi-background-color);
+        color: var(--vi-background-color);
+        background: transparent;
     }
 }
 
-.vi-button.is-disabled.is-transparent {
+.vi-button.is-transparent {
     &:disabled {
-        color: @mgrey;
-        background: @white;
+        color: var(--vi-background-color);
+        background: transparent;
+    }
+
+    &:hover:disabled {
+        color: var(--vi-background-color);
+        background: transparent;
     }
 }
