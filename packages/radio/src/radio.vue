@@ -27,12 +27,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, getCurrentInstance, inject, computed } from 'vue'
-import type { Ref, SetupContext, ComponentInternalInstance } from 'vue'
+import { defineComponent } from 'vue'
+import type { Ref, SetupContext } from 'vue'
 
 import props from './props'
 
-import type { RadioDOM } from '@/types/vue-types'
 import type { RadioProps } from '@/types/radio-types'
 
 import { radioState } from './hooks'
