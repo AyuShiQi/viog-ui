@@ -3,6 +3,14 @@
     --vi-font-size: 14px;
     --vi-small-font-size: 12px;
     --vi-big-font-size: 18px;
+
+    --vi-card-radius: 4px;
+    --vi-card-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.04), 
+    0px 4px 8px rgba(0, 0, 0, 0.02), 
+    0px 6px 12px rgba(0, 0, 0, 0.02);
+    --vi-box-shadow: 0px 1px 3px #0000000a,0px 2px 8px #00000014;
+    --vi-blur: 16px;
+    --vi-transition: all .2s ease 0s;
     /* 组件样式们 */
     --vi-button-padding: .8em .6em;
 
@@ -89,4 +97,7 @@
     --vi-green-color4: #E0FFE3;
     --vi-green-color5: rgba(115, 218, 126, 0.1);
     --vi-green-background: linear-gradient(to left, #31cf58 0%, #6bf0ad 100%);
+    /* golden */
+    --vi-golden-color1: #C0986F;
+    --vi-golden-color2: #cba37b;
 }

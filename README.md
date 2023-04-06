@@ -195,10 +195,6 @@ export type { ViLoadingType } from 'viog-ui'
 
 #### props参数
 
-- defaultOpen：boolean 对话框初始状态 （已弃用该属性，请勿使用）
-
-  > 参数： 默认为false，请不要在该prop上绑定响应式数据，对对话框的操作请调用相关方法
-
 - modelValue: boolean 对话框开闭状态 （可使用v-model语法糖）
 
   > 参数：默认为false
@@ -227,17 +223,9 @@ export type { ViLoadingType } from 'viog-ui'
 
   > 参数：black(default)/white/golden/purple
 
-- filter：boolean 对话框是否进行模糊
+- blur：boolean 对话框是否进行模糊
 
   > 参数： true/false(default)
-
-- shadow：boolean 对话框是否添加阴影
-
-  > 参数： true/false(default)
-
-- top：string 对话框距顶部位置 （已弃用，请使用css修改样式）
-
-  > 参数：一个可以被识别的长度单位值，默认20vh
 
 - sure：boolean 是否有确认按键
 
@@ -251,14 +239,6 @@ export type { ViLoadingType } from 'viog-ui'
 
   > 参数： true(default)/false
 
-- contentTextAlign：string 内容对齐方式 （已弃用，请使用css修改样式）
-
-  > 参数： left(default)/center/right
-
-- optionTextAlign：string 确认取消按键对齐方式（已弃用，请使用css修改样式）
-
-  > 参数： left/center/right(default)
-  
 - toSure：()=>boolean 控制按下确认按键是否关闭对话框
 
   > 参数： 默认函数返回true，暂不支持异步函数
@@ -270,6 +250,26 @@ export type { ViLoadingType } from 'viog-ui'
 - toShutDown：()=>boolean 控制按下叉叉按键是否关闭对话框
 
   > 参数：默认函数返回true，暂不支持异步函数
+
+- defaultOpen：boolean 对话框初始状态 （已弃用该属性，请勿使用）
+
+  > 参数： 默认为false，请不要在该prop上绑定响应式数据，对对话框的操作请调用相关方法
+
+- contentTextAlign：string 内容对齐方式 （已弃用，请使用css修改样式）
+
+  > 参数： left(default)/center/right
+
+- optionTextAlign：string 确认取消按键对齐方式（已弃用，请使用css修改样式）
+
+  > 参数： left/center/right(default)
+
+- shadow：boolean 对话框是否添加阴影 (已弃用)
+
+  > 参数： true/false(default)
+
+- top：string 对话框距顶部位置 （已弃用，请使用css修改样式）
+
+  > 参数：一个可以被识别的长度单位值，默认20vh
 
 #### 事件支持
 

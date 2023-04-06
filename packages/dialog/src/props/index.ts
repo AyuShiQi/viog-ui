@@ -35,7 +35,7 @@ export default {
     type: String,
     default: 'black'
   },
-  maskFilter: {
+  maskBlur: {
     type: Boolean,
     default: false
   },
@@ -47,26 +47,22 @@ export default {
     type: String,
     default: 'black'
   },
-  filter: {
+  blur: {
     type: Boolean,
     default: false
   },
-  shadow: {
-    type: Boolean,
-    default: false
-  },
-  top: {
-    type: String,
-    default: '20vh'
-  },
-  contentTextAlign: {
-    type: String,
-    default: 'left'
-  },
-  optionTextAlign: {
-    type: String,
-    default: 'right'
-  },
+  // top: {
+  //   type: String,
+  //   default: '20vh'
+  // },
+  // contentTextAlign: {
+  //   type: String,
+  //   default: 'left'
+  // },
+  // optionTextAlign: {
+  //   type: String,
+  //   default: 'right'
+  // },
   toSure: {
     type: Function,
     default: (): boolean => {

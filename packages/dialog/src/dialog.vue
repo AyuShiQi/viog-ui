@@ -3,7 +3,7 @@
     <transition name="vi-dialog">
       <div class="vi-dialog" :class="[`vi-dialog--${maskColor}`,{
         'has-mask': mask,
-        'is-filter': maskFilter
+        'is-blur': maskBlur
       }]"
       v-show="modelValue">
         <div class="vi-dialog-content"
@@ -11,8 +11,7 @@
         `vi-content-background--${background}`,
         `vi-content--${color}`,
         {
-          'has-shadow': shadow,
-          'is-filter': filter
+          'is-blur': blur
         }]">
           <div class="top">
               <h3 class="title">

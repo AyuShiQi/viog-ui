@@ -194,6 +194,7 @@
     <ViButton color="purple" type="transparent" radius="circle">点击</ViButton>
     <ViButton color="green" type="transparent" radius="circle">点击</ViButton>
   </vi-row>
+
     <!-- <vi-row justify="center">
       <ViLoading type="diamond"/>
     </vi-row>
@@ -241,21 +242,19 @@
     <ViLoading type="star" color="red"/>
     <ViLoading type="star" color="pink"/>
   </vi-row> -->
-  <!-- <ViDialog ref="child"
+  <ViDialog ref="child"
   v-model="open"
-  maskFilter
+  maskBlur
   mask
-  filter
   background="black"
   color="purple"
-  shadow
   title="提示"
   @sure="hello">
     <vi-row>
       是否支付？
       <ViSwitch dark size="small" filter></ViSwitch>
     </vi-row>
-  </ViDialog> -->
+  </ViDialog>
   <!-- <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中" class="scroll-style">
     <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
   </ViScroll>

@@ -11,10 +11,11 @@
         height: var(--vi-dialog-height);
         padding: 0 10px;
         font-size: 14px;
-        border-radius: 5px;
+        border-radius: var(--vi-card-radius);
         box-sizing: border-box;
         flex-direction: column;
         justify-content: space-between;
+        box-shadow: var(--vi-box-shadow);
 
         .top {
             display: flex;
@@ -68,61 +69,49 @@
     }
 
     .vi-content--black {
-        color: @black-background;
-        fill: @black-background;
+        color: var(--vi-font-color);
+        fill: var(--vi-font-color);
     }
 
     .vi-content--white {
-        color: @white;
-        fill: @white;
+        color: #fff;
+        fill: #fff;
     }
 
     .vi-content--golden {
-        color: @golden;
-        fill: @golden;
+        color: var(--vi-golden-color1);
+        fill: var(--vi-golden-color1);
     }
 
     .vi-content--purple {
-        color: @mpurple;
-        fill: @mpurple;
+        color: var(--vi-purple-color1);
+        fill: var(--vi-purple-color1);
     }
 
     .vi-content-background--black {
-        background-color: @black-background;
+        background-color: var(--vi-font-color);
     }
 
-    .vi-content-background--black.is-filter {
+    .vi-content-background--black.is-blur {
         background-color: #00000099;
         backdrop-filter: blur(5px);
     }
 
-    .vi-content-background--black.has-shadow {
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.45);
-    }
-
     .vi-content-background--white {
-        background-color: @white;
+        background-color: #fff;
     }
 
-    .vi-content-background--white.is-filter {
+    .vi-content-background--white.is-blur {
         background-color: #ffffff99;
         backdrop-filter: blur(5px);
-    }
-
-    .vi-content-background--white.has-shadow {
-        box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.45);
     }
 
     .vi-content-background--golden {
         background-color: @golden;
     }
 
-    .vi-content-background--golden.is-filter {
+    .vi-content-background--golden.is-blur {
         background-color: #b8906999;
         backdrop-filter: blur(5px);
-    }
-
-    .vi-content-background--golden.has-shadow {
-        box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.45);
     }
 }
