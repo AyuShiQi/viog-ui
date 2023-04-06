@@ -5,6 +5,8 @@
   `is-${size}`,
   `vi-switch-${type}`,
   {
+    'left-choice': !modelValue,
+    'right-choice': modelValue,
     'vi-switch-dark': dark,
     'is-filter': filter,
     'disabled': disabled
@@ -18,10 +20,7 @@
     {
       'left-choice': !modelValue,
       'right-choice': modelValue
-    }]"
-    :style="{
-      backgroundColor: nowColor
-    }">
+    }]">
       <span
       class="switch-circle"
       @click="toChange">

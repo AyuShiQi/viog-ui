@@ -42,6 +42,9 @@
     --vi-input-inner-padding: 0.6em;
     --vi-input-suffix-width: ;
 
+    --vi-switch-left-color: var(--vi-background-color); 
+    --vi-switch-right-color: var(--vi-purple-color3);
+
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */

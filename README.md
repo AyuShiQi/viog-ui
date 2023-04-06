@@ -676,6 +676,28 @@ export type { ViInputType } from 'viog-ui'
 - toFocus 获取焦点
 - toBlur 失去焦点
 
+#### 样式修改
+
+- width： 组件宽度， 默认300px
+
+  覆写变量：--vi-input-width
+
+- height：组件的宽度，默认无
+
+  覆写变量：--vi-input-height
+
+- padding： 组件padding， 默认.8em .6em
+
+  覆写变量：--vi-input-padding
+
+- inner-padding： 组件内部间距， 默认.6em
+
+  覆写变量：--vi-input-inner-padding
+
+- fix-width： 组件前后缀宽度， 默认无
+
+  覆写变量：--vi-input-suffix-width
+
 ### ViSwitch
 
 `<ViSwitch>`
@@ -706,11 +728,11 @@ export type { ViInputType } from 'viog-ui'
 
   > 参数：false(default)/true
 
-- leftColor：string  off的颜色
+- leftColor：string  off的颜色 （已弃用，请使用css修改）
 
   > 参数：任意颜色，默认灰色调
 
-- rightColor：string  on的颜色
+- rightColor：string  on的颜色 （已弃用，请使用css修改）
 
   > 参数：任意颜色，默认紫色调
   
@@ -759,6 +781,16 @@ export type { ViSwitchType } from 'viog-ui'
 - toOn 去打开开关(一般用不到)
 - toOff 去关闭开关(一般用不到)
 - toChange 去改变开关
+
+#### 样式修改
+
+- left-color：off的颜色
+
+  覆写变量：--vi-switch-left-color
+
+- right-color：on的颜色
+
+  覆写变量：--vi-switch-right-color
 
 ### ViRadio
 
