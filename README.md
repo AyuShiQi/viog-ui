@@ -631,10 +631,24 @@ export type { ViVirtualScrollType } from 'viog-ui'
 - suffix： string | number | any[]  后缀内容/选项
 
   > 参数：默认为空字符串
+  
+- suffix： string | number | any[]  后缀内容/选项
+
+  > 参数：默认为空字符串
+
+- suffix： string | number | any[]  后缀内容/选项
+
+  > 参数：默认为空字符串
+
+- placeholder： string  原生属性
+
+  > 参数：默认为空字符串
 
 #### 插槽内容
 
-- 默认插槽，placeholder内容
+- 默认插槽，placeholder内容 （已弃用）
+- prefix插槽，插入最外层前缀
+- suffix插槽，插入最外层后缀
 
 #### 事件支持
 

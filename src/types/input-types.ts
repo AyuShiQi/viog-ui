@@ -19,7 +19,8 @@ export interface InputProps {
   width: string,
   autofocus: boolean,
   suffix: any[] | string,
-  prefix: any[] | string
+  prefix: any[] | string,
+  placeholder: string
 }
 
 export interface ViInputType {

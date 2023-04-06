@@ -76,5 +76,9 @@ export default {
   prefix: {
     type: [Array, String],
     default: ''
+  },
+  placeholder: {
+    type: String,
+    default: ''
   }
 }

@@ -19,6 +19,9 @@
   @click="toFocus"
   @mouseenter="mouseEnter"
   @mouseleave="mouseLeave">
+    <span class="vi-input-prefix vi-input-fix" v-show="prefixSlot">
+      <slot name="prefix"></slot>
+    </span>
     <InputFix
     v-show="prefix!==''"
     class="vi-input-prefix"
@@ -73,6 +76,9 @@
     v-model="suf"
     :disabled="disabled">
     </InputFix>
+    <span class="vi-input-suffix vi-input-fix" v-show="suffixSlot">
+      <slot name="suffix"></slot>
+    </span>
   </span>
 </template>
 
@@ -86,7 +92,7 @@ import InputFix from './input-fix.vue'
 
 import { InputProps } from '@/types/input-types'
 
-import { inputState, valueState } from './hooks'
+import { inputState, valueState, slotState } from './hooks'
 
 export default defineComponent({
   name: 'ViInput',
@@ -97,12 +103,12 @@ export default defineComponent({
     const value = ref('')
     const mainInput = inputState(props, context, value)
     const inputEvent = valueState(props, context, value)
-    const placeholder = context.slots?.default !== undefined ? context.slots?.default()[0].children : ''
+    const hasSlot = slotState(props, context)
 
     return {
-      placeholder,
       ...mainInput,
       ...inputEvent,
+      ...hasSlot,
       value
     }
   },
