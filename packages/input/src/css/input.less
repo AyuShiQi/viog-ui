@@ -116,6 +116,54 @@
     }
 }
 
+.vi-input-plain.is-disabled {
+    cursor: no-drop;
+    box-shadow: 0 0 0 1px var(--vi-background-color);
+    &:hover {
+        box-shadow: 0 0 0 1px var(--vi-background-color);
+    }
+
+    .vi-input-fix {
+        border-color: var(--vi-background-color);
+        &:hover {
+            border-color: var(--vi-background-color);
+        }
+    }
+
+    .vi-input {
+        &::placeholder {
+            color: var(--vi-background-color);
+        }
+    }
+}
+
+.vi-input-plain.is-dark.is-disabled {
+    cursor: no-drop;
+    border-color: var(--vi-background-color);
+    &::before {
+        background-color: var(--vi-background-color);
+    }
+    &:hover::before {
+        background-color: var(--vi-background-color);
+    }
+    &:hover {
+        border-color: var(--vi-background-color);
+    }
+
+    .vi-input-fix {
+        border-color: var(--vi-background-color);
+        &:hover {
+            border-color: var(--vi-background-color);
+        }
+    }
+
+    .vi-input {
+        &::placeholder {
+            color: var(--vi-background-color);
+        }
+    }
+}
+
 .vi-input-button.is-disabled {
     color: #fff;
     &:hover {
