@@ -6,51 +6,25 @@
         box-sizing: border-box;
         padding: 2px 4px;
         margin: 0 2px 2px 0;
-        background-color: @spurple-o3;
-        border-radius: 3px;
+        background-color: var(--vi-background-color);
+        border-radius: var(--vi-card-radius);
         justify-content: space-between;
         align-items: center;
 
         .vi-select-chacha {
             cursor: pointer;
-            margin-left: 8px;
+            width: 1em;
+            height: 1em;
+            margin-left: .4em;
             path {
-                fill: @lblack-background;
+                fill: var(--vi-link-color);
             }
 
             &:hover {
                 path {
-                    fill: @mblack-background;
+                    fill: var(--vi-font-color);
                 }
             }
-        }
-    }
-}
-
-.vi-select.is-middle {
-    .vi-select-item {
-        .vi-select-chacha {
-            margin-left: 8px;
-            width: 12px;
-        }
-    }
-}
-
-.vi-select.is-small {
-    .vi-select-item {
-        .vi-select-chacha {
-            margin-left: 6px;
-            width: 10px;
-        }
-    }
-}
-
-.vi-select.is-big {
-    .vi-select-item {
-        margin: 0 4px 4px 0;
-        .vi-select-chacha {
-            margin-left: 10px;
-            width: 14px;
         }
     }
 }
@@ -60,7 +34,7 @@
         .vi-select-chacha {
             &:hover {
                 path {
-                    fill: @purple
+                    fill: var(--vi-font-color)
                 }
             }
         }
@@ -70,16 +44,16 @@
 .vi-select.is-default,
 .vi-select.is-plain {
     .vi-select-item {
-        background-color: @grey-o3;
+        background-color: var(--vi-background-color);
 
         .vi-select-chacha {
             path {
-                fill: @grey;
+                fill: var(--vi-link-color);
             }
 
             &:hover {
                 path {
-                    fill: @black-background-hover;
+                    fill: var(--vi-font-color);
                 }
             }
         }
@@ -89,17 +63,17 @@
 .vi-select.is-default.is-dark,
 .vi-select.is-plain.is-dark {
     .vi-select-item {
-        color: @mblack-background;
-        background-color: @black-background-hover-o3;
+        color: var(--vi-link-color);
+        background-color: var(--vi-background-color-deep);
 
         .vi-select-chacha {
             path {
-                fill: @mblack-background;
+                fill: var(--vi-link-color);
             }
 
             &:hover {
                 path {
-                    fill: @purple;
+                    fill: var(--vi-font-color);
                 }
             }
         }

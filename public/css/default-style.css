@@ -54,6 +54,7 @@
     --vi-background-color-deep: #E5E5E5;
     /* 该颜色作用于所有disabled组件样式颜色 */
     --vi-background-color: rgb(0, 10, 32, 0.05);
+    --vi-background-color-solid: #f2f3f4;
     --vi-border-color: #E2E8F0;
     /* 规则配色 */
     /* dark mode*/
@@ -67,6 +68,7 @@
     --vi-purple-color3: #B498D5;
     --vi-purple-color4: #F1E5FF;
     --vi-purple-color5: rgba(181, 136, 233, 0.1);
+    --vi-purple-color6: rgba(181, 136, 233, 0.3);
     --vi-purple-background: linear-gradient(-225deg, #b588e9 0%, #a053ff 48%, #4254f2 100%);
     /* red */
     --vi-red-color1: #FF7D70;

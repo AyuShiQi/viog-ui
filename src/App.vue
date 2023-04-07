@@ -445,14 +445,15 @@
     <vi-col :row="1" :col="4" class="okk">8</vi-col>
     <vi-col :row="1" :col="2" class="okk">9</vi-col>
   </vi-grid> -->
-  <!-- <vi-row justify="center">
+
+  <vi-row justify="center">
     <ViSelect filter dark size="big" :datas="arr" v-model="value"></ViSelect>
   </vi-row>
   <vi-row justify="center">
     <ViSelect filter dark size="big" :datas="arr" multi v-model="ar"></ViSelect>
   </vi-row>
   <vi-row justify="center">
-    <ViSelect filter :datas="arr" multi v-model="ar"></ViSelect>
+    <ViSelect type="button" filter :datas="arr" multi v-model="ar"></ViSelect>
   </vi-row>
   <vi-row justify="center">
     <ViSelect filter placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
@@ -477,7 +478,20 @@
     <ViSelect filter placeholder="123" size="small" :datas="arr" v-model="value" disabled></ViSelect>
   </vi-row>
   </div>
-  <vi-input password show-password></vi-input>
+  <vi-row justify="center">
+    <ViSelect dark :datas="arr" v-model="value"></ViSelect>
+    <ViSelect :datas="arr" v-model="value"></ViSelect>
+  </vi-row>
+  <vi-row justify="center">
+    <ViSelect dark type="button" :datas="arr" v-model="value"></ViSelect>
+    <ViSelect type="button" :datas="arr" v-model="value"></ViSelect>
+  </vi-row>
+  <vi-row justify="center">
+    <ViSelect dark type="plain" :datas="arr" v-model="value"></ViSelect>
+    <ViSelect type="plain" :datas="arr" v-model="value"></ViSelect>
+  </vi-row>
+
+  <!-- <vi-input password show-password></vi-input>
   <vi-input width="100%" type="plain" password show-password></vi-input>
   <vi-input type="plain" password show-password size="big"></vi-input>
   <vi-input v-model="value" :maxlength="10" :suffix="arr" type="plain" password show-password show-clear size="small"></vi-input> -->

@@ -9,15 +9,18 @@
     justify-content: center;
     user-select: none;
     box-sizing: border-box;
+    cursor: default;
+    transition: var(--vi-transition);
 
     .vi-select-input {
         display: inline-flex;
         width: var(--vi-select-width);
         height: var(--vi-select-height);
-        padding: 8px;
+        padding: var(--vi-card-padding);
         align-items: center;
         justify-content: space-between;
         box-sizing: border-box;
+        transition: var(--vi-transition);
 
         .vi-select-choose {
             overflow: hidden;
@@ -28,11 +31,13 @@
 
         .vi-select-arrow {
             display: inline-flex;
+            width: 1em;
+            height: 1em;
             align-items: flex-start;
             align-content: flex-start;
             flex-wrap: wrap;
             cursor: pointer;
-            transform: rotateX(180deg);
+            transform: scale(64%) rotateX(180deg);
             transition: all .2s linear 0s;
         }
     }
@@ -46,32 +51,14 @@
 
 .vi-select.is-middle {
     font-size: @font-size;
-    .vi-select-input {
-        .vi-select-arrow {
-            width: 12px;
-            height: 12px;
-        }
-    }
 }
 
 .vi-select.is-big {
     font-size: @big-font-size;
-    .vi-select-input {
-        .vi-select-arrow {
-            width: 14px;
-            height: 14px;
-        }
-    }
 }
 
 .vi-select.is-small {
     font-size: @small-font-size;
-    .vi-select-input {
-        .vi-select-arrow {
-            width: 10px;
-            height: 10px;
-        }
-    }
 }
 
 .vi-select.is-dark {
@@ -81,7 +68,7 @@
 .vi-select.be-open {
     .vi-select-input {
         .vi-select-arrow {
-            transform: rotateX(0deg);
+            transform: scale(64%) rotateX(0deg);
         }
     }
 }
