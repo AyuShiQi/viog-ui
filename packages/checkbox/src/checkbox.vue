@@ -8,7 +8,8 @@
   {
     'is-disabled': disabled,
     'is-dark': dark,
-    'be-checked': containsValue
+    'be-checked': containsValue,
+    'is-mutate': mutate
   }
   ]">
     <input
@@ -17,6 +18,7 @@
     :value="value"
     :name="name"
     :checked="containsValue"
+    :disabled="disabled"
     @change="handleChange"
     type="checkbox">
     <span v-if="type==='default'" class="vi-checkbox-box" @click="toPick">

@@ -22,9 +22,13 @@ export default {
   },
   color: {
     type: String,
-    default: 'spurple'
+    default: 'purple'
   },
   disabled: {
+    type: Boolean,
+    default: false
+  },
+  mutate: {
     type: Boolean,
     default: false
   }

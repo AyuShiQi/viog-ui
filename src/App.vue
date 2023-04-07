@@ -390,15 +390,15 @@
     </ViRadioGroup>
   </vi-row>
 
-  <!-- <vi-row height="200px">
+  <vi-row height="200px">
     <vi-row>
-      <ViCheckbox size="small" @change="change" v-model="ar" value="唱歌" dark></ViCheckbox>
+      <ViCheckbox disabled size="small" @change="change" v-model="ar" value="唱歌" dark></ViCheckbox>
       <ViCheckbox size="small" v-model="ar" value="跳舞"></ViCheckbox>
       <ViCheckbox size="small" v-model="ar" value="打豆豆"></ViCheckbox>
       <ViCheckbox size="small" v-model="ar" value="吃饭" color="purple"></ViCheckbox>
       <ViCheckbox size="small" v-model="ar" value="睡觉" color="green"></ViCheckbox>
-      <ViCheckbox size="small" v-model="ar" value="划水" color="sgreen"></ViCheckbox>
-      <ViCheckbox size="small" v-model="ar" value="飞翔" color="syellow"></ViCheckbox>
+      <ViCheckbox size="small" v-model="ar" value="划水" color="green"></ViCheckbox>
+      <ViCheckbox size="small" v-model="ar" value="飞翔" color="yellow"></ViCheckbox>
       <ViCheckbox size="small" v-model="ar" value="这个" color="yellow"></ViCheckbox>
       <ViCheckbox size="small" v-model="ar" value="唱歌" color="pink"></ViCheckbox>
       <ViCheckbox size="small" v-model="ar" value="妈妈" color="pink" type="button"></ViCheckbox>
@@ -410,8 +410,8 @@
       <ViCheckbox v-model="ar" value="打豆豆"></ViCheckbox>
       <ViCheckbox v-model="ar" value="吃饭" color="purple"></ViCheckbox>
       <ViCheckbox v-model="ar" value="睡觉" color="green"></ViCheckbox>
-      <ViCheckbox v-model="ar" value="划水" color="sgreen"></ViCheckbox>
-      <ViCheckbox v-model="ar" value="飞翔" color="syellow"></ViCheckbox>
+      <ViCheckbox v-model="ar" value="划水" color="green"></ViCheckbox>
+      <ViCheckbox v-model="ar" value="飞翔" color="yellow"></ViCheckbox>
       <ViCheckbox v-model="ar" value="这个" color="yellow"></ViCheckbox>
       <ViCheckbox v-model="ar" value="唱歌" color="pink"></ViCheckbox>
       <ViCheckbox v-model="ar" value="妈妈" color="pink" type="button"></ViCheckbox>
@@ -424,15 +424,16 @@
         <ViCheckbox value="打豆豆" size="big"></ViCheckbox>
         <ViCheckbox value="吃饭" size="big" color="purple"></ViCheckbox>
         <ViCheckbox value="睡觉" size="big" color="green"></ViCheckbox>
-        <ViCheckbox value="划水" size="big" color="sgreen"></ViCheckbox>
-        <ViCheckbox value="飞翔" size="big" color="syellow"></ViCheckbox>
+        <ViCheckbox value="划水" size="big" color="green"></ViCheckbox>
+        <ViCheckbox value="飞翔" size="big" color="yellow"></ViCheckbox>
         <ViCheckbox value="这个" size="big" color="yellow"></ViCheckbox>
         <ViCheckbox value="唱歌" size="big" color="pink"></ViCheckbox>
         <ViCheckbox value="妈妈" size="big" color="pink" type="button"></ViCheckbox>
-        <ViCheckbox value="米亚" dark size="big" color="pink" type="button"></ViCheckbox>
+        <ViCheckbox disabled mutate value="米亚" dark size="big" color="pink" type="button"></ViCheckbox>
       </ViCheckboxGroup>
     </vi-row>
-  </vi-row> -->
+  </vi-row>
+
   <!-- <vi-grid :row="2" :col="11" gap="10px" height="500px">
     <vi-col :row="1" :col="2" class="okk">1</vi-col>
     <vi-col :row="1" :col="3" class="okk">2</vi-col>

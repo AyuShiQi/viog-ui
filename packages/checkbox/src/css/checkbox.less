@@ -3,7 +3,7 @@
 
 .vi-checkbox-appreance {
     display: inline-flex;
-    color: @grey;
+    color: var(--vi-link-color);
     user-select: none;
     align-items: center;
 
@@ -15,14 +15,20 @@
         position: relative;
         display: inline-flex;
         box-sizing: border-box;
-        border: 1px solid @grey;
+        box-shadow: 0 0 0 1px var(--vi-background-color-deep);
         margin: 0 2px;
+        width: 1em;
+        height: 1em;
         background-color: transparent;
         border-radius: 2px;
         justify-content: center;
         align-items: center;
         cursor: pointer;
         transition: all .2s linear 0s;
+
+        .vi-checkbox-gougou {
+            width: .8em;
+        }
 
         .vi-gougou-path {
             stroke-opacity: 0;
@@ -39,38 +45,14 @@
 
 .vi-checkbox-appreance.is-middle {
     font-size: @font-size;
-    .vi-checkbox-box {
-        width: 12px;
-        height: 12px;
-
-        .vi-checkbox-gougou {
-            width: 10px;
-        }
-    }
 }
 
 .vi-checkbox-appreance.is-small {
     font-size: @small-font-size;
-    .vi-checkbox-box {
-        width: 10px;
-        height: 10px;
-
-        .vi-checkbox-gougou {
-            width: 8px;
-        }
-    }
 }
 
 .vi-checkbox-appreance.is-big {
     font-size: @big-font-size;
-    .vi-checkbox-box {
-        width: 18px;
-        height: 18px;
-
-        .vi-checkbox-gougou {
-            width: 16px;
-        }
-    }
 }
 
 .vi-checkbox-appreance.is-button {
@@ -81,7 +63,7 @@
     .vi-checkbox-text {
         display: inline-block;
         padding: 6px 20px;
-        border: 1px solid @grey;
+        box-shadow: 0 0 0 1px var(--vi-background-color-deep);
         border-radius: 5px;
         cursor: pointer;
         transition: all .2s linear 0s;
@@ -89,18 +71,38 @@
 }
 
 .vi-checkbox-appreance.is-dark {
-    color: @black-background-hover;
+    color: var(--vi-font-color);
     .vi-checkbox-box {
-        border-color: @black-background-hover;
+        box-shadow: 0 0 0 1px var(--vi-icon-color);
     }
 }
 
 .vi-checkbox-appreance.is-dark.is-button {
-    color: @black-background-hover;
+    color: var(--vi-font-color);
     .vi-checkbox-text {
-        border-color: @black-background-hover;
+        box-shadow: 0 0 0 1px var(--vi-icon-color);
+    }
+}
+
+.vi-checkbox-appreance.be-checked {
+    .vi-checkbox-box {
+        box-shadow: none;
+    }
+    .vi-checkbox-text {
+        box-shadow: none;
+    }
+}
+
+.vi-checkbox-appreance.is-button.be-checked {
+    .vi-checkbox-box {
+        box-shadow: none;
+    }
+    .vi-checkbox-text {
+        box-shadow: none;
     }
 }
 
 @import './checked.less';
 @import './color.less';
+@import './mutate.less';
+@import './disabled.less';

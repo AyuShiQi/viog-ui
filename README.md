@@ -74,6 +74,10 @@ npm install viog-ui --save
 - size：string   按钮大小
 
   > 参数：small/middle(default)/big
+  
+- mutate： boolean 样式是否变异
+
+  > 参数：默认为false
 
 #### 事件支持
 
@@ -891,7 +895,7 @@ export type { ViRadioGroupType } from 'viog-ui'
 
 #### props参数
 
-- modelValue：undefined[]  当前单选框组选中的value
+- modelValue：any[]  当前单选框组选中的value
 
   > 参数：必传 (v-model形式)
 
@@ -921,7 +925,11 @@ export type { ViRadioGroupType } from 'viog-ui'
 
 - color：string  选中后的颜色
 
-  > 参数：spurple(default)/purple/red/green/yellow/pink/blue/sred/sgreen/syellow/spink/sblue
+  > 参数：purple(default)/red/green/yellow/pink/blue
+  
+- mutate： boolean 样式是否变异
+
+  > 参数：默认为false
 
 #### 插槽内容
 

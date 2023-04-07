@@ -22,6 +22,7 @@
 - 重构button样式组
 - 新增button组件size属性，弃用small属性
 - 新增input组件type样式
+- 重构radio，checkbox样式组，新增mutate属性
 
 # 0.3.0
 
