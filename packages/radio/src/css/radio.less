@@ -3,7 +3,7 @@
 
 .vi-radio-appreance {
     display: inline-flex;
-    color: @grey;
+    color: var(--vi-link-color);
     user-select: none;
     transition: all .3s linear 0s;
     align-items: center;
@@ -13,76 +13,48 @@
     }
 
     .vi-radio-circle {
-        position: relative;
         display: inline-flex;
         box-sizing: border-box;
-        border: 1px solid var(--vi-background-color);
+        width: 1em;
+        height: 1em;
+        padding: 2px;
         margin: 0 2px;
         background-color: transparent;
+        box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
         border-radius: 50%;
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        transition: var(--vi-transition);
 
-        // &::before {
-        //     opacity: 0;
-        //     content: "";
-        //     position: absolute;
-        //     top: 2px;
-        //     left: 2px;
-        //     border-radius: 50%;
-        //     background-color: @mpurple;
-        //     transition: all .2s linear 0s;
-        // }
         .vi-radio-ball {
-            opacity: 0;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
-            transition: all .2s linear 0s;
         }
     }
 
     .vi-radio-text {
         margin: 0 2px;
     }
+
+    &:hover {
+        .vi-radio-circle {
+            box-shadow: inset 0 0 0 1px var(--vi-icon-color);
+        }
+    }
 }
 
 .vi-radio-appreance.is-middle {
     font-size: @font-size;
-    .vi-radio-circle {
-        width: 13px;
-        height: 13px;
-
-        .vi-radio-ball {
-          width: 9px;
-          height: 9px;
-        }
-    }
 }
 
 .vi-radio-appreance.is-small {
     font-size: @small-font-size;
-    .vi-radio-circle {
-        width: 8px;
-        height: 8px;
-
-        .vi-radio-ball {
-            width: 4px;
-            height: 4px;
-        }
-    }
 }
 
 .vi-radio-appreance.is-big {
     font-size: @big-font-size;
-    .vi-radio-circle {
-        width: 18px;
-        height: 18px;
-
-        .vi-radio-ball {
-            width: 14px;
-            height: 14px;
-        }
-    }
 }
 
 .vi-radio-appreance.is-button {
@@ -93,13 +65,28 @@
     .vi-radio-text {
         display: inline-block;
         padding: 6px 20px;
-        border: 1px solid @grey;
-        border-radius: 5px;
+        box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
+        border-radius: var(--vi-card-radius);
         cursor: pointer;
         transition: all .2s linear 0s;
+    }
+
+    &:hover {
+        .vi-radio-text {
+            box-shadow: inset 0 0 0 1px var(--vi-icon-color);
+        }
+    }
+}
+
+.vi-radio-appreance.is-button.be-checked {
+    &:hover {
+        .vi-radio-text {
+            box-shadow: inset 0 0 0 1px var(--vi-icon-color);
+        }
     }
 }
 
 @import './dark.less';
 @import './checked.less';
 @import './color.less';
+@import './disabled.less';

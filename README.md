@@ -830,7 +830,7 @@ export type { ViSwitchType } from 'viog-ui'
 
 - color：string  选中后的颜色
 
-  > 参数：spurple(default)/purple/red/green/yellow/pink/blue/sred/sgreen/syellow/spink/sblue
+  > 参数：purple(default)/red/green/yellow/pink/blue
 
 #### 插槽内容
 

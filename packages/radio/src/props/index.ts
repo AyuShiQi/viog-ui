@@ -19,7 +19,7 @@ export default {
   },
   color: {
     type: String,
-    default: 'spurple'
+    default: 'purple'
   },
   disabled: {
     type: Boolean,

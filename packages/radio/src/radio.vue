@@ -17,6 +17,7 @@
     :value="value"
     :name="name"
     v-model="nowPick"
+    :disabled="disabled"
     @change="handleChange"
     type="radio">
     <span class="vi-radio-circle" @click="toPick"><span class="vi-radio-ball"></span></span>
@@ -28,7 +29,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import type { Ref, SetupContext } from 'vue'
+import type { SetupContext } from 'vue'
 
 import props from './props'
 

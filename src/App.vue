@@ -357,8 +357,8 @@
     <ViSwitch dark filter leftColor="#0f0b286c"></ViSwitch>
   </vi-row>
 
-  <!-- <vi-row id="div" style="padding: 10px 0;">
-    <ViRadio color="yellow" @change="change" rid="#123" value="吃饭" name="haha" v-model="value"></ViRadio>
+  <vi-row id="div" style="padding: 10px 0;">
+    <ViRadio disabled color="yellow" @change="change" rid="#123" value="吃饭" name="haha" v-model="value"></ViRadio>
     <ViRadio color="blue" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio>
     <ViRadio color="red" dark size="small" rid="#125" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
     <ViRadio color="pink" size="big" rid="#126" value="飞翔" name="haha" v-model="value">飞翔</ViRadio>
@@ -383,12 +383,12 @@
   </vi-row>
   <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
     <ViRadioGroup v-model="value">
-      <ViRadio type="button" color="yellow" rid="#127" value="吃饭" name="haha"></ViRadio>
+      <ViRadio disabled type="button" color="yellow" rid="#127" value="吃饭" name="haha"></ViRadio>
       <ViRadio type="button" color="green" dark rid="#128" value="睡觉" name="haha"></ViRadio>
       <ViRadio type="button" color="purple" dark size="small" rid="#129" value="打豆豆"  name="haha">打豆豆</ViRadio>
       <ViRadio type="button" size="big" rid="#130" value="飞翔" name="haha">飞翔</ViRadio>
     </ViRadioGroup>
-  </vi-row> -->
+  </vi-row>
 
   <!-- <vi-row height="200px">
     <vi-row>

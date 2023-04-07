@@ -1,13 +1,31 @@
 .vi-radio-appreance.is-dark {
-    color: @black-background-hover;
+    color: var(--vi-font-color);
 
     .vi-radio-circle {
-        border-color: @black-background-hover;
+        box-shadow: inset 0 0 0 1px var(--vi-icon-color);
     }
+    // &:hover {
+    //     .vi-radio-circle {
+    //         box-shadow: inset 0 0 0 1px var(--vi-link-color);
+    //     }
+    // }
 }
 
 .vi-radio-appreance.is-button.is-dark {
     .vi-radio-text {
-        border-color: @black-background-hover;
+        color: var(--vi-font-color);
+        box-shadow: inset 0 0 0 1px var(--vi-icon-color);
+    }
+    &:hover {
+        .vi-radio-text {
+            box-shadow: inset 0 0 0 1px var(--vi-link-color);
+        }
+    }
+}
+
+.vi-radio-appreance.is-button.is-dark.be-checked {
+    .vi-radio-text {
+        color: #fff;
+        box-shadow: none;
     }
 }
