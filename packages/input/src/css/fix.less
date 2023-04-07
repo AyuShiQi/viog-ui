@@ -29,9 +29,9 @@
     }
 
     .vi-input-suffix {
-        padding-left: 8px;
+        padding-left: var(--vi-input-inner-padding);
         border-left: 1px solid var(--vi-background-color-deep);
-        margin-left: 8px;
+        margin-left: var(--vi-input-inner-padding);
     }
 }
 
@@ -55,5 +55,19 @@
         .vi-input-fix {
             border-color: var(--vi-link-color);
         }   
+    }
+}
+
+.vi-input-button {
+    .vi-input-suffix {
+        padding-left: 8px;
+        border-left: none;
+        margin-left: 0px;
+    }
+
+    .vi-input-prefix {
+        padding-right: var(--vi-input-inner-padding);
+        border-right: none;
+        margin-right: 0px;
     }
 }

@@ -271,7 +271,7 @@
     </template>
   </ViVirtualScroll> -->
 
-  <!-- <vi-row id="div" style="padding: 10px 0;">
+  <vi-row id="div" style="padding: 10px 0;">
     <ViInput v-model="value" number showClear width="400px" :maxLength="10" @change="ok" placeholder="账号"></ViInput><br/>
     <ViInput v-model="value" dark password showPassword showClear>密码</ViInput><br/>
     <ViInput round color="pink" password showPassword showClear>密码</ViInput><br/>
@@ -342,7 +342,7 @@
     <ViInput type="button" color="blue" dark warn>placeholder</ViInput><br>
     <ViInput type="button" color="red" error>placeholder</ViInput><br/>
     <ViInput type="button" ref="ipt" color="red" dark error>placeholder</ViInput><br>
-  </vi-row> -->
+  </vi-row>
 
   <vi-row id="div" style="padding: 10px 0;">
     <ViSwitch v-model="res" disabled></ViSwitch><br><br>
