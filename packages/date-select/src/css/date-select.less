@@ -8,6 +8,7 @@
     justify-content: center;
     user-select: none;
     box-sizing: border-box;
+    cursor: default;
 
     .vi-date-select-input {
         display: inline-flex;
@@ -25,6 +26,8 @@
 
         .vi-date-select-icon {
             display: inline-flex;
+            width: 1em;
+            height: 1em;
             align-items: flex-start;
             align-content: flex-start;
             flex-wrap: wrap;
@@ -43,32 +46,14 @@
 
 .vi-date-select.is-middle {
     font-size: @font-size;
-    .vi-date-select-input {
-        .vi-date-select-icon {
-            width: 14px;
-            height: 14px;
-        }
-    }
 }
 
 .vi-date-select.is-big {
     font-size: @big-font-size;
-    .vi-date-select-input {
-        .vi-date-select-icon {
-            width: 18px;
-            height: 18px;
-        }
-    }
 }
 
 .vi-date-select.is-small {
     font-size: @small-font-size;
-    .vi-date-select-input {
-        .vi-date-select-icon {
-            width: 12px;
-            height: 12px;
-        }
-    }
 }
 
 .vi-date-select.is-dark {
