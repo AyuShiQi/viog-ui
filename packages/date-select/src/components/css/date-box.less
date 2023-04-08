@@ -9,7 +9,7 @@
         display: flex;
         width: 100%;
         height: 32px;
-        border-bottom: 1px solid @grey-o7;
+        border-bottom: 1px solid var(--vi-background-color-deep);
         box-sizing: border-box;
         align-items: center;
         justify-content: center;
@@ -20,7 +20,7 @@
         .vi-year-forward {
             cursor: pointer;
             path {
-                fill: @purple;
+                fill: var(--vi-purple-color1);
             }
         }
 
@@ -28,7 +28,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: @black-background-hover;
+            color: var(--vi-link-color);
             flex: 1;
 
             .vi-select-input {
@@ -55,7 +55,7 @@
             width: 100%;
             height: 25px;
             line-height: 25px;
-            color: @black-background-hover;
+            color: var(--vi-link-color);
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
@@ -69,7 +69,7 @@
         .vi-canlendary-days {
             display: flex;
             width: 100%;
-            color: @black-background-hover;
+            color: var(--vi-link-color);
             flex-wrap: wrap;
             .vi-canlendary-day {
                 width: 14%;
@@ -81,21 +81,21 @@
                 transition: all .2s linear 0s;
 
                 &:hover {
-                    color: @spurple-background
+                    color: var(--vi-purple-color1)
                 }
             }
 
             .vi-canlendary-day.be-choosed {
-                color: @spurple-background;
-                background-color: @spurple-o5;
-                border-radius: 5px;
+                color: var(--vi-purple-color1);
+                background-color: var(--vi-purple-color6);
+                border-radius: var(--vi-card-radius);
             }
 
             .vi-canlendary-default {
                 width: 14%;
                 height: 25px;
                 line-height: 25px;
-                color: @grey-o7;
+                color: var(--vi-background-color-deep);
                 text-align: center;
                 list-style: none;
             }
@@ -107,7 +107,7 @@
         width: 100%;
         height: 28px;
         box-sizing: border-box;
-        border-top: 1px solid @grey-o7;
+        border-top: 1px solid var(--vi-background-color-deep);
         justify-content: center;
         align-items: center;
 
@@ -119,30 +119,33 @@
 
 .vi-date-select.is-dark {
     .vi-date-select-top {
-        background-color: @mblack-background;
-        border-bottom: 1px solid @lblack-background;
+        border-bottom: 1px solid var(--vi-icon-color);
 
         .vi-date-show {
-            color: @lgrey;
+            color: var(--vi-font-color);
         }
     }
 
     .vi-date-select-content {    
         .vi-canlendary-title {
-            color: @lgrey;
+            color: var(--vi-font-color);
         }
 
         .vi-canlendary-days {
-            color: @lgrey;
+            color: var(--vi-font-color);
             .vi-canlenddary-day {
                 &:hover {
-                    color: @spurple-background
+                    color: var(--vi-purple-color1)
                 }
             }
 
             .vi-canlendary-default {
-                color: @black-background-o3;
+                color: var(--vi-icon-color);
             }
         }
+    }
+
+    .vi-date-select-bottom {
+        border-top: 1px solid var(--vi-icon-color);
     }
 }
