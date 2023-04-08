@@ -28,6 +28,7 @@
 }
 
 .vi-select-box {
+    display: flex;
     position: absolute;
     text-align: left;
     top: 5px;
@@ -35,13 +36,16 @@
     z-index: 2;
     background-color: #fff;
     width: var(--vi-select-scroll-width);
+    max-width: var(--vi-select-scroll-max-width);
+    min-width: var(--vi-select-scroll-min-width);
     border-radius: 5px;
     box-sizing: border-box;
 
     .vi-select-scroll {
+        --vi-virtual-scroll-width: 100%;
         --vi-virtual-scroll-max-height: var(--vi-select-max-height);
-        --vi-scroll-width: var(--vi-select-scroll-width);
-        --vi-scroll-max-height: var(--vi-select-max-height);
+        // --vi-scroll-width: var(--vi-select-scroll-width);
+        // --vi-scroll-max-height: var(--vi-select-max-height);
     }
 
     .vi-select-li {

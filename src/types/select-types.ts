@@ -3,7 +3,7 @@ export interface SelectDOM {
 }
 
 export interface SelectProps {
-  modelValue: any
+  modelValue: any,
   size: string,
   type: string,
   dark: boolean,
@@ -12,7 +12,7 @@ export interface SelectProps {
   width: string,
   placeholder: string,
   filter: boolean,
-  datas: unknown[] | undefined,
+  datas: any[] | undefined,
   itemHeight: number
 }
 

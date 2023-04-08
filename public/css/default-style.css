@@ -27,8 +27,11 @@
 
     --vi-select-width: ;
     --vi-select-height: ;
+    --vi-select-padding: var(--vi-card-padding);
     --vi-select-scroll-width: 100%;
     --vi-select-max-height: 400px;
+    --vi-select-scroll-min-width: ;
+    --vi-select-scroll-max-width: ;
 
     --vi-dialog-width: 400px;
     --vi-dialog-height: auto;
