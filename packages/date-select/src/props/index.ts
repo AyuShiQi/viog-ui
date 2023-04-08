@@ -27,10 +27,6 @@ export default {
     type: Boolean,
     default: false
   },
-  width: {
-    type: String,
-    default: '200px'
-  },
   placeholder: {
     type: String,
     default: '请选择'

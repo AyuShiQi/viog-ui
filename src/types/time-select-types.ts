@@ -8,7 +8,6 @@ export interface TimeSelectProps {
   type: string,
   dark: boolean,
   disabled: boolean,
-  width: string,
   placeholder: string,
   filter: boolean,
   range: boolean,

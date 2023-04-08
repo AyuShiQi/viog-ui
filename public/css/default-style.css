@@ -25,7 +25,7 @@
     --vi-virtual-scroll-height: ;
     --vi-virtual-scroll-max-height: 400px;
 
-    --vi-select-width: ;
+    --vi-select-width: 200px;
     --vi-select-height: ;
     --vi-select-padding: var(--vi-card-padding);
     --vi-select-scroll-width: 100%;
@@ -39,7 +39,7 @@
     --vi-dialog-content-text-align: left;
     --vi-dialog-option-text-align: right;
 
-    --vi-input-width: 300px;
+    --vi-input-width: 200px;
     --vi-input-height: ;
     --vi-input-padding: var(--vi-card-padding);
     --vi-input-inner-padding: 0.6em;
@@ -48,7 +48,11 @@
     --vi-switch-left-color: var(--vi-background-color); 
     --vi-switch-right-color: var(--vi-purple-color3);
 
-    --vi-time-select-width: ;
+    --vi-date-select-width: 200px;
+    --vi-date-select-height: ;
+    --vi-date-select-padding: var(--vi-card-padding);
+
+    --vi-time-select-width: 200px;
     --vi-time-select-height: ;
     --vi-time-select-padding: var(--vi-card-padding);
 

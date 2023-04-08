@@ -12,10 +12,12 @@
 
     .vi-date-select-input {
         display: inline-flex;
-        padding: 8px;
         align-items: center;
         justify-content: space-between;
         box-sizing: border-box;
+        width: var(--vi-date-select-width);
+        height: var(--vi-date-select-height);
+        padding: var(--vi-date-select-padding);
 
         .vi-date-select-choose {
             overflow: hidden;
@@ -41,6 +43,13 @@
         position: relative;
         width: 100%;
         height: 0;
+
+        .vi-select:last-child {
+            --vi-select-width: 40px;
+        }
+        .vi-select:first-child {
+            --vi-select-width: 56px;
+        }
     }
 }
 

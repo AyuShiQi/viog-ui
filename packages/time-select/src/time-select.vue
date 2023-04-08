@@ -13,9 +13,6 @@
   ]"
   ref="select">
     <span class="vi-time-select-input"
-    :style="{
-      width
-    }"
     @click="toSelect">
       <span class="vi-time-select-choose">
         {{formatTime}}
