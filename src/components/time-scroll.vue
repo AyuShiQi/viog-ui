@@ -65,8 +65,8 @@ export default defineComponent({
     overflow: hidden;
     width: 36px;
     height: 200px;
-    border-left: 1px solid @grey-o3;
-    color: @grey-o7;
+    border-left: 1px solid var(--vi-background-color-deep);
+    color: var(--vi-background-color-deep);
     text-align: center;
     box-sizing: border-box;
 
@@ -76,7 +76,7 @@ export default defineComponent({
     }
 
     li.be-choosed {
-        color: @spurple-background;
+        color: var(--vi-purple-color1);
     }
 
     .vi-time-scroll-information {
@@ -84,7 +84,7 @@ export default defineComponent({
       top: 65px;
       right: 0px;
       font-size: @font-size;
-      color: @spurple-background;
+      color: var(--vi-purple-color1);
       transform: scale(70%);
     }
   }
