@@ -544,6 +544,8 @@
       <ViTimeSelect v-model="date"></ViTimeSelect>
       <ViTimeSelect v-model="date" dark></ViTimeSelect>
     </vi-form-item>
+
+    <vi-toast></vi-toast>
   </vi-form>
 </template>
 

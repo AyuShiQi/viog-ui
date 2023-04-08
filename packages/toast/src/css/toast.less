@@ -1,0 +1,21 @@
+.vi-toast {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    pointer-events: none;
+
+    .vi-toast-card {
+        display: inline-block;
+        padding: var(--vi-card-padding);
+        color: #fff;
+        margin-top: 200px;
+        background-color: #262626de;
+        border-radius: var(--vi-card-radius);
+        box-shadow: var(--vi-card-box-shadow);
+        pointer-events: all;
+        backdrop-filter: blur(5px);
+    }
+}
