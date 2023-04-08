@@ -48,6 +48,10 @@
     --vi-switch-left-color: var(--vi-background-color); 
     --vi-switch-right-color: var(--vi-purple-color3);
 
+    --vi-time-select-width: ;
+    --vi-time-select-height: ;
+    --vi-time-select-padding: var(--vi-card-padding);
+
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */

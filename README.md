@@ -1192,7 +1192,7 @@ export type { ViSelectType } from 'viog-ui'
 
 ### ViDateSelect
 
-`<ViSelect>`
+`<ViDateSelect>`
 
 日期时间选择器
 
@@ -1216,7 +1216,7 @@ export type { ViSelectType } from 'viog-ui'
 
   > 参数：必传 (v-model形式) ，属性可根据单位值进行选择传入
 
-- size：string dateSelect 大小  // 暂未实现
+- size：string dateSelect 大小
 
   > 参数：middle(default)/big/small
 
@@ -1224,7 +1224,7 @@ export type { ViSelectType } from 'viog-ui'
 
   > 参数：false(default)/true
 
-- type：string 单选框样式 // 暂无
+- type：string 单选框样式
 
   > 参数：default/button/plain
 
@@ -1236,7 +1236,7 @@ export type { ViSelectType } from 'viog-ui'
 
   > 参数：默认请选择
 
-- width：string 宽度
+- width：string 宽度 （已弃用）
 
   > 参数：一个可以被识别的长度单位值，默认200px
 
@@ -1256,6 +1256,94 @@ export type { ViSelectType } from 'viog-ui'
 
   > 参数：second(default)/minute/hour
   
+- time：boolean 是否启用时间选择器
+
+  > 参数：false(default)/true
+
+#### 事件支持
+
+- 暂未实现
+
+#### ts类型
+
+````typescript
+export type { ViSelectType } from 'viog-ui'
+````
+
+#### 对外暴露方法调用
+
+```typescript
+<!-- 父子组件中 -->
+<ViSelect ref="child">
+  睡觉
+</ViSelect>
+
+<!-- mounted -->   - ts -
+(this.$refs.child as ViSelectType).toPick()
+```
+
+- toClear 清空所有选择
+
+### ViTimeSelect
+
+`<ViSelect>`
+
+时间选择器
+
+#### props参数
+
+- modelValue：{
+
+  ​	hour?: number,
+
+  ​	minute?: number,
+
+  ​	second?: number
+
+  }  当前选择的时间
+
+  > 参数：必传 (v-model形式) ，属性可根据单位值进行选择传入
+
+- size：string dateSelect 大小  // 暂未实现
+
+  > 参数：middle(default)/big/small
+
+- disabled：boolean 是否禁用
+
+  > 参数：false(default)/true
+
+- type：string 单选框样式 
+
+  > 参数：default/button/plain
+
+- dark：boolean 基础色调是否为暗色调
+
+  > 参数：false(default)/true
+
+- placeholder: string 未选择时缺省值
+
+  > 参数：默认请选择
+
+- width：string 宽度 （已弃用）
+
+  > 参数：一个可以被识别的长度单位值，默认200px
+
+- filter：boolean 是否为毛玻璃效果  // 暂未实现
+
+  > 参数：false(default)/true
+
+- range：boolean 是否开启范围选择 // 暂未实现
+
+  > 参数：false(default)/true
+
+- unit：string 日期选择器最小单位
+
+  > 参数：date(default)/week(暂时不做)/month/year
+
+- timeUnit：string 时间选择器最小单位，前提为开启时间选择
+
+  > 参数：second(default)/minute/hour
+
 - time：boolean 是否启用时间选择器
 
   > 参数：false(default)/true
