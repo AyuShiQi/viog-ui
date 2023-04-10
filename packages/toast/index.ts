@@ -6,14 +6,14 @@ let toastComp: VNode
 const show = ref(false)
 const message: Ref<unknown> = ref('')
 let first = true
-let end = true
+let timer: NodeJS.Timeout | undefined
 
 export default {
   install (app: App) {
     app.component(toast.name, toast)
   },
   open (info: unknown, time = 2000) {
-    if (!end) return
+    if (timer) clearTimeout(timer)
     // 挂载一个toast
     if (first) {
       first = false
@@ -27,10 +27,9 @@ export default {
     }
     message.value = info
     show.value = true
-    end = false
-    setTimeout(() => {
+    timer = setTimeout(() => {
       show.value = false
-      end = true
+      timer = undefined
     }, time)
   }
 }
