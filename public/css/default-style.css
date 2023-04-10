@@ -56,6 +56,8 @@
     --vi-time-select-height: ;
     --vi-time-select-padding: var(--vi-card-padding);
 
+    --vi-message-width: 240px;
+
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */

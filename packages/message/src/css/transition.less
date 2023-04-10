@@ -1,0 +1,46 @@
+.vi-message-enter-from {
+    opacity: 0;
+
+    .vi-message-card {
+        transform: translateY(5px);
+    }
+}
+
+.vi-message-enter-to {
+    opacity: 1;
+
+    .vi-message-card {
+        transform: translateY(0px);
+    }
+}
+
+.vi-message-enter-active {
+    transition: var(--vi-transition);
+    .vi-message-card {
+        transition: var(--vi-transition);
+    }
+}
+
+.vi-message-leave {
+    opacity: 1;
+
+    .vi-message-card {
+        transform: translateY(0px);
+    }
+}
+
+.vi-message-leave-to {
+    opacity: 0;
+
+    .vi-message-card {
+        transform: translateY(5px);
+    }
+}
+
+.vi-message-leave-active {
+    transition: var(--vi-transition);
+
+    .vi-message-card {
+        transition: var(--vi-transition);
+    }
+}

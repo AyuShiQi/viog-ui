@@ -8,6 +8,7 @@ import ViLayout from './layout'
 // 交互组件
 import ViDialog from './dialog'
 import ViToast from './toast'
+import ViMessage from './message'
 // scroll 组
 import ViScroll from './scroll'
 // 表单组
@@ -36,11 +37,13 @@ const components = [
   ViSelect,
   ViForm,
   ViDateSelect,
-  ViTimeSelect
+  ViTimeSelect,
+  ViMessage
 ]
 
 export {
-  ViToast
+  ViToast,
+  ViMessage
 }
 
 export default {

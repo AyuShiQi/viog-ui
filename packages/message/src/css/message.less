@@ -1,0 +1,39 @@
+.vi-message {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    text-align: right;
+    pointer-events: none;
+
+
+
+    .vi-message-card {
+        @keyframes message {
+            0% {
+                transform: translateX(400px);
+            }
+            100% {
+                transform: translateX(0px);
+            }
+        }
+        display: inline-block;
+        width: var(--vi-message-width);
+        padding: var(--vi-card-padding);
+        margin-bottom: 1em;
+        color: #fff;
+        text-align: left;
+        background-color: var(--vi-font-color);
+        border-radius: var(--vi-card-radius);
+        box-shadow: var(--vi-card-box-shadow);
+        pointer-events: all;
+        box-sizing: border-box;
+        transition: var(--vi-transition);
+    }
+
+    .vi-message-card_show {
+        animation: message .3s ease 0s 0 normal backwards;
+    }
+}
+
+@import './transition.less';

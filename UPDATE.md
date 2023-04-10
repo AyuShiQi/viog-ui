@@ -18,7 +18,6 @@
 - 调整vi-input组件样式调控，支持修改width、height，padding组件内部属性
 - 重构vi-input组件实现，支持前后缀添加
 - 修复select样式判别
-- 修复select组件自适应最长属性，预防抖动
 - 重构button样式组
 - 新增button组件size属性，弃用small属性
 - 新增input组件type样式
@@ -36,6 +35,7 @@
 
 - 修改xx组件为全局响应模式，支持组件样式全局配置与一次性配置，弃用其component使用形式
 - 对弹出框做视口判断，避免遮挡情况发生
+- 修复select组件自适应最长属性，预防抖动
 
 
 

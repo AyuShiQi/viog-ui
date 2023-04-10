@@ -544,14 +544,13 @@
       <ViTimeSelect v-model="date"></ViTimeSelect>
       <ViTimeSelect v-model="date" dark></ViTimeSelect>
     </vi-form-item>
-
-    <!-- <vi-toast></vi-toast> -->
   </vi-form>
+  <!-- <vi-message></vi-message> -->
 </template>
 
 <script lang="ts">
 import { defineComponent, getCurrentInstance, ref, ComponentInternalInstance, reactive } from 'vue'
-import { ViToast } from '../packages/index'
+import { ViToast, ViMessage } from '../packages/index'
 
 type ViDialogType = {
   open: (time?: number) => void,
@@ -628,7 +627,8 @@ export default defineComponent({
     }
 
     function opent () {
-      ViToast.open('你好，成功了')
+      // ViToast.open('你好，成功了')
+      ViMessage.append('可以了')
     }
 
     function openf () {
