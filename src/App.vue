@@ -3,8 +3,8 @@
   <vi-row justify="center">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
-    <ViButton color="pink" small @click="hello">点击进入</ViButton>
-    <ViButton color="red">点击进入</ViButton>
+    <ViButton color="pink" @click="opent">打开toast</ViButton>
+    <ViButton color="red" @click="openf">点击进入</ViButton>
     <ViButton color="blue">点击进入</ViButton>
     <ViButton color="yellow">点击进入</ViButton>
     <ViButton color="purple">点击进入</ViButton>
@@ -545,12 +545,13 @@
       <ViTimeSelect v-model="date" dark></ViTimeSelect>
     </vi-form-item>
 
-    <vi-toast></vi-toast>
+    <!-- <vi-toast></vi-toast> -->
   </vi-form>
 </template>
 
 <script lang="ts">
 import { defineComponent, getCurrentInstance, ref, ComponentInternalInstance, reactive } from 'vue'
+import { ViToast } from '../packages/index'
 
 type ViDialogType = {
   open: (time?: number) => void,
@@ -626,6 +627,14 @@ export default defineComponent({
       console.log('up')
     }
 
+    function opent () {
+      ViToast.open('你好，成功了')
+    }
+
+    function openf () {
+      ViToast.open('这样也可以')
+    }
+
     return {
       ar,
       value,
@@ -640,7 +649,9 @@ export default defineComponent({
       change,
       res,
       date,
-      up
+      up,
+      opent,
+      openf
     }
   },
   mounted () {

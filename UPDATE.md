@@ -73,3 +73,29 @@
 - input框解耦合，新增默认头尾部输入功能 ~0.8.0 （完成）
 
 - 增添loading，progress， toast，information全局响应功能，更好的支持中间件使用 ~0.9.0
+
+select更新一下虚拟滚动的算法，mounted获取到代码的长度，完成虚拟滚动渲染
+
+- 支持一下多级选项
+- 选项分组
+- search处理
+- 远程搜索处理
+- composition事件处理输入优化
+
+input框更新解耦合
+
+form表单的正则以及代码规范
+
+处理一下input的bug
+
+日期选择器的解耦的做好优化处理
+
+文件上传组件
+
+进度条
+
+table
+
+list
+
+message，toast，骨架框，navigation。。。

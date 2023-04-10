@@ -1,12 +1,18 @@
 <template>
-  <div class="vi-toast">
-    <span class="vi-toast-card">此功能暂未开通，尽请期待</span>
-  </div>
+  <transition name="vi-toast">
+    <div class="vi-toast" v-show="show">
+      <span class="vi-toast-card">{{message}}</span>
+    </div>
+  </transition>
 </template>
 
 <script lang="ts">
+
+import props from './props'
+
 export default {
-  name: 'ViToast'
+  name: 'ViToast',
+  props
 }
 </script>
 

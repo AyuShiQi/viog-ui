@@ -36,9 +36,12 @@ const components = [
   ViSelect,
   ViForm,
   ViDateSelect,
-  ViTimeSelect,
-  ViToast
+  ViTimeSelect
 ]
+
+export {
+  ViToast
+}
 
 export default {
   install: (app: App) => {

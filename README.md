@@ -1345,29 +1345,3 @@ export type { ViSelectType } from 'viog-ui'
 ### ViForm
 
 ### ViFormItem
-
-select更新一下虚拟滚动的算法，mounted获取到代码的长度，完成虚拟滚动渲染
-
-- 支持一下多级选项
-- 选项分组
-- search处理
-- 远程搜索处理
-- composition事件处理输入优化
-
-input框更新解耦合
-
-form表单的正则以及代码规范
-
-处理一下input的bug
-
-日期选择器的解耦的做好优化处理
-
-文件上传组件
-
-进度条
-
-table
-
-list
-
-message，toast，骨架框，navigation。。。
