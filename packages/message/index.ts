@@ -10,8 +10,7 @@ export default {
   install (app: App) {
     app.component(message.name, message)
   },
-  append (info: any, time = 20000) {
-    // 挂载一个toast
+  append (info: any, duration?: number) {
     if (first) {
       first = false
       effect(() => {
@@ -21,11 +20,20 @@ export default {
         render(toastComp, document.body)
       })
     }
-    _message.value.push(info)
-    setTimeout(() => {
-      const index = _message.value.indexOf(info)
-      _message.value.splice(index, 1)
-    }, time)
+    (function () {
+      const mes = {
+        info,
+        duration,
+        time: Date.now()
+      }
+      _message.value.push(mes)
+      if (duration) {
+        setTimeout(() => {
+          const index = _message.value.indexOf(mes)
+          _message.value.splice(index, 1)
+        }, duration)
+      }
+    })()
   }
 }
 

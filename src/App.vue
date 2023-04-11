@@ -83,7 +83,7 @@
     <ViButton disabled color="green" mutate>点击进入</ViButton>
     <ViButton disabled color="dark" mutate>点击进入</ViButton>
   </vi-row>
-  <vi-row justify="center">
+  <!-- <vi-row justify="center">
     <ViButton disabled type="plain" small>点击进入</ViButton>
     <ViButton disabled color="pink" type="plain">点击进入</ViButton>
     <ViButton disabled color="red" type="plain">点击进入</ViButton>
@@ -92,9 +92,9 @@
     <ViButton disabled color="purple" type="plain">点击进入</ViButton>
     <ViButton disabled color="green" type="plain">点击进入</ViButton>
     <ViButton disabled color="dark" type="plain">点击进入</ViButton>
+  </vi-row> -->
 
-  </vi-row>
-  <vi-row justify="center">
+  <!-- <vi-row justify="center">
     <ViButton disabled type="plain" mutate>点击进入</ViButton>
     <ViButton disabled color="pink" type="plain" mutate>点击进入</ViButton>
     <ViButton disabled color="red" type="plain" mutate>点击进入</ViButton>
@@ -193,7 +193,7 @@
     </ViButton>
     <ViButton color="purple" type="transparent" radius="circle">点击</ViButton>
     <ViButton color="green" type="transparent" radius="circle">点击</ViButton>
-  </vi-row>
+  </vi-row> -->
 
     <!-- <vi-row justify="center">
       <ViLoading type="diamond"/>
@@ -271,7 +271,7 @@
     </template>
   </ViVirtualScroll> -->
 
-  <vi-row id="div" style="padding: 10px 0;">
+  <!-- <vi-row id="div" style="padding: 10px 0;">
     <ViInput v-model="value" number showClear width="400px" :maxLength="10" @change="ok" placeholder="账号"></ViInput><br/>
     <ViInput v-model="value" dark password showPassword showClear>密码</ViInput><br/>
     <ViInput round color="pink" password showPassword showClear>密码</ViInput><br/>
@@ -342,9 +342,9 @@
     <ViInput type="button" color="blue" dark warn>placeholder</ViInput><br>
     <ViInput type="button" color="red" error>placeholder</ViInput><br/>
     <ViInput type="button" ref="ipt" color="red" dark error>placeholder</ViInput><br>
-  </vi-row>
+  </vi-row> -->
 
-  <vi-row id="div" style="padding: 10px 0;">
+  <!-- <vi-row id="div" style="padding: 10px 0;">
     <ViSwitch v-model="res" disabled></ViSwitch><br><br>
     <ViSwitch v-model="res" size="small" dark></ViSwitch><br><br>
     <ViSwitch v-model="res" size="big" filter></ViSwitch><br><br>
@@ -355,9 +355,9 @@
     <ViSwitch dark></ViSwitch><br><br>
     <ViSwitch filter></ViSwitch><br><br>
     <ViSwitch dark filter leftColor="#0f0b286c"></ViSwitch>
-  </vi-row>
+  </vi-row> -->
 
-  <vi-row id="div" style="padding: 10px 0;">
+  <!-- <vi-row id="div" style="padding: 10px 0;">
     <ViRadio disabled color="yellow" @change="change" rid="#123" value="吃饭" name="haha" v-model="value"></ViRadio>
     <ViRadio color="blue" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio>
     <ViRadio color="red" dark size="small" rid="#125" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
@@ -388,9 +388,9 @@
       <ViRadio type="button" color="purple" dark size="small" rid="#129" value="打豆豆"  name="haha">打豆豆</ViRadio>
       <ViRadio type="button" size="big" rid="#130" value="飞翔" name="haha">飞翔</ViRadio>
     </ViRadioGroup>
-  </vi-row>
+  </vi-row> -->
 
-  <vi-row height="200px">
+  <!-- <vi-row height="200px">
     <vi-row>
       <ViCheckbox disabled size="small" @change="change" v-model="ar" value="唱歌" dark></ViCheckbox>
       <ViCheckbox size="small" v-model="ar" value="跳舞"></ViCheckbox>
@@ -432,7 +432,7 @@
         <ViCheckbox disabled mutate value="米亚" dark size="big" color="pink" type="button"></ViCheckbox>
       </ViCheckboxGroup>
     </vi-row>
-  </vi-row>
+  </vi-row> -->
 
   <!-- <vi-grid :row="2" :col="11" gap="10px" height="500px">
     <vi-col :row="1" :col="2" class="okk">1</vi-col>
@@ -446,7 +446,7 @@
     <vi-col :row="1" :col="2" class="okk">9</vi-col>
   </vi-grid> -->
 
-  <vi-row justify="center">
+  <!-- <vi-row justify="center">
     <ViSelect filter dark size="big" :datas="arr" v-model="value"></ViSelect>
   </vi-row>
   <vi-row justify="center">
@@ -489,14 +489,14 @@
   <vi-row justify="center">
     <ViSelect dark type="plain" :datas="arr" v-model="value"></ViSelect>
     <ViSelect type="plain" :datas="arr" v-model="value"></ViSelect>
-  </vi-row>
+  </vi-row> -->
 
   <!-- <vi-input password show-password></vi-input>
   <vi-input width="100%" type="plain" password show-password></vi-input>
   <vi-input type="plain" password show-password size="big"></vi-input>
   <vi-input v-model="value" :maxlength="10" :suffix="arr" type="plain" password show-password show-clear size="small"></vi-input> -->
 
-  <vi-form>
+  <!-- <vi-form>
     <vi-form-item label="姓名">
       <vi-input password show-password>123</vi-input>
     </vi-form-item>
@@ -544,7 +544,8 @@
       <ViTimeSelect v-model="date"></ViTimeSelect>
       <ViTimeSelect v-model="date" dark></ViTimeSelect>
     </vi-form-item>
-  </vi-form>
+  </vi-form> -->
+
   <!-- <vi-message></vi-message> -->
 </template>
 
@@ -632,7 +633,8 @@ export default defineComponent({
     }
 
     function openf () {
-      ViToast.open('这样也可以')
+      // ViToast.open('这样也可以')
+      ViMessage.append('可以了这', 3000)
     }
 
     return {

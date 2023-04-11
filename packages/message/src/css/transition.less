@@ -1,16 +1,12 @@
 .vi-message-enter-from {
-    opacity: 0;
-
     .vi-message-card {
-        transform: translateY(5px);
+        transform: translateX(var(--vi-message-width));
     }
 }
 
 .vi-message-enter-to {
-    opacity: 1;
-
     .vi-message-card {
-        transform: translateY(0px);
+        transform: translateX(-10px);
     }
 }
 
@@ -25,7 +21,7 @@
     opacity: 1;
 
     .vi-message-card {
-        transform: translateY(0px);
+        transform: translateX(-10px) translateY(0px);
     }
 }
 
@@ -33,7 +29,7 @@
     opacity: 0;
 
     .vi-message-card {
-        transform: translateY(5px);
+        transform: translateX(-20px) translateY(-5px);
     }
 }
 

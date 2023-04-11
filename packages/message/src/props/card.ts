@@ -6,8 +6,5 @@ export default {
     type: Boolean,
     default: true
   },
-  duration: {
-    type: Number,
-    default: 2000
-  }
+  duration: Number
 }
