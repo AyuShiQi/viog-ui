@@ -11,7 +11,7 @@
 - 调整select组件为虚拟滚动列表
 - 增加--vi-dialog-width等一系列css变量，支持复写变量值灵活修改dialog样式
 
-# 0.2.5（当前迭代开发版本）
+# 0.2.5
 
 - 新增--vi-font-size,--vi-small-font-size,--vi-big-font-size css变量灵活定义项目大中小字体，建议在:root中修改变量值，也支持修改单个font-size
 - 调整vi-select组件样式调控，支持修改width、height，等组件内部属性
@@ -28,14 +28,17 @@
 
 - 重构组件库配色系统
 - 新增toast组件，支持全局响应
-- 新增astfix固钉组件
 - 新增message组件，支持全局响应
 
-# 0.3.1
+# 0.3.1（当前迭代开发版本）
 
 - 修改xx组件为全局响应模式，支持组件样式全局配置与一次性配置，弃用其component使用形式
 - 对弹出框做视口判断，避免遮挡情况发生
 - 修复select组件自适应最长属性，预防抖动
+
+# 0.4.0
+
+- 新增astfix固钉组件
 
 
 
