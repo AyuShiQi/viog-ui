@@ -63,6 +63,34 @@ npm install viog-ui --save
 export { ViButtonType } from 'viog-ui'
 ````
 
+### link
+
+` <Vilink/>` 
+
+#### props参数
+
+- color ：string  按钮颜色
+
+  > 参数：default/dark/red/green/yellow/pink/blue/purple
+
+- disabled ：boolean 是否禁用 （暂无）
+
+- size：string   按钮大小
+
+  > 参数：small/middle(default)/big
+
+#### 事件支持
+
+- click 点击事件
+
+#### 插槽
+
+- 默认插槽，link内内容
+
+#### ts类型
+
+- 暂无
+
 ### Icon
 
 `<ViIcon/>`
@@ -1345,3 +1373,59 @@ export type { ViSelectType } from 'viog-ui'
 ### ViForm
 
 ### ViFormItem
+
+### Toast
+
+`<ViToast/>`
+
+```javascript
+import { ViToast } from 'viog-ui'
+
+ViToast.open(info, time) //默认为2000ms 
+```
+
+#### props参数
+
+- 暂无
+
+
+#### 事件支持
+
+- 暂无
+
+
+#### ts类型
+
+- 暂无
+
+#### 样式修改
+
+- 暂无
+
+### Message
+
+`<ViMessae/>`
+
+```javascript
+import { ViMessage } from 'viog-ui'
+
+ViMessage.append(info, time) //默认不关闭 
+```
+
+#### props参数
+
+- 暂无
+
+#### 事件支持
+
+- 暂无
+
+#### ts类型
+
+- 暂无
+
+#### 样式修改
+
+- 暂无
+
+### 

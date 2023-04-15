@@ -637,7 +637,7 @@ export default defineComponent({
     }
 
     function opent () {
-      // ViToast.open('你好，成功了')
+      ViToast.open('你好，成功了')
       ViMessage.append('可以了')
     }
 
