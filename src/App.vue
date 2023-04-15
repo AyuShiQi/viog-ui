@@ -547,6 +547,15 @@
   </vi-form> -->
 
   <!-- <vi-message></vi-message> -->
+
+  <vi-link></vi-link>
+  <vi-link color="purple"></vi-link>
+  <vi-link color="red"></vi-link>
+  <vi-link color="pink"></vi-link>
+  <vi-link color="blue"></vi-link>
+  <vi-link color="green"></vi-link>
+  <vi-link color="yellow"></vi-link>
+  <vi-link color="dark"></vi-link>
 </template>
 
 <script lang="ts">
