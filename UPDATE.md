@@ -1,4 +1,4 @@
-# 0.2.4
+# 0.3.2
 
 - 修复dateSelect time组件对于mousewheel事件阻止的优化
 - 删除scroll及virtual-scroll组件width、heigth、maxHeight  props，删除style操作样式方法
@@ -30,10 +30,14 @@
 - 新增toast组件，支持全局响应
 - 新增message组件，支持全局响应
 
-# 0.3.1（当前迭代开发版本）
+# 0.3.1
 
 - 新增link组件
 - 修复select组件自适应最长属性，预防抖动
+
+# 0.3.2（当前迭代开发版本）
+
+- 修改button plain部分样式展示
 
 # 0.4.0
 

@@ -10,6 +10,6 @@ module.exports = defineConfig({
   },
   parallel: false,
   css: {
-    extract: false
+    // extract: false
   }
 })
