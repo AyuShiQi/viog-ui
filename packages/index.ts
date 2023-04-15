@@ -5,6 +5,7 @@ import ViButton from './button'
 import ViIcon from './icon'
 import ViLoading from './loading'
 import ViLayout from './layout'
+import ViLink from './link'
 // 交互组件
 import ViDialog from './dialog'
 import ViToast from './toast'
@@ -38,7 +39,8 @@ const components = [
   ViForm,
   ViDateSelect,
   ViTimeSelect,
-  ViMessage
+  ViMessage,
+  ViLink
 ]
 
 export {
