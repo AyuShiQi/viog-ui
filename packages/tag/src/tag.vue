@@ -17,10 +17,7 @@ import props from './props'
 
 export default defineComponent({
   name: 'ViTag',
-  props,
-  setup (props: any, ctx: SetupContext) {
-    console.log('ok')
-  }
+  props
 })
 </script>
 
