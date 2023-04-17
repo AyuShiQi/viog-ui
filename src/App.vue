@@ -550,14 +550,36 @@
 
   <!-- <vi-message></vi-message> -->
 
-  <vi-link></vi-link>
-  <vi-link color="purple"></vi-link>
-  <vi-link color="red"></vi-link>
-  <vi-link color="pink"></vi-link>
-  <vi-link color="blue"></vi-link>
-  <vi-link color="green"></vi-link>
-  <vi-link color="yellow"></vi-link>
-  <vi-link color="dark"></vi-link>
+  <vi-link>1</vi-link>
+  <vi-link color="purple">1</vi-link>
+  <vi-link color="red">1</vi-link>
+  <vi-link color="pink">1</vi-link>
+  <vi-link color="blue">1</vi-link>
+  <vi-link color="green">1</vi-link>
+  <vi-link color="yellow">1</vi-link>
+  <vi-link color="dark">1</vi-link>
+
+  <vi-tag></vi-tag>
+  <vi-tag color="purple"></vi-tag>
+  <vi-tag color="pink"></vi-tag>
+  <vi-tag color="red"></vi-tag>
+  <vi-tag color="green"></vi-tag>
+  <vi-tag color="yellow"></vi-tag>
+  <vi-tag color="blue"></vi-tag>
+  <vi-tag size="small"></vi-tag>
+  <vi-tag size="small" color="purple"></vi-tag>
+  <vi-tag size="small" color="pink"></vi-tag>
+  <vi-tag size="small" color="red"></vi-tag>
+  <vi-tag size="small" color="green"></vi-tag>
+  <vi-tag size="small" color="yellow"></vi-tag>
+  <vi-tag size="small" color="blue"></vi-tag>
+  <vi-tag size="big"></vi-tag>
+  <vi-tag size="big" color="purple"></vi-tag>
+  <vi-tag size="big" color="pink"></vi-tag>
+  <vi-tag size="big" color="red"></vi-tag>
+  <vi-tag size="big" color="green"></vi-tag>
+  <vi-tag size="big" color="yellow"></vi-tag>
+  <vi-tag size="big" color="blue"></vi-tag>
 </template>
 
 <script lang="ts">

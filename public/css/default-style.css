@@ -17,6 +17,8 @@
     /* 组件样式们 */
     --vi-button-padding: var(--vi-card-padding);
 
+    --vi-tag-padding: .2em .6em;
+
     --vi-scroll-height: 400px;
     --vi-scroll-width: ;
     --vi-scroll-max-height: ;
