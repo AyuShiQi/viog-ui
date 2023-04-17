@@ -357,6 +357,8 @@
     <ViSwitch dark filter leftColor="#0f0b286c"></ViSwitch>
   </vi-row> -->
 
+  <ViRadio color="blue" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio>
+
   <!-- <vi-row id="div" style="padding: 10px 0;">
     <ViRadio disabled color="yellow" @change="change" rid="#123" value="吃饭" name="haha" v-model="value"></ViRadio>
     <ViRadio color="blue" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio>

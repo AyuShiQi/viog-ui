@@ -39,6 +39,10 @@
 
 - 修改button plain部分样式展示
 
+# 0.3.3
+
+- 修复input number启用在某些场景下的抖动问题
+
 # 0.4.0
 
 - 新增astfix固钉组件
