@@ -448,7 +448,7 @@
     <vi-col :row="1" :col="2" class="okk">9</vi-col>
   </vi-grid> -->
 
-  <!-- <vi-row justify="center">
+  <vi-row justify="center">
     <ViSelect filter dark size="big" :datas="arr" v-model="value"></ViSelect>
   </vi-row>
   <vi-row justify="center">
@@ -491,7 +491,7 @@
   <vi-row justify="center">
     <ViSelect dark type="plain" :datas="arr" v-model="value"></ViSelect>
     <ViSelect type="plain" :datas="arr" v-model="value"></ViSelect>
-  </vi-row> -->
+  </vi-row>
 
   <!-- <vi-input password show-password></vi-input>
   <vi-input width="100%" type="plain" password show-password></vi-input>
@@ -558,6 +558,7 @@
   <vi-link color="green">1</vi-link>
   <vi-link color="yellow">1</vi-link>
   <vi-link color="dark">1</vi-link>
+  <vi-select-n></vi-select-n>
 
   <vi-tag></vi-tag>
   <vi-tag color="purple"></vi-tag>
@@ -580,8 +581,6 @@
   <vi-tag size="big" color="green"></vi-tag>
   <vi-tag size="big" color="yellow"></vi-tag>
   <vi-tag size="big" color="blue"></vi-tag>
-
-  <vi-select-n></vi-select-n>
 </template>
 
 <script lang="ts">
