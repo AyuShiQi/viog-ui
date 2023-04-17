@@ -20,6 +20,7 @@ import ViSwitch from './switch'
 import ViRadio from './radio'
 import ViCheckbox from './checkbox'
 import ViSelect from './select'
+import ViSelectN from './select-normal'
 import ViDateSelect from './date-select'
 import ViTimeSelect from './time-select'
 // type
@@ -42,7 +43,8 @@ const components = [
   ViTimeSelect,
   ViMessage,
   ViLink,
-  ViTag
+  ViTag,
+  ViSelectN
 ]
 
 export {
