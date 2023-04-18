@@ -11,6 +11,7 @@ import type { SetupContext } from 'vue'
 export default defineComponent({
   name: 'ViOption',
   setup (props: any, ctx: SetupContext) {
+    console.log(12)
   }
 })
 </script>
@@ -18,4 +19,3 @@ export default defineComponent({
 <style lang="less">
 @import './css/option.less';
 </style>
-

@@ -558,7 +558,12 @@
   <vi-link color="green">1</vi-link>
   <vi-link color="yellow">1</vi-link>
   <vi-link color="dark">1</vi-link>
-  <vi-select-n></vi-select-n>
+  <vi-select-n>
+    <vi-option>123</vi-option>
+    <vi-option>123</vi-option>
+    <vi-option>123</vi-option>
+    <vi-option>123</vi-option>
+  </vi-select-n>
 
   <vi-tag></vi-tag>
   <vi-tag color="purple"></vi-tag>
