@@ -23,7 +23,13 @@
             <path d="M17.4019 1.5C18.5566 -0.5 21.4434 -0.5 22.5981 1.5L39.0526 30C40.2073 32 38.7639 34.5 36.4545 34.5H3.54552C1.23612 34.5 -0.207259 32 0.947441 30L17.4019 1.5Z"/>
         </svg>
     </span>
-    <span class="vi-select-list"></span>
+    <div class="vi-select-list">
+      <transition name="vi-select-box">
+        <div class="vi-select-list-container" v-if="open">
+          <slot></slot>
+        </div>
+      </transition>
+    </div>
   </span>
 </template>
 
