@@ -586,6 +586,8 @@
   <vi-tag size="big" color="green"></vi-tag>
   <vi-tag size="big" color="yellow"></vi-tag>
   <vi-tag size="big" color="blue"></vi-tag>
+
+  <vi-dropdown></vi-dropdown>
 </template>
 
 <script lang="ts">

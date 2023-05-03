@@ -38,6 +38,8 @@
 # 0.3.2（当前迭代开发版本）
 
 - 修改button plain部分样式展示
+- 新增dropdown组件
+- 新增select-normal组件
 
 # 0.3.3
 
