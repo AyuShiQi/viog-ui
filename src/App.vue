@@ -492,7 +492,6 @@
     <ViSelect dark type="plain" :datas="arr" v-model="value"></ViSelect>
     <ViSelect type="plain" :datas="arr" v-model="value"></ViSelect>
   </vi-row>
-
   <!-- <vi-input password show-password></vi-input>
   <vi-input width="100%" type="plain" password show-password></vi-input>
   <vi-input type="plain" password show-password size="big"></vi-input>
@@ -549,45 +548,54 @@
   </vi-form> -->
 
   <!-- <vi-message></vi-message> -->
-
-  <vi-link>1</vi-link>
-  <vi-link color="purple">1</vi-link>
-  <vi-link color="red">1</vi-link>
-  <vi-link color="pink">1</vi-link>
-  <vi-link color="blue">1</vi-link>
-  <vi-link color="green">1</vi-link>
-  <vi-link color="yellow">1</vi-link>
-  <vi-link color="dark">1</vi-link>
-  <vi-select-n>
-    <vi-option>123</vi-option>
-    <vi-option>123</vi-option>
-    <vi-option>123</vi-option>
-    <vi-option>123</vi-option>
-  </vi-select-n>
-
-  <vi-tag></vi-tag>
-  <vi-tag color="purple"></vi-tag>
-  <vi-tag color="pink"></vi-tag>
-  <vi-tag color="red"></vi-tag>
-  <vi-tag color="green"></vi-tag>
-  <vi-tag color="yellow"></vi-tag>
-  <vi-tag color="blue"></vi-tag>
-  <vi-tag size="small"></vi-tag>
-  <vi-tag size="small" color="purple"></vi-tag>
-  <vi-tag size="small" color="pink"></vi-tag>
-  <vi-tag size="small" color="red"></vi-tag>
-  <vi-tag size="small" color="green"></vi-tag>
-  <vi-tag size="small" color="yellow"></vi-tag>
-  <vi-tag size="small" color="blue"></vi-tag>
-  <vi-tag size="big"></vi-tag>
-  <vi-tag size="big" color="purple"></vi-tag>
-  <vi-tag size="big" color="pink"></vi-tag>
-  <vi-tag size="big" color="red"></vi-tag>
-  <vi-tag size="big" color="green"></vi-tag>
-  <vi-tag size="big" color="yellow"></vi-tag>
-  <vi-tag size="big" color="blue"></vi-tag>
-
-  <vi-dropdown></vi-dropdown>
+  <vi-row justify="center">
+    <vi-dropdown></vi-dropdown>
+  </vi-row>
+  <vi-row>
+    <vi-link>1</vi-link>
+    <vi-link color="purple">1</vi-link>
+    <vi-link color="red">1</vi-link>
+    <vi-link color="pink">1</vi-link>
+    <vi-link color="blue">1</vi-link>
+    <vi-link color="green">1</vi-link>
+    <vi-link color="yellow">1</vi-link>
+    <vi-link color="dark">1</vi-link>
+  </vi-row>
+  <vi-row>
+    <vi-select-n>
+      <vi-option>123</vi-option>
+      <vi-option>123</vi-option>
+      <vi-option>123</vi-option>
+      <vi-option>123</vi-option>
+    </vi-select-n>
+  </vi-row>
+  <vi-row>
+    <vi-tag></vi-tag>
+    <vi-tag color="purple"></vi-tag>
+    <vi-tag color="pink"></vi-tag>
+    <vi-tag color="red"></vi-tag>
+    <vi-tag color="green"></vi-tag>
+    <vi-tag color="yellow"></vi-tag>
+    <vi-tag color="blue"></vi-tag>
+  </vi-row>
+  <vi-row>
+    <vi-tag size="small"></vi-tag>
+    <vi-tag size="small" color="purple"></vi-tag>
+    <vi-tag size="small" color="pink"></vi-tag>
+    <vi-tag size="small" color="red"></vi-tag>
+    <vi-tag size="small" color="green"></vi-tag>
+    <vi-tag size="small" color="yellow"></vi-tag>
+    <vi-tag size="small" color="blue"></vi-tag>
+  </vi-row>
+  <vi-row>
+    <vi-tag size="big"></vi-tag>
+    <vi-tag size="big" color="purple"></vi-tag>
+    <vi-tag size="big" color="pink"></vi-tag>
+    <vi-tag size="big" color="red"></vi-tag>
+    <vi-tag size="big" color="green"></vi-tag>
+    <vi-tag size="big" color="yellow"></vi-tag>
+    <vi-tag size="big" color="blue"></vi-tag>
+  </vi-row>
 </template>
 
 <script lang="ts">

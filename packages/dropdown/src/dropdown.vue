@@ -1,7 +1,13 @@
 <template>
     <span class="vi-dropdown" ref="select">
       <div class="vi-dropdown-nav" @click="toSelect">dropdown</div>
-      <div class="vi-dropdown-content">
+      <div
+      class="vi-dropdown-content"
+      :class="[
+        `vi-dropdown-content-${direction}`,
+        `vi-dropdown-content-${elseDirection}`
+      ]"
+      ref="dropdown">
         <transition name="vi-fade-in-out">
           <scroll class="vi-dropdown-list" v-show="open">
             1111111111111111111
@@ -18,6 +24,7 @@ import type { SetupContext } from 'vue'
 import { scroll } from '../../scroll'
 
 import openState from '@/hooks/open-state'
+import boxPositionState from '@/hooks/box-position-state'
 
 export default defineComponent({
   name: 'ViDropdown',
@@ -26,9 +33,11 @@ export default defineComponent({
   },
   setup (props: any, ctx: SetupContext) {
     const open = openState()
+    const boxPosition = boxPositionState()
 
     return {
-      ...open
+      ...open,
+      ...boxPosition
     }
   }
 })
