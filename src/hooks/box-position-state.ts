@@ -6,7 +6,7 @@ export default function () {
   let listenerResize: any
   let listenerScroll: any
   const direction = ref('down')
-  const elseDirection = ref('left')
+  const elseDirection = ref('normal')
   onMounted(() => {
     const dropdwonStyle = window.getComputedStyle(dropdown.value.children[0])
     const temp = dropdwonStyle.getPropertyValue('height') || dropdwonStyle.getPropertyPriority('min-height')
@@ -21,12 +21,11 @@ export default function () {
     return function (e: Event) {
       if (timer) clearTimeout(timer)
       timer = setTimeout(() => {
-        // console.log(window.innerHeight)
         const { left, right, bottom, top } = dropdown.value.getBoundingClientRect()
-        console.log(left)
         if (top + height < window.innerHeight) direction.value = 'down'
-        else direction.value = 'up'
-      }, 300)
+        // else if (top - height >= 0) direction.value = 'up'
+        else direction.value = 'left'
+      }, 100)
     }
   })()
 
