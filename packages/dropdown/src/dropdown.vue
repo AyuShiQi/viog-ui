@@ -1,7 +1,7 @@
 <template>
     <span class="vi-dropdown" ref="select">
       <div class="vi-dropdown-nav" @click="toSelect">
-        <slot></slot>
+        <slot :open="open">dropdown</slot>
       </div>
       <div
       class="vi-dropdown-content"

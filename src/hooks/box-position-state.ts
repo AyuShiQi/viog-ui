@@ -23,7 +23,7 @@ export default function () {
       timer = setTimeout(() => {
         const { left, right, bottom, top } = dropdown.value.getBoundingClientRect()
         if (top + height < window.innerHeight) direction.value = 'down'
-        // else if (top - height >= 0) direction.value = 'up'
+        else if (top - height >= 0) direction.value = 'up'
         else direction.value = 'left'
       }, 100)
     }
