@@ -19,7 +19,8 @@
 
     --vi-tag-padding: .2em .6em;
 
-    --vi-scroll-height: 400px;
+    --vi-scroll-max-height: 400px;
+    --vi-scroll-height: ;
     --vi-scroll-width: ;
     --vi-scroll-max-height: ;
 
