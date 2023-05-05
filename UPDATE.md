@@ -35,21 +35,26 @@
 - 新增link组件
 - 修复select组件自适应最长属性，预防抖动
 
-# 0.3.2（当前迭代开发版本）
+# 0.3.2
 
 - 修改button plain部分样式展示
-- 新增dropdown组件
+
+# 0.3.3（当前迭代开发版本）
+
+- 新增dropdown组件，对弹出框做视口判断，避免遮挡情况发生
 - 新增select-normal组件
+- 添加scroll组件min-height css变量
 
-# 0.3.3
+# 0.3.4
 
-- 修复input number启用在某些场景下的抖动问题
+- 新增抽屉组件
+- 新增骨架框组件
 
 # 0.4.0
 
+- 修复input number启用在某些场景下的抖动问题
 - 新增astfix固钉组件
 - 新增page-controller分页器组件
-- 对弹出框做视口判断，避免遮挡情况发生
 
 
 
