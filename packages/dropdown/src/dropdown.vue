@@ -1,6 +1,6 @@
 <template>
     <span class="vi-dropdown" ref="select">
-      <div class="vi-dropdown-nav" @click="toSelect">
+      <div class="vi-dropdown-nav" @click="toOpen" ref="select">
         <slot :open="open">dropdown</slot>
       </div>
       <div
@@ -31,9 +31,14 @@ export default defineComponent({
     const open = openState()
     const boxPosition = boxPositionState()
 
+    function toOpen () {
+      open.toSelect(boxPosition.recalcSize)
+    }
+
     return {
       ...open,
-      ...boxPosition
+      ...boxPosition,
+      toOpen
     }
   }
 })

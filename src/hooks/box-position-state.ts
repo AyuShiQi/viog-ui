@@ -2,6 +2,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 export default function () {
   const dropdown = ref()
+  const select = ref()
   const height = ref(Number.MAX_SAFE_INTEGER)
   let listenerResize: any
   let listenerScroll: any
@@ -19,10 +20,12 @@ export default function () {
       if (timer) clearTimeout(timer)
       timer = setTimeout(() => {
         recalcSize()
-        const { left, right, bottom, top } = dropdown.value.getBoundingClientRect()
-        if (top + height.value < window.innerHeight) direction.value = 'down'
+        const { left, right, bottom, top } = select.value.getBoundingClientRect()
+        if (bottom + height.value < window.innerHeight) direction.value = 'down'
         else if (top - height.value >= 0) direction.value = 'up'
-        else direction.value = 'left'
+        else if (right + height.value < window.innerWidth) direction.value = 'right'
+        else if (left - height.value >= 0) direction.value = 'left'
+        else direction.value = 'down'
       }, 100)
     }
   })()
@@ -41,8 +44,10 @@ export default function () {
 
   return {
     dropdown,
+    select,
     direction,
     elseDirection,
-    toChangeViewPosition
+    toChangeViewPosition,
+    recalcSize
   }
 }
