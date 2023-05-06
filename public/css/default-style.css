@@ -61,8 +61,8 @@
 
     --vi-message-width: 240px;
 
-    --vi-dropdown-height: 100px;
-    --vi-dropdown-max-height: ;
+    --vi-dropdown-height: ;
+    --vi-dropdown-max-height: 400px;
 
     /* 颜色样式们 */
     /* 字体样式 */

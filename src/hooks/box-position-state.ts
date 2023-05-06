@@ -8,6 +8,7 @@ export default function () {
   const direction = ref('down')
   const elseDirection = ref('normal')
   onMounted(() => {
+    toChangeViewPosition()
     listenerResize = window.addEventListener('resize', toChangeViewPosition)
     listenerScroll = window.addEventListener('scroll', toChangeViewPosition)
   })
@@ -30,6 +31,7 @@ export default function () {
     const dropdwonStyle = window.getComputedStyle(dropdown.value.children[0])
     const temp = dropdwonStyle.getPropertyValue('height')
     if (/.*px/.test(temp)) height.value = Number((temp).slice(0, -2))
+    // console.log(temp)
   }
 
   onUnmounted(() => {
@@ -41,6 +43,6 @@ export default function () {
     dropdown,
     direction,
     elseDirection,
-    recalcSize
+    toChangeViewPosition
   }
 }

@@ -1,0 +1,120 @@
+/* 普通渐进 */
+@keyframes vi-fade-in-out-normal-enter {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes vi-fade-in-out-normal-leave {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* 上方展开 */
+@keyframes vi-fade-in-out-up-enter {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes vi-fade-in-out-up-leave {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+}
+
+/* 下方展开 */
+@keyframes vi-fade-in-out-down-enter {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes vi-fade-in-out-down-leave {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+}
+
+/* 左方展开 */
+@keyframes vi-fade-in-out-left-enter {
+    0% {
+        opacity: 0;
+        transform: translateX(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes vi-fade-in-out-left-leave {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(5px);
+    }
+}
+
+/* 右方展开 */
+@keyframes vi-fade-in-out-right-enter {
+    0% {
+        opacity: 0;
+        transform: translateX(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes vi-fade-in-out-right-leave {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(5px);
+    }
+}
