@@ -15,9 +15,9 @@
         {
           'be-open': open
         }
-      ]"
-      @click="toSelect">
+      ]">
           <span class="vi-select-choose">
+            {{modelValue}}
           </span>
           <svg
           class="vi-select-arrow"
@@ -37,15 +37,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, provide, computed } from 'vue'
 import type { SetupContext } from 'vue'
 
 import { dropdown } from '../../dropdown'
 import { scroll } from '../../scroll'
 
 import props from './props/select'
-
-import openState from '@/hooks/open-state'
 
 export default defineComponent({
   name: 'ViSelectN',
@@ -55,10 +53,13 @@ export default defineComponent({
   },
   props,
   setup (props: any, ctx: SetupContext) {
-    const open = openState()
+    const choosed = computed(() => props.modelValue)
+    provide('choosed', choosed)
+    provide('update:choosed', changeSelect)
 
-    return {
-      ...open
+    function changeSelect (newValue: any) {
+      console.log(newValue)
+      ctx.emit('update:modelValue', newValue)
     }
   }
 })

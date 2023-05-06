@@ -562,11 +562,11 @@
     <vi-link color="dark">1</vi-link>
   </vi-row>
   <vi-row>
-    <vi-select-n>
-      <vi-option>123</vi-option>
-      <vi-option>123</vi-option>
-      <vi-option>123</vi-option>
-      <vi-option>123</vi-option>
+    <vi-select-n v-model="value">
+      <vi-option value="123">123</vi-option>
+      <vi-option value="234">123</vi-option>
+      <vi-option value="676">123</vi-option>
+      <vi-option value="891">123</vi-option>
     </vi-select-n>
   </vi-row>
   <vi-row>
