@@ -12,6 +12,7 @@ import ViDropDown from './dropdown'
 import ViDialog from './dialog'
 import ViToast from './toast'
 import ViMessage from './message'
+import ViDrawer from './drawer'
 // scroll 组
 import ViScroll from './scroll'
 // 表单组
@@ -46,7 +47,8 @@ const components = [
   ViLink,
   ViTag,
   ViSelectN,
-  ViDropDown
+  ViDropDown,
+  ViDrawer
 ]
 
 export {
