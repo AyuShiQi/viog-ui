@@ -10,17 +10,11 @@
         `vi-dropdown-content-else-${elseDirection}`
       ]"
       ref="dropdown">
-        <!-- <transition :name="`vi-fade-in-out-${direction}`"> -->
-          <div
-          class="vi-dropdown-list"
-          :class="[
-            {
-              'is-open': open
-            }
-          ]">
+        <transition :name="`vi-fade-in-out-${direction}`">
+          <div class="vi-dropdown-list" v-show="open">
             <slot name="content"></slot>
           </div>
-        <!-- </transition> -->
+        </transition>
       </div>
     </span>
 </template>

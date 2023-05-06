@@ -18,8 +18,13 @@ export default function () {
     document.removeEventListener('click', listener)
   })
 
-  function toSelect () {
+  function toSelect (cb?: any, ...args: any[]) {
     open.value = !open.value
+    if (cb) {
+      setTimeout(() => {
+        cb.call(...args)
+      })
+    }
   }
 
   return {

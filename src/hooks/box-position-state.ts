@@ -2,7 +2,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 export default function () {
   const dropdown = ref()
-  const height = ref(0)
+  const height = ref(Number.MAX_SAFE_INTEGER)
   let listenerResize: any
   let listenerScroll: any
   const direction = ref('down')
