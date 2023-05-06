@@ -17,7 +17,7 @@
         }
       ]">
           <span class="vi-select-choose">
-            {{modelValue}}
+            {{isEmpty()? placeholder : modelValue}}
           </span>
           <svg
           class="vi-select-arrow"
@@ -60,6 +60,14 @@ export default defineComponent({
     function changeSelect (newValue: any) {
       console.log(newValue)
       ctx.emit('update:modelValue', newValue)
+    }
+
+    function isEmpty () {
+      return !props.modelValue
+    }
+
+    return {
+      isEmpty
     }
   }
 })
