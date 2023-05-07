@@ -8,13 +8,14 @@ export default function (ctx: SetupContext) {
   const nav = ref()
 
   onMounted(() => {
+    const { x: contentLeft } = nav.value.getBoundingClientRect()
     let i = 0
     for (const navChild of nav.value.children) {
       listEvent.push(navChild.addEventListener('click', toChoose.bind(undefined, i)))
       const { x, width } = navChild.getBoundingClientRect()
-      console.log(x, width)
+      // console.log(x - contentLeft, width)
       listWidth.push(width)
-      listLeft.push(x)
+      listLeft.push(x - contentLeft)
       i++
     }
     console.log()
