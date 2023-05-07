@@ -1,4 +1,5 @@
 <template>
+  <vi-header></vi-header>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <vi-row justify="center">
     <ViButton @click="openDialog">
@@ -596,7 +597,7 @@
     <vi-tag size="big" color="yellow"></vi-tag>
     <vi-tag size="big" color="blue"></vi-tag>
   </vi-row>
-  <vi-drawer v-model="open"></vi-drawer>
+  <!-- <vi-drawer v-model="open"></vi-drawer> -->
 </template>
 
 <script lang="ts">

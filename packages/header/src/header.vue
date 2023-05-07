@@ -19,4 +19,5 @@ export default defineComponent({
 </script>
 
 <style lang="less">
+@import './css/header.less';
 </style>
