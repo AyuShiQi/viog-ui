@@ -68,6 +68,7 @@
 
     --vi-drawer-width: 300px;
     --vi-drawer-height: 300px;
+    --vi-drawer-padding: var(--vi-card-padding);
 
     --vi-header-padding: 0 16px;
 
