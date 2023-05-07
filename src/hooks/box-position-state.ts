@@ -3,12 +3,13 @@ import { ref, onMounted, onUnmounted } from 'vue'
 export default function () {
   const dropdown = ref()
   const select = ref()
-  const height = ref(Number.MAX_SAFE_INTEGER)
+  const height = ref(0)
   let listenerResize: any
   let listenerScroll: any
   const direction = ref('down')
   const elseDirection = ref('normal')
   onMounted(() => {
+    firstCalcSize()
     toChangeViewPosition()
     listenerResize = window.addEventListener('resize', toChangeViewPosition)
     listenerScroll = window.addEventListener('scroll', toChangeViewPosition)
@@ -33,8 +34,17 @@ export default function () {
   function recalcSize (): void {
     const dropdwonStyle = window.getComputedStyle(dropdown.value.children[0])
     const temp = dropdwonStyle.getPropertyValue('height')
-    if (/.*px/.test(temp)) height.value = Number((temp).slice(0, -2))
-    // console.log(temp)
+    if (/.*px/.test(temp) && temp !== '0px') height.value = Number((temp).slice(0, -2))
+  }
+
+  function firstCalcSize (): void {
+    const dropdwonStyle = window.getComputedStyle(dropdown.value.children[0])
+    const temp = dropdwonStyle.getPropertyValue('height')
+    if (/.*px/.test(temp) && temp !== '0px') height.value = Number((temp).slice(0, -2))
+    else {
+      const maxTemp = dropdwonStyle.getPropertyValue('max-height')
+      if (/.*px/.test(maxTemp)) height.value = Number((maxTemp).slice(0, -2))
+    }
   }
 
   onUnmounted(() => {
