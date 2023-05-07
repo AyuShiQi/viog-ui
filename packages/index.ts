@@ -8,6 +8,8 @@ import ViLayout from './layout'
 import ViLink from './link'
 import ViTag from './tag'
 import ViDropDown from './dropdown'
+// 模块组
+import ViHeader from './header'
 // 交互组件
 import ViDialog from './dialog'
 import ViToast from './toast'
@@ -48,7 +50,8 @@ const components = [
   ViTag,
   ViSelectN,
   ViDropDown,
-  ViDrawer
+  ViDrawer,
+  ViHeader
 ]
 
 export {

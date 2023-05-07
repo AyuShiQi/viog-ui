@@ -55,7 +55,7 @@
 - 新增tag组件
 - 新增dropdown组件，对弹出框做视口判断，避免遮挡情况发生
 - 新增select-normal组件
-- 新增抽屉组件
+- 新增drawer组件
 - 新增header组件
 - 新增tab组件
 - 新增navigation组件
