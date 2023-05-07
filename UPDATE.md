@@ -58,7 +58,7 @@
 - 新增drawer组件
 - 新增header组件
 - 新增tab组件
-- 新增navigation组件
+- 新增nav组件
 
 # 0.5.0
 

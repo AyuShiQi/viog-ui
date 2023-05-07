@@ -1,5 +1,11 @@
 <template>
-  <vi-header></vi-header>
+  <vi-header>
+    <vi-nav v-model="choose">
+      <div v-for="item in nav" :key="item">
+        {{item}}
+      </div>
+    </vi-nav>
+  </vi-header>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <vi-row justify="center">
     <ViButton @click="openDialog">
@@ -634,11 +640,13 @@ export default defineComponent({
       month: undefined,
       date: undefined
     })
+    const choose = ref(0)
     const res = ref(false)
     const value = ref('')
     const ar = reactive([])
     const { proxy } = getCurrentInstance() as ComponentInternalInstance
     const open = ref(true)
+    const nav = ['吃饭', '睡觉', '长个子', '好']
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
     const obj = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 }]
 
@@ -704,7 +712,9 @@ export default defineComponent({
       date,
       up,
       opent,
-      openf
+      openf,
+      nav,
+      choose
     }
   },
   mounted () {
