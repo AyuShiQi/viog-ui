@@ -22,6 +22,7 @@ export default function () {
       timer = setTimeout(() => {
         recalcSize()
         const { left, right, bottom, top } = select.value.getBoundingClientRect()
+        console.log(height.value, window.innerHeight, window.innerWidth, bottom)
         if (bottom + height.value < window.innerHeight) direction.value = 'down'
         else if (top - height.value >= 0) direction.value = 'up'
         else if (right + height.value < window.innerWidth) direction.value = 'right'
