@@ -2,17 +2,19 @@
     display: flex;
     width: var(--vi-nav-width);
     height: var(--vi-nav-height);
+    font-size: var(--vi-nav-font-size);
     // background-color: pink;
     flex-direction: column;
     justify-content: space-between;
 
     .vi-nav-list {
         display: flex;
-        height: 1em;
     }
 
     .vi-nav-list > * {
         margin-left: var(--vi-nav-gap);
+        cursor: pointer;
+        user-select: none;
         &:first-child {
             margin-left: 0;
         }
@@ -20,7 +22,7 @@
 
     .vi-nav-line {
         position: relative;
-        height: 1em;
+        height: .5em;
         flex-grow: 0;
 
         .vi-nav-line-choose {
