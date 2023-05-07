@@ -28,15 +28,13 @@ import boxPositionState from '@/hooks/box-position-state'
 export default defineComponent({
   name: 'ViDropdown',
   setup () {
-    let first = true
     const open = openState()
     const boxPosition = boxPositionState()
 
     function toOpen () {
-      if (first) {
-        first = false
-        open.toSelect(boxPosition.recalcSize)
-      } else open.toSelect(boxPosition.toChangeViewPosition)
+      // 当此次操作时打开时，仅做重新计算处理
+      if (!open.open.value) open.toSelect(boxPosition.recalcSize)
+      else open.toSelect(boxPosition.toChangeViewPosition)
     }
 
     return {
