@@ -596,6 +596,7 @@
     <vi-tag size="big" color="yellow"></vi-tag>
     <vi-tag size="big" color="blue"></vi-tag>
   </vi-row>
+  <vi-drawer v-model="open"></vi-drawer>
 </template>
 
 <script lang="ts">

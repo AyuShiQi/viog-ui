@@ -14,6 +14,8 @@
     --vi-blur: 16px;
     --vi-transition: all .2s ease 0s;
     --vi-transition-slow: all .3s ease 0s;
+    --vi-transition-large: all .5s ease 0s;
+    --vi-transition-large-linear: all .5s linear 0s;
     /* 组件样式们 */
     --vi-button-padding: var(--vi-card-padding);
 
@@ -63,6 +65,9 @@
 
     --vi-dropdown-height: ;
     --vi-dropdown-max-height: 400px;
+
+    --vi-drawer-width: 300px;
+    --vi-drawer-height: 300px;
 
     /* 颜色样式们 */
     /* 字体样式 */
