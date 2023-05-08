@@ -1,4 +1,6 @@
 import { App } from 'vue'
+import '../public/css/icon.less'
+import '../public/css/default-style.css'
 
 // 基础组件
 import ViButton from './button'
@@ -68,5 +70,7 @@ export default {
     components.forEach((component) => {
       component.install(app)
     })
-  }
+  },
+  ViToast,
+  ViMessage
 }
