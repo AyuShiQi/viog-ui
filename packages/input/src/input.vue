@@ -14,7 +14,8 @@
     'info-warn': warn,
     'show-password': showPassword,
     'show-clear': showClear,
-    'is-disabled': disabled
+    'is-disabled': disabled,
+    'is-number': number
   }]"
   @click="toFocus"
   @mouseenter="mouseEnter"
@@ -33,6 +34,7 @@
     :value="value"
     @input="handleInput"
     @change="handleChange"
+    @beforeinput="beforeInput"
     class="vi-input"
     :placeholder="placeholder"
     :type="passwordOrText"

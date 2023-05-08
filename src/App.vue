@@ -1,13 +1,22 @@
 <template>
-  <vi-header>
+  <!-- <vi-header>
     <vi-nav v-model="choose">
       <div v-for="item in nav" :key="item">
         {{item}}
       </div>
     </vi-nav>
-  </vi-header>
+  </vi-header> -->
+  <vi-input
+  :maxlength="11"
+  number></vi-input>
+  <vi-input type="plain" :style="{
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    margin: '0 0 0 -100px'
+  }"></vi-input>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <vi-row justify="center">
+  <!-- <vi-row justify="center">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
     <ViButton color="pink" @click="opent">打开toast</ViButton>
@@ -89,7 +98,8 @@
     <ViButton disabled color="purple" mutate>点击进入</ViButton>
     <ViButton disabled color="green" mutate>点击进入</ViButton>
     <ViButton disabled color="dark" mutate>点击进入</ViButton>
-  </vi-row>
+  </vi-row> -->
+
   <!-- <vi-row justify="center">
     <ViButton disabled type="plain" small>点击进入</ViButton>
     <ViButton disabled color="pink" type="plain">点击进入</ViButton>
@@ -364,7 +374,7 @@
     <ViSwitch dark filter leftColor="#0f0b286c"></ViSwitch>
   </vi-row> -->
 
-  <ViRadio color="blue" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio>
+  <!-- <ViRadio color="blue" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio> -->
 
   <!-- <vi-row id="div" style="padding: 10px 0;">
     <ViRadio disabled color="yellow" @change="change" rid="#123" value="吃饭" name="haha" v-model="value"></ViRadio>
@@ -555,7 +565,7 @@
   </vi-form> -->
 
   <!-- <vi-message></vi-message> -->
-  <vi-row justify="center">
+  <!-- <vi-row justify="center">
     <vi-dropdown></vi-dropdown>
   </vi-row>
   <vi-row>
@@ -609,7 +619,7 @@
         {{item}}
       </div>
     </vi-nav>
-  </vi-drawer>
+  </vi-drawer> -->
 </template>
 
 <script lang="ts">

@@ -1,5 +1,6 @@
 import { onMounted, ref, watch } from 'vue'
 import type { SetupContext, Ref } from 'vue'
+import { ViToast } from '../../../index'
 
 import { InputEvent } from '@/types/vue-types'
 import { InputProps } from '@/types/input-types'
@@ -28,53 +29,59 @@ export default function (props: InputProps, context: SetupContext, value: Ref) {
 
   // 验证数字状态下
   function toUpdateValue (e: InputEvent): boolean {
-    // 长度超过，不理睬
-    if (isMaxLength(e.target.value)) {
-      e.target.value = value.value
-      return false
-    }
     // 数字辨别区域
-    if (props.number) {
-      // 代表值没有变化
-      if (e.inputType === undefined) {
-        e.target.blur()
-        return false
-        // 按下的按键是数字或者是删除键才行
-      } else if (e.inputType === 'insertCompositionText') {
-        e.target.value = value.value
-        return false
-      } else if (e?.inputType !== 'insertText' || (!Number.isNaN(parseInt(e.data)))) {
-        // 合规才传
-        return true
-      } else {
-        // input变回原来的状态
-        e.target.value = props.modelValue
-        return false
-      }
+    if (props.number && e.inputType === 'insertCompositionText') {
+      // e.target.value = value.value
+      return false
     }
     return true
   }
 
-  function handleInput (e: InputEvent): void {
+  function beforeInput (E: Event): void {
+    const e = E as unknown as InputEvent
+    console.log(value.value, e.inputType)
+    if (isMaxLength(e.target.value)) {
+      E.preventDefault()
+    } else if (props.number) {
+      if (e.inputType === 'insertCompositionText') {
+        // 对输入法无效
+        E.preventDefault()
+      } else if (e.inputType === 'insertText') {
+        if (Number.isNaN(parseInt(e.data))) E.preventDefault()
+        else value.value = e.target.value
+      } else if (e.inputType === 'historyRedo' || e.inputType === 'historyUndo') {
+        E.preventDefault()
+      } else if (e.inputType === 'insertFromDrop' && Number.isNaN(parseInt(e.data))) {
+        E.preventDefault()
+      } else if (e.inputType === 'insertFromPaste' && Number.isNaN(parseInt(e.data))) {
+        E.preventDefault()
+      }
+    }
+  }
+
+  function handleInput (E: Event): void {
+    const e = E as unknown as InputEvent
     if (toUpdateValue(e)) {
-      value.value = e.target.value
+      // value.value = e.target.value
       context.emit('update:modelValue', pre.value + value.value + suf.value)
       context.emit('input')
     }
   }
 
-  function handleChange (e: InputEvent): void {
+  function handleChange (E: Event): void {
+    const e = E as unknown as InputEvent
     if (toUpdateValue(e)) {
-      value.value = e.target.value
+      // value.value = e.target.value
       context.emit('update:modelValue', pre.value + value.value + suf.value)
     }
-    if (e.inputType === undefined) context.emit('change')
+    // if (e.inputType === undefined) context.emit('change')
   }
 
   return {
     // change与input事件
     handleInput,
     handleChange,
+    beforeInput,
     suf,
     pre
   }
