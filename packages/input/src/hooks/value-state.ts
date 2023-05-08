@@ -30,17 +30,14 @@ export default function (props: InputProps, context: SetupContext, value: Ref) {
   // 验证数字状态下
   function toUpdateValue (e: InputEvent): boolean {
     const E = e as unknown as Event
-    console.log(value.value, e.inputType)
+    // console.log(value.value, e.inputType)
     // 数字辨别区域
     if (props.number) {
-      if (e.inputType === 'insertCompositionText') {
-        // 对输入法无效
-        return false
-      } else if (e.inputType === 'insertText' || e.inputType === 'deleteContentBackward') {
+      if (e.inputType !== 'insertCompositionText') {
         if (!Number.isNaN(parseInt(e.target.value))) value.value = parseInt(e.target.value)
         else if (e.target.value === '') value.value = e.target.value
         else return false
-      }
+      } else return false
     }
     return true
   }
@@ -76,7 +73,6 @@ export default function (props: InputProps, context: SetupContext, value: Ref) {
   }
 
   function handleKeyUp (e: KeyboardEvent) {
-    console.log(e)
     if (e.code === 'Enter') (e!.target as any).blur()
   }
 
