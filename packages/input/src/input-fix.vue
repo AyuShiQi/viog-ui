@@ -1,6 +1,6 @@
 <template>
   <span class="vi-input-fix">
-    <vi-select v-if="isArray" :datas="data" v-model="value" :size="size" :disabled="disabled"></vi-select>
+    <vi-select v-if="isArray" :datas="Array.isArray(data)? data : []" v-model="value" :size="size" :disabled="disabled"></vi-select>
     <p v-else>{{data}}</p>
   </span>
 </template>
@@ -18,6 +18,7 @@ export default defineComponent({
   props: {
     modelValue: String,
     data: {
+      type: [Array, String],
       default: ''
     },
     dark: {

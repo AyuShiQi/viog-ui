@@ -20,11 +20,11 @@
   @click="toFocus"
   @mouseenter="mouseEnter"
   @mouseleave="mouseLeave">
-    <span class="vi-input-prefix vi-input-fix" v-show="prefixSlot">
+    <span class="vi-input-prefix vi-input-fix" v-if="prefixSlot">
       <slot name="prefix"></slot>
     </span>
     <InputFix
-    v-show="prefix!==''"
+    v-if="prefix!==''"
     class="vi-input-prefix"
     :data="prefix"
     :size="size"
@@ -72,14 +72,14 @@
       </span>
     </span>
     <InputFix
-    v-show="suffix!==''"
+    v-if="suffix!==''"
     class="vi-input-suffix"
     :data="suffix"
     :size="size"
     v-model="suf"
     :disabled="disabled">
     </InputFix>
-    <span class="vi-input-suffix vi-input-fix" v-show="suffixSlot">
+    <span class="vi-input-suffix vi-input-fix" v-if="suffixSlot">
       <slot name="suffix"></slot>
     </span>
   </span>

@@ -14,7 +14,14 @@
     top: '50%',
     left: '50%',
     margin: '0 0 0 -100px'
-  }"></vi-input>
+  }">
+    <template v-slot:prefix>
+      <vi-select-n class="v-v-v" v-model="value">
+        <vi-option value="+86" selected>+86</vi-option>
+        <vi-option value="+163" selected>+163</vi-option>
+      </vi-select-n>
+    </template>
+  </vi-input>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <!-- <vi-row justify="center">
     <ViButton @click="openDialog">
@@ -779,6 +786,11 @@ div > button {
   width: 100%;
   padding: 5px 0;
   margin: 10px 0;
+}
+
+.v-v-v {
+  --vi-select-width: 4em;
+  --vi-dropdown-max-height: 50px;
 }
 
 .lili {
