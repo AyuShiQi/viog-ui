@@ -791,6 +791,7 @@ div > button {
 .v-v-v {
   --vi-select-width: 4em;
   --vi-dropdown-max-height: 50px;
+  --vi-dropdown-width: 6em;
 }
 
 .lili {
