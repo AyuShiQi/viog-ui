@@ -35,6 +35,7 @@
     @input="handleInput"
     @change="handleChange"
     @beforeinput="beforeInput"
+    @keyup="handleKeyUp"
     class="vi-input"
     :placeholder="placeholder"
     :type="passwordOrText"

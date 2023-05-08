@@ -29,26 +29,33 @@ export default function (props: InputProps, context: SetupContext, value: Ref) {
 
   // 验证数字状态下
   function toUpdateValue (e: InputEvent): boolean {
+    const E = e as unknown as Event
+    console.log(value.value, e.inputType)
     // 数字辨别区域
-    if (props.number && e.inputType === 'insertCompositionText') {
-      // e.target.value = value.value
-      return false
+    if (props.number) {
+      if (e.inputType === 'insertCompositionText') {
+        // 对输入法无效
+        return false
+      } else if (e.inputType === 'insertText' || e.inputType === 'deleteContentBackward') {
+        if (!Number.isNaN(parseInt(e.target.value))) value.value = parseInt(e.target.value)
+        else if (e.target.value === '') value.value = e.target.value
+        else return false
+      }
     }
     return true
   }
 
   function beforeInput (E: Event): void {
     const e = E as unknown as InputEvent
-    console.log(value.value, e.inputType)
+    // console.log(value.value, e.inputType)
     if (isMaxLength(e.target.value)) {
       E.preventDefault()
     } else if (props.number) {
       if (e.inputType === 'insertCompositionText') {
-        // 对输入法无效
+        // 暂时对输入法无效
         E.preventDefault()
-      } else if (e.inputType === 'insertText') {
-        if (Number.isNaN(parseInt(e.data))) E.preventDefault()
-        else value.value = e.target.value
+      } else if (e.inputType === 'insertText' && Number.isNaN(parseInt(e.data))) {
+        E.preventDefault()
       } else if (e.inputType === 'historyRedo' || e.inputType === 'historyUndo') {
         E.preventDefault()
       } else if (e.inputType === 'insertFromDrop' && Number.isNaN(parseInt(e.data))) {
@@ -62,16 +69,21 @@ export default function (props: InputProps, context: SetupContext, value: Ref) {
   function handleInput (E: Event): void {
     const e = E as unknown as InputEvent
     if (toUpdateValue(e)) {
-      // value.value = e.target.value
+      if (!props.number) value.value = e.target.value
       context.emit('update:modelValue', pre.value + value.value + suf.value)
       context.emit('input')
     }
   }
 
+  function handleKeyUp (e: KeyboardEvent) {
+    console.log(e)
+    if (e.code === 'Enter') (e!.target as any).blur()
+  }
+
   function handleChange (E: Event): void {
     const e = E as unknown as InputEvent
     if (toUpdateValue(e)) {
-      // value.value = e.target.value
+      if (!props.number) value.value = e.target.value
       context.emit('update:modelValue', pre.value + value.value + suf.value)
     }
     // if (e.inputType === undefined) context.emit('change')
@@ -81,6 +93,7 @@ export default function (props: InputProps, context: SetupContext, value: Ref) {
     // change与input事件
     handleInput,
     handleChange,
+    handleKeyUp,
     beforeInput,
     suf,
     pre
