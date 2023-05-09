@@ -56,9 +56,10 @@ export default defineComponent({
     const choosed = computed(() => props.modelValue)
     provide('choosed', choosed)
     provide('update:choosed', changeSelect)
+    provide('choose-type', props.chooseType)
 
     function changeSelect (newValue: any) {
-      console.log(newValue)
+      // console.log(newValue)
       ctx.emit('update:modelValue', newValue)
     }
 

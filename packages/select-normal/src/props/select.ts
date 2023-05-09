@@ -25,5 +25,9 @@ export default {
   placeholder: {
     type: String,
     default: '请选择'
+  },
+  chooseType: {
+    type: String,
+    default: 'default'
   }
 }
