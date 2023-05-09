@@ -70,6 +70,7 @@
 - 完善input value逻辑
 - 修复select组件ts问题
 - 增添option组件显示选项描述信息功能
+- 增添option组件selected属性
 
 # 0.5.0
 

@@ -16,14 +16,33 @@
     margin: '0 0 0 -100px'
   }">
     <template v-slot:prefix>
-      <vi-select-n class="v-v-v" v-model="value">
+      <vi-select-n class="v-v-v" v-model="value" chooseType="plain">
+        <vi-option-title>常用地区</vi-option-title>
         <vi-option value="+86" selected desc="中国大陆">
           <template v-slot:pre>
             中国大陆
           </template>
           +86
         </vi-option>
-        <vi-option value="+163">+163</vi-option>
+        <vi-option value="+163">
+          <template v-slot:pre>
+            中国台湾
+          </template>
+          +886
+        </vi-option>
+        <vi-option-title>Z</vi-option-title>
+        <vi-option value="+86" selected desc="中国大陆">
+          <template v-slot:pre>
+            中国大陆
+          </template>
+          +86
+        </vi-option>
+        <vi-option value="+163">
+          <template v-slot:pre>
+            中国台湾
+          </template>
+          +886
+        </vi-option>
       </vi-select-n>
     </template>
   </vi-input>

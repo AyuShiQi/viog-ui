@@ -13,4 +13,5 @@ export default defineComponent({
 </script>
 
 <style lang="less">
+@import './css/option-title.less';
 </style>
