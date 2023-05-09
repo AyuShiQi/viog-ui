@@ -17,8 +17,13 @@
   }">
     <template v-slot:prefix>
       <vi-select-n class="v-v-v" v-model="value">
-        <vi-option value="+86" selected>+86</vi-option>
-        <vi-option value="+163" selected>+163</vi-option>
+        <vi-option value="+86" selected desc="中国大陆">
+          <template v-slot:pre>
+            中国大陆
+          </template>
+          +86
+        </vi-option>
+        <vi-option value="+163">+163</vi-option>
       </vi-select-n>
     </template>
   </vi-input>
@@ -789,9 +794,9 @@ div > button {
 }
 
 .v-v-v {
-  --vi-select-width: 4em;
+  --vi-select-width: 3.6em;
   --vi-dropdown-max-height: 50px;
-  --vi-dropdown-width: 6em;
+  --vi-dropdown-width: 10em;
 }
 
 .lili {

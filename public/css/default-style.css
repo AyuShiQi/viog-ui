@@ -66,6 +66,7 @@
     --vi-dropdown-width: 100%;
     --vi-dropdown-height: ;
     --vi-dropdown-max-height: 400px;
+    --vi-dropdown-top: 2px;
 
     --vi-drawer-width: 300px;
     --vi-drawer-height: 300px;
