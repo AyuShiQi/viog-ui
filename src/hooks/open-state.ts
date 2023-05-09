@@ -27,8 +27,18 @@ export default function () {
     }
   }
 
+  function toClose () {
+    open.value = false
+  }
+
+  function toOpen () {
+    open.value = true
+  }
+
   return {
     open,
-    toSelect
+    toSelect,
+    toClose,
+    toOpen
   }
 }

@@ -1,6 +1,6 @@
 <template>
     <span class="vi-dropdown" ref="select">
-      <div class="vi-dropdown-nav" @click="toOpen" ref="select">
+      <div class="vi-dropdown-nav" @click="changeOpen" ref="select">
         <slot :open="open">dropdown</slot>
       </div>
       <div
@@ -31,7 +31,7 @@ export default defineComponent({
     const open = openState()
     const boxPosition = boxPositionState()
 
-    function toOpen () {
+    function changeOpen () {
       // 当此次操作时打开时，仅做重新计算处理
       if (!open.open.value) open.toSelect(boxPosition.recalcSize)
       else open.toSelect(boxPosition.toChangeViewPosition)
@@ -40,7 +40,7 @@ export default defineComponent({
     return {
       ...open,
       ...boxPosition,
-      toOpen
+      changeOpen
     }
   }
 })
