@@ -10,6 +10,7 @@ import ViLayout from './layout'
 import ViLink from './link'
 import ViTag from './tag'
 import ViDropDown from './dropdown'
+import ViAffix from './affix'
 // 模块组
 import ViHeader from './header'
 // 导航组
@@ -56,7 +57,8 @@ const components = [
   ViDropDown,
   ViDrawer,
   ViHeader,
-  ViNav
+  ViNav,
+  ViAffix
 ]
 
 export {

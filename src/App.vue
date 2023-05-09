@@ -46,8 +46,11 @@
       </vi-select-n>
     </template>
   </vi-input>
+  <vi-affix :position="10">
+    <vi-button>我是固钉1</vi-button>
+  </vi-affix>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <!-- <vi-row justify="center">
+  <vi-row justify="center">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
     <ViButton color="pink" @click="opent">打开toast</ViButton>
@@ -129,7 +132,7 @@
     <ViButton disabled color="purple" mutate>点击进入</ViButton>
     <ViButton disabled color="green" mutate>点击进入</ViButton>
     <ViButton disabled color="dark" mutate>点击进入</ViButton>
-  </vi-row> -->
+  </vi-row>
 
   <!-- <vi-row justify="center">
     <ViButton disabled type="plain" small>点击进入</ViButton>
@@ -142,7 +145,7 @@
     <ViButton disabled color="dark" type="plain">点击进入</ViButton>
   </vi-row> -->
 
-  <!-- <vi-row justify="center">
+  <vi-row justify="center">
     <ViButton disabled type="plain" mutate>点击进入</ViButton>
     <ViButton disabled color="pink" type="plain" mutate>点击进入</ViButton>
     <ViButton disabled color="red" type="plain" mutate>点击进入</ViButton>
@@ -241,7 +244,7 @@
     </ViButton>
     <ViButton color="purple" type="transparent" radius="circle">点击</ViButton>
     <ViButton color="green" type="transparent" radius="circle">点击</ViButton>
-  </vi-row> -->
+  </vi-row>
 
     <!-- <vi-row justify="center">
       <ViLoading type="diamond"/>
@@ -250,7 +253,12 @@
       <ViLoading type="diamond" color="purple"/>
     </vi-row>
      <ViLoading type="diamond" color="white"/> -->
-  <!-- <vi-row justify="center">
+
+  <vi-affix type="bottom" :position="10">
+    <vi-button>我是固钉2</vi-button>
+  </vi-affix>
+
+  <vi-row justify="center">
     <ViLoading type="ball"/><br/>
     <ViLoading type="ball" color="purple"/><br/>
     <ViLoading type="ball" color="golden"/><br/>
@@ -289,7 +297,7 @@
     <ViLoading type="star" color="blue"/>
     <ViLoading type="star" color="red"/>
     <ViLoading type="star" color="pink"/>
-  </vi-row> -->
+  </vi-row>
 
   <!-- <ViDialog ref="child"
   v-model="open"
