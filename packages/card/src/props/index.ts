@@ -4,8 +4,8 @@ export default {
     // plain
     default: 'default'
   },
-  finish: {
-    type: Boolean,
-    default: true
+  cb: {
+    type: Function,
+    default: () => undefined
   }
 }
