@@ -22,22 +22,21 @@
 .vi-dropdown-content-up {
     top: 0;
     .vi-dropdown-list {
-        bottom: 2px;
+        bottom: var(--vi-dropdown-top);
     }
 }
 
 .vi-dropdown-content-down {
     bottom: 0;
     .vi-dropdown-list {
-        // left: calc(0px - var(--vi-dropdown-width) / 4);
-        top: 2px;
+        top: var(--vi-dropdown-top);
     }
 }
 
 .vi-dropdown-content-left {
     bottom: 0;
     .vi-dropdown-list {
-        right: calc(100% + 2px);
+        right: calc(100% + var(--vi-dropdown-top));
         // margin-top: -50%;
     }
 }
@@ -45,7 +44,7 @@
 .vi-dropdown-content-right {
     top: 0;
     .vi-dropdown-list {
-        left: calc(100% + 2px);
+        left: calc(100% + var(--vi-dropdown-top));
         // margin-top: -50%;
     }
 }
