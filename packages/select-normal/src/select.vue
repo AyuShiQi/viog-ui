@@ -1,5 +1,6 @@
 <template>
   <dropdown
+  ref="dropdown"
   class="vi-select"
   :class="[
     `is-${size}`,
@@ -37,7 +38,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, provide, computed } from 'vue'
+import { defineComponent, provide, computed, ref } from 'vue'
 import type { SetupContext } from 'vue'
 
 import { dropdown } from '../../dropdown'
@@ -53,12 +54,16 @@ export default defineComponent({
   },
   props,
   setup (props: any, ctx: SetupContext) {
+    const dropdown = ref()
     const choosed = computed(() => props.modelValue)
     provide('choosed', choosed)
     provide('update:choosed', changeSelect)
     provide('choose-type', props.chooseType)
 
     function changeSelect (newValue: any) {
+      if (props.once) {
+        dropdown.value?.toClose()
+      }
       // console.log(newValue)
       ctx.emit('update:modelValue', newValue)
     }
@@ -68,7 +73,8 @@ export default defineComponent({
     }
 
     return {
-      isEmpty
+      isEmpty,
+      dropdown
     }
   }
 })

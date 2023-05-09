@@ -67,10 +67,12 @@
 
 - less属性变量全部移植为css变量，并满足用户自定义需求
 - 修复input组件在number属性开启情况下的历史输入丢失与闪屏问题
-- 完善input value逻辑
+- 完善input value判别逻辑
 - 修复select组件ts问题
 - 增添option组件显示选项描述信息功能
 - 增添option组件selected属性
+- 新增option-title组件，用于分类展示option内容
+- 新增select-n组件once属性，设置为true后，用户进行选择后立即关闭选择框
 
 # 0.5.0
 

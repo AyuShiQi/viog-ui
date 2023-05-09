@@ -29,5 +29,9 @@ export default {
   chooseType: {
     type: String,
     default: 'default'
+  },
+  once: {
+    type: Boolean,
+    default: false
   }
 }
