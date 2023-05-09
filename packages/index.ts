@@ -9,6 +9,7 @@ import ViLoading from './loading'
 import ViLayout from './layout'
 import ViLink from './link'
 import ViTag from './tag'
+import ViCard from './card'
 import ViDropDown from './dropdown'
 import ViAffix from './affix'
 // 模块组
@@ -58,7 +59,8 @@ const components = [
   ViDrawer,
   ViHeader,
   ViNav,
-  ViAffix
+  ViAffix,
+  ViCard
 ]
 
 export {

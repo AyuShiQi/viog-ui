@@ -6,6 +6,9 @@
       </div>
     </vi-nav>
   </vi-header> -->
+  <vi-card type="plain">
+    <vi-button>nishishei1</vi-button>
+  </vi-card>
   <vi-input
   :maxlength="11"
   number></vi-input>
