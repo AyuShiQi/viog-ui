@@ -17,7 +17,7 @@
   <vi-input
   :maxlength="11"
   number></vi-input>
-  <vi-input type="plain" :style="{
+  <!-- <vi-input type="plain" :style="{
     position: 'absolute',
     top: '50%',
     left: '50%',
@@ -53,7 +53,8 @@
         </vi-option>
       </vi-select-n>
     </template>
-  </vi-input>
+  </vi-input> -->
+  <vi-menu></vi-menu>
   <vi-affix :position="10">
     <vi-button>我是固钉1</vi-button>
   </vi-affix>

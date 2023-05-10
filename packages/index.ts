@@ -16,6 +16,7 @@ import ViAffix from './affix'
 import ViHeader from './header'
 // 导航组
 import ViNav from './nav'
+import ViMenu from './menu'
 // 交互组件
 import ViDialog from './dialog'
 import ViToast from './toast'
@@ -60,7 +61,8 @@ const components = [
   ViHeader,
   ViNav,
   ViAffix,
-  ViCard
+  ViCard,
+  ViMenu
 ]
 
 export {
