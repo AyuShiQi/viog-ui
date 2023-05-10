@@ -1,5 +1,9 @@
 <template>
-    <div class="vi-nav">
+    <div
+    class="vi-nav"
+    :class="[
+      `is-${direction}`
+    ]">
         <div class="vi-nav-list" ref="nav">
             <slot></slot>
         </div>
@@ -7,8 +11,8 @@
             <div
             class="vi-nav-line-choose"
             :style="{
-              'width': `${nowWidth}px`,
-              'left': `${nowLeft}px`
+              [boxUnit]: `${nowWidth}px`,
+              [offsetUnit]: `${nowLeft}px`
             }"></div>
         </div>
     </div>
@@ -26,20 +30,24 @@ export default defineComponent({
   name: 'ViNav',
   props,
   setup (props: any, ctx: SetupContext) {
-    const nav = navState(ctx)
+    const nav = navState(ctx, props.direction)
+    const boxUnit = props.direction === 'horizontal' ? 'width' : 'height'
+    const offsetUnit = props.direction === 'horizontal' ? 'left' : 'top'
 
     const nowWidth = computed(() => {
-      return nav.listWidth[props.modelValue]
+      return nav.listLen[props.modelValue]
     })
 
     const nowLeft = computed(() => {
-      return nav.listLeft[props.modelValue]
+      return nav.listOffset[props.modelValue]
     })
 
     return {
       ...nav,
       nowWidth,
-      nowLeft
+      nowLeft,
+      boxUnit,
+      offsetUnit
     }
   }
 })

@@ -6,6 +6,11 @@
       </div>
     </vi-nav>
   </vi-header> -->
+  <vi-nav v-model="choose" direction="vertical">
+    <div v-for="item in nav" :key="item">
+      {{item}}
+    </div>
+  </vi-nav>
   <vi-card type="plain">
     <vi-button>nishishei1</vi-button>
   </vi-card>
