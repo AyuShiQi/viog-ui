@@ -1,17 +1,15 @@
 <template>
-  <ul class="vi-menu">
-    <slot></slot>
-  </ul>
+  <li class="vi-menu-item"></li>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import type { SetupContext } from 'vue'
 
-import props from './props/menu'
+import props from './props/menu-item'
 
 export default defineComponent({
-  name: 'ViMenu',
+  name: 'ViMenuItem',
   props,
   setup (props: any, ctx: SetupContext) {
     console.log('new component')
@@ -20,5 +18,5 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-@import './css/menu.less';
+@import './css/menu-item.less';
 </style>

@@ -54,7 +54,7 @@
       </vi-select-n>
     </template>
   </vi-input> -->
-  <vi-menu></vi-menu>
+  <vi-menu>123</vi-menu>
   <vi-affix :position="10">
     <vi-button>我是固钉1</vi-button>
   </vi-affix>
