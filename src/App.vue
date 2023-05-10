@@ -1,11 +1,11 @@
 <template>
-  <!-- <vi-header>
+  <vi-header retract>
     <vi-nav v-model="choose">
       <div v-for="item in nav" :key="item">
         {{item}}
       </div>
     </vi-nav>
-  </vi-header> -->
+  </vi-header>
   <vi-nav v-model="choose" direction="vertical">
     <div v-for="item in nav" :key="item">
       {{item}}
