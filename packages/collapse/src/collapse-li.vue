@@ -29,7 +29,7 @@
 import { defineComponent } from 'vue'
 import type { SetupContext } from 'vue'
 
-import props from './props'
+import props from './props/collapse'
 
 import openState from '@/hooks/open-state'
 
@@ -37,7 +37,7 @@ export default defineComponent({
   name: 'ViCollapseLi',
   props,
   setup (props: any, ctx: SetupContext) {
-    const open = openState()
+    const open = openState(props.autoRetract)
 
     return {
       ...open

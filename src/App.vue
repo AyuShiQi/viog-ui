@@ -55,10 +55,20 @@
     </template>
   </vi-input> -->
   <vi-menu>123</vi-menu>
-  <vi-affix :position="10">
+  <!-- <vi-affix :position="10">
     <vi-button>我是固钉1</vi-button>
-  </vi-affix>
+  </vi-affix> -->
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+
+  <vi-collapse-group accordion>
+    <vi-collapse title="折叠面板">
+      折叠面板，沙琪玛好吃
+    </vi-collapse>
+    <vi-collapse title="折叠面板">
+      折叠面板，沙琪玛好吃
+    </vi-collapse>
+  </vi-collapse-group>
+
   <vi-row justify="center">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
@@ -154,7 +164,7 @@
     <ViButton disabled color="dark" type="plain">点击进入</ViButton>
   </vi-row> -->
 
-  <vi-row justify="center">
+  <!-- <vi-row justify="center">
     <ViButton disabled type="plain" mutate>点击进入</ViButton>
     <ViButton disabled color="pink" type="plain" mutate>点击进入</ViButton>
     <ViButton disabled color="red" type="plain" mutate>点击进入</ViButton>
@@ -253,7 +263,7 @@
     </ViButton>
     <ViButton color="purple" type="transparent" radius="circle">点击</ViButton>
     <ViButton color="green" type="transparent" radius="circle">点击</ViButton>
-  </vi-row>
+  </vi-row> -->
 
     <!-- <vi-row justify="center">
       <ViLoading type="diamond"/>
@@ -263,11 +273,11 @@
     </vi-row>
      <ViLoading type="diamond" color="white"/> -->
 
-  <vi-affix type="bottom" :position="10">
+  <!-- <vi-affix type="bottom" :position="10">
     <vi-button>我是固钉2</vi-button>
-  </vi-affix>
+  </vi-affix> -->
 
-  <vi-row justify="center">
+  <!-- <vi-row justify="center">
     <ViLoading type="ball"/><br/>
     <ViLoading type="ball" color="purple"/><br/>
     <ViLoading type="ball" color="golden"/><br/>
@@ -306,7 +316,7 @@
     <ViLoading type="star" color="blue"/>
     <ViLoading type="star" color="red"/>
     <ViLoading type="star" color="pink"/>
-  </vi-row>
+  </vi-row> -->
 
   <!-- <ViDialog ref="child"
   v-model="open"
