@@ -13,6 +13,7 @@ import ViCard from './card'
 import ViDropDown from './dropdown'
 import ViAffix from './affix'
 import ViCollapse from './collapse'
+import ViDivider from './divider'
 // 模块组
 import ViHeader from './header'
 // 导航组
@@ -64,7 +65,8 @@ const components = [
   ViAffix,
   ViCard,
   ViMenu,
-  ViCollapse
+  ViCollapse,
+  ViDivider
 ]
 
 export {

@@ -82,18 +82,20 @@
 
   <vi-menu shadow>
     <vi-menu-item>新建项目</vi-menu-item>
+    <vi-divider></vi-divider>
     <vi-menu-group title="我的项目" scalable>
       <vi-menu-item>图表</vi-menu-item>
       <vi-menu-item>表格</vi-menu-item>
       <vi-menu-item>回收站</vi-menu-item>
     </vi-menu-group>
+    <vi-divider></vi-divider>
     <vi-menu-group title="模板中心">
       <vi-menu-item>发现模板</vi-menu-item>
       <vi-menu-item>我的收藏</vi-menu-item>
       <vi-menu-item>我的分享</vi-menu-item>
     </vi-menu-group>
-    <vi-menu-item>菜单3</vi-menu-item>
-    <vi-menu-item>菜单4</vi-menu-item>
+    <vi-divider></vi-divider>
+    <vi-menu-item>设置</vi-menu-item>
   </vi-menu>
   <!-- <vi-affix :position="10">
     <vi-button>我是固钉1</vi-button>
