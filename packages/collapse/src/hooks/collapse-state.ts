@@ -16,7 +16,7 @@ export default function (props: any) {
   })
 
   function toChoose () {
-    if (changeChoose) changeChoose(id)
+    if (changeChoose) changeChoose(open.open.value ? 0 : id)
     open.toSelect()
   }
 

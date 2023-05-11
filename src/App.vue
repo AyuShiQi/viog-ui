@@ -60,6 +60,7 @@
   </vi-affix> -->
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
 
+  <vi-drawer></vi-drawer>
   <vi-collapse-group accordion>
     <vi-collapse title="折叠面板">
       折叠面板，沙琪玛好吃
