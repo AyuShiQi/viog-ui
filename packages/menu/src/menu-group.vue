@@ -1,9 +1,18 @@
 <template>
   <collapseLi
+  v-if="scalable"
   class="vi-menu-group"
   :title="title">
     <slot></slot>
   </collapseLi>
+  <li
+  v-else
+  class="vi-menu-group">
+    <div class="vi-menu-group__title">{{ title }}</div>
+    <div class="vi-menu-group__content">
+      <slot></slot>
+    </div>
+  </li>
 </template>
 
 <script lang="ts">
