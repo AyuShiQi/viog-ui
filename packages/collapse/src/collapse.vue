@@ -4,7 +4,7 @@
   class="vi-collapse"
   :class="[
     {
-      'is-open': id !== 0 ? open : isOpen,
+      'is-open': id === 0 ? open : isOpen,
     }
   ]">
     <div class="vi-collapse__title" @click="toChoose">

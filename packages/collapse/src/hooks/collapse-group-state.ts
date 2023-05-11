@@ -12,7 +12,6 @@ export default function (props: any) {
     provide('id', idGetter())
 
     provide('change-choose', function (newChoose: number) {
-      console.log(newChoose)
       accordionChoose.value = newChoose
     })
 

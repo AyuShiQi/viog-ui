@@ -68,6 +68,9 @@
       折叠面板，沙琪玛好吃
     </vi-collapse>
   </vi-collapse-group>
+  <vi-collapse title="折叠面板">
+    折叠面板，沙琪玛好吃
+  </vi-collapse>
 
   <vi-row justify="center">
     <ViButton @click="openDialog">

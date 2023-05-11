@@ -9,7 +9,6 @@ export default function (props: any) {
   const id = idGetter ? (idGetter as () => number)() : 0
   const nowChoose = inject('now-choose', ref(undefined)) as Ref
   const changeChoose = inject('change-choose', undefined) as ((id: number) => void) | undefined
-  console.log(id)
 
   const isOpen = computed(() => {
     if (id !== 0) id === nowChoose.value ? open.toOpen() : open.toClose()
@@ -22,8 +21,8 @@ export default function (props: any) {
   }
 
   return {
-    id,
     ...open,
+    id,
     isOpen,
     toChoose
   }
