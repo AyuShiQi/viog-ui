@@ -4,10 +4,10 @@
   class="vi-collapse"
   :class="[
     {
-      'is-open': open,
+      'is-open': id === 0 ? open : isOpen,
     }
   ]">
-    <div class="vi-collapse__title" @click="toSelect">
+    <div class="vi-collapse__title" @click="toChoose">
         <span>{{ title }}</span>
         <svg
         class="vi-collapse__title-arrow"
@@ -18,9 +18,9 @@
         </svg>
     </div>
     <div class="vi-collapse__content">
-      <ul class="vi-collapse__content-view">
+      <li class="vi-collapse__content-view">
         <slot></slot>
-      </ul>
+      </li>
     </div>
   </li>
 </template>
@@ -31,16 +31,15 @@ import type { SetupContext } from 'vue'
 
 import props from './props/collapse'
 
-import openState from '@/hooks/open-state'
+import collapseState from './hooks/collapse-state'
 
 export default defineComponent({
   name: 'ViCollapseLi',
   props,
   setup (props: any, ctx: SetupContext) {
-    const open = openState(props.autoRetract)
-
+    const collapse = collapseState(props)
     return {
-      ...open
+      ...collapse
     }
   }
 })

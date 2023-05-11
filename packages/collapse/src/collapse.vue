@@ -31,7 +31,6 @@ import type { SetupContext } from 'vue'
 
 import props from './props/collapse'
 
-import openState from '@/hooks/open-state'
 import collapseState from './hooks/collapse-state'
 
 export default defineComponent({
