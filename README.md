@@ -16,6 +16,15 @@ npm install viog-ui --save
 
 - 特殊标注样式属性请添加前缀--vi-组件名-属性名：如Scroll组件width：--vi-scroll-width
 
+# 引入
+
+``` javascript
+import viog from 'viog-ui';
+import from 'viog-ui/dist/viog-ui.css'
+
+app.use(viog)
+```
+
 ## 组件
 
 ### button

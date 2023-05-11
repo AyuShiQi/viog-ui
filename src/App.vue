@@ -1,5 +1,5 @@
 <template>
-  <vi-header retract>
+  <!-- <vi-header retract>
     <vi-nav v-model="choose">
       <div v-for="item in nav" :key="item">
         {{item}}
@@ -16,7 +16,7 @@
   </vi-card>
   <vi-input
   :maxlength="11"
-  number></vi-input>
+  number></vi-input> -->
   <!-- <vi-input type="plain" :style="{
     position: 'absolute',
     top: '50%',
@@ -54,14 +54,28 @@
       </vi-select-n>
     </template>
   </vi-input> -->
-  <vi-menu>123</vi-menu>
+  <vi-menu shadow>
+    <vi-menu-group title="菜单1">
+      <vi-menu-item>子项1</vi-menu-item>
+      <vi-menu-item>子项2</vi-menu-item>
+      <vi-menu-item>子项3</vi-menu-item>
+      <vi-menu-group title="子项4">
+        <vi-menu-item>子项4.4</vi-menu-item>
+        <vi-menu-item>子项4.5</vi-menu-item>
+        <vi-menu-item>子项4.6</vi-menu-item>
+      </vi-menu-group>
+    </vi-menu-group>
+    <vi-menu-item>菜单2</vi-menu-item>
+    <vi-menu-item>菜单3</vi-menu-item>
+    <vi-menu-item>菜单4</vi-menu-item>
+  </vi-menu>
   <!-- <vi-affix :position="10">
     <vi-button>我是固钉1</vi-button>
   </vi-affix> -->
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
 
-  <vi-drawer></vi-drawer>
-  <vi-collapse-group accordion>
+  <!-- <vi-drawer></vi-drawer> -->
+  <!-- <vi-collapse-group accordion>
     <vi-collapse title="折叠面板">
       折叠面板，沙琪玛好吃
     </vi-collapse>
@@ -71,7 +85,7 @@
   </vi-collapse-group>
   <vi-collapse title="折叠面板">
     折叠面板，沙琪玛好吃
-  </vi-collapse>
+  </vi-collapse> -->
 
   <vi-row justify="center">
     <ViButton @click="openDialog">
