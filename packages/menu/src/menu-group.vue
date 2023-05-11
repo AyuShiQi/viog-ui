@@ -32,7 +32,10 @@ export default defineComponent({
     collapseLi
   },
   setup (props: any, ctx: SetupContext) {
-    menuGroupState()
+    const menuGroup = menuGroupState(props)
+    return {
+      ...menuGroup
+    }
   }
 })
 </script>

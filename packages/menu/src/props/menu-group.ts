@@ -7,7 +7,7 @@ export default {
   title: {
     type: String
   },
-  // 标题是否可选
+  // 标题是否可以选择，只在scalable下有效
   option: {
     type: Boolean,
     default: false
