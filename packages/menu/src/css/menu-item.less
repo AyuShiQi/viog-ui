@@ -1,3 +1,40 @@
 .vi-menu-item {
-    
+    position: relative;
+    padding: .6em .8em;
+    color: var(--vi-font-color);
+    list-style: none;
+    user-select: none;
+    cursor: pointer;
+    border-radius: var(--vi-card-radius);
+    transition: var(--vi-transition);
+    box-sizing: border-box;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -0.6em;
+        width: 4px;
+        height: 100%;
+        background-color: var(--vi-purple-color1);
+        opacity: 0;
+        transition: var(--vi-transition);
+    }
+
+    &:hover {
+        background-color: var(--vi-purple-color5);
+    }
+}
+
+.vi-menu-item.be-choose {
+    color: var(--vi-purple-color1);
+    transform: translateX(.6em);
+
+    &:hover {
+        background-color: transparent;
+    }
+
+    &::before {
+        opacity: 1;
+    }
 }
