@@ -1,0 +1,23 @@
+.vi-skeleton {
+    background-color: var(--vi-background-color);
+}
+
+.vi-skeleton.is-animate {
+    background: linear-gradient(to right, var(--vi-background-color) 30%, var(--vi-background-color-deep) 50%, var(--vi-background-color) 70%);
+    background-size: 300% 100%;
+    animation: background-move 2s ease infinite;
+}
+
+.vi-skeleton_default {
+    width: 100%;
+    height: 1em;
+    border-radius: var(--vi-card-radius);
+}
+
+.vi-skeleton_circle {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+}
+
+@import '../../../normal/animation/displacement-animation.css';

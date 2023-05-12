@@ -78,7 +78,7 @@
 
 - 新增nav组件竖版模式，使用direction属性控制方向
 - 新增header组件收缩效果，使用retract属性控制是否使用
-- 新增select组件组option-group组件、删除option-title组件 （未做）
+- 新增select-n组件组option-group组件、保留option-title组件但不建议使用 （未做）
 - 修改openState hooks表现（未做）
 
 # 0.5.0
@@ -86,7 +86,7 @@
 - 新增affix固钉组件
 - 新增空卡片组件 （这个bug还没有测）
 - 新增折叠框组件组
-- 新增Menu组件组 (未做router处理)未做完
+- 新增Menu组件组 (未做router处理)
 - 新增分割线组件
 - 新增骨架框组件 （未做）
 - 新增头像组件 （未做）

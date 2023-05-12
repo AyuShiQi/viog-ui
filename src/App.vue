@@ -17,7 +17,7 @@
   <vi-input
   :maxlength="11"
   number></vi-input> -->
-  <!-- <vi-input type="plain" :style="{
+  <vi-input type="plain" :style="{
     position: 'absolute',
     top: '50%',
     left: '50%',
@@ -25,43 +25,53 @@
   }">
     <template v-slot:prefix>
       <vi-select-n class="v-v-v" v-model="value" chooseType="plain" once>
-        <vi-option-title>常用地区</vi-option-title>
-        <vi-option value="+86" selected desc="中国大陆">
-          <template v-slot:pre>
-            中国大陆
-          </template>
-          +86
-        </vi-option>
-        <vi-option value="+163">
-          <template v-slot:pre>
-            中国台湾
-          </template>
-          +886
-        </vi-option>
-        <vi-option-title>Z</vi-option-title>
-        <vi-option value="+86" selected desc="中国大陆">
-          <template v-slot:pre>
-            中国大陆
-          </template>
-          +86
-        </vi-option>
-        <vi-option value="+163">
-          <template v-slot:pre>
-            中国台湾
-          </template>
-          +886
-        </vi-option>
+        <vi-option-group title="常用地区">
+          <vi-option value="+86" selected desc="中国大陆">
+            <template v-slot:pre>
+              中国大陆
+            </template>
+            +86
+          </vi-option>
+          <vi-option value="+163">
+            <template v-slot:pre>
+              中国台湾
+            </template>
+            +886
+          </vi-option>
+        </vi-option-group>
+        <vi-option-group title="Z">
+          <vi-option value="+86" selected desc="中国大陆">
+            <template v-slot:pre>
+              中国大陆
+            </template>
+            +86
+          </vi-option>
+          <vi-option value="+163">
+            <template v-slot:pre>
+              中国台湾
+            </template>
+            +886
+          </vi-option>
+        </vi-option-group>
       </vi-select-n>
     </template>
-  </vi-input> -->
+  </vi-input>
+  <vi-skeleton></vi-skeleton>
 
-  <vi-menu shadow>
-    <vi-menu-item>新建项目</vi-menu-item>
+  <vi-menu shadow @select="ok">
+    <vi-menu-item>
+      <template v-slot:prefix>
+        <vi-icon type="tianjia" style="font-size: 20px;"></vi-icon>
+      </template>
+      新建项目
+    </vi-menu-item>
     <vi-divider></vi-divider>
     <vi-menu-group title="我的项目" scalable option>
       <vi-menu-item>图表</vi-menu-item>
       <vi-menu-item>表格</vi-menu-item>
-      <vi-menu-item>回收站</vi-menu-item>
+      <vi-menu-item>
+        回收站
+      </vi-menu-item>
     </vi-menu-group>
     <vi-divider></vi-divider>
     <vi-menu-group title="模板中心">
@@ -70,7 +80,12 @@
       <vi-menu-item>我的分享</vi-menu-item>
     </vi-menu-group>
     <vi-divider></vi-divider>
-    <vi-menu-item>设置</vi-menu-item>
+    <vi-menu-item>
+      <template v-slot:prefix>
+        <vi-icon type="shezhi" style="font-size: 20px;"></vi-icon>
+      </template>
+      设置
+    </vi-menu-item>
   </vi-menu>
   <!-- <vi-affix :position="10">
     <vi-button>我是固钉1</vi-button>
@@ -750,8 +765,8 @@ export default defineComponent({
       open.value = false
     }
 
-    function ok () {
-      console.log('ok')
+    function ok (v: any) {
+      console.log(v)
     }
 
     function scr () {
