@@ -1,5 +1,5 @@
 import { inject, computed, ref } from 'vue'
-import type { Ref } from 'vue'
+import type { Ref, DebuggerOptions } from 'vue'
 
 import openState from '@/hooks/open-state'
 
@@ -16,6 +16,7 @@ export default function (props: any) {
   })
 
   function toChoose () {
+    if (!props.needChange()) return
     if (changeChoose) changeChoose(open.open.value ? 0 : id)
     open.toSelect()
   }
