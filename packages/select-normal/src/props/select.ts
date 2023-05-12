@@ -26,8 +26,10 @@ export default {
     type: String,
     default: '请选择'
   },
+  // 选择的样式
   chooseType: {
     type: String,
+    // plain
     default: 'default'
   },
   once: {

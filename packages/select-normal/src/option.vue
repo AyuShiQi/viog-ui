@@ -5,7 +5,6 @@
     `choose-${chooseType}`,
     {
       'be-choosed': isChoosed,
-      'only-value': !preSlot && !sufSlot
     }
   ]"
   @click="toChoose">
@@ -20,38 +19,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, ref, computed } from 'vue'
-import type { SetupContext, ComputedRef } from 'vue'
-
-import slotState from './hooks/slot-state'
+import { defineComponent } from 'vue'
+import type { SetupContext } from 'vue'
 
 import props from './props/option'
+
+import optionState from './hooks/option-state'
 
 export default defineComponent({
   name: 'ViOption',
   props,
   setup (props: any, ctx: SetupContext) {
-    const choosed = inject('choosed')
-    const changeSelect: any = inject('update:choosed')
-    const chooseType = inject('choose-type')
-    const hasSlot = slotState()
-    if (props.selected) toChoose()
+    const option = optionState(props, ctx)
 
-    const isChoosed = computed((): boolean => {
-      return (choosed as ComputedRef).value === props.value
-    })
-
-    function toChoose () {
-      changeSelect(props.value)
-    }
-
-    return {
-      choosed,
-      isChoosed,
-      toChoose,
-      chooseType,
-      ...hasSlot
-    }
+    return option
   }
 })
 </script>

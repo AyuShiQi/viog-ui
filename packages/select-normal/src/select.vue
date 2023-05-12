@@ -38,44 +38,27 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, provide, computed, ref } from 'vue'
+import { defineComponent } from 'vue'
 import type { SetupContext } from 'vue'
+
+import props from './props/select'
 
 import { dropdown } from '../../dropdown'
 import { scroll } from '../../scroll'
 
-import props from './props/select'
+import selectState from './hooks/select-state'
 
 export default defineComponent({
   name: 'ViSelectN',
+  props,
   components: {
     dropdown,
     scroll
   },
-  props,
   setup (props: any, ctx: SetupContext) {
-    const dropdown = ref()
-    const choosed = computed(() => props.modelValue)
-    provide('choosed', choosed)
-    provide('update:choosed', changeSelect)
-    provide('choose-type', props.chooseType)
+    const select = selectState(props, ctx)
 
-    function changeSelect (newValue: any) {
-      if (props.once) {
-        dropdown.value?.toClose()
-      }
-      // console.log(newValue)
-      ctx.emit('update:modelValue', newValue)
-    }
-
-    function isEmpty () {
-      return !props.modelValue
-    }
-
-    return {
-      isEmpty,
-      dropdown
-    }
+    return select
   }
 })
 </script>
