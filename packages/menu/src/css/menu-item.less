@@ -1,10 +1,12 @@
 .vi-menu-item {
     position: relative;
+    display: flex;
     padding: .6em .8em;
     color: var(--vi-font-color);
     list-style: none;
     user-select: none;
     cursor: pointer;
+    align-items: center;
     border-radius: var(--vi-card-radius);
     transition: var(--vi-transition);
     box-sizing: border-box;
@@ -23,6 +25,10 @@
 
     &:hover {
         background-color: var(--vi-purple-color5);
+    }
+
+    >.vi-menu-item__prefix {
+        padding-right: .2em;
     }
 }
 

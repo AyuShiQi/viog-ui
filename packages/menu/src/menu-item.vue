@@ -7,7 +7,12 @@
     }
   ]"
   @click="toChoose">
-    <slot></slot>
+    <span class="vi-menu-item__prefix" v-if="prefix">
+      <slot name="prefix"></slot>
+    </span>
+    <span class="vi-menu-item__text">
+      <slot></slot>
+    </span>
   </li>
 </template>
 
