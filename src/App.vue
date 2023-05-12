@@ -17,6 +17,11 @@
   <vi-input
   :maxlength="11"
   number></vi-input> -->
+
+  <vi-bubble>
+    <vi-button></vi-button>
+  </vi-bubble>
+
   <vi-input type="plain" :style="{
     position: 'absolute',
     top: '50%',

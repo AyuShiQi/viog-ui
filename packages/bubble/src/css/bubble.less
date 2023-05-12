@@ -1,0 +1,22 @@
+.vi-bubble {
+    position: relative;
+    .vi-bubble__content {
+        position: absolute;
+        .vi-bubble__view {
+            position: absolute;
+            z-index: 20;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    }
+}
+
+.vi-bubble_down {
+    .vi-bubble__content {
+        bottom: 0;
+        .vi-bubble__view {
+            top: 0;
+        }
+    }
+}

@@ -25,6 +25,7 @@ import ViDialog from './dialog'
 import ViToast from './toast'
 import ViMessage from './message'
 import ViDrawer from './drawer'
+import ViBubble from './bubble'
 // scroll 组
 import ViScroll from './scroll'
 // 表单组
@@ -68,7 +69,8 @@ const components = [
   ViMenu,
   ViCollapse,
   ViDivider,
-  ViSkeleton
+  ViSkeleton,
+  ViBubble
 ]
 
 export {
