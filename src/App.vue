@@ -55,35 +55,10 @@
     </template>
   </vi-input> -->
 
-  <!-- <vi-menu shadow>
-    <vi-menu-group title="菜单1">
-      <vi-menu-item>子项1</vi-menu-item>
-      <vi-menu-item>子项2</vi-menu-item>
-      <vi-menu-item>子项3</vi-menu-item>
-      <vi-menu-group title="子项4">
-        <vi-menu-item>子项4.1</vi-menu-item>
-        <vi-menu-item>子项4.2</vi-menu-item>
-        <vi-menu-item>子项4.3</vi-menu-item>
-        <vi-menu-group title="子项4.4">
-        <vi-menu-item>子项4.4.1</vi-menu-item>
-        <vi-menu-item>子项4.4.2</vi-menu-item>
-        <vi-menu-item>子项4.4.3</vi-menu-item>
-      </vi-menu-group>
-      </vi-menu-group>
-    </vi-menu-group>
-    <vi-menu-group title="菜单2">
-      <vi-menu-item>子项1</vi-menu-item>
-      <vi-menu-item>子项2</vi-menu-item>
-      <vi-menu-item>子项3</vi-menu-item>
-    </vi-menu-group>
-    <vi-menu-item>菜单3</vi-menu-item>
-    <vi-menu-item>菜单4</vi-menu-item>
-  </vi-menu> -->
-
   <vi-menu shadow>
     <vi-menu-item>新建项目</vi-menu-item>
     <vi-divider></vi-divider>
-    <vi-menu-group title="我的项目" scalable>
+    <vi-menu-group title="我的项目" scalable option>
       <vi-menu-item>图表</vi-menu-item>
       <vi-menu-item>表格</vi-menu-item>
       <vi-menu-item>回收站</vi-menu-item>

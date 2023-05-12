@@ -19,9 +19,41 @@
     width: 100%;
     box-sizing: border-box;
     >.vi-collapse__title {
+        position: relative;
         width: 100%;
         padding-left: .8em;
         box-sizing: border-box;
+        transition: var(--vi-transition);
+
+        ::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: -0.6em;
+            width: 4px;
+            height: 100%;
+            background-color: var(--vi-purple-color1);
+            transition: var(--vi-transition);
+            opacity: 0;
+        }
+    }
+
+    >.vi-collapse__content {
+        width: 100%;
+        padding-left: 1em;
+        box-sizing: border-box;
+    }
+}
+
+.vi-menu-group.be-choose {
+    >.vi-collapse__title {
+        padding-left: 1.4em;
+        color: var(--vi-purple-color3);
+
+        ::after {
+            opacity: 1;
+            transform: translateX(0.6em);
+        }
     }
     >.vi-collapse__content {
         width: 100%;

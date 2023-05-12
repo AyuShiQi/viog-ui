@@ -1,7 +1,12 @@
 <template>
   <collapseLi
   v-if="scalable"
+  ref="collapse"
   class="vi-menu-group"
+  :needChange="option ? toChoose : () => true"
+  :class="{
+    'be-choose': option ? isChoose : false
+  }"
   :title="title">
     <slot></slot>
   </collapseLi>

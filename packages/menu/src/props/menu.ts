@@ -6,5 +6,9 @@ export default {
   shadow: {
     type: Boolean,
     default: false
+  },
+  defaultId: {
+    type: Number,
+    default: 0
   }
 }
