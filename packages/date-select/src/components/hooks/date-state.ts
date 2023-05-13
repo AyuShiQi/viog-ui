@@ -108,6 +108,7 @@ export default function (props: any, localDate: ModelValueDate) {
    * 选择今年
    */
   function thisYear (): void {
+    viewYear.value = nowDate.getFullYear()
     localDate.year = nowDate.getFullYear()
   }
 

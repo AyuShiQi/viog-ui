@@ -1,48 +1,18 @@
-@import '../../../../../public/css/basecolor.less';
-
-.vi-date-select-box-enter-from {
-    transform: translateY(-2px);
-    opacity: 0;
-}
-
-.vi-date-select-box-enter-to {
-    opacity: 1;
-}
-
-.vi-date-select-box-enter-active {
-    transition: all .2s linear 0s;
-}
-
-.vi-date-select-box-leave {
-    opacity: 1;
-}
-
-.vi-date-select-box-leave-to {
-    transform: translateY(-2px);
-    opacity: 0;
-}
-
-.vi-date-select-box-leave-active {
-    transition: all .2s linear 0s;
-}
-
 .vi-date-select-box {
     display: flex;
-    position: absolute;
     overflow: hidden;
     text-align: left;
-    top: 5px;
-    left: 0;
-    z-index: 2;
     background-color: #fff;
     height: 238px;
     align-items: center;
     border-radius: 5px;
     box-sizing: border-box;
-}
 
-// .vi-date-select.is-dark {
-//     .vi-date-select-box {
-//         background-color: @mblack-background;
-//     }
-// }
+    .vi-date-show_year {
+        --vi-select-width: 4em;
+    }
+
+    .vi-date-show_month {
+        --vi-select-width: 3em;
+    }
+}

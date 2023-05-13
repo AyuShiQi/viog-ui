@@ -1,4 +1,4 @@
-.vi-date-select.is-button {
+.vi-date-select-type-button {
     color: var(--vi-link-color);
     .vi-date-select-input {
         background-color: var(--vi-background-color);
@@ -20,7 +20,7 @@
     }
 }
 
-.vi-date-select.is-button.is-dark {
+.vi-date-select-type-button.vi-date-select-mode-dark {
     color: var(--vi-font-color);
     .vi-date-select-input {
         background-color: var(--vi-background-color-deep);
@@ -36,53 +36,31 @@
     }
 }
 
-// .vi-date-select.is-button.is-filter {
-//     .vi-date-select-input {
-//         background-color: #ffffffdd;
-//         backdrop-filter: blur(5px);
-//     }
-
-//     .vi-date-select-box {
-//         background-color: #ffffffdd;
-//         backdrop-filter: blur(5px);
-//     }
-// }
-
-// .vi-date-select.is-button.is-dark.is-filter {
-//     .vi-date-select-input {
-//         background-color: @black-background-hover-o7;
-//         backdrop-filter: blur(5px);
-//     }
-
-//     .vi-date-select-box {
-//         background-color: @black-background-hover-o7;
-//         backdrop-filter: blur(5px);
-//     }
-// }
-
-.vi-date-select.is-default {
-    position: relative;
+.vi-date-select-type-default {
     color: var(--vi-link-color);
 
-    &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0px;
-        height: 2px;
-        background-color: var(--vi-background-color-deep);
-        // box-shadow: 0 0 5px 0 #d1d1d196;
-        transition: all .3s ease 0s;
-    }
-
     .vi-date-select-input {
+        position: relative;
         padding-left: 0;
-        border-bottom: 1px solid var(--vi-background-color-deep);
         .vi-date-select-icon {
             path {
                 fill: var(--vi-link-color);
             }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--vi-background-color-deep);
+            transition: var(--vi-transition);
+        }
+
+        &:hover::before {
+            background-color: var(--vi-icon-color);
         }
     }
 
@@ -92,19 +70,22 @@
     }
 }
 
-.vi-date-select.is-default.is-dark {
+.vi-date-select-type-default.vi-date-select-mode-dark {
     color: var(--vi-font-color);
 
-    &::before {
-        // box-shadow: 0 0 5px 0 #d1d1d121;
-        background-color: var(--vi-icon-color);
-    }
     .vi-date-select-input {
-        border-bottom: 1px solid var(--vi-icon-color);
         .vi-date-select-icon {
             path {
                 fill: var(--vi-font-color);
             }
+        }
+
+        &::before {
+            background-color: var(--vi-icon-color);
+        }
+
+        &:hover::before {
+            background-color: var(--vi-link-color);
         }
     }
 
@@ -121,13 +102,7 @@
     }
 }
 
-.vi-date-select.is-default.be-open {
-    &::before {
-        width: 100%;
-    }
-}
-
-.vi-date-select.is-plain {
+.vi-date-select-type-plain {
     color: var(--vi-link-color);
 
     .vi-date-select-input {
@@ -148,7 +123,7 @@
     }
 }
 
-.vi-date-select.is-plain.is-dark {
+.vi-date-select-type-plain.vi-date-select-mode-dark {
     color: var(--vi-font-color);
 
     .vi-date-select-input {
@@ -173,27 +148,3 @@
         }
     }
 }
-
-// .vi-date-select.is-plain.be-open {
-//     .vi-date-select-input {
-//         .vi-date-select-icon {
-//             transform: rotateX(0deg);
-//         }
-//     }
-// }
-
-
-// .vi-date-select.is-plain.is-filter,
-// .vi-date-select.is-default.is-filter {
-//     .vi-date-select-box {
-//         background-color: #ffffffdd;
-//         backdrop-filter: blur(5px);
-//     }
-// }
-
-// .vi-date-select.is-plain.is-dark.is-filter,
-// .vi-date-select.is-default.is-dark.is-filter {
-//     .vi-date-select-box {
-//         background-color: @mblack-background-o8;
-//     }
-// }

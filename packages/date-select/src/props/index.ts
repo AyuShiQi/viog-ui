@@ -31,7 +31,7 @@ export default {
     type: String,
     default: '请选择'
   },
-  // 未实现
+  // 未实现，已禁用
   filter: {
     type: Boolean,
     default: false

@@ -1,21 +1,30 @@
 import { ref, computed } from 'vue'
+import type { SetupContext } from 'vue'
 
-export default function (props: any, nowDate: Date) {
-  let temp: number = Math.trunc(nowDate.getFullYear() / 10) * 10
+import dateState from './date-state'
 
-  if (temp >= props.beginYear) {
-    if (props.endYear && temp > props.endYear) {
-      temp = Math.trunc(props.endYear / 10) * 10
+export default function (props: any, ctx: SetupContext) {
+  const _date = dateState(props, props.choosed)
+  const viewStart = computed(() => {
+    const temp: number = Math.trunc(_date.viewYear.value / 10) * 10
+
+    if (temp >= props.beginYear) {
+      if (props.endYear && temp > props.endYear) {
+        return Math.trunc(props.endYear / 10) * 10
+      }
+      return temp
+    } else {
+      return Math.trunc(props.beginYear / 10) * 10
     }
-  } else {
-    temp = Math.trunc(props.beginYear / 10) * 10
-  }
-  const viewStart = ref(temp)
-  const viewEnd = ref(props.endYear ? Math.min(props.endYear, viewStart.value + 9) : viewStart.value + 9)
+  })
+
+  const viewEnd = computed(() => {
+    return props.endYear ? Math.min(props.endYear, viewStart.value! + 9) : viewStart.value! + 9
+  })
 
   const years = computed((): number[] => {
     const years: number[] = []
-    for (let i = viewStart.value; i <= viewEnd.value; i++) {
+    for (let i = viewStart.value!; i <= viewEnd.value!; i++) {
       years.push(i)
     }
     return years
@@ -25,15 +34,13 @@ export default function (props: any, nowDate: Date) {
    * 年份范围后退
    */
   function yearRangeBack (): void {
-    viewStart.value = Math.max(props.beginYear, viewStart.value - 10)
-    viewEnd.value = props.endYear ? Math.min(props.endYear, viewStart.value + 9) : viewStart.value + 9
+    _date.viewYear.value = Math.max(props.beginYear, _date.viewYear.value - 10)
   }
   /**
    * 年份范围前进
    */
   function yearRangeForward (): void {
-    viewStart.value = props.endYear ? Math.min(props.endYear, viewStart.value + 10) : viewStart.value + 10
-    viewEnd.value = props.endYear ? Math.min(props.endYear, viewStart.value + 9) : viewStart.value + 9
+    _date.viewYear.value = props.endYear ? Math.max(props.endYear, _date.viewYear.value + 10) : _date.viewYear.value + 10
   }
 
   /**
@@ -50,6 +57,7 @@ export default function (props: any, nowDate: Date) {
     years,
     yearRangeBack,
     yearRangeForward,
-    isChoosed
+    isChoosed,
+    ..._date
   }
 }

@@ -17,8 +17,8 @@
     </svg>
     <!-- 当前显示年月标识 -->
     <span class="vi-date-show">
-      <ViSelect :itemHeight="27" type="button" :datas="selectYears" v-model="viewYear"></ViSelect>年
-      <ViSelect :itemHeight="27" type="button" :datas="selectMonths" v-model="viewMonth"></ViSelect>月
+      <selectV class="vi-date-show_year" type="button" :datas="selectYears" v-model="viewYear"></selectV>年
+      <selectV class="vi-date-show_month" type="button" :datas="selectMonths" v-model="viewMonth"></selectV>月
     </span>
     <!-- 月份前进 -->
     <svg
@@ -77,9 +77,11 @@
 import { defineComponent } from 'vue'
 import type { SetupContext } from 'vue'
 
+import type { DateBoxProps } from '@/types/date-select-types/date-box-types'
+
 import { dateViewState, dateState } from './hooks'
 
-import { DateBoxProps } from '@/types/date-select-types/date-box-types'
+import { selectV } from '../../../select'
 
 export default defineComponent({
   name: 'ViDateBox',
@@ -96,6 +98,9 @@ export default defineComponent({
     },
     beginYear: Number,
     endYear: Number
+  },
+  components: {
+    selectV
   },
   setup (props: DateBoxProps, context: SetupContext) {
     const mainDate = dateState(props, props.choosed)
