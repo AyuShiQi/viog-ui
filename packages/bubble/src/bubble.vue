@@ -1,8 +1,23 @@
 <template>
-    <div class="vi-bubble vi-bubble_down">
+    <div
+    class="vi-bubble vi-bubble_down"
+    :class="[
+      `vi-bubble-direction-${direction}`,
+      {
+        'vi-bubble-mode-dark': dark
+      }
+    ]"
+    @mouseover="toOpen" @mouseleave="toClose">
         <slot></slot>
         <div class="vi-bubble__content">
-            <div class="vi-bubble__view"></div>
+          <transition name="vi-fade-in-out-normal">
+            <div class="vi-bubble__view" v-if="open">
+              <div class="vi-bubble__title"></div>
+              <div class="vi-bubble__text">
+                <slot name="content"></slot>
+              </div>
+            </div>
+          </transition>
         </div>
     </div>
 </template>
@@ -21,7 +36,7 @@ export default defineComponent({
   name: 'ViBubble',
   props,
   setup (props: any, ctx: SetupContext) {
-    const bubble = bubbleState()
+    const bubble = bubbleState(props, ctx)
 
     return bubble
   }

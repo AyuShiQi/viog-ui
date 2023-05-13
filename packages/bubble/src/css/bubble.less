@@ -1,22 +1,32 @@
 .vi-bubble {
+    display: inline-block;
     position: relative;
     .vi-bubble__content {
+        display: flex;
         position: absolute;
+        width: 100%;
+        height: var(--vi-bubble-gap);
+        justify-content: center;
         .vi-bubble__view {
             position: absolute;
             z-index: 20;
             width: 100px;
             height: 100px;
-            background-color: pink;
+            background-color: #fff;
+            border-radius: var(--vi-card-radius);
+            filter: drop-shadow(0 0 .5px var(--vi-background-color-deep)) drop-shadow(0 0 .5px var(--vi-background-color-deep)) drop-shadow(0 0 .5px var(--vi-background-color-deep));
+            
+            &::after {
+                content: "";
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                background-color: #fff;
+                transform: rotate(45deg);
+            }
         }
     }
 }
 
-.vi-bubble_down {
-    .vi-bubble__content {
-        bottom: 0;
-        .vi-bubble__view {
-            top: 0;
-        }
-    }
-}
+@import './direction.less';
+@import './mode.less';
