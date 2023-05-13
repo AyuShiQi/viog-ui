@@ -11,7 +11,7 @@
       'is-filter': filter
     }
   ]"
-  ref="select">
+  ref="openDOM">
     <span class="vi-time-select-input"
     @click="toSelect">
       <span class="vi-time-select-choose">
