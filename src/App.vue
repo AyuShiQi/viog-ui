@@ -659,13 +659,13 @@
     </vi-form-item>
     <vi-form-item label="生日">
       <ViDateSelect v-model="date" timeUnit="hour" time></ViDateSelect>
-      <!-- <ViDateSelect v-model="date" dark></ViDateSelect>
+      <ViDateSelect v-model="date" dark></ViDateSelect>
       <ViDateSelect type="button" v-model="date"></ViDateSelect>
       <ViDateSelect type="button" v-model="date" dark></ViDateSelect>
       <ViDateSelect type="plain" v-model="date"></ViDateSelect>
-      <ViDateSelect type="plain" v-model="date" dark></ViDateSelect> -->
+      <ViDateSelect type="plain" v-model="date" dark></ViDateSelect>
     </vi-form-item>
-    <!-- <vi-form-item label="生日">
+    <vi-form-item label="生日">
       <ViDateSelect v-model="date" timeUnit="second" time></ViDateSelect>
       <ViDateSelect v-model="date" dark unit="year"></ViDateSelect>
       <ViDateSelect v-model="date" dark unit="month"></ViDateSelect>
@@ -673,7 +673,7 @@
     <vi-form-item label="生日">
       <ViTimeSelect v-model="date"></ViTimeSelect>
       <ViTimeSelect v-model="date" dark></ViTimeSelect>
-    </vi-form-item> -->
+    </vi-form-item>
   </vi-form>
 
   <!-- <vi-message></vi-message> -->

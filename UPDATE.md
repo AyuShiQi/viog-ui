@@ -74,12 +74,19 @@
 - 新增option-title组件，用于分类展示option内容
 - 新增select-n组件once属性，设置为true后，用户进行选择后立即关闭选择框
 
-# 0.4.3（当前迭代开发版本）
+# 0.4.3
 
 - 新增nav组件竖版模式，使用direction属性控制方向
 - 新增header组件收缩效果，使用retract属性控制是否使用
 - 新增select-n组件组option-group组件、保留option-title组件但不建议使用 （未做）
-- 修改openState hooks表现（未做）
+- 修改openState hooks表现
+- 更换openState内部ref DOM名称
+- 更换boxPositionState内部ref DOM名称
+
+# 0.4.4（当前迭代开发版本）
+
+- select-n组件更名为select、旧select组件更名为select-v
+- 更换time-select组件、date-select组件底层为dropdown组件（未做）
 
 # 0.5.0
 
@@ -90,7 +97,7 @@
 - 新增分割线组件
 - 新增骨架框组件
 - 新增头像组件 （未做）
-- 新增气泡框组件 （未做）
+- 新增气泡框组件
 
 # 0.5.1
 
