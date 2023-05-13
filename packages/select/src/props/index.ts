@@ -1,5 +1,6 @@
 export default {
   modelValue: {
+    type: [String, Number, Boolean],
     default: ''
   },
   size: {
@@ -34,9 +35,5 @@ export default {
     type: Boolean,
     default: false
   },
-  datas: Array,
-  itemHeight: {
-    type: Number,
-    default: 24
-  }
+  datas: Array
 }

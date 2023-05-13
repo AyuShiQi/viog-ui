@@ -1,13 +1,13 @@
 import { App } from 'vue'
 
-import select from './src/select.vue'
+import selectV from './src/select.vue'
 
 export default {
   install (app: App) {
-    app.component(select.name, select)
+    app.component(selectV.name, selectV)
   }
 }
 
 export {
-  select
+  selectV
 }
