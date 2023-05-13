@@ -66,7 +66,7 @@ import ViSelectBox from './components/select-box.vue'
 import ViSelectItem from './components/select-item.vue'
 
 export default defineComponent({
-  name: 'ViSelect',
+  name: 'ViSelectV',
   emits: ['update:modelValue'],
   components: {
     ViSelectBox,

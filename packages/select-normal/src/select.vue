@@ -49,7 +49,7 @@ import { scroll } from '../../scroll'
 import selectState from './hooks/select-state'
 
 export default defineComponent({
-  name: 'ViSelectN',
+  name: 'ViSelect',
   props,
   components: {
     dropdown,

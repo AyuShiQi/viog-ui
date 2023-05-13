@@ -9,11 +9,11 @@
 import { defineComponent, ref, watch } from 'vue'
 import type { SetupContext } from 'vue'
 
-import { select } from '../../select'
+import { selectV } from '../../select'
 
 export default defineComponent({
   name: 'ViInputFix',
-  components: { ViSelect: select },
+  components: { ViSelect: selectV },
   emits: ['update:modelValue'],
   props: {
     modelValue: String,
