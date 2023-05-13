@@ -10,10 +10,13 @@
         .vi-bubble__view {
             position: absolute;
             z-index: 20;
-            width: 100px;
-            height: 100px;
+            width: var(--vi-bubble-width);
+            height: var(--vi-bubble-height);
+            padding: var(--vi-card-padding);
+            color: var(--vi-font-color);
             background-color: #fff;
             border-radius: var(--vi-card-radius);
+            box-sizing: border-box;
             filter: drop-shadow(0 0 .5px var(--vi-background-color-deep)) drop-shadow(0 0 .5px var(--vi-background-color-deep)) drop-shadow(0 0 .5px var(--vi-background-color-deep));
             
             &::after {
@@ -23,6 +26,17 @@
                 height: 8px;
                 background-color: #fff;
                 transform: rotate(45deg);
+            }
+
+            .vi-bubble__title {
+                font-size: var(--vi-font-size);
+                margin-bottom: .5em;
+            }
+
+            .vi-bubble__text {
+                min-height: 1em;
+                color: var(--vi-link-color);
+                font-size: var(--vi-font-size)
             }
         }
     }

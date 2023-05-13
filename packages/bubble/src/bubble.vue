@@ -12,7 +12,7 @@
         <div class="vi-bubble__content">
           <transition name="vi-fade-in-out-normal">
             <div class="vi-bubble__view" v-if="open">
-              <div class="vi-bubble__title"></div>
+              <div class="vi-bubble__title" v-if="title !== ''">{{ title }}</div>
               <div class="vi-bubble__text">
                 <slot name="content"></slot>
               </div>
