@@ -1,6 +1,6 @@
 <template>
-    <span class="vi-dropdown" ref="select">
-      <div class="vi-dropdown-nav" @click="changeOpen" ref="select">
+    <span class="vi-dropdown" ref="openDOM">
+      <div class="vi-dropdown-nav" @click="changeOpen" ref="boxPositionDOM">
         <slot :open="open">dropdown</slot>
       </div>
       <div
