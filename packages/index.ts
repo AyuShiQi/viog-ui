@@ -17,6 +17,7 @@ import ViDivider from './divider'
 // 模块组
 import ViHeader from './header'
 import ViSkeleton from './skeleton'
+import ViAvater from './avater'
 // 导航组
 import ViNav from './nav'
 import ViMenu from './menu'
@@ -70,7 +71,8 @@ const components = [
   ViCollapse,
   ViDivider,
   ViSkeleton,
-  ViBubble
+  ViBubble,
+  ViAvater
 ]
 
 export {

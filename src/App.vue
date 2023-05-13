@@ -1,10 +1,12 @@
 <template>
-  <!-- <vi-header retract>
+  <vi-header retract>
     <vi-nav v-model="choose">
       <div v-for="item in nav" :key="item">
         {{item}}
       </div>
     </vi-nav>
+    <vi-avater src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"></vi-avater>
+    <vi-avater></vi-avater>
   </vi-header>
   <vi-nav v-model="choose" direction="vertical">
     <div v-for="item in nav" :key="item">
@@ -16,7 +18,7 @@
   </vi-card>
   <vi-input
   :maxlength="11"
-  number></vi-input> -->
+  number></vi-input>
 
   <vi-input type="plain" :style="{
     position: 'absolute',

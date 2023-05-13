@@ -78,7 +78,7 @@
 
 - 新增nav组件竖版模式，使用direction属性控制方向
 - 新增header组件收缩效果，使用retract属性控制是否使用
-- 新增select-n组件组option-group组件、保留option-title组件但不建议使用 （未做）
+- 新增select-n组件组option-group组件、保留option-title组件但不建议使用
 - 修改openState hooks表现
 - 更换openState内部ref DOM名称
 - 更换boxPositionState内部ref DOM名称
@@ -86,7 +86,7 @@
 # 0.4.4（当前迭代开发版本）
 
 - select-n组件更名为select、旧select组件更名为select-v
-- 更换time-select组件、date-select组件底层为dropdown组件（未做）
+- 更换time-select组件、date-select组件底层为dropdown组件
 
 # 0.5.0
 
