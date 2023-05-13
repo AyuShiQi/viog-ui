@@ -2,7 +2,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 export default function (mode = 'auto') {
   const dropdown = ref()
-  const select = ref()
+  const boxPositionDOM = ref()
   const height = ref(0)
   let listenerResize: any
   let listenerScroll: any
@@ -23,7 +23,7 @@ export default function (mode = 'auto') {
       if (timer) clearTimeout(timer)
       timer = setTimeout(() => {
         recalcSize()
-        const { left, right, bottom, top } = select.value.getBoundingClientRect()
+        const { left, right, bottom, top } = boxPositionDOM.value.getBoundingClientRect()
         // console.log(height.value, window.innerHeight, window.innerWidth, bottom)
         if (bottom + height.value < window.innerHeight) direction.value = 'down'
         else if (top - height.value >= 0) direction.value = 'up'
@@ -57,7 +57,7 @@ export default function (mode = 'auto') {
 
   return {
     dropdown,
-    select,
+    boxPositionDOM,
     direction,
     elseDirection,
     toChangeViewPosition,

@@ -25,7 +25,7 @@
     margin: '0 0 0 -100px'
   }">
     <template v-slot:prefix>
-      <vi-select-n class="v-v-v" v-model="value" chooseType="plain" once>
+      <vi-select class="v-v-v" v-model="value" chooseType="plain" once>
         <vi-option-group title="常用地区">
           <vi-option value="+86" selected desc="中国大陆">
             <template v-slot:pre>
@@ -54,7 +54,7 @@
             +886
           </vi-option>
         </vi-option-group>
-      </vi-select-n>
+      </vi-select>
     </template>
   </vi-input>
   <vi-skeleton></vi-skeleton>
@@ -89,8 +89,11 @@
     </vi-menu-item>
   </vi-menu>
 
-  <vi-bubble dark>
+  <vi-bubble title="这是我们的家">
     <vi-button>我们应该像这个样子</vi-button>
+    <template v-slot:content>
+      Tianxia
+    </template>
   </vi-bubble>
   <vi-bubble direction="left">
     <vi-button>我们应该像这个样子</vi-button>
@@ -623,7 +626,7 @@
   <vi-input type="plain" password show-password size="big"></vi-input>
   <vi-input v-model="value" :maxlength="10" :suffix="arr" type="plain" password show-password show-clear size="small"></vi-input> -->
 
-  <!-- <vi-form>
+  <vi-form>
     <vi-form-item label="姓名">
       <vi-input password show-password>123</vi-input>
     </vi-form-item>
@@ -656,13 +659,13 @@
     </vi-form-item>
     <vi-form-item label="生日">
       <ViDateSelect v-model="date" timeUnit="hour" time></ViDateSelect>
-      <ViDateSelect v-model="date" dark></ViDateSelect>
+      <!-- <ViDateSelect v-model="date" dark></ViDateSelect>
       <ViDateSelect type="button" v-model="date"></ViDateSelect>
       <ViDateSelect type="button" v-model="date" dark></ViDateSelect>
       <ViDateSelect type="plain" v-model="date"></ViDateSelect>
-      <ViDateSelect type="plain" v-model="date" dark></ViDateSelect>
+      <ViDateSelect type="plain" v-model="date" dark></ViDateSelect> -->
     </vi-form-item>
-    <vi-form-item label="生日">
+    <!-- <vi-form-item label="生日">
       <ViDateSelect v-model="date" timeUnit="second" time></ViDateSelect>
       <ViDateSelect v-model="date" dark unit="year"></ViDateSelect>
       <ViDateSelect v-model="date" dark unit="month"></ViDateSelect>
@@ -670,8 +673,8 @@
     <vi-form-item label="生日">
       <ViTimeSelect v-model="date"></ViTimeSelect>
       <ViTimeSelect v-model="date" dark></ViTimeSelect>
-    </vi-form-item>
-  </vi-form> -->
+    </vi-form-item> -->
+  </vi-form>
 
   <!-- <vi-message></vi-message> -->
   <!-- <vi-row justify="center">

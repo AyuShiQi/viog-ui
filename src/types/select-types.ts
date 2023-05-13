@@ -12,8 +12,7 @@ export interface SelectProps {
   width: string,
   placeholder: string,
   filter: boolean,
-  datas: any[] | undefined,
-  itemHeight: number
+  datas: any[] | undefined
 }
 
 export interface ViSelectType {
