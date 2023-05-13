@@ -1,18 +1,20 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
-export default function () {
+export default function (mode = 'auto') {
   const dropdown = ref()
   const select = ref()
   const height = ref(0)
   let listenerResize: any
   let listenerScroll: any
-  const direction = ref('down')
+  const direction = ref(mode === 'auto' ? 'down' : mode)
   const elseDirection = ref('normal')
   onMounted(() => {
-    firstCalcSize()
-    toChangeViewPosition()
-    listenerResize = window.addEventListener('resize', toChangeViewPosition)
-    listenerScroll = window.addEventListener('scroll', toChangeViewPosition)
+    if (mode === 'auto') {
+      firstCalcSize()
+      toChangeViewPosition()
+      listenerResize = window.addEventListener('resize', toChangeViewPosition)
+      listenerScroll = window.addEventListener('scroll', toChangeViewPosition)
+    }
   })
 
   const toChangeViewPosition = (function () {
@@ -22,7 +24,7 @@ export default function () {
       timer = setTimeout(() => {
         recalcSize()
         const { left, right, bottom, top } = select.value.getBoundingClientRect()
-        console.log(height.value, window.innerHeight, window.innerWidth, bottom)
+        // console.log(height.value, window.innerHeight, window.innerWidth, bottom)
         if (bottom + height.value < window.innerHeight) direction.value = 'down'
         else if (top - height.value >= 0) direction.value = 'up'
         else if (right + height.value < window.innerWidth) direction.value = 'right'

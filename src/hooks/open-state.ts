@@ -1,13 +1,13 @@
 import { ref, onMounted, onUnmounted, getCurrentInstance } from 'vue'
 import type { ComponentInternalInstance } from 'vue'
 
-export default function (needBlur = true) {
+export default function (needBlur = true, openMode = 'click') {
   const { proxy } = getCurrentInstance() as ComponentInternalInstance
   let listener: any
   const open = ref(false)
 
   onMounted(() => {
-    if (needBlur) {
+    if (needBlur && openMode === 'click') {
       listener = document.addEventListener('click', (e: any) => {
         if (!(proxy?.$refs.select as Element)?.contains(e.target)) open.value = false
       })

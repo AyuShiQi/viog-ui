@@ -1,3 +1,19 @@
+/* 普通打开 */
+.vi-fade-in-out-normal-enter-from,
+.vi-fade-in-out-normal-leave-to {
+    opacity: 0;
+}
+
+.vi-fade-in-out-normal-enter-to,
+.vi-fade-in-out-normal-leave {
+    opacity: 1;
+}
+
+.vi-fade-in-out-normal-enter-active,
+.vi-fade-in-out-normal-leave-active {
+    transition: var(--vi-transition);
+}
+
 /* 向上打开 */
 .vi-fade-in-out-up-enter-from,
 .vi-fade-in-out-up-leave-to {

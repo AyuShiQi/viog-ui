@@ -18,13 +18,9 @@
   :maxlength="11"
   number></vi-input> -->
 
-  <vi-bubble>
-    <vi-button></vi-button>
-  </vi-bubble>
-
   <vi-input type="plain" :style="{
     position: 'absolute',
-    top: '50%',
+    top: '80%',
     left: '50%',
     margin: '0 0 0 -100px'
   }">
@@ -92,6 +88,20 @@
       设置
     </vi-menu-item>
   </vi-menu>
+
+  <vi-bubble dark>
+    <vi-button>我们应该像这个样子</vi-button>
+  </vi-bubble>
+  <vi-bubble direction="left">
+    <vi-button>我们应该像这个样子</vi-button>
+  </vi-bubble>
+  <vi-bubble direction="top">
+    <vi-button>我们应该像这个样子</vi-button>
+  </vi-bubble>
+  <vi-bubble direction="right">
+    <vi-button>我们应该像这个样子</vi-button>
+  </vi-bubble>
+
   <!-- <vi-affix :position="10">
     <vi-button>我是固钉1</vi-button>
   </vi-affix> -->
@@ -881,8 +891,9 @@ div > button {
 }
 
 .v-v-v {
+  top: 80%;
   --vi-select-width: 3.6em;
-  --vi-dropdown-max-height: 50px;
+  --vi-dropdown-max-height: 200px;
   --vi-dropdown-width: 10em;
 }
 

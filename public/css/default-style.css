@@ -84,9 +84,15 @@
 
     --vi-menu-width: 200px;
 
+    --vi-bubble-width: 200px;
+    --vi-bubble-height: ;
+    --vi-bubble-gap: 8px;
+
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */
+    --vi-info-background-color: #262626de;
+    --vi-info-background-color-solid: #424242;
     --vi-font-color: #262626; /* dark */
     --vi-link-color: rgb(38, 38, 38, 0.75); /*default*/
     --vi-icon-color: #8C8C8C;  
