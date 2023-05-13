@@ -83,12 +83,12 @@
 - 更换openState内部ref DOM名称
 - 更换boxPositionState内部ref DOM名称
 
-# 0.4.4（当前迭代开发版本）
+# 0.4.4
 
 - select-n组件更名为select、旧select组件更名为select-v
 - 更换time-select组件、date-select组件底层为dropdown组件
 
-# 0.5.0
+# 0.5.0（当前迭代开发版本）
 
 - 新增affix固钉组件
 - 新增空卡片组件 （这个bug还没有测）
@@ -96,7 +96,7 @@
 - 新增Menu组件组 (未做router处理)
 - 新增分割线组件
 - 新增骨架框组件
-- 新增头像组件 （未做）
+- 新增头像组件
 - 新增气泡框组件
 
 # 0.5.1
