@@ -49,6 +49,7 @@ export default function (props: VirtualScrollProps) {
     if (/px$/.test(height)) {
       itemHeight.value = Number(height.slice(0, -2))
     }
+    // console.log(itemHeight.value)
   }
 
   // 获取容器高度
@@ -62,7 +63,7 @@ export default function (props: VirtualScrollProps) {
       const height = contentStyle.getPropertyValue('height')
       if (/px$/.test(height)) contentHeight.value = Number(height.slice(0, -2))
     }
-    console.log(contentHeight.value)
+    // console.log(contentHeight.value)
   }
 
   function computeLenAndTop () {
@@ -72,6 +73,7 @@ export default function (props: VirtualScrollProps) {
       data.itemHeight = itemHeight.value
       currentHeight += itemHeight.value
     }
+    // console.log(useDatas)
   }
 
   // 以下是methods
@@ -90,6 +92,7 @@ export default function (props: VirtualScrollProps) {
       endIndex.value = end
       nowHeight.value = useDatas[begin].scrollTop
     }
+    // console.log(scrollTop, nowHeight.value, totalHeight.value, begin, end)
   }
 
   return {
