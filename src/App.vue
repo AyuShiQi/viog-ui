@@ -13,6 +13,13 @@
     <vi-avater src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"></vi-avater>
     <vi-avater></vi-avater>
   </vi-header>
+  <h1>中国China</h1>
+  <h2>中国China</h2>
+  <h3>中国China</h3>
+  <h4>中国China</h4>
+  <h5>中国China</h5>
+  <h6>中国China</h6>
+  <p>中国China</p>
   <vi-nav v-model="choose" direction="vertical">
     <div v-for="item in nav" :key="item">
       {{item}}
