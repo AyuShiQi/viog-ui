@@ -88,7 +88,7 @@
 - select-n组件更名为select、旧select组件更名为select-v
 - 更换time-select组件、date-select组件底层为dropdown组件
 
-# 0.5.0（当前迭代开发版本）
+# 0.5.0
 
 - 新增affix固钉组件
 - 新增空卡片组件 （这个bug还没有测）
@@ -99,13 +99,13 @@
 - 新增头像组件
 - 新增气泡框组件
 
-# 0.5.1
+# 0.5.1（当前迭代开发版本）
 
-- 新增nav组件组nav-item组件及nav-item-group组件
-- 新增nav组件触发模式trigger属性
+- 新增nav组件组nav-item组件及nav-item-group组件*
+- 新增nav组件触发模式trigger属性*
 - 新增h1~h6样式
 - 新增header组件flex相关属性便于布局 *
-- 修改nav组件内部使用v-model更换选择的方式，选择采用事件触发模式
+- 修改nav组件内部使用v-model更换选择的方式，选择采用事件触发模式*
 - 新增menu组件router模式
 
 # 0.6.0

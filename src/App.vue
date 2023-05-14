@@ -1,9 +1,14 @@
 <template>
   <vi-header retract>
-    <vi-nav v-model="choose">
-      <div v-for="item in nav" :key="item">
+    <vi-nav v-model="choose" trigger="hover">
+      <vi-nav-item v-for="item in nav" :key="item">
         {{item}}
-      </div>
+      </vi-nav-item>
+      <vi-nav-item-group title="其他">
+        <vi-nav-item>吃饭</vi-nav-item>
+        <vi-nav-item>睡觉</vi-nav-item>
+        <vi-nav-item>打豆豆</vi-nav-item>
+      </vi-nav-item-group>
     </vi-nav>
     <vi-avater src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"></vi-avater>
     <vi-avater></vi-avater>
@@ -12,6 +17,11 @@
     <div v-for="item in nav" :key="item">
       {{item}}
     </div>
+    <vi-nav-item-group title="其他">
+        <vi-nav-item>吃饭</vi-nav-item>
+        <vi-nav-item>睡觉</vi-nav-item>
+        <vi-nav-item>打豆豆</vi-nav-item>
+      </vi-nav-item-group>
   </vi-nav>
   <vi-card type="plain">
     <vi-button>nishishei1</vi-button>

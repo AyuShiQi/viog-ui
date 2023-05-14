@@ -1,21 +1,36 @@
-import { ref, onMounted, reactive } from 'vue'
+import { ref, onMounted, reactive, computed } from 'vue'
 import type { SetupContext } from 'vue'
 
-export default function (ctx: SetupContext, direction: string) {
-  const listLen = reactive([] as number[])
-  const listOffset = reactive([] as number[])
+export default function (props: any, ctx: SetupContext) {
+  const boxUnit = props.direction === 'horizontal' ? 'width' : 'height'
+  const offsetUnit = props.direction === 'horizontal' ? 'left' : 'top'
+
   const listEvent: EventListener[] = []
   const nav = ref()
+  const choose = ref(props.defaultId)
+  const listLen = reactive([] as number[])
+  const listOffset = reactive([] as number[])
 
-  onMounted(() => {
-    direction === 'horizontal' ? horizontalCalc() : verticalCalc()
+  const nowWidth = computed(() => {
+    return listLen[choose.value]
   })
 
+  const nowLeft = computed(() => {
+    return listOffset[choose.value]
+  })
+
+  const toChoose = (index: number) => {
+    choose.value = index
+    ctx.emit('change', index)
+  }
+
+  // 普通函数
   const verticalCalc = () => {
     const { y: contentTop } = nav.value.getBoundingClientRect()
     let i = 0
     for (const navChild of nav.value.children) {
-      listEvent.push(navChild.addEventListener('click', toChoose.bind(undefined, i)))
+      if (props.trigger === 'click') listEvent.push(navChild.addEventListener('click', toChoose.bind(undefined, i)))
+      else if (props.trigger === 'hover') listEvent.push(navChild.addEventListener('mouseover', toChoose.bind(undefined, i)))
       const { y, height } = navChild.getBoundingClientRect()
       listLen.push(height)
       listOffset.push(y - contentTop)
@@ -27,7 +42,8 @@ export default function (ctx: SetupContext, direction: string) {
     const { x: contentLeft } = nav.value.getBoundingClientRect()
     let i = 0
     for (const navChild of nav.value.children) {
-      listEvent.push(navChild.addEventListener('click', toChoose.bind(undefined, i)))
+      if (props.trigger === 'click') listEvent.push(navChild.addEventListener('click', toChoose.bind(undefined, i)))
+      else if (props.trigger === 'hover') listEvent.push(navChild.addEventListener('mouseover', toChoose.bind(undefined, i)))
       const { x, width } = navChild.getBoundingClientRect()
       // console.log(x - contentLeft, width)
       listLen.push(width)
@@ -36,13 +52,18 @@ export default function (ctx: SetupContext, direction: string) {
     }
   }
 
-  const toChoose = (index: number) => {
-    ctx.emit('update:modelValue', index)
-  }
+  onMounted(() => {
+    props.direction === 'horizontal' ? horizontalCalc() : verticalCalc()
+  })
 
   return {
+    boxUnit,
+    offsetUnit,
     nav,
+    choose,
     listLen,
-    listOffset
+    listOffset,
+    nowWidth,
+    nowLeft
   }
 }

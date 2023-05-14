@@ -3,14 +3,16 @@
     width: var(--vi-nav-width);
     height: var(--vi-nav-height);
     color: var(--vi-font-color);
-    font-weight: 600;
-    font-size: var(--vi-nav-font-size);
+    font-size: var(--vi-font-size);
     // background-color: pink;
     flex-direction: column;
     justify-content: space-between;
 
     .vi-nav-list {
         display: flex;
+        & > * {
+          font-weight: 600;
+        }
     }
 
     .vi-nav-list > * {
