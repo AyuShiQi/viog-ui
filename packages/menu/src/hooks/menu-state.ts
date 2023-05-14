@@ -16,7 +16,15 @@ export default function (props: any, ctx: SetupContext) {
   function toPick (newId: number, to?: string) {
     nowPick.value = newId
     ctx.emit('select', newId)
-    if(props.router && to) router.push(to)
+    if (props.router && to) {
+      try {
+        router.push(to).catch((err) => {
+          console.error(err)
+        })
+      } catch (e) {
+        if (e instanceof TypeError) console.error('[viog-ui]: 你并没有在项目中引入vue-router，menu无法正确跳转！')
+        else console.error(e)
+      }
+    }
   }
-  
 }

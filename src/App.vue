@@ -78,15 +78,15 @@
   </vi-input>
   <vi-skeleton></vi-skeleton>
 
-  <vi-menu shadow @select="ok">
-    <vi-menu-item>
+  <vi-menu shadow @select="ok" router>
+    <vi-menu-item to="/home">
       <template v-slot:prefix>
         <vi-icon type="tianjia" style="font-size: 20px;"></vi-icon>
       </template>
       新建项目
     </vi-menu-item>
     <vi-divider></vi-divider>
-    <vi-menu-group title="我的项目" scalable option>
+    <vi-menu-group title="我的项目" scalable option to="/home">
       <vi-menu-item>图表</vi-menu-item>
       <vi-menu-item>表格</vi-menu-item>
       <vi-menu-item>
