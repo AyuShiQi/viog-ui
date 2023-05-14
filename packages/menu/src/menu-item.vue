@@ -22,13 +22,13 @@ import type { SetupContext } from 'vue'
 
 import props from './props/menu-item'
 
-import menuItemState from './hooks/menu-item'
+import menuItemState from './hooks/menu-item-state'
 
 export default defineComponent({
   name: 'ViMenuItem',
   props,
   setup (props: any, ctx: SetupContext) {
-    const menuItem = menuItemState()
+    const menuItem = menuItemState(props, ctx)
 
     return {
       ...menuItem

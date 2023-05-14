@@ -11,5 +11,9 @@ export default {
   option: {
     type: Boolean,
     default: false
+  },
+  // router option scalble全部开启情况下是有用的
+  to: {
+    type: String
   }
 }

@@ -8,7 +8,7 @@ export default function (props: any) {
 
   const collapse = ref()
   const id = (inject('menu-id') as () => number)()
-  const toPick = inject('to-pick') as (id: number) => void
+  const toPick = inject('to-pick') as (id: number, to: string) => void
   const nowPick = inject('now-pick') as Ref
 
   const idCollector = idCollectorState(id)
@@ -20,7 +20,7 @@ export default function (props: any) {
   })
 
   function toChoose (): false {
-    if (props.scalable && props.option) toPick(id)
+    if (props.scalable && props.option) toPick(id, props.to)
     return false
   }
 
