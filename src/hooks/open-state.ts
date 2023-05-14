@@ -27,12 +27,22 @@ export default function (needBlur = true, openMode = 'click') {
     }
   }
 
-  function toClose () {
+  function toClose (cb: any = undefined, ...args: any[]) {
     open.value = false
+    if (cb && cb instanceof Function) {
+      setTimeout(() => {
+        cb.apply(...args)
+      })
+    }
   }
 
-  function toOpen () {
+  function toOpen (cb: any = undefined, ...args: any[]) {
     open.value = true
+    if (cb && cb instanceof Function) {
+      setTimeout(() => {
+        cb.apply(...args)
+      })
+    }
   }
 
   return {

@@ -1,6 +1,6 @@
 <template>
     <span class="vi-dropdown" ref="openDOM">
-      <div class="vi-dropdown-nav" @click="changeOpen" ref="boxPositionDOM">
+      <div class="vi-dropdown-nav" @click="changeOpen" ref="boxPositionDOM" @mouseover="mouseOpen" @mouseout="mouseClose">
         <slot :open="open">dropdown</slot>
       </div>
       <div
@@ -22,16 +22,30 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+import props from './props'
+
 import openState from '@/hooks/open-state'
 import boxPositionState from '@/hooks/box-position-state'
 
 export default defineComponent({
   name: 'ViDropdown',
-  setup () {
+  props,
+  setup (props: any) {
     const open = openState()
     const boxPosition = boxPositionState()
 
+    function mouseClose () {
+      if (props.trigger !== 'hover') return
+      open.toClose(boxPosition.toChangeViewPosition)
+    }
+
+    function mouseOpen () {
+      if (props.trigger !== 'hover') return
+      open.toOpen(boxPosition.recalcSize)
+    }
+
     function changeOpen () {
+      if (props.trigger !== 'click') return
       // 当此次操作时打开时，仅做重新计算处理
       if (!open.open.value) open.toSelect(boxPosition.recalcSize)
       else open.toSelect(boxPosition.toChangeViewPosition)
@@ -40,7 +54,9 @@ export default defineComponent({
     return {
       ...open,
       ...boxPosition,
-      changeOpen
+      changeOpen,
+      mouseOpen,
+      mouseClose
     }
   }
 })
