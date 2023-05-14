@@ -7,7 +7,12 @@
       }
     ]"
     ref="header">
-        <div class="vi-header-content">
+        <div
+        class="vi-header-content"
+        :style="{
+          'align-items': align,
+          'justify-content': justify
+        }">
             <slot></slot>
         </div>
     </header>

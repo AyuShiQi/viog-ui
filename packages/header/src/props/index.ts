@@ -1,6 +1,14 @@
 export default {
   retract: {
     type: Boolean,
-    default: true
+    default: false
+  },
+  justify: {
+    type: String,
+    default: 'space-between'
+  },
+  align: {
+    type: String,
+    default: 'center'
   }
 }

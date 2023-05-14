@@ -103,11 +103,14 @@
 
 - 新增nav组件组nav-item组件及nav-item-group组件
 - 新增nav组件触发模式trigger属性
+- 新增h1~h6样式
+- 新增header组件flex相关属性便于布局 *
+- 修改nav组件内部使用v-model更换选择的方式，选择采用事件触发模式
+- 新增menu组件router模式
 
 # 0.6.0
 
 - 新增面包屑组件
-- 新增page-controller分页器组件
 - 新增文件上传组件
 - 新增表格组件
 - 新增可编辑表格组件
@@ -117,6 +120,7 @@
 - 新增list组件
 - 新增tab组件
 - 新增多级选择器
+- 新增page-controller分页器组件
 
 # 0.8.0
 
