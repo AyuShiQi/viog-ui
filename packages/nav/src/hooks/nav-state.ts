@@ -12,6 +12,7 @@ export default function (props: any, ctx: SetupContext) {
   const listOffset = reactive([] as number[])
 
   const nowWidth = computed(() => {
+    if (choose.value === -1) return 0
     return listLen[choose.value]
   })
 
@@ -28,6 +29,7 @@ export default function (props: any, ctx: SetupContext) {
   const verticalCalc = () => {
     const { y: contentTop } = nav.value.getBoundingClientRect()
     let i = 0
+    if (props.trigger === 'hover') nav.value.addEventListener('mouseleave', () => { choose.value = -1 })
     for (const navChild of nav.value.children) {
       if (props.trigger === 'click') listEvent.push(navChild.addEventListener('click', toChoose.bind(undefined, i)))
       else if (props.trigger === 'hover') listEvent.push(navChild.addEventListener('mouseover', toChoose.bind(undefined, i)))
@@ -41,6 +43,7 @@ export default function (props: any, ctx: SetupContext) {
   const horizontalCalc = () => {
     const { x: contentLeft } = nav.value.getBoundingClientRect()
     let i = 0
+    if (props.trigger === 'hover') nav.value.addEventListener('mouseleave', () => { choose.value = -1 })
     for (const navChild of nav.value.children) {
       if (props.trigger === 'click') listEvent.push(navChild.addEventListener('click', toChoose.bind(undefined, i)))
       else if (props.trigger === 'hover') listEvent.push(navChild.addEventListener('mouseover', toChoose.bind(undefined, i)))
