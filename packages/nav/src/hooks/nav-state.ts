@@ -1,4 +1,4 @@
-import { ref, onMounted, reactive, computed } from 'vue'
+import { ref, onMounted, reactive, computed, provide } from 'vue'
 import type { SetupContext } from 'vue'
 
 export default function (props: any, ctx: SetupContext) {
@@ -51,6 +51,8 @@ export default function (props: any, ctx: SetupContext) {
       i++
     }
   }
+
+  provide('nav-trigger', props.trigger)
 
   onMounted(() => {
     props.direction === 'horizontal' ? horizontalCalc() : verticalCalc()

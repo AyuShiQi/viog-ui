@@ -1,5 +1,5 @@
 <template>
-  <dropdown class="vi-nav-item-group">
+  <dropdown class="vi-nav-item-group" :trigger="trigger">
     <template v-slot:default>
       <span class="vi-nav-item-group__title">{{ title }}</span>
       <svg
@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, inject } from 'vue'
 import type { SetupContext } from 'vue'
 // 组件type
 // 组件props
@@ -32,8 +32,11 @@ export default defineComponent({
   props,
   components: { dropdown },
   setup (props: any, ctx: SetupContext) {
-    // const _ = _State()
-    console.log('item-vue')
+    const trigger = inject('nav-trigger', '') as string
+
+    return {
+      trigger
+    }
   }
 })
 </script>

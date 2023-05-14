@@ -103,6 +103,7 @@
 
 - 新增nav组件组nav-item组件及nav-item-group组件*
 - 新增nav组件触发模式trigger属性*
+- 新增dropdown组件触发模式trigger属性*
 - 新增h1~h6样式
 - 新增header组件flex相关属性便于布局 *
 - 修改nav组件内部使用v-model更换选择的方式，选择采用事件触发模式*
