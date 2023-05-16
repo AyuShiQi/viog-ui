@@ -21,6 +21,7 @@ import ViAvater from './avater'
 // 导航组
 import ViNav from './nav'
 import ViMenu from './menu'
+import ViBreadcrumb from './breadcrumb'
 // 交互组件
 import ViDialog from './dialog'
 import ViToast from './toast'
@@ -72,7 +73,8 @@ const components = [
   ViDivider,
   ViSkeleton,
   ViBubble,
-  ViAvater
+  ViAvater,
+  ViBreadcrumb
 ]
 
 export {

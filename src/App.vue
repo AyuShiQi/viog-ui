@@ -20,6 +20,11 @@
   <h5>中国China</h5>
   <h6>中国China</h6>
   <p>中国China</p>
+  <vi-breadcrumb color="purple">
+    <vi-breadcrumb-item to="/goto">我的项目</vi-breadcrumb-item>
+    <vi-breadcrumb-item to="/home" color="green">最近更新</vi-breadcrumb-item>
+    <vi-breadcrumb-item>折线图</vi-breadcrumb-item>
+  </vi-breadcrumb>
   <vi-nav v-model="choose" direction="vertical">
     <div v-for="item in nav" :key="item">
       {{item}}
@@ -645,7 +650,7 @@
   <vi-input type="plain" password show-password size="big"></vi-input>
   <vi-input v-model="value" :maxlength="10" :suffix="arr" type="plain" password show-password show-clear size="small"></vi-input> -->
 
-  <vi-form>
+  <!-- <vi-form>
     <vi-form-item label="姓名">
       <vi-input password show-password>123</vi-input>
     </vi-form-item>
@@ -693,10 +698,10 @@
       <ViTimeSelect v-model="date"></ViTimeSelect>
       <ViTimeSelect v-model="date" dark></ViTimeSelect>
     </vi-form-item>
-  </vi-form>
+  </vi-form> -->
 
   <!-- <vi-message></vi-message> -->
-  <vi-row justify="center">
+  <!-- <vi-row justify="center">
     <vi-dropdown></vi-dropdown>
   </vi-row>
   <vi-row>
@@ -761,7 +766,7 @@
   <vi-input show-clear show-password></vi-input>
   <vi-input type="plain" password show-clear show-password></vi-input>
   <vi-input type="button" password show-clear show-password></vi-input>
-  <vi-skeleton animate></vi-skeleton>
+  <vi-skeleton animate></vi-skeleton> -->
 </template>
 
 <script lang="ts">
