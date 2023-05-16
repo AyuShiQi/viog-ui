@@ -696,7 +696,7 @@
   </vi-form>
 
   <!-- <vi-message></vi-message> -->
-  <!-- <vi-row justify="center">
+  <vi-row justify="center">
     <vi-dropdown></vi-dropdown>
   </vi-row>
   <vi-row>
@@ -710,39 +710,46 @@
     <vi-link color="dark">1</vi-link>
   </vi-row>
   <vi-row>
-    <vi-select-n v-model="value">
+    <vi-select v-model="value">
       <vi-option value="123">123</vi-option>
       <vi-option value="234">123</vi-option>
       <vi-option value="676">123</vi-option>
       <vi-option value="891">123</vi-option>
-    </vi-select-n>
+    </vi-select>
   </vi-row>
   <vi-row>
-    <vi-tag></vi-tag>
-    <vi-tag color="purple"></vi-tag>
-    <vi-tag color="pink"></vi-tag>
-    <vi-tag color="red"></vi-tag>
-    <vi-tag color="green"></vi-tag>
-    <vi-tag color="yellow"></vi-tag>
-    <vi-tag color="blue"></vi-tag>
+    <vi-tag>好奇妙呀</vi-tag>
+    <vi-tag color="purple">好奇妙呀</vi-tag>
+    <vi-tag color="pink">好奇妙呀</vi-tag>
+    <vi-tag color="red">好奇妙呀</vi-tag>
+    <vi-tag color="green">好奇妙呀</vi-tag>
+    <vi-tag color="yellow">好奇妙呀</vi-tag>
+    <vi-tag color="blue">好奇妙呀</vi-tag>
+    <vi-tag max mutate>好奇妙呀</vi-tag>
+    <vi-tag max mutate color="purple">好奇妙呀</vi-tag>
+    <vi-tag max mutate color="pink">好奇妙呀</vi-tag>
+    <vi-tag max mutate color="red">好奇妙呀</vi-tag>
+    <vi-tag max mutate color="green">好奇妙呀</vi-tag>
+    <vi-tag max mutate color="yellow">好奇妙呀</vi-tag>
+    <vi-tag max mutate color="blue">好奇妙呀</vi-tag>
   </vi-row>
   <vi-row>
-    <vi-tag size="small"></vi-tag>
-    <vi-tag size="small" color="purple"></vi-tag>
-    <vi-tag size="small" color="pink"></vi-tag>
-    <vi-tag size="small" color="red"></vi-tag>
-    <vi-tag size="small" color="green"></vi-tag>
-    <vi-tag size="small" color="yellow"></vi-tag>
-    <vi-tag size="small" color="blue"></vi-tag>
+    <vi-tag size="small">真奇妙呀</vi-tag>
+    <vi-tag size="small" color="purple">真奇妙呀</vi-tag>
+    <vi-tag size="small" color="pink">真奇妙呀</vi-tag>
+    <vi-tag size="small" color="red">真奇妙呀</vi-tag>
+    <vi-tag size="small" color="green">真奇妙呀</vi-tag>
+    <vi-tag size="small" color="yellow">真奇妙呀</vi-tag>
+    <vi-tag size="small" color="blue">真奇妙呀</vi-tag>
   </vi-row>
   <vi-row>
-    <vi-tag size="big"></vi-tag>
-    <vi-tag size="big" color="purple"></vi-tag>
-    <vi-tag size="big" color="pink"></vi-tag>
-    <vi-tag size="big" color="red"></vi-tag>
-    <vi-tag size="big" color="green"></vi-tag>
-    <vi-tag size="big" color="yellow"></vi-tag>
-    <vi-tag size="big" color="blue"></vi-tag>
+    <vi-tag size="big">真奇妙呀</vi-tag>
+    <vi-tag size="big" color="purple">真奇妙呀</vi-tag>
+    <vi-tag size="big" color="pink">真奇妙呀</vi-tag>
+    <vi-tag size="big" color="red">真奇妙呀</vi-tag>
+    <vi-tag size="big" color="green">真奇妙呀</vi-tag>
+    <vi-tag size="big" color="yellow">真奇妙呀</vi-tag>
+    <vi-tag size="big" color="blue">真奇妙呀</vi-tag>
   </vi-row>
   <vi-drawer v-model="open">
     <vi-nav v-model="choose">
@@ -750,7 +757,10 @@
         {{item}}
       </div>
     </vi-nav>
-  </vi-drawer> -->
+  </vi-drawer>
+  <vi-input show-clear show-password></vi-input>
+  <vi-input type="plain" password show-clear show-password></vi-input>
+  <vi-input type="button" password show-clear show-password></vi-input>
 </template>
 
 <script lang="ts">
