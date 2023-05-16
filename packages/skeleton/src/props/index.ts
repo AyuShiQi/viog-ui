@@ -5,7 +5,7 @@ export default {
     default: 'default'
   },
   animate: {
-    type: String,
+    type: Boolean,
     default: false
   }
 }
