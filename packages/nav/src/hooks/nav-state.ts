@@ -7,7 +7,8 @@ export default function (props: any, ctx: SetupContext) {
 
   const listEvent: EventListener[] = []
   const nav = ref()
-  const choose = ref(props.defaultId)
+  // hover 双分支处理
+  const choose = ref(props.trigger === 'click' ? props.defaultId : -1)
   const listLen = reactive([] as number[])
   const listOffset = reactive([] as number[])
 

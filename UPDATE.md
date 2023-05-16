@@ -111,9 +111,8 @@
 
 # 0.5.2
 
-- 修复nav组件hover模式下，line默认出现不正确问题
+- 修复nav组件hover模式下，line默认出现不正确问题*
 - 增添menu组件默认跳转路由与路由获取并选中显示功能*
-- 修改默认h1~h6样式
 - 修复input组件button情况下，clear、password按钮无法看见颜色的情况
 - 修复tag组件无法正常显示插槽内容的情况
 - 修复skeleton animate条件动画展示问题
