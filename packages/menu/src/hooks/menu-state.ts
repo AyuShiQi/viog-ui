@@ -37,8 +37,14 @@ export default function (props: any, ctx: SetupContext) {
     function routerLink (id: number, to: string) {
       routerMap.set(to, id)
     }
-    router.afterEach((to: RouteLocationNormalized, from) => {
-      if (routerMap.has(to.path)) nowPick.value = routerMap.get(to.path)
-    })
+
+    try {
+      router.afterEach((to: RouteLocationNormalized, from) => {
+        if (routerMap.has(to.path)) nowPick.value = routerMap.get(to.path)
+      })
+    } catch (e) {
+      if (e instanceof TypeError) console.error('[viog-ui]: 你并没有在项目中引入vue-router，menu无法正确跳转！')
+      else console.error(e)
+    }
   }
 }
