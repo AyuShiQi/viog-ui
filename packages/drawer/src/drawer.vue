@@ -4,7 +4,8 @@
     :class="[
       `the-${direction}`,
       {
-        'be-open': modelValue
+        'be-open': modelValue,
+        'vi-drawer-teleport': teleport
       }
     ]">
       <div class="vi-drawer-handle" @click="toOpen">

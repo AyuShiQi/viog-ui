@@ -5,5 +5,9 @@ export default {
   direction: {
     type: String,
     default: 'right'
+  },
+  teleport: {
+    type: Boolean,
+    default: true
   }
 }
