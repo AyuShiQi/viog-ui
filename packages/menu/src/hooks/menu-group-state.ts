@@ -13,6 +13,7 @@ export default function (props: any) {
 
   const idCollector = idCollectorState(id)
   const superIdCollector = inject('id-collector', undefined) as ((id: number) => void) | undefined
+  if (nowPick.value === id) toPick(id, props.id)
 
   const isChoose = computed(() => {
     isInRange() ? collapse.value?.toOpen() : collapse.value?.toClose()
