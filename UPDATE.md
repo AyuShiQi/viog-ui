@@ -109,14 +109,19 @@
 - 修改nav组件内部使用v-model更换选择的方式，选择采用事件触发模式
 - 新增menu组件router模式
 
-# 0.5.2
+# 0.5.2（当前迭代开发版本）
 
-- 修复nav组件hover模式下，line默认出现不正确问题*
-- 增添menu组件默认跳转路由与路由获取并选中显示功能*
+- 修复nav组件hover模式下，line默认出现不正确问题
+- 增添menu组件默认跳转路由与路由获取并选中显示功能
 - 修复input组件button情况下，clear、password按钮无法看见颜色的情况
-- 修复tag组件无法正常显示插槽内容的情况*
-- 修复skeleton animate条件动画展示问题*
-- 新增tag组件max、mutate属性*
+- 修复tag组件无法正常显示插槽内容的情况
+- 修复skeleton animate条件动画展示问题
+- 新增tag组件max、mutate属性
+- 新增drawer组件teleport属性，默认开启，开启后组件自动固定于body中
+
+# 0.5.3
+
+- 新增input框远程搜索功能
 
 # 0.6.0
 

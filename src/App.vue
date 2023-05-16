@@ -142,7 +142,7 @@
     折叠面板，沙琪玛好吃
   </vi-collapse> -->
 
-  <vi-row justify="center">
+  <!-- <vi-row justify="center">
     <ViButton @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
     <ViButton color="pink" @click="opent">打开toast</ViButton>
@@ -224,7 +224,7 @@
     <ViButton disabled color="purple" mutate>点击进入</ViButton>
     <ViButton disabled color="green" mutate>点击进入</ViButton>
     <ViButton disabled color="dark" mutate>点击进入</ViButton>
-  </vi-row>
+  </vi-row> -->
 
   <!-- <vi-row justify="center">
     <ViButton disabled type="plain" small>点击进入</ViButton>
@@ -407,17 +407,17 @@
 
   <!-- <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中" class="scroll-style">
     <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
-  </ViScroll>
-  <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
+  </ViScroll> -->
+  <!-- <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
     <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
   </ViScroll> -->
-  <!-- <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" class="virtual-scroll">
+  <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" class="virtual-scroll">
     <template v-slot="vi">
       <vi-row class="lili">
         {{vi.data.number}}
       </vi-row>
     </template>
-  </ViVirtualScroll> -->
+  </ViVirtualScroll>
 
   <!-- <vi-row id="div" style="padding: 10px 0;">
     <ViInput v-model="value" number showClear width="400px" :maxLength="10" @change="ok" placeholder="账号"></ViInput><br/>
@@ -761,6 +761,7 @@
   <vi-input show-clear show-password></vi-input>
   <vi-input type="plain" password show-clear show-password></vi-input>
   <vi-input type="button" password show-clear show-password></vi-input>
+  <vi-skeleton animate></vi-skeleton>
 </template>
 
 <script lang="ts">
@@ -944,6 +945,7 @@ div > button {
 
 .scroll-style {
   --vi-scroll-width: 100px;
+  --vi-scroll-height: 300px;
   background-color: #fff;
 }
 
