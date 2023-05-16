@@ -10,7 +10,7 @@ export default function (props: any, ctx: SetupContext) {
   const superIdCollector = inject('id-collector', undefined) as ((id: number) => void) | undefined
   if (superIdCollector) superIdCollector(id)
   // router default
-  if(nowPick.value === id) toPick(id, props.id)
+  if (nowPick.value === id) toPick(id, props.id)
 
   const isChoose = computed(() => {
     return id === nowPick.value
