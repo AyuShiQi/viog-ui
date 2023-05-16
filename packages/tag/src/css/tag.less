@@ -14,50 +14,82 @@
     }
 }
 
-.vi-tag.is-middle {
+.vi-tag-max {
+    --vi-tag-padding: var(--vi-card-padding);
+}
+
+.vi-tag-size-middle {
     font-size: var(--vi-font-size);
 }
 
-.vi-tag.is-small {
+.vi-tag-size-small {
     font-size: var(--vi-small-font-size);
 }
 
-.vi-tag.is-big {
+.vi-tag-size-big {
     font-size: var(--vi-big-font-size);
 }
 
-.vi-tag--default {
+.vi-tag-color-default {
     &:hover {
         background-color: var(--vi-background-color-deep);
     }
 }
 
-.vi-tag--purple {
+.vi-tag-mutate.vi-tag-color-default {
+    color: var(--vi-font-color);
+}
+
+.vi-tag-color-purple {
     color: #fff;
     background-color: var(--vi-purple-color3);
 }
 
-.vi-tag--pink {
+.vi-tag-mutate.vi-tag-color-purple {
+    background: var(--vi-purple-background);
+}
+
+.vi-tag-color-pink {
     color: #fff;
     background-color: var(--vi-pink-color3);
 }
 
-.vi-tag--red {
+.vi-tag-mutate.vi-tag-color-pink {
+    background: var(--vi-pink-background);
+}
+
+.vi-tag-color-red {
     color: #fff;
     background-color: var(--vi-red-color3);
 }
 
-.vi-tag--green {
+.vi-tag-mutate.vi-tag-color-red {
+    background: var(--vi-red-background);
+}
+
+.vi-tag-color-green {
     color: #fff;
     background-color: var(--vi-green-color3);
 }
 
-.vi-tag--yellow {
+.vi-tag-mutate.vi-tag-color-green {
+    background: var(--vi-green-background);
+}
+
+.vi-tag-color-yellow {
     color: #fff;
     background-color: var(--vi-yellow-color3);
 }
 
-.vi-tag--blue {
+.vi-tag-mutate.vi-tag-color-yellow {
+    background: var(--vi-yellow-background);
+}
+
+.vi-tag-color-blue {
     color: #fff;
     background-color: var(--vi-blue-color3);
+}
+
+.vi-tag-mutate.vi-tag-color-blue {
+    background: var(--vi-blue-background);
 }

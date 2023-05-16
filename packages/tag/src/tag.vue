@@ -2,16 +2,21 @@
   <span
   class="vi-tag"
   :class="[
-    `vi-tag--${color}`,
-    `is-${size}`
+    `vi-tag-color-${color}`,
+    `vi-tag-size-${size}`,
+    {
+      'vi-tag-max': max,
+      'vi-tag-mutate': mutate
+    }
   ]">
-    <span>标签内容</span>
+    <span>
+      <slot></slot>
+    </span>
   </span>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import type { SetupContext } from 'vue'
 
 import props from './props'
 

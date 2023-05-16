@@ -6,5 +6,13 @@ export default {
   size: {
     type: String,
     default: 'middle'
+  },
+  max: {
+    type: Boolean,
+    default: false
+  },
+  mutate: {
+    type: Boolean,
+    default: false
   }
 }
