@@ -88,32 +88,23 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import type { SetupContext } from 'vue'
+import type { InputProps } from './type'
 
 import props from './props'
 
 import InputFix from './input-fix.vue'
 
-import { InputProps } from '@/types/input-types'
-
-import { inputState, valueState, slotState } from './hooks'
+import inputState from './hooks/input-state'
 
 export default defineComponent({
   name: 'ViInput',
   components: { InputFix },
-  emits: ['change', 'input', 'update:modelValue'],
+  emits: ['change', 'input', 'update:modelValue', 'search'],
   props,
   setup (props: InputProps, context: SetupContext) {
-    const value = ref('')
-    const mainInput = inputState(props, context, value)
-    const inputEvent = valueState(props, context, value)
-    const hasSlot = slotState(props, context)
+    const input = inputState(props, context)
 
-    return {
-      ...mainInput,
-      ...inputEvent,
-      ...hasSlot,
-      value
-    }
+    return input
   },
   mounted () {
     if (this.autofocus) this.toFocus()
@@ -122,5 +113,5 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-  @import './css/input.less';
+@import './css/input.less';
 </style>

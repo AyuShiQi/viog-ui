@@ -1,12 +1,14 @@
+
 export default {
   modelValue: {
     type: String,
     default: ''
   },
-  width: {
-    type: String,
-    default: '200px'
-  },
+  // 已弃用
+  // width: {
+  //   type: String,
+  //   default: '200px'
+  // },
   password: {
     type: Boolean,
     default: false
@@ -80,5 +82,9 @@ export default {
   placeholder: {
     type: String,
     default: ''
+  },
+  search: {
+    type: Boolean,
+    default: false
   }
 }

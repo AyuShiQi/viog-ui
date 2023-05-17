@@ -1,12 +1,22 @@
 import { ref, computed } from 'vue'
-import type { SetupContext, Ref } from 'vue'
+import type { SetupContext } from 'vue'
+import type { InputProps } from '../type'
+import type { InputDOM } from '@/types/vue-types'
 
-import { InputDOM } from '@/types/vue-types'
-import { InputProps } from '@/types/input-types'
+import valueState from './value-state'
+import slotState from './slot-state'
+import searchState from './search-state'
 
-export default function (props: InputProps, context: SetupContext, value: Ref) {
+export default function (props: InputProps, context: SetupContext) {
   // input dom
   const input = ref()
+  // ref
+  // 输出的value
+  const value = ref('')
+
+  const search = searchState(props, context, value, input)
+  const inputEvent = valueState(props, context, value, search.search)
+  const hasSlot = slotState(props, context)
 
   /* 密码展示部分 */
   // 是否展示密码
@@ -62,6 +72,7 @@ export default function (props: InputProps, context: SetupContext, value: Ref) {
   // #endregion
 
   return {
+    value,
     // password 显示控制
     ifShowPassword,
     passwordOrText,
@@ -76,6 +87,9 @@ export default function (props: InputProps, context: SetupContext, value: Ref) {
     focus,
     blur,
     mouseEnter,
-    mouseLeave
+    mouseLeave,
+    ...inputEvent,
+    ...hasSlot,
+    ...search
   }
 }

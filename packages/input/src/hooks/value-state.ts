@@ -1,11 +1,10 @@
 import { onMounted, ref, watch } from 'vue'
 import type { SetupContext, Ref } from 'vue'
-import { ViToast } from '../../../index'
+import type { InputProps } from '../type'
 
 import { InputEvent } from '@/types/vue-types'
-import { InputProps } from '@/types/input-types'
 
-export default function (props: InputProps, context: SetupContext, value: Ref) {
+export default function (props: InputProps, context: SetupContext, value: Ref, search: Ref) {
   onMounted(() => {
     if (props.number && Number.isNaN(Number.parseInt(props.modelValue))) {
       context.emit('update:modelValue', '')
@@ -69,6 +68,8 @@ export default function (props: InputProps, context: SetupContext, value: Ref) {
       if (!props.number) value.value = e.target.value
       context.emit('update:modelValue', pre.value + value.value + suf.value)
       context.emit('input')
+      // search搜索
+      if (props.search && search.value) context.emit('search', value.value)
     }
   }
 
@@ -81,6 +82,7 @@ export default function (props: InputProps, context: SetupContext, value: Ref) {
     if (toUpdateValue(e)) {
       if (!props.number) value.value = e.target.value
       context.emit('update:modelValue', pre.value + value.value + suf.value)
+      context.emit('change')
     }
     // if (e.inputType === undefined) context.emit('change')
   }
