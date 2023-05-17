@@ -6,7 +6,8 @@
     {
       'vi-breadcrumb-item-to': to
     }
-  ]">
+  ]"
+  @click="handleClick">
     <slot></slot>
   </li>
 </template>

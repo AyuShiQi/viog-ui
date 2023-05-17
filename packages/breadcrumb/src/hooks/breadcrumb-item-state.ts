@@ -14,16 +14,21 @@ export default function (props: any, ctx: SetupContext) {
   // reactive
   // inject
   const superColor = inject('breadcrumb-color', undefined) as string | undefined
+  const toPick = inject('breadcrumb-to-pick', undefined) as ((to: string) => void) | undefined
   // computed
   const curColor = computed<string>(() => {
     return props.color ? props.color : superColor!
   })
   // 事件方法
+  function handleClick () {
+    if (toPick) toPick(props.to)
+  }
   // 方法
   // 普通function函数
   // provide
   // 生命周期
   return {
-    curColor
+    curColor,
+    handleClick
   }
 }
