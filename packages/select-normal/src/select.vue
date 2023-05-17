@@ -17,7 +17,10 @@
           'be-open': open
         }
       ]">
-          <span class="vi-select-choose">
+          <span class="vi-select-choose" v-if="search">
+            <input type="text" v-model="value" @input="handleInput" @compositionstart="handleCompositionStart" @compositionend="handleCompositionAfter">
+          </span>
+          <span class="vi-select-choose" v-else>
             {{isEmpty()? placeholder : modelValue}}
           </span>
           <svg
@@ -51,6 +54,7 @@ import selectState from './hooks/select-state'
 export default defineComponent({
   name: 'ViSelect',
   props,
+  emits: ['search', 'update:modelValue'],
   components: {
     dropdown,
     scroll

@@ -1,7 +1,10 @@
 import { provide, computed, ref } from 'vue'
 import type { SetupContext } from 'vue'
 
+import searchState from './search-state'
+
 export default function (props: any, ctx: SetupContext) {
+  const search = searchState(props, ctx)
   const dropdown = ref()
 
   const choosed = computed(() => props.modelValue)
@@ -23,6 +26,7 @@ export default function (props: any, ctx: SetupContext) {
 
   return {
     isEmpty,
-    dropdown
+    dropdown,
+    ...search
   }
 }

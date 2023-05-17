@@ -1,9 +1,14 @@
 export type PropsType<T> = {
     [k in keyof T]: T[k] extends { type: any } ? (
+        T[k] extends { default: any } ? 
         T[k]['type'] extends Array<any> ? (
             includeString<T[k]['type'][0]>
         ) : normalType<T[k]['type']>
-    ) : normalType<T[k]> | undefined
+        : T[k]['type'] extends Array<any> ? (
+            includeString<T[k]['type'][0]>
+        ) : normalType<T[k]['type']> | undefined
+    ) : T[k] extends { default: any } ? any
+    : normalType<T[k]> | undefined
 }
 
 type normalType<T> = T extends StringConstructor ? string :

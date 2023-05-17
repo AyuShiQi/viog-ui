@@ -35,5 +35,9 @@ export default {
   once: {
     type: Boolean,
     default: false
+  },
+  search: {
+    type: Boolean,
+    default: false
   }
 }

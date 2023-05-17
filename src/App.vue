@@ -20,6 +20,7 @@
   <h5>中国China</h5>
   <h6>中国China</h6>
   <p>中国China</p>
+  <vi-input search @search="ok"></vi-input>
   <vi-breadcrumb color="purple">
     <vi-breadcrumb-item to="/goto">我的项目</vi-breadcrumb-item>
     <vi-breadcrumb-item to="/home" color="green">最近更新</vi-breadcrumb-item>
@@ -82,6 +83,8 @@
     </template>
   </vi-input>
   <vi-skeleton></vi-skeleton>
+
+  <vi-select placeholder="请选择" search @search="ok" v-model="value"></vi-select>
 
   <vi-menu shadow @select="ok" router>
     <vi-menu-item to="/home">
