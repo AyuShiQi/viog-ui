@@ -9,6 +9,7 @@ import type { SetupContext, Ref } from 'vue'
 
 export default function (props: any, ctx: SetupContext) {
   // 普通常量
+  let timer: NodeJS.Timeout | undefined = undefined
   // DOM ref
   // ref
   const search = ref(props.search)
@@ -18,7 +19,7 @@ export default function (props: any, ctx: SetupContext) {
   // computed
   // 事件方法
   function handleInput () {
-    if (search.value) ctx.emit('search', value.value)
+    if (search.value) toSearch()
   }
 
   function handleCompositionStart (e: Event) {
@@ -27,10 +28,16 @@ export default function (props: any, ctx: SetupContext) {
 
   function handleCompositionAfter () {
     search.value = true
-    ctx.emit('search', value.value)
+    toSearch()
   }
   // 方法
   // 普通function函数
+  function toSearch () {
+    if (timer) clearTimeout(timer)
+    timer = setTimeout(() => {
+      ctx.emit('search', value.value)
+    }, 500)
+  }
   // provide
   // 生命周期
 
