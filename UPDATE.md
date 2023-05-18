@@ -121,10 +121,10 @@
 
 # 0.5.3
 
-- 新增input框远程搜索功能，添加search属性用于搜索控制*
-- 新增select框远程搜索功能，添加search属性用于搜索控制 （今日事）
+- 新增input框远程搜索功能，添加search属性用于搜索控制
+- 新增select框远程搜索功能，添加search属性用于搜索控制
 - 处理一下search与choosed之间的关系
-- 采用composion事件优化远程搜索（今日事）
+- 采用composion事件优化远程搜索
 
 # 0.6.0
 

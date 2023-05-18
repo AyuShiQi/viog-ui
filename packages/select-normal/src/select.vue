@@ -20,7 +20,13 @@
         }
       ]">
           <span class="vi-select-choose" v-if="search">
-            <input type="text" v-model="value" @input="handleInput" @compositionstart="handleCompositionStart" @compositionend="handleCompositionAfter" ref="input">
+            <input type="text"
+            v-model="value"
+            @input="handleInput"
+            @blur="searchToBlur"
+            @compositionstart="handleCompositionStart"
+            @compositionend="handleCompositionAfter"
+            ref="input">
           </span>
           <span class="vi-select-choose" v-else>
             {{isEmpty()? placeholder : modelValue}}

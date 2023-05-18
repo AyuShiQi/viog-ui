@@ -43,7 +43,7 @@
   :maxlength="11"
   number></vi-input>
 
-  <vi-input type="plain" :style="{
+  <!-- <vi-input type="plain" :style="{
     position: 'absolute',
     top: '80%',
     left: '50%',
@@ -81,11 +81,16 @@
         </vi-option-group>
       </vi-select>
     </template>
-  </vi-input>
+  </vi-input> -->
   <vi-skeleton></vi-skeleton>
 
   <vi-select placeholder="请选择" search @search="ok" v-model="value">
-    <vi-option>{{value}}</vi-option>
+    <vi-option :value="val">{{val}}</vi-option>
+    <vi-option :value="val">{{val}}</vi-option>
+    <vi-option :value="val">{{val}}</vi-option>
+    <vi-option :value="val">{{val}}</vi-option>
+    <vi-option :value="val">{{val}}</vi-option>
+    <vi-option :value="val">{{val}}</vi-option>
   </vi-select>
 
   <vi-menu shadow @select="ok" router>
@@ -811,6 +816,7 @@ export default defineComponent({
     const choose = ref(0)
     const res = ref(false)
     const value = ref('')
+    const val = ref('')
     const ar = reactive([])
     const { proxy } = getCurrentInstance() as ComponentInternalInstance
     const open = ref(true)
@@ -827,7 +833,7 @@ export default defineComponent({
       console.log(v)
       setTimeout(() => {
         n.finish.value = true
-        value.value = v
+        val.value = v
       }, 500)
     }
 
@@ -869,6 +875,7 @@ export default defineComponent({
     }
 
     return {
+      val,
       ar,
       value,
       hello,

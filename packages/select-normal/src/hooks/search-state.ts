@@ -9,7 +9,6 @@ import type { SetupContext, Ref } from 'vue'
 
 export default function (props: any, ctx: SetupContext, dropdown: Ref, choosed: Ref) {
   // 普通常量
-  let timer: NodeJS.Timeout | undefined
   // DOM ref
   const input = ref()
   // ref
@@ -29,6 +28,10 @@ export default function (props: any, ctx: SetupContext, dropdown: Ref, choosed: 
     value.value = choosed.value
   })
   // 事件方法
+  function searchToBlur () {
+    if (value.value !== choosed.value) value.value = choosed.value
+  }
+
   function handleInput () {
     if (search.value) toSearch()
   }
@@ -48,12 +51,9 @@ export default function (props: any, ctx: SetupContext, dropdown: Ref, choosed: 
   // 方法
   // 普通function函数
   function toSearch () {
-    if (timer) clearTimeout(timer)
-    timer = setTimeout(() => {
-      finish.value = false
-      // 将finish置为true后展示搜索结果
-      ctx.emit('search', value.value, { finish })
-    }, 300)
+    finish.value = false
+    // 将finish置为true后展示搜索结果
+    ctx.emit('search', value.value, { finish })
   }
   // provide
   // 生命周期
@@ -62,6 +62,7 @@ export default function (props: any, ctx: SetupContext, dropdown: Ref, choosed: 
     input,
     value,
     finish,
+    searchToBlur,
     toFocus,
     handleInput,
     handleCompositionStart,
