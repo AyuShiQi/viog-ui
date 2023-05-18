@@ -1,6 +1,6 @@
 <template>
   <dropdown
-  :beforeopen="search"
+  :noTriggerOpen="search"
   @click="toFocus"
   ref="dropdown"
   class="vi-select"
