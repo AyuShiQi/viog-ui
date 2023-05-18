@@ -50,7 +50,7 @@
     margin: '0 0 0 -100px'
   }">
     <template v-slot:prefix>
-      <vi-select class="v-v-v" v-model="value" chooseType="plain" once>
+      <vi-select class="v-v-v" v-model="value" chooseType="plain">
         <vi-option-group title="常用地区">
           <vi-option value="+86" selected desc="中国大陆">
             <template v-slot:pre>

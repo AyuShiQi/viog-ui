@@ -1,6 +1,6 @@
 <template>
-    <span class="vi-dropdown" ref="openDOM" @click="changeOpen" @mouseover="mouseOpen" @mouseout="mouseClose">
-      <div class="vi-dropdown-nav" ref="boxPositionDOM">
+    <span class="vi-dropdown" ref="openDOM"  @mouseover="mouseOpen" @mouseout="mouseClose">
+      <div class="vi-dropdown-nav" ref="boxPositionDOM" @click="changeOpen">
         <slot :open="open"></slot>
       </div>
       <div
@@ -55,12 +55,12 @@ export default defineComponent({
       // 当此次操作时打开时，仅做重新计算处理
       if (!open.open.value) {
         open.toSelect({
-          preCb: () => props.beforeopen,
+          preCb: () => !props.noTriggerOpen,
           afterCb: boxPosition.recalcSize
         })
       } else {
         open.toSelect({
-          preCb: () => props.beforeopen,
+          preCb: () => !props.noTriggerOpen,
           afterCb: boxPosition.toChangeViewPosition
         })
       }
