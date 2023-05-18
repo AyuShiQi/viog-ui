@@ -1,7 +1,7 @@
 <template>
     <span class="vi-dropdown" ref="openDOM" @click="changeOpen" @mouseover="mouseOpen" @mouseout="mouseClose">
       <div class="vi-dropdown-nav" ref="boxPositionDOM">
-        <slot :open="open">dropdown</slot>
+        <slot :open="open"></slot>
       </div>
       <div
       class="vi-dropdown-content"
@@ -34,6 +34,7 @@ export default defineComponent({
     const open = openState()
     const boxPosition = boxPositionState()
 
+    // 针对hover的方法
     function mouseClose () {
       if (props.trigger !== 'hover') return
       open.toClose(boxPosition.toChangeViewPosition)
@@ -44,11 +45,22 @@ export default defineComponent({
       open.toOpen(boxPosition.recalcSize)
     }
 
+    // 针对click的方法
     function changeOpen () {
       if (props.trigger !== 'click') return
+      if (props.beforeopen) return
       // 当此次操作时打开时，仅做重新计算处理
       if (!open.open.value) open.toSelect(boxPosition.recalcSize)
       else open.toSelect(boxPosition.toChangeViewPosition)
+    }
+
+    function toopen () {
+      // 当此次操作时打开时，仅做重新计算处理
+      open.toOpen(boxPosition.recalcSize)
+    }
+
+    function toclose () {
+      open.toSelect(boxPosition.toChangeViewPosition)
     }
 
     return {
@@ -56,7 +68,9 @@ export default defineComponent({
       ...boxPosition,
       changeOpen,
       mouseOpen,
-      mouseClose
+      mouseClose,
+      toopen,
+      toclose
     }
   }
 })
