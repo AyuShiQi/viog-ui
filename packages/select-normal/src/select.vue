@@ -1,5 +1,7 @@
 <template>
   <dropdown
+  :beforeopen="search"
+  @click="toFocus"
   ref="dropdown"
   class="vi-select"
   :class="[
@@ -18,7 +20,7 @@
         }
       ]">
           <span class="vi-select-choose" v-if="search">
-            <input type="text" v-model="value" @input="handleInput" @compositionstart="handleCompositionStart" @compositionend="handleCompositionAfter">
+            <input type="text" v-model="value" @input="handleInput" @compositionstart="handleCompositionStart" @compositionend="handleCompositionAfter" ref="input">
           </span>
           <span class="vi-select-choose" v-else>
             {{isEmpty()? placeholder : modelValue}}
@@ -33,9 +35,12 @@
       </span>
     </template>
     <template v-slot:content>
-      <scroll class="vi-select-box vi-select-box-normal">
+      <scroll class="vi-select-box vi-select-box-normal" v-if="finish">
         <slot></slot>
       </scroll>
+      <div v-else>
+        <slot name="loading">加载中</slot>
+      </div>
     </template>
   </dropdown>
 </template>

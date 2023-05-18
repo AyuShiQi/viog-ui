@@ -84,7 +84,9 @@
   </vi-input>
   <vi-skeleton></vi-skeleton>
 
-  <vi-select placeholder="请选择" search @search="ok" v-model="value"></vi-select>
+  <vi-select placeholder="请选择" search @search="ok" v-model="value">
+    <vi-option>{{value}}</vi-option>
+  </vi-select>
 
   <vi-menu shadow @select="ok" router>
     <vi-menu-item to="/home">
@@ -821,8 +823,12 @@ export default defineComponent({
       open.value = false
     }
 
-    function ok (v: any) {
+    function ok (v: any, n: any) {
       console.log(v)
+      setTimeout(() => {
+        n.finish.value = true
+        value.value = v
+      }, 500)
     }
 
     function scr () {
@@ -835,7 +841,7 @@ export default defineComponent({
         console.log('pf')
         setTimeout(() => {
           resolve('ok')
-        }, 3000)
+        }, 500)
       })
     }
 
