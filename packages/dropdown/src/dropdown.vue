@@ -37,30 +37,46 @@ export default defineComponent({
     // 针对hover的方法
     function mouseClose () {
       if (props.trigger !== 'hover') return
-      open.toClose(boxPosition.toChangeViewPosition)
+      open.toClose({
+        afterCb: boxPosition.toChangeViewPosition
+      })
     }
 
     function mouseOpen () {
       if (props.trigger !== 'hover') return
-      open.toOpen(boxPosition.recalcSize)
+      open.toOpen({
+        afterCb: boxPosition.recalcSize
+      })
     }
 
     // 针对click的方法
     function changeOpen () {
       if (props.trigger !== 'click') return
-      if (props.beforeopen) return
       // 当此次操作时打开时，仅做重新计算处理
-      if (!open.open.value) open.toSelect(boxPosition.recalcSize)
-      else open.toSelect(boxPosition.toChangeViewPosition)
+      if (!open.open.value) {
+        open.toSelect({
+          preCb: () => props.beforeopen,
+          afterCb: boxPosition.recalcSize
+        })
+      } else {
+        open.toSelect({
+          preCb: () => props.beforeopen,
+          afterCb: boxPosition.toChangeViewPosition
+        })
+      }
     }
 
     function toopen () {
       // 当此次操作时打开时，仅做重新计算处理
-      open.toOpen(boxPosition.recalcSize)
+      open.toOpen({
+        afterCb: boxPosition.recalcSize
+      })
     }
 
     function toclose () {
-      open.toSelect(boxPosition.toChangeViewPosition)
+      open.toClose({
+        afterCb: boxPosition.toChangeViewPosition
+      })
     }
 
     return {

@@ -4,7 +4,7 @@ export default {
     // hover
     default: 'click'
   },
-  beforeopen: {
+  noTriggerOpen: {
     type: Boolean,
     default: false
   }
