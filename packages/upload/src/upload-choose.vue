@@ -1,6 +1,5 @@
 <template>
-  <div class="vi-upload">
-    <input type="file" ref="fileUploaderInput" @change="handleFileChange"/>
+  <div class="vi-upload-choose" @click="handleClick">
     <slot></slot>
   </div>
 </template>
@@ -10,21 +9,21 @@ import { defineComponent } from 'vue'
 import type { SetupContext } from 'vue'
 // 组件type
 // 组件props
-import props from './props/upload'
+import props from './props/upload-choose'
 // 组件引用components
-import uploadState from './hooks/upload-state'
+import optionChooseState from './hooks/upload-choose-state'
 
 export default defineComponent({
-  name: 'ViUpload',
+  name: 'ViUploadChoose',
   props,
   setup (props: any, ctx: SetupContext) {
-    const upload = uploadState()
+    const optionChoose = optionChooseState()
 
-    return upload
+    return optionChoose
   }
 })
 </script>
 
 <style lang="less">
-@import './css/upload.less';
+@import './css/upload-choose.less';
 </style>

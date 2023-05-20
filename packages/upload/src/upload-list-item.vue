@@ -1,5 +1,5 @@
 <template>
-  <li class="vi-upload-list-item"></li>
+  <li class="vi-upload-list-item">123</li>
 </template>
 
 <script lang="ts">
@@ -15,7 +15,7 @@ export default defineComponent({
   name: 'ViUploadListItem',
   props,
   setup (props: any, ctx: SetupContext) {
-    const uploadListItem = uploadListItemState()
+    const uploadListItem = uploadListItemState(props, ctx)
 
     return uploadListItem
   }
@@ -23,5 +23,5 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-@import './css/_.less';
+@import './css/upload-list-item.less';
 </style>

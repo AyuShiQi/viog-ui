@@ -1,11 +1,13 @@
 // vue
+import { inject } from 'vue'
 // vue type
+import type { SetupContext } from 'vue'
 // 组件type
 // 外部hooks
 // 内部hooks
 // 外部模块
 
-export default function () {
+export default function (props: any, ctx: SetupContext) {
   // 普通常量
   // DOM ref
   // ref

@@ -13,7 +13,11 @@
     <vi-avater src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"></vi-avater>
     <vi-avater></vi-avater>
   </vi-header>
-  <vi-upload></vi-upload>
+  <vi-upload>
+    <vi-upload-choose>
+      <vi-button>点击下载文件</vi-button>
+    </vi-upload-choose>
+  </vi-upload>
   <!-- <input type="file"/> -->
   <h1>中国China</h1>
   <h2>中国China</h2>

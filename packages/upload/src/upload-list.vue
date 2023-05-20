@@ -1,5 +1,7 @@
 <template>
-  <ul class="vi-upload-list"></ul>
+  <ul class="vi-upload-list">
+    <vi-upload-list-item></vi-upload-list-item>
+  </ul>
 </template>
 
 <script lang="ts">
@@ -9,13 +11,18 @@ import type { SetupContext } from 'vue'
 // 组件props
 import props from './props/upload-list'
 // 组件引用components
+import uploadListItem from './upload-list-item.vue'
+
 import uploadListState from './hooks/upload-list-state'
 
 export default defineComponent({
   name: 'ViUploadList',
   props,
+  components: {
+    ViUploadListItem: uploadListItem
+  },
   setup (props: any, ctx: SetupContext) {
-    const uploadList = uploadListState()
+    const uploadList = uploadListState(props, ctx)
 
     return uploadList
   }

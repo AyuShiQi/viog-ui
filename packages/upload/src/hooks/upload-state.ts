@@ -1,5 +1,5 @@
 // vue
-import { ref } from 'vue'
+import { ref, reactive, provide } from 'vue'
 // vue type
 // 组件type
 // 外部hooks
@@ -12,10 +12,11 @@ export default function () {
   const fileUploaderInput = ref()
   // ref
   // reactive
+  const fileList = reactive([] as File[])
   // inject
   // computed
   // 事件方法
-  function handleClick () {
+  function toChooseFile () {
     fileUploaderInput.value.click()
   }
 
@@ -26,16 +27,18 @@ export default function () {
       file.text().then((val) => {
         console.log(val)
       })
+      // 这个可能有bug
+      fileList.push(file)
     }
   }
   // 方法
   // 普通function函数
   // provide
+  provide('upload-choose-file', toChooseFile)
   // 生命周期
 
   return {
     fileUploaderInput,
-    handleClick,
     handleFileChange
   }
 }
