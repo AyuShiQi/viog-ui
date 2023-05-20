@@ -15,16 +15,27 @@ export default function () {
   // inject
   // computed
   // 事件方法
-  // 方法
   function handleClick () {
     fileUploaderInput.value.click()
   }
+
+  function handleFileChange (e: Event) {
+    const { files } = e.target as HTMLInputElement
+    for (const file of files!) {
+      console.log(file)
+      file.text().then((val) => {
+        console.log(val)
+      })
+    }
+  }
+  // 方法
   // 普通function函数
   // provide
   // 生命周期
 
   return {
     fileUploaderInput,
-    handleClick
+    handleClick,
+    handleFileChange
   }
 }
