@@ -1,5 +1,12 @@
 <template>
-  <li class="vi-upload-list-item">123</li>
+  <li
+  class="vi-upload-list-item"
+  :class="[
+    `vi-upload-list-item-format-${format}`
+  ]">
+    <div class="vi-upload-list-item__img"></div>
+    <span class="vi-upload-list-item__text">{{ name }}</span>
+  </li>
 </template>
 
 <script lang="ts">

@@ -12,6 +12,7 @@ export default function () {
   // ref
   // reactive
   // inject
+  // 用于触发打开input file框
   const toChooseFile = inject('upload-choose-file', undefined) as (() => void) | undefined
   // computed
   // 事件方法

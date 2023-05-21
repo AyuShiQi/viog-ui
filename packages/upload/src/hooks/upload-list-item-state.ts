@@ -1,5 +1,5 @@
 // vue
-import { inject } from 'vue'
+import { ref } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
@@ -11,6 +11,8 @@ export default function (props: any, ctx: SetupContext) {
   // 普通常量
   // DOM ref
   // ref
+  const res = /\..+$/.test(props.name)
+  const format = res ? props.name.split('.').pop().toLowerCase() : 'default'
   // reactive
   // inject
   // computed
@@ -19,4 +21,7 @@ export default function (props: any, ctx: SetupContext) {
   // 普通function函数
   // provide
   // 生命周期
+  return {
+    format
+  }
 }

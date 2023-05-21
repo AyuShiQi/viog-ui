@@ -13,10 +13,15 @@ export default function (props: any, ctx: SetupContext) {
   // ref
   // reactive
   // inject
+  const fileList = inject('upload-file-list', []) as File[]
   // computed
   // 事件方法
   // 方法
   // 普通function函数
   // provide
   // 生命周期
+
+  return {
+    fileList
+  }
 }

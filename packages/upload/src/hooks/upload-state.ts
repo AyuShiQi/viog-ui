@@ -27,7 +27,7 @@ export default function () {
       file.text().then((val) => {
         console.log(val)
       })
-      // 这个可能有bug
+      // 这个可能有bug,先试一下
       fileList.push(file)
     }
   }
@@ -35,6 +35,7 @@ export default function () {
   // 普通function函数
   // provide
   provide('upload-choose-file', toChooseFile)
+  provide('upload-file-list', fileList)
   // 生命周期
 
   return {
