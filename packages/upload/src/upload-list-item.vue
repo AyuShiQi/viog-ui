@@ -10,10 +10,10 @@
     <div class="vi-upload-list-item__view">
       <div class="vi-upload-list-item__view__img"></div>
     </div>
-    <p class="vi-upload-list-item__text">
+    <div class="vi-upload-list-item__text">
       <p class="vi-upload-list-item__text__name">{{ name }}</p>
-      <p class="vi-upload-list-item__text__size" v-if="showSize">{{ size }}</p>
-    </p>
+      <p class="vi-upload-list-item__text__size" v-if="showSize">{{ sizeString }}</p>
+    </div>
   </li>
 </template>
 

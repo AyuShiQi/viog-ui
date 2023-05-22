@@ -28,8 +28,18 @@
     }
 
     .vi-upload-list-item__text {
+        display: flex;
         padding-left: .5em;
-        text-overflow: ellipsis;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        .vi-upload-list-item__text__name {
+            text-overflow: ellipsis;
+        }
+        .vi-upload-list-item__text__size {
+            font-size: .8em;
+            color: var(--vi-link-color);
+        }
     }
 }
 
