@@ -156,7 +156,7 @@
 }
 
 body {
-    font-size: 14px;
+    font-size: var(--vi-font-size);
     color: var(--vi-font-color);
 }
 

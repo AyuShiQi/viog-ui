@@ -24,9 +24,9 @@ export default function () {
     const { files } = e.target as HTMLInputElement
     for (const file of files!) {
       console.log(file)
-      file.text().then((val) => {
-        console.log(val)
-      })
+      // file.text().then((val) => {
+      // console.log(val)
+      // })
       // 这个可能有bug,先试一下
       fileList.push(file)
     }

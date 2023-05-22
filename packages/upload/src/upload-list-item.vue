@@ -2,10 +2,18 @@
   <li
   class="vi-upload-list-item"
   :class="[
-    `vi-upload-list-item-format-${format}`
+    `vi-upload-list-item-format-${format}`,
+    {
+      'vi-upload-list-item-show-size': showSize
+    }
   ]">
-    <div class="vi-upload-list-item__img"></div>
-    <span class="vi-upload-list-item__text">{{ name }}</span>
+    <div class="vi-upload-list-item__view">
+      <div class="vi-upload-list-item__view__img"></div>
+    </div>
+    <p class="vi-upload-list-item__text">
+      <p class="vi-upload-list-item__text__name">{{ name }}</p>
+      <p class="vi-upload-list-item__text__size" v-if="showSize">{{ size }}</p>
+    </p>
   </li>
 </template>
 

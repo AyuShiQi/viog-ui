@@ -1,6 +1,11 @@
 <template>
   <ul class="vi-upload-list">
-    <vi-upload-list-item v-for="file in fileList" :key="file.name" :name="file.name"></vi-upload-list-item>
+    <vi-upload-list-item
+    :showSize="showSize"
+    v-for="file in fileList"
+    :key="file.name"
+    :name="file.name"
+    :size="file.size"></vi-upload-list-item>
   </ul>
 </template>
 

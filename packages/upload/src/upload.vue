@@ -1,6 +1,13 @@
 <template>
   <div class="vi-upload">
-    <input type="file" ref="fileUploaderInput" @change="handleFileChange"/>
+    <input
+    type="file"
+    :multiple="multiple"
+    :accept="accept"
+    :capture="capture"
+    :name="name"
+    ref="fileUploaderInput"
+    @change="handleFileChange"/>
     <slot></slot>
   </div>
 </template>

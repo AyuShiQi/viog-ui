@@ -3,46 +3,66 @@
     width: 100%;
     height: 3em;
     align-items: center;
-    background-color: var(--vi-backgroun-deep);
+    // background-color: var(--vi-background-color);
+    box-sizing: border-box;
+    border-radius: var(--vi-card-radius);
     --vi-upload-file-img: url('../img/default.svg');
+    --vi-upload-file-background-color: var(--vi-background-color-deep);
 
-    .vi-upload-list-item__img {
+    .vi-upload-list-item__view {
+        display: flex;
         width: 2em;
         height: 2em;
-        background-color: #fff;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        background-image: var(--vi-upload-file-img);
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--vi-card-radius);
+        background-color: var(--vi-upload-file-background-color);
+
+        .vi-upload-list-item__view__img {
+            width: 2em;
+            height: 2em;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: var(--vi-upload-file-img);
+        }
     }
 
     .vi-upload-list-item__text {
-        height: 1em;
+        padding-left: .5em;
+        text-overflow: ellipsis;
     }
 }
 
 .vi-upload-list-item-format-pdf {
+    --vi-upload-file-background-color: var(--vi-red-color4);
     --vi-upload-file-img: url('../img/pdf.svg');
 }
 
 .vi-upload-list-item-format-doc {
+    --vi-upload-file-background-color: var(--vi-blue-color4);
     --vi-upload-file-img: url('../img/word.svg');
 }
 .vi-upload-list-item-format-docx {
+    --vi-upload-file-background-color: var(--vi-blue-color4);
     --vi-upload-file-img: url('../img/word.svg');
 }
 
 .vi-upload-list-item-format-xls {
+    --vi-upload-file-background-color: var(--vi-green-color4);
     --vi-upload-file-img: url('../img/excel.svg');
 }
 .vi-upload-list-item-format-xlsx {
+    --vi-upload-file-background-color: var(--vi-green-color4);
     --vi-upload-file-img: url('../img/excel.svg');
 }
 
 .vi-upload-list-item-format-pptx {
+    --vi-upload-file-background-color: var(--vi-red-color4);
     --vi-upload-file-img: url('../img/ppt.svg');
 }
 
 .vi-upload-list-item-format-txt {
+    --vi-upload-file-background-color: var(--vi-green-color4);
     --vi-upload-file-img: url('../img/txt.svg');
 }
 
@@ -54,9 +74,11 @@
 }
 
 .vi-upload-list-item-format-zip {
+    --vi-upload-file-background-color: var(--vi-yellow-color4);
     --vi-upload-file-img: url('../img/zip.svg');
 }
 .vi-upload-list-item-format-rar {
+    --vi-upload-file-background-color: var(--vi-yellow-color4);
     --vi-upload-file-img: url('../img/zip.svg');
 }
 
