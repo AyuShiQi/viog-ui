@@ -12,7 +12,7 @@ export default function () {
   const fileUploaderInput = ref()
   // ref
   // reactive
-  const fileList = reactive([] as File[])
+  const fileList = reactive(new Set<File>())
   // inject
   // computed
   // 事件方法
@@ -28,7 +28,7 @@ export default function () {
       // console.log(val)
       // })
       // 这个可能有bug,先试一下
-      fileList.push(file)
+      fileList.add(file)
     }
   }
   // 方法

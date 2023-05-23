@@ -17,7 +17,10 @@
     <vi-upload-choose>
       <vi-button>点击下载文件</vi-button>
     </vi-upload-choose>
+    <vi-upload-list></vi-upload-list>
     <vi-upload-list show-size></vi-upload-list>
+    <vi-upload-list type="button"></vi-upload-list>
+    <vi-upload-list show-size type="button"></vi-upload-list>
   </vi-upload>
   <!-- <input type="file"/> -->
   <h1>中国China</h1>

@@ -2,6 +2,7 @@
   <ul class="vi-upload-list">
     <vi-upload-list-item
     :showSize="showSize"
+    :type="type"
     v-for="file in fileList"
     :key="file.name"
     :name="file.name"

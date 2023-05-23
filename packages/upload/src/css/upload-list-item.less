@@ -1,13 +1,15 @@
 .vi-upload-list-item {
+    overflow: hidden;
+    // position: relative;
     display: flex;
     width: 100%;
     height: 3em;
     align-items: center;
-    // background-color: var(--vi-background-color);
     box-sizing: border-box;
     border-radius: var(--vi-card-radius);
     --vi-upload-file-img: url('../img/default.svg');
     --vi-upload-file-background-color: var(--vi-background-color-deep);
+    user-select: none;
 
     .vi-upload-list-item__view {
         display: flex;
@@ -31,14 +33,40 @@
         display: flex;
         padding-left: .5em;
         flex-direction: column;
-        justify-content: space-between;
+        // justify-content: space-between;
         align-items: flex-start;
         .vi-upload-list-item__text__name {
+            cursor: pointer;
             text-overflow: ellipsis;
+
+            &:hover {
+                color: var(--vi-link-color);
+            }
         }
         .vi-upload-list-item__text__size {
             font-size: .8em;
-            color: var(--vi-link-color);
+            color: var(--vi-icon-color);
+        }
+    }
+
+    .vi-upload-list-item__delete-btn {
+        // position: absolute;
+        overflow: hidden;
+        display: flex;
+        width: 0;
+        height: 100%;
+        color: #fff;
+        background-color: var(--vi-red-color3);
+        align-items: center;
+        justify-content: center;
+        transition: var(--vi-transition);
+        cursor: pointer;
+    }
+
+    &:hover {
+        .vi-upload-list-item__delete-btn {
+            width: 3em;
+            margin-right: 1em;
         }
     }
 }

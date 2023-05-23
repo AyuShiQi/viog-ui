@@ -1,5 +1,6 @@
 export default {
   name: String,
   size: Number,
-  showSize: Boolean
+  showSize: Boolean,
+  type: String
 }
