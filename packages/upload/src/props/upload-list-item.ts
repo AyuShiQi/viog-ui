@@ -1,6 +1,6 @@
 export default {
-  name: String,
-  size: Number,
+  file: Object,
   showSize: Boolean,
-  type: String
+  type: String,
+  delete: Boolean
 }

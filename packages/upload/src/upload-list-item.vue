@@ -8,12 +8,14 @@
       'vi-upload-list-item-show-size': showSize
     }
   ]">
-    <div class="vi-upload-list-item__delete-btn">删除</div>
+    <div class="vi-upload-list-item__delete-btn" @click="handleDelete">
+        删除
+    </div>
     <div class="vi-upload-list-item__view">
       <div class="vi-upload-list-item__view__img"></div>
     </div>
     <div class="vi-upload-list-item__text">
-      <p class="vi-upload-list-item__text__name">{{ name }}</p>
+      <p class="vi-upload-list-item__text__name">{{ file!.name }}</p>
       <p class="vi-upload-list-item__text__size" v-if="showSize">{{ sizeString }}</p>
     </div>
   </li>

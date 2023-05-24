@@ -5,8 +5,7 @@
     :type="type"
     v-for="file in fileList"
     :key="file.name"
-    :name="file.name"
-    :size="file.size"></vi-upload-list-item>
+    :file="file"></vi-upload-list-item>
   </ul>
 </template>
 

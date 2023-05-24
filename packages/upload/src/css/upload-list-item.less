@@ -1,6 +1,6 @@
 .vi-upload-list-item {
     overflow: hidden;
-    // position: relative;
+    position: relative;
     display: flex;
     width: 100%;
     height: 3em;
@@ -50,10 +50,11 @@
     }
 
     .vi-upload-list-item__delete-btn {
-        // position: absolute;
+        position: absolute;
         overflow: hidden;
         display: flex;
-        width: 0;
+        right: -3em;
+        width: 3em;
         height: 100%;
         color: #fff;
         background-color: var(--vi-red-color3);
@@ -65,8 +66,7 @@
 
     &:hover {
         .vi-upload-list-item__delete-btn {
-            width: 3em;
-            margin-right: 1em;
+            right: 0; 
         }
     }
 }
