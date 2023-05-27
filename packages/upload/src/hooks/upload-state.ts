@@ -26,6 +26,7 @@ export default function (props: any, ctx: SetupContext) {
   function handleFileChange (e: Event) {
     const _prevent = eventPrevent()
     const { files } = e.target as HTMLInputElement
+    let flag = false
     for (const file of files!) {
       if (props.limit && file.size > props.limit) {
         ctx.emit('LimitAttention', file)
@@ -40,13 +41,15 @@ export default function (props: any, ctx: SetupContext) {
         }
       }
       console.log(file)
-      // file.text().then((val) => {
-      // console.log(val)
-      // })
       // 这个可能有bug,先试一下
       ctx.emit('beforeadd', file, _prevent.preventDefault)
-      if (_prevent.defaultEvent) fileList.push(file)
-      ctx.emit('afteradd', file)
+      if (_prevent.defaultEvent) {
+        flag = true
+        fileList.push(file)
+        ctx.emit('afteradd', file)
+      }
+      // change事件触发
+      if (flag) ctx.emit('change', [...fileList])
     }
   }
   // 方法
