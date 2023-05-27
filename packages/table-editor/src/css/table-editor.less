@@ -1,0 +1,53 @@
+.vi-table-editor {
+    display: block;
+    border-spacing: 0px;
+
+    .vi-table-editor__header {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: var(--vi-table-header-height);
+        .vi-table-editor__header_view {
+            position: absolute;
+            display: flex;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+
+            th {
+                display: flex;
+                width: var(--vi-table-td-width);
+                height: 100%;
+                background-color: var(--vi-background-color-deep);
+                border-left: 1px solid #fff;
+                user-select: none;
+                overflow: hidden;
+                white-space: nowrap;
+                box-sizing: border-box;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .vi-table-editor__body {
+        width: 100%;
+
+        tr {
+            width: 100%;
+            height: var(--vi-table-header-height);
+        }
+
+        td {
+            width: var(--vi-table-td-width);
+            height: var(--vi-table-header-height);
+            border-left: 1px solid var(--vi-background-color);
+            border-bottom: 1px solid var(--vi-background-color);
+            background-color: #fff;
+            text-align: center;
+            user-select: none;
+            box-sizing: border-box;
+        }
+    }
+}

@@ -30,6 +30,7 @@
   <h5>中国China</h5>
   <h6>中国China</h6>
   <p>中国China</p>
+  <vi-table-editor></vi-table-editor>
   <vi-input search @search="ok"></vi-input>
   <vi-breadcrumb color="purple">
     <vi-breadcrumb-item to="/goto">我的项目</vi-breadcrumb-item>

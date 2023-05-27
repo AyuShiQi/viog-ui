@@ -41,6 +41,8 @@ import ViSelectN from './select-normal'
 import ViDateSelect from './date-select'
 import ViTimeSelect from './time-select'
 import ViUpload from './upload'
+
+import ViTableEditor from './table-editor'
 // type
 export * from '@/types'
 
@@ -76,7 +78,8 @@ const components = [
   ViBubble,
   ViAvater,
   ViBreadcrumb,
-  ViUpload
+  ViUpload,
+  ViTableEditor
 ]
 
 export {
