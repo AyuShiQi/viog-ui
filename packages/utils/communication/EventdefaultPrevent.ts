@@ -1,7 +1,7 @@
 export default function () {
   let defaultEvent = true
 
-  function preventDefault() {
+  function preventDefault () {
     defaultEvent = false
   }
 

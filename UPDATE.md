@@ -123,7 +123,7 @@
 
 - 新增input框远程搜索功能，添加search属性用于搜索控制
 - 新增select框远程搜索功能，添加search属性用于搜索控制
-- 修复input框default样式padding
+- 修复input框default样式padding（未做）
 
 # 0.6.0
 
@@ -138,6 +138,10 @@
 - 新增tab组件
 - 新增多级选择器
 - 新增page-controller分页器组件
+
+# 0.7.1
+
+- 新增上传组件可拖拽类型
 
 # 0.8.0
 

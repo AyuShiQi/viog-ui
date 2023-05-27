@@ -6,6 +6,7 @@ import type { SetupContext } from 'vue'
 // 外部hooks
 // 内部hooks
 // 外部模块
+
 import eventPrevent from '../../../utils/communication/EventdefaultPrevent'
 
 export default function (props: any, ctx: SetupContext) {
@@ -14,7 +15,7 @@ export default function (props: any, ctx: SetupContext) {
   const fileUploaderInput = ref()
   // ref
   // reactive
-  const fileList = reactive(new Set<File>())
+  const fileList = reactive([] as File[])
   // inject
   // computed
   // 事件方法
@@ -26,13 +27,25 @@ export default function (props: any, ctx: SetupContext) {
     const _prevent = eventPrevent()
     const { files } = e.target as HTMLInputElement
     for (const file of files!) {
+      if (props.limit && file.size > props.limit) {
+        ctx.emit('LimitAttention', file)
+        continue
+      }
+      // 文件份数加载前控制
+      if ((props.multiple && fileList.length > 0) || (props.maximum && fileList.length >= props.maximum)) {
+        if (props.replace) fileList.shift()
+        else {
+          ctx.emit('MaximumAttention', file)
+          break
+        }
+      }
       console.log(file)
       // file.text().then((val) => {
       // console.log(val)
       // })
       // 这个可能有bug,先试一下
       ctx.emit('beforeadd', file, _prevent.preventDefault)
-      if (_prevent.defaultEvent) fileList.add(file)
+      if (_prevent.defaultEvent) fileList.push(file)
       ctx.emit('afteradd', file)
     }
   }
@@ -40,7 +53,11 @@ export default function (props: any, ctx: SetupContext) {
   function toDelete (file: File) {
     const _prevent = eventPrevent()
     ctx.emit('beforedelete', file, _prevent.preventDefault)
-    if (_prevent.defaultEvent) fileList.delete(file)
+    // 满足条件删除
+    if (_prevent.defaultEvent) {
+      const index = fileList.findIndex((otherfile) => otherfile === file)
+      fileList.splice(index, 1)
+    }
     ctx.emit('afterdelete', file)
   }
   // 普通function函数

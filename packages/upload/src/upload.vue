@@ -24,7 +24,7 @@ import uploadState from './hooks/upload-state'
 export default defineComponent({
   name: 'ViUpload',
   props,
-  emits: ['beforeadd', 'afteradd', 'beforedelete', 'afterdelete'],
+  emits: ['beforeadd', 'afteradd', 'beforedelete', 'afterdelete', 'MaximumAttention', 'LimitAttention'],
   setup (props: any, ctx: SetupContext) {
     const upload = uploadState(props, ctx)
 
