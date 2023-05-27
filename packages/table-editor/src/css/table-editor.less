@@ -1,17 +1,16 @@
 .vi-table-editor {
-    display: block;
-    border-spacing: 0px;
+    --vi-scroll-width: 100px;
+    --vi-scroll-min-height: 50px;
 
     .vi-table-editor__header {
         display: block;
         position: relative;
-        width: 100%;
         height: var(--vi-table-header-height);
         .vi-table-editor__header_view {
             position: absolute;
             display: flex;
             top: 0;
-            width: 100%;
+            left: 0;
             height: 100%;
             background-color: #fff;
 
@@ -32,10 +31,7 @@
     }
 
     .vi-table-editor__body {
-        width: 100%;
-
-        tr {
-            width: 100%;
+        div {
             height: var(--vi-table-header-height);
         }
 

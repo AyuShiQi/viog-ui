@@ -1,18 +1,18 @@
 <template>
-  <table class="vi-table-editor">
-    <thead class="vi-table-editor__header">
-      <tr class="vi-table-editor__header_view">
+  <scroll class="vi-table-editor">
+    <div class="vi-table-editor__header">
+      <div class="vi-table-editor__header_view">
         <th>A</th>
         <th>B</th>
-      </tr>
-    </thead>
-    <tbody class="vi-table-editor__body">
-      <tr>
+      </div>
+    </div>
+    <div class="vi-table-editor__body">
+      <div>
         <td>A</td>
         <td>B</td>
-      </tr>
-    </tbody>
-  </table>
+      </div>
+    </div>
+  </scroll>
 </template>
 
 <script lang="ts">
@@ -22,11 +22,14 @@ import type { SetupContext } from 'vue'
 // 组件props
 import props from './props/table-editor'
 // 组件引用components
+import { scroll } from '../../scroll'
+
 import tableEditorState from './hooks/table-editor-state'
 
 export default defineComponent({
   name: 'ViTableEditor',
   props,
+  components: { scroll },
   setup (props: any, ctx: SetupContext) {
     const tableEditor = tableEditorState()
 
