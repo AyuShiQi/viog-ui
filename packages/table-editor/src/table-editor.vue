@@ -1,15 +1,30 @@
 <template>
   <scroll class="vi-table-editor">
-    <div class="vi-table-editor__header">
-      <div class="vi-table-editor__header_view">
-        <th>A</th>
-        <th>B</th>
+    <div class="vi-table-editor__view" ref="table">
+      <div class="vi-table-editor__fixed-header"
+      :style="{
+        top: `${tableTop}px`,
+        left: `${tableLeft}px`
+      }"></div>
+      <div class="vi-table-editor__side-header"
+      :style="{
+        left: `${tableLeft}px`
+      }">
+        <span class="vi-table-editor__side-header__th"
+        v-for="item in sideList" :key="item">
+          {{ item }}
+        </span>
       </div>
-    </div>
-    <div class="vi-table-editor__body">
-      <div>
-        <td>A</td>
-        <td>B</td>
+      <div class="vi-table-editor__header"
+      :style="{
+        top: `${tableTop}px`
+      }">
+        <span class="vi-table-editor__header__th" v-for="item in headerList" :key="item">{{ item }}</span>
+      </div>
+      <div class="vi-table-editor__body">
+        <div class="vi-table-editor__body__tr" v-for="arr in modelValue" :key="arr">
+          <span class="vi-table-editor__body__td" v-for="item in arr" :key="item">{{ item }}</span>
+        </div>
       </div>
     </div>
   </scroll>
@@ -31,7 +46,7 @@ export default defineComponent({
   props,
   components: { scroll },
   setup (props: any, ctx: SetupContext) {
-    const tableEditor = tableEditorState()
+    const tableEditor = tableEditorState(props, ctx)
 
     return tableEditor
   }

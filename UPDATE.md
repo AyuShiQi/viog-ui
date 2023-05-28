@@ -99,7 +99,7 @@
 - 新增头像组件
 - 新增气泡框组件
 
-# 0.5.1（当前迭代开发版本）
+# 0.5.1
 
 - 新增nav组件组nav-item组件及nav-item-group组件
 - 新增nav组件触发模式trigger属性
@@ -109,7 +109,7 @@
 - 修改nav组件内部使用v-model更换选择的方式，选择采用事件触发模式
 - 新增menu组件router模式
 
-# 0.5.2（当前迭代开发版本）
+# 0.5.2
 
 - 修复nav组件hover模式下，line默认出现不正确问题
 - 增添menu组件默认跳转路由与路由获取并选中显示功能
@@ -119,13 +119,12 @@
 - 新增tag组件max、mutate属性
 - 新增drawer组件teleport属性，默认开启，开启后组件自动固定于body中
 
-# 0.5.3
+# 0.5.3（当前迭代开发版本）
 
 - 新增input框远程搜索功能，添加search属性用于搜索控制
 - 新增select框远程搜索功能，添加search属性用于搜索控制
-- 修复input框default样式padding（未做）
-- 新增affix组件水平方向粘连功能，增添属性left，right
-- 新增affix组件，target组件，用于决定容器方位(这个粘连可用于scroll中)
+- 修复input框default样式padding
+- 增加scroll组件scroll-bar悬浮显示的功能，使用属性overlay空置（仅在谷歌浏览器下使用）
 
 # 0.6.0
 
@@ -143,7 +142,11 @@
 
 # 0.7.1
 
-- 新增上传组件可拖拽类型
+- 新增上传组件可拖拽drag类型
+
+- 实现可编辑表格以下功能
+
+  ![image-20230528190208350](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20230528190208350.png)
 
 # 0.8.0
 

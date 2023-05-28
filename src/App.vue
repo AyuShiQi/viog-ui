@@ -30,8 +30,8 @@
   <h5>中国China</h5>
   <h6>中国China</h6>
   <p>中国China</p>
-  <vi-table-editor></vi-table-editor>
-  <vi-input search @search="ok"></vi-input>
+  <vi-table-editor v-model="table"></vi-table-editor>
+  <vi-input search @search="ok" show-clear></vi-input>
   <vi-breadcrumb color="purple">
     <vi-breadcrumb-item to="/goto">我的项目</vi-breadcrumb-item>
     <vi-breadcrumb-item to="/home" color="green">最近更新</vi-breadcrumb-item>
@@ -53,6 +53,16 @@
   <vi-input
   :maxlength="11"
   number></vi-input>
+
+  <!-- <vi-scroll :style="{
+    width: '100px',
+    height: '200px'
+  }">
+    <div :style="{
+      width: '200px',
+      height: '300px'
+    }">123333333444444444444444444444444</div>
+  </vi-scroll> -->
 
   <!-- <vi-input type="plain" :style="{
     position: 'absolute',
@@ -834,6 +844,7 @@ export default defineComponent({
     const nav = ['吃饭', '睡觉', '长个子', '好']
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
     const obj = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 }]
+    const table = [['销量', '领先销量', '全球销量'], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]
 
     function hello () {
       alert('hello')
@@ -904,7 +915,8 @@ export default defineComponent({
       opent,
       openf,
       nav,
-      choose
+      choose,
+      table
     }
   },
   mounted () {

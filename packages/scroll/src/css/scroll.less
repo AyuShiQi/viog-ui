@@ -3,7 +3,6 @@
     width: var(--vi-scroll-width);
     height: var(--vi-scroll-height);
     max-height: var(--vi-scroll-max-height);
-    max-height: var(--vi-scroll-max-height);
     transition: all .2s ease-in-out;
 
     .lazy-loading {
@@ -19,10 +18,18 @@
     }
 
     &::-webkit-scrollbar {
-        width: 6px;
-        height: 100%;
         opacity: 1;
         transition: all 0.2s;
+
+        &:vertical {
+            width: 6px;
+            height: 100%;
+        }
+
+        &:horizontal {
+            width: 100%;
+            height: 6px;
+        }
     }
 
     &::-webkit-scrollbar-thumb {
