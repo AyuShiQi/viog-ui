@@ -1,6 +1,4 @@
 // vue
-import { type } from 'os'
-import { nextTick } from 'process'
 import { ref, inject, computed, watch } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'

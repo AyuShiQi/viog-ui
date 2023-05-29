@@ -1,16 +1,18 @@
 // vue
-import { ref, reactive, provide } from 'vue'
+import { ref, reactive, provide, onMounted } from 'vue'
 // vue type
-import type { SetupContext } from 'vue'
+import type { SetupContext, Ref } from 'vue'
 // 组件type
 // 外部hooks
 // 内部hooks
 // 外部模块
 
-export default function (props: any, ctx: SetupContext) {
+export default function (props: any, ctx: SetupContext, table: Ref) {
   // 普通常量
   // DOM ref
   // ref
+  const needPick = ref(false)
+  // reactive
   const chooseTarget = reactive([-1, -1] as [number, number])
   const editTarget = reactive([-1, -1] as [number, number])
   const entireTarget = reactive([-1, -1] as [number, number])
@@ -20,7 +22,6 @@ export default function (props: any, ctx: SetupContext) {
     colStart: -1,
     colEnd: -1
   })
-  // reactive
   // inject
   // computed
   // 事件方法
@@ -35,6 +36,21 @@ export default function (props: any, ctx: SetupContext) {
     entireTarget[1] = -1
     chooseTarget[0] = chooseTarget[1] = -1
   }
+
+  function handlePointerMouseDown (e: Event) {
+    needPick.value = true
+    console.log(e)
+  }
+
+  function handlePointerMouseMove (e: Event) {
+    if (!needPick.value) return
+    // console.log(e)
+    console.log('ok')
+  }
+
+  function handlePointerMouseUp (e: Event) {
+    needPick.value = false
+  }
   // 方法
   function editValue (row: number, col: number, newVal: any) {
     props.modelValue[row][col] = newVal
@@ -46,10 +62,17 @@ export default function (props: any, ctx: SetupContext) {
   provide('table-editor-entire-target', entireTarget)
   provide('table-editor-edit-value', editValue)
   // 生命周期
+  onMounted(() => {
+    table.value.parentNode.addEventListener('mouseup', handlePointerMouseUp)
+  })
+
   return {
     entireTarget,
     chooseTarget,
     handleHeaderClick,
-    handleSiderClick
+    handleSiderClick,
+    handlePointerMouseDown,
+    handlePointerMouseMove,
+    handlePointerMouseUp
   }
 }

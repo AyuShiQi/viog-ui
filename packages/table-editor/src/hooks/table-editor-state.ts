@@ -13,8 +13,8 @@ import tableValueState from './table-value-state'
 const headerMap = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
 export default function (props: any, ctx: SetupContext) {
-  const tableValue = tableValueState(props, ctx)
   const scroll = scrollState(props, ctx)
+  const tableValue = tableValueState(props, ctx, scroll.table)
   // 普通常量
   // DOM ref
   // ref

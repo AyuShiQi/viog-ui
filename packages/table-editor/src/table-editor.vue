@@ -1,5 +1,6 @@
 <template>
-  <scroll class="vi-table-editor">
+  <scroll
+  class="vi-table-editor">
     <div class="vi-table-editor__view" ref="table">
       <div class="vi-table-editor__fixed-header"
       :style="{
@@ -38,14 +39,16 @@
         </span>
       </div>
       <!-- body部分 -->
-      <div class="vi-table-editor__body">
+      <div class="vi-table-editor__body"
+      @mousemove="handlePointerMouseMove">
         <div class="vi-table-editor__body__tr" v-for="(arr, i) in modelValue" :key="arr">
           <tableEditorTd v-for="(item, j) in arr" :key="item" :value="item" :row="Number(i)" :col="j"></tableEditorTd>
         </div>
       </div>
       <!-- 格式框 -->
       <div class="vi-table-editor__pick-box">
-        <div class="vi-table-editor__pick-pointer"></div>
+        <div class="vi-table-editor__pick-pointer"
+        @mousedown="handlePointerMouseDown"></div>
       </div>
     </div>
   </scroll>
