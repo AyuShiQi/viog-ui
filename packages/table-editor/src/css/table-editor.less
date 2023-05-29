@@ -1,8 +1,9 @@
 .vi-table-editor {
     position: relative;
-    --vi-scroll-width: 200px;
+    --vi-scroll-width: 800px;
     --vi-scroll-max-height: 600px;
-    --vi-scroll-height: 100px;
+    --vi-scroll-height: 300px;
+    transition: none;
 
     .vi-table-editor__view {
         color: var(--vi-link-color);
@@ -45,6 +46,10 @@
             align-items: center;
             box-sizing: border-box;
         }
+
+        .vi-table-editor__header__th.is-entire {
+            background-color: var(--vi-green-color3);
+        }
     }
 
     .vi-table-editor__side-header {
@@ -69,28 +74,44 @@
             align-items: center;
             box-sizing: border-box;
         }
+
+        .vi-table-editor__side-header__th.is-entire {
+            background-color: var(--vi-green-color3);
+        }
     }
 
     .vi-table-editor__body {
         position: absolute;
         top: var(--vi-table-header-height);
         left: 40px;
-        z-index: 8;
+        z-index: 1;
         color: var(--vi-font-color);
         .vi-table-editor__body__tr {
             display: flex;
         }
-        .vi-table-editor__body__td {
-            display: flex;
-            width: var(--vi-table-td-width);
-            height: var(--vi-table-header-height);
-            border-right: 1px solid var(--vi-background-color-solid);
-            border-bottom: 1px solid var(--vi-background-color-solid);
-            background-color: #fff;
-            user-select: none;
-            justify-content: center;
-            align-items: center;
+    }
+
+    .vi-table-editor__pick-box {
+        position: absolute;
+        top: 25px;
+        left: 40px;
+        z-index: 12;
+        width: 70px;
+        height: 100px;
+        border: 1px solid var(--vi-green-color1);
+        pointer-events: none;
+
+        .vi-table-editor__pick-pointer {
+            position: absolute;
+            right: -4px;
+            bottom: -4px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--vi-green-color1);
+            border: 1px solid #fff;
             box-sizing: border-box;
+            cursor: crosshair;
+            pointer-events: all;
         }
     }
 }
