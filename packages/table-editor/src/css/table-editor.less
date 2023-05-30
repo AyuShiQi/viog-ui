@@ -4,6 +4,7 @@
     --vi-scroll-max-height: 600px;
     --vi-scroll-height: 300px;
     transition: none;
+    user-select: none;
 
     .vi-table-editor__view {
         color: var(--vi-link-color);
@@ -45,6 +46,7 @@
             justify-content: center;
             align-items: center;
             box-sizing: border-box;
+            user-select: none;
         }
 
         .vi-table-editor__header__th.is-entire {
@@ -73,6 +75,7 @@
             justify-content: center;
             align-items: center;
             box-sizing: border-box;
+            user-select: none;
         }
 
         .vi-table-editor__side-header__th.is-entire {
@@ -88,6 +91,7 @@
         .vi-table-editor__body__tr {
             display: flex;
         }
+        user-select: none;
     }
 
     .vi-table-editor__pick-box {
@@ -114,7 +118,20 @@
             border: 1px solid #fff;
             box-sizing: border-box;
             cursor: crosshair;
-            pointer-events: all;
+            pointer-events: auto;
         }
+    }
+
+    .vi-table-editor__change-box {
+        position: absolute;
+        top: 25px;
+        left: 40px;
+        // 这里也别加z-index
+        // z-index: 6;
+        width: 70px;
+        height: 100px;
+        border: 1px dashed var(--vi-icon-color);
+        pointer-events: none;
+        box-sizing: border-box;
     }
 }

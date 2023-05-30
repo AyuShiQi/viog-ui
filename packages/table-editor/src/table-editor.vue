@@ -1,7 +1,7 @@
 <template>
   <scroll
   class="vi-table-editor">
-    <div class="vi-table-editor__view" ref="table">
+    <div class="vi-table-editor__view" draggable="false" ref="table">
       <div class="vi-table-editor__fixed-header"
       :style="{
         top: `${tableTop}px`,
@@ -39,13 +39,22 @@
         </span>
       </div>
       <!-- body部分 -->
-      <div class="vi-table-editor__body"
-      @mousemove="handlePointerMouseMove">
+      <div class="vi-table-editor__body" draggable="false">
         <div class="vi-table-editor__body__tr" v-for="(arr, i) in value" :key="arr">
           <tableEditorTd v-for="(item, j) in arr" :key="`${item}$${i}$${j}`" :value="item" :row="Number(i)" :col="j"></tableEditorTd>
         </div>
       </div>
       <!-- 格式框 -->
+      <div
+      v-show="needChange"
+      class="vi-table-editor__change-box"
+      :style="{
+        top: changeTop,
+        left: changeLeft,
+        width: changeWidth,
+        height: changeHeight
+      }"></div>
+      <!-- 选中框 -->
       <div
       v-show="pickBoxShow"
       class="vi-table-editor__pick-box"
@@ -56,7 +65,11 @@
         height: pickHeight
       }">
         <div class="vi-table-editor__pick-pointer"
-        @mousedown="handlePointerMouseDown"></div>
+        @mousedown="handlePointerMouseDown"
+        :style="{
+          'pointer-events': needChange ? 'none' : 'auto'
+        }"
+        ></div>
       </div>
     </div>
   </scroll>

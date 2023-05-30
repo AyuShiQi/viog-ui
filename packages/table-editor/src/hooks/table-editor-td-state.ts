@@ -9,8 +9,18 @@ type PickTarget = {
   row: number,
   col: number,
   colLen: number,
-  rowLen: number
+  rowLen: number,
+  rowStart: number,
+  rowEnd: number,
+  colStart: number,
+  colEnd: number
 } | undefined
+
+type ChangeTarget = {
+  row: number,
+  col: number
+} | undefined
+
 type EditValue = ((row: number, col: number, value: any) => void) | undefined
 // 外部hooks
 // 内部hooks
@@ -31,6 +41,7 @@ export default function (props: any, ctx: SetupContext) {
   const needPick = inject('table-editor-need-pick', undefined) as Ref<boolean> | undefined
   const needChange = inject('table-editor-need-change', undefined) as Ref<boolean> | undefined
   const pickTarget = inject('table-editor-pick-target', undefined) as PickTarget
+  const changeTarget = inject('table-editor-change-target', undefined) as ChangeTarget
   // computed
   const beChoosed = computed(() => {
     if (chooseTarget![0] === -1 || chooseTarget![1] === -1) return false
@@ -47,6 +58,7 @@ export default function (props: any, ctx: SetupContext) {
   // watch
   // 事件方法
   function handleMouseDown () {
+    // 选中命中
     needPick!.value = true
     // 选择当前位置
     chooseTarget![0] = props.row
@@ -60,21 +72,31 @@ export default function (props: any, ctx: SetupContext) {
   }
 
   function handleDoubleClick () {
+    // 格式化功能取消
     needPick!.value = false
-    editTarget![0] = props.row
-    editTarget![1] = props.col
+    needChange!.value = false
+    // 选中取消
     pickTarget!.row = -1
     pickTarget!.col = -1
+    changeTarget!.row = -1
+    changeTarget!.col = -1
+    // 编辑命中
+    editTarget![0] = props.row
+    editTarget![1] = props.col
+    // 自动聚焦input
     setTimeout(() => {
       editInput.value.focus()
     })
   }
 
   function handleMouseEnter () {
-    if (!needPick!.value) return
-    pickTarget!.rowLen = props.row - pickTarget!.row
-    pickTarget!.colLen = props.col - pickTarget!.col
-    // if (!needChange!.value) return
+    if (needPick!.value) {
+      pickTarget!.rowLen = props.row - pickTarget!.row
+      pickTarget!.colLen = props.col - pickTarget!.col
+    } else if (needChange!.value) {
+      changeTarget!.row = props.row
+      changeTarget!.col = props.col
+    }
   }
 
   function handleBlur () {

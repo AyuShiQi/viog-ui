@@ -18,7 +18,7 @@ export default function (props: any, ctx: SetupContext) {
   const value = reactive(props.modelValue)
   const scroll = scrollState(props, ctx)
   const tableValue = tableValueState(props, ctx, value)
-  const pickBox = pickBoxState(props, ctx, tableValue.chooseTarget, scroll.table, value)
+  const pickBox = pickBoxState(props, ctx, tableValue.chooseTarget, value)
   // 普通常量
   // DOM ref
   // ref
