@@ -1,5 +1,5 @@
 // vue
-import { ref, reactive, onMounted, onBeforeUnmount, computed, watch } from 'vue'
+import { reactive, computed, watch } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
@@ -7,14 +7,18 @@ import type { SetupContext } from 'vue'
 // 内部hooks
 import scrollState from './scroll-state'
 import tableValueState from './table-value-state'
+import pickBoxState from './pick-box-state'
 // 外部模块
 
 // 横向标头生成
 const headerMap = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
 export default function (props: any, ctx: SetupContext) {
+  // 特殊处理
+  const value = reactive(props.modelValue)
   const scroll = scrollState(props, ctx)
-  const tableValue = tableValueState(props, ctx, scroll.table)
+  const tableValue = tableValueState(props, ctx, value)
+  const pickBox = pickBoxState(props, ctx, tableValue.chooseTarget, scroll.table, value)
   // 普通常量
   // DOM ref
   // ref
@@ -119,11 +123,13 @@ export default function (props: any, ctx: SetupContext) {
   // 生命周期
 
   return {
+    value,
     rows,
     cols,
     sideList,
     headerList,
     ...scroll,
-    ...tableValue
+    ...tableValue,
+    ...pickBox
   }
 }

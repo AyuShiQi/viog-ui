@@ -5,8 +5,9 @@
     'vi-table-editor-td-entire': isEntire,
     'vi-table-editor-td-choose': beChoosed
   }"
-  @click="handleClick"
-  @dblclick="handleDoubleClick">
+  @mousedown="handleMouseDown"
+  @dblclick="handleDoubleClick"
+  @mouseenter="handleMouseEnter">
     <span
     v-show="!edit"
     class="vi-table-editor-td__text">
@@ -14,12 +15,13 @@
     </span>
     <input
     name="vi-editor-table-value"
-    v-show="edit"
     type="text"
+    autocomplete="off"
+    v-show="edit"
     class="vi-table-editor-td__input"
     v-model="inputValue"
-    ref="editInput"
-    autocomplete="off"/>
+    @blur="handleBlur"
+    ref="editInput"/>
   </span>
 </template>
 

@@ -41,12 +41,20 @@
       <!-- body部分 -->
       <div class="vi-table-editor__body"
       @mousemove="handlePointerMouseMove">
-        <div class="vi-table-editor__body__tr" v-for="(arr, i) in modelValue" :key="arr">
-          <tableEditorTd v-for="(item, j) in arr" :key="item" :value="item" :row="Number(i)" :col="j"></tableEditorTd>
+        <div class="vi-table-editor__body__tr" v-for="(arr, i) in value" :key="arr">
+          <tableEditorTd v-for="(item, j) in arr" :key="`${item}$${i}$${j}`" :value="item" :row="Number(i)" :col="j"></tableEditorTd>
         </div>
       </div>
       <!-- 格式框 -->
-      <div class="vi-table-editor__pick-box">
+      <div
+      v-show="pickBoxShow"
+      class="vi-table-editor__pick-box"
+      :style="{
+        top: pickTop,
+        left: pickLeft,
+        width: pickWidth,
+        height: pickHeight
+      }">
         <div class="vi-table-editor__pick-pointer"
         @mousedown="handlePointerMouseDown"></div>
       </div>

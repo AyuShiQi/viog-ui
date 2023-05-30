@@ -1,29 +1,23 @@
 // vue
-import { ref, reactive, provide, onMounted } from 'vue'
+import { reactive, provide } from 'vue'
 // vue type
-import type { SetupContext, Ref } from 'vue'
+import type { SetupContext } from 'vue'
 // 组件type
 // 外部hooks
 // 内部hooks
 // 外部模块
 
-export default function (props: any, ctx: SetupContext, table: Ref) {
+export default function (props: any, ctx: SetupContext, value: any) {
   // 普通常量
   // DOM ref
   // ref
-  const needPick = ref(false)
   // reactive
   const chooseTarget = reactive([-1, -1] as [number, number])
   const editTarget = reactive([-1, -1] as [number, number])
   const entireTarget = reactive([-1, -1] as [number, number])
-  const pickTarget = reactive({
-    rowStart: -1,
-    rowEnd: -1,
-    colStart: -1,
-    colEnd: -1
-  })
   // inject
   // computed
+  // watched
   // 事件方法
   function handleHeaderClick (e: Event, col: number) {
     entireTarget[1] = col
@@ -36,24 +30,9 @@ export default function (props: any, ctx: SetupContext, table: Ref) {
     entireTarget[1] = -1
     chooseTarget[0] = chooseTarget[1] = -1
   }
-
-  function handlePointerMouseDown (e: Event) {
-    needPick.value = true
-    console.log(e)
-  }
-
-  function handlePointerMouseMove (e: Event) {
-    if (!needPick.value) return
-    // console.log(e)
-    console.log('ok')
-  }
-
-  function handlePointerMouseUp (e: Event) {
-    needPick.value = false
-  }
   // 方法
   function editValue (row: number, col: number, newVal: any) {
-    props.modelValue[row][col] = newVal
+    value[row][col] = newVal
   }
   // 普通function函数
   // provide
@@ -62,17 +41,11 @@ export default function (props: any, ctx: SetupContext, table: Ref) {
   provide('table-editor-entire-target', entireTarget)
   provide('table-editor-edit-value', editValue)
   // 生命周期
-  onMounted(() => {
-    table.value.parentNode.addEventListener('mouseup', handlePointerMouseUp)
-  })
 
   return {
     entireTarget,
     chooseTarget,
     handleHeaderClick,
-    handleSiderClick,
-    handlePointerMouseDown,
-    handlePointerMouseMove,
-    handlePointerMouseUp
+    handleSiderClick
   }
 }

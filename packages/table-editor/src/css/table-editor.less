@@ -84,7 +84,6 @@
         position: absolute;
         top: var(--vi-table-header-height);
         left: 40px;
-        z-index: 1;
         color: var(--vi-font-color);
         .vi-table-editor__body__tr {
             display: flex;
@@ -95,16 +94,20 @@
         position: absolute;
         top: 25px;
         left: 40px;
-        z-index: 12;
+        // 这里也别加z-index
+        // z-index: 6;
         width: 70px;
         height: 100px;
         border: 1px solid var(--vi-green-color1);
+        background-color: var(--vi-green-color5);
         pointer-events: none;
+        box-sizing: border-box;
 
         .vi-table-editor__pick-pointer {
             position: absolute;
             right: -4px;
             bottom: -4px;
+            z-index: 5;
             width: 8px;
             height: 8px;
             background-color: var(--vi-green-color1);
