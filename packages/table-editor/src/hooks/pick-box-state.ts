@@ -1,5 +1,4 @@
 // vue
-import { row } from 'packages/layout'
 import { ref, reactive, provide, onMounted, computed, watch, onBeforeMount } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
@@ -109,22 +108,62 @@ export default function (props: any, ctx: SetupContext, chooseTarget: [number, n
     }
     if (needChange.value) {
       needChange.value = false
-      // 第一版数据覆盖, 还需要修改
-      const val = value[pickTarget.row][pickTarget.col]
-      // 计算前后坐标
-      // const rowStart = Math.min(pickTarget.row, pickTarget.row + pickTarget.rowLen)
-      // const rowEnd = Math.max(pickTarget.row, pickTarget.row + pickTarget.rowLen)
-      // const colStart = Math.min(pickTarget.col, pickTarget.col + pickTarget.colLen)
-      // const colEnd = Math.max(pickTarget.col, pickTarget.col + pickTarget.colLen)
-      // for (let i = rowStart; i <= rowEnd; i++) {
-      //   for (let j = colStart; j <= colEnd; j++) {
-      //     value[i][j] = val
-      //   }
-      // }
+      // 数据覆盖
+      changeValue()
     }
   }
   // 方法
   // 普通function函数
+  function changeValue () {
+    // 长度获取
+    const { rowStart, rowEnd, colStart, colEnd } = pickTarget
+    const { row, col } = changeTarget
+    const rowLen = rowEnd - rowStart + 1
+    const colLen = colEnd - colStart + 1
+    // 四角区域处理部分
+    // 右下角区域处理
+    if (col > colEnd && row > rowEnd) {
+      coverValue(rowEnd + 1, row, colEnd + 1, col, rowLen, colLen, rowStart, colStart)
+    // 右上角区域处理
+    } else if (col > colEnd && row < rowStart) {
+      coverValue(row, rowStart - 1, colEnd + 1, col, rowLen, colLen, rowStart, colStart)
+    // 左下角区域处理
+    } else if (col < colStart && row > rowEnd) {
+      coverValue(rowEnd + 1, row, col, colEnd - 1, rowLen, colLen, rowStart, colStart)
+    // 左上角区域处理
+    } else if (col < colStart && row < rowStart) {
+      coverValue(row, rowStart - 1, col, colStart - 1, rowLen, colLen, rowStart, colStart)
+    }
+    // 十字区域处理部分
+    // 右边
+    if (col > colEnd) {
+      coverValue(rowStart, rowEnd, colEnd + 1, col, rowLen, colLen, rowStart, colStart)
+    }
+    // 下边
+    if (row > rowEnd) {
+      coverValue(rowEnd + 1, row, colStart, colEnd, rowLen, colLen, rowStart, colStart)
+    }
+    // 左边
+    if (col < colStart) {
+      coverValue(rowStart, rowEnd, col, colStart - 1, rowLen, colLen, rowStart, colStart)
+    }
+    // 上边
+    if (row < rowStart) {
+      coverValue(row, rowStart - 1, colStart, colEnd, rowLen, colLen, rowStart, colStart)
+    }
+  }
+
+  function coverValue (rowStart: number, rowEnd: number, colStart: number, colEnd: number, rowLen: number, colLen: number, row: number, col: number) {
+    let coverRow = 0
+    for (let i = rowStart; i <= rowEnd; i++) {
+      let coverCol = 0
+      for (let j = colStart; j <= colEnd; j++) {
+        value[i][j] = value[coverRow + row][coverCol + col]
+        coverCol = (coverCol + 1) % colLen
+      }
+      coverRow = (coverRow + 1) % rowLen
+    }
+  }
   // provide
   provide('table-editor-pick-target', pickTarget)
   provide('table-editor-change-target', changeTarget)
