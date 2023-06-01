@@ -21,14 +21,10 @@
 
     --vi-tag-padding: .2em .6em;
 
-    --vi-scroll-max-height: 400px;
     --vi-scroll-height: ;
     --vi-scroll-width: ;
     --vi-scroll-max-height: ;
-
-    --vi-virtual-scroll-width: ;
-    --vi-virtual-scroll-height: ;
-    --vi-virtual-scroll-max-height: 400px;
+    --vi-scroll-min-height: ;
 
     --vi-select-width: 200px;
     --vi-select-height: ;
@@ -88,8 +84,12 @@
     --vi-bubble-height: ;
     --vi-bubble-gap: 8px;
 
+    --vi-table-width: 500px;
+    --vi-table-height: 300px;
     --vi-table-header-height: 25px;
+    --vi-table-sider-width: 40px;
     --vi-table-td-width: 70px;
+    --vi-table-td-height: 25px;
 
     /* 颜色样式们 */
     /* 字体样式 */

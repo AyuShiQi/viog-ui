@@ -1,8 +1,7 @@
 .vi-table-editor {
     position: relative;
-    --vi-scroll-width: 800px;
-    --vi-scroll-max-height: 600px;
-    --vi-scroll-height: 300px;
+    --vi-scroll-width: var(--vi-table-width);
+    --vi-scroll-height: var(--vi-table-height);
     transition: none;
     user-select: none;
 
@@ -15,7 +14,8 @@
         top: 0;
         height: 0;
         z-index: 10;
-        width: 40px;
+        // 可自控
+        width: var(--vi-table-sider-width);
         height: var(--vi-table-header-height);
         border-right: 1px solid #fff;
         border-bottom: 1px solid #fff;
@@ -27,13 +27,15 @@
         position: absolute;
         display: flex;
         top: 0;
-        left: 40px;
+        left: var(--vi-table-sider-width);
         z-index: 9;
         background-color: #fff;
+        // 可自控
         height: var(--vi-table-header-height);
 
         .vi-table-editor__header__th {
             display: flex;
+            // 可自控
             width: var(--vi-table-td-width);
             height: 100%;
             background-color: var(--vi-background-color-solid);
@@ -63,8 +65,8 @@
 
         .vi-table-editor__side-header__th {
             display: flex;
-            width: 40px;
-            height: var(--vi-table-header-height);
+            width: var(--vi-table-sider-width);
+            height: var(--vi-table-td-height);
             background-color: var(--vi-background-color-solid);
             border-bottom: 1px solid #fff;
             font-weight: 600;
@@ -86,7 +88,7 @@
     .vi-table-editor__body {
         position: absolute;
         top: var(--vi-table-header-height);
-        left: 40px;
+        left: var(--vi-table-sider-width);
         color: var(--vi-font-color);
         .vi-table-editor__body__tr {
             display: flex;

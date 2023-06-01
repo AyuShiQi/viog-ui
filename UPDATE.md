@@ -124,13 +124,14 @@
 - 新增input框远程搜索功能，添加search属性用于搜索控制
 - 新增select框远程搜索功能，添加search属性用于搜索控制
 - 修复input框default样式padding
-- 增加scroll组件scroll-bar悬浮显示的功能，使用属性overlay空置（仅在谷歌浏览器下使用）
+- 增加scroll组件scroll-bar悬浮显示的功能，使用属性overlay空置（仅在谷歌浏览器下使用）（未完成）
+- 修改virtual-scroll组件样式调控变量名
 
 # 0.6.0
 
 - 新增面包屑组件
 - 新增文件上传组件（当前无drag功能）
-- 新增可编辑表格组件（当前进度）
+- 新增可编辑表格组件（当前进度）（大致完成）
 - 新增表格组件
 
 # 0.7.0
