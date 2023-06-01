@@ -1,9 +1,11 @@
 .vi-virtual-scroll {
     overflow: auto;
     position: relative;
-    width: var(--vi-virtual-scroll-width);
-    height: var(--vi-virtual-scroll-height);
-    max-height: var(--vi-virtual-scroll-max-height);
+    // 可自控
+    width: var(--vi-scroll-width);
+    height: var(--vi-scroll-height);
+    min-height: var(--vi-scroll-min-height);
+    max-height: var(--vi-scroll-max-height);
 
     .list {
         position: absolute;
