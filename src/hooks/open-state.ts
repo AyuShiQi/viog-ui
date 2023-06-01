@@ -1,4 +1,4 @@
-import { ref, onMounted, onUnmounted, getCurrentInstance } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 type openOption = {
   preCb?: () => boolean,
@@ -6,21 +6,24 @@ type openOption = {
 }
 
 export default function (needBlur = true, openMode = 'click') {
-  // const { proxy } = getCurrentInstance() as ComponentInternalInstance
   let listener: any
   const openDOM = ref()
   const open = ref(false)
 
   onMounted(() => {
-    if (needBlur && openMode === 'click') {
-      listener = document.addEventListener('click', (e: any) => {
-        if (!openDOM.value.contains(e.target)) open.value = false
+    if (needBlur && openMode !== 'hover') {
+      listener = document.addEventListener(openMode, (e: any) => {
+        if (openDOM.value instanceof Element) {
+          if (!openDOM.value.contains(e.target)) open.value = false
+        } else {
+          if (!openDOM.value.$el.contains(e.target)) open.value = false
+        }
       })
     }
   })
 
   onUnmounted(() => {
-    document.removeEventListener('click', listener)
+    document.removeEventListener(openMode, listener)
   })
 
   function toSelect (option: openOption = {}) {
