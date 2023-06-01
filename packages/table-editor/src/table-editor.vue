@@ -15,7 +15,8 @@
         <span class="vi-table-editor__side-header__th"
         v-for="(item, i) in sideList"
         :key="item"
-        @click="handleSiderClick($event, i)"
+        @mousedown="handleSiderClick($event, i)"
+        @contextmenu="handleOpenContextMenu($event, 'row')"
         :class="{
           'is-entire': entireTarget[0] === i || chooseTarget[0] === i
         }">
@@ -31,7 +32,8 @@
         class="vi-table-editor__header__th"
         v-for="(item, j) in headerList"
         :key="item"
-        @click="handleHeaderClick($event, j)"
+        @mousedown="handleHeaderClick($event, j)"
+        @contextmenu="handleOpenContextMenu($event, 'col')"
         :class="{
           'is-entire': entireTarget[1] === j || chooseTarget[1] === j
         }">
@@ -41,7 +43,12 @@
       <!-- body部分 -->
       <div class="vi-table-editor__body" draggable="false">
         <div class="vi-table-editor__body__tr" v-for="(arr, i) in value" :key="arr">
-          <tableEditorTd v-for="(item, j) in arr" :key="`${item}$${i}$${j}`" :value="item" :row="Number(i)" :col="j"></tableEditorTd>
+          <tableEditorTd
+          v-for="(item, j) in arr"
+          :key="`${item}$${i}$${j}`"
+          :value="item" :row="Number(i)"
+          :col="j"
+          @contextmenu="handleOpenContextMenu"></tableEditorTd>
         </div>
       </div>
       <!-- 格式框 -->
@@ -71,6 +78,11 @@
         }"
         ></div>
       </div>
+      <!-- 操作列表 -->
+      <tableEditorOptionList
+      v-show="open"
+      ref="openDOM">
+      </tableEditorOptionList>
     </div>
   </scroll>
 </template>
@@ -83,6 +95,7 @@ import type { SetupContext } from 'vue'
 import props from './props/table-editor'
 // 组件引用components
 import tableEditorTd from './table-editor-td.vue'
+import tableEditorOptionList from './table-editor-option-list.vue'
 import { scroll } from '../../scroll'
 
 import tableEditorState from './hooks/table-editor-state'
@@ -90,7 +103,7 @@ import tableEditorState from './hooks/table-editor-state'
 export default defineComponent({
   name: 'ViTableEditor',
   props,
-  components: { scroll, tableEditorTd },
+  components: { scroll, tableEditorTd, tableEditorOptionList },
   setup (props: any, ctx: SetupContext) {
     const tableEditor = tableEditorState(props, ctx)
 

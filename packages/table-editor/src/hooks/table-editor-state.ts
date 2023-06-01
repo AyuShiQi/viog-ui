@@ -8,6 +8,7 @@ import type { SetupContext } from 'vue'
 import scrollState from './scroll-state'
 import tableValueState from './table-value-state'
 import pickBoxState from './pick-box-state'
+import contextMenuState from './context-menu-state'
 // 外部模块
 
 // 横向标头生成
@@ -19,6 +20,7 @@ export default function (props: any, ctx: SetupContext) {
   const scroll = scrollState(props, ctx)
   const tableValue = tableValueState(props, ctx, value)
   const pickBox = pickBoxState(props, ctx, tableValue.chooseTarget, value)
+  const contextMenu = contextMenuState(props, ctx)
   // 普通常量
   // DOM ref
   // ref
@@ -130,6 +132,7 @@ export default function (props: any, ctx: SetupContext) {
     headerList,
     ...scroll,
     ...tableValue,
-    ...pickBox
+    ...pickBox,
+    ...contextMenu
   }
 }
