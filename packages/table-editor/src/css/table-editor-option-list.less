@@ -3,5 +3,17 @@
     top: 60px;
     left: 100px;
     z-index: 10;
-    background-color: pink;
+    width: 166px;
+    background-color: #fff;
+    list-style: none;
+    box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
+
+    >li {
+        padding: var(--vi-card-padding);
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--vi-background-color);
+        }
+    }
 }

@@ -5,7 +5,7 @@
     'vi-table-editor-td-entire': isEntire,
     'vi-table-editor-td-choose': beChoosed
   }"
-  @mousedown="handleMouseDown"
+  @mousedown="handleMouseDown($event, row!, col!)"
   @dblclick="handleDoubleClick"
   @mouseenter="handleMouseEnter">
     <span

@@ -20,7 +20,7 @@ export default function (props: any, ctx: SetupContext) {
   const scroll = scrollState(props, ctx)
   const tableValue = tableValueState(props, ctx, value)
   const pickBox = pickBoxState(props, ctx, tableValue.chooseTarget, value)
-  const contextMenu = contextMenuState(props, ctx)
+  const contextMenu = contextMenuState(props, ctx, tableValue.chooseTarget, pickBox.pickTarget, tableValue.entireTarget, value)
   // 普通常量
   // DOM ref
   // ref
@@ -31,14 +31,14 @@ export default function (props: any, ctx: SetupContext) {
   // inject
   // computed
   const rows = computed(() => {
-    return Math.max(props.modelValue.length, 10)
+    return Math.max(value.length, 15)
   })
   const cols = computed(() => {
     let max = 0
-    for (const arr of props.modelValue) {
+    for (const arr of value) {
       max = Math.max(arr.length, max)
     }
-    return Math.max(max, 10)
+    return Math.max(max, 15)
   })
 
   // watch
@@ -46,8 +46,8 @@ export default function (props: any, ctx: SetupContext) {
   watch(rows, (newVal, oldVal) => {
     // 行数填充
     if (!oldVal) oldVal = 0
-    while (props.modelValue.length < newVal) {
-      props.modelValue.push(new Array(cols.value))
+    while (value.length < newVal) {
+      value.push(new Array(cols.value))
     }
     generateSider(newVal, oldVal)
   }, { immediate: true })
@@ -55,7 +55,7 @@ export default function (props: any, ctx: SetupContext) {
   watch(cols, (newVal, oldVal) => {
     // 列数填充
     if (!oldVal) oldVal = 0
-    for (const row of props.modelValue) {
+    for (const row of value) {
       row.length = newVal
     }
     generateHeader(newVal, oldVal)
@@ -75,6 +75,7 @@ export default function (props: any, ctx: SetupContext) {
 
   // 生成字母表头
   function generateHeader (newVal: number, oldVal: number) {
+    console.log(newVal, oldVal)
     if (newVal < oldVal) headerList.length = newVal
     // 先生成到最新的表头
     else {
@@ -103,8 +104,8 @@ export default function (props: any, ctx: SetupContext) {
     }
     if (step === 1) {
       // 开始真正生成
-      for (let i = 0; i < 26; i++) {
-        if (now + i < start) continue
+      for (let i = now - 1; i < 26; i++) {
+        // if (now + i < start) continue
         now = addHeader(step - 1, start, end, now, title + headerMap[i])
         if (now === -1) return -1
       }
@@ -113,7 +114,7 @@ export default function (props: any, ctx: SetupContext) {
 
     const nowCount = Math.pow(26, step - 1)
     for (let i = 0; i < 26; i++) {
-      const pre = i * nowCount
+      const pre = (i + 1) * nowCount
       if (pre + nowCount < start) continue
       now = addHeader(step - 1, start - pre, end - pre, now - pre, title + headerMap[i])
       if (now === -1) return -1

@@ -1,9 +1,13 @@
 <template>
   <ul
-    class="vi-table-editor-option-list">
-    <li>删除</li>
-    <li>复制</li>
-    <li>粘贴</li>
+  class="vi-table-editor-option-list"
+  :style="{
+    top: listTop + 'px',
+    left: listLeft + 'px'
+  }">
+    <li @click="toDelete">删除</li>
+    <li @click="toCopy">复制</li>
+    <li @click="toPaste">粘贴</li>
     <vi-divider></vi-divider>
     <li>在xx插入一行</li>
     <li>在xx插入一行</li>

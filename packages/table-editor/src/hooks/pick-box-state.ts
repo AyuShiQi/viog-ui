@@ -51,13 +51,13 @@ export default function (props: any, ctx: SetupContext, chooseTarget: [number, n
   })
 
   const pickWidth = computed(() => {
-    if (pickTarget.colLen < 0) return `${(-pickTarget.colLen + 1) * 70}px`
-    return `${(pickTarget.colLen + 1) * 70}px`
+    if (pickTarget.colLen < 0) return `${(-pickTarget.colLen + 1) * 70 - 1}px`
+    return `${(pickTarget.colLen + 1) * 70 - 1}px`
   })
 
   const pickHeight = computed(() => {
-    if (pickTarget.rowLen < 0) return `${(-pickTarget.rowLen + 1) * 25}px`
-    return `${(pickTarget.rowLen + 1) * 25}px`
+    if (pickTarget.rowLen < 0) return `${(-pickTarget.rowLen + 1) * 25 - 1}px`
+    return `${(pickTarget.rowLen + 1) * 25 - 1}px`
   })
 
   const changeTop = computed(() => {
@@ -71,19 +71,19 @@ export default function (props: any, ctx: SetupContext, chooseTarget: [number, n
   })
 
   const changeWidth = computed(() => {
-    if (changeTarget.col < pickTarget.colStart) return `${70 * (pickTarget.colEnd - changeTarget.col + 1)}px`
+    if (changeTarget.col < pickTarget.colStart) return `${70 * (pickTarget.colEnd - changeTarget.col + 1) - 1}px`
     else if (pickTarget.colStart <= changeTarget.col && changeTarget.col <= pickTarget.colEnd) {
-      return `${70 * (pickTarget.colEnd - pickTarget.colStart + 1)}px`
+      return `${70 * (pickTarget.colEnd - pickTarget.colStart + 1) - 1}px`
     }
-    return `${70 * (changeTarget.col - pickTarget.colStart + 1)}px`
+    return `${70 * (changeTarget.col - pickTarget.colStart + 1) - 1}px`
   })
 
   const changeHeight = computed(() => {
-    if (changeTarget.row < pickTarget.rowStart) return `${25 * (pickTarget.rowEnd - changeTarget.row + 1)}px`
+    if (changeTarget.row < pickTarget.rowStart) return `${25 * (pickTarget.rowEnd - changeTarget.row + 1) - 1}px`
     else if (pickTarget.rowStart <= changeTarget.row && changeTarget.row <= pickTarget.rowEnd) {
-      return `${25 * (pickTarget.rowEnd - pickTarget.rowStart + 1)}px`
+      return `${25 * (pickTarget.rowEnd - pickTarget.rowStart + 1) - 1}px`
     }
-    return `${25 * (changeTarget.row - pickTarget.rowStart + 1)}px`
+    return `${25 * (changeTarget.row - pickTarget.rowStart + 1) - 1}px`
   })
   // watch
   watch(chooseTarget, (newVal) => {
