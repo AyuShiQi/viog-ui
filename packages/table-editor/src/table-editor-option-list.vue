@@ -10,16 +10,40 @@
     <li @click="toCut">剪切</li>
     <li @click="toCopy">复制</li>
     <li @click="toPaste">粘贴</li>
-    <vi-divider v-show="showLine"></vi-divider>
-    <li v-show="showLine" @click="toInsert(0)">
+    <vi-divider></vi-divider>
+    <li
+    :class="[
+      {
+        'vi-table-editor-option-list__li_ban': !showLine
+      }
+    ]"
+    @click="toInsert(0)">
       在{{ mode === 'col' ? '左侧' : '上方' }}插入一行
     </li>
-    <li v-show="showLine" @click="toInsert(1)">
+    <li
+    :class="[
+      {
+        'vi-table-editor-option-list__li_ban': !showLine
+      }
+    ]"
+    @click="toInsert(1)">
       在{{ mode === 'col' ? '右侧' : '下方' }}插入一行
     </li>
-    <vi-divider v-show="showCol"></vi-divider>
-    <li v-show="showCol" @click="toSort(0)">升序</li>
-    <li v-show="showCol" @click="toSort(1)">降序</li>
+    <vi-divider></vi-divider>
+    <li
+    :class="[
+      {
+        'vi-table-editor-option-list__li_ban': !showCol
+      }
+    ]"
+    @click="toSort(0)">升序</li>
+    <li
+    :class="[
+      {
+        'vi-table-editor-option-list__li_ban': !showCol
+      }
+    ]"
+    @click="toSort(1)">降序</li>
   </ul>
 </template>
 

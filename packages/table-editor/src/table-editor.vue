@@ -1,7 +1,8 @@
 <template>
   <scroll
-  class="vi-table-editor">
-    <div class="vi-table-editor__view" draggable="false" ref="table">
+  class="vi-table-editor"
+  ref="table">
+    <div class="vi-table-editor__view" draggable="false">
       <div class="vi-table-editor__fixed-header"
       :style="{
         top: `${tableTop}px`,
@@ -41,7 +42,7 @@
         </span>
       </div>
       <!-- body部分 -->
-      <div class="vi-table-editor__body" draggable="false">
+      <div class="vi-table-editor__body" draggable="false" ref="tableBody">
         <div class="vi-table-editor__body__tr" v-for="(arr, i) in value" :key="arr">
           <tableEditorTd
           v-for="(item, j) in arr"

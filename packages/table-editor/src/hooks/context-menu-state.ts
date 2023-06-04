@@ -14,6 +14,10 @@ export default function (props: any, ctx: SetupContext, chooseTarget: Target, pi
   // 普通常量
   const mode = ref('content')
   const clipboard = navigator.clipboard
+  const optionListSize = {
+    width: 0,
+    height: 0
+  }
   // DOM ref
   // ref
   const listTop = ref(0)
@@ -24,12 +28,29 @@ export default function (props: any, ctx: SetupContext, chooseTarget: Target, pi
   // 事件方法
   function handleOpenContextMenu (e: MouseEvent, mod: 'row' | 'col' | 'content' = 'content') {
     mode.value = mod
-    listTop.value = e.y
-    listLeft.value = e.x
     open.open.value = true
+    changeListPosition(e.x, e.y)
     e.preventDefault()
   }
   // 方法
+  // 位置信息组
+  function changeListPosition (mx: number, my: number) {
+    const { innerHeight, innerWidth } = window
+    if (mx + optionListSize.width <= innerWidth) listLeft.value = mx
+    // 做处理
+    else {
+      const now = innerWidth - optionListSize.width
+      listLeft.value = now >= 0 ? now : mx
+    }
+
+    if (my + optionListSize.height <= innerHeight) listTop.value = my
+    // 做处理
+    else {
+      const now = innerHeight - optionListSize.height
+      listTop.value = now >= 0 ? now : my
+    }
+  }
+
   function closeOptionList () {
     open.toClose()
   }
@@ -112,8 +133,8 @@ export default function (props: any, ctx: SetupContext, chooseTarget: Target, pi
       const aIsNum = !isNaN(Number(ra))
       const bIsNum = !isNaN(Number(rb))
       if (aIsNum && bIsNum) return Number(ra) - Number(rb)
-      else if (aIsNum) return -1
-      else if (bIsNum) return 1
+      else if (aIsNum) return 1
+      else if (bIsNum) return -1
       else return String(ra).localeCompare(String(rb))
     })
   }
@@ -134,6 +155,13 @@ export default function (props: any, ctx: SetupContext, chooseTarget: Target, pi
     })
   }
   // 普通function函数
+  function getSize () {
+    const styles = getComputedStyle(open.openDOM.value.$el)
+    const width = styles.getPropertyValue('width')
+    const height = styles.getPropertyValue('height')
+    if (/px$/.test(width)) optionListSize.width = Number(width.slice(0, -2))
+    if (/px$/.test(height)) optionListSize.height = Number(height.slice(0, -2))
+  }
   // provide
   provide('editor-table-option-list-close', open.toClose)
   provide('editor-table-option-list-top', listTop)
@@ -148,6 +176,7 @@ export default function (props: any, ctx: SetupContext, chooseTarget: Target, pi
   // 生命周期
   onMounted(() => {
     window.addEventListener('scroll', closeOptionList)
+    getSize()
   })
 
   onBeforeMount(() => {

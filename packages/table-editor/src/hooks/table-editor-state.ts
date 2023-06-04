@@ -1,10 +1,11 @@
 // vue
-import { reactive, computed, watch } from 'vue'
+import { reactive, computed, watch, ref } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
 // 外部hooks
 // 内部hooks
+import boxSizeState from './box-size-state'
 import scrollState from './scroll-state'
 import tableValueState from './table-value-state'
 import pickBoxState from './pick-box-state'
@@ -17,12 +18,9 @@ const headerMap = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', '
 export default function (props: any, ctx: SetupContext) {
   // 特殊处理
   const value = reactive(props.modelValue)
-  const scroll = scrollState(props, ctx)
-  const tableValue = tableValueState(props, ctx, value)
-  const pickBox = pickBoxState(props, ctx, tableValue.chooseTarget, value)
-  const contextMenu = contextMenuState(props, ctx, tableValue.chooseTarget, pickBox.pickTarget, tableValue.entireTarget, value)
   // 普通常量
   // DOM ref
+  const table = ref()
   // ref
   // reactive
   // header标头
@@ -124,13 +122,20 @@ export default function (props: any, ctx: SetupContext) {
   }
   // provide
   // 生命周期
+  const tableValue = tableValueState(props, ctx, value)
+  const boxSize = boxSizeState(table)
+  const pickBox = pickBoxState(props, ctx, boxSize, tableValue.chooseTarget, value)
+  const contextMenu = contextMenuState(props, ctx, tableValue.chooseTarget, pickBox.pickTarget, tableValue.entireTarget, value)
+  const scroll = scrollState(table, pickBox.needPick, pickBox.needChange, boxSize)
 
   return {
     value,
+    table,
     rows,
     cols,
     sideList,
     headerList,
+    ...boxSize,
     ...scroll,
     ...tableValue,
     ...pickBox,
