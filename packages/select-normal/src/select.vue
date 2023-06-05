@@ -65,7 +65,7 @@ import selectState from './hooks/select-state'
 export default defineComponent({
   name: 'ViSelect',
   props,
-  emits: ['search', 'update:modelValue'],
+  emits: ['search', 'update:modelValue'] as string[],
   components: {
     dropdown,
     scroll

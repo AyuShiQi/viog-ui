@@ -14,7 +14,7 @@ import { selectV } from '../../select'
 export default defineComponent({
   name: 'ViInputFix',
   components: { ViSelect: selectV },
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue'] as string[],
   props: {
     modelValue: String,
     data: {

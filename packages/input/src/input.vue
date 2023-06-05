@@ -99,7 +99,7 @@ import inputState from './hooks/input-state'
 export default defineComponent({
   name: 'ViInput',
   components: { InputFix },
-  emits: ['change', 'input', 'update:modelValue', 'search'],
+  emits: ['change', 'input', 'update:modelValue', 'search'] as string[],
   props,
   setup (props: InputProps, context: SetupContext) {
     const input = inputState(props, context)

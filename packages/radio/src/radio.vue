@@ -39,7 +39,7 @@ import { radioState } from './hooks'
 
 export default defineComponent({
   name: 'ViRadio',
-  emits: ['change', 'update:modelValue'],
+  emits: ['change', 'update:modelValue'] as string[],
   inject: {
     'radio-group-value': {
       default: undefined

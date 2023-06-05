@@ -21,7 +21,7 @@ import type { SetupContext } from 'vue'
 
 export default defineComponent({
   name: 'ViSelect',
-  emits: ['delete'],
+  emits: ['delete'] as string[],
   props: {
     data: {
       default: ''

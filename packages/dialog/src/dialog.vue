@@ -54,9 +54,9 @@ import { dialogState } from './hooks'
 
 export default defineComponent({
   name: 'ViDialog',
-  emits: ['sure', 'unSure', 'shutDown', 'update:modelValue'],
+  emits: ['sure', 'unSure', 'shutDown', 'update:modelValue'] as string[],
   props,
-  setup (props: DialogProps, context: SetupContext): any {
+  setup (props: DialogProps, context: SetupContext) {
     const mainDialog = dialogState(props, context)
 
     return {

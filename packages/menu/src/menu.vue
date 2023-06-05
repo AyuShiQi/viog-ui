@@ -18,7 +18,7 @@ import menuState from './hooks/menu-state'
 
 export default defineComponent({
   name: 'ViMenu',
-  emits: ['select'],
+  emits: ['select'] as string[],
   props,
   setup (props: any, ctx: SetupContext) {
     menuState(props, ctx)

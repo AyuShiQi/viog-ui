@@ -43,7 +43,7 @@ import type { CheckboxProps } from '@/types/checkbox-types'
 import { checkboxState } from './hooks'
 export default defineComponent({
   name: 'ViCheckbox',
-  emits: ['change', 'update:modelValue'],
+  emits: ['change', 'update:modelValue'] as string[],
   inject: {
     'checkbox-group-value': {
       default: []

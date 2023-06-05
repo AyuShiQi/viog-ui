@@ -30,7 +30,7 @@ import { scroll, virtualScroll } from '../../../scroll'
 
 export default defineComponent({
   name: 'ViSelectBox',
-  emits: ['update'],
+  emits: ['update'] as string[],
   components: { Scroll: virtualScroll },
   props: {
     datas: Array,

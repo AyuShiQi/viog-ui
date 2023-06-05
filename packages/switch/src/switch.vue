@@ -50,7 +50,7 @@ import { switchState } from './hooks'
 
 export default defineComponent({
   name: 'ViSwitch',
-  emits: ['off', 'on', 'change', 'update:modelValue'],
+  emits: ['off', 'on', 'change', 'update:modelValue'] as string[],
   props,
   setup (props: SwitchProps, context: SetupContext) {
     const mainSwitch = switchState(props, context)

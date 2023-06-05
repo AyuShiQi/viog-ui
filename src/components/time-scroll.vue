@@ -28,7 +28,6 @@ import { TimeScrollProps } from '@/types/date-select-types/time-scroll-types'
 
 export default defineComponent({
   name: 'ViTimeScroll',
-  emits: [],
   props: {
     choosed: {
       default: {}
