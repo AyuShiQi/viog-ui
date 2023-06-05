@@ -1,3 +1,9 @@
+---
+next:
+  text: 组件
+  link: /components/
+---
+
 # 快速上手
 
 ## 安装
