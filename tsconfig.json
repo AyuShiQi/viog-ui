@@ -43,5 +43,7 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "declaration": true,
+  "declarationMap": true
 }

@@ -92,5 +92,6 @@
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
   },
   "_id": "viog-ui@0.1.0",
-  "readme": "ERROR: No README data found!"
+  "readme": "ERROR: No README data found!",
+  "typings": "types/index.d.ts"
 }
