@@ -6,7 +6,5 @@ export default {
     type: Boolean,
     default: false
   },
-  color: {
-    type: String
-  }
+  color: String
 }

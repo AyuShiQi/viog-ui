@@ -77,6 +77,7 @@
     --vi-nav-font-size: 16px;
 
     --vi-collapse-width: 200px;
+    --vi-collapse-overflow-x: hidden;
 
     --vi-menu-width: 200px;
 
@@ -98,9 +99,9 @@
     --vi-info-background-color-solid: #424242;
     --vi-font-color: #262626; /* dark */
     --vi-link-color: rgb(38, 38, 38, 0.75); /*default*/
+    /* 该颜色作用于所有disabled组件样式颜色 */
     --vi-icon-color: #8C8C8C;  
     --vi-background-color-deep: #E5E5E5;
-    /* 该颜色作用于所有disabled组件样式颜色 */
     --vi-background-color: rgb(0, 10, 32, 0.05);
     --vi-background-color-solid: #f2f3f4;
     --vi-border-color: #E2E8F0;
@@ -112,7 +113,7 @@
     --vi-dark-color4: #8A82A6;
     /* purple */
     --vi-purple-color1: #A486C6;
-    --vi-purple-color2: #B588E9;
+    --vi-purple-color2: #B08ED4;
     --vi-purple-color3: #B498D5;
     --vi-purple-color4: #F1E5FF;
     --vi-purple-color5: rgba(181, 136, 233, 0.1);
@@ -156,6 +157,12 @@
     /* golden */
     --vi-golden-color1: #C0986F;
     --vi-golden-color2: #cba37b;
+    /* main */
+    --vi-main-color1: var(--vi-purple-color1);
+    --vi-main-color2: var(--vi-purple-color2);
+    --vi-main-color3: var(--vi-purple-color3);
+    --vi-main-color4: var(--vi-purple-color4);
+    --vi-main-color5: var(--vi-purple-color5);
 }
 
 body {

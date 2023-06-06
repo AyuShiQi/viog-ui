@@ -1,5 +1,5 @@
 <template>
-  <vi-header retract>
+  <!-- <vi-header retract>
     <vi-nav v-model="choose" trigger="hover">
       <vi-nav-item v-for="item in nav" :key="item">
         {{item}}
@@ -12,8 +12,16 @@
     </vi-nav>
     <vi-avater src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"></vi-avater>
     <vi-avater></vi-avater>
-  </vi-header>
-  <vi-upload @MaximumAttention="up" :maximum="1" replace @change="ok" @beforeadd="ok" @LimitAttention="up">
+  </vi-header> -->
+  <!-- <vi-icon size="big"></vi-icon> -->
+
+  <vi-collapse title="完成任务" class="okkkkk">
+    <div :style="{
+      width: '600px',
+      height: '400px'
+    }"></div>
+  </vi-collapse>
+  <!-- <vi-upload @MaximumAttention="up" :maximum="1" replace @change="ok" @beforeadd="ok" @LimitAttention="up">
     <vi-upload-choose>
       <vi-button>点击下载文件</vi-button>
     </vi-upload-choose>
@@ -21,18 +29,18 @@
     <vi-upload-list show-size></vi-upload-list>
     <vi-upload-list type="button"></vi-upload-list>
     <vi-upload-list show-size type="button"></vi-upload-list>
-  </vi-upload>
+  </vi-upload> -->
   <!-- <input type="file"/> -->
-  <h1>中国China</h1>
+  <!-- <h1>中国China</h1>
   <h2>中国China</h2>
   <h3>中国China</h3>
   <h4>中国China</h4>
   <h5>中国China</h5>
   <h6>中国China</h6>
-  <p>中国China</p>
+  <p>中国China</p> -->
   <vi-table-editor v-model="table"></vi-table-editor>
   <vi-input search @search="ok" show-clear></vi-input>
-  <vi-breadcrumb color="purple">
+  <vi-breadcrumb>
     <vi-breadcrumb-item to="/goto">我的项目</vi-breadcrumb-item>
     <vi-breadcrumb-item to="/home" color="green">最近更新</vi-breadcrumb-item>
     <vi-breadcrumb-item>折线图</vi-breadcrumb-item>
@@ -178,8 +186,8 @@
     折叠面板，沙琪玛好吃
   </vi-collapse> -->
 
-  <!-- <vi-row justify="center">
-    <ViButton @click="openDialog">
+  <vi-row justify="center">
+    <ViButton disabled @click="openDialog">
       <ViIcon/>打开对话框</ViButton>
     <ViButton color="pink" @click="opent">打开toast</ViButton>
     <ViButton color="red" @click="openf">点击进入</ViButton>
@@ -189,10 +197,10 @@
     <ViButton color="green">点击进入</ViButton>
     <ViButton color="dark">点击进入</ViButton>
   </vi-row>
-  <vi-row justify="center">
+  <vi-row justify="center" gap="23px">
     <ViButton mutate>点击进入</ViButton>
-    <ViButton color="pink" mutate>点击进入</ViButton>
-    <ViButton color="red" mutate>点击进入</ViButton>
+    <ViButton radius="round" color="pink" mutate>点击进入</ViButton>
+    <ViButton size="small" color="red" mutate>点击进入</ViButton>
     <ViButton color="blue" mutate>点击进入</ViButton>
     <ViButton color="yellow" mutate>点击进入</ViButton>
     <ViButton color="purple" mutate>点击进入</ViButton>
@@ -200,7 +208,7 @@
     <ViButton color="dark" mutate>点击进入</ViButton>
   </vi-row>
   <vi-row justify="center">
-    <ViButton type="plain">点击进入</ViButton>
+    <ViButton disabled type="plain">点击进入</ViButton>
     <ViButton color="pink" type="plain">点击进入</ViButton>
     <ViButton color="red" type="plain">点击进入</ViButton>
     <ViButton color="blue" type="plain">点击进入</ViButton>
@@ -260,7 +268,7 @@
     <ViButton disabled color="purple" mutate>点击进入</ViButton>
     <ViButton disabled color="green" mutate>点击进入</ViButton>
     <ViButton disabled color="dark" mutate>点击进入</ViButton>
-  </vi-row> -->
+  </vi-row>
 
   <!-- <vi-row justify="center">
     <ViButton disabled type="plain" small>点击进入</ViButton>
@@ -1002,5 +1010,9 @@ div > button {
   --vi-select-width: 100px;
   --vi-select-scroll-width: 100%;
   --vi-select-max-height: 50px;
+}
+
+.okkkkk {
+  --vi-collapse-overflow: auto;
 }
 </style>
