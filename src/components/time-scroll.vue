@@ -57,8 +57,6 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-  @import '../../public/css/basecolor.less';
-  @import '../../public/css/base.less';
   .vi-time-scroll {
     position: relative;
     overflow: hidden;
@@ -75,15 +73,15 @@ export default defineComponent({
     }
 
     li.be-choosed {
-        color: var(--vi-purple-color1);
+        color: var(--vi-main-color1);
     }
 
     .vi-time-scroll-information {
       position: absolute;
       top: 65px;
       right: 0px;
-      font-size: @font-size;
-      color: var(--vi-purple-color1);
+      font-size: var(--vi-font-size);
+      color: var(--vi-main-color1);
       transform: scale(70%);
     }
   }
