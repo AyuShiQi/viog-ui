@@ -2,9 +2,9 @@
   <button class="vi-button" type="button" :disabled="disabled"
   :class="
   [`vi-button--${color}`,
-  `is-${type}`,
-  `is-${radius}`,
-  `is-${size}`,
+  `vi-button-type-${type}`,
+  `vi-button-radius-${radius}`,
+  `vi-button-size-${size}`,
   {
     'is-mutate': mutate,
     'is-disabled': disabled

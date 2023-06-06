@@ -2,38 +2,38 @@
     &:disabled {
         cursor: no-drop;
         color: #fff;
-        background: var(--vi-background-color);
+        background: var(--vi-background-color-deep);
     }
 
-    &:hover:disabled {
+    &:disabled:hover {
         cursor: no-drop;
         color: #fff;
-        background: var(--vi-background-color);
+        background: var(--vi-background-color-deep);
     }
 }
 
-.vi-button.is-plain {
+.vi-button.vi-button-type-plain {
     &:disabled {
-        border-color: var(--vi-background-color);
-        color: var(--vi-background-color);
+        box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
+        color: var(--vi-background-color-deep);
         background: transparent;
     }
 
-    &:hover:disabled {
-        border-color: var(--vi-background-color);
-        color: var(--vi-background-color);
+    &:disabled:hover {
+        box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
+        color: var(--vi-background-color-deep);
         background: transparent;
     }
 }
 
-.vi-button.is-transparent {
+.vi-button.vi-button-type-transparent {
     &:disabled {
-        color: var(--vi-background-color);
+        color: var(--vi-background-color-deep);
         background: transparent;
     }
 
-    &:hover:disabled {
-        color: var(--vi-background-color);
+    &:disabled:hover {
+        color: var(--vi-background-color-deep);
         background: transparent;
     }
 }
