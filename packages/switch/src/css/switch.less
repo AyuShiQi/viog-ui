@@ -1,10 +1,7 @@
-@import '../../../../public/css/basecolor.less';
-@import '../../../../public/css/base.less';
-
 .vi-switch-appreance {
     display: inline-flex;
     align-items: center;
-    color: @grey;
+    color: var(--vi-background-color-deep);
 
     .vi-switch-content {
         position: relative;
@@ -54,7 +51,7 @@
 }
 
 .vi-switch-appreance.is-middle {
-    font-size: @font-size;
+    font-size: var(--vi-font-size);
     .vi-switch-content {
         width: 40px;
         height: 22px;
@@ -75,7 +72,7 @@
 }
 
 .vi-switch-appreance.is-small {
-    font-size: @small-font-size;
+    font-size: var(--vi-small-font-size);
     .vi-switch-content {
         width: 30px;
         height: 17px;
@@ -84,7 +81,7 @@
         .switch-circle {
             width: 13px;
             height: 13px;
-            font-size: @small-font-size;
+            font-size: var(--vi-small-font-size);
             background-color: #fff;
         }
     }
@@ -97,7 +94,7 @@
 }
 
 .vi-switch-appreance.is-big {
-    font-size: @big-font-size;
+    font-size: var(--vi-big-font-size);
     .vi-switch-content {
         width: 50px;
         height: 27px;
