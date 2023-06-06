@@ -2,6 +2,7 @@
   <a
   class="vi-link"
   :href="href"
+  :target="target"
   :class="[
     `vi-link--${color}`,
     `is-${size}`
