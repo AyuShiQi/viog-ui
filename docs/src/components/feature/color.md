@@ -3,7 +3,8 @@
 
 ## 装饰色
 我们规定了六套装饰色系（分别为：purple、red、pink、yellow、blue、green），适应不同场景的不同需求  
-其中，紫色是我们默认的主色系，如果您需要更改主色系，只需要修改相应的css变量即可
+你也可以重新定义覆盖这些css变量，个性化你自己的调色盘。需要注意的是：color5一般为一个透明度较高的颜色，其它颜色则为实色
+
 <vi-row justify="space-between">
   <ul class="color-palette color-palette-purple">
     <span class="color-palette-item">--vi-purple-color1</span>
@@ -51,6 +52,15 @@
   </ul>
 </vi-row>
 
+其中，紫色是我们默认的组件库主色系，如果您需要更改主色系，只需要修改以下css变量即可：
+
+- --vi-main-color1
+- --vi-main-color2
+- --vi-main-color3
+- --vi-main-color4
+- --vi-main-color5
+- --vi-main-color6: 此颜色仅用于控制time-select组件中的选中元素颜色：rgba(181, 136, 233, 0.3)
+
 ## 中性色
 除装饰色外，我们规定了一套中性色用于文本、边框等部分
 <vi-row justify="space-between" align="flex-start">
@@ -77,7 +87,7 @@
 
 ## 使用
 如果需要使用上方这些颜色，只需要引用对应的css变量即可  
-你也可以在自定义覆盖这些变量，达到自定义颜色的效果
+你也可以在自定义覆盖这些变量，完成你的个性化订制，全局更改建议在:root里定义，仅对一个组件色系更改，可以在类名vi-组件名中更改
 
 <script setup>
 import { ref } from 'vue'
