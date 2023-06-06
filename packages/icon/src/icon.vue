@@ -1,5 +1,9 @@
 <template>
-  <span class="vi-icon" :class="[`icon-${type}`,`is-${size}`]"></span>
+  <span class="vi-icon"
+  :class="[
+    `vi-icon-${type}`,
+    `vi-icon-size-${size}`
+  ]"></span>
 </template>
 
 <script lang="ts">
