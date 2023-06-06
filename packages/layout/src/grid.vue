@@ -12,10 +12,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 
-import props from './props/grid.ts'
+import props from './props/grid'
 
 export default defineComponent({
   name: 'ViGrid',
