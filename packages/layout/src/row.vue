@@ -3,17 +3,18 @@
   class="vi-row"
   :style="{
     alignItems: align,
-    alignCenter: align,
+    alignContent: align,
     justifyContent: justify,
-    flexDirection: direction,
+    flexDirection: direction as any,
     width,
-    height
+    height,
+    gap
   }">
     <slot></slot>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 
 import props from './props'
