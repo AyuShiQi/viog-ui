@@ -132,17 +132,17 @@
 - 新增文件上传组件（当前无drag功能）
 - 新增可编辑表格组件
 
-# 0.6.1（当前迭代开发版本）
+# 0.6.1
 
-- 修复button组件disabled状况下的样式覆盖不完全情况*
-- 新增layout组件gap属性*
-- 修改button className表现，修改button禁用色*
-- 修复collapse组件突出物scroll不适配问题*
-- 修改icon、font-size不匹配问题问题*
+- 修复button组件disabled状况下的样式覆盖不完全情况
+- 新增layout组件gap属性
+- 修改button className表现，修改button禁用色
+- 修复collapse组件突出物scroll不适配问题
+- 修改icon、font-size不匹配问题问题
 - 添加主要颜色css变量，调整purple3颜色
 - 修改disabled组件配色
 
-# 0.6.2
+# 0.6.2（当前迭代开发版本）
 
 - 添加form组件的rule检查
 - 添加form表单的正则以及代码规范
@@ -183,4 +183,3 @@
 # 0.11.0
 
 - 新增富文本编辑器组件
-
