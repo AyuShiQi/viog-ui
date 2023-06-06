@@ -47,7 +47,7 @@
     --vi-input-suffix-width: ;
 
     --vi-switch-left-color: var(--vi-background-color); 
-    --vi-switch-right-color: var(--vi-purple-color3);
+    --vi-switch-right-color: var(--vi-main-color3);
 
     --vi-date-select-width: 200px;
     --vi-date-select-height: ;
@@ -163,6 +163,7 @@
     --vi-main-color3: var(--vi-purple-color3);
     --vi-main-color4: var(--vi-purple-color4);
     --vi-main-color5: var(--vi-purple-color5);
+    --vi-main-color6: var(--vi-purple-color6);
 }
 
 body {
