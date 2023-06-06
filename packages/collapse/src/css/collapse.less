@@ -36,9 +36,13 @@
     .vi-collapse__content-view {
         max-width: 100%;
         overflow-y: hidden;
-        overflow-x: auto;
+        overflow-x: var(--vi-collapse-overflow-x);
         min-height: 0px;
         box-sizing: border-box;
+    }
+
+    .vi-collapse__content-view-li {
+      overflow: hidden;
     }
   }
 }
