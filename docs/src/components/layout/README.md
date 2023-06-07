@@ -6,6 +6,11 @@ sidebarDepth: 1
 
 通过`row` `grid` `col` 组件快速进行flex布局或grid布局
 
+::: warning
+
+布局类组件目前处于开发状态，功能尚不完善，后续版本将持续更新
+
+:::
 
 ## Row 组件
 
@@ -142,9 +147,7 @@ dirction属性用于定义布局方向，属性值同flex-direction
 
 ### 布局
 
-组件的align、justify、gap属性与`row`组件使用相似
-
-唯一不同在于，`grid`组件使用row与col属性定义盒子的行数与列数，默认行列数均为1
+`grid`组件使用row与col属性定义盒子的行数与列数，默认行列数均为1
 
 <code-show>
 <vi-grid class="layout-row">
@@ -231,17 +234,41 @@ dirction属性用于定义布局方向，属性值同flex-direction
 </code-show>
 
 ## Props
+
+### Row
+
 | 属性名 | 描述 | 类型 | 默认 |
 | - | - | - | - |
-| color | 链接颜色 | 'default' \| 'dark' \| 'red' \| 'green' \| 'yellow' \| 'pink' \| 'blue' \| 'purple' | 'default'
-| size | 链接大小 | 'big' \| 'middle' \| 'small' | 'middle' |
-| href | 跳转地址 | string | - |
-| radius | 按钮边框弧度 | '_blank' \| '_self' \| '_parent' \| '_top' \| '_framename' | '_self' |
+| align | 主轴对齐 | 同align-items与align-content属性 | 'center' |
+| justify | 副轴对齐 | 同justify-content属性 | 'space-between' |
+| direction | 布局方向 | 同flex-direction | 'row' |
+| gap | 盒子间隙 | 同gap属性 | 0 |
+
+### Grid
+
+| 属性名 | 描述 | 类型 | 默认 |
+| - | - | - | - |
+| gap | 盒子间隙 | 同gap属性 | '0' |
+| row | grid组件专用，占位行数 | number | 1 |
+| col | grid组件专用，占位列数 | number | 1 |
+
+### Col
+
+| 属性名 | 描述 | 类型 | 默认 |
+| - | - | - | - |
+| align | 主轴对齐 | 同align-items与align-content属性 | 'center' |
+| justify | 副轴对齐 | 同justify-content属性 | 'space-between' |
+| direction | 布局方向 | 同flex-direction | 'row' |
+| row | grid组件专用，占位行数 | number | 1 |
+| col | grid组件专用，占位列数 | number | 1 |
 
 ## 插槽
+
+布局组件均只存在默认插槽
+
 | 插槽名 | 描述 |
 | - | - |
-| 默认插槽 | 链接描述内容 |
+| 默认插槽 | 布局内容 |
 
 <style>
 .layout-row {

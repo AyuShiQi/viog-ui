@@ -3,7 +3,7 @@
   class="vi-col"
   :style="{
     alignItems: align,
-    alignCenter: align,
+    alignContent: align,
     justifyContent: justify,
     width,
     height,
@@ -14,7 +14,7 @@
   </span>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 
 import props from './props/col'

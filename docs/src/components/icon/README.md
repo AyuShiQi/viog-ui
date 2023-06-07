@@ -6,7 +6,7 @@ sidebarDepth: 1
 
 本组件库集合了一套icon图标供以使用
 
-::: tip
+::: tip 说明
 本套icon来自iconfont-阿里巴巴矢量图标库，可以免费商用
 :::
 

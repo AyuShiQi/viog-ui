@@ -26,7 +26,7 @@ sidebarDepth: 1
 
 ### 颜色
 
-我们共有六种颜色的按钮，使用属性color进行调控
+共有八种颜色的按钮，使用属性color进行调控
 
 <code-show>
 <row>
@@ -55,7 +55,7 @@ sidebarDepth: 1
 </template>
 </code-show>
 
-你还可以通过添加mutate属性，将按钮颜色变异，使按钮颜色更加绚烂
+可以通过添加mutate属性，将按钮颜色变异，使按钮更加炫酷
 
 <code-show>
 <row>
@@ -84,7 +84,7 @@ sidebarDepth: 1
 </template>
 </code-show>
 
-需要注意的是，默认/dark颜色按钮，mutate属性无效
+需要注意的是，default/dark颜色按钮，mutate属性对其无效
 
 ### 样式
 

@@ -73,20 +73,20 @@ export default defineUserConfig({
               link: '/components/link/'
             },
             {
-              text: '分割线 divider',
-              link: '/components/divider/'             
+              text: '标签 tag',
+              link: '/components/tag/'
             },
             {
               text: '布局 layout',
               link: '/components/layout/'
             },
             {
-              text: '标签 tag',
-              link: '/components/link/'
+              text: '分割线 divider',
+              link: '/components/divider/'             
             },
             {
               text: '滚动框 scroll',
-              link: 'components/scroll/'
+              link: '/components/scroll/'
             },
             {
               text: '虚拟滚动 virtual-scroll',
@@ -147,12 +147,12 @@ export default defineUserConfig({
               link: 'components/nav/'
             },
             {
-              text: '菜单 menu',
-              link: '/components/menu/'             
-            },
-            {
               text: '固钉 affix',
               link: '/components/affix/'  
+            },
+            {
+              text: '菜单 menu',
+              link: '/components/menu/'             
             },
             {
               text: '面包屑 breadcrumb',
