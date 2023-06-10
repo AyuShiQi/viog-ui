@@ -1,5 +1,5 @@
 import { inject, computed, ref } from 'vue'
-import type { Ref, DebuggerOptions } from 'vue'
+import type { Ref } from 'vue'
 
 import openState from '@/hooks/open-state'
 

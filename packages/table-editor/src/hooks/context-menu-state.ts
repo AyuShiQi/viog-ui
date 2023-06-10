@@ -1,5 +1,5 @@
 // vue
-import { ref, provide, inject, onMounted, onBeforeMount } from 'vue'
+import { ref, provide, onMounted, onBeforeMount } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type

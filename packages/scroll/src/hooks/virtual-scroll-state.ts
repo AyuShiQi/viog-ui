@@ -1,4 +1,4 @@
-import { ref, reactive, computed, onMounted, onUpdated } from 'vue'
+import { ref, reactive, computed, onMounted } from 'vue'
 
 import { VirtualScrollProps } from '@/types/scroll-types'
 

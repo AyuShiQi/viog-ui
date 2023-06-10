@@ -1,4 +1,4 @@
-import { ref, reactive, computed, onMounted } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import { formatTimeDigit } from '@/utils/date-utils'
 
 import type { ModelValueDate } from '@/types/date-select-types'

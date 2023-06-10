@@ -1,5 +1,5 @@
 // vue
-import { computed, ref, inject } from 'vue'
+import { computed, inject } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type

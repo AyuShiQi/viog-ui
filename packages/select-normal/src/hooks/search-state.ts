@@ -1,5 +1,5 @@
 // vue
-import { computed, onMounted, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 // vue type
 import type { SetupContext, Ref } from 'vue'
 // 组件type

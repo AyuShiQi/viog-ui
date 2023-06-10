@@ -1,4 +1,4 @@
-import { ref, onMounted, onUnmounted, getCurrentInstance } from 'vue'
+import { ref, onMounted, onBeforeMount, getCurrentInstance } from 'vue'
 import type { ComponentInternalInstance } from 'vue'
 
 import { SelectDOM } from '@/types/select-types'
@@ -16,7 +16,7 @@ export default function () {
     })
   })
 
-  onUnmounted(() => {
+  onBeforeMount(() => {
     document.removeEventListener('click', listener)
   })
 

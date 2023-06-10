@@ -1,4 +1,4 @@
-import { onMounted, onUnmounted, getCurrentInstance } from 'vue'
+import { onMounted, onBeforeMount, getCurrentInstance } from 'vue'
 import type { ComponentInternalInstance } from 'vue'
 
 import { DOMType } from '@/types/vue-types'
@@ -32,7 +32,7 @@ export default function (props: ScrollProps) {
     }
   })
 
-  onUnmounted(() => {
+  onBeforeMount(() => {
     if (props.lazy != null) (proxy?.$refs.content as DOMType).removeEventListener('scroll', listener)
   })
 }

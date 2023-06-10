@@ -467,7 +467,7 @@ export type { ViScrollType } from 'viog-ui'
 
 不支持平滑滚动，若有需要请使用普通滚动
 
-**注：组件内部会计算获取scroll容器和item的高度，但由于js特性，无法获取到auto相关属性所渲染出的节点高度，请一定通过--vi-virtual-height或者--vi-virtual-max-height给定容器一个px单位的值，item请给定一个px单位的值**
+**注：组件内部会计算获取scroll容器和item的高度，但由于js特性，无法获取到auto相关值所渲染出的节点高度，请一定通过--vi-virtual-height或者--vi-virtual-max-height给定容器一个px单位的值，item请给定一个px单位的值**
 
 #### props参数
 

@@ -1,4 +1,4 @@
-import { inject, ref, computed } from 'vue'
+import { inject, computed } from 'vue'
 import type { SetupContext, ComputedRef } from 'vue'
 
 import slotState from './slot-state'

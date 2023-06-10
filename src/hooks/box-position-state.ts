@@ -1,4 +1,4 @@
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onBeforeMount } from 'vue'
 
 export default function (mode = 'auto') {
   const dropdown = ref()
@@ -73,7 +73,7 @@ export default function (mode = 'auto') {
     if (/.*px/.test(tempWidth) && tempWidth !== '0px') width.value = Number((tempWidth).slice(0, -2))
   }
 
-  onUnmounted(() => {
+  onBeforeMount(() => {
     window.removeEventListener('resize', listenerResize)
     window.removeEventListener('scroll', listenerScroll)
   })

@@ -1,5 +1,5 @@
 // vue
-import { inject, reactive } from 'vue'
+import { inject } from 'vue'
 // vue type
 // 组件type
 // 外部hooks

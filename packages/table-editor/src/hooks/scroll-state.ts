@@ -1,7 +1,7 @@
 // vue
-import { ref, reactive, onMounted, onBeforeUnmount, computed, watch } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 // vue type
-import type { SetupContext, Ref } from 'vue'
+import type { Ref } from 'vue'
 // 组件type
 import type { BoxSizeState } from '../types/box-size-types'
 // 外部hooks
