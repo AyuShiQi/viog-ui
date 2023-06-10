@@ -1,6 +1,6 @@
 import type { SetupContext } from 'vue'
 
-import type { DialogProps, DialogOpen } from '@/types/dialog-types'
+import type { DialogProps } from '@/types/dialog-types'
 
 export default function (props: DialogProps, context: SetupContext) {
   function beSure (): void {

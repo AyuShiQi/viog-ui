@@ -1,4 +1,4 @@
-import { ref, onMounted, onBeforeMount } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 export default function (retract: boolean) {
   const header = ref()
@@ -10,7 +10,7 @@ export default function (retract: boolean) {
     }
   })
 
-  onBeforeMount(() => {
+  onBeforeUnmount(() => {
     window.removeEventListener('scroll', scrollListener)
   })
 

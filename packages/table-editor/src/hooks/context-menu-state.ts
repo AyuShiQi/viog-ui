@@ -1,5 +1,5 @@
 // vue
-import { ref, provide, onMounted, onBeforeMount } from 'vue'
+import { ref, provide, onMounted, onBeforeUnmount } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
@@ -179,7 +179,7 @@ export default function (props: any, ctx: SetupContext, chooseTarget: Target, pi
     getSize()
   })
 
-  onBeforeMount(() => {
+  onBeforeUnmount(() => {
     window.removeEventListener('scroll', closeOptionList)
   })
 

@@ -25,7 +25,7 @@ import { loading } from '../../loading'
 
 import { ScrollProps } from '@/types/scroll-types'
 
-import { scrollState, lazyState } from './hooks'
+import scrollState from './hooks/scroll-state'
 
 export default defineComponent({
   name: 'ViScroll',
@@ -34,12 +34,9 @@ export default defineComponent({
   },
   props,
   setup (props: ScrollProps) {
-    lazyState(props)
-    const mainScroll = scrollState()
+    const scroll = scrollState(props)
 
-    return {
-      ...mainScroll
-    }
+    return scroll
   }
 })
 </script>

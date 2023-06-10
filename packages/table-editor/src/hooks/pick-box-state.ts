@@ -1,5 +1,5 @@
 // vue
-import { ref, reactive, provide, onMounted, computed, watch, onBeforeMount } from 'vue'
+import { ref, reactive, provide, onMounted, computed, watch, onBeforeUnmount } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
@@ -176,7 +176,7 @@ export default function (props: any, ctx: SetupContext, boxSize: BoxSizeState, c
     window.addEventListener('mouseup', handlePointerMouseUp)
   })
 
-  onBeforeMount(() => {
+  onBeforeUnmount(() => {
     window.removeEventListener('mouseup', handlePointerMouseUp)
   })
 

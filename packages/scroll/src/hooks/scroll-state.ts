@@ -1,16 +1,18 @@
-import { getCurrentInstance } from 'vue'
-import type { ComponentInternalInstance } from 'vue'
+import { ref } from 'vue'
 
-import { DOMType } from '@/types/vue-types'
+import lazyState from './lazy-state'
 
-export default function () {
-  const { proxy } = getCurrentInstance() as ComponentInternalInstance
+export default function (props: any) {
+  const content = ref()
 
   function scrollTo (x: number, y: number) {
-    (proxy?.$refs.content as DOMType).scrollTo(x, y)
+    content.value.scrollTo(x, y)
   }
 
+  lazyState(props, content)
+
   return {
+    content,
     scrollTo
   }
 }
