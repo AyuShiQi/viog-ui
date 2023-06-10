@@ -2,7 +2,7 @@
 sidebarDepth: 1
 ---
 
-# 滚动框 scroll
+# 滚动框 scroll <Badge type="warning" text="待优化" vertical="middle"/>
 
 用于代替原生滚动条
 
@@ -325,8 +325,6 @@ function changeSmooth () {
 <!-- script -->
 child.value.scrollTo(0, 140)
 ```
-
-#### 
 
 <script setup>
 import { ref, reactive } from 'vue'

@@ -1,4 +1,3 @@
-import path from 'path'
 import { defineUserConfig, defaultTheme } from 'vuepress'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { copyCodePlugin } from "vuepress-plugin-copy-code2";
@@ -6,7 +5,7 @@ import { copyCodePlugin } from "vuepress-plugin-copy-code2";
 export default defineUserConfig({
   // 站点配置
   lang: 'zh-CN',
-  title: 'viog-ui组件库',
+  title: 'Viog UI',
   description: '基于vue3的炫酷组件库',
   head: [ // 注入到当前页面的 HTML <head> 中的标签
     ['link', {
@@ -90,7 +89,7 @@ export default defineUserConfig({
             },
             {
               text: '虚拟滚动 virtual-scroll',
-              link: 'components/virtual-scroll/'
+              link: '/components/virtualScroll/'
             },
           ]
         },
@@ -99,7 +98,7 @@ export default defineUserConfig({
           children: [
             {
               text: '表单 form',
-              link: 'components/form/'
+              link: '/components/form/'
             },
             {
               text: '开关 switch',
@@ -123,15 +122,15 @@ export default defineUserConfig({
             },
             {
               text: '下拉框 select',
-              link: 'components/select/'
+              link: '/components/select/'
             },
             {
               text: '虚拟下拉框 select-v',
-              link: 'components/select-v/'
+              link: '/components/select-v/'
             },
             {
               text: '时间选择器 time-select',
-              link: 'components/time-select/'
+              link: '/components/time-select/'
             },
             {
               text: '日期时间选择器 date-select',
@@ -144,7 +143,7 @@ export default defineUserConfig({
           children: [
             {
               text: '导航 nav',
-              link: 'components/nav/'
+              link: '/components/nav/'
             },
             {
               text: '固钉 affix',
@@ -173,7 +172,7 @@ export default defineUserConfig({
             },
             {
               text: '头像框 avater',
-              link: 'components/avater/'
+              link: '/components/avater/'
             },
             {
               text: '伸缩框 collapse',
@@ -190,7 +189,7 @@ export default defineUserConfig({
           children: [
             {
               text: '抽屉 drawer',
-              link: 'components/drawer/'
+              link: '/components/drawer/'
             },
             {
               text: '气泡 bubble',
@@ -219,7 +218,7 @@ export default defineUserConfig({
           children: [
             {
               text: '可编辑表格 table-editor',
-              link: 'components/table-editor/'
+              link: '/components/table-editor/'
             }
           ]
         },
@@ -228,7 +227,7 @@ export default defineUserConfig({
           children: [
             {
               text: '加载 loading',
-              link: 'components/loading/'
+              link: '/components/loading/'
             }
           ]
         }
