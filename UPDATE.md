@@ -142,15 +142,18 @@
 - 添加主要颜色css变量，调整purple3颜色
 - 修改disabled组件配色
 
-# 0.6.2-0.6.5（当前迭代开发版本）
+# 0.6.2-0.6.5
 
 - 修复组件内部removeListener问题
 - 修复link组件出现hover出现下划线的情况，添加target属性
 
-# 0.6.6
+# 0.6.6（当前迭代开发版本）
 
 - 修复upload组件icon消失的问题
 - 增加upload组件list-width调控变量
+- 修复input多个input框无法绑定成功一个变量的情况
+- 修复input number情况看得见输入的情况
+- 修复input前后缀问题，select在input中表现不正常
 
 # 0.6.7
 

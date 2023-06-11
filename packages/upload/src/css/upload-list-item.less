@@ -1,9 +1,26 @@
+@import '../img/3d.svg';
+@import '../img/config.svg';
+@import '../img/db.svg';
+@import '../img/db2.svg';
+@import '../img/default.svg';
+@import '../img/excel.svg';
+@import '../img/exe.svg';
+@import '../img/link.svg';
+@import '../img/pdf.svg';
+@import '../img/ppt.svg';
+@import '../img/project.svg';
+@import '../img/txt.svg';
+@import '../img/word.svg';
+@import '../img/wps.svg';
+@import '../img/zip.svg';
+
 .vi-upload-list-item {
     overflow: hidden;
     position: relative;
     display: flex;
     width: 100%;
     height: 3em;
+    padding: 0;
     align-items: center;
     box-sizing: border-box;
     border-radius: var(--vi-card-radius);
@@ -36,6 +53,8 @@
         // justify-content: space-between;
         align-items: flex-start;
         .vi-upload-list-item__text__name {
+            padding: 0;
+            margin: 0;
             cursor: pointer;
             text-overflow: ellipsis;
 
@@ -44,6 +63,8 @@
             }
         }
         .vi-upload-list-item__text__size {
+            padding: 0;
+            margin: 0;
             font-size: .8em;
             color: var(--vi-icon-color);
         }

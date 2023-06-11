@@ -92,6 +92,10 @@
     --vi-table-td-width: 70px;
     --vi-table-td-height: 25px;
 
+    --vi-upload-width: 100%;
+    --vi-upload-height: ;
+    --vi-upload-list-width: 100%;
+
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */
