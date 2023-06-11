@@ -142,19 +142,24 @@
 - 添加主要颜色css变量，调整purple3颜色
 - 修改disabled组件配色
 
-# 0.6.2（当前迭代开发版本）
+# 0.6.2-0.6.5（当前迭代开发版本）
 
 - 修复组件内部removeListener问题
+- 修复link组件出现hover出现下划线的情况，添加target属性
 
-# 0.6.3
+# 0.6.6
+
+- 修复upload组件icon消失的问题
+- 增加upload组件list-width调控变量
+
+# 0.6.7
 
 - 添加form组件的rule检查
 - 添加form表单的正则以及代码规范
-- 修复link组件出现hover出现下划线的情况，添加target属性
 - layout组件删除width及height等属性
 - 增加grid组件行列布局计算属性
 
-# 0.6.4
+# 0.6.8
 
 - 新增上传组件可拖拽drag类型
 - 新增可编辑表格组件撤回功能（增加撤销栈）

@@ -89,7 +89,8 @@ export {
 
 export default {
   install: (app: App) => {
-    app.config.unwrapInjectedRef = true
+    // 3.3 弃用
+    // app.config.unwrapInjectedRef = true
     components.forEach((component) => {
       component.install(app)
     })

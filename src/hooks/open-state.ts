@@ -1,4 +1,4 @@
-import { ref, onMounted, onBeforeMount } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 type openOption = {
   preCb?: () => boolean,
@@ -22,7 +22,7 @@ export default function (needBlur = true, openMode = 'click') {
     }
   })
 
-  onBeforeMount(() => {
+  onBeforeUnmount(() => {
     document.removeEventListener(openMode, listener)
   })
 

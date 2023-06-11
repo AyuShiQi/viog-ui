@@ -19,7 +19,7 @@ export default function (props: any, content: Ref) {
   }
 
   onMounted(() => {
-    if (props.lazy != null) {
+    if (props.lazy !== null) {
       // wait加载区的高度
       if (props.lazy !== null && props.wait !== 'none') {
         lazyHeight = 35
@@ -30,6 +30,8 @@ export default function (props: any, content: Ref) {
   })
 
   onBeforeUnmount(() => {
-    if (props.lazy != null) content.value.removeEventListener('scroll', handleScroll)
+    if (props.lazy !== null) {
+      if (content.value.removeEventListener) content.value.removeEventListener('scroll', handleScroll)
+    }
   })
 }

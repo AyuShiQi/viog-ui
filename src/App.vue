@@ -1,4 +1,8 @@
 <template>
+  <vi-button @click="toSelect">点击打开</vi-button>
+  <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中" v-if="open">
+    <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
+  </ViScroll>
   <!-- <vi-header retract>
     <vi-nav v-model="choose" trigger="hover">
       <vi-nav-item v-for="item in nav" :key="item">
@@ -38,7 +42,7 @@
   <h5>中国China</h5>
   <h6>中国China</h6>
   <p>中国China</p> -->
-  <vi-table-editor v-model="table"></vi-table-editor>
+  <!-- <vi-table-editor v-model="table"></vi-table-editor>
   <vi-input search @search="ok" show-clear></vi-input>
   <vi-breadcrumb>
     <vi-breadcrumb-item to="/goto">我的项目</vi-breadcrumb-item>
@@ -60,7 +64,7 @@
   </vi-card>
   <vi-input
   :maxlength="11"
-  number></vi-input>
+  number></vi-input> -->
 
   <!-- <vi-scroll :style="{
     width: '100px',
@@ -186,202 +190,6 @@
     折叠面板，沙琪玛好吃
   </vi-collapse> -->
 
-  <vi-row justify="center">
-    <ViButton disabled @click="openDialog">
-      <ViIcon/>打开对话框</ViButton>
-    <ViButton color="pink" @click="opent">打开toast</ViButton>
-    <ViButton color="red" @click="openf">点击进入</ViButton>
-    <ViButton color="blue">点击进入</ViButton>
-    <ViButton color="yellow">点击进入</ViButton>
-    <ViButton color="purple">点击进入</ViButton>
-    <ViButton color="green">点击进入</ViButton>
-    <ViButton color="dark">点击进入</ViButton>
-  </vi-row>
-  <vi-row justify="center" gap="23px">
-    <ViButton mutate>点击进入</ViButton>
-    <ViButton radius="round" color="pink" mutate>点击进入</ViButton>
-    <ViButton size="small" color="red" mutate>点击进入</ViButton>
-    <ViButton color="blue" mutate>点击进入</ViButton>
-    <ViButton color="yellow" mutate>点击进入</ViButton>
-    <ViButton color="purple" mutate>点击进入</ViButton>
-    <ViButton color="green" mutate>点击进入</ViButton>
-    <ViButton color="dark" mutate>点击进入</ViButton>
-  </vi-row>
-  <vi-row justify="center">
-    <ViButton disabled type="plain">点击进入</ViButton>
-    <ViButton color="pink" type="plain">点击进入</ViButton>
-    <ViButton color="red" type="plain">点击进入</ViButton>
-    <ViButton color="blue" type="plain">点击进入</ViButton>
-    <ViButton color="yellow" type="plain">点击进入</ViButton>
-    <ViButton color="purple" type="plain">点击进入</ViButton>
-    <ViButton color="green" type="plain">点击进入</ViButton>
-    <ViButton color="dark" type="plain">点击进入</ViButton>
-
-  </vi-row>
-  <vi-row justify="center">
-    <ViButton size="big" type="plain" mutate>点击进入</ViButton>
-    <ViButton size="big" color="pink" type="plain" mutate>点击进入</ViButton>
-    <ViButton size="big" color="red" type="plain" mutate>点击进入</ViButton>
-    <ViButton size="big" color="blue" type="plain" mutate>点击进入</ViButton>
-    <ViButton size="big" color="yellow" type="plain" mutate>点击进入</ViButton>
-    <ViButton size="big" color="purple" type="plain" mutate>点击进入</ViButton>
-    <ViButton size="big" color="green" type="plain" mutate>点击进入</ViButton>
-    <ViButton size="big" color="dark" type="plain" mutate>点击进入</ViButton>
-  </vi-row>
-  <vi-row justify="center">
-    <ViButton type="transparent" small>点击进入</ViButton>
-    <ViButton color="pink" type="transparent">点击进入</ViButton>
-    <ViButton color="red" type="transparent">点击进入</ViButton>
-    <ViButton color="blue" type="transparent" >点击进入</ViButton>
-    <ViButton color="yellow" type="transparent">点击进入</ViButton>
-    <ViButton color="purple" type="transparent">点击进入</ViButton>
-    <ViButton color="green" type="transparent">点击进入</ViButton>
-    <ViButton color="dark" type="transparent">点击进入</ViButton>
-  </vi-row>
-  <vi-row justify="center">
-    <ViButton type="transparent" mutate>点击进入</ViButton>
-    <ViButton color="pink" type="transparent" mutate>点击进入</ViButton>
-    <ViButton color="red" type="transparent" mutate>点击进入</ViButton>
-    <ViButton color="blue" type="transparent" mutate>点击进入</ViButton>
-    <ViButton color="yellow" type="transparent" mutate>点击进入</ViButton>
-    <ViButton color="purple" type="transparent" mutate>点击进入</ViButton>
-    <ViButton color="green" type="transparent" mutate>点击进入</ViButton>
-    <ViButton color="dark" type="transparent" mutate>点击进入</ViButton>
-  </vi-row>
-    <vi-row justify="center">
-    <ViButton @click="openDialog">
-      <ViIcon/>打开对话框</ViButton>
-    <ViButton color="pink" small @click="hello">点击进入</ViButton>
-    <ViButton color="red">点击进入</ViButton>
-    <ViButton color="blue">点击进入</ViButton>
-    <ViButton color="yellow">点击进入</ViButton>
-    <ViButton color="purple">点击进入</ViButton>
-    <ViButton color="green">点击进入</ViButton>
-    <ViButton color="dark">点击进入</ViButton>
-  </vi-row>
-  <vi-row justify="center">
-    <ViButton disabled mutate>点击进入</ViButton>
-    <ViButton disabled color="pink" mutate>点击进入</ViButton>
-    <ViButton disabled color="red" mutate>点击进入</ViButton>
-    <ViButton disabled color="blue" mutate>点击进入</ViButton>
-    <ViButton disabled color="yellow" mutate>点击进入</ViButton>
-    <ViButton disabled color="purple" mutate>点击进入</ViButton>
-    <ViButton disabled color="green" mutate>点击进入</ViButton>
-    <ViButton disabled color="dark" mutate>点击进入</ViButton>
-  </vi-row>
-
-  <!-- <vi-row justify="center">
-    <ViButton disabled type="plain" small>点击进入</ViButton>
-    <ViButton disabled color="pink" type="plain">点击进入</ViButton>
-    <ViButton disabled color="red" type="plain">点击进入</ViButton>
-    <ViButton disabled color="blue" type="plain">点击进入</ViButton>
-    <ViButton disabled color="yellow" type="plain">点击进入</ViButton>
-    <ViButton disabled color="purple" type="plain">点击进入</ViButton>
-    <ViButton disabled color="green" type="plain">点击进入</ViButton>
-    <ViButton disabled color="dark" type="plain">点击进入</ViButton>
-  </vi-row> -->
-
-  <!-- <vi-row justify="center">
-    <ViButton disabled type="plain" mutate>点击进入</ViButton>
-    <ViButton disabled color="pink" type="plain" mutate>点击进入</ViButton>
-    <ViButton disabled color="red" type="plain" mutate>点击进入</ViButton>
-    <ViButton disabled color="blue" type="plain" mutate>点击进入</ViButton>
-    <ViButton disabled color="yellow" type="plain" mutate>点击进入</ViButton>
-    <ViButton disabled color="purple" type="plain" mutate>点击进入</ViButton>
-    <ViButton disabled color="green" type="plain" mutate>点击进入</ViButton>
-    <ViButton disabled color="dark" type="plain" mutate>点击进入</ViButton>
-  </vi-row>
-  <vi-row justify="center">
-    <ViButton disabled type="transparent" small>点击进入</ViButton>
-    <ViButton disabled color="pink" type="transparent">点击进入</ViButton>
-    <ViButton disabled color="red" type="transparent">点击进入</ViButton>
-    <ViButton disabled color="blue" type="transparent" >点击进入</ViButton>
-    <ViButton disabled color="yellow" type="transparent">点击进入</ViButton>
-    <ViButton disabled color="purple" type="transparent">点击进入</ViButton>
-    <ViButton disabled color="green" type="transparent">点击进入</ViButton>
-    <ViButton disabled color="dark" type="transparent">点击进入</ViButton>
-  </vi-row>
-  <vi-row justify="center">
-    <ViButton disabled type="transparent" mutate>点击进入</ViButton>
-    <ViButton disabled color="pink" type="transparent" mutate>点击进入</ViButton>
-    <ViButton disabled color="red" type="transparent" mutate>点击进入</ViButton>
-    <ViButton disabled color="blue" type="transparent" mutate>点击进入</ViButton>
-    <ViButton disabled color="yellow" type="transparent" mutate>点击进入</ViButton>
-    <ViButton disabled color="purple" type="transparent" mutate>点击进入</ViButton>
-    <ViButton disabled color="green" type="transparent" mutate>点击进入</ViButton>
-    <ViButton disabled color="dark" type="transparent" mutate>点击进入</ViButton>
-  </vi-row>
-  <vi-row justify="center">
-    <ViButton radius="round">点击</ViButton>
-    <ViButton color="pink" radius="round">点击</ViButton>
-    <ViButton color="red" radius="round">点击</ViButton>
-    <ViButton color="blue" radius="round">点击</ViButton>
-    <ViButton color="yellow" radius="circle" style="transform: scale(80%)">
-      <ViIcon type="renzheng" size="big"/>
-    </ViButton>
-    <ViButton color="purple" radius="round">点击xxx</ViButton>
-    <ViButton color="green" radius="round">点击xxx</ViButton>
-  </vi-row>
-  <vi-row justify="center">
-    <ViButton radius="circle" mutate>
-      <ViIcon type="renzheng"/>
-    </ViButton>
-    <ViButton color="pink" radius="circle" mutate>点击</ViButton>
-    <ViButton color="red" radius="circle" mutate>点击</ViButton>
-    <ViButton color="blue" radius="circle" mutate>点击</ViButton>
-    <ViButton color="yellow" radius="circle" mutate>
-      <ViIcon type="renzheng"/>
-    </ViButton>
-    <ViButton color="purple" radius="circle" mutate>点击</ViButton>
-    <ViButton color="green" radius="circle" mutate>点击</ViButton>
-  </vi-row>
-  <vi-row justify="center">
-    <ViButton type="plain" radius="circle">点击</ViButton>
-    <ViButton color="pink" type="plain" radius="circle">点击</ViButton>
-    <ViButton color="red" type="plain" radius="circle">点击</ViButton>
-    <ViButton color="blue" type="plain" radius="circle">点击</ViButton>
-    <ViButton color="yellow" type="plain" radius="circle">
-      <ViIcon type="renzheng"/>
-    </ViButton>
-    <ViButton color="purple" type="plain" radius="circle">点击</ViButton>
-    <ViButton color="green" type="plain" radius="circle">点击</ViButton>
-  </vi-row>
-  <vi-row justify="center">
-    <ViButton type="plain" radius="circle">点击</ViButton>
-    <ViButton color="pink" type="plain" radius="circle">点击</ViButton>
-    <ViButton color="red" type="plain" radius="circle">点击</ViButton>
-    <ViButton color="blue" type="plain" radius="circle">点击</ViButton>
-    <ViButton color="yellow" type="plain" radius="circle">
-      <ViIcon type="renzheng"/>
-    </ViButton>
-    <ViButton color="purple" type="plain" radius="circle">点击</ViButton>
-    <ViButton color="green" type="plain" radius="circle">点击</ViButton>
-  </vi-row>
-  <vi-row justify="center">
-    <ViButton type="transparent" radius="circle">点击</ViButton>
-    <ViButton color="pink" type="transparent" radius="circle">点击</ViButton>
-    <ViButton color="red" type="transparent" radius="circle">点击</ViButton>
-    <ViButton color="blue" type="transparent" radius="circle">点击</ViButton>
-    <ViButton color="yellow" type="transparent" radius="circle">
-      <ViIcon type="renzheng"/>
-    </ViButton>
-    <ViButton color="purple" type="transparent" radius="circle">点击</ViButton>
-    <ViButton color="green" type="transparent" radius="circle">点击</ViButton>
-  </vi-row>
-  <vi-row justify="center">
-    <ViButton type="transparent" radius="circle">
-      <ViIcon type="renzheng"/>
-    </ViButton>
-    <ViButton color="pink" type="transparent" radius="circle">点击</ViButton>
-    <ViButton color="red" type="transparent" radius="circle">点击</ViButton>
-    <ViButton color="blue" type="transparent" radius="circle">点击</ViButton>
-    <ViButton color="yellow" type="transparent" radius="circle">
-      <ViIcon type="renzheng"/>
-    </ViButton>
-    <ViButton color="purple" type="transparent" radius="circle">点击</ViButton>
-    <ViButton color="green" type="transparent" radius="circle">点击</ViButton>
-  </vi-row> -->
-
     <!-- <vi-row justify="center">
       <ViLoading type="diamond"/>
     </vi-row>
@@ -449,12 +257,9 @@
     </vi-row>
   </ViDialog> -->
 
-  <!-- <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中" class="scroll-style">
+  <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中" class="scroll-style" v-if="open">
     <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
-  </ViScroll> -->
-  <!-- <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中">
-    <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
-  </ViScroll> -->
+  </ViScroll>
   <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" class="virtual-scroll">
     <template v-slot="vi">
       <vi-row class="lili">
@@ -860,12 +665,16 @@ export default defineComponent({
       open.value = false
     }
 
+    function toSelect () {
+      open.value = !open.value
+    }
+
     function ok (v: any, n: any) {
       console.log(v)
-      setTimeout(() => {
-        n.finish.value = true
-        val.value = v
-      }, 500)
+      // setTimeout(() => {
+      //   // n.finish.value = true
+      //   val.value = v
+      // }, 500)
     }
 
     function scr () {
@@ -925,7 +734,8 @@ export default defineComponent({
       openf,
       nav,
       choose,
-      table
+      table,
+      toSelect
     }
   },
   mounted () {
