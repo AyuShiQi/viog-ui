@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import type { SetupContext } from 'vue'
 import type { InputProps } from '../type'
 import type { InputDOM } from '@/types/vue-types'
@@ -6,34 +6,20 @@ import type { InputDOM } from '@/types/vue-types'
 import valueState from './value-state'
 import slotState from './slot-state'
 import searchState from './search-state'
+import passwordState from './password-state'
 
 export default function (props: InputProps, context: SetupContext) {
   // input dom
   const input = ref()
   // ref
-  // 输出的value
-  const value = ref('')
-
-  const search = searchState(props, context, value, input)
-  const inputEvent = valueState(props, context, value, search.search)
+  const search = searchState(props, context, input)
+  const inputEvent = valueState(props, context, search.search)
   const hasSlot = slotState(props, context)
-
-  /* 密码展示部分 */
-  // 是否展示密码
-  // #region
-  const ifShowPassword = ref(false)
-  const passwordOrText = computed((): string => {
-    return props.password && !ifShowPassword.value ? 'password' : 'text'
-  })
-  function changeShowPassword () {
-    ifShowPassword.value = !ifShowPassword.value
-  }
-  // #endregion
+  const password = passwordState(props)
 
   /* 清除区 */
   function toClear () {
     context.emit('update:modelValue', '')
-    value.value = ''
   }
 
   /* 鼠标进出input框事件 */
@@ -53,11 +39,13 @@ export default function (props: InputProps, context: SetupContext) {
   function focus () {
     isFocus.value = true
   }
+
   function blur () {
     // blur后需要还原所有状态
     if (!isEnter.value) {
       isFocus.value = false
-      ifShowPassword.value = false
+      // 密码还原
+      password.ifShowPassword.value = false
     }
   }
 
@@ -72,11 +60,6 @@ export default function (props: InputProps, context: SetupContext) {
   // #endregion
 
   return {
-    value,
-    // password 显示控制
-    ifShowPassword,
-    passwordOrText,
-    changeShowPassword,
     input,
     // clear控制
     toClear,
@@ -90,6 +73,7 @@ export default function (props: InputProps, context: SetupContext) {
     mouseLeave,
     ...inputEvent,
     ...hasSlot,
-    ...search
+    ...search,
+    ...password
   }
 }

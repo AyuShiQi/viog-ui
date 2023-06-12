@@ -1,4 +1,4 @@
-.vi-input-apperance {
+.vi-input {
     position: relative;
     display: inline-flex;
     width: var(--vi-input-width);
@@ -11,7 +11,7 @@
     box-sizing: border-box;
     cursor: text;
 
-    .vi-input {
+    .vi-input__origin {
         width: 1px;
         height: 100%;
         border: none;
@@ -29,18 +29,18 @@
         }
     }
 
-    .vi-input:disabled {
+    .vi-input__origin:disabled {
         cursor: no-drop;
     }
 }
 
-.vi-input-apperance.is-number {
+.vi-input.is-number {
     .vi-input {
         ime-mode: disabled
     }
 }
 
-.vi-input-apperance.is-dark { 
+.vi-input.is-dark { 
     .vi-input {
         color: var(--vi-font-color);
         // 光标颜色
@@ -66,7 +66,7 @@
 @import './transition.less';
 @import './fix.less';
 
-.vi-input-apperance.is-disabled {
+.vi-input.is-disabled {
     cursor: no-drop;
     border-color: var(--vi-background-color);
     &::before {
@@ -93,7 +93,7 @@
     }
 }
 
-.vi-input-apperance.is-dark.is-disabled {
+.vi-input.is-dark.is-disabled {
     cursor: no-drop;
     border-color: var(--vi-background-color);
     &::before {

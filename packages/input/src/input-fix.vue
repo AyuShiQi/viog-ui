@@ -1,5 +1,5 @@
 <template>
-  <span class="vi-input-fix">
+  <span class="vi-input-fix" @click="handleClick">
     <vi-select v-if="isArray" :datas="Array.isArray(data)? data : []" v-model="value" :size="size" :disabled="disabled"></vi-select>
     <p v-else>{{data}}</p>
   </span>
@@ -47,9 +47,15 @@ export default defineComponent({
     watch(value, () => {
       context.emit('update:modelValue', value.value)
     })
+
+    function handleClick (e: Event) {
+      e?.stopPropagation()
+    }
+
     return {
       isArray,
-      value
+      value,
+      handleClick
     }
   }
 })

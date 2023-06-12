@@ -1,23 +1,22 @@
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, computed } from 'vue'
 import type { SetupContext, Ref } from 'vue'
 import type { InputProps } from '../type'
 
 import { InputEvent } from '@/types/vue-types'
 
-export default function (props: InputProps, context: SetupContext, value: Ref, search: Ref) {
-  onMounted(() => {
-    if (props.number && Number.isNaN(Number.parseInt(props.modelValue))) {
-      context.emit('update:modelValue', '')
+import strToNumstr from '../../../utils/string-utils/str-to-numstr'
+
+export default function (props: InputProps, context: SetupContext, search: Ref) {
+  const value = computed(() => {
+    if (props.number) {
+      const newValue = strToNumstr(props.modelValue)
+      if (props.modelValue !== newValue) context.emit('update:modelValue', newValue)
     }
+    return props.modelValue
   })
 
-  const suf = ref('')
-  const pre = ref('')
-
-  watch([suf, pre], () => {
-    if (value.value) context.emit('update:modelValue', pre.value + value.value + suf.value)
-  })
-
+  // 用于记录上一次输入
+  let preInput: string
   /* change与input与数字区 */
   // 验证最大长度下
   function isMaxLength (value: string): boolean {
@@ -28,72 +27,70 @@ export default function (props: InputProps, context: SetupContext, value: Ref, s
 
   // 验证数字状态下
   function toUpdateValue (e: InputEvent): boolean {
-    const E = e as unknown as Event
-    // console.log(value.value, e.inputType)
     // 数字辨别区域
-    if (props.number) {
-      if (e.inputType !== 'insertCompositionText') {
-        if (!Number.isNaN(parseInt(e.target.value))) value.value = parseInt(e.target.value)
-        else if (e.target.value === '') value.value = e.target.value
-        else return false
-      } else return false
-    }
+    // if (props.number && e.inputType === 'insertCompositionText') {
+    //   e.target.value = preInput
+    //   return false
+    // }
     return true
   }
 
+  // 输入前
   function beforeInput (E: Event): void {
     const e = E as unknown as InputEvent
-    // console.log(value.value, e.inputType)
-    if (isMaxLength(e.target.value)) {
-      E.preventDefault()
-    } else if (props.number) {
-      if (e.inputType === 'insertCompositionText') {
-        // 暂时对输入法无效
-        E.preventDefault()
-      } else if (e.inputType === 'insertText' && Number.isNaN(parseInt(e.data))) {
-        E.preventDefault()
-      } else if (e.inputType === 'historyRedo' || e.inputType === 'historyUndo') {
-        E.preventDefault()
-      } else if (e.inputType === 'insertFromDrop' && Number.isNaN(parseInt(e.data))) {
-        E.preventDefault()
-      } else if (e.inputType === 'insertFromPaste' && Number.isNaN(parseInt(e.data))) {
-        E.preventDefault()
-      }
-    }
+    // preInput = e.target.value
+    // // console.log(e.target.value, e.inputType)
+    // if (isMaxLength(e.target.value)) {
+    //   E.preventDefault()
+    // } else if (props.number) handleNumber(e.inputType, e.data, E)
   }
 
+  // 输入时
   function handleInput (E: Event): void {
+    // console.log('ok')
     const e = E as unknown as InputEvent
     if (toUpdateValue(e)) {
-      if (!props.number) value.value = e.target.value
-      context.emit('update:modelValue', pre.value + value.value + suf.value)
+      context.emit('update:modelValue', e.target.value)
       context.emit('input')
       // search搜索
-      if (props.search && search.value) context.emit('search', value.value)
+      if (props.search && search.value) context.emit('search', props.modelValue)
     }
   }
 
   function handleKeyUp (e: KeyboardEvent) {
+    // 按下enter键自动失焦
     if (e.code === 'Enter') (e!.target as any).blur()
   }
 
   function handleChange (E: Event): void {
     const e = E as unknown as InputEvent
     if (toUpdateValue(e)) {
-      if (!props.number) value.value = e.target.value
-      context.emit('update:modelValue', pre.value + value.value + suf.value)
       context.emit('change')
     }
-    // if (e.inputType === undefined) context.emit('change')
+  }
+
+  function handleNumber (inputType: string, data: any, e: Event) {
+    // if (inputType === 'insertCompositionText') {
+    //   // 暂时对输入法无效，在input已经发生后处理
+    //   e.preventDefault()
+    // } else if (inputType === 'insertText' && Number.isNaN(parseInt(data))) {
+    //   e.preventDefault()
+    //   // number拒绝历史处理，一劳永逸处理错误问题
+    // } else if (inputType === 'historyRedo' || inputType === 'historyUndo') {
+    //   e.preventDefault()
+    // } else if (inputType === 'insertFromDrop' && Number.isNaN(parseInt(data))) {
+    //   e.preventDefault()
+    // } else if (inputType === 'insertFromPaste' && Number.isNaN(parseInt(data))) {
+    //   e.preventDefault()
+    // }
   }
 
   return {
+    value,
     // change与input事件
     handleInput,
     handleChange,
     handleKeyUp,
-    beforeInput,
-    suf,
-    pre
+    beforeInput
   }
 }

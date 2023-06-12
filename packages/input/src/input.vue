@@ -1,10 +1,10 @@
 <template>
   <span
-  class="vi-input-apperance"
+  class="vi-input"
   :class="[
   `is-${color}`,
   `vi-input-${type}`,
-  `is-${size}`,
+  `vi-input-size-${size}`,
   {
     'is-focus': isFocus,
     'is-dark': dark,
@@ -20,32 +20,29 @@
   @click="toFocus"
   @mouseenter="mouseEnter"
   @mouseleave="mouseLeave">
+    <!-- 前缀 -->
     <span class="vi-input-prefix vi-input-fix" v-if="prefixSlot">
       <slot name="prefix"></slot>
     </span>
-    <InputFix
-    v-if="prefix!==''"
-    class="vi-input-prefix"
-    :data="prefix"
-    :size="size"
-    v-model="pre"
-    :disabled="disabled"></InputFix>
+    <!-- 输入框 -->
     <input
-    :value="value"
+    class="vi-input__origin"
     @input="handleInput"
     @change="handleChange"
     @beforeinput="beforeInput"
     @keyup="handleKeyUp"
-    class="vi-input"
-    :placeholder="placeholder"
-    :type="passwordOrText"
-    :name="name"
     @focus="focus"
     @blur="blur"
+    :value="value"
+    :name="name"
+    :type="passwordOrText"
     :maxlength="maxlength"
     :minlength="minlength"
     :disabled="disabled"
+    :autofocus="autofocus"
+    :placeholder="placeholder"
     ref="input"/>
+    <!-- 按钮 -->
     <span class="vi-option-button-home">
       <span class="vi-option-clear" v-show="showClear" @click="toClear">
         <svg class="clear-option"
@@ -71,14 +68,7 @@
         </svg>
       </span>
     </span>
-    <InputFix
-    v-if="suffix!==''"
-    class="vi-input-suffix"
-    :data="suffix"
-    :size="size"
-    v-model="suf"
-    :disabled="disabled">
-    </InputFix>
+    <!-- 后缀 -->
     <span class="vi-input-suffix vi-input-fix" v-if="suffixSlot">
       <slot name="suffix"></slot>
     </span>
@@ -86,28 +76,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 import type { SetupContext } from 'vue'
 import type { InputProps } from './type'
 
 import props from './props'
 
-import InputFix from './input-fix.vue'
-
 import inputState from './hooks/input-state'
 
 export default defineComponent({
   name: 'ViInput',
-  components: { InputFix },
   emits: ['change', 'input', 'update:modelValue', 'search'] as string[],
   props,
   setup (props: InputProps, context: SetupContext) {
     const input = inputState(props, context)
 
     return input
-  },
-  mounted () {
-    if (this.autofocus) this.toFocus()
   }
 })
 </script>

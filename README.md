@@ -619,7 +619,7 @@ export type { ViVirtualScrollType } from 'viog-ui'
 
   > 参数：false(default)/true
 
-- number：boolean 输入框是否只能输入数字
+- number：boolean 输入框是否只能输入数字（不包括小数点）
 
   > 参数：false(default)/true
 

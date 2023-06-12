@@ -1,500 +1,5 @@
 <template>
-  <vi-button @click="toSelect">点击打开</vi-button>
-  <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中" v-if="open">
-    <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
-  </ViScroll>
-  <!-- <vi-header retract>
-    <vi-nav v-model="choose" trigger="hover">
-      <vi-nav-item v-for="item in nav" :key="item">
-        {{item}}
-      </vi-nav-item>
-      <vi-nav-item-group title="其他">
-        <vi-nav-item>吃饭</vi-nav-item>
-        <vi-nav-item>睡觉</vi-nav-item>
-        <vi-nav-item>打豆豆</vi-nav-item>
-      </vi-nav-item-group>
-    </vi-nav>
-    <vi-avater src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"></vi-avater>
-    <vi-avater></vi-avater>
-  </vi-header> -->
-  <!-- <vi-icon size="big"></vi-icon> -->
-
-  <vi-collapse title="完成任务" class="okkkkk">
-    <div :style="{
-      width: '600px',
-      height: '400px'
-    }"></div>
-  </vi-collapse>
-  <!-- <vi-upload @MaximumAttention="up" :maximum="1" replace @change="ok" @beforeadd="ok" @LimitAttention="up">
-    <vi-upload-choose>
-      <vi-button>点击下载文件</vi-button>
-    </vi-upload-choose>
-    <vi-upload-list></vi-upload-list>
-    <vi-upload-list show-size></vi-upload-list>
-    <vi-upload-list type="button"></vi-upload-list>
-    <vi-upload-list show-size type="button"></vi-upload-list>
-  </vi-upload> -->
-  <!-- <input type="file"/> -->
-  <!-- <h1>中国China</h1>
-  <h2>中国China</h2>
-  <h3>中国China</h3>
-  <h4>中国China</h4>
-  <h5>中国China</h5>
-  <h6>中国China</h6>
-  <p>中国China</p> -->
-  <!-- <vi-table-editor v-model="table"></vi-table-editor>
-  <vi-input search @search="ok" show-clear></vi-input>
-  <vi-breadcrumb>
-    <vi-breadcrumb-item to="/goto">我的项目</vi-breadcrumb-item>
-    <vi-breadcrumb-item to="/home" color="green">最近更新</vi-breadcrumb-item>
-    <vi-breadcrumb-item>折线图</vi-breadcrumb-item>
-  </vi-breadcrumb>
-  <vi-nav v-model="choose" direction="vertical">
-    <div v-for="item in nav" :key="item">
-      {{item}}
-    </div>
-    <vi-nav-item-group title="其他">
-        <vi-nav-item>吃饭</vi-nav-item>
-        <vi-nav-item>睡觉</vi-nav-item>
-        <vi-nav-item>打豆豆</vi-nav-item>
-      </vi-nav-item-group>
-  </vi-nav>
-  <vi-card type="plain">
-    <vi-button>nishishei1</vi-button>
-  </vi-card>
-  <vi-input
-  :maxlength="11"
-  number></vi-input> -->
-
-  <!-- <vi-scroll :style="{
-    width: '100px',
-    height: '200px'
-  }">
-    <div :style="{
-      width: '200px',
-      height: '300px'
-    }">123333333444444444444444444444444</div>
-  </vi-scroll> -->
-
-  <!-- <vi-input type="plain" :style="{
-    position: 'absolute',
-    top: '80%',
-    left: '50%',
-    margin: '0 0 0 -100px'
-  }">
-    <template v-slot:prefix>
-      <vi-select class="v-v-v" v-model="value" chooseType="plain">
-        <vi-option-group title="常用地区">
-          <vi-option value="+86" selected desc="中国大陆">
-            <template v-slot:pre>
-              中国大陆
-            </template>
-            +86
-          </vi-option>
-          <vi-option value="+163">
-            <template v-slot:pre>
-              中国台湾
-            </template>
-            +886
-          </vi-option>
-        </vi-option-group>
-        <vi-option-group title="Z">
-          <vi-option value="+86" selected desc="中国大陆">
-            <template v-slot:pre>
-              中国大陆
-            </template>
-            +86
-          </vi-option>
-          <vi-option value="+163">
-            <template v-slot:pre>
-              中国台湾
-            </template>
-            +886
-          </vi-option>
-        </vi-option-group>
-      </vi-select>
-    </template>
-  </vi-input> -->
-  <vi-skeleton></vi-skeleton>
-
-  <vi-select placeholder="请选择" search @search="ok" v-model="value">
-    <vi-option :value="val">{{val}}</vi-option>
-    <vi-option :value="val">{{val}}</vi-option>
-    <vi-option :value="val">{{val}}</vi-option>
-    <vi-option :value="val">{{val}}</vi-option>
-    <vi-option :value="val">{{val}}</vi-option>
-    <vi-option :value="val">{{val}}</vi-option>
-  </vi-select>
-
-  <vi-menu shadow @select="ok" router>
-    <vi-menu-item to="/home">
-      <template v-slot:prefix>
-        <vi-icon type="tianjia" style="font-size: 20px;"></vi-icon>
-      </template>
-      新建项目
-    </vi-menu-item>
-    <vi-divider></vi-divider>
-    <vi-menu-group title="我的项目" scalable option to="/home">
-      <vi-menu-item>图表</vi-menu-item>
-      <vi-menu-item>表格</vi-menu-item>
-      <vi-menu-item>
-        回收站
-      </vi-menu-item>
-    </vi-menu-group>
-    <vi-divider></vi-divider>
-    <vi-menu-group title="模板中心">
-      <vi-menu-item>发现模板</vi-menu-item>
-      <vi-menu-item>我的收藏</vi-menu-item>
-      <vi-menu-item>我的分享</vi-menu-item>
-    </vi-menu-group>
-    <vi-divider></vi-divider>
-    <vi-menu-item>
-      <template v-slot:prefix>
-        <vi-icon type="shezhi" style="font-size: 20px;"></vi-icon>
-      </template>
-      设置
-    </vi-menu-item>
-  </vi-menu>
-
-  <vi-bubble title="这是我们的家">
-    <vi-button>我们应该像这个样子</vi-button>
-    <template v-slot:content>
-      Tianxia
-    </template>
-  </vi-bubble>
-  <vi-bubble direction="left">
-    <vi-button>我们应该像这个样子</vi-button>
-  </vi-bubble>
-  <vi-bubble direction="top">
-    <vi-button>我们应该像这个样子</vi-button>
-  </vi-bubble>
-  <vi-bubble direction="right">
-    <vi-button>我们应该像这个样子</vi-button>
-  </vi-bubble>
-
-  <!-- <vi-affix :position="10">
-    <vi-button>我是固钉1</vi-button>
-  </vi-affix> -->
-  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-
-  <!-- <vi-drawer></vi-drawer> -->
-  <!-- <vi-collapse-group accordion>
-    <vi-collapse title="折叠面板">
-      折叠面板，沙琪玛好吃
-    </vi-collapse>
-    <vi-collapse title="折叠面板">
-      折叠面板，沙琪玛好吃
-    </vi-collapse>
-  </vi-collapse-group>
-  <vi-collapse title="折叠面板">
-    折叠面板，沙琪玛好吃
-  </vi-collapse> -->
-
-    <!-- <vi-row justify="center">
-      <ViLoading type="diamond"/>
-    </vi-row>
-    <vi-row justify="center">
-      <ViLoading type="diamond" color="purple"/>
-    </vi-row>
-     <ViLoading type="diamond" color="white"/> -->
-
-  <!-- <vi-affix type="bottom" :position="10">
-    <vi-button>我是固钉2</vi-button>
-  </vi-affix> -->
-
-  <!-- <vi-row justify="center">
-    <ViLoading type="ball"/><br/>
-    <ViLoading type="ball" color="purple"/><br/>
-    <ViLoading type="ball" color="golden"/><br/>
-    <ViLoading type="ball" color="white"/><br/>
-    <ViLoading type="ball" color="green"/><br/>
-    <ViLoading type="ball" color="blue"/><br>
-    <ViLoading type="ball" color="red"/><br/>
-    <ViLoading type="ball" color="pink"/>
-  </vi-row>
-  <vi-row justify="center">
-    <ViLoading type="circle"/>
-    <ViLoading type="circle" color="purple"/>
-    <ViLoading type="circle" color="golden"/>
-    <ViLoading type="circle" color="white"/>
-    <ViLoading type="circle" color="green"/>
-    <ViLoading type="circle" color="blue"/>
-    <ViLoading type="circle" color="red"/>
-    <ViLoading type="circle" color="pink"/>
-  </vi-row>
-  <vi-row justify="center">
-    <ViLoading type="disk"/>
-    <ViLoading type="disk" color="purple"/>
-    <ViLoading type="disk" color="golden"/>
-    <ViLoading type="disk" color="white"/>
-    <ViLoading type="disk" color="green"/>
-    <ViLoading type="disk" color="blue"/>
-    <ViLoading type="disk" color="red"/>
-    <ViLoading type="disk" color="pink"/>
-  </vi-row>
-  <vi-row justify="center">
-    <ViLoading type="star"/>
-    <ViLoading type="star" color="purple"/>
-    <ViLoading type="star" color="golden"/>
-    <ViLoading type="star" color="white"/>
-    <ViLoading type="star" color="green"/>
-    <ViLoading type="star" color="blue"/>
-    <ViLoading type="star" color="red"/>
-    <ViLoading type="star" color="pink"/>
-  </vi-row> -->
-
-  <!-- <ViDialog ref="child"
-  v-model="open"
-  maskBlur
-  mask
-  background="black"
-  color="purple"
-  title="提示"
-  @sure="hello">
-    <vi-row>
-      是否支付？
-      <ViSwitch dark size="small" filter></ViSwitch>
-    </vi-row>
-  </ViDialog> -->
-
-  <ViScroll :lazy="pf" ref="scroll" smooth wait="ball" waitText="加载中" class="scroll-style" v-if="open">
-    <vi-row class="li" v-for="item in arr" :key="item">{{item}}</vi-row>
-  </ViScroll>
-  <ViVirtualScroll :itemHeight="100" :datas="obj" ref="vscroll" class="virtual-scroll">
-    <template v-slot="vi">
-      <vi-row class="lili">
-        {{vi.data.number}}
-      </vi-row>
-    </template>
-  </ViVirtualScroll>
-
-  <!-- <vi-row id="div" style="padding: 10px 0;">
-    <ViInput v-model="value" number showClear width="400px" :maxLength="10" @change="ok" placeholder="账号"></ViInput><br/>
-    <ViInput v-model="value" dark password showPassword showClear>密码</ViInput><br/>
-    <ViInput round color="pink" password showPassword showClear>密码</ViInput><br/>
-    <ViInput color="pink" dark>
-      <template v-slot:prefix>
-        placeholder
-      </template>
-    </ViInput><br>
-    <ViInput color="purple">placeholder</ViInput><br/>
-    <ViInput color="purple" dark>placeholder</ViInput><br>
-    <ViInput color="golden">placeholder</ViInput><br/>
-    <ViInput color="golden" dark>placeholder</ViInput><br>
-    <ViInput color="green">placeholder</ViInput><br/>
-    <ViInput color="green" dark>placeholder</ViInput><br>
-    <ViInput disabled color="yellow">placeholder</ViInput><br/>
-    <ViInput color="yellow" dark>placeholder</ViInput><br>
-    <ViInput color="blue">placeholder</ViInput><br/>
-    <ViInput color="blue" dark>placeholder</ViInput><br>
-    <ViInput color="red">placeholder</ViInput><br/>
-    <ViInput :suffix="arr" color="red" dark password :prefix="arr">placeholder</ViInput><br>
-  </vi-row>
-    <vi-row id="div" style="padding: 10px 0;">
-    <ViInput round :suffix="arr" type="plain" v-model="value" number showClear :maxlength="10" @change="ok">账号</ViInput><br/>
-    <ViInput type="plain" v-model="value" dark password showPassword showClear>密码</ViInput><br/>
-    <ViInput type="plain" round color="pink" password showPassword showClear>密码</ViInput><br/>
-    <ViInput type="plain" color="purple">placeholder</ViInput><br/>
-    <ViInput type="plain" color="purple" dark>placeholder</ViInput><br>
-    <ViInput type="plain" color="pink" dark>placeholder</ViInput><br>
-    <ViInput type="plain" color="golden">placeholder</ViInput><br/>
-    <ViInput type="plain" color="golden" dark>placeholder</ViInput><br>
-    <ViInput type="plain" color="green">placeholder</ViInput><br/>
-    <ViInput type="plain" color="green" dark>placeholder</ViInput><br>
-    <ViInput type="plain" disabled color="yellow">placeholder</ViInput><br/>
-    <ViInput type="plain" color="yellow" dark>placeholder</ViInput><br>
-    <ViInput type="plain" color="blue">placeholder</ViInput><br/>
-    <ViInput type="plain" color="blue" dark>placeholder</ViInput><br>
-    <ViInput type="plain" color="red">placeholder</ViInput><br/>
-    <ViInput disabled :suffix="arr" type="plain" color="red" dark password :prefix="arr">placeholder</ViInput><br>
-  </vi-row>
-  <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
-    <ViInput disabled type="plain">placeholder</ViInput><br/>
-    <ViInput type="plain" dark>placeholder</ViInput><br>
-    <ViInput type="plain" color="pink">placeholder</ViInput><br/>
-    <ViInput type="plain" color="pink" dark>placeholder</ViInput><br>
-    <ViInput type="plain" color="golden">placeholder</ViInput><br/>
-    <ViInput type="plain" color="golden" dark>placeholder</ViInput><br>
-    <ViInput type="plain" color="green">placeholder</ViInput><br/>
-    <ViInput type="plain" color="green" dark>placeholder</ViInput><br>
-    <ViInput type="plain" color="yellow" right>placeholder</ViInput><br/>
-    <ViInput type="plain" color="yellow" dark right>placeholder</ViInput><br>
-    <ViInput type="plain" color="blue" warn>placeholder</ViInput><br/>
-    <ViInput type="plain" color="blue" dark warn>placeholder</ViInput><br>
-    <ViInput type="plain" color="red" error>placeholder</ViInput><br/>
-    <ViInput type="plain" ref="ipt" color="red" dark error>placeholder</ViInput><br>
-  </vi-row>
-    <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
-    <ViInput :preffix="arr" :suffix="arr" round type="button">placeholder</ViInput><br/>
-    <ViInput disabled type="button" dark placeholder="ysysysy"></ViInput><br>
-    <ViInput type="button" color="pink">placeholder</ViInput><br/>
-    <ViInput type="button" color="pink" dark>placeholder</ViInput><br>
-    <ViInput type="button" color="golden">placeholder</ViInput><br/>
-    <ViInput type="button" color="golden" dark>placeholder</ViInput><br>
-    <ViInput type="button" color="green">placeholder</ViInput><br/>
-    <ViInput type="button" color="green" dark>placeholder</ViInput><br>
-    <ViInput type="button" color="yellow" right>placeholder</ViInput><br/>
-    <ViInput type="button" color="yellow" dark right>placeholder</ViInput><br>
-    <ViInput type="button" color="blue" warn>placeholder</ViInput><br/>
-    <ViInput type="button" color="blue" dark warn>placeholder</ViInput><br>
-    <ViInput type="button" color="red" error>placeholder</ViInput><br/>
-    <ViInput type="button" ref="ipt" color="red" dark error>placeholder</ViInput><br>
-  </vi-row> -->
-
-  <!-- <vi-row id="div" style="padding: 10px 0;">
-    <ViSwitch v-model="res" disabled></ViSwitch><br><br>
-    <ViSwitch v-model="res" size="small" dark></ViSwitch><br><br>
-    <ViSwitch v-model="res" size="big" filter></ViSwitch><br><br>
-    <ViSwitch dark filter></ViSwitch>
-  </vi-row>
-  <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
-    <ViSwitch></ViSwitch><br><br>
-    <ViSwitch dark></ViSwitch><br><br>
-    <ViSwitch filter></ViSwitch><br><br>
-    <ViSwitch dark filter leftColor="#0f0b286c"></ViSwitch>
-  </vi-row> -->
-
-  <!-- <ViRadio color="blue" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio> -->
-
-  <!-- <vi-row id="div" style="padding: 10px 0;">
-    <ViRadio disabled color="yellow" @change="change" rid="#123" value="吃饭" name="haha" v-model="value"></ViRadio>
-    <ViRadio color="blue" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio>
-    <ViRadio color="red" dark size="small" rid="#125" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
-    <ViRadio color="pink" size="big" rid="#126" value="飞翔" name="haha" v-model="value">飞翔</ViRadio>
-  </vi-row>
-  <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
-    <ViRadio color="green" rid="#127" value="吃饭" name="haha" v-model="value"></ViRadio>
-    <ViRadio color="purple" dark rid="#128" value="睡觉" name="haha" v-model="value"></ViRadio>
-    <ViRadio dark size="small" rid="#129" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
-    <ViRadio size="big" rid="#130" value="飞翔" name="haha" v-model="value">飞翔</ViRadio>
-  </vi-row>
-    <vi-row id="div" style="padding: 10px 0;">
-    <ViRadio type="button" color="yellow" @change="change" rid="#123" value="吃饭" name="haha" v-model="value"></ViRadio>
-    <ViRadio color="blue" type="button" dark rid="#124" value="睡觉" name="haha" v-model="value"></ViRadio>
-    <ViRadio type="button" color="red" dark size="small" rid="#125" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
-    <ViRadio type="button" color="pink" size="big" rid="#126" value="飞翔" name="haha" v-model="value">飞翔</ViRadio>
-  </vi-row>
-  <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
-    <ViRadio type="button" color="yellow" rid="#127" value="吃饭" name="haha" v-model="value"></ViRadio>
-    <ViRadio type="button" color="green" dark rid="#128" value="睡觉" name="haha" v-model="value"></ViRadio>
-    <ViRadio type="button" color="purple" dark size="small" rid="#129" value="打豆豆"  name="haha" v-model="value">打豆豆</ViRadio>
-    <ViRadio type="button" size="big" rid="#130" value="飞翔" name="haha" v-model="value">飞翔</ViRadio>
-  </vi-row>
-  <vi-row id="div" style="backgroundColor: #fff; padding: 10px 0;">
-    <ViRadioGroup v-model="value">
-      <ViRadio disabled type="button" color="yellow" rid="#127" value="吃饭" name="haha"></ViRadio>
-      <ViRadio type="button" color="green" dark rid="#128" value="睡觉" name="haha"></ViRadio>
-      <ViRadio type="button" color="purple" dark size="small" rid="#129" value="打豆豆"  name="haha">打豆豆</ViRadio>
-      <ViRadio type="button" size="big" rid="#130" value="飞翔" name="haha">飞翔</ViRadio>
-    </ViRadioGroup>
-  </vi-row> -->
-
-  <!-- <vi-row height="200px">
-    <vi-row>
-      <ViCheckbox disabled size="small" @change="change" v-model="ar" value="唱歌" dark></ViCheckbox>
-      <ViCheckbox size="small" v-model="ar" value="跳舞"></ViCheckbox>
-      <ViCheckbox size="small" v-model="ar" value="打豆豆"></ViCheckbox>
-      <ViCheckbox size="small" v-model="ar" value="吃饭" color="purple"></ViCheckbox>
-      <ViCheckbox size="small" v-model="ar" value="睡觉" color="green"></ViCheckbox>
-      <ViCheckbox size="small" v-model="ar" value="划水" color="green"></ViCheckbox>
-      <ViCheckbox size="small" v-model="ar" value="飞翔" color="yellow"></ViCheckbox>
-      <ViCheckbox size="small" v-model="ar" value="这个" color="yellow"></ViCheckbox>
-      <ViCheckbox size="small" v-model="ar" value="唱歌" color="pink"></ViCheckbox>
-      <ViCheckbox size="small" v-model="ar" value="妈妈" color="pink" type="button"></ViCheckbox>
-      <ViCheckbox size="small" v-model="ar" value="米亚" dark color="pink" type="button"></ViCheckbox>
-    </vi-row>
-    <vi-row>
-      <ViCheckbox @change="change" v-model="ar" value="唱歌" dark></ViCheckbox>
-      <ViCheckbox v-model="ar" value="跳舞"></ViCheckbox>
-      <ViCheckbox v-model="ar" value="打豆豆"></ViCheckbox>
-      <ViCheckbox v-model="ar" value="吃饭" color="purple"></ViCheckbox>
-      <ViCheckbox v-model="ar" value="睡觉" color="green"></ViCheckbox>
-      <ViCheckbox v-model="ar" value="划水" color="green"></ViCheckbox>
-      <ViCheckbox v-model="ar" value="飞翔" color="yellow"></ViCheckbox>
-      <ViCheckbox v-model="ar" value="这个" color="yellow"></ViCheckbox>
-      <ViCheckbox v-model="ar" value="唱歌" color="pink"></ViCheckbox>
-      <ViCheckbox v-model="ar" value="妈妈" color="pink" type="button"></ViCheckbox>
-      <ViCheckbox v-model="ar" value="米亚" dark color="pink" type="button"></ViCheckbox>
-    </vi-row>
-    <vi-row>
-      <ViCheckboxGroup v-model="ar">
-        <ViCheckbox @change="change" value="唱歌" dark size="big"></ViCheckbox>
-        <ViCheckbox value="跳舞" size="big"></ViCheckbox>
-        <ViCheckbox value="打豆豆" size="big"></ViCheckbox>
-        <ViCheckbox value="吃饭" size="big" color="purple"></ViCheckbox>
-        <ViCheckbox value="睡觉" size="big" color="green"></ViCheckbox>
-        <ViCheckbox value="划水" size="big" color="green"></ViCheckbox>
-        <ViCheckbox value="飞翔" size="big" color="yellow"></ViCheckbox>
-        <ViCheckbox value="这个" size="big" color="yellow"></ViCheckbox>
-        <ViCheckbox value="唱歌" size="big" color="pink"></ViCheckbox>
-        <ViCheckbox value="妈妈" size="big" color="pink" type="button"></ViCheckbox>
-        <ViCheckbox disabled mutate value="米亚" dark size="big" color="pink" type="button"></ViCheckbox>
-      </ViCheckboxGroup>
-    </vi-row>
-  </vi-row> -->
-
-  <!-- <vi-grid :row="2" :col="11" gap="10px" height="500px">
-    <vi-col :row="1" :col="2" class="okk">1</vi-col>
-    <vi-col :row="1" :col="3" class="okk">2</vi-col>
-    <vi-col :row="1" :col="2" class="okk">3</vi-col>
-    <vi-col :row="1" :col="3" class="okk">4</vi-col>
-    <vi-col :row="1" :col="2" class="okk">5</vi-col>
-    <vi-col :row="1" :col="4" class="okk">6</vi-col>
-    <vi-col :row="1" :col="2" class="okk">7</vi-col>
-    <vi-col :row="1" :col="4" class="okk">8</vi-col>
-    <vi-col :row="1" :col="2" class="okk">9</vi-col>
-  </vi-grid> -->
-
-  <!-- <vi-row justify="center">
-    <ViSelect filter dark size="big" :datas="arr" v-model="value"></ViSelect>
-  </vi-row>
-  <vi-row justify="center">
-    <ViSelect filter dark size="big" :datas="arr" multi v-model="ar"></ViSelect>
-  </vi-row>
-  <vi-row justify="center">
-    <ViSelect type="button" filter :datas="arr" multi v-model="ar"></ViSelect>
-  </vi-row>
-  <vi-row justify="center">
-    <ViSelect filter placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
-  </vi-row>
-  <vi-row justify="center">
-    <ViSelect filter placeholder="123" size="small" :datas="arr" v-model="value" disabled></ViSelect>
-  </vi-row>
-  <div style="background-color: #fff">
-    <vi-row justify="center">
-    <ViSelect filter dark size="big" :datas="arr" v-model="value"></ViSelect>
-  </vi-row>
-  <vi-row justify="center">
-    <ViSelect filter dark size="big" :datas="arr" multi v-model="ar"></ViSelect>
-  </vi-row>
-  <vi-row justify="center">
-    <ViSelect filter :datas="arr" multi v-model="ar"></ViSelect>
-  </vi-row>
-  <vi-row justify="center">
-    <ViSelect filter placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
-  </vi-row>
-  <vi-row justify="center">
-    <ViSelect filter placeholder="123" size="small" :datas="arr" v-model="value" disabled></ViSelect>
-  </vi-row>
-  </div>
-  <vi-row justify="center">
-    <ViSelect dark :datas="arr" v-model="value"></ViSelect>
-    <ViSelect :datas="arr" v-model="value"></ViSelect>
-  </vi-row>
-  <vi-row justify="center">
-    <ViSelect dark type="button" :datas="arr" v-model="value"></ViSelect>
-    <ViSelect type="button" :datas="arr" v-model="value"></ViSelect>
-  </vi-row>
-  <vi-row justify="center">
-    <ViSelect dark type="plain" :datas="arr" v-model="value"></ViSelect>
-    <ViSelect type="plain" :datas="arr" v-model="value"></ViSelect>
-  </vi-row> -->
-  <!-- <vi-input password show-password></vi-input>
-  <vi-input width="100%" type="plain" password show-password></vi-input>
-  <vi-input type="plain" password show-password size="big"></vi-input>
-  <vi-input v-model="value" :maxlength="10" :suffix="arr" type="plain" password show-password show-clear size="small"></vi-input> -->
-
-  <vi-form>
+  <!-- <vi-form>
     <vi-form-item label="姓名">
       <vi-input password show-password>123</vi-input>
     </vi-form-item>
@@ -503,7 +8,7 @@
     </vi-form-item>
     <vi-form-item dark label="你觉得呢">
       <ViCheckboxGroup v-model="ar">
-        <ViCheckbox @change="change" value="唱歌" dark></ViCheckbox>
+        <ViCheckbox value="唱歌" dark></ViCheckbox>
         <ViCheckbox value="跳舞"></ViCheckbox>
         <ViCheckbox value="打豆豆"></ViCheckbox>
         <ViCheckbox value="吃饭" color="purple"></ViCheckbox>
@@ -543,75 +48,37 @@
       <ViTimeSelect v-model="date"></ViTimeSelect>
       <ViTimeSelect v-model="date" dark></ViTimeSelect>
     </vi-form-item>
-  </vi-form>
+  </vi-form> -->
 
-  <!-- <vi-message></vi-message> -->
-  <!-- <vi-row justify="center">
-    <vi-dropdown></vi-dropdown>
-  </vi-row>
-  <vi-row>
-    <vi-link>1</vi-link>
-    <vi-link color="purple">1</vi-link>
-    <vi-link color="red">1</vi-link>
-    <vi-link color="pink">1</vi-link>
-    <vi-link color="blue">1</vi-link>
-    <vi-link color="green">1</vi-link>
-    <vi-link color="yellow">1</vi-link>
-    <vi-link color="dark">1</vi-link>
-  </vi-row>
-  <vi-row>
-    <vi-select v-model="value">
-      <vi-option value="123">123</vi-option>
-      <vi-option value="234">123</vi-option>
-      <vi-option value="676">123</vi-option>
-      <vi-option value="891">123</vi-option>
-    </vi-select>
-  </vi-row>
-  <vi-row>
-    <vi-tag>好奇妙呀</vi-tag>
-    <vi-tag color="purple">好奇妙呀</vi-tag>
-    <vi-tag color="pink">好奇妙呀</vi-tag>
-    <vi-tag color="red">好奇妙呀</vi-tag>
-    <vi-tag color="green">好奇妙呀</vi-tag>
-    <vi-tag color="yellow">好奇妙呀</vi-tag>
-    <vi-tag color="blue">好奇妙呀</vi-tag>
-    <vi-tag max mutate>好奇妙呀</vi-tag>
-    <vi-tag max mutate color="purple">好奇妙呀</vi-tag>
-    <vi-tag max mutate color="pink">好奇妙呀</vi-tag>
-    <vi-tag max mutate color="red">好奇妙呀</vi-tag>
-    <vi-tag max mutate color="green">好奇妙呀</vi-tag>
-    <vi-tag max mutate color="yellow">好奇妙呀</vi-tag>
-    <vi-tag max mutate color="blue">好奇妙呀</vi-tag>
-  </vi-row>
-  <vi-row>
-    <vi-tag size="small">真奇妙呀</vi-tag>
-    <vi-tag size="small" color="purple">真奇妙呀</vi-tag>
-    <vi-tag size="small" color="pink">真奇妙呀</vi-tag>
-    <vi-tag size="small" color="red">真奇妙呀</vi-tag>
-    <vi-tag size="small" color="green">真奇妙呀</vi-tag>
-    <vi-tag size="small" color="yellow">真奇妙呀</vi-tag>
-    <vi-tag size="small" color="blue">真奇妙呀</vi-tag>
-  </vi-row>
-  <vi-row>
-    <vi-tag size="big">真奇妙呀</vi-tag>
-    <vi-tag size="big" color="purple">真奇妙呀</vi-tag>
-    <vi-tag size="big" color="pink">真奇妙呀</vi-tag>
-    <vi-tag size="big" color="red">真奇妙呀</vi-tag>
-    <vi-tag size="big" color="green">真奇妙呀</vi-tag>
-    <vi-tag size="big" color="yellow">真奇妙呀</vi-tag>
-    <vi-tag size="big" color="blue">真奇妙呀</vi-tag>
-  </vi-row>
-  <vi-drawer v-model="open">
-    <vi-nav v-model="choose">
-      <div v-for="item in nav" :key="item">
-        {{item}}
-      </div>
-    </vi-nav>
-  </vi-drawer>
-  <vi-input show-clear show-password></vi-input>
-  <vi-input type="plain" password show-clear show-password></vi-input>
-  <vi-input type="button" password show-clear show-password></vi-input>
-  <vi-skeleton animate></vi-skeleton> -->
+  <vi-input type="plain" v-model="value" password show-password>
+    <template v-slot:prefix>
+      <vi-select></vi-select>
+    </template>
+    <template v-slot:suffix>
+      <vi-select></vi-select>
+    </template>
+  </vi-input><br/>
+  <vi-input v-model="value" number>
+    <template v-slot:prefix>
+      <vi-select></vi-select>
+    </template>
+    <template v-slot:suffix>
+      <vi-select></vi-select>
+    </template>
+  </vi-input><br/>
+  <vi-input v-model="value" show-clear></vi-input><br/>
+  <vi-input type="plain" v-model="value" show-clear></vi-input><br/>
+  <vi-input v-model="value"></vi-input><br/>
+  <vi-input type="plain" v-model="value"></vi-input><br/>
+  <vi-input v-model="value"></vi-input><br/>
+  <vi-input type="button" v-model="value" autofocus>
+    <template v-slot:prefix>
+      <vi-select></vi-select>
+    </template>
+    <template v-slot:suffix>
+      <vi-select></vi-select>
+    </template>
+  </vi-input><br/>
 </template>
 
 <script lang="ts">
@@ -653,89 +120,24 @@ export default defineComponent({
     const value = ref('')
     const val = ref('')
     const ar = reactive([])
-    const { proxy } = getCurrentInstance() as ComponentInternalInstance
     const open = ref(true)
     const nav = ['吃饭', '睡觉', '长个子', '好']
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
     const obj = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 }]
     const table = [['销量', '领先销量', '全球销量'], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]
 
-    function hello () {
-      alert('hello')
-      open.value = false
-    }
-
-    function toSelect () {
-      open.value = !open.value
-    }
-
-    function ok (v: any, n: any) {
-      console.log(v)
-      // setTimeout(() => {
-      //   // n.finish.value = true
-      //   val.value = v
-      // }, 500)
-    }
-
-    function scr () {
-      (proxy?.$refs.scroll as scrollType).scrollTo(0, 140);
-      (proxy?.$refs.vscroll as VirtualScrollType).scrollTo(0, 140)
-    }
-
-    function pf () {
-      return new Promise((resolve) => {
-        console.log('pf')
-        setTimeout(() => {
-          resolve('ok')
-        }, 500)
-      })
-    }
-
-    function openDialog () {
-      (proxy?.$refs.child as ViDialogType).open()
-    }
-
-    function change () {
-      console.log(value.value)
-      console.log(ar)
-    }
-
-    function up () {
-      console.log('up')
-    }
-
-    function opent () {
-      ViToast.open('你好，成功了')
-      ViMessage.append('可以了')
-    }
-
-    function openf () {
-      // ViToast.open('这样也可以')
-      ViMessage.append('可以了这', 3000)
-    }
-
     return {
       val,
       ar,
       value,
-      hello,
-      ok,
       arr,
       open,
-      scr,
-      pf,
-      openDialog,
       obj,
-      change,
       res,
       date,
-      up,
-      opent,
-      openf,
       nav,
       choose,
-      table,
-      toSelect
+      table
     }
   },
   mounted () {
@@ -787,7 +189,6 @@ div > button {
 }
 
 .v-v-v {
-  top: 80%;
   --vi-select-width: 3.6em;
   --vi-dropdown-max-height: 200px;
   --vi-dropdown-width: 10em;

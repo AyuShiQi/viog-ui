@@ -8,7 +8,7 @@ import type { InputProps } from '../type'
 // 内部hooks
 // 外部模块
 
-export default function (props: InputProps, ctx: SetupContext, value: Ref, input: Ref) {
+export default function (props: InputProps, ctx: SetupContext, input: Ref) {
   // 普通常量
   // DOM ref
   // ref
@@ -23,7 +23,7 @@ export default function (props: InputProps, ctx: SetupContext, value: Ref, input
 
   function handleCompositionAfter () {
     search.value = true
-    ctx.emit('search', value.value)
+    ctx.emit('search', props.modelValue)
   }
   // 方法
   // 普通function函数

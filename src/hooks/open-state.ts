@@ -16,7 +16,7 @@ export default function (needBlur = true, openMode = 'click') {
         if (openDOM.value instanceof Element) {
           if (!openDOM.value.contains(e.target)) open.value = false
         } else {
-          if (openDOM.value.$el && !openDOM.value.$el.contains(e.target)) open.value = false
+          if (openDOM?.value?.$el && !openDOM.value.$el.contains(e.target)) open.value = false
         }
       })
     }
