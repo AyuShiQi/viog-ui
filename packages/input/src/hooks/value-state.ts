@@ -9,11 +9,11 @@ import strToNumstr from '../../../utils/number-utils/str-to-numstr'
 export default function (props: InputProps, ctx: SetupContext, search: Ref) {
   // 输入处理
   const value = computed(() => {
+    // console.log(props.modelValue)
     if (props.number) {
       const newValue = strToNumstr(props.modelValue)
       if (props.modelValue !== newValue) ctx.emit('update:modelValue', newValue)
     } else if (isMaxLength(props.modelValue)) {
-      console.log(props.modelValue, props.modelValue.slice(0, props.maxlength))
       ctx.emit('update:modelValue', props.modelValue.slice(0, props.maxlength))
     }
     return props.modelValue
@@ -37,8 +37,10 @@ export default function (props: InputProps, ctx: SetupContext, search: Ref) {
   }
 
   // 输入前
+  let preInput: string
   function beforeInput (E: Event): void {
     const e = E as unknown as InputEvent
+    preInput = e.target.value
     // 大于最大长度，直接不允许输入，对输入法无效
     if (isMaxLength(e.target.value)) {
       E.preventDefault()

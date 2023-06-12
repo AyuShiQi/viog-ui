@@ -1,6 +1,6 @@
 export default {
   modelValue: {
-    type: [String, Number, Boolean],
+    type: [String, Number, Boolean, Array],
     default: ''
   },
   size: {

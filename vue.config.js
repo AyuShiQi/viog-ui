@@ -5,11 +5,13 @@ module.exports = defineConfig({
   transpileDependencies: true,
   configureWebpack: {
     output: {
-      libraryExport: 'default'
+      libraryExport: 'default',
     }
   },
   parallel: false,
   css: {
     // extract: false
-  }
+  },
+  // lib专享嘿嘿
+  publicPath: './'
 })

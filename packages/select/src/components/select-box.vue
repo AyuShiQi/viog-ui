@@ -36,10 +36,12 @@ export default defineComponent({
     datas: Array,
     multi: Boolean,
     selected: {
+      type: [String, Number, Boolean],
       default: ''
     },
     selectedMulti: {
-      default: []
+      type: Array,
+      default: () => []
     },
     itemHeight: Number
   },

@@ -16,7 +16,7 @@
     @click="toSelect">
         <span class="vi-select-choose">
           <template
-          v-if="!multi || modelValue.length === 0">
+          v-if="!multi || (modelValue as []).length === 0">
             {{isPlaceholder? placeholder : modelValue}}
           </template>
           <span

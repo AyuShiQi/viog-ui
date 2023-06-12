@@ -50,21 +50,15 @@
     </vi-form-item>
   </vi-form> -->
 
-  <vi-input type="plain" v-model="value" password show-password>
+  <!-- <vi-input type="plain" v-model="value" password show-password>
     <template v-slot:prefix>
       <vi-select></vi-select>
     </template>
     <template v-slot:suffix>
       <vi-select></vi-select>
     </template>
-  </vi-input><br/>
+  </vi-input><br/> -->
   <vi-input v-model="value" number>
-    <template v-slot:prefix>
-      <vi-select></vi-select>
-    </template>
-    <template v-slot:suffix>
-      <vi-select></vi-select>
-    </template>
   </vi-input><br/>
   <vi-input v-model="value" show-clear></vi-input><br/>
   <vi-input type="plain" v-model="value" show-clear></vi-input><br/>
@@ -80,12 +74,12 @@
     </template>
   </vi-input><br/>
   <vi-divider></vi-divider>
+  <!-- <vi-input v-model="val" show-clear ></vi-input><br/> -->
+  <vi-input v-model="val" show-clear :maxlength="10" number></vi-input><br/>
+  <!-- <vi-input v-model="val" show-clear ></vi-input><br/>
   <vi-input v-model="val" show-clear ></vi-input><br/>
-  <vi-input v-model="val" show-clear :maxlength="10"></vi-input><br/>
   <vi-input v-model="val" show-clear ></vi-input><br/>
-  <vi-input v-model="val" show-clear ></vi-input><br/>
-  <vi-input v-model="val" show-clear ></vi-input><br/>
-  <vi-input v-model="val" show-clear ></vi-input><br/>
+  <vi-input v-model="val" show-clear ></vi-input><br/> -->
 </template>
 
 <script lang="ts">

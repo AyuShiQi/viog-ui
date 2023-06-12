@@ -147,24 +147,26 @@
 - 修复组件内部removeListener问题
 - 修复link组件出现hover出现下划线的情况，添加target属性
 
-# 0.6.6（当前迭代开发版本）
+# 0.6.6-0.6.7（当前迭代开发版本）
 
-- 修复upload组件icon消失的问题*（应该解决了）
-- 增加upload组件list-width调控变量*
-- 修复input多个input框无法绑定成功一个响应式变量的情况*
-- 修复input number情况看得见输入的情况*
-- 修复input前后缀问题，select在input中表现不正常（原因，dropdown-content透明层遮挡）*
-- 删除input框通过props添加前后缀*
-- 删除所有组件dark属性
+- 修复upload组件icon消失的问题（应该解决了，无语没解决啊）（这下真的解决了）
+- 增加upload组件list-width调控变量
+- 修复input多个input框无法绑定成功一个响应式变量的情况
+- 修复input number情况看得见输入的情况
+- 修复input前后缀问题，select在input中表现不正常（原因，dropdown-content透明层遮挡）
+- 删除input框通过props添加前后缀
+- 删除input组件dark属性
+- 修复select组件
 
-# 0.6.7
+# 0.6.8
 
 - 添加form组件的rule检查
 - 添加form表单的正则以及代码规范
 - layout组件删除width及height等属性
-- 增加grid组件行列布局计算属性
+- 增加grid组件行列布局算属性
+- 删除所有组件dark属性
 
-# 0.6.8
+# 0.6.9
 
 - 新增上传组件可拖拽drag类型
 - 新增可编辑表格组件撤回功能（增加撤销栈）
@@ -209,3 +211,4 @@
 
 - 标签管理器组件
 - 
+
