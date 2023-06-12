@@ -17,7 +17,7 @@ export default function (props: InputProps, ctx: SetupContext, input: Ref) {
   // inject
   // computed
   // 事件方法
-  function handleCompositionStart (e: Event) {
+  function handleCompositionStart () {
     search.value = false
   }
 

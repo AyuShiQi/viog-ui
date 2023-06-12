@@ -79,6 +79,13 @@
       <vi-select></vi-select>
     </template>
   </vi-input><br/>
+  <vi-divider></vi-divider>
+  <vi-input v-model="val" show-clear ></vi-input><br/>
+  <vi-input v-model="val" show-clear :maxlength="10"></vi-input><br/>
+  <vi-input v-model="val" show-clear ></vi-input><br/>
+  <vi-input v-model="val" show-clear ></vi-input><br/>
+  <vi-input v-model="val" show-clear ></vi-input><br/>
+  <vi-input v-model="val" show-clear ></vi-input><br/>
 </template>
 
 <script lang="ts">

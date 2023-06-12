@@ -12,9 +12,9 @@ export default function (props: InputProps, context: SetupContext) {
   // input dom
   const input = ref()
   // ref
+  const hasSlot = slotState()
   const search = searchState(props, context, input)
   const inputEvent = valueState(props, context, search.search)
-  const hasSlot = slotState(props, context)
   const password = passwordState(props)
 
   /* 清除区 */
@@ -57,6 +57,10 @@ export default function (props: InputProps, context: SetupContext) {
   function toBlur () {
     (input.value as InputDOM).blur()
   }
+  function handleKeyUp (e: KeyboardEvent) {
+    // 按下enter键自动失焦
+    if (e.code === 'Enter') (e!.target as any).blur()
+  }
   // #endregion
 
   return {
@@ -71,6 +75,7 @@ export default function (props: InputProps, context: SetupContext) {
     blur,
     mouseEnter,
     mouseLeave,
+    handleKeyUp,
     ...inputEvent,
     ...hasSlot,
     ...search,

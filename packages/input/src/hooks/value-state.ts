@@ -1,4 +1,4 @@
-import { onMounted, computed } from 'vue'
+import { computed } from 'vue'
 import type { SetupContext, Ref } from 'vue'
 import type { InputProps } from '../type'
 
@@ -6,17 +6,20 @@ import { InputEvent } from '@/types/vue-types'
 
 import strToNumstr from '../../../utils/string-utils/str-to-numstr'
 
-export default function (props: InputProps, context: SetupContext, search: Ref) {
+export default function (props: InputProps, ctx: SetupContext, search: Ref) {
+  // 输入处理
   const value = computed(() => {
     if (props.number) {
       const newValue = strToNumstr(props.modelValue)
-      if (props.modelValue !== newValue) context.emit('update:modelValue', newValue)
+      if (props.modelValue !== newValue) ctx.emit('update:modelValue', newValue)
+    }
+    if (isMaxLength(props.modelValue)) {
+      console.log(props.modelValue, props.modelValue.slice(0, props.maxlength))
+      ctx.emit('update:modelValue', props.modelValue.slice(0, props.maxlength))
     }
     return props.modelValue
   })
 
-  // 用于记录上一次输入
-  let preInput: string
   /* change与input与数字区 */
   // 验证最大长度下
   function isMaxLength (value: string): boolean {
@@ -27,22 +30,20 @@ export default function (props: InputProps, context: SetupContext, search: Ref) 
 
   // 验证数字状态下
   function toUpdateValue (e: InputEvent): boolean {
-    // 数字辨别区域
-    // if (props.number && e.inputType === 'insertCompositionText') {
-    //   e.target.value = preInput
-    //   return false
-    // }
+    // 数字辨别区域，输入法针对
+    if (props.number && e.inputType === 'insertCompositionText') return false
+    // 判断最大长度
+    if (isMaxLength(e.target.value)) return false
     return true
   }
 
   // 输入前
   function beforeInput (E: Event): void {
     const e = E as unknown as InputEvent
-    // preInput = e.target.value
-    // // console.log(e.target.value, e.inputType)
-    // if (isMaxLength(e.target.value)) {
-    //   E.preventDefault()
-    // } else if (props.number) handleNumber(e.inputType, e.data, E)
+    // 大于最大长度，直接不允许输入，对输入法无效
+    if (isMaxLength(e.target.value)) {
+      E.preventDefault()
+    }
   }
 
   // 输入时
@@ -50,39 +51,18 @@ export default function (props: InputProps, context: SetupContext, search: Ref) 
     // console.log('ok')
     const e = E as unknown as InputEvent
     if (toUpdateValue(e)) {
-      context.emit('update:modelValue', e.target.value)
-      context.emit('input')
+      ctx.emit('update:modelValue', e.target.value)
+      ctx.emit('input')
       // search搜索
-      if (props.search && search.value) context.emit('search', props.modelValue)
-    }
-  }
-
-  function handleKeyUp (e: KeyboardEvent) {
-    // 按下enter键自动失焦
-    if (e.code === 'Enter') (e!.target as any).blur()
+      if (props.search && search.value) ctx.emit('search', props.modelValue)
+    } else e.target.value = value.value
   }
 
   function handleChange (E: Event): void {
     const e = E as unknown as InputEvent
     if (toUpdateValue(e)) {
-      context.emit('change')
+      ctx.emit('change')
     }
-  }
-
-  function handleNumber (inputType: string, data: any, e: Event) {
-    // if (inputType === 'insertCompositionText') {
-    //   // 暂时对输入法无效，在input已经发生后处理
-    //   e.preventDefault()
-    // } else if (inputType === 'insertText' && Number.isNaN(parseInt(data))) {
-    //   e.preventDefault()
-    //   // number拒绝历史处理，一劳永逸处理错误问题
-    // } else if (inputType === 'historyRedo' || inputType === 'historyUndo') {
-    //   e.preventDefault()
-    // } else if (inputType === 'insertFromDrop' && Number.isNaN(parseInt(data))) {
-    //   e.preventDefault()
-    // } else if (inputType === 'insertFromPaste' && Number.isNaN(parseInt(data))) {
-    //   e.preventDefault()
-    // }
   }
 
   return {
@@ -90,7 +70,6 @@ export default function (props: InputProps, context: SetupContext, search: Ref) 
     // change与input事件
     handleInput,
     handleChange,
-    handleKeyUp,
     beforeInput
   }
 }
