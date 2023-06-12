@@ -44,10 +44,6 @@ export default {
     type: Boolean,
     default: false
   },
-  dark: {
-    type: Boolean,
-    default: false
-  },
   right: {
     type: Boolean,
     default: false
@@ -70,14 +66,15 @@ export default {
   },
   maxlength: Number,
   minlength: Number,
-  suffix: {
-    type: [Array, String],
-    default: ''
-  },
-  prefix: {
-    type: [Array, String],
-    default: ''
-  },
+  // 已弃用
+  // suffix: {
+  //   type: [Array, String],
+  //   default: ''
+  // },
+  // prefix: {
+  //   type: [Array, String],
+  //   default: ''
+  // },
   placeholder: {
     type: String,
     default: ''

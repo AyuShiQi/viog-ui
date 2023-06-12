@@ -4,7 +4,7 @@ import type { InputProps } from '../type'
 
 import { InputEvent } from '@/types/vue-types'
 
-import strToNumstr from '../../../utils/string-utils/str-to-numstr'
+import strToNumstr from '../../../utils/number-utils/str-to-numstr'
 
 export default function (props: InputProps, ctx: SetupContext, search: Ref) {
   // 输入处理
@@ -12,8 +12,7 @@ export default function (props: InputProps, ctx: SetupContext, search: Ref) {
     if (props.number) {
       const newValue = strToNumstr(props.modelValue)
       if (props.modelValue !== newValue) ctx.emit('update:modelValue', newValue)
-    }
-    if (isMaxLength(props.modelValue)) {
+    } else if (isMaxLength(props.modelValue)) {
       console.log(props.modelValue, props.modelValue.slice(0, props.maxlength))
       ctx.emit('update:modelValue', props.modelValue.slice(0, props.maxlength))
     }
@@ -55,7 +54,7 @@ export default function (props: InputProps, ctx: SetupContext, search: Ref) {
       ctx.emit('input')
       // search搜索
       if (props.search && search.value) ctx.emit('search', props.modelValue)
-    } else e.target.value = value.value
+    }
   }
 
   function handleChange (E: Event): void {

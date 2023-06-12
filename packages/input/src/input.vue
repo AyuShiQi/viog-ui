@@ -7,7 +7,6 @@
   `vi-input-size-${size}`,
   {
     'is-focus': isFocus,
-    'is-dark': dark,
     'is-round': round,
     'info-right': right,
     'info-error': error,

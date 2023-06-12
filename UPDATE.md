@@ -151,10 +151,11 @@
 
 - 修复upload组件icon消失的问题*（应该解决了）
 - 增加upload组件list-width调控变量*
-- 修复input多个input框无法绑定成功一个响应式变量的情况
-- 修复input number情况看得见输入的情况
+- 修复input多个input框无法绑定成功一个响应式变量的情况*
+- 修复input number情况看得见输入的情况*
 - 修复input前后缀问题，select在input中表现不正常（原因，dropdown-content透明层遮挡）*
-- 删除input框通过props添加前后缀
+- 删除input框通过props添加前后缀*
+- 删除所有组件dark属性
 
 # 0.6.7
 
