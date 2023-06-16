@@ -30,7 +30,7 @@
     --vi-select-height: ;
     --vi-select-padding: var(--vi-card-padding);
     --vi-select-list-gap: 2px;
-    --vi-select-list-width: ;
+    --vi-select-list-width: 100%;
     --vi-select-list-height: ;
     --vi-select-list-max-height: ;
     /* 弃用，目前还用于select-v没改 */
@@ -49,7 +49,8 @@
     --vi-input-height: ;
     --vi-input-padding: var(--vi-card-padding);
     --vi-input-inner-padding: 0.6em;
-    --vi-input-suffix-width: ;
+    --vi-input-prefix-width: auto;
+    --vi-input-suffix-width: auto;
 
     --vi-switch-left-color: var(--vi-background-color); 
     --vi-switch-right-color: var(--vi-main-color3);
