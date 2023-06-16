@@ -16,10 +16,6 @@ export default {
     type: String,
     default: 'default' // button
   },
-  dark: {
-    type: Boolean,
-    default: false
-  },
   color: {
     type: String,
     default: 'purple'
@@ -29,6 +25,10 @@ export default {
     default: false
   },
   mutate: {
+    type: Boolean,
+    default: false
+  },
+  checked: {
     type: Boolean,
     default: false
   }

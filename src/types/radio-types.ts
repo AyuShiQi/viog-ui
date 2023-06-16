@@ -7,7 +7,7 @@ export interface RadioProps {
   color: string,
   disabled: boolean,
   mutate: boolean,
-  selected: boolean
+  checked: boolean
 }
 
 export interface ViRadioType {

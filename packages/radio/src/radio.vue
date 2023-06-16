@@ -15,7 +15,7 @@
     ref="radio"
     class="vi-radio__origin"
     :value="value"
-    :name="groupName"
+    :name="groupName ? groupName : name"
     v-model="nowPick"
     :disabled="disabled"
     @click="handleChange"

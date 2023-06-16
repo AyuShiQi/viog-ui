@@ -170,11 +170,12 @@
 - 处理selected类型别名的显示*（同一select中，一个option只能拥有一个别名）
 - 添加select name* （所有表单的name都需要供form表单使用）
 - 删除radio组件dark属性*
+- 删除checkbox组件dark属性*
 - radio新增mutate*
-- 添加radio selected*
-- 添加checkbox selected
+- 添加radio checked*
+- 添加checkbox checked*
 - radio-group新增name*
-- checkbox-group新增name
+- checkbox-group新增name*
 - 添加option组件disabled功能
 - select处理search功能完善
 

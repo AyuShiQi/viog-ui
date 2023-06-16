@@ -1,13 +1,13 @@
 @import '../../../../public/css/basecolor.less';
 @import '../../../../public/css/base.less';
 
-.vi-checkbox-appreance {
+.vi-checkbox {
     display: inline-flex;
     color: var(--vi-link-color);
     user-select: none;
     align-items: center;
 
-    .vi-checkbox {
+    .vi-checkbox__origin {
         display: none;
     }
 
@@ -41,21 +41,27 @@
     .vi-checkbox-text {
         margin: 0 2px;
     }
+
+    &:hover {
+        .vi-checkbox-box {
+            box-shadow: 0 0 0 1px var(--vi-background-color-deeper);
+        }
+    }
 }
 
-.vi-checkbox-appreance.is-middle {
-    font-size: @font-size;
+.vi-checkbox-size-middle {
+    font-size: var(--vi-font-size);
 }
 
-.vi-checkbox-appreance.is-small {
-    font-size: @small-font-size;
+.vi-checkbox-size-small {
+    font-size: var(--vi-small-font-size);
 }
 
-.vi-checkbox-appreance.is-big {
-    font-size: @big-font-size;
+.vi-checkbox-size-big {
+    font-size: var(--vi-big-font-size);
 }
 
-.vi-checkbox-appreance.is-button {
+.vi-checkbox-type-button {
     .vi-checkbox-box {
         display: none;
     }
@@ -70,21 +76,7 @@
     }
 }
 
-.vi-checkbox-appreance.is-dark {
-    color: var(--vi-font-color);
-    .vi-checkbox-box {
-        box-shadow: 0 0 0 1px var(--vi-icon-color);
-    }
-}
-
-.vi-checkbox-appreance.is-dark.is-button {
-    color: var(--vi-font-color);
-    .vi-checkbox-text {
-        box-shadow: 0 0 0 1px var(--vi-icon-color);
-    }
-}
-
-.vi-checkbox-appreance.be-checked {
+.vi-checkbox.be-checked {
     .vi-checkbox-box {
         box-shadow: none;
     }
@@ -93,7 +85,7 @@
     }
 }
 
-.vi-checkbox-appreance.is-button.be-checked {
+.vi-checkbox-type-button.be-checked {
     .vi-checkbox-box {
         box-shadow: none;
     }

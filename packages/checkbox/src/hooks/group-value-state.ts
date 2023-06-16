@@ -9,10 +9,10 @@ export default function (props: GroupValueProps, context: SetupContext, valueNam
       return props.modelValue
     },
     set: (newPick: unknown[]) => {
-      console.log(newPick)
       context.emit('update:modelValue', newPick)
     }
   })
 
   provide(valueName, ref(groupValue))
+  provide('checkbox-group-name', props.name)
 }

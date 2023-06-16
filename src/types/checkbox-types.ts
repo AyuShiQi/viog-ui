@@ -4,9 +4,9 @@ export interface CheckboxProps {
   name: string,
   size: string,
   type: string,
-  dark: boolean,
   color: string,
-  disabled: boolean
+  disabled: boolean,
+  checked: boolean
 }
 
 export interface ViCheckboxType {
@@ -24,5 +24,6 @@ export interface ViCheckboxInject {
 
 
 export interface GroupValueProps {
-  modelValue: unknown[]
+  modelValue: unknown[],
+  name: string | undefined
 }

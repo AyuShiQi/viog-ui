@@ -1,25 +1,24 @@
 <template>
   <span
-  class="vi-checkbox-appreance"
+  class="vi-checkbox"
   :class="[
-  `is-${size}`,
+  `vi-checkbox-size-${size}`,
   `vi-checkbox-${color}`,
-  `is-${type}`,
+  `vi-checkbox-type-${type}`,
   {
     'is-disabled': disabled,
-    'is-dark': dark,
     'be-checked': containsValue,
     'is-mutate': mutate
   }
   ]">
     <input
     ref="checkbox"
-    class="vi-checkbox"
+    class="vi-checkbox__origin"
     :value="value"
-    :name="name"
+    :name="groupName ? groupName : name"
     :checked="containsValue"
     :disabled="disabled"
-    @change="handleChange"
+    @click="handleChange"
     type="checkbox">
     <span v-if="type==='default'" class="vi-checkbox-box" @click="toPick">
       <svg class="vi-checkbox-gougou" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg">

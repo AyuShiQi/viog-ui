@@ -35,7 +35,7 @@ export default function (props: RadioProps, context: SetupContext) {
   })
 
   // 初次选中
-  if (props.selected) {
+  if (props.checked) {
     hasGroup ? nowPick.value = props.value : context.emit('update:modelValue', props.value)
     context.emit('change')
   }

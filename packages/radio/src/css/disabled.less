@@ -1,7 +1,10 @@
 .vi-radio.is-disabled {
     color: var(--vi-background-color-deep);
     .vi-radio-circle {
-        box-shadow: inset 0 0 1px 0 var(--vi-background-color-deep);
+        box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
+        .vi-radio-ball {
+            background-color: transparent;
+        }
     }
 
     .vi-radio-text {
@@ -10,7 +13,7 @@
 
     &:hover {
         .vi-radio-circle {
-            box-shadow: inset 0 0 1px 0 var(--vi-background-color-deep);
+            box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
         }
     }
 }
@@ -18,12 +21,13 @@
 .vi-radio-type-button.is-disabled {
     color: var(--vi-background-color-deep);
     .vi-radio-text {
-        box-shadow: inset 0 0 1px 0 var(--vi-background-color-deep);
+        box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
+        background-color: transparent;
     }
 
     &:hover {
         .vi-radio-text {
-            box-shadow: inset 0 0 1px 0 var(--vi-background-color-deep);
+            box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
         }
     }   
 }

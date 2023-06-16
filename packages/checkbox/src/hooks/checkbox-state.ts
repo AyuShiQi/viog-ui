@@ -11,6 +11,7 @@ export default function (props: CheckboxProps, context: SetupContext) {
   })()
   // 当前选择
   const nowPick: Ref = inject('checkbox-group-value', ref())
+  const groupName = inject('checkbox-group-name', props.name)
   // 该checkbox是否包含于结果之中
   const containsValue = computed((): boolean => {
     return hasGroup ? nowPick.value.includes(props.value) : props.modelValue.includes(props.value)
@@ -35,11 +36,20 @@ export default function (props: CheckboxProps, context: SetupContext) {
     (checkbox.value as RadioDOM).click()
   }
 
+  if (props.checked) {
+    if (!hasGroup) nowPick.value = props.modelValue
+    if (!containsValue.value) {
+      nowPick.value.push(props.value)
+      if (!hasGroup) context.emit('update:modelValue', nowPick)
+    }
+  }
+
   return {
     nowPick,
     handleChange,
     toPick,
     containsValue,
-    checkbox
+    checkbox,
+    groupName
   }
 }

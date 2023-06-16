@@ -22,7 +22,7 @@ export default {
     type: Boolean,
     default: false
   },
-  selected: {
+  checked: {
     type: Boolean,
     default: false
   }

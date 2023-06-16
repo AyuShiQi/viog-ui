@@ -1,5 +1,5 @@
 <template>
-  <!-- <vi-form>
+  <vi-form>
     <vi-form-item label="姓名">
       <vi-input password show-password>123</vi-input>
     </vi-form-item>
@@ -20,7 +20,9 @@
       </ViCheckboxGroup>
     </vi-form-item>
     <vi-form-item label="你觉得呢">
-      <ViSelect class="select-style" filter placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
+      <ViSelect class="select-style" filter placeholder="123" size="small" :datas="arr" v-model="value">
+        <vi-option value="你看" disabled></vi-option>
+      </ViSelect>
       <ViSelect class="select-style" dark type="plain" filter placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
     </vi-form-item>
     <vi-form-item label="你觉得呢">
@@ -48,49 +50,35 @@
       <ViTimeSelect v-model="date"></ViTimeSelect>
       <ViTimeSelect v-model="date" dark></ViTimeSelect>
     </vi-form-item>
-  </vi-form> -->
+  </vi-form>
 
-  <vi-radio value="当前" v-model="open"></vi-radio>
-  <vi-radio :value="false" v-model="open" color="red"></vi-radio>
-  <vi-radio :value="false" v-model="open" color="pink"></vi-radio>
-  <vi-radio :value="false" v-model="open" color="green"></vi-radio>
-  <vi-radio :value="false" v-model="open" color="yellow"></vi-radio>
-  <vi-radio :value="false" v-model="open" color="blue"></vi-radio>
-  <vi-radio :value="false" v-model="open" size="big"></vi-radio>
-  <vi-radio :value="false" v-model="open" ></vi-radio>
-  <vi-radio :value="false" v-model="open" size="small"></vi-radio>
-  <vi-radio :value="false" type="button" v-model="open"></vi-radio>
-  <vi-radio :value="false" type="button" v-model="open" color="red"></vi-radio>
-  <vi-radio :value="false" type="button" v-model="open" color="pink"></vi-radio>
-  <vi-radio :value="false" type="button" v-model="open" color="green"></vi-radio>
-  <vi-radio :value="false" type="button" v-model="open" color="yellow"></vi-radio>
-  <vi-radio :value="false" type="button" v-model="open" color="blue"></vi-radio>
-  <vi-radio :value="false" type="button" v-model="open" size="big"></vi-radio>
-  <vi-radio :value="false" type="button" v-model="open" ></vi-radio>
-  <vi-radio :value="false" type="button" v-model="open" size="small"></vi-radio>
-  <vi-radio :value="false" mutate v-model="open"></vi-radio>
-  <vi-radio :value="false" mutate v-model="open" color="red"></vi-radio>
-  <vi-radio :value="false" mutate v-model="open" color="pink"></vi-radio>
-  <vi-radio :value="false" mutate v-model="open" color="green"></vi-radio>
-  <vi-radio :value="false" mutate v-model="open" color="yellow"></vi-radio>
-  <vi-radio :value="false" mutate v-model="open" color="blue"></vi-radio>
-  <vi-radio :value="false" mutate v-model="open" size="big"></vi-radio>
-  <vi-radio :value="false" mutate v-model="open" ></vi-radio>
-  <vi-radio :value="false" mutate v-model="open" size="small"></vi-radio>
-  <vi-radio :value="false" mutate type="button" v-model="open"></vi-radio>
-  <vi-radio :value="false" mutate type="button" v-model="open" color="red"></vi-radio>
-  <vi-radio :value="false" mutate type="button" v-model="open" color="pink"></vi-radio>
-  <vi-radio :value="false" mutate type="button" v-model="open" color="green"></vi-radio>
-  <vi-radio :value="false" mutate type="button" v-model="open" color="yellow"></vi-radio>
-  <vi-radio :value="false" mutate type="button" v-model="open" color="blue"></vi-radio>
-  <vi-radio :value="false" mutate type="button" v-model="open" size="big"></vi-radio>
-  <vi-radio :value="false" mutate type="button" v-model="open" ></vi-radio>
-  <vi-radio :value="false" mutate type="button" v-model="open" size="small"></vi-radio>
+  <!-- <vi-checkbox v-model="ar"></vi-checkbox>
+  <vi-checkbox v-model="ar"></vi-checkbox>
+  <vi-checkbox v-model="ar"></vi-checkbox>
+  <vi-checkbox disabled v-model="ar"></vi-checkbox>
+  <vi-checkbox color="pink" mutate v-model="ar"></vi-checkbox>
+  <vi-checkbox v-model="ar"></vi-checkbox>
+  <vi-checkbox disabled type="button" v-model="ar"></vi-checkbox>
+  <vi-checkbox type="button" v-model="ar"></vi-checkbox>
+  <vi-checkbox color="pink" mutate type="button" v-model="ar"></vi-checkbox>
+  <vi-checkbox type="button" v-model="ar" size="big"></vi-checkbox>
+  <vi-checkbox type="button" v-model="ar" size="middle"></vi-checkbox>
+  <vi-checkbox type="button" v-model="ar" size="small"></vi-checkbox>
+  <vi-checkbox v-model="ar" size="big"></vi-checkbox>
+  <vi-checkbox v-model="ar" size="middle"></vi-checkbox>
+  <vi-checkbox v-model="ar" size="small" checked name="性别"></vi-checkbox>
 
-  <vi-radio-group name="性别" v-model="open">
-    <vi-radio value="男" color="red" selected>male</vi-radio>
-    <vi-radio value="女" color="pink" selected>female</vi-radio>
-  </vi-radio-group>
+  <vi-checkbox-group v-model="ar" name="hao">
+    <vi-checkbox value="1" size="small" checked></vi-checkbox>
+    <vi-checkbox value="2" size="small" checked></vi-checkbox>
+    <vi-checkbox value="3" size="small" checked></vi-checkbox>
+    <vi-checkbox value="4" size="small" checked></vi-checkbox>
+    <vi-checkbox value="5" size="small" checked></vi-checkbox>
+  </vi-checkbox-group>
+
+  <vi-radio value="12" v-model="val" checked></vi-radio>
+  <vi-radio disabled></vi-radio>
+  <vi-radio disabled type="button"></vi-radio> -->
 </template>
 
 <script lang="ts">
