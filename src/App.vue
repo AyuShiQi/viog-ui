@@ -1,5 +1,8 @@
 <template>
-  <vi-form>
+  <vi-select v-model="searchInfo" name="choose" class="my-select-v2" placeholder="请输入关键字" @search="handleSearch" search>
+      <vi-option v-for="item in optionList" :key="item" :value="item">{{ item }}</vi-option>
+  </vi-select>
+  <!-- <vi-form>
     <vi-form-item label="姓名">
       <vi-input password show-password>123</vi-input>
     </vi-form-item>
@@ -50,7 +53,7 @@
       <ViTimeSelect v-model="date"></ViTimeSelect>
       <ViTimeSelect v-model="date" dark></ViTimeSelect>
     </vi-form-item>
-  </vi-form>
+  </vi-form> -->
 
   <!-- <vi-checkbox v-model="ar"></vi-checkbox>
   <vi-checkbox v-model="ar"></vi-checkbox>
@@ -105,6 +108,17 @@ interface ViInputType {
   toBlur: () => void
 }
 
+const searchInfo = ref()
+const optionList: any[] = reactive([])
+
+function handleSearch (key: string, { finish }: any) {
+  console.log(key)
+  setTimeout(() => {
+    optionList[0] = key
+    finish.value = true
+  }, 500)
+}
+
 export default defineComponent({
   name: 'App',
   components: {
@@ -137,7 +151,10 @@ export default defineComponent({
       date,
       nav,
       choose,
-      table
+      table,
+      searchInfo,
+      optionList,
+      handleSearch
     }
   },
   mounted () {

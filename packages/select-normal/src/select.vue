@@ -40,12 +40,10 @@
       </span>
     </template>
     <template v-slot:content>
-      <scroll class="vi-select-box vi-select-box-normal" v-if="finish">
-        <slot></slot>
+      <scroll class="vi-select-box vi-select-box-normal">
+        <slot v-if="finish"></slot>
+        <slot v-else name="loading">加载中</slot>
       </scroll>
-      <div v-else>
-        <slot name="loading">加载中</slot>
-      </div>
     </template>
   </dropdown>
 </template>
