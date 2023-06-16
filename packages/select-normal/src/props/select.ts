@@ -35,5 +35,9 @@ export default {
   search: {
     type: Boolean,
     default: false
+  },
+  name: {
+    type: String,
+    default: ''
   }
 }

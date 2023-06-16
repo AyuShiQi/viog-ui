@@ -11,7 +11,7 @@
     <span class="vi-option-pre" v-if="preSlot">
       <slot name="pre"></slot>
     </span>
-    <slot></slot>
+    <slot>{{ value }}</slot>
     <span class="vi-option-suf" v-if="sufSlot">
       <slot name="suf"></slot>
     </span>

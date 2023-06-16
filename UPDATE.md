@@ -165,14 +165,15 @@
 - 回归测试：修复input颜色显示不正常问题*
 - input suffix prefix width*
 - 删除select组件dark属性*
-- 修改select组件hover颜色
+- 修改select组件hover颜色*
+- 修改input组件hover颜色*
+- 处理selected类型别名的显示*（同一select中，一个option只能拥有一个别名）
+- 添加select name* （所有表单的name都需要供form表单使用）
 - radio新增mutate
 - radio-group新增name
 - 添加radio selected
 - 添加option组件disabled功能
-- 处理selected类型别名的显示
 - select处理search功能完善
-- 添加select name
 
 # 0.6.9
 

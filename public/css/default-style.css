@@ -38,6 +38,7 @@
     --vi-select-max-height: 400px;
     --vi-select-scroll-min-width: ;
     --vi-select-scroll-max-width: ; */
+    --vi-option-padding: .4em .6em;
 
     --vi-dialog-width: 400px;
     --vi-dialog-height: auto;

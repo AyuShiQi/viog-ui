@@ -28,7 +28,7 @@
             ref="input">
           </span>
           <span class="vi-select-choose" v-else>
-            {{isEmpty()? placeholder : modelValue}}
+            {{ chooseShow }}
           </span>
           <svg
           class="vi-select-arrow"
