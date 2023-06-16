@@ -1,14 +1,11 @@
-@import '../../../../public/css/basecolor.less';
-@import '../../../../public/css/base.less';
-
-.vi-radio-appreance {
+.vi-radio {
     display: inline-flex;
     color: var(--vi-link-color);
     user-select: none;
     transition: all .3s linear 0s;
     align-items: center;
 
-    .vi-radio {
+    .vi-radio__origin {
         display: none;
     }
 
@@ -31,6 +28,7 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
+            box-sizing: border-box;
         }
     }
 
@@ -40,24 +38,24 @@
 
     &:hover {
         .vi-radio-circle {
-            box-shadow: inset 0 0 0 1px var(--vi-icon-color);
+            box-shadow: inset 0 0 0 1px var(--vi-background-color-deeper);
         }
     }
 }
 
-.vi-radio-appreance.is-middle {
-    font-size: @font-size;
+.vi-radio-size-middle {
+    font-size: var(--vi-font-size);
 }
 
-.vi-radio-appreance.is-small {
-    font-size: @small-font-size;
+.vi-radio-size-small {
+    font-size: var(--vi-small-font-size);
 }
 
-.vi-radio-appreance.is-big {
-    font-size: @big-font-size;
+.vi-radio-size-big {
+    font-size: var(--vi-big-font-size);
 }
 
-.vi-radio-appreance.is-button {
+.vi-radio-type-button {
     .vi-radio-circle {
         display: none;
     }
@@ -70,23 +68,8 @@
         cursor: pointer;
         transition: all .2s linear 0s;
     }
-
-    // &:hover {
-    //     .vi-radio-text {
-    //         box-shadow: inset 0 0 0 1px var(--vi-icon-color);
-    //     }
-    // }
 }
 
-// .vi-radio-appreance.is-button.be-checked {
-//     &:hover {
-//         .vi-radio-text {
-//             box-shadow: inset 0 0 0 1px var(--vi-icon-color);
-//         }
-//     }
-// }
-
-@import './dark.less';
-@import './checked.less';
 @import './color.less';
+@import './checked.less';
 @import './disabled.less';

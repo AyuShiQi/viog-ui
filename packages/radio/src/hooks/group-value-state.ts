@@ -14,4 +14,5 @@ export default function (props: GroupValueProps, context: SetupContext, valueNam
   })
 
   provide(valueName, ref(groupValue))
+  if (props.name) provide('radio-group-name', props.name)
 }

@@ -1,12 +1,13 @@
 export interface RadioProps {
   modelValue: string | number | boolean | undefined,
   value: string | number | boolean | undefined,
-  name: string,
+  name: string | undefined,
   size: string,
   type: string,
-  dark: boolean,
   color: string,
-  disabled: boolean
+  disabled: boolean,
+  mutate: boolean,
+  selected: boolean
 }
 
 export interface ViRadioType {
@@ -24,5 +25,6 @@ export interface ViRadioInject {
 }
 
 export interface GroupValueProps {
-  modelValue: string | number | boolean | undefined
+  modelValue: string | number | boolean | undefined,
+  name: string | undefined
 }

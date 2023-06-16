@@ -10,7 +10,7 @@ import props from './props/group'
 
 import { GroupValueProps } from '@/types/radio-types'
 
-import { groupValueState } from './hooks'
+import groupValueState from './hooks/group-value-state'
 
 export default defineComponent({
   name: 'ViRadioGroup',

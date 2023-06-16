@@ -1,10 +1,7 @@
 export default {
   modelValue: [String, Number, Boolean],
   value: [String, Number, Boolean],
-  name: {
-    type: String,
-    default: ''
-  },
+  name: String,
   size: {
     type: String,
     default: 'middle'
@@ -13,15 +10,19 @@ export default {
     type: String,
     default: 'default' // button
   },
-  dark: {
-    type: Boolean,
-    default: false
-  },
   color: {
     type: String,
     default: 'purple'
   },
   disabled: {
+    type: Boolean,
+    default: false
+  },
+  mutate: {
+    type: Boolean,
+    default: false
+  },
+  selected: {
     type: Boolean,
     default: false
   }

@@ -50,7 +50,47 @@
     </vi-form-item>
   </vi-form> -->
 
-  <vi-radio v-model="open"></vi-radio>
+  <vi-radio value="当前" v-model="open"></vi-radio>
+  <vi-radio :value="false" v-model="open" color="red"></vi-radio>
+  <vi-radio :value="false" v-model="open" color="pink"></vi-radio>
+  <vi-radio :value="false" v-model="open" color="green"></vi-radio>
+  <vi-radio :value="false" v-model="open" color="yellow"></vi-radio>
+  <vi-radio :value="false" v-model="open" color="blue"></vi-radio>
+  <vi-radio :value="false" v-model="open" size="big"></vi-radio>
+  <vi-radio :value="false" v-model="open" ></vi-radio>
+  <vi-radio :value="false" v-model="open" size="small"></vi-radio>
+  <vi-radio :value="false" type="button" v-model="open"></vi-radio>
+  <vi-radio :value="false" type="button" v-model="open" color="red"></vi-radio>
+  <vi-radio :value="false" type="button" v-model="open" color="pink"></vi-radio>
+  <vi-radio :value="false" type="button" v-model="open" color="green"></vi-radio>
+  <vi-radio :value="false" type="button" v-model="open" color="yellow"></vi-radio>
+  <vi-radio :value="false" type="button" v-model="open" color="blue"></vi-radio>
+  <vi-radio :value="false" type="button" v-model="open" size="big"></vi-radio>
+  <vi-radio :value="false" type="button" v-model="open" ></vi-radio>
+  <vi-radio :value="false" type="button" v-model="open" size="small"></vi-radio>
+  <vi-radio :value="false" mutate v-model="open"></vi-radio>
+  <vi-radio :value="false" mutate v-model="open" color="red"></vi-radio>
+  <vi-radio :value="false" mutate v-model="open" color="pink"></vi-radio>
+  <vi-radio :value="false" mutate v-model="open" color="green"></vi-radio>
+  <vi-radio :value="false" mutate v-model="open" color="yellow"></vi-radio>
+  <vi-radio :value="false" mutate v-model="open" color="blue"></vi-radio>
+  <vi-radio :value="false" mutate v-model="open" size="big"></vi-radio>
+  <vi-radio :value="false" mutate v-model="open" ></vi-radio>
+  <vi-radio :value="false" mutate v-model="open" size="small"></vi-radio>
+  <vi-radio :value="false" mutate type="button" v-model="open"></vi-radio>
+  <vi-radio :value="false" mutate type="button" v-model="open" color="red"></vi-radio>
+  <vi-radio :value="false" mutate type="button" v-model="open" color="pink"></vi-radio>
+  <vi-radio :value="false" mutate type="button" v-model="open" color="green"></vi-radio>
+  <vi-radio :value="false" mutate type="button" v-model="open" color="yellow"></vi-radio>
+  <vi-radio :value="false" mutate type="button" v-model="open" color="blue"></vi-radio>
+  <vi-radio :value="false" mutate type="button" v-model="open" size="big"></vi-radio>
+  <vi-radio :value="false" mutate type="button" v-model="open" ></vi-radio>
+  <vi-radio :value="false" mutate type="button" v-model="open" size="small"></vi-radio>
+
+  <vi-radio-group name="性别" v-model="open">
+    <vi-radio value="男" color="red" selected>male</vi-radio>
+    <vi-radio value="女" color="pink" selected>female</vi-radio>
+  </vi-radio-group>
 </template>
 
 <script lang="ts">

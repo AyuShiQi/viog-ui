@@ -1,28 +1,28 @@
 <template>
   <span
-  class="vi-radio-appreance"
+  class="vi-radio"
   :class="[
-  `is-${size}`,
+  `vi-radio-size-${size}`,
   `vi-radio-${color}`,
-  `is-${type}`,
+  `vi-radio-type-${type}`,
   {
+    'vi-radio-mutate': mutate,
     'is-disabled': disabled,
-    'is-dark': dark,
     'be-checked': value === pickValue
   }
   ]">
     <input
     ref="radio"
-    class="vi-radio"
+    class="vi-radio__origin"
     :value="value"
-    :name="name"
+    :name="groupName"
     v-model="nowPick"
     :disabled="disabled"
-    @change="handleChange"
+    @click="handleChange"
     type="radio">
     <span class="vi-radio-circle" @click="toPick"><span class="vi-radio-ball"></span></span>
     <span class="vi-radio-text" @click="toPick">
-        <slot>{{value}}</slot>
+        <slot>{{ value }}</slot>
     </span>
   </span>
 </template>
@@ -35,7 +35,7 @@ import props from './props'
 
 import type { RadioProps } from '@/types/radio-types'
 
-import { radioState } from './hooks'
+import radioState from './hooks/radio-state'
 
 export default defineComponent({
   name: 'ViRadio',
