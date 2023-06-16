@@ -9,7 +9,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import type { SetupContext } from 'vue'
 // 组件type
 // 组件props
 import props from './props/option-group'
@@ -19,7 +18,7 @@ import optionGroupState from './hooks/option-group-state'
 export default defineComponent({
   name: 'ViOptionGroup',
   props,
-  setup (props: any, ctx: SetupContext) {
+  setup () {
     const optionGroup = optionGroupState()
 
     return optionGroup

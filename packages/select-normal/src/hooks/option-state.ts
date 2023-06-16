@@ -17,6 +17,7 @@ export default function (props: any, ctx: SetupContext) {
   })
 
   function toChoose () {
+    if (props.disabled) return
     changeSelect(props.value)
   }
 

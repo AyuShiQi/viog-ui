@@ -5,6 +5,7 @@
     `choose-${chooseType}`,
     {
       'be-choosed': isChoosed,
+      'is-disabled': disabled
     }
   ]"
   @click="toChoose">
