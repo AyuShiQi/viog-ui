@@ -9,8 +9,5 @@ export default {
   },
   value: {
     type: String
-  },
-  desc: {
-    type: String
   }
 }

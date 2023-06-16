@@ -2,7 +2,7 @@
   <span
   class="vi-input"
   :class="[
-  `is-${color}`,
+  `vi-input-color-${color}`,
   `vi-input-${type}`,
   `vi-input-size-${size}`,
   {

@@ -29,14 +29,15 @@
     --vi-select-width: 200px;
     --vi-select-height: ;
     --vi-select-padding: var(--vi-card-padding);
-    --vi-select-scroll-width: 100%;
-    --vi-select-max-height: 400px;
-    --vi-select-scroll-min-width: ;
-    --vi-select-scroll-max-width: ;
-    --vi-select-list-top: 2px;
+    --vi-select-list-gap: 2px;
     --vi-select-list-width: ;
     --vi-select-list-height: ;
     --vi-select-list-max-height: ;
+    /* 弃用，目前还用于select-v没改 */
+    /* --vi-select-scroll-width: 100%;
+    --vi-select-max-height: 400px;
+    --vi-select-scroll-min-width: ;
+    --vi-select-scroll-max-width: ; */
 
     --vi-dialog-width: 400px;
     --vi-dialog-height: auto;
@@ -66,7 +67,7 @@
     --vi-dropdown-width: 100%;
     --vi-dropdown-height: ;
     --vi-dropdown-max-height: 400px;
-    --vi-dropdown-top: 2px;
+    --vi-dropdown-gap: 2px;
 
     --vi-drawer-width: 300px;
     --vi-drawer-height: 300px;
@@ -108,7 +109,9 @@
     --vi-font-color: #262626; /* dark */
     --vi-link-color: rgb(38, 38, 38, 0.75); /*default*/
     /* 该颜色作用于所有disabled组件样式颜色 */
-    --vi-icon-color: #8C8C8C;  
+    --vi-icon-color: #8C8C8C;
+    --vi-background-color-deepest: #b8b8b8;
+    --vi-background-color-deeper: #cbcbcb;
     --vi-background-color-deep: #E5E5E5;
     --vi-background-color-middle: rgba(0, 10, 32, 0.1);
     --vi-background-color: rgb(0, 10, 32, 0.05);

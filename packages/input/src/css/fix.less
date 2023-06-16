@@ -2,8 +2,6 @@
     .vi-input-fix {
         display: inline-flex;
         color: var(--vi-icon-color);
-        width: var(--vi-input-suffix-width);
-        --vi-select-width: var(--vi-input-suffix-width);
         height: 1em;
         justify-self: center;
         align-items: center;
@@ -23,12 +21,14 @@
         }
     }
     .vi-input-prefix {
+        width: var(--vi-input-prefix-width);
         padding-right: var(--vi-input-inner-padding);
         border-right: 1px solid var(--vi-background-color-deep);
         margin-right: var(--vi-input-inner-padding);
     }
 
     .vi-input-suffix {
+        width: var(--vi-input-suffix-width);
         padding-left: var(--vi-input-inner-padding);
         border-left: 1px solid var(--vi-background-color-deep);
         margin-left: var(--vi-input-inner-padding);

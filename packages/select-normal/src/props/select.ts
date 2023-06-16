@@ -10,10 +10,6 @@ export default {
     type: String,
     default: 'default'//  default/plain/button
   },
-  dark: {
-    type: Boolean,
-    default: false
-  },
   disabled: {
     type: Boolean,
     default: false

@@ -97,5 +97,5 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-  @import './css/select.less';
+  // @import './css/select.less';
 </style>

@@ -50,14 +50,65 @@
     </vi-form-item>
   </vi-form> -->
 
-  <!-- <vi-input type="plain" v-model="value" password show-password>
+  <vi-select v-model="val">
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+  </vi-select>
+  <vi-select choose-type="plain" v-model="val">
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+  </vi-select>
+  <vi-select type="button">
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+  </vi-select>
+  <vi-select type="plain">
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+  </vi-select>
+  <vi-select type="plain" size="small">
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+  </vi-select>
+  <vi-select type="plain" size="big">
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+  </vi-select>
+  <vi-select type="button" size="small">
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="1">1</vi-option>
+  </vi-select>
+  <vi-input type="plain" v-model="value" password show-password>
     <template v-slot:prefix>
       <vi-select></vi-select>
     </template>
     <template v-slot:suffix>
       <vi-select></vi-select>
     </template>
-  </vi-input><br/> -->
+  </vi-input><br/>
   <vi-input v-model="value" number>
   </vi-input><br/>
   <vi-input v-model="value" show-clear></vi-input><br/>

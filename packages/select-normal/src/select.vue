@@ -5,10 +5,9 @@
   ref="dropdown"
   class="vi-select"
   :class="[
-    `is-${size}`,
-    `is-${type}`,
+    `vi-select-size-${size}`,
+    `vi-select-type-${type}`,
     {
-      'is-dark': dark,
       'is-disabled': disabled
     }
   ]">

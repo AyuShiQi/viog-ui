@@ -1,9 +1,57 @@
 .vi-select {
-    --vi-dropdown-top: var(--vi-select-list-top);
+    --vi-dropdown-gap: var(--vi-select-list-gap);
     --vi-dropdown-width: var(--vi-select-list-width);
     --vi-dropdown-height: var(--vi-select-list-height);
     --vi-dropdown-max-height: var(--vi-select-list-max-height);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    box-sizing: border-box;
+    cursor: default;
+    transition: var(--vi-transition);
+
+    .vi-select-input {
+        display: inline-flex;
+        width: var(--vi-select-width);
+        height: var(--vi-select-height);
+        padding: var(--vi-select-padding);
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        transition: var(--vi-transition);
+
+        .vi-select-choose {
+            overflow: hidden;
+            word-wrap: break-word;
+            text-align: left;
+            flex: 1;
+
+            input {
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                border: none;
+                outline: none;
+            }
+        }
+
+        .vi-select-arrow {
+            display: inline-flex;
+            width: 1em;
+            height: 1em;
+            align-items: flex-start;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            cursor: pointer;
+            transform: scale(64%) rotateX(180deg);
+            transition: all .2s linear 0s;
+        }
+    }
+
     .vi-select-list {
+        position: relative;
         width: 100%;
         .vi-select-list-container {
             position: absolute;
@@ -25,3 +73,37 @@
         top: 0;
     }
 }
+
+.vi-select.be-open {
+    .vi-select-input {
+        .vi-select-arrow {
+            transform: scale(64%) rotateX(0deg);
+        }
+    }
+}
+
+.vi-select {
+    .vi-select-input.be-open {
+        .vi-select-arrow {
+            transform: scale(64%) rotateX(0deg);
+        }
+    }
+}
+
+.vi-select.is-disabled {
+    position: relative;
+    cursor: no-drop;
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+}
+
+@import './size.less';
+@import './type.less';

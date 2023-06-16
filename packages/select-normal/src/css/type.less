@@ -1,4 +1,4 @@
-.vi-select.is-button {
+.vi-select-type-button {
     color: var(--vi-link-color);
     .vi-select-input {
         background-color: var(--vi-background-color);
@@ -22,111 +22,63 @@
     }
 }
 
-.vi-select.is-button.is-dark {
-    color: var(--vi-font-color);
-    .vi-select-input {
-        background-color: var(--vi-background-color-deep);
-        .vi-select-arrow {
-            path {
-                fill: var(--vi-font-color);
-            }
-        }
-    }
-
-    .vi-select-box {
-        background-color: var(--vi-background-color-deep);
-    }
-}
-
-// .vi-select.is-button.is-filter {
-//     .vi-select-input {
-//         background-color: #ffffffdd;
-//         backdrop-filter: blur(5px);
-//     }
-
-//     .vi-select-box {
-//         background-color: #ffffffdd;
-//         backdrop-filter: blur(5px);
-//     }
-// }
-
-// .vi-select.is-button.is-dark.is-filter {
-//     .vi-select-input {
-//         background-color: @black-background-hover-o7;
-//         backdrop-filter: blur(5px);
-//     }
-
-//     .vi-select-box {
-//         background-color: @black-background-hover-o7;
-//         backdrop-filter: blur(5px);
-//     }
-// }
-
-.vi-select.is-default {
+.vi-select-type-default {
     position: relative;
     color: var(--vi-link-color);
 
-    &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0px;
-        height: 2px;
-        background-color: var(--vi-background-color-deep);
-        transition: all .3s ease 0s;
-    }
-
     .vi-select-input {
         padding-left: 0;
-        border-bottom: 1px solid var(--vi-background-color-deep);
         .vi-select-arrow {
             path {
                 fill: var(--vi-link-color);
             }
         }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--vi-background-color-deep);
+            transition: all .3s ease 0s;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--vi-background-color-deep);
+            transition: all .3s ease 0s;
+        }
     }
+
+    // 暂时不启用
+    // .vi-select-input.be-open {
+    //     &::before {
+    //         width: 100%;
+    //     }
+    // }
 
     .vi-select-box {
         color: var(--vi-link-color);
         box-shadow: 0 0 0 1px var(--vi-background-color-deep);
     }
-}
 
-.vi-select.is-default.is-dark {
-    color: var(--vi-font-color);
-    &::before {
-        background-color: var(--vi-icon-color);
-    }
-    .vi-select-input {
-        border-bottom: 1px solid var(--vi-icon-color);
-        .vi-select-arrow {
-            path {
-                fill: var(--vi-font-color);
-            }
-        }
-    }
-
-    .vi-select-box {
-        color: var(--vi-font-color);
-        box-shadow: 0 0 0 1px var(--vi-icon-color);
-        background-color: #fff;
-
-        .vi-select-li {
-            &:hover {
-                background-color: var(--vi-background-color-deep);
+    &:hover {
+        .vi-select-input {
+            &::after {
+                background-color: var(--vi-background-color-deeper);
             }
         }
     }
 }
 
-.vi-select.is-default.be-open {
-    &::before {
-        width: 100%;
-    }
-}
-
-.vi-select.is-plain {
+.vi-select-type-plain {
     color: var(--vi-link-color);
 
     .vi-select-input {
@@ -145,45 +97,10 @@
         color: var(--vi-link-color);
         box-shadow: 0 0 0 1px var(--vi-background-color-deep);
     }
-}
 
-.vi-select.is-plain.is-dark {
-    color: var(--vi-font-color);
-
-    .vi-select-input {
-        box-shadow: 0 0 0 1px var(--vi-icon-color);
-        border-radius: var(--vi-card-radius);
-        .vi-select-arrow {
-            path {
-                fill: var(--vi-font-color);
-            }
-        }
-    }
-
-    .vi-select-box {
-        color: var(--vi-font-color);
-        box-shadow: 0 0 0 1px var(--vi-icon-color);
-        background-color: #fff;
-
-        .vi-select-li {
-            &:hover {
-                background-color: var(--vi-background-color-deep);
-            }
+    &:hover {
+        .vi-select-input {
+            box-shadow: 0 0 0 1px var(--vi-background-color-deeper);
         }
     }
 }
-
-// .vi-select.is-plain.is-filter,
-// .vi-select.is-default.is-filter {
-//     .vi-select-box {
-//         background-color: #ffffffdd;
-//         backdrop-filter: blur(5px);
-//     }
-// }
-
-// .vi-select.is-plain.is-dark.is-filter,
-// .vi-select.is-default.is-dark.is-filter {
-//     .vi-select-box {
-//         background-color: @mblack-background-o8;
-//     }
-// }
