@@ -177,7 +177,7 @@
 - radio-group新增name*
 - checkbox-group新增name*
 - 添加option组件disabled功能*
-- select处理search功能完善
+- select处理search功能完善*
 
 # 0.6.9
 
