@@ -1,9 +1,9 @@
 <template>
   <div
   class="vi-time-select-part">
-    <time-scroll v-if="needHour()" :choosed="choosed" :need="24" target="hour" info="时"></time-scroll>
-    <time-scroll v-if="needMinute()" :choosed="choosed" target="minute" info="分"></time-scroll>
-    <time-scroll v-if="needSecond()" :choosed="choosed" target="second" info="秒"></time-scroll>
+    <time-scroll v-if="needHour()" :choosed="choosed" :need="24" :target="end ? 'endHour' : 'hour'" info="时"></time-scroll>
+    <time-scroll v-if="needMinute()" :choosed="choosed" :target="end ? 'endMinute' : 'minute'" info="分"></time-scroll>
+    <time-scroll v-if="needSecond()" :choosed="choosed" :target="end ? 'endSecond' : 'second'" info="秒"></time-scroll>
   </div>
 </template>
 
@@ -27,6 +27,10 @@ export default defineComponent({
       default: () => {
         return {}
       }
+    },
+    end: {
+      type: Boolean,
+      default: false
     }
   },
   setup (props: TimeBoxProps) {

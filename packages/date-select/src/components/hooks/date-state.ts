@@ -71,9 +71,15 @@ export default function (props: any, localDate: ModelValueDate) {
    */
   function update (d: string | number): void {
     if (typeof d === 'string') d = parseInt(d)
-    localDate.year = viewYear.value
-    localDate.month = viewMonth.value
-    localDate.date = d
+    if (!props.end) {
+      localDate.year = viewYear.value
+      localDate.month = viewMonth.value
+      localDate.date = d
+    } else {
+      localDate.endYear = viewYear.value
+      localDate.endMonth = viewMonth.value
+      localDate.endDate = d
+    }
   }
 
   /**
@@ -82,8 +88,13 @@ export default function (props: any, localDate: ModelValueDate) {
    */
   function updateMonth (m: number | string): void {
     if (typeof m === 'string') m = parseInt(m)
-    localDate.year = viewYear.value
-    localDate.month = m
+    if (!props.end) {
+      localDate.year = viewYear.value
+      localDate.month = m
+    } else {
+      localDate.endYear = viewYear.value
+      localDate.endMonth = m
+    }
   }
 
   /**
@@ -92,24 +103,39 @@ export default function (props: any, localDate: ModelValueDate) {
   function today (): void {
     viewYear.value = nowDate.getFullYear()
     viewMonth.value = nowDate.getMonth() + 1
-    localDate.date = nowDate.getDate()
-    localDate.year = viewYear.value
-    localDate.month = viewMonth.value
+    if (!props.end) {
+      localDate.date = nowDate.getDate()
+      localDate.year = viewYear.value
+      localDate.month = viewMonth.value
+    } else {
+      localDate.endDate = nowDate.getDate()
+      localDate.endYear = viewYear.value
+      localDate.endMonth = viewMonth.value
+    }
   }
   /**
    * 选择本月
    */
   function thisMonth (): void {
     viewYear.value = nowDate.getFullYear()
-    localDate.year = nowDate.getFullYear()
-    localDate.month = nowDate.getMonth() + 1
+    if (!props.end) {
+      localDate.year = nowDate.getFullYear()
+      localDate.month = nowDate.getMonth() + 1
+    } else {
+      localDate.endYear = nowDate.getFullYear()
+      localDate.endMonth = nowDate.getMonth() + 1
+    }
   }
   /**
    * 选择今年
    */
   function thisYear (): void {
     viewYear.value = nowDate.getFullYear()
-    localDate.year = nowDate.getFullYear()
+    if (!props.end) {
+      localDate.year = nowDate.getFullYear()
+    } else {
+      localDate.endYear = nowDate.getFullYear()
+    }
   }
 
   /**
@@ -118,7 +144,11 @@ export default function (props: any, localDate: ModelValueDate) {
    */
   function updateYear (y: number | string): void {
     if (typeof y === 'string') y = parseInt(y)
-    localDate.year = y
+    if (!props.end) {
+      localDate.year = y
+    } else {
+      localDate.endYear = y
+    }
   }
 
   // 用于视图渲染的天数数组

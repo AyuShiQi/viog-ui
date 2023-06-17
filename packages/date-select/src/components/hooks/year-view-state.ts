@@ -47,7 +47,11 @@ export default function (props: any, ctx: SetupContext) {
    * 是否是被选择的
    */
   function isChoosed (y: number): boolean {
-    if (props.choosed.year === y) return true
+    if (!props.end) {
+      if (props.choosed.year === y) return true
+    } else {
+      if (props.choosed.endYear === y) return true
+    }
     return false
   }
 

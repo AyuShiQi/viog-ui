@@ -22,6 +22,21 @@
     }
 }
 
+.vi-time-select-type-button.is-disabled {
+    color: var(--vi-background-color-base);
+    .vi-time-select-icon {
+        path {
+            fill: var(--vi-background-color-base);
+        }
+    }
+
+    &:hover {
+        .vi-time-select-input {
+            background-color: var(--vi-background-color);
+        }
+    }
+}
+
 .vi-time-select-type-default {
     position: relative;
     color: var(--vi-link-color);
@@ -56,6 +71,23 @@
     }
 }
 
+.vi-time-select-type-default.is-disabled {
+    color: var(--vi-background-color-deep);
+
+    &:hover::before {
+        background-color: var(--vi-background-color-deep);
+    }
+
+    .vi-time-select-input {
+        padding-left: 0;
+        .vi-time-select-icon {
+            path {
+                fill: var(--vi-background-color-deep);
+            }
+        }
+    }
+}
+
 .vi-time-select-type-plain {
     color: var(--vi-link-color);
 
@@ -79,6 +111,24 @@
     &:hover {
         .vi-time-select-input {
             box-shadow: 0 0 0 1px var(--vi-background-color-deeper);
+        }
+    }
+}
+
+.vi-time-select-type-plain.is-disabled {
+    color: var(--vi-background-color-deep);
+
+    .vi-time-select-input {
+        .vi-time-select-icon {
+            path {
+                fill: var(--vi-background-color-deep);
+            }
+        }
+    }
+
+    &:hover {
+        .vi-time-select-input {
+            box-shadow: 0 0 0 1px var(--vi-background-color-deep);
         }
     }
 }

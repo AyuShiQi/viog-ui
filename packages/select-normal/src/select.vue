@@ -1,5 +1,6 @@
 <template>
   <dropdown
+  :disabled="disabled"
   :noTriggerOpen="search"
   @click="toFocus"
   ref="dropdown"

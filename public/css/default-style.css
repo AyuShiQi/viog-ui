@@ -59,6 +59,10 @@
     --vi-date-select-width: 200px;
     --vi-date-select-height: ;
     --vi-date-select-padding: var(--vi-card-padding);
+    --vi-date-select-list-gap: 4px;
+    --vi-date-select-list-width: auto;
+    --vi-date-select-list-height: ;
+    --vi-date-select-list-max-height: ;
 
     --vi-time-select-width: 200px;
     --vi-time-select-height: ;
@@ -123,7 +127,7 @@
     --vi-background-color: rgb(0, 10, 32, 0.05);
     --vi-background-color-solid: #f2f3f4;
     --vi-border-color: #E2E8F0;
-    --vi-bacground-color-base: #fff;
+    --vi-background-color-base: #fff;
     /* 规则配色 */
     /* dark mode*/
     --vi-dark-color1: #0F0B28;

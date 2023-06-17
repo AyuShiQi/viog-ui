@@ -7,5 +7,9 @@ export default {
   noTriggerOpen: {
     type: Boolean,
     default: false
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   }
 }

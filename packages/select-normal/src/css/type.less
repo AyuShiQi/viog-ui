@@ -22,6 +22,23 @@
     }
 }
 
+.vi-select-type-button.is-disabled {
+    color: var(--vi-background-color-base);
+    .vi-select-input {
+        .vi-select-arrow {
+            path {
+                fill: var(--vi-background-color-base);
+            }
+        }
+    }
+
+    &:hover {
+        .vi-select-input {
+            background-color: var(--vi-background-color);
+        }   
+    }
+}
+
 .vi-select-type-default {
     position: relative;
     color: var(--vi-link-color);
@@ -78,6 +95,26 @@
     }
 }
 
+.vi-select-type-default.is-disabled {
+    color: var(--vi-background-color-deep);
+
+    .vi-select-input {
+        .vi-select-arrow {
+            path {
+                fill: var(--vi-background-color-deep);
+            }
+        }
+    }
+
+    &:hover {
+        .vi-select-input {
+            &::after {
+                background-color: var(--vi-background-color-deep);
+            }
+        }
+    }
+}
+
 .vi-select-type-plain {
     color: var(--vi-link-color);
 
@@ -101,6 +138,25 @@
     &:hover {
         .vi-select-input {
             box-shadow: 0 0 0 1px var(--vi-background-color-deeper);
+        }
+    }
+}
+
+.vi-select-type-plain.is-disabled {
+    color: var(--vi-background-color-deep);
+
+    .vi-select-input {
+        box-shadow: 0 0 0 1px var(--vi-background-color-deep);
+        .vi-select-arrow {
+            path {
+                fill: var(--vi-background-color-deep);
+            }
+        }
+    }
+
+    &:hover {
+        .vi-select-input {
+            box-shadow: 0 0 0 1px var(--vi-background-color-deep);
         }
     }
 }

@@ -11,28 +11,28 @@
         }
     }
 
-    .vi-select-box {
-        background-color: #fff;
-    }
-
     .vi-date-select-box {
         background-color: var(--vi-background-color-solid);
     }
-}
 
-.vi-date-select-type-button.vi-date-select-mode-dark {
-    color: var(--vi-font-color);
-    .vi-date-select-input {
-        background-color: var(--vi-background-color-deep);
-        .vi-date-select-icon {
-            path {
-                fill: var(--vi-font-color);
-            }
+    &:hover {
+        .vi-date-select-input {
+            background-color: var(--vi-background-color-deep);
         }
     }
+}
 
-    .vi-date-select-box {
-        background-color: var(--vi-background-color-deep);
+.vi-date-select-type-button.is-disabled {
+    color: var(--vi-background-color-base);
+    .vi-date-select-input {
+        background-color: var(--vi-background-color);
+        border-radius: 5px;
+
+        .vi-date-select-icon {
+            path {
+                fill: var(--vi-background-color-base);
+            }
+        }
     }
 }
 
@@ -60,7 +60,7 @@
         }
 
         &:hover::before {
-            background-color: var(--vi-icon-color);
+            background-color: var(--vi-background-color-deeper);
         }
     }
 
@@ -70,34 +70,18 @@
     }
 }
 
-.vi-date-select-type-default.vi-date-select-mode-dark {
-    color: var(--vi-font-color);
+.vi-date-select-type-default.is-disabled {
+    color: var(--vi-background-color-deep);
 
     .vi-date-select-input {
         .vi-date-select-icon {
             path {
-                fill: var(--vi-font-color);
+                fill: var(--vi-background-color-deep);
             }
-        }
-
-        &::before {
-            background-color: var(--vi-icon-color);
         }
 
         &:hover::before {
-            background-color: var(--vi-link-color);
-        }
-    }
-
-    .vi-date-select-box {
-        color: var(--vi-font-color);
-        box-shadow: inset 0 0 0 1px var(--vi-icon-color);
-        background-color: #fff;
-
-        .vi-date-select-li {
-            &:hover {
-                background-color: var(--vi-main-color1);
-            }
+            background-color: var(--vi-background-color-deep);
         }
     }
 }
@@ -121,30 +105,24 @@
         color: var(--vi-link-color);
         box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
     }
-}
 
-.vi-date-select-type-plain.vi-date-select-mode-dark {
-    color: var(--vi-font-color);
-
-    .vi-date-select-input {
-        box-shadow: inset 0 0 0 1px var(--vi-icon-color);
-        border-radius: 5px;
-        .vi-date-select-icon {
-            path {
-                fill: var(--vi-font-color);
-            }
+    &:hover {
+        .vi-date-select-input {
+            box-shadow: inset 0 0 0 1px var(--vi-background-color-deeper);
         }
     }
+}
+
+.vi-date-select-type-plain.is-disabled {
+    color: var(--vi-background-color-deep);
 
     .vi-date-select-box {
-        color: var(--vi-font-color);
-        box-shadow: inset 0 0 0 1px var(--vi-icon-color);
-        background-color: #fff;
+        color: var(--vi-background-color-deep);
+    }
 
-        .vi-date-select-li {
-            &:hover {
-                background-color: var(--vi-main-color1);
-            }
+    &:hover {
+        .vi-date-select-input {
+            box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
         }
     }
 }

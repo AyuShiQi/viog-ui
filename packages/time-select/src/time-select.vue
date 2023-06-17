@@ -1,5 +1,6 @@
 <template>
   <dropdown class="vi-time-select"
+  :disabled="disabled"
   :class="[
     `vi-time-select-size-${size}`,
     `vi-time-select-type-${type}`,

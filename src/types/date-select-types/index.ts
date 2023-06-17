@@ -5,6 +5,9 @@ export interface ModelValueDate {
   hour?: number,
   minute?: number,
   second?: number,
+  endYear?: number,
+  endMonth?: number,
+  endDate?: number
   endHour?: number,
   endMinute?: number,
   endSecond?: number
@@ -14,7 +17,6 @@ export interface DateSelectProps {
   modelValue: ModelValueDate,
   size: string,
   type: string,
-  dark: boolean,
   disabled: boolean,
   placeholder: string,
   filter: boolean,

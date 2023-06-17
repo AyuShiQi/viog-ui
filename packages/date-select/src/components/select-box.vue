@@ -4,6 +4,11 @@
     <MonthBox :beginYear="beginYear" :endYear="endYear" v-if="unit === 'month'" :choosed="choosed" :unit="unit"></MonthBox>
     <YearBox :beginYear="beginYear" :endYear="endYear" v-if="unit === 'year'" :choosed="choosed" :unit="unit"></YearBox>
     <TimeBox :beginYear="beginYear" :endYear="endYear" v-if="time" :choosed="choosed" :unit="timeUnit"></TimeBox>
+    <!-- range end部分 -->
+    <DateBox end :beginYear="beginYear" :endYear="endYear" v-if="range && unit === 'date'" :choosed="choosed" :unit="unit"></DateBox>
+    <MonthBox end :beginYear="beginYear" :endYear="endYear" v-if="range && unit === 'month'" :choosed="choosed" :unit="unit"></MonthBox>
+    <YearBox end :beginYear="beginYear" :endYear="endYear" v-if="range && unit === 'year'" :choosed="choosed" :unit="unit"></YearBox>
+    <TimeBox end :beginYear="beginYear" :endYear="endYear" v-if="range && time" :choosed="choosed" :unit="timeUnit"></TimeBox>
   </span>
 </template>
 
@@ -37,7 +42,8 @@ export default defineComponent({
     },
     endYear: {
       type: Number
-    }
+    },
+    range: Boolean
   }
 })
 </script>

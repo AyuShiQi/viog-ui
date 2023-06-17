@@ -61,7 +61,11 @@ export default defineComponent({
       default: {}
     },
     beginYear: Number,
-    endYear: Number
+    endYear: Number,
+    end: {
+      type: Boolean,
+      default: false
+    }
   },
   setup (props: DateBoxProps, ctx: SetupContext) {
     const yearBoxView = yearViewState(props, ctx)

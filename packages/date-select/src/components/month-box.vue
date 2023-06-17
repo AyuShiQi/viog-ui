@@ -64,7 +64,11 @@ export default defineComponent({
       default: {}
     },
     beginYear: Number,
-    endYear: Number
+    endYear: Number,
+    end: {
+      type: Boolean,
+      default: false
+    }
   },
   components: { selectV },
   setup (props: DateBoxProps, context: SetupContext) {

@@ -1,11 +1,12 @@
 <template>
   <dropdown
+  :disabled="disabled"
   class="vi-date-select"
   :class="[
     `vi-date-select-size-${size}`,
     `vi-date-select-type-${type}`,
     {
-      'vi-date-select-mode-dark': dark,
+      'is-range': range,
       'is-disabled': disabled
     }
   ]">
@@ -17,8 +18,14 @@
           'is-open': open
         }
       ]">
-      <span class="vi-date-select-choose">
+        <span class="vi-date-select-choose">
           {{formatDateTime}}
+        </span>
+        <span class="vi-date-select-choose__gap" v-if="range">
+          -
+        </span>
+        <span class="vi-date-select-choose" v-if="range">
+          {{formatDateTimeEnd}}
         </span>
         <svg
         class="vi-date-select-icon"
@@ -31,7 +38,8 @@
     </template>
     <template v-slot:content>
       <ViDateSelectBox
-      :choosed="modelValue"
+      :range="range"
+      :choosed="value"
       :time="time"
       :unit="unit"
       :timeUnit="timeUnit"

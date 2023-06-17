@@ -44,6 +44,7 @@ export default defineComponent({
 
     function mouseOpen () {
       if (props.trigger !== 'hover') return
+      if (props.disabled) return
       open.toOpen({
         afterCb: boxPosition.recalcSize
       })
@@ -52,6 +53,7 @@ export default defineComponent({
     // 针对click的方法
     function changeOpen () {
       if (props.trigger !== 'click') return
+      if (props.disabled) return
       // 当此次操作时打开时，仅做重新计算处理
       if (!open.open.value) {
         open.toSelect({

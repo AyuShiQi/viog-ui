@@ -5,9 +5,16 @@ export default function (props: any, viewYear: Ref, viewMonth: Ref) {
 
   function isChoose (viewDate: string | number): boolean {
     if (typeof viewDate === 'string') viewDate = parseInt(viewDate)
-    const { year, month, date } = props.choosed
-    if (year === viewYear.value && month === viewMonth.value) {
-      if (date === viewDate) return true
+    if (!props.end) {
+      const { year, month, date } = props.choosed
+      if (year === viewYear.value && month === viewMonth.value) {
+        if (date === viewDate) return true
+      }
+    } else {
+      const { endYear, endMonth, endDate } = props.choosed
+      if (endYear === viewYear.value && endMonth === viewMonth.value) {
+        if (endDate === viewDate) return true
+      }
     }
     return false
   }

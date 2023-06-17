@@ -8,9 +8,16 @@ export default function (props: any, viewYear: Ref) {
   }
 
   function isChoose (viewMonth: number): boolean {
-    const { year, month } = props.choosed
-    if (year === viewYear.value) {
-      if (month === viewMonth) return true
+    if (!props.end) {
+      const { year, month } = props.choosed
+      if (year === viewYear.value) {
+        if (month === viewMonth) return true
+      }
+    } else {
+      const { endYear, endMonth } = props.choosed
+      if (endYear === viewYear.value) {
+        if (endMonth === viewMonth) return true
+      }
     }
     return false
   }

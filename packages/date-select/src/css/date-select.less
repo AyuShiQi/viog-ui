@@ -1,4 +1,8 @@
 .vi-date-select {
+    --vi-dropdown-width: var(--vi-date-select-list-width);
+    --vi-dropdown-height: var(--vi-date-select-list-height);
+    --vi-dropdown-max-height: var(--vi-date-select-list-max-height);
+    --vi-dropdown-gap: var(--vi-date-select-list-gap);
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -6,7 +10,6 @@
     user-select: none;
     box-sizing: border-box;
     cursor: default;
-    --vi-dropdown-width: auto;
 
     .vi-date-select-input {
         display: inline-flex;
@@ -16,12 +19,19 @@
         width: var(--vi-date-select-width);
         height: var(--vi-date-select-height);
         padding: var(--vi-date-select-padding);
+        transition: var(--vi-transition);
+
+        .vi-date-select-choose__gap {
+            color: var(--vi-background-color-deeper);
+            text-align: center;
+            flex: 1;
+        }
 
         .vi-date-select-choose {
             overflow: hidden;
             word-wrap: break-word;
             text-align: left;
-            flex: 1;
+            flex-grow: 0.1;
         }
 
         .vi-date-select-icon {
@@ -47,6 +57,18 @@
         }
         .vi-select:first-child {
             --vi-select-width: 56px;
+        }
+    }
+}
+
+.vi-date-select.is-range {
+    .vi-date-select-input {
+        .vi-date-select-choose {
+            cursor: pointer;
+
+            &:hover {
+                color: var(--vi-font-color);
+            }
         }
     }
 }
