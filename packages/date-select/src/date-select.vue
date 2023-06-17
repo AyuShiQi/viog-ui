@@ -22,7 +22,7 @@
           {{formatDateTime}}
         </span>
         <span class="vi-date-select-choose__gap" v-if="range">
-          -
+          {{ separate }}
         </span>
         <span class="vi-date-select-choose" v-if="range">
           {{formatDateTimeEnd}}

@@ -12,7 +12,7 @@
       <span class="vi-time-select-choose">
         {{formatTime}}
       </span>
-      <span class="vi-time-select-choose-gap" v-if="range">-</span>
+      <span class="vi-time-select-choose-gap" v-if="range">{{ separate }}</span>
       <span class="vi-time-select-choose" v-if="range">
         {{formatTimeEnd}}
       </span>
@@ -30,7 +30,7 @@
         <time-scroll v-if="needHour()" :choosed="value" :need="24" target="hour" info="时"></time-scroll>
         <time-scroll v-if="needMinute()" :choosed="value" target="minute" info="分"></time-scroll>
         <time-scroll v-if="needSecond()" :choosed="value" target="second" info="秒"></time-scroll>
-        <div class="vi-time-select-box-gap" v-if="range">-</div>
+        <div class="vi-time-select-box-gap" v-if="range">{{ separate }}</div>
         <time-scroll v-if="range && needHour()" :choosed="value" :need="24" target="endHour" info="时"></time-scroll>
         <time-scroll v-if="range && needMinute()" :choosed="value" target="endMinute" info="分"></time-scroll>
         <time-scroll v-if="range && needSecond()" :choosed="value" target="endSecond" info="秒"></time-scroll>

@@ -67,6 +67,7 @@
 - 新增select-v组件once属性
 - 增加调色盘颜色bg-base
 - 新增time-select、date-select组件range属性
+- 新增time-select、date-select组件separate属性
 - 新增time-scroll组件移动端滑动处理功能
 - 新增dropdown组件disabled属性
 - 更改select、time-select组件等background-color颜色

@@ -38,5 +38,9 @@ export default {
     type: String,
     default: 'hh:mm:ss'
   },
+  separate: {
+    type: String,
+    default: '-'
+  },
   name: String
 }

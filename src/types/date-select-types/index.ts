@@ -24,5 +24,6 @@ export interface DateSelectProps {
   unit: string,
   timeUnit: string,
   format: string,
-  defaultUnit: ModelValueDate
+  defaultUnit: ModelValueDate,
+  separate: string
 }

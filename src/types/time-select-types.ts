@@ -11,5 +11,6 @@ export interface TimeSelectProps {
   range: boolean,
   unit: string,
   format: string,
+  separate: string
   name: string | undefined
 }

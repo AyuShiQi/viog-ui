@@ -1,27 +1,27 @@
 <template>
   <vi-button color="blue">按钮</vi-button>
-  <!-- <vi-select v-model="searchInfo" name="choose" class="my-select-v2" placeholder="请输入关键字" @search="handleSearch" search>
+  <vi-select v-model="searchInfo" name="choose" class="my-select-v2" placeholder="请输入关键字" @search="handleSearch" search>
       <vi-option v-for="item in optionList" :key="item" :value="item">{{ item }}</vi-option>
   </vi-select>
   <vi-select v-model="val">
     <vi-option value="1">1</vi-option>
-  </vi-select> -->
-  <!-- <vi-divider style="margin: 10px 0;"></vi-divider> -->
-  <!-- <vi-time-select range v-model="o"></vi-time-select> -->
-  <!-- <vi-time-select v-model="o" type="button" disabled></vi-time-select>
+  </vi-select>
+  <vi-divider style="margin: 10px 0;"></vi-divider>
+  <vi-time-select range v-model="o"></vi-time-select>
+  <vi-time-select v-model="o" type="button" disabled></vi-time-select>
   <vi-time-select v-model="o" type="plain"></vi-time-select>
   <vi-time-select v-model="o" size="big"></vi-time-select>
   <vi-time-select v-model="o" size="small"></vi-time-select>
   <vi-time-select v-model="o" type="plain" size="big"></vi-time-select>
-  <vi-time-select range v-model="o" size="big"></vi-time-select>
+  <vi-time-select range v-model="o" size="big" separate="至"></vi-time-select>
   <vi-time-select range v-model="o" size="middle"></vi-time-select>
-  <vi-time-select range v-model="o" size="small"></vi-time-select> -->
-  <!-- <vi-divider style="margin: 10px 0;"></vi-divider> -->
-  <!-- <vi-date-select v-model="o"></vi-date-select> -->
-  <!-- <vi-date-select v-model="o" type="button"></vi-date-select> -->
-  <!-- <vi-date-select style="--vi-date-select-width: 320px;" v-model="o" type="plain" unit="month" range></vi-date-select> -->
-  <!-- <vi-date-select style="--vi-date-select-width: 320px;" v-model="o" time timeUnit="second" unit="year" range></vi-date-select> -->
-  <!-- <vi-date-select style="--vi-date-select-width: 320px;" v-model="o" range></vi-date-select> -->
+  <vi-time-select range v-model="o" size="small"></vi-time-select>
+  <vi-divider style="margin: 10px 0;"></vi-divider>
+  <vi-date-select v-model="o"></vi-date-select>
+  <vi-date-select v-model="o" type="button"></vi-date-select>
+  <vi-date-select style="--vi-date-select-width: 320px;" v-model="o" type="plain" unit="month" range></vi-date-select>
+  <vi-date-select style="--vi-date-select-width: 320px;" v-model="o" time timeUnit="second" unit="year" range></vi-date-select>
+  <vi-date-select style="--vi-date-select-width: 320px;" v-model="o" range separate="至"></vi-date-select>
   <vi-virtual-select once style="--vi-select-list-height: 100px;" :datas="arr" v-model="val"></vi-virtual-select>
   <vi-virtual-select once style="--vi-select-list-height: 100px;" :datas="arr" v-model="val" choose-type="plain" type="button"></vi-virtual-select>
   <vi-select v-model="ar" multi>

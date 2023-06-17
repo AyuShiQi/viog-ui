@@ -73,5 +73,9 @@ export default {
       second: 0
     }
   },
+  separate: {
+    type: String,
+    default: '-'
+  },
   name: String
 }
