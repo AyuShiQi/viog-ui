@@ -3,10 +3,16 @@
       <vi-option v-for="item in optionList" :key="item" :value="item">{{ item }}</vi-option>
   </vi-select>
   <vi-select type="button">
-    <vi-option v-for="item in optionList" :key="item" :value="item">{{ item }}</vi-option>
+    <vi-option>1</vi-option>
+    <vi-option>1</vi-option>
+    <vi-option>1</vi-option>
+    <vi-option>1</vi-option>
   </vi-select>
   <vi-select type="plain">
-    <vi-option v-for="item in optionList" :key="item" :value="item">{{ item }}</vi-option>
+    <vi-option>1</vi-option>
+    <vi-option>1</vi-option>
+    <vi-option>1</vi-option>
+    <vi-option>1</vi-option>
   </vi-select>
   <vi-divider style="margin: 10px 0;"></vi-divider>
   <vi-time-select v-model="o"></vi-time-select>

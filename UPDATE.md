@@ -66,6 +66,8 @@
 - 删除time-select组件dark属性
 - 新增time-select组件range属性
 - 新增time-select组件移动端滑动处理功能
+- 新增css变量bg-base
+- 更改select、time-select组件等background-color颜色
 
 # 0.6.8
 
