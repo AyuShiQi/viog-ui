@@ -15,7 +15,7 @@ export default function (props: any) {
   // inject
   const aliasMap = inject('select-alias-map') as Map<any, any>
   // 向select添加别名映射
-  aliasMap.set(props.value, alias)
+  if (aliasMap) aliasMap.set(props.value, alias)
   // computed
   // 事件方法
   // 方法

@@ -32,12 +32,13 @@
     --vi-select-list-gap: 4px;
     --vi-select-list-width: 100%;
     --vi-select-list-height: ;
-    --vi-select-list-max-height: ;
+    --vi-select-list-max-height: 400px;
     /* 弃用，目前还用于select-v没改 */
     /* --vi-select-scroll-width: 100%;
     --vi-select-max-height: 400px;
     --vi-select-scroll-min-width: ;
     --vi-select-scroll-max-width: ; */
+    --vi-option-height: 1.8em;
     --vi-option-padding: .4em .6em;
 
     --vi-dialog-width: 400px;

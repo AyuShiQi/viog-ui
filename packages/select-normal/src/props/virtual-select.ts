@@ -19,17 +19,20 @@ export default {
     type: Boolean,
     default: false
   },
-  width: {
+  // 选择的样式
+  chooseType: {
     type: String,
-    default: '200px'
+    // plain
+    default: 'default'
+  },
+  once: {
+    type: Boolean,
+    default: false
   },
   placeholder: {
     type: String,
     default: '请选择'
   },
-  filter: {
-    type: Boolean,
-    default: false
-  },
-  datas: Array
+  datas: Array,
+  name: String
 }

@@ -3,7 +3,10 @@
       <vi-option v-for="item in optionList" :key="item" :value="item">{{ item }}</vi-option>
   </vi-select>
   <vi-input></vi-input>
-  <vi-select type="button" disabled>
+  <vi-select v-model="val">
+    <vi-option value="1">1</vi-option>
+  </vi-select>
+  <vi-select type="button">
     <vi-option>1</vi-option>
     <vi-option>1</vi-option>
     <vi-option>1</vi-option>
@@ -31,6 +34,7 @@
   <vi-date-select style="--vi-date-select-width: 320px;" v-model="o" type="plain" unit="month" range></vi-date-select>
   <vi-date-select style="--vi-date-select-width: 320px;" v-model="o" time timeUnit="second" unit="year" range></vi-date-select>
   <vi-date-select style="--vi-date-select-width: 320px;" v-model="o" range></vi-date-select>
+  <vi-virtual-select once style="--vi-select-list-height: 100px;" :datas="arr" v-model="val"></vi-virtual-select>
   <!-- <vi-form>
     <vi-form-item label="姓名">
       <vi-input password show-password>123</vi-input>

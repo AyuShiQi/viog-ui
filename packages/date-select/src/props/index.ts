@@ -26,11 +26,6 @@ export default {
     type: String,
     default: '请选择'
   },
-  // 未实现，已禁用
-  filter: {
-    type: Boolean,
-    default: false
-  },
   // 日期是否开启范围选择
   range: {
     type: Boolean,
@@ -77,5 +72,6 @@ export default {
       minute: 0,
       second: 0
     }
-  }
+  },
+  name: String
 }

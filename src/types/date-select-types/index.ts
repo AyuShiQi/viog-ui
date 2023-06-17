@@ -19,7 +19,7 @@ export interface DateSelectProps {
   type: string,
   disabled: boolean,
   placeholder: string,
-  filter: boolean,
+  name: string | undefined,
   range: boolean,
   unit: string,
   timeUnit: string,

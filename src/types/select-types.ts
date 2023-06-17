@@ -4,15 +4,14 @@ export interface SelectDOM {
 
 export interface SelectProps {
   modelValue: any,
+  once: boolean,
   size: string,
   type: string,
-  dark: boolean,
   disabled: boolean,
   multi: boolean,
-  width: string,
   placeholder: string,
-  filter: boolean,
-  datas: any[] | undefined
+  datas: any[] | undefined,
+  name: string | undefined
 }
 
 export interface ViSelectType {

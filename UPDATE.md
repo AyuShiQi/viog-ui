@@ -49,7 +49,6 @@
 
 # 0.6.10
 
-- 修复select-v
 - 增添调色盘
 - 修复tag组件嵌套情况下混用样式问题
 - 添加form组件的rule检查
@@ -60,16 +59,20 @@
 
 # 0.6.9（当前迭代开发版本）
 
-- 修复time-select组件ul离家出走问题
-- 修改time-select组件hover颜色
-- 修改select组组件disabled样式
-- 删除time-select组件filter属性
-- 删除time-select、date-select组件dark属性
-- 新增css变量bg-base
-- 新增time-select、date-select组件range属性
-- 新增time-scroll组件移动端滑动处理功能
-- 新增dropdown组件disabled属性
-- 更改select、time-select组件等background-color颜色
+- 修复select-v，新增select、select-v组件multi属性
+- 修复time-select组件ul离家出走问题*
+- 修改time-select组件hover颜色*
+- 修改select组组件disabled样式*
+- 删除time-select组件filter属性*
+- 删除time-select、date-select、select-v组件dark属性*
+- 新增select-v组件name属性*
+- 新增select-v组件once属性
+- 新增css变量bg-base*
+- 新增time-select、date-select组件range属性*
+- 新增time-scroll组件移动端滑动处理功能*
+- 新增dropdown组件disabled属性*
+- 更改select、time-select组件等background-color颜色*
+- select-v组件更名为virtual-select*
 
 # 0.6.8
 

@@ -4,11 +4,11 @@ import type { SetupContext } from 'vue'
 import searchState from './search-state'
 import aliasState from './alias-state'
 
-export default function (props: any, ctx: SetupContext) {
+export default function (props: any, ctx: SetupContext, useAlias = true) {
   const dropdown = ref()
   const choosed = computed(() => props.modelValue)
 
-  const alias = aliasState()
+  const alias = aliasState(useAlias)
   const search = searchState(props, ctx, dropdown, choosed)
 
   function changeSelect (newValue: any) {
@@ -20,7 +20,7 @@ export default function (props: any, ctx: SetupContext) {
 
   // 显现的选择
   const chooseShow = computed(() => {
-    return isEmpty() ? props.placeholder : alias.aliasMap.get(props.modelValue)
+    return isEmpty() ? props.placeholder : alias.aliasMap ? alias.aliasMap.get(props.modelValue) : props.modelValue
   })
 
   // 判断是否有选择

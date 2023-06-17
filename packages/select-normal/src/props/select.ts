@@ -36,8 +36,5 @@ export default {
     type: Boolean,
     default: false
   },
-  name: {
-    type: String,
-    default: ''
-  }
+  name: String
 }

@@ -10,10 +10,10 @@ export default function (props: any, ctx: SetupContext) {
 
   const changeSelect: any = inject('update:choosed')
   const chooseType = inject('choose-type')
-  const choosed = inject('choosed')
+  const choosed = inject('choosed') as ComputedRef
 
   const isChoosed = computed((): boolean => {
-    return (choosed as ComputedRef).value === props.value
+    return choosed.value === props.value
   })
 
   function toChoose () {

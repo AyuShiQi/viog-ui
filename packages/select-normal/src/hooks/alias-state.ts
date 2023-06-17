@@ -6,7 +6,12 @@ import { provide } from 'vue'
 // 内部hooks
 // 外部模块
 
-export default function () {
+export default function (useAlias = true) {
+  if (!useAlias) {
+    return {
+      aliasMap: undefined
+    }
+  }
   // 普通常量
   const aliasMap = new Map<string, string>()
   // DOM ref
