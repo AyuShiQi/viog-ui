@@ -11,14 +11,9 @@ export default {
     type: String,
     default: 'middle'
   },
-  // 未实现
   type: {
     type: String,
     default: 'default'//  default/plain/button
-  },
-  dark: {
-    type: Boolean,
-    default: false
   },
   disabled: {
     type: Boolean,
@@ -27,11 +22,6 @@ export default {
   placeholder: {
     type: String,
     default: '请选择'
-  },
-  // 未实现
-  filter: {
-    type: Boolean,
-    default: false
   },
   // 是否开启范围选择
   range: {
@@ -47,5 +37,6 @@ export default {
   format: {
     type: String,
     default: 'hh:mm:ss'
-  }
+  },
+  name: String
 }

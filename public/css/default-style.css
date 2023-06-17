@@ -29,7 +29,7 @@
     --vi-select-width: 200px;
     --vi-select-height: ;
     --vi-select-padding: var(--vi-card-padding);
-    --vi-select-list-gap: 2px;
+    --vi-select-list-gap: 4px;
     --vi-select-list-width: 100%;
     --vi-select-list-height: ;
     --vi-select-list-max-height: ;
@@ -63,6 +63,10 @@
     --vi-time-select-width: 200px;
     --vi-time-select-height: ;
     --vi-time-select-padding: var(--vi-card-padding);
+    --vi-time-select-list-gap: 4px;
+    --vi-time-select-list-width: auto;
+    --vi-time-select-list-height: ;
+    --vi-time-select-list-max-height: ;
 
     --vi-message-width: 240px;
 

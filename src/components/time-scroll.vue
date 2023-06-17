@@ -1,9 +1,10 @@
 <template>
-  <div class="vi-time-scroll" @wheel="mouseWheel">
+  <div class="vi-time-scroll" @wheel="mouseWheel" @touchmove="handleTouchmove" @touchstart="handleTouchstart">
     <div class="vi-time-scroll-information">
       {{info}}
     </div>
     <ul
+    class="vi-time-scroll__ul"
     ref="scrollUl"
     :style="{
     transform: `translateY(${translate}px)`
@@ -66,6 +67,12 @@ export default defineComponent({
     color: var(--vi-background-color-deep);
     text-align: center;
     box-sizing: border-box;
+
+    .vi-time-scroll__ul {
+      line-height: normal;
+      padding: 0;
+      margin: 0;
+    }
 
     li {
         list-style: none;

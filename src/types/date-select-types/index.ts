@@ -4,7 +4,10 @@ export interface ModelValueDate {
   date?: number,
   hour?: number,
   minute?: number,
-  second?: number
+  second?: number,
+  endHour?: number,
+  endMinute?: number,
+  endSecond?: number
 }
 
 export interface DateSelectProps {

@@ -2,6 +2,22 @@
   <vi-select v-model="searchInfo" name="choose" class="my-select-v2" placeholder="请输入关键字" @search="handleSearch" search>
       <vi-option v-for="item in optionList" :key="item" :value="item">{{ item }}</vi-option>
   </vi-select>
+  <vi-select type="button">
+    <vi-option v-for="item in optionList" :key="item" :value="item">{{ item }}</vi-option>
+  </vi-select>
+  <vi-select type="plain">
+    <vi-option v-for="item in optionList" :key="item" :value="item">{{ item }}</vi-option>
+  </vi-select>
+  <vi-divider style="margin: 10px 0;"></vi-divider>
+  <vi-time-select v-model="o"></vi-time-select>
+  <vi-time-select v-model="o" type="button"></vi-time-select>
+  <vi-time-select v-model="o" type="plain"></vi-time-select>
+  <vi-time-select v-model="o" size="big"></vi-time-select>
+  <vi-time-select v-model="o" size="small"></vi-time-select>
+  <vi-time-select v-model="o" type="plain" size="big"></vi-time-select>
+  <vi-time-select range v-model="o" size="big"></vi-time-select>
+  <vi-time-select range v-model="o" size="middle"></vi-time-select>
+  <vi-time-select range v-model="o" size="small"></vi-time-select>
   <!-- <vi-form>
     <vi-form-item label="姓名">
       <vi-input password show-password>123</vi-input>
@@ -134,6 +150,7 @@ export default defineComponent({
     const value = ref('')
     const val = ref('')
     const ar = reactive([])
+    const o = ref({})
     const open = ref(true)
     const nav = ['吃饭', '睡觉', '长个子', '好']
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
@@ -141,6 +158,7 @@ export default defineComponent({
     const table = [['销量', '领先销量', '全球销量'], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]
 
     return {
+      o,
       val,
       ar,
       value,

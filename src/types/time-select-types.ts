@@ -6,11 +6,10 @@ export interface TimeSelectProps {
   modelValue: ModelValueDate,
   size: string,
   type: string,
-  dark: boolean,
   disabled: boolean,
   placeholder: string,
-  filter: boolean,
   range: boolean,
   unit: string,
-  format: string
+  format: string,
+  name: string | undefined
 }

@@ -32,7 +32,7 @@ export default function (props: TimeScrollProps, need: number, first: number, ta
     return first - (choosed[t] as number) * 30
   })
 
-  // 鼠标滚动事件
+  // 鼠标滚动事件(暂不支持手机端)
   function mouseWheel (e: WheelEvent): void {
     // 阻止默认滚动事件
     e.preventDefault()
@@ -45,11 +45,32 @@ export default function (props: TimeScrollProps, need: number, first: number, ta
     }
   }
 
+  let preY = 0
+  function handleTouchstart (e: TouchEvent) {
+    e.preventDefault()
+    preY = e.touches[0].pageY
+  }
+
+  function handleTouchmove (e: TouchEvent) {
+    e.preventDefault()
+    const { pageY } = e.touches[0]
+    if (pageY < preY) {
+      if ((choosed[t] as number) >= need - 1) return
+      (choosed[t] as number)++
+    } else {
+      if ((choosed[t] as number) <= 0) return
+      (choosed[t] as number)--
+    }
+    preY = pageY
+  }
+
   return {
     lists,
     isChoosed,
     translate,
     mouseWheel,
+    handleTouchmove,
+    handleTouchstart,
     scrollUl
   }
 }
