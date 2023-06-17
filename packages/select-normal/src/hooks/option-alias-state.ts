@@ -13,7 +13,7 @@ export default function (props: any) {
   // ref
   // reactive
   // inject
-  const aliasMap = inject('select-alias-map') as Map<any, any>
+  const aliasMap = inject('select-alias-map', undefined) as Map<any, any> | undefined
   // 向select添加别名映射
   if (aliasMap) aliasMap.set(props.value, alias)
   // computed

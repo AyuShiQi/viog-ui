@@ -29,7 +29,13 @@
             ref="input">
           </span>
           <span class="vi-select-choose" v-else>
-            {{ chooseShow }}
+            <!-- 渲染为多选节点 -->
+            <template v-if="chooseShow instanceof Array">
+              <selectItem v-for="item in chooseShow" :key="item">{{ item }}</selectItem>
+            </template>
+            <template v-else>
+              {{ chooseShow }}
+            </template>
           </span>
           <svg
           class="vi-select-arrow"
@@ -60,13 +66,16 @@ import { scroll } from '../../scroll'
 
 import selectState from './hooks/select-state'
 
+import selectItem from './select-item.vue'
+
 export default defineComponent({
   name: 'ViSelect',
   props,
   emits: ['search', 'update:modelValue'] as string[],
   components: {
     dropdown,
-    scroll
+    scroll,
+    selectItem
   },
   setup (props: any, ctx: SetupContext) {
     const select = selectState(props, ctx)

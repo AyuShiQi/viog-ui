@@ -36,7 +36,6 @@ import ViInput from './input'
 import ViSwitch from './switch'
 import ViRadio from './radio'
 import ViCheckbox from './checkbox'
-import ViSelect from './select'
 import ViSelectN from './select-normal'
 import ViDateSelect from './date-select'
 import ViTimeSelect from './time-select'
@@ -57,7 +56,6 @@ const components = [
   ViRadio,
   ViCheckbox,
   ViLayout,
-  ViSelect,
   ViForm,
   ViDateSelect,
   ViTimeSelect,

@@ -17,14 +17,13 @@
         }
       ]">
         <span class="vi-select-choose">
-          <template
-          v-if="!multi || (modelValue as []).length === 0">
-            {{ chooseShow }}
-          </template>
-          <span
-          class="vi-select-multi"
-          v-else>
-          </span>
+            <!-- 渲染为多选节点 -->
+            <template v-if="chooseShow instanceof Array">
+              <selectItem v-for="item in chooseShow" :key="item">{{ item }}</selectItem>
+            </template>
+            <template v-else>
+              {{ chooseShow }}
+            </template>
         </span>
         <svg
         class="vi-select-arrow"
@@ -54,10 +53,15 @@ import { SelectProps } from '@/types/select-types'
 
 import selectState from './hooks/select-state'
 
+import selectItem from './select-item.vue'
+
 export default defineComponent({
   name: 'ViVirtualSelect',
   emits: ['update:modelValue'] as string[],
   props,
+  components: {
+    selectItem
+  },
   setup (props: SelectProps, ctx: SetupContext) {
     const select = selectState(props, ctx, false)
 
