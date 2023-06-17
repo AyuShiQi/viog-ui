@@ -45,32 +45,31 @@
 - 新增可编辑表格组件快捷键操作功能
 - 新增可编辑表格自定义拖拉表格长宽功能
 
-# 0.6.10
+# 0.6.10（当前迭代开发版本）
 
-- 修复tag组件嵌套情况下混用样式问题
 - 添加form组件的rule检查
 - 添加form表单的正则以及代码规范
 - layout组件删除width及height等属性
 - 增加grid组件行列布局计算属性
 - 删除所有组件dark属性
 
-# 0.6.9（当前迭代开发版本）
+# 0.6.9
 
-- 修复select-v*
+- 修复select-v
 - 新增select、select-v组件multi属性
-- 修复time-select组件ul离家出走问题*
-- 修改time-select组件hover颜色*
-- 修改select组组件disabled样式*
-- 删除time-select组件filter属性*
-- 删除time-select、date-select、select-v组件dark属性*
-- 新增select-v组件name属性*
-- 新增select-v组件once属性*
-- 新增css变量bg-base*
-- 新增time-select、date-select组件range属性*
-- 新增time-scroll组件移动端滑动处理功能*
-- 新增dropdown组件disabled属性*
-- 增加调色盘颜色
-- 更改select、time-select组件等background-color颜色*
+- 修复time-select组件ul离家出走问题
+- 修复tag组件嵌套情况下混用样式问题
+- 修改time-select组件hover颜色
+- 修改select组组件disabled样式
+- 删除time-select组件filter属性
+- 删除time-select、date-select、select-v组件dark属性
+- 新增select-v组件name属性
+- 新增select-v组件once属性
+- 增加调色盘颜色bg-base
+- 新增time-select、date-select组件range属性
+- 新增time-scroll组件移动端滑动处理功能
+- 新增dropdown组件disabled属性
+- 更改select、time-select组件等background-color颜色
 - select-v组件更名为virtual-select*
 
 # 0.6.8
