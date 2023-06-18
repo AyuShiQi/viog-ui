@@ -7,11 +7,6 @@ import { provide } from 'vue'
 // 外部模块
 
 export default function (useAlias = true) {
-  if (!useAlias) {
-    return {
-      aliasMap: undefined
-    }
-  }
   // 普通常量
   const aliasMap = new Map<string, string>()
   // DOM ref
@@ -21,11 +16,15 @@ export default function (useAlias = true) {
   // computed
   // 事件方法
   // 方法
+  function aliasShow (value: string) {
+    return aliasMap.has(value) ? aliasMap.get(value) : value
+  }
   // 普通function函数
   // provide
-  provide('select-alias-map', aliasMap)
+  if (useAlias) provide('select-alias-map', aliasMap)
   // 生命周期
   return {
-    aliasMap
+    aliasMap: useAlias ? aliasMap : undefined,
+    aliasShow
   }
 }

@@ -47,6 +47,11 @@
 
 # 0.6.10（当前迭代开发版本）
 
+- 修复select组多选情况下不显示别名的情况*
+- 修复input组件color为purple情况下的样式问题*
+- 修复checkbox组件button样式mutate属性失效的问题*
+- 修改time-select组件在移动端下滑动速度（降低）*
+- 修复date-select组件被ul离家出走问题*
 - 添加form组件的rule检查
 - 添加form表单的正则以及代码规范
 - layout组件删除width及height等属性

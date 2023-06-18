@@ -1,5 +1,17 @@
 <template>
-  <vi-button color="blue">按钮</vi-button>
+  <vi-input color="purple"></vi-input>
+  <vi-select v-model="ar" multi>
+    <vi-option value="1">1</vi-option>
+    <vi-option value="2">2</vi-option>
+    <vi-option value="3">3</vi-option>
+    <vi-option value="4">4</vi-option>
+    <vi-option value="5">你知道的</vi-option>
+  </vi-select>
+  <vi-select v-model="ar" :datas="arr" multi>
+  </vi-select>
+  <vi-time-select v-model="obj"></vi-time-select>
+  <vi-checkbox color="green" mutate v-model="ar" type="button"></vi-checkbox>
+  <!-- <vi-button color="blue">按钮</vi-button>
   <vi-select v-model="searchInfo" name="choose" class="my-select-v2" placeholder="请输入关键字" @search="handleSearch" search>
       <vi-option v-for="item in optionList" :key="item" :value="item">{{ item }}</vi-option>
   </vi-select>
@@ -39,7 +51,7 @@
     <vi-option value="1"></vi-option>
   </vi-select>
   <vi-virtual-select v-model="ar" multi :datas="arr">
-  </vi-virtual-select>
+  </vi-virtual-select> -->
   <!-- <vi-form>
     <vi-form-item label="姓名">
       <vi-input password show-password>123</vi-input>
@@ -123,7 +135,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, getCurrentInstance, ref, ComponentInternalInstance, reactive } from 'vue'
+import { defineComponent, getCurrentInstance, ref, ComponentInternalInstance, reactive, watch } from 'vue'
 import { ViToast, ViMessage } from '../packages/index'
 
 type ViDialogType = {
@@ -178,6 +190,10 @@ export default defineComponent({
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
     const obj = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 }]
     const table = [['销量', '领先销量', '全球销量'], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]
+
+    watch(ar, () => {
+      console.log(ar)
+    })
 
     return {
       o,

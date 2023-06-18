@@ -19,7 +19,7 @@
         <span class="vi-select-choose">
             <!-- 渲染为多选节点 -->
             <template v-if="chooseShow instanceof Array">
-              <selectItem v-for="item in chooseShow" :key="item">{{ item }}</selectItem>
+              <selectItem v-for="item in chooseShow" :key="item">{{ aliasShow(item) }}</selectItem>
             </template>
             <template v-else>
               {{ chooseShow }}

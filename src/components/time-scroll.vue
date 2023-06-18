@@ -21,7 +21,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import type { SetupContext } from 'vue'
 
 import timeScrollState from '@/hooks/time-scroll-state'
 
@@ -46,7 +45,7 @@ export default defineComponent({
       default: 60
     }
   },
-  setup (props: TimeScrollProps, context: SetupContext) {
+  setup (props: TimeScrollProps) {
     const first = 80
     const mainScroll = timeScrollState(props, props.need, first, props.target)
 

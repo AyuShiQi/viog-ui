@@ -40,7 +40,7 @@ export default function (props: any, ctx: SetupContext, useAlias = true) {
 
     // 多选直接返回选择列表
     if (props.multi) return props.modelValue
-    return alias.aliasMap ? alias.aliasMap.get(props.modelValue) : props.modelValue
+    return alias.aliasShow(props.modelValue)
   })
 
   // 判断是否有选择
@@ -60,6 +60,7 @@ export default function (props: any, ctx: SetupContext, useAlias = true) {
     isEmpty,
     dropdown,
     chooseShow,
-    ...search
+    ...search,
+    ...alias
   }
 }

@@ -45,6 +45,7 @@ export default function (props: TimeScrollProps, need: number, first: number, ta
     }
   }
 
+  // 移动端事件组
   let preY = 0
   function handleTouchstart (e: TouchEvent) {
     e.preventDefault()
@@ -54,6 +55,8 @@ export default function (props: TimeScrollProps, need: number, first: number, ta
   function handleTouchmove (e: TouchEvent) {
     e.preventDefault()
     const { pageY } = e.touches[0]
+    // 速度控制，右方数字越大，速度越慢
+    if (Math.abs(pageY - preY) < 10) return
     if (pageY < preY) {
       if ((choosed[t] as number) >= need - 1) return
       (choosed[t] as number)++
