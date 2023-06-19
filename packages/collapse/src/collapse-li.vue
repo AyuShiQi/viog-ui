@@ -1,10 +1,11 @@
 <template>
   <li
-  ref="select"
+  ref="openDOM"
   class="vi-collapse"
   :class="[
+    `vi-collapse-type-${type}`,
     {
-      'is-open': id === 0 ? open : isOpen,
+      'is-open': id === -1 ? open : isOpen,
     }
   ]">
     <div class="vi-collapse__title" @click="toChoose">

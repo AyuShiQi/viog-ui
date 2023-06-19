@@ -1,10 +1,11 @@
 <template>
   <div
-  ref="select"
+  ref="openDOM"
   class="vi-collapse"
   :class="[
+    `vi-collapse-type-${type}`,
     {
-      'is-open': id === 0 ? open : isOpen,
+      'is-open': id === -1 ? open : isOpen,
     }
   ]">
     <div class="vi-collapse__title" @click="toChoose">
@@ -27,7 +28,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import type { SetupContext } from 'vue'
 
 import props from './props/collapse'
 
@@ -36,7 +36,7 @@ import collapseState from './hooks/collapse-state'
 export default defineComponent({
   name: 'ViCollapse',
   props,
-  setup (props: any, ctx: SetupContext) {
+  setup (props: any) {
     const collapse = collapseState(props)
     return {
       ...collapse

@@ -4,14 +4,11 @@
   color: var(--vi-font-color);
   background-color: transparent;
   box-sizing: border-box;
-  border-top: 1px solid var(--vi-background-color-deep);
-  border-bottom: 1px solid var(--vi-background-color-deep);
 
   >.vi-collapse__title {
     display: flex;
     width: 100%;
     padding: .6em 0;
-    background-color: transparent;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
@@ -43,6 +40,25 @@
 
     .vi-collapse__content-view-li {
       overflow: hidden;
+    }
+  }
+}
+
+.vi-collapse-type-default {
+  border-top: 1px solid var(--vi-background-color-deep);
+  border-bottom: 1px solid var(--vi-background-color-deep);
+}
+
+
+.vi-collapse-type-button {
+  border-top: 1px solid var(--vi-background-color-deep);
+  border-bottom: 1px solid var(--vi-background-color-deep);
+  // background-color: var(--vi-background-color);
+  box-shadow: inset 0px 5px 10px 0 var(--vi-background-color);
+
+  >.vi-collapse__title {
+    .vi-collapse__title-arrow {
+      display: none;
     }
   }
 }

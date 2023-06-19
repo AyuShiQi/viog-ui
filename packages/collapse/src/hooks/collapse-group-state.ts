@@ -2,15 +2,15 @@ import { provide, ref } from 'vue'
 import IdDistributor from '../../../utils/communication/IdDistributor'
 
 export default function (props: any) {
-  const accordionChoose = ref(0)
+  const accordionChoose = ref(-1)
 
   if (props.accordion) {
-    provide('id', IdDistributor())
+    provide('collapse-group-id', IdDistributor()) // id分发器
 
-    provide('change-choose', function (newChoose: number) {
+    provide('collapse-group-change-choose', function (newChoose: number) { // 更改选择
       accordionChoose.value = newChoose
     })
 
-    provide('now-choose', accordionChoose)
+    provide('collapse-group-now-choose', accordionChoose) // 当前选择
   }
 }
