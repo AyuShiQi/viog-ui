@@ -1,5 +1,7 @@
 # 后续
 
+- 增添tag等组件的router模式to属性
+
 # 0.12.0
 
 - 标签管理器组件
@@ -38,12 +40,20 @@
 - 新增多级选择器
 - 新增page-controller分页器组件
 
-# 0.6.11
+# 0.6.12
 
 - 新增上传组件可拖拽drag类型
 - 新增可编辑表格组件撤回功能（增加撤销栈）
 - 新增可编辑表格组件快捷键操作功能
 - 新增可编辑表格自定义拖拉表格长宽功能
+
+# 0.6.12
+
+- 添加form组件的rule检查
+- 添加form表单的正则以及代码规范
+- layout组件删除width及height等属性
+- 增加grid组件行列布局计算属性
+- 删除所有组件dark属性
 
 # 0.6.10（当前迭代开发版本）
 
@@ -52,11 +62,22 @@
 - 修复checkbox组件button样式mutate属性失效的问题*
 - 修改time-select组件在移动端下滑动速度（降低）*
 - 修复date-select组件被ul离家出走问题*
-- 添加form组件的rule检查
-- 添加form表单的正则以及代码规范
-- layout组件删除width及height等属性
-- 增加grid组件行列布局计算属性
-- 删除所有组件dark属性
+- 修复breadcrumb组件replace属性
+- 修复collapse组件auto-retract不自动收回的情况
+- 修复collapse组件手风琴不生效问题
+- 修复menu组件router状态下当前路由匹配
+- 新增collapse组件type属性（button、多彩button）
+- 修改bubble组件暗色系字体颜色
+- 修复bubble组件trigger属性click
+- dialog组件几乎重来一遍
+- 更改dialog组件sureTitle与unsureTitle属性为插槽，允许绑定组件确认取消框
+- 更改dialog组件background修改方式有props变为css（也可以通过props更改，增加更改方式）
+- 处理组件z-index关系(select、dialog、collapse、input、drawer等等)（那个docs里nav10和header20）
+- 修复drawer非teleport情况下height的问题
+- dropdown逻辑功能完善（重写）
+- 新增message修改top的功能
+- 修复table-editor可编辑表格操作list ul离家出走问题
+- 修复table-editor删除列页头不变的情况
 
 # 0.6.9
 
