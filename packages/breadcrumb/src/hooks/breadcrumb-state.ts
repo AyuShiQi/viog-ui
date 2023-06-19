@@ -10,8 +10,14 @@ import type { Router } from 'vue-router'
 
 export default function (props: any, ctx: SetupContext) {
   // 普通常量
+  /**
+   * router实例
+   */
   const router = getCurrentInstance()!.appContext.config.globalProperties.$router as Router
   // DOM ref
+  /**
+   * 面包屑大框
+   */
   const breadcrumb = ref()
   // ref
   // reactive
@@ -19,27 +25,39 @@ export default function (props: any, ctx: SetupContext) {
   // computed
   // 事件方法
   // 方法
-  // 普通function函数
-  function toPick (to?: string) {
+  /**
+   * 选择面包屑进行跳转
+   * @param to 跳转地址
+   * @param replace 是否是replace模式
+   */
+  function toPick (to?: string, replace = false): void {
     if (!router) console.error('[viog-ui]: 你并没有在项目中引入vue-router，breadcrumb无法正确跳转！')
     else if (to) {
-      props.replace ? router.replace(to) : router.push(to)
+      console.log(replace)
+      replace ? router.replace(to) : router.push(to)
     }
   }
-  // provide
-  provide('breadcrumb-color', props.color)
-  provide('breadcrumb-to-pick', toPick)
-  // 生命周期
-  onMounted(() => {
+  // 普通function函数
+  /**
+   * 生成分隔符
+   */
+  function generateSeparator (): void {
     const { children } = breadcrumb.value
     if (!children) return
     for (let i = children.length - 2; i >= 0; i--) {
-      // 原生操作
+      // 原生操作，生成separator分隔符
       const separator = document.createElement('span')
       separator.className = 'vi-breadcrumb__separator'
       separator.innerText = props.separator
       breadcrumb.value.insertBefore(separator, children[i].nextSibling)
     }
+  }
+  // provide
+  provide('breadcrumb-color', props.color) // 提供面包屑的全局颜色
+  provide('breadcrumb-to-pick', toPick) // 提供面包屑的跳转函数，通过该函数进行所有跳转操作
+  // 生命周期
+  onMounted(() => {
+    generateSeparator()
   })
 
   return {

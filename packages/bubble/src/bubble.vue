@@ -7,7 +7,7 @@
         'vi-bubble-mode-dark': dark
       }
     ]"
-    @mouseover="toOpen as any" @mouseleave="toClose as any">
+    @mouseover="handleMouseover" @mouseleave="handleMouseleave">
         <slot></slot>
         <div class="vi-bubble__content">
           <transition name="vi-fade-in-out-normal">

@@ -1,137 +1,17 @@
 <template>
-  <vi-input color="purple"></vi-input>
-  <vi-select v-model="ar" multi>
-    <vi-option value="1">1</vi-option>
-    <vi-option value="2">2</vi-option>
-    <vi-option value="3">3</vi-option>
-    <vi-option value="4">4</vi-option>
-    <vi-option value="5">你知道的</vi-option>
-  </vi-select>
-  <vi-select v-model="ar" :datas="arr" multi>
-  </vi-select>
-  <vi-time-select v-model="obj"></vi-time-select>
-  <vi-checkbox color="green" mutate v-model="ar" type="button"></vi-checkbox>
-  <!-- <vi-button color="blue">按钮</vi-button>
-  <vi-select v-model="searchInfo" name="choose" class="my-select-v2" placeholder="请输入关键字" @search="handleSearch" search>
-      <vi-option v-for="item in optionList" :key="item" :value="item">{{ item }}</vi-option>
-  </vi-select>
-  <vi-select v-model="val">
-    <vi-option value="1">1</vi-option>
-  </vi-select>
-  <vi-divider style="margin: 10px 0;"></vi-divider>
-  <vi-time-select range v-model="o"></vi-time-select>
-  <vi-time-select v-model="o" type="button" disabled></vi-time-select>
-  <vi-time-select v-model="o" type="plain"></vi-time-select>
-  <vi-time-select v-model="o" size="big"></vi-time-select>
-  <vi-time-select v-model="o" size="small"></vi-time-select>
-  <vi-time-select v-model="o" type="plain" size="big"></vi-time-select>
-  <vi-time-select range v-model="o" size="big" separate="至"></vi-time-select>
-  <vi-time-select range v-model="o" size="middle"></vi-time-select>
-  <vi-time-select range v-model="o" size="small"></vi-time-select>
-  <vi-divider style="margin: 10px 0;"></vi-divider>
-  <vi-date-select v-model="o"></vi-date-select>
-  <vi-date-select v-model="o" type="button"></vi-date-select>
-  <vi-date-select style="--vi-date-select-width: 320px;" v-model="o" type="plain" unit="month" range></vi-date-select>
-  <vi-date-select style="--vi-date-select-width: 320px;" v-model="o" time timeUnit="second" unit="year" range></vi-date-select>
-  <vi-date-select style="--vi-date-select-width: 320px;" v-model="o" range separate="至"></vi-date-select>
-  <vi-virtual-select once style="--vi-select-list-height: 100px;" :datas="arr" v-model="val"></vi-virtual-select>
-  <vi-virtual-select once style="--vi-select-list-height: 100px;" :datas="arr" v-model="val" choose-type="plain" type="button"></vi-virtual-select>
-  <vi-select v-model="ar" multi>
-    <vi-option value="1"></vi-option>
-    <vi-option value="2"></vi-option>
-    <vi-option value="3"></vi-option>
-    <vi-option value="4"></vi-option>
-    <vi-option value="5"></vi-option>
-    <vi-option value="6"></vi-option>
-    <vi-option value="7"></vi-option>
-    <vi-option value="8"></vi-option>
-    <vi-option value="9"></vi-option>
-    <vi-option value="1"></vi-option>
-    <vi-option value="1"></vi-option>
-    <vi-option value="1"></vi-option>
-  </vi-select>
-  <vi-virtual-select v-model="ar" multi :datas="arr">
-  </vi-virtual-select> -->
-  <!-- <vi-form>
-    <vi-form-item label="姓名">
-      <vi-input password show-password>123</vi-input>
-    </vi-form-item>
-    <vi-form-item label="你觉得呢">
-      <vi-input>123</vi-input>
-    </vi-form-item>
-    <vi-form-item dark label="你觉得呢">
-      <ViCheckboxGroup v-model="ar">
-        <ViCheckbox value="唱歌" dark></ViCheckbox>
-        <ViCheckbox value="跳舞"></ViCheckbox>
-        <ViCheckbox value="打豆豆"></ViCheckbox>
-        <ViCheckbox value="吃饭" color="purple"></ViCheckbox>
-        <ViCheckbox value="睡觉" color="green"></ViCheckbox>
-        <ViCheckbox value="划水" color="sgreen"></ViCheckbox>
-        <ViCheckbox value="飞翔" color="syellow"></ViCheckbox>
-        <ViCheckbox value="这个" color="yellow"></ViCheckbox>
-        <ViCheckbox value="唱歌" color="pink"></ViCheckbox>
-      </ViCheckboxGroup>
-    </vi-form-item>
-    <vi-form-item label="你觉得呢">
-      <ViSelect class="select-style" filter placeholder="123" size="small" :datas="arr" v-model="value">
-        <vi-option value="你看" disabled></vi-option>
-      </ViSelect>
-      <ViSelect class="select-style" dark type="plain" filter placeholder="123" size="small" :datas="arr" v-model="value"></ViSelect>
-    </vi-form-item>
-    <vi-form-item label="你觉得呢">
-      <ViRadioGroup v-model="value">
-      <ViRadio type="button" color="yellow" rid="#127" value="吃饭" name="haha"></ViRadio>
-      <ViRadio type="button" color="green" dark rid="#128" value="睡觉" name="haha"></ViRadio>
-      <ViRadio type="button" color="purple" dark size="small" rid="#129" value="打豆豆"  name="haha">打豆豆</ViRadio>
-      </ViRadioGroup>
-    </vi-form-item>
-    <vi-form-item label="生日">
-      <ViDateSelect v-model="date" timeUnit="hour" time></ViDateSelect>
-      <ViDateSelect v-model="date" dark></ViDateSelect>
-      <ViDateSelect type="button" v-model="date"></ViDateSelect>
-      <ViDateSelect type="button" v-model="date" dark></ViDateSelect>
-      <ViDateSelect type="plain" v-model="date"></ViDateSelect>
-      <ViDateSelect type="plain" v-model="date" dark></ViDateSelect>
-    </vi-form-item>
-    <vi-form-item label="生日">
-      <vi-switch v-model="open"></vi-switch>
-      <ViDateSelect v-model="date" timeUnit="second" time></ViDateSelect>
-      <ViDateSelect v-model="date" dark unit="year"></ViDateSelect>
-      <ViDateSelect v-model="date" dark unit="month"></ViDateSelect>
-    </vi-form-item>
-    <vi-form-item label="生日">
-      <ViTimeSelect v-model="date"></ViTimeSelect>
-      <ViTimeSelect v-model="date" dark></ViTimeSelect>
-    </vi-form-item>
-  </vi-form> -->
+  <vi-breadcrumb>
+    <vi-breadcrumb-item replace to="/hom">首页</vi-breadcrumb-item>
+    <vi-breadcrumb-item to="/home/components">首页</vi-breadcrumb-item>
+  </vi-breadcrumb>
 
-  <!-- <vi-checkbox v-model="ar"></vi-checkbox>
-  <vi-checkbox v-model="ar"></vi-checkbox>
-  <vi-checkbox v-model="ar"></vi-checkbox>
-  <vi-checkbox disabled v-model="ar"></vi-checkbox>
-  <vi-checkbox color="pink" mutate v-model="ar"></vi-checkbox>
-  <vi-checkbox v-model="ar"></vi-checkbox>
-  <vi-checkbox disabled type="button" v-model="ar"></vi-checkbox>
-  <vi-checkbox type="button" v-model="ar"></vi-checkbox>
-  <vi-checkbox color="pink" mutate type="button" v-model="ar"></vi-checkbox>
-  <vi-checkbox type="button" v-model="ar" size="big"></vi-checkbox>
-  <vi-checkbox type="button" v-model="ar" size="middle"></vi-checkbox>
-  <vi-checkbox type="button" v-model="ar" size="small"></vi-checkbox>
-  <vi-checkbox v-model="ar" size="big"></vi-checkbox>
-  <vi-checkbox v-model="ar" size="middle"></vi-checkbox>
-  <vi-checkbox v-model="ar" size="small" checked name="性别"></vi-checkbox>
-
-  <vi-checkbox-group v-model="ar" name="hao">
-    <vi-checkbox value="1" size="small" checked></vi-checkbox>
-    <vi-checkbox value="2" size="small" checked></vi-checkbox>
-    <vi-checkbox value="3" size="small" checked></vi-checkbox>
-    <vi-checkbox value="4" size="small" checked></vi-checkbox>
-    <vi-checkbox value="5" size="small" checked></vi-checkbox>
-  </vi-checkbox-group>
-
-  <vi-radio value="12" v-model="val" checked></vi-radio>
-  <vi-radio disabled></vi-radio>
-  <vi-radio disabled type="button"></vi-radio> -->
+  <vi-bubble>
+    <vi-button>看看有效吗</vi-button>
+    <template v-slot:content>
+      <div>
+        1
+      </div>
+    </template>
+  </vi-bubble>
 </template>
 
 <script lang="ts">

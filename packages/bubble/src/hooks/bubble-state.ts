@@ -18,11 +18,19 @@ export default function (props: any, ctx: SetupContext) {
   // inject
   // computed
   // 事件方法
+  function handleMouseover (): void {
+    open.toOpen()
+  }
+  function handleMouseleave (): void {
+    open.toClose()
+  }
   // 方法
   // 普通function函数
   // provide
   // 生命周期
   return {
+    handleMouseover,
+    handleMouseleave,
     ...open,
     ...boxPosition
   }

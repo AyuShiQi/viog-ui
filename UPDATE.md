@@ -62,7 +62,7 @@
 - 修复checkbox组件button样式mutate属性失效的问题*
 - 修改time-select组件在移动端下滑动速度（降低）*
 - 修复date-select组件被ul离家出走问题*
-- 修复breadcrumb组件replace属性
+- 修复breadcrumb组件replace属性*
 - 修复collapse组件auto-retract不自动收回的情况
 - 修复collapse组件手风琴不生效问题
 - 修复menu组件router状态下当前路由匹配

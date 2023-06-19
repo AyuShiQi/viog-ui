@@ -3,6 +3,7 @@ import { computed, inject } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
+import type { ToPick, Color } from '../types/breadcrumb'
 // 外部hooks
 // 内部hooks
 // 外部模块
@@ -13,15 +14,21 @@ export default function (props: any, ctx: SetupContext) {
   // ref
   // reactive
   // inject
-  const superColor = inject('breadcrumb-color', undefined) as string | undefined
-  const toPick = inject('breadcrumb-to-pick', undefined) as ((to: string) => void) | undefined
+  const superColor = inject('breadcrumb-color', undefined) as Color
+  const toPick = inject('breadcrumb-to-pick', undefined) as ToPick
   // computed
+  /**
+   * 当前面包屑的颜色
+   */
   const curColor = computed<string>(() => {
     return props.color ? props.color : superColor!
   })
   // 事件方法
-  function handleClick () {
-    if (toPick) toPick(props.to)
+  /**
+   * 处理breadcrumb-item组件click事件
+   */
+  function handleClick (): void {
+    if (toPick) toPick(props.to, props.replace)
   }
   // 方法
   // 普通function函数
