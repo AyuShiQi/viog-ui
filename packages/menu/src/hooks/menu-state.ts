@@ -8,10 +8,10 @@ export default function (props: any, ctx: SetupContext) {
   const router = instance.appContext.config.globalProperties.$router as Router
   const nowPick = ref(props.defaultId)
 
-  provide('menu-id', IdDistributor())
-  provide('to-pick', toPick)
-  provide('now-pick', nowPick)
-  provide('menu-router', props.router)
+  provide('menu-id', IdDistributor()) // id分发器
+  provide('menu-to-pick', toPick) // 去选择
+  provide('menu-now-pick', nowPick) // 当前选择
+  provide('menu-router', props.router) // 是否是router模式
 
   function toPick (newId: number, to?: string) {
     nowPick.value = newId
@@ -33,7 +33,7 @@ export default function (props: any, ctx: SetupContext) {
   if (props.router) {
     // 用于收集id对应的router跳转地址
     const routerMap = new Map<string, number>()
-    provide('router-linker', routerLink)
+    provide('menu-router-linker', routerLink)
     function routerLink (id: number, to: string) {
       routerMap.set(to, id)
     }

@@ -1,5 +1,7 @@
 import { ref, inject, computed, onMounted } from 'vue'
-import type { Ref } from 'vue'
+
+import type { MenuId, ToPick, NowPick, MenuRouterLinker } from '../type/menu'
+import type { MenuGroupIdCollector } from '../type/menu-group'
 
 import idCollectorState from '@/hooks/id-collector-state'
 
@@ -7,13 +9,17 @@ export default function (props: any) {
   if (!props.scalable || !props.option) return {}
 
   const collapse = ref()
-  const id = (inject('menu-id') as () => number)()
-  const toPick = inject('to-pick') as (id: number, to: string) => void
-  const nowPick = inject('now-pick') as Ref
+  const id = (inject('menu-id') as MenuId)()
+  const toPick = inject('menu-to-pick') as ToPick
+  const nowPick = inject('menu-now-pick') as NowPick
 
-  const idCollector = idCollectorState(id)
-  const superIdCollector = inject('id-collector', undefined) as ((id: number) => void) | undefined
+  const idCollector = idCollectorState(id, 'menu-group')
+  const superIdCollector = inject('menu-group-id-collector', undefined) as MenuGroupIdCollector
   if (nowPick.value === id) toPick(id, props.id)
+
+  // menu跳转路由收集
+  const routerLinker = inject('menu-router-linker', undefined) as MenuRouterLinker
+  if (routerLinker && props.scalable && props.option && props.to) routerLinker(id, props.to)
 
   const isChoose = computed(() => {
     isInRange() ? collapse.value?.toOpen() : collapse.value?.toClose()

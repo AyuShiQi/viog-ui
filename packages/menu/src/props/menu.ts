@@ -9,6 +9,6 @@ export default {
   },
   defaultId: {
     type: Number,
-    default: 0
+    default: -1
   }
 }
