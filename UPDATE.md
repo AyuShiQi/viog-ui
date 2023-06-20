@@ -40,7 +40,7 @@
 - 新增多级选择器
 - 新增page-controller分页器组件
 
-# 0.6.12
+# 0.6.13
 
 - 新增上传组件可拖拽drag类型
 - 新增可编辑表格组件撤回功能（增加撤销栈）
@@ -55,6 +55,14 @@
 - 增加grid组件行列布局计算属性
 - 删除所有组件dark属性
 - dropdown自动计算方位逻辑功能重写实现
+- 修复dialog通过变量无法修改的问题
+- 修复nodejs环境无法获取navigator变量的错误
+
+# 0.6.11
+
+- 修改virtual-scroll组件bar颜色
+- 修复dropdown组件在更换时找不到children的情况（这个注意了）
+- 修复collapse组件，title span绑定flex：1
 
 # 0.6.10
 
