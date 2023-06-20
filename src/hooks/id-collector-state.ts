@@ -1,8 +1,8 @@
 import { ref, provide } from 'vue'
 
-export default function (defaultId: number) {
+export default function (defaultId: number, compName: string) {
   const maxId = ref(defaultId)
-  provide('id-collector', idCollector)
+  provide(`${compName}-id-collector`, idCollector)
 
   function idCollector (id: number) {
     maxId.value = id

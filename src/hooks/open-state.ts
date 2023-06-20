@@ -5,26 +5,16 @@ type openOption = {
   afterCb?: () => any
 }
 
+/**
+ * open功能hooks，包含控制open的ref，打开、关闭、变换状态、失焦关闭等功能
+ * 你需要为进行操作的元素绑定openDOM的ref
+ * @param needBlur 是否需要失焦关闭功能
+ * @param openMode 打开方式(必须是一个有效的事件)
+ * @returns {}
+ */
 export default function (needBlur = true, openMode = 'click') {
-  let listener: any
   const openDOM = ref()
   const open = ref(false)
-
-  onMounted(() => {
-    if (needBlur && openMode !== 'hover') {
-      listener = document.addEventListener(openMode, (e: any) => {
-        if (openDOM.value instanceof Element) {
-          if (!openDOM.value.contains(e.target)) open.value = false
-        } else {
-          if (openDOM?.value?.$el && !openDOM.value.$el.contains(e.target)) open.value = false
-        }
-      })
-    }
-  })
-
-  onBeforeUnmount(() => {
-    document.removeEventListener(openMode, listener)
-  })
 
   function toSelect (option: openOption = {}) {
     const { preCb, afterCb } = option
@@ -58,6 +48,27 @@ export default function (needBlur = true, openMode = 'click') {
       })
     }
   }
+
+  /**
+   * 失焦收回处理
+   */
+  function blurOption (e: any) {
+    if (openDOM.value instanceof Element) {
+      if (!openDOM.value.contains(e.target)) open.value = false
+    } else {
+      if (openDOM?.value?.$el && !openDOM.value.$el.contains(e.target)) open.value = false
+    }
+  }
+
+  onMounted(() => {
+    if (needBlur && openMode !== 'hover') {
+      document.addEventListener(openMode, blurOption)
+    }
+  })
+
+  onBeforeUnmount(() => {
+    document.removeEventListener(openMode, blurOption)
+  })
 
   return {
     openDOM,

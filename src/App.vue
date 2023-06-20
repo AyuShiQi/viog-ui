@@ -1,17 +1,18 @@
 <template>
-  <vi-breadcrumb>
-    <vi-breadcrumb-item replace to="/hom">首页</vi-breadcrumb-item>
-    <vi-breadcrumb-item to="/home/components">首页</vi-breadcrumb-item>
-  </vi-breadcrumb>
-
-  <vi-bubble>
-    <vi-button>看看有效吗</vi-button>
-    <template v-slot:content>
-      <div>
-        1
-      </div>
-    </template>
-  </vi-bubble>
+  <vi-collapse title="下拉框" auto-retract>内容</vi-collapse>
+  <vi-collapse-group accordion>
+    <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
+    <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
+    <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
+    <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
+  </vi-collapse-group>
+  <vi-menu router>
+    <vi-menu-item to="/ok">你好</vi-menu-item>
+    <vi-menu-item to="/home">你好</vi-menu-item>
+    <vi-menu-group scalable option to="/12" title="好吧">
+      <vi-menu-item to="/">你好</vi-menu-item>
+    </vi-menu-group>
+  </vi-menu>
 </template>
 
 <script lang="ts">

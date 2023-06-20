@@ -63,10 +63,10 @@
 - 修改time-select组件在移动端下滑动速度（降低）*
 - 修复date-select组件被ul离家出走问题*
 - 修复breadcrumb组件replace属性*
-- 修复collapse组件auto-retract不自动收回的情况
-- 修复collapse组件手风琴不生效问题
-- 修复menu组件router状态下当前路由匹配
-- 新增collapse组件type属性（button、多彩button）
+- 修复collapse组件auto-retract不自动收回的情况*
+- 新增collapse组件type属性button*
+- 修复menu组件router状态下当前路由匹配*
+- 修改menu起始绑定id为0*
 - 修改bubble组件暗色系字体颜色
 - 修复bubble组件trigger属性click
 - dialog组件几乎重来一遍
