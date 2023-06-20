@@ -7,7 +7,13 @@
     <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
     <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
   </vi-collapse-group>
-  <vi-dialog v-model="open" title="这是一个对话框">
+  <vi-dropdown>
+    <vi-button>haode</vi-button>
+    <template v-slot:content>
+      12134
+    </template>
+  </vi-dropdown>
+  <!-- <vi-dialog v-model="open" title="这是一个对话框">
     你好
     <template v-slot:shutdown>
       <vi-button radius="round" color="red" size="small" type="transparent">关闭</vi-button>
@@ -18,15 +24,15 @@
     <template v-slot:sure>
       <vi-button color="purple">确认</vi-button>
     </template>
-  </vi-dialog>
+  </vi-dialog> -->
   <vi-button @click="open = true">打开对话框</vi-button>
-  <vi-menu router>
+  <!-- <vi-menu router>
     <vi-menu-item to="/ok">你好</vi-menu-item>
     <vi-menu-item to="/home">你好</vi-menu-item>
     <vi-menu-group scalable option to="/12" title="好吧">
       <vi-menu-item to="/">你好</vi-menu-item>
     </vi-menu-group>
-  </vi-menu>
+  </vi-menu> -->
   <vi-bubble dark>
     <vi-button @click="append">看bubble</vi-button>
     <template v-slot:content>

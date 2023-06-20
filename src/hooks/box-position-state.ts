@@ -24,6 +24,7 @@ export default function (mode = 'auto') {
       if (timer) clearTimeout(timer)
       timer = setTimeout(() => {
         recalcSize()
+        if (!boxPositionDOM.value || !boxPositionDOM.value.getBoundingClientRect) return
         const { left, right, bottom, top, width: w, height: h } = boxPositionDOM.value.getBoundingClientRect()
         const inw = window.innerWidth
         const inh = window.innerHeight
@@ -54,6 +55,8 @@ export default function (mode = 'auto') {
   })()
 
   function recalcSize (): void {
+    console.log(dropdown.value)
+    if (!dropdown?.value?.children[0]) return
     const dropdwonStyle = window.getComputedStyle(dropdown.value.children[0])
     const tempHeight = dropdwonStyle.getPropertyValue('height')
     if (/.*px/.test(tempHeight) && tempHeight !== '0px') height.value = Number((tempHeight).slice(0, -2))
@@ -62,6 +65,7 @@ export default function (mode = 'auto') {
   }
 
   function firstCalcSize (): void {
+    if (!dropdown?.value?.children[0]) return
     const dropdwonStyle = window.getComputedStyle(dropdown.value.children[0])
     const temp = dropdwonStyle.getPropertyValue('height')
     if (/.*px/.test(temp) && temp !== '0px') height.value = Number((temp).slice(0, -2))
