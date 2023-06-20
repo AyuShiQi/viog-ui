@@ -1,4 +1,5 @@
 <template>
+  <vi-checkbox v-model="ar">你好</vi-checkbox>
   <vi-collapse title="下拉框" auto-retract>内容</vi-collapse>
   <vi-collapse-group accordion>
     <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
@@ -13,6 +14,31 @@
       <vi-menu-item to="/">你好</vi-menu-item>
     </vi-menu-group>
   </vi-menu>
+  <vi-bubble dark>
+    <vi-button @click="append">看bubble</vi-button>
+    <template v-slot:content>
+      <div>
+        暗色bubble
+      </div>
+    </template>
+  </vi-bubble>
+  <vi-bubble trigger="click">
+    <vi-button>看bubble</vi-button>
+    <template v-slot:content>
+      <div>
+        暗色bubble
+      </div>
+    </template>
+  </vi-bubble>
+  <vi-table-editor></vi-table-editor>
+  <!-- <vi-drawer v-model="open" teleport direction="bottom">
+    <vi-table-editor style="width: 100%"></vi-table-editor>
+  </vi-drawer> -->
+  <!-- <div style="width: 400px; height: 400px; overflow: hidden; position: relative;">
+    <vi-drawer v-model="open" teleport diretction="top">
+      <vi-table-editor style="width: 100%"></vi-table-editor>
+    </vi-drawer>
+  </div> -->
 </template>
 
 <script lang="ts">
@@ -76,6 +102,10 @@ export default defineComponent({
       console.log(ar)
     })
 
+    function append () {
+      ViMessage.append('你好')
+    }
+
     return {
       o,
       val,
@@ -91,7 +121,8 @@ export default defineComponent({
       table,
       searchInfo,
       optionList,
-      handleSearch
+      handleSearch,
+      append
     }
   },
   mounted () {

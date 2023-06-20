@@ -1,5 +1,6 @@
 <template>
   <ul
+  ref="openDOM"
   class="vi-table-editor-option-list"
   :style="{
     top: listTop + 'px',

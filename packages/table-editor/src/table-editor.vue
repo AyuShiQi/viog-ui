@@ -80,10 +80,12 @@
         ></div>
       </div>
       <!-- 操作列表 -->
-      <tableEditorOptionList
-      v-show="open"
-      ref="openDOM">
-      </tableEditorOptionList>
+      <teleport to='body'>
+        <tableEditorOptionList
+        v-show="open"
+        ref="openDOM">
+        </tableEditorOptionList>
+      </teleport>
     </div>
   </scroll>
 </template>

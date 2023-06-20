@@ -112,6 +112,9 @@
     --vi-upload-height: ;
     --vi-upload-list-width: 100%;
 
+    --vi-message-top: 5vh;
+    --vi-message-right: 10px; 
+
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */

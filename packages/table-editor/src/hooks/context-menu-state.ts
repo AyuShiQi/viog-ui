@@ -37,6 +37,7 @@ export default function (props: any, ctx: SetupContext, chooseTarget: Target, pi
   // 位置信息组
   function changeListPosition (mx: number, my: number) {
     const { innerHeight, innerWidth } = window
+    console.log(mx + optionListSize.width, innerWidth)
     if (mx + optionListSize.width <= innerWidth) listLeft.value = mx
     // 做处理
     else {
@@ -161,6 +162,7 @@ export default function (props: any, ctx: SetupContext, chooseTarget: Target, pi
   }
   // 普通function函数
   function getSize () {
+    if (!open.openDOM.value.$el) return
     const styles = getComputedStyle(open.openDOM.value.$el)
     const width = styles.getPropertyValue('width')
     const height = styles.getPropertyValue('height')

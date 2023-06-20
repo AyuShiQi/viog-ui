@@ -67,17 +67,19 @@
 - 新增collapse组件type属性button*
 - 修复menu组件router状态下当前路由匹配*
 - 修改menu起始绑定id为0*
-- 修改bubble组件暗色系字体颜色
-- 修复bubble组件trigger属性click
+- 修改bubble组件暗色系字体颜色*
+- 修复bubble组件trigger属性click*
 - dialog组件几乎重来一遍
 - 更改dialog组件sureTitle与unsureTitle属性为插槽，允许绑定组件确认取消框
 - 更改dialog组件background修改方式有props变为css（也可以通过props更改，增加更改方式）
 - 处理组件z-index关系(select、dialog、collapse、input、drawer等等)（那个docs里nav10和header20）
-- 修复drawer非teleport情况下height的问题
+- 修复drawer非teleport情况下height的问题*
 - dropdown逻辑功能完善（重写）
-- 新增message修改top的功能
-- 修复table-editor可编辑表格操作list ul离家出走问题
-- 修复table-editor删除列页头不变的情况
+- 新增message修改top与right的css变量*
+- 修复table-editor可编辑表格操作list ul离家出走问题*
+- 修复table-editor删除列页头不变的情况*
+- 修复checkbox在生产环境下出现报错的问题（暂时修复，待定）
+- 修改scroll组件bar颜色*
 
 # 0.6.9
 
@@ -97,7 +99,7 @@
 - 新增time-scroll组件移动端滑动处理功能
 - 新增dropdown组件disabled属性
 - 更改select、time-select组件等background-color颜色
-- select-v组件更名为virtual-select*
+- select-v组件更名为virtual-select
 
 # 0.6.8
 
