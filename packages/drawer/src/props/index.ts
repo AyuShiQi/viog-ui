@@ -8,6 +8,6 @@ export default {
   },
   teleport: {
     type: Boolean,
-    default: true
+    default: false
   }
 }
