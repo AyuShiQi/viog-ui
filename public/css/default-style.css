@@ -11,7 +11,7 @@
     0px 6px 12px rgba(0, 0, 0, 0.02);
     --vi-card-padding: .6em .8em;
     --vi-box-shadow: 0px 1px 3px #0000000a,0px 2px 8px #00000014;
-    --vi-blur: 16px;
+    --vi-blur: 2px;
     --vi-transition: all .2s ease 0s;
     --vi-transition-slow: all .3s ease 0s;
     --vi-transition-large: all .5s ease 0s;
@@ -43,7 +43,13 @@
 
     --vi-dialog-width: 400px;
     --vi-dialog-height: auto;
+    --vi-dialog-padding: var(--vi-card-padding);
+    --vi-dialog-inner-padding: 10px 0;
     --vi-dialog-top: 20vh;
+    --vi-dialog-title-color: var(--vi-font-color);
+    --vi-dialog-color: var(--vi-link-color);
+    --vi-dialog-background-color: var(--vi-background-color-base);
+    --vi-dialog-mask-color: ;
     --vi-dialog-content-text-align: left;
     --vi-dialog-option-text-align: right;
 

@@ -3,6 +3,10 @@ export default {
     type: Boolean,
     default: false
   },
+  dark: {
+    type: Boolean,
+    default: false
+  },
   title: {
     type: String,
     default: ''
@@ -15,35 +19,23 @@ export default {
     type: String,
     default: '取消'
   },
-  sure: {
+  noSure: {
     type: Boolean,
-    default: true
+    default: false
   },
-  unsure: {
+  noUnsure: {
     type: Boolean,
-    default: true
+    default: false
   },
-  shutdown: {
+  noShutdown: {
     type: Boolean,
-    default: true
+    default: false
   },
-  mask: {
+  noMask: {
     type: Boolean,
     default: false
   },
   maskColor: {
-    type: String,
-    default: 'black'
-  },
-  maskBlur: {
-    type: Boolean,
-    default: false
-  },
-  background: {
-    type: String,
-    default: 'white'
-  },
-  color: {
     type: String,
     default: 'black'
   },

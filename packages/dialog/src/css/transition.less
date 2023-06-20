@@ -1,7 +1,7 @@
 .vi-dialog-enter-from {
     opacity: 0;
 
-    .vi-dialog-content {
+    .vi-dialog__content {
         transform: translateY(-20px);
     }
 }
@@ -9,14 +9,14 @@
 .vi-dialog-enter-to {
     opacity: 1;
 
-    .vi-dialog-content {
+    .vi-dialog__content {
         transform: translateY(0px);
     }
 }
 
 .vi-dialog-enter-active {
     transition: var(--vi-transition);
-    .vi-dialog-content {
+    .vi-dialog__content {
         transition: var(--vi-transition);
     }
 }
@@ -24,7 +24,7 @@
 .vi-dialog-leave {
     opacity: 1;
 
-    .vi-dialog-content {
+    .vi-dialog__content {
         transform: translateY(0px);
     }
 }
@@ -32,7 +32,7 @@
 .vi-dialog-leave-to {
     opacity: 0;
 
-    .vi-dialog-content {
+    .vi-dialog__content {
         transform: translateY(-20px);
     }
 }
@@ -40,7 +40,7 @@
 .vi-dialog-leave-active {
     transition: var(--vi-transition);
 
-    .vi-dialog-content {
+    .vi-dialog__content {
         transition: var(--vi-transition);
     }
 }

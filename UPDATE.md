@@ -69,10 +69,9 @@
 - 修改menu起始绑定id为0*
 - 修改bubble组件暗色系字体颜色*
 - 修复bubble组件trigger属性click*
-- dialog组件几乎重来一遍
-- 更改dialog组件sureTitle与unsureTitle属性为插槽，允许绑定组件确认取消框
-- 更改dialog组件background修改方式有props变为css（也可以通过props更改，增加更改方式）
-- 处理组件z-index关系(select、dialog、collapse、input、drawer等等)（那个docs里nav10和header20）
+- 更改dialog组件sureTitle与unsureTitle属性为插槽（保留），允许绑定组件确认取消框*
+- 更改dialog组件background、color等修改方式有props变为css（也可以通过props更改，增加更改方式）*
+- 处理组件z-index关系(select、dialog50、collapse、input、drawer等等)（那个docs里nav10和header20）
 - 修复drawer非teleport情况下height的问题*
 - dropdown逻辑功能完善（重写）
 - 新增message修改top与right的css变量*

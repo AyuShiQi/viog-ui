@@ -1,114 +1,83 @@
 .vi-dialog {
-    .vi-dialog-content {
+    --vi-dialog-title-color: var(--vi-font-color);
+    --vi-dialog-color: var(--vi-link-color);
+    --vi-dialog-background-color: var(--vi-background-color-base);
+    background-color: var(--vi-dialog-mask-color);
+    .vi-dialog__content {
         display: flex;
         position: relative;
         top: var(--vi-dialog-top);
         margin: 0 auto;
         width: var(--vi-dialog-width);
         height: var(--vi-dialog-height);
-        padding: 0 10px;
-        font-size: 14px;
+        padding: var(--vi-dialog-padding);
+        font-size: var(--vi-font-size);
+        background-color: var(--vi-dialog-background-color);
         border-radius: var(--vi-card-radius);
-        box-sizing: border-box;
         flex-direction: column;
         justify-content: space-between;
         box-shadow: var(--vi-box-shadow);
+        box-sizing: border-box;
 
-        .top {
+        .vi-dialog__content__top {
             display: flex;
             width: 100%;
-            height: 30px;
+            color: var(--vi-dialog-title-color);
             justify-content: space-between;
             align-items: center;
             box-sizing: border-box;
 
-            .title {
+            .content__top__title {
                 padding: 0;
                 margin: 0;
-                font-size: 16px;
+                font-size: 1em;
                 font-weight: 600;
             }
 
-            .delete-point {
+            .content__top__delete-point {
+                display: inline-block;
                 cursor: pointer;
                 user-select: none;
+
+                > .vi-dialog__icon {
+                    width: 1em;
+                    path {
+                        fill: var(--vi-dialog-color);
+                    }
+                }
             }
         }
 
-        .content {
-            padding: 5px 0;
+        .vi-dialog__content__content {
+            display: inline-block;
+            padding: var(--vi-dialog-inner-padding);
             margin: 0;
+            color: var(--vi-dialog-color);
             text-align: var(--vi-dialog-content-text-align);
             flex: 1;
         }
 
-        .bottom {
+        .vi-dialog__content__bottom {
             width: 100%;
-            height: 30px;
+            color: var(--vi-dialog-title-color);
             font-weight: 600;
-            font-size: 16px;
+            font-size: 1em;
             text-align: var(--vi-dialog-option-text-align);
 
-            .sure,
-            .unsure {
-                cursor: pointer;
-                user-select: none;
-            }
+            .content__bottom__home {
+                display: inline-flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10px;
 
-            .sure {
-                padding-left: 12px;
-            }
-
-            .sure.single {
-                padding-left: 0px;
+                .sure,
+                .unsure {
+                    cursor: pointer;
+                    user-select: none;
+                }
             }
         }
     }
-
-    .vi-content--black {
-        color: var(--vi-font-color);
-        fill: var(--vi-font-color);
-    }
-
-    .vi-content--white {
-        color: #fff;
-        fill: #fff;
-    }
-
-    .vi-content--golden {
-        color: var(--vi-golden-color1);
-        fill: var(--vi-golden-color1);
-    }
-
-    .vi-content--purple {
-        color: var(--vi-purple-color1);
-        fill: var(--vi-purple-color1);
-    }
-
-    .vi-content-background--black {
-        background-color: var(--vi-font-color);
-    }
-
-    .vi-content-background--black.is-blur {
-        background-color: #00000099;
-        backdrop-filter: blur(5px);
-    }
-
-    .vi-content-background--white {
-        background-color: #fff;
-    }
-
-    .vi-content-background--white.is-blur {
-        background-color: #ffffff99;
-        backdrop-filter: blur(5px);
-    }
-
-    .vi-content-background--golden {
-        background-color: var(--vi-golden-color1);
-    }
-
-    .vi-content-background--golden.is-blur {
-        background-color: #b8906999;
-        backdrop-filter: blur(5px);
-    }
 }
+
+@import './color.less';
