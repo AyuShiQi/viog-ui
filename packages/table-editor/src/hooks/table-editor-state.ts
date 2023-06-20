@@ -1,5 +1,5 @@
 // vue
-import { reactive, computed, watch, ref } from 'vue'
+import { reactive, computed, watch, ref, toRef } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
@@ -15,32 +15,56 @@ import contextMenuState from './context-menu-state'
 // 横向标头生成
 const headerMap = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
+/**
+ * table-editor 组件的hooks入口文件，包括表格基础数据的处理
+ * @param props props
+ * @param ctx crx
+ */
 export default function (props: any, ctx: SetupContext) {
   // 特殊处理
-  const value = reactive(props.modelValue)
+  /**
+   * 表格的输入内容
+   */
+  const value = reactive(props.modelValue ? props.modelValue : [])
   // 普通常量
   // DOM ref
+  /**
+   * table所在的DOM
+   */
   const table = ref()
   // ref
   // reactive
-  // header标头
+  /**
+   * sider标头
+   */
   const sideList = reactive([] as number[])
+  /**
+   * header标头
+   */
   const headerList = reactive([] as string[])
   // inject
   // computed
+  /**
+   * 当前行数
+   */
   const rows = computed(() => {
-    return Math.max(value.length, 15)
+    return Math.max(value.length, props.defaultRow)
   })
+  /**
+   * 当前列数
+   */
   const cols = computed(() => {
     let max = 0
     for (const arr of value) {
       max = Math.max(arr.length, max)
     }
-    return Math.max(max, 15)
+    return Math.max(max, props.defaultCol)
   })
 
   // watch
-  // 行数监视
+  /**
+   * 行数监视
+   */
   watch(rows, (newVal, oldVal) => {
     // 行数填充
     if (!oldVal) oldVal = 0
@@ -49,7 +73,9 @@ export default function (props: any, ctx: SetupContext) {
     }
     generateSider(newVal, oldVal)
   }, { immediate: true })
-  // 列数监视
+  /**
+   * 行数监视
+   */
   watch(cols, (newVal, oldVal) => {
     // 列数填充
     if (!oldVal) oldVal = 0
@@ -62,6 +88,11 @@ export default function (props: any, ctx: SetupContext) {
   // 事件方法
   // 方法
   // 普通function函数
+  /**
+   * 动态生成side标头
+   * @param newVal 新行数
+   * @param oldVal 老行数
+   */
   function generateSider (newVal: number, oldVal: number) {
     if (newVal < oldVal) sideList.length = newVal
     else {
@@ -71,9 +102,13 @@ export default function (props: any, ctx: SetupContext) {
     }
   }
 
-  // 生成字母表头
+  /**
+   * 动态生成字母表头
+   * @param newVal 新列数
+   * @param oldVal 老列数
+   */
   function generateHeader (newVal: number, oldVal: number) {
-    console.log(newVal, oldVal)
+    // console.log(newVal, oldVal)
     if (newVal < oldVal) headerList.length = newVal
     // 先生成到最新的表头
     else {
@@ -93,7 +128,15 @@ export default function (props: any, ctx: SetupContext) {
     }
   }
 
-  // -1已完成
+  /**
+   * 生成字母表头，是上一个函数的dfs算法
+   * @param step 当前阶数 指当前now标头是一个字母还是两个字母还是n个字母
+   * @param start 开始生成的起始序号
+   * @param end 结束序号
+   * @param now 当前需生成的序号
+   * @param title 目前已生成的title，懂吧dfs
+   * @returns 返回下一次需要生成的字母序号，如果生成完毕返回-1
+   */
   function addHeader (step: number, start: number, end: number, now: number, title: string): number {
     // 加入list
     if (step === 0) {

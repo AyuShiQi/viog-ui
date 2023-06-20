@@ -25,7 +25,13 @@ export default function () {
   const sortByOrder = inject('editor-table-sort-by-order') as () => void
   const sortByDesc = inject('editor-table-sort-by-desc') as () => void
   // computed
+  /**
+   * 是否展示针对行列的操作
+   */
   const showLine = computed(() => mode.value !== 'content')
+  /**
+   * 是否展示针对列的操作
+   */
   const showCol = computed(() => mode.value === 'col')
   // 事件方法
   function toDelete () {

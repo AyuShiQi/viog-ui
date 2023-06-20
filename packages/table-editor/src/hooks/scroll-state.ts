@@ -43,7 +43,7 @@ export default function (table: Ref, needPick: Ref<boolean>, needChange: Ref<boo
     ({ scrollLeft, scrollTop } = table.value.$el)
 
     const { x, y, width, height } = table.value.$el.getBoundingClientRect()
-    console.log(x, y, width, height)
+    // console.log(x, y, width, height)
     timer = requestAnimationFrame(step)
 
     function step () {
@@ -74,7 +74,7 @@ export default function (table: Ref, needPick: Ref<boolean>, needChange: Ref<boo
   function handleMouseMove (e: MouseEvent) {
     if (!scrollDrag.value) return
     ({ x: mx, y: my } = e)
-    console.log(mx, my)
+    // console.log(mx, my)
   }
   // 方法
   // 普通function函数

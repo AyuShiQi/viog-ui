@@ -8,6 +8,14 @@ import type { BoxSizeState } from '../types/box-size-types'
 // 内部hooks
 // 外部模块
 
+/**
+ * 编辑框选中框等的展现和功能
+ * @param props props
+ * @param ctx crx
+ * @param boxSize 编辑组件的大小信息
+ * @param chooseTarget 选中的目标格子
+ * @param value 表格的数据
+ */
 export default function (props: any, ctx: SetupContext, boxSize: BoxSizeState, chooseTarget: [number, number], value: any) {
   // 普通常量
   // DOM ref

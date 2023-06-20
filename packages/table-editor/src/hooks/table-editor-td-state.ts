@@ -25,15 +25,22 @@ export default function (props: any, ctx: SetupContext) {
   const pickTarget = inject('table-editor-pick-target') as PickTarget
   const changeTarget = inject('table-editor-change-target') as ChangeTarget
   // computed
+  /**
+   * 该格子是否单击选中（第一次选中）
+   */
   const beChoosed = computed(() => {
     if (chooseTarget![0] === -1 || chooseTarget![1] === -1) return false
     return chooseTarget![0] === props.row && chooseTarget![1] === props.col
   })
-
+  /**
+   * 该格子是否正在被编辑
+   */
   const edit = computed(() => {
     return editTarget![0] === props.row && editTarget![1] === props.col
   })
-
+  /**
+   * 该格子是否属于整行整列选中的格子
+   */
   const isEntire = computed(() => {
     return entireTarget![0] === props.row || entireTarget![1] === props.col
   })
@@ -91,6 +98,7 @@ export default function (props: any, ctx: SetupContext) {
   }
 
   function handleBlur () {
+    // 格子失去焦点更改格子的值
     editValue!(props.row, props.col, inputValue.value)
   }
   // 方法

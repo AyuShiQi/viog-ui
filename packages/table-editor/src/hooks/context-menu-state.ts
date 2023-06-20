@@ -6,6 +6,7 @@ import type { SetupContext } from 'vue'
 import type { Target, PickTarget } from '../types/inject-type'
 // 外部hooks
 import openState from '@/hooks/open-state'
+import { row } from 'packages/layout'
 // 内部hooks
 // 外部模块
 
@@ -65,10 +66,14 @@ export default function (props: any, ctx: SetupContext, chooseTarget: Target, pi
     } else if (mode.value === 'row') {
       const row = entireTarget[0]
       value.splice(row, 1)
+      if (value.length < props.defaultRow) value.length = props.defaultRow
     } else if (mode.value === 'col') {
       const col = entireTarget[1]
+      // 此方法无法触发响应式
       for (const row of value) {
         row.splice(col, 1)
+        // 默认栏数处理
+        if (row.length < props.defaultCol) row.length = props.defaultCol
       }
     }
   }
