@@ -1,5 +1,6 @@
 <template>
     <div
+    ref="openDOM"
     class="vi-bubble vi-bubble_down"
     :class="[
       `vi-bubble-direction-${direction}`,
@@ -7,7 +8,7 @@
         'vi-bubble-mode-dark': dark
       }
     ]"
-    @mouseover="handleMouseover" @mouseleave="handleMouseleave">
+    @mouseover="handleMouseover" @mouseleave="handleMouseleave" @click="handleClick">
         <slot></slot>
         <div class="vi-bubble__content">
           <transition name="vi-fade-in-out-normal">
@@ -36,7 +37,7 @@ export default defineComponent({
   name: 'ViBubble',
   props,
   setup (props: any, ctx: SetupContext) {
-    const bubble = bubbleState(props, ctx)
+    const bubble = bubbleState(props)
 
     return bubble
   }

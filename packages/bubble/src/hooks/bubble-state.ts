@@ -8,8 +8,8 @@ import boxPositionState from '@/hooks/box-position-state'
 // 内部hooks
 // 外部模块
 
-export default function (props: any, ctx: SetupContext) {
-  const open = openState(false, props.trigger)
+export default function (props: any) {
+  const open = openState(true, props.trigger)
   const boxPosition = boxPositionState(props.direction)
   // 普通常量
   // DOM ref
@@ -19,10 +19,13 @@ export default function (props: any, ctx: SetupContext) {
   // computed
   // 事件方法
   function handleMouseover (): void {
-    open.toOpen()
+    if (props.trigger === 'hover') open.toOpen()
   }
   function handleMouseleave (): void {
-    open.toClose()
+    if (props.trigger === 'hover') open.toClose()
+  }
+  function handleClick (): void {
+    if (props.trigger === 'click') open.toSelect()
   }
   // 方法
   // 普通function函数
@@ -31,6 +34,7 @@ export default function (props: any, ctx: SetupContext) {
   return {
     handleMouseover,
     handleMouseleave,
+    handleClick,
     ...open,
     ...boxPosition
   }
