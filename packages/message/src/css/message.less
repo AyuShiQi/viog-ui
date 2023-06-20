@@ -1,6 +1,6 @@
 .vi-message {
     position: fixed;
-    top: 5vh;
+    top: var(--vi-message-top);
     right: 0;
     width: auto;
     pointer-events: none;
@@ -14,9 +14,9 @@
         width: var(--vi-message-width);
         padding: var(--vi-card-padding);
         margin-bottom: 1em;
-        color: #fff;
+        color: var(--vi-background-color-deep);
         text-align: left;
-        background-color: var(--vi-font-color);
+        background-color: var(--vi-info-background-color);
         border-radius: var(--vi-card-radius);
         box-shadow: var(--vi-card-box-shadow);
         pointer-events: all;
@@ -30,19 +30,20 @@
         }
 
         .delete-point {
+            fill: var(--vi-background-color-deep);
             width: 1em;
+            transform: scale(90%);
             cursor: pointer;
-            fill: #fff;
         }
     }
 
     .vi-message-card_appear {
-        transform: translateX(-10px);
+        transform: translateX(calc(0px - var(--vi-message-right)));
     }
 
     .vi-message-card_disappear {
         opacity: 0;
-        transform: translateX(-10px) translateY(-5px);
+        transform: translateX(calc(0px - var(--vi-message-right))) translateY(-5px);
     }
 }
 

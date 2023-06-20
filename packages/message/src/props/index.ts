@@ -1,6 +1,7 @@
 export default {
   message: {
-    default: ''
+    type: Array,
+    default: []
   },
   shutdown: {
     type: Boolean,

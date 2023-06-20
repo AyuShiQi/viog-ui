@@ -1,7 +1,7 @@
 <template>
   <div class="vi-message" v-show="show">
     <ViMessageCard
-    v-for="item,i in message"
+    v-for="item,i in (message as any[])"
     :style="{
       top:`${i*46}px`
     }"
@@ -14,6 +14,8 @@
 
 <script lang="ts">
 import { computed, ref } from 'vue'
+
+import type { MessageProps } from './type/message'
 
 import ViMessageCard from './message-card.vue'
 
