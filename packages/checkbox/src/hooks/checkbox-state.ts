@@ -14,7 +14,10 @@ export default function (props: CheckboxProps, context: SetupContext) {
   const groupName = inject('checkbox-group-name', props.name)
   // 该checkbox是否包含于结果之中
   const containsValue = computed((): boolean => {
-    return hasGroup ? nowPick.value.includes(props.value) : props.modelValue.includes(props.value)
+    if (hasGroup) {
+      return nowPick.value instanceof Array ? nowPick.value.includes(props.value) : false
+    }
+    return props.modelValue instanceof Array ? props.modelValue.includes(props.value) : false
   })
   // 监听改变
   function handleChange (): void {
