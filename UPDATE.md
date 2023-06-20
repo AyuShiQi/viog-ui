@@ -47,20 +47,21 @@
 - 新增可编辑表格组件快捷键操作功能
 - 新增可编辑表格自定义拖拉表格长宽功能
 
-# 0.6.12
+# 0.6.12（当前迭代开发版本）
 
 - 添加form组件的rule检查
 - 添加form表单的正则以及代码规范
 - layout组件删除width及height等属性
 - 增加grid组件行列布局计算属性
 - 删除所有组件dark属性
+- dropdown自动计算方位逻辑功能重写实现
 
-# 0.6.10（当前迭代开发版本）
+# 0.6.10
 
 - 修复select组多选情况下不显示别名的情况*
 - 修复input组件color为purple情况下的样式问题*
 - 修复checkbox组件button样式mutate属性失效的问题*
-- 修改time-select组件在移动端下滑动速度（降低）*
+- 修改time-select组件在移动端下滑动速度（降低）
 - 修复date-select组件被ul离家出走问题*
 - 修复breadcrumb组件replace属性*
 - 修复collapse组件auto-retract不自动收回的情况*
@@ -71,13 +72,12 @@
 - 修复bubble组件trigger属性click*
 - 更改dialog组件sureTitle与unsureTitle属性为插槽（保留），允许绑定组件确认取消框*
 - 更改dialog组件background、color等修改方式有props变为css（也可以通过props更改，增加更改方式）*
-- 处理组件z-index关系(select、dialog50、collapse、input、drawer等等)（那个docs里nav10和header20）
+- 处理组件z-index关系(select10、dialog50、input、drawer22, message\toast24,header20, affix40等等)（那个docs里nav10和header20）*
 - 修复drawer非teleport情况下height的问题*
-- dropdown逻辑功能完善（重写）
 - 新增message修改top与right的css变量*
 - 修复table-editor可编辑表格操作list ul离家出走问题*
 - 修复table-editor删除列页头不变的情况*
-- 修复checkbox在生产环境下出现报错的问题（暂时修复，待定）
+- 修复checkbox在生产环境下出现报错的问题（暂时修复，待定）*
 - 修改scroll组件bar颜色*
 
 # 0.6.9
