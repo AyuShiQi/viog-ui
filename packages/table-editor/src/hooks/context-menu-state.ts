@@ -1,20 +1,19 @@
 // vue
 import { ref, provide, onMounted, onBeforeUnmount } from 'vue'
 // vue type
-import type { SetupContext } from 'vue'
+import type { SetupContext, Ref } from 'vue'
 // 组件type
 import type { Target, PickTarget } from '../types/inject-type'
 // 外部hooks
 import openState from '@/hooks/open-state'
-import { row } from 'packages/layout'
 // 内部hooks
 // 外部模块
 
-export default function (props: any, ctx: SetupContext, chooseTarget: Target, pickTarget: PickTarget, entireTarget: Target, value: any[][]) {
+export default function (props: any, ctx: SetupContext, chooseTarget: Target, pickTarget: PickTarget, entireTarget: Target, value: any[][], table: Ref) {
   const open = openState(true, 'mousedown')
   // 普通常量
   const mode = ref('content')
-  const clipboard = navigator.clipboard
+  const clipboard = navigator?.clipboard
   const optionListSize = {
     width: 0,
     height: 0
@@ -34,18 +33,26 @@ export default function (props: any, ctx: SetupContext, chooseTarget: Target, pi
     e.preventDefault()
   }
   // 方法
-  // 位置信息组
+  /**
+   * 调整list框所在方位
+   * @param mx 鼠标x轴
+   * @param my 鼠标y轴
+   */
   function changeListPosition (mx: number, my: number) {
     const { innerHeight, innerWidth } = window
-    console.log(mx + optionListSize.width, innerWidth)
+    // console.log(mx + optionListSize.width, innerWidth)
+    // x轴区
     if (mx + optionListSize.width <= innerWidth) listLeft.value = mx
+    else if (mx - optionListSize.width >= 0) listLeft.value = mx - optionListSize.width
     // 做处理
     else {
       const now = innerWidth - optionListSize.width
       listLeft.value = now >= 0 ? now : mx
     }
 
+    // y轴区
     if (my + optionListSize.height <= innerHeight) listTop.value = my
+    else if (my - optionListSize.height >= 0) listTop.value = my - optionListSize.height
     // 做处理
     else {
       const now = innerHeight - optionListSize.height
@@ -94,12 +101,12 @@ export default function (props: any, ctx: SetupContext, chooseTarget: Target, pi
         copyArr.push(row[col])
       }
     }
-    clipboard.writeText(copyArr.join('\n'))
+    clipboard?.writeText(copyArr.join('\n'))
     console.log(copyArr.join('\n'))
   }
 
   function pasteValue () {
-    clipboard.readText().then((val) => {
+    clipboard?.readText().then((val) => {
       if (!val) return
       if (chooseTarget[0] === -1 || chooseTarget[1] === -1) return
       const rowArr = val.split('\n')
@@ -182,12 +189,17 @@ export default function (props: any, ctx: SetupContext, chooseTarget: Target, pi
   provide('editor-table-sort-by-desc', sortByDesc)
   // 生命周期
   onMounted(() => {
+    // 后期需要绑定表格长度变化关闭
     window.addEventListener('scroll', closeOptionList)
+    table.value?.$el.addEventListener('scroll', closeOptionList)
+    window.addEventListener('resize', closeOptionList)
     getSize()
   })
 
   onBeforeUnmount(() => {
     window.removeEventListener('scroll', closeOptionList)
+    table.value?.$el.addEventListener('scroll', closeOptionList)
+    window.removeEventListener('resize', closeOptionList)
   })
 
   return {

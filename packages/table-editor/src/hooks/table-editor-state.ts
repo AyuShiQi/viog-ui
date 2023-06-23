@@ -168,7 +168,7 @@ export default function (props: any, ctx: SetupContext) {
   const tableValue = tableValueState(props, ctx, value)
   const boxSize = boxSizeState(table)
   const pickBox = pickBoxState(props, ctx, boxSize, tableValue.chooseTarget, value)
-  const contextMenu = contextMenuState(props, ctx, tableValue.chooseTarget, pickBox.pickTarget, tableValue.entireTarget, value)
+  const contextMenu = contextMenuState(props, ctx, tableValue.chooseTarget, pickBox.pickTarget, tableValue.entireTarget, value, table)
   const scroll = scrollState(table, pickBox.needPick, pickBox.needChange, boxSize)
 
   return {
