@@ -10,7 +10,7 @@ import boxPositionState from '@/hooks/box-position-state'
 
 export default function (props: any) {
   const open = openState(true, props.trigger)
-  const boxPosition = boxPositionState(props.direction)
+  // const boxPosition = boxPositionState(props.direction)
   // 普通常量
   // DOM ref
   // ref
@@ -35,7 +35,7 @@ export default function (props: any) {
     handleMouseover,
     handleMouseleave,
     handleClick,
-    ...open,
-    ...boxPosition
+    ...open
+    // ...boxPosition
   }
 }

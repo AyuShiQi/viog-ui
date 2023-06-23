@@ -1,7 +1,7 @@
 <template>
     <div
     ref="openDOM"
-    class="vi-bubble vi-bubble_down"
+    class="vi-bubble vi-bubble"
     :class="[
       `vi-bubble-direction-${direction}`,
       {

@@ -6,7 +6,7 @@ export default {
   direction: {
     type: String,
     // top left right
-    default: 'down'
+    default: 'bottom'
   },
   trigger: {
     type: String,
