@@ -4,7 +4,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import type { SetupContext } from 'vue'
 
 import props from './props/group'
 
@@ -15,8 +14,8 @@ import { groupValueState } from './hooks'
 export default defineComponent({
   name: 'ViCheckboxGroup',
   props,
-  setup (props: GroupValueProps, context: SetupContext) {
-    groupValueState(props, context, 'checkbox-group-value')
+  setup (props: GroupValueProps) {
+    groupValueState(props)
   }
 })
 </script>
