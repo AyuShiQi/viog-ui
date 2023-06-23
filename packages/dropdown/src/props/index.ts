@@ -11,5 +11,10 @@ export default {
   disabled: {
     type: Boolean,
     default: false
-  }
+  },
+  mode: {
+    type: String,
+    default: 'auto'
+  },
+  scrollTarget: [Object, String]
 }

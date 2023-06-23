@@ -1,10 +1,19 @@
 <template>
-  <vi-checkbox v-model="ar">你好</vi-checkbox>
+  <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
+  <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
+  <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
+  <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
+  <vi-checkbox-group v-model="ar">
+    <vi-checkbox value="nihao">你好</vi-checkbox>
+    <vi-checkbox value="nihao">你好</vi-checkbox>
+    <vi-checkbox value="nihao">你好</vi-checkbox>
+    <vi-checkbox value="nihao">你好</vi-checkbox>
+  </vi-checkbox-group>
   <vi-collapse title="下拉框" auto-retract>内容</vi-collapse>
   <vi-collapse-group accordion>
     <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
     <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
-    <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
+    <!-- <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse> -->
     <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
   </vi-collapse-group>
   <vi-dropdown>
@@ -49,7 +58,8 @@
       </div>
     </template>
   </vi-bubble>
-  <vi-table-editor></vi-table-editor>
+  <vi-table-editor v-model="ar"></vi-table-editor>
+  <!-- <vi-table-editor v-model="ar"></vi-table-editor> -->
   <!-- <vi-drawer v-model="open" teleport direction="bottom">
     <vi-table-editor style="width: 100%"></vi-table-editor>
   </vi-drawer> -->
@@ -58,6 +68,8 @@
       <vi-table-editor style="width: 100%"></vi-table-editor>
     </vi-drawer>
   </div> -->
+  <vi-select style="--vi-select-list-height: 400px; --vi-select-list-width: 300px; position: absolute; left: 50%;">
+  </vi-select>
 </template>
 
 <script lang="ts">
@@ -111,7 +123,7 @@ export default defineComponent({
     const val = ref('')
     const ar = reactive([])
     const o = ref({})
-    const open = ref(true)
+    const open = ref(false)
     const nav = ['吃饭', '睡觉', '长个子', '好']
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
     const obj = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 }]

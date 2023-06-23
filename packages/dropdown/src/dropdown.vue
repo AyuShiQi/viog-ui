@@ -6,12 +6,17 @@
       <div
       class="vi-dropdown-content"
       :class="[
-        `vi-dropdown-content-${direction}`,
-        `vi-dropdown-content-else-${elseDirection}`
+        `vi-dropdown-content-${direction}`
       ]"
       ref="dropdown">
         <transition :name="`vi-fade-in-out-${direction}`">
-          <div class="vi-dropdown-list" v-show="open">
+          <div
+          class="vi-dropdown-list"
+          :style="{
+            top: `${listTop}px`,
+            left: `${listLeft}px`
+          }"
+          v-show="open">
             <slot name="content"></slot>
           </div>
         </transition>
@@ -24,72 +29,15 @@ import { defineComponent } from 'vue'
 
 import props from './props'
 
-import openState from '@/hooks/open-state'
-import boxPositionState from '@/hooks/box-position-state'
+import dropdownState from './hooks/dropdown-state'
 
 export default defineComponent({
   name: 'ViDropdown',
   props,
   setup (props: any) {
-    const open = openState()
-    const boxPosition = boxPositionState()
+    const dropdown = dropdownState(props)
 
-    // 针对hover的方法
-    function mouseClose () {
-      if (props.trigger !== 'hover') return
-      open.toClose({
-        afterCb: boxPosition.toChangeViewPosition
-      })
-    }
-
-    function mouseOpen () {
-      if (props.trigger !== 'hover') return
-      if (props.disabled) return
-      open.toOpen({
-        afterCb: boxPosition.recalcSize
-      })
-    }
-
-    // 针对click的方法
-    function changeOpen () {
-      if (props.trigger !== 'click') return
-      if (props.disabled) return
-      // 当此次操作时打开时，仅做重新计算处理
-      if (!open.open.value) {
-        open.toSelect({
-          preCb: () => !props.noTriggerOpen,
-          afterCb: boxPosition.recalcSize
-        })
-      } else {
-        open.toSelect({
-          preCb: () => !props.noTriggerOpen,
-          afterCb: boxPosition.toChangeViewPosition
-        })
-      }
-    }
-
-    function toopen () {
-      // 当此次操作时打开时，仅做重新计算处理
-      open.toOpen({
-        afterCb: boxPosition.recalcSize
-      })
-    }
-
-    function toclose () {
-      open.toClose({
-        afterCb: boxPosition.toChangeViewPosition
-      })
-    }
-
-    return {
-      ...open,
-      ...boxPosition,
-      changeOpen,
-      mouseOpen,
-      mouseClose,
-      toopen,
-      toclose
-    }
+    return dropdown
   }
 })
 </script>

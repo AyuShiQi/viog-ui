@@ -20,7 +20,7 @@
 }
 
 /* 上方展开 */
-@keyframes vi-fade-in-out-up-enter {
+@keyframes vi-fade-in-out-top-enter {
     0% {
         opacity: 0;
         transform: translateY(5px);
@@ -32,7 +32,7 @@
     }
 }
 
-@keyframes vi-fade-in-out-up-leave {
+@keyframes vi-fade-in-out-top-leave {
     0% {
         opacity: 1;
         transform: translateY(0);
@@ -45,7 +45,7 @@
 }
 
 /* 下方展开 */
-@keyframes vi-fade-in-out-down-enter {
+@keyframes vi-fade-in-out-bottom-enter {
     0% {
         opacity: 0;
         transform: translateY(-5px);
@@ -57,7 +57,7 @@
     }
 }
 
-@keyframes vi-fade-in-out-down-leave {
+@keyframes vi-fade-in-out-bottom-leave {
     0% {
         opacity: 1;
         transform: translateY(0);

@@ -54,9 +54,11 @@
 - layout组件删除width及height等属性
 - 增加grid组件行列布局计算属性
 - 删除所有组件dark属性
-- dropdown自动计算方位逻辑功能重写实现
-- 修复dialog通过变量无法修改的问题
-- 修复nodejs环境无法获取navigator变量的错误
+- 优化dropdown自动计算方位逻辑功能实现算法*
+- 修复dialog通过变量无法修改的问题*
+- 修复nodejs环境无法获取navigator变量的错误*
+- 修复checkbox组件生产环境下报错*
+- 修复drawer组件在不同高度时handler匹配大小不统一的问题*
 
 # 0.6.11
 

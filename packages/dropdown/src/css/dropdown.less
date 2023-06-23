@@ -4,87 +4,48 @@
     user-select: none;
 
     .vi-dropdown-content {
-        display: flex;
+        // display: flex;
         position: absolute;
         z-index: 10;
         width: 100%;
         height: var(--vi-dropdown-gap);
-        justify-content: center;
-        pointer-events: none;
+        // justify-content: center;
+        // pointer-events: none;
         .vi-dropdown-list {
             position: absolute;
-            z-index: 10;
             width: var(--vi-dropdown-width);
             height: var(--vi-dropdown-height);
             max-height: var(--vi-dropdown-max-height);
-            pointer-events: all;
+            // pointer-events: all;
         }
     }
 }
 
-.vi-dropdown-content-up {
+.vi-dropdown-content-top {
     top: calc(0px - var(--vi-dropdown-gap));
     .vi-dropdown-list {
-        bottom: var(--vi-dropdown-gap);
+        margin-top: 0;
     }
 }
 
-.vi-dropdown-content-down {
+.vi-dropdown-content-bottom {
     bottom: calc(0px - var(--vi-dropdown-gap));
     .vi-dropdown-list {
-        top: var(--vi-dropdown-gap);
+        margin-top: var(--vi-dropdown-gap);
     }
 }
 
 .vi-dropdown-content-left {
-    bottom: 0;
+    top: 0;
     .vi-dropdown-list {
-        right: calc(100% + var(--vi-dropdown-gap));
-        // margin-top: -50%;
+        margin-left: calc(0px - var(--vi-dropdown-gap));
     }
 }
 
 .vi-dropdown-content-right {
     top: 0;
     .vi-dropdown-list {
-        left: calc(100% + var(--vi-dropdown-gap));
-        // margin-top: -50%;
-    }
-}
-
-// .vi-dropdown-content-else-normal {
-//     left: 0;
-//     .vi-dropdown-list {
-//         left: 0;
-//     }
-// }
-
-.vi-dropdown-content-else-left {
-    .vi-dropdown-list {
-        right: 100%;
-    }
-}
-
-.vi-dropdown-content-else-right {
-    .vi-dropdown-list {
-        left: 100%;
-    }
-}
-
-.vi-dropdown-content-else-left.vi-dropdown-content-up,
-.vi-dropdown-content-else-right.vi-dropdown-content-up {
-    top: auto;
-    bottom: 0;
-    .vi-dropdown-list {
-        bottom: 0;
-    }
-}
-
-.vi-dropdown-content-else-left.vi-dropdown-content-down,
-.vi-dropdown-content-else-right.vi-dropdown-content-down {
-    top: 0;
-    .vi-dropdown-list {
-        top: 0;
+        margin-left: var(--vi-dropdown-gap);
     }
 }
 

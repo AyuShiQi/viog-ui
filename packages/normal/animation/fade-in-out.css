@@ -15,38 +15,38 @@
 }
 
 /* 向上打开 */
-.vi-fade-in-out-up-enter-from,
-.vi-fade-in-out-up-leave-to {
+.vi-fade-in-out-top-enter-from,
+.vi-fade-in-out-top-leave-to {
     opacity: 0;
     transform: translateY(5px);
 }
 
-.vi-fade-in-out-up-enter-to,
-.vi-fade-in-out-up-leave {
+.vi-fade-in-out-top-enter-to,
+.vi-fade-in-out-top-leave {
     opacity: 1;
     transform: translateY(0px);
 }
 
-.vi-fade-in-out-up-enter-active,
-.vi-fade-in-out-up-leave-active {
+.vi-fade-in-out-top-enter-active,
+.vi-fade-in-out-top-leave-active {
     transition: var(--vi-transition);
 }
 
 /* 向下打开 */
-.vi-fade-in-out-down-enter-from,
-.vi-fade-in-out-down-leave-to {
+.vi-fade-in-out-bottom-enter-from,
+.vi-fade-in-out-bottom-leave-to {
     opacity: 0;
     transform: translateY(-5px);
 }
 
-.vi-fade-in-out-down-enter-to,
-.vi-fade-in-out-down-leave {
+.vi-fade-in-out-bottom-enter-to,
+.vi-fade-in-out-bottom-leave {
     opacity: 1;
     transform: translateY(0px);
 }
 
-.vi-fade-in-out-down-enter-active,
-.vi-fade-in-out-down-leave-active {
+.vi-fade-in-out-bottom-enter-active,
+.vi-fade-in-out-bottom-leave-active {
     transition: var(--vi-transition);
 }
 
