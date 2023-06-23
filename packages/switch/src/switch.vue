@@ -7,7 +7,6 @@
   {
     'left-choice': !modelValue,
     'right-choice': modelValue,
-    'vi-switch-dark': dark,
     'is-filter': filter,
     'disabled': disabled
   }]">

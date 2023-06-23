@@ -10,7 +10,6 @@ export interface SwitchProps {
   type: string,
   rightColor: string,
   leftColor: string,
-  dark: boolean,
   disabled: boolean,
   filter: boolean,
   name: string

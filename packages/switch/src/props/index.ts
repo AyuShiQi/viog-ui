@@ -19,10 +19,6 @@ export default {
     type: String,
     default: '#dae1ea'
   },
-  dark: {
-    type: Boolean,
-    default: false
-  },
   disabled: {
     type: Boolean,
     default: false
