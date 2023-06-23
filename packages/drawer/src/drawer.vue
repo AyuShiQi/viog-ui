@@ -10,7 +10,7 @@
     ]">
       <div class="vi-drawer-handle" @click="toOpen">
         <svg class="drawer-content" viewBox="0 0 50 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 111.803C0 104.041 1.80726 96.3855 5.27864 89.4427L50 0V400L5.27864 310.557C1.80725 303.615 0 295.959 0 288.197V111.803Z"/>
+          <path d="M0 111.803 C0 104.041 1.80726 96.3855 5.27864 89.4427 L65 0V400L5.27864 310.557C1.80725 303.615 0 295.959 0 288.197V111.803Z"/>
         </svg>
         <svg
         class="vi-drawer-arrow"

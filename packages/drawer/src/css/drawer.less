@@ -10,9 +10,9 @@
 
     .vi-drawer-handle {
         position: absolute;
-        top: 35%;
-        width: 18px;
-        height: 30%;
+        top: calc(50% - (var(--vi-drawer-handler-size) * 5 / 2));
+        width: var(--vi-drawer-handler-size);
+        height: calc(5 * var(--vi-drawer-handler-size));
         transform: rotateZ(180deg);
 
         .drawer-content {
@@ -20,15 +20,16 @@
             width: 100%;
             path {
                 fill: var(--vi-background-color-base);
+                // fill: #000;
             }
         }
 
         .vi-drawer-arrow {
             position: absolute;
             top: 0;
-            right: 0;
+            left: calc(var(--vi-drawer-handler-size) / 3);
             height: 100%;
-            width: 14px;
+            width: calc(var(--vi-drawer-handler-size) / 2);
             transform: rotateZ(-90deg);
             transition: var(--vi-transition-large-linear);
             cursor: pointer;
@@ -49,11 +50,8 @@
     left: calc(0px - var(--vi-drawer-width));
     width: var(--vi-drawer-width);
     height: 100%;
-    .vi-drawer-arrow {
-        transform: rotateZ(-90deg);
-    }
     .vi-drawer-handle {
-        right: -16px;
+        right: calc(0px - var(--vi-drawer-handler-size));
         transform: rotateZ(180deg);
 
         .vi-drawer-arrow {
@@ -76,7 +74,7 @@
     width: var(--vi-drawer-width);
     height: 100%;
     .vi-drawer-handle {
-        left: -16px;
+        left: calc(0px - var(--vi-drawer-handler-size));
         transform: rotateZ(0deg);
 
         .vi-drawer-arrow {
@@ -98,10 +96,8 @@
     width: 100%;
     height: var(--vi-drawer-height);
     .vi-drawer-handle {
-        width: 18px;
-        height: 100%;
-        top: calc(50% + 8px);
-        left: calc(50% - 16px);
+        top: calc(100% - var(--vi-drawer-handler-size) * 2);
+        left: calc(50% - var(--vi-drawer-handler-size) / 2);
         transform: rotateZ(-90deg);
 
         .vi-drawer-arrow {
@@ -124,10 +120,8 @@
     width: 100%;
     height: var(--vi-drawer-height);
     .vi-drawer-handle {
-        width: 18px;
-        height: 100%;
-        top: calc(-50% - 8px);
-        left: calc(50% - 16px);
+        top: calc(0px - var(--vi-drawer-handler-size) * 3);
+        left: calc(50% - var(--vi-drawer-handler-size) / 2);
         transform: rotateZ(90deg);
 
         .vi-drawer-arrow {
