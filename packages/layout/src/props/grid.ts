@@ -11,14 +11,14 @@ export default {
     type: String,
     default: 'row'
   },
-  width: {
-    type: String,
-    default: ''
-  },
-  height: {
-    type: String,
-    default: ''
-  },
+  // width: {
+  //   type: String,
+  //   default: ''
+  // },
+  // height: {
+  //   type: String,
+  //   default: ''
+  // },
   row: {
     type: Number,
     default: 1
@@ -30,5 +30,18 @@ export default {
   gap: {
     type: String,
     default: '0'
+  },
+  // grid-auto-flow
+  flow: {
+    type: String,
+    default: 'row'
+  },
+  placeContent: {
+    type: String,
+    default: 'center'
+  },
+  placeItems: {
+    type: String,
+    default: 'center'
   }
 }

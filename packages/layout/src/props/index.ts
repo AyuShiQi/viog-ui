@@ -11,13 +11,5 @@ export default {
     type: String,
     default: 'row'
   },
-  width: {
-    type: String,
-    default: ''
-  },
-  height: {
-    type: String,
-    default: ''
-  },
   gap: String
 }

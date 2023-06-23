@@ -5,8 +5,6 @@
     alignItems: align,
     alignContent: align,
     justifyContent: justify,
-    width,
-    height,
     gridColumnStart: `span ${col}`,
     gridRowStart: `span ${row}`
   }">

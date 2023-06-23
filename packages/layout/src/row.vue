@@ -6,8 +6,6 @@
     alignContent: align,
     justifyContent: justify,
     flexDirection: direction as any,
-    width,
-    height,
     gap
   }">
     <slot></slot>

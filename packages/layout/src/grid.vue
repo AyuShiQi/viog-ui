@@ -2,10 +2,11 @@
   <div
   class="vi-grid"
   :style="{
-    width,
-    height,
     gridTemplateColumns: `repeat(${col}, 1fr)`,
     gridTemplateRows: `repeat(${row}, 1fr)`,
+    gridAutoFlow: flow,
+    placeContent,
+    placeItems,
     gap
   }">
     <slot></slot>
