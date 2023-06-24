@@ -23,7 +23,7 @@ export default function (props: any) {
     if (props.trigger !== 'hover') return
     if (props.disabled) return
     open.toOpen({
-      afterCb: boxPosition.calcSize
+      afterCb: boxPosition.toChangeViewPosition
     })
   }
 
@@ -35,7 +35,7 @@ export default function (props: any) {
     if (!open.open.value) {
       open.toSelect({
         preCb: () => !props.noTriggerOpen,
-        afterCb: boxPosition.calcSize
+        afterCb: boxPosition.toChangeViewPosition
       })
     } else {
       open.toSelect({
@@ -46,9 +46,8 @@ export default function (props: any) {
   }
 
   function toopen () {
-    // 当此次操作时打开时，仅做重新计算处理
     open.toOpen({
-      afterCb: boxPosition.calcSize
+      afterCb: boxPosition.toChangeViewPosition
     })
   }
 
