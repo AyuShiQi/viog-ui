@@ -82,13 +82,14 @@ export default function (mode = 'auto', parentNodeId?: string | Element) {
             listTop.value = -height.value
           }
           calcBottomAndTopListLeft(left, w)
+          // console.log(listTop.value, listLeft.value)
           return
         }
         // 是否能从右面/左面展开
         if (left + w + width.value <= innerWidth || left - width.value >= 0) {
           if (left + w + width.value <= innerWidth) {
             direction.value = 'right'
-            listLeft.value = left + w
+            listLeft.value = w
           } else {
             direction.value = 'left'
             listLeft.value = -width.value
@@ -113,7 +114,8 @@ export default function (mode = 'auto', parentNodeId?: string | Element) {
     // 首先查看是否能居中展示
     if (tempListLeft >= 0 && tempListLeft + width.value <= innerWidth) {
       // 如果list比view小
-      listLeft.value = tempListLeft - viewLeft
+      if (width.value === 0) listLeft.value = 0
+      else listLeft.value = tempListLeft - viewLeft
     // 无法居中看是否可以靠右
     } else if (viewLeft + width.value <= innerWidth) {
       if (viewLeft >= 0) listLeft.value = 0
@@ -135,7 +137,7 @@ export default function (mode = 'auto', parentNodeId?: string | Element) {
       listTop.value = 0
     // 不可以就往上走，直到view顶部贴近list底部,显示不完全也没办法，摆烂就行
     } else {
-      console.log(top, height.value, innerHeight)
+      // console.log(top, height.value, innerHeight)
       listTop.value = -viewTop - height.value + innerHeight
       // 尽量不要靠到最底部
     }
