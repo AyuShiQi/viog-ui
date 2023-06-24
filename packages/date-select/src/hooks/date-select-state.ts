@@ -6,6 +6,8 @@ import type { DateSelectProps } from '@/types/date-select-types'
 
 import { getTimeStamp } from '@/utils/time-utils'
 
+import { formTargetStateReactive } from '@/hooks/form-target-state'
+
 export default function (props: DateSelectProps) {
   const value = reactive(props.modelValue)
 
@@ -86,6 +88,8 @@ export default function (props: DateSelectProps) {
 
     return format
   })
+
+  if (props.name) formTargetStateReactive(props.name, value)
 
   return {
     value,

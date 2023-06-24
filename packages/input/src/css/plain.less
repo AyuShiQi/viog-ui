@@ -10,3 +10,13 @@
 .vi-input-plain.is-round {
     border-radius: var(--vi-round-radius);
 }
+
+.vi-form-item-invalid {
+    .vi-input-plain {
+        box-shadow: 0 0 0 1px var(--vi-red-color1);
+    
+        &:hover {
+            box-shadow: 0 0 0 1px var(--vi-background-color-deeper);
+        }
+    }
+}

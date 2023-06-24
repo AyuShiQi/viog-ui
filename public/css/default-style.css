@@ -16,6 +16,8 @@
     --vi-transition-slow: all .3s ease 0s;
     --vi-transition-large: all .5s ease 0s;
     --vi-transition-large-linear: all .5s linear 0s;
+
+    --vi-fade-in-out-len: 5px;
     /* 组件样式们 */
     --vi-button-padding: var(--vi-card-padding);
 
@@ -25,6 +27,9 @@
     --vi-scroll-width: ;
     --vi-scroll-max-height: ;
     --vi-scroll-min-height: ;
+
+    --vi-form-lable-gap: 8px;
+    --vi-form-item-gap: 2px;
 
     --vi-select-width: 200px;
     --vi-select-height: ;

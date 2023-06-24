@@ -10,7 +10,7 @@
     'is-filter': filter,
     'disabled': disabled
   }]">
-    <span class="vi-switch-slot">
+    <span class="vi-switch-slot" v-if="leftChoice">
       <slot name="left-choice"></slot>
     </span>
     <span
@@ -31,7 +31,7 @@
       :checked="modelValue"
       :name="name">
     </span>
-    <span class="vi-switch-slot">
+    <span class="vi-switch-slot" v-if="rightChoice">
       <slot name="right-choice"></slot>
     </span>
   </span>

@@ -35,3 +35,15 @@
         box-shadow: none;
     }
 }
+
+.vi-form-item-invalid {
+    .vi-input-default {
+        &::before {
+            background-color: var(--vi-red-color1);
+        }
+    
+        &:hover::before {
+            background-color: var(--vi-background-color-deeper);
+        }
+    }
+}

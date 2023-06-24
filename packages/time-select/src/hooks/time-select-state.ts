@@ -6,6 +6,8 @@ import { TimeSelectProps } from '@/types/time-select-types'
 
 import { getTimeStamp } from '@/utils/time-utils'
 
+import { formTargetStateReactive } from '@/hooks/form-target-state'
+
 export default function (props: TimeSelectProps) {
   const value = reactive(props.modelValue)
   watch(value, () => {
@@ -62,6 +64,8 @@ export default function (props: TimeSelectProps) {
   function needSecond () {
     return props.unit === 'second'
   }
+
+  if (props.name) formTargetStateReactive(props.name, value)
 
   return {
     value,

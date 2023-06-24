@@ -18,7 +18,7 @@
 .vi-fade-in-out-top-enter-from,
 .vi-fade-in-out-top-leave-to {
     opacity: 0;
-    transform: translateY(5px);
+    transform: translateY(var(--vi-fade-in-out-len));
 }
 
 .vi-fade-in-out-top-enter-to,
@@ -36,7 +36,7 @@
 .vi-fade-in-out-bottom-enter-from,
 .vi-fade-in-out-bottom-leave-to {
     opacity: 0;
-    transform: translateY(-5px);
+    transform: translateY(calc(0px - var(--vi-fade-in-out-len)));
 }
 
 .vi-fade-in-out-bottom-enter-to,
@@ -54,7 +54,7 @@
 .vi-fade-in-out-left-enter-from,
 .vi-fade-in-out-left-leave-to {
     opacity: 0;
-    transform: translateX(5px);
+    transform: translateX(var(--vi-fade-in-out-len));
 }
 
 .vi-fade-in-out-left-enter-to,
@@ -72,7 +72,7 @@
 .vi-fade-in-out-right-enter-from,
 .vi-fade-in-out-right-leave-to {
     opacity: 0;
-    transform: translateX(-5px);
+    transform: translateX(calc(0px - var(--vi-fade-in-out-len)));
 }
 
 .vi-fade-in-out-right-enter-to,

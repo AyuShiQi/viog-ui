@@ -55,11 +55,11 @@
 
 # 0.6.12（当前迭代开发版本）
 
+- 完善form组件功能
 - 添加form组件的rule检查
-- 添加form表单的正则以及代码规范
-- layout组件删除width及height等属性
-- 增加grid组件行列布局计算属性
-- 删除所有表单组件dark属性
+- layout组件删除width及height等属性*
+- 增加grid组件行列布局计算属性*
+- 删除所有表单组件dark属性*
 - 优化dropdown自动计算方位逻辑功能实现算法*
 - 修复dialog通过变量无法修改的问题*
 - 修复nodejs环境无法获取navigator变量的错误*
@@ -69,7 +69,7 @@
 # 0.6.11
 
 - 修改virtual-scroll组件bar颜色
-- 修复dropdown组件在更换时找不到children的情况（这个注意了）
+- 修复dropdown组件在更换时找不到children的情况（原因：rEL绑定错误）
 - 修复collapse组件，title span绑定flex：1
 
 # 0.6.10

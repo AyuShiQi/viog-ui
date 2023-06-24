@@ -160,3 +160,65 @@
         }
     }
 }
+
+// 表单无效区=============================================================================================
+.vi-form-item-invalid {
+    .vi-select-type-button {
+        .vi-select-input {
+            box-shadow: inset 0 0 0 1px var(--vi-red-color1);
+        }
+    
+        &:hover {
+            .vi-select-input {
+                box-shadow: none;
+            }   
+        }
+    }
+    
+    .vi-select-type-default {
+        .vi-select-input {    
+            &::after {
+                background-color: var(--vi-red-color1);
+            }
+        }
+    
+        &:hover {
+            .vi-select-input {
+                &::after {
+                    background-color: var(--vi-background-color-deeper);
+                }
+            }
+        }
+    }
+    
+    .vi-select-type-plain {
+        .vi-select-input {
+            box-shadow: 0 0 0 1px var(--vi-red-color1);
+        }
+    
+        &:hover {
+            .vi-select-input {
+                box-shadow: 0 0 0 1px var(--vi-background-color-deeper);
+            }
+        }
+    }
+    
+    .vi-select-type-plain.is-disabled {
+        color: var(--vi-background-color-deep);
+    
+        .vi-select-input {
+            box-shadow: 0 0 0 1px var(--vi-background-color-deep);
+            .vi-select-arrow {
+                path {
+                    fill: var(--vi-background-color-deep);
+                }
+            }
+        }
+    
+        &:hover {
+            .vi-select-input {
+                box-shadow: 0 0 0 1px var(--vi-background-color-deep);
+            }
+        }
+    }
+}

@@ -1,5 +1,64 @@
 <template>
-  <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
+  <vi-form @submit="look">
+    <template v-slot="{ submit }">
+      <vi-form-item label="昵称" :rules="[
+      {
+        rule: /杨/,
+        info: '您没有输入正确的昵称'
+      },
+      {
+        rule(vals: string) {
+          return vals.length === 6
+        },
+        info: '您需要输入杨诗绮'
+      }
+    ]">
+      <vi-input name="nickname" placeholder="输入昵称" v-model="val"></vi-input>
+      <vi-input name="nickname" placeholder="输入昵称" v-model="val" type="button"></vi-input>
+      <vi-input name="nickname" placeholder="输入昵称" v-model="val" type="plain"></vi-input>
+    </vi-form-item>
+    <vi-form-item label="性别">
+      <vi-radio-group name="sex" v-model="value">
+        <vi-radio value="male">男</vi-radio>
+        <vi-radio value="female">女</vi-radio>
+        <vi-radio value="unknown">未知</vi-radio>
+      </vi-radio-group>
+    </vi-form-item>
+    <vi-form-item label="爱好">
+      <vi-checkbox-group name="like" v-model="ar">
+        <vi-checkbox value="eating">吃饭</vi-checkbox>
+        <vi-checkbox value="sleep">睡觉</vi-checkbox>
+        <vi-checkbox value="play game">打游戏</vi-checkbox>
+      </vi-checkbox-group>
+    </vi-form-item>
+    <vi-form-item label="所在地">
+      <vi-select name="place" v-model="ar" multi>
+        <vi-option :value="1"></vi-option>
+      </vi-select>
+      <vi-select name="place" v-model="ar" multi type="button">
+        <vi-option :value="1"></vi-option>
+      </vi-select>
+      <vi-select name="place" v-model="ar" multi type="plain">
+        <vi-option :value="1"></vi-option>
+      </vi-select>
+    </vi-form-item>
+    <vi-form-item label="出生日期">
+      <vi-date-select name="birthday" v-model="o"></vi-date-select>
+      <vi-date-select name="birthday" v-model="o" type="button"></vi-date-select>
+      <vi-date-select name="birthday" v-model="o" type="plain"></vi-date-select>
+    </vi-form-item>
+    <vi-form-item label="选定事件">
+      <vi-time-select name="time"></vi-time-select>
+      <vi-time-select name="time" type="button"></vi-time-select>
+      <vi-time-select name="time" type="plain"></vi-time-select>
+    </vi-form-item>
+    <vi-form-item label="虚拟数据">
+      <vi-switch name="vd" v-model="res"></vi-switch>
+    </vi-form-item>
+     <vi-button @click="submit">121</vi-button>
+    </template>
+  </vi-form>
+  <!-- <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
   <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
   <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
   <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
@@ -13,15 +72,15 @@
   <vi-collapse-group accordion>
     <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
     <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
-    <!-- <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse> -->
     <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
-  </vi-collapse-group>
-  <vi-dropdown>
+    <vi-collapse title="下拉框" auto-retract type="button">内容</vi-collapse>
+  </vi-collapse-group> -->
+  <!-- <vi-dropdown>
     <vi-button>haode</vi-button>
     <template v-slot:content>
       12134
     </template>
-  </vi-dropdown>
+  </vi-dropdown> -->
   <!-- <vi-dialog v-model="open" title="这是一个对话框">
     你好
     <template v-slot:shutdown>
@@ -34,7 +93,7 @@
       <vi-button color="purple">确认</vi-button>
     </template>
   </vi-dialog> -->
-  <vi-button @click="open = true">打开对话框</vi-button>
+  <!-- <vi-button @click="open = true">打开对话框</vi-button> -->
   <!-- <vi-menu router>
     <vi-menu-item to="/ok">你好</vi-menu-item>
     <vi-menu-item to="/home">你好</vi-menu-item>
@@ -42,7 +101,7 @@
       <vi-menu-item to="/">你好</vi-menu-item>
     </vi-menu-group>
   </vi-menu> -->
-  <vi-bubble dark>
+  <!-- <vi-bubble dark>
     <vi-button @click="append">看bubble</vi-button>
     <template v-slot:content>
       <div>
@@ -58,7 +117,7 @@
       </div>
     </template>
   </vi-bubble>
-  <vi-table-editor v-model="ar"></vi-table-editor>
+  <vi-table-editor v-model="ar"></vi-table-editor> -->
   <!-- <vi-table-editor v-model="ar"></vi-table-editor> -->
   <!-- <vi-drawer v-model="open" teleport direction="bottom">
     <vi-table-editor style="width: 100%"></vi-table-editor>
@@ -68,8 +127,8 @@
       <vi-table-editor style="width: 100%"></vi-table-editor>
     </vi-drawer>
   </div> -->
-  <vi-select style="--vi-select-list-height: 400px; --vi-select-list-width: 300px; position: absolute; left: 50%;">
-  </vi-select>
+  <!-- <vi-select style="--vi-select-list-height: 400px; --vi-select-list-width: 300px; position: absolute; left: 50%;">
+  </vi-select> -->
 </template>
 
 <script lang="ts">
@@ -137,6 +196,10 @@ export default defineComponent({
       ViMessage.append('你好')
     }
 
+    function look (...args: any[]) {
+      console.log(...args)
+    }
+
     return {
       o,
       val,
@@ -153,7 +216,8 @@ export default defineComponent({
       searchInfo,
       optionList,
       handleSearch,
-      append
+      append,
+      look
     }
   },
   mounted () {

@@ -1,10 +1,10 @@
 import { provide, reactive } from 'vue'
 
 import type { GroupValueProps } from '@/types/checkbox-types'
+import { formTargetStateReactive } from '@/hooks/form-target-state'
 
 export default function (props: GroupValueProps) {
-  const groupValue = reactive(props.modelValue)
-
-  provide('checkbox-group-value', groupValue)
+  provide('checkbox-group-value', props.modelValue)
   provide('checkbox-group-name', props.name)
+  if (props.name) formTargetStateReactive(props.name, props.modelValue)
 }

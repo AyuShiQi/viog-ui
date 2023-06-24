@@ -8,6 +8,8 @@ import slotState from './slot-state'
 import searchState from './search-state'
 import passwordState from './password-state'
 
+import { formTargetStateRef } from '@/hooks/form-target-state'
+
 export default function (props: InputProps, context: SetupContext) {
   // input dom
   const input = ref()
@@ -16,6 +18,7 @@ export default function (props: InputProps, context: SetupContext) {
   const search = searchState(props, context, input)
   const inputEvent = valueState(props, context, search.search)
   const password = passwordState(props)
+  formTargetStateRef(props.name, inputEvent.value)
 
   /* 清除区 */
   function toClear () {

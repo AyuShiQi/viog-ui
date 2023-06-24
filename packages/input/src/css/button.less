@@ -2,6 +2,10 @@
     background-color: var(--vi-background-color);
     border-radius: var(--vi-card-radius);
     border: none;
+
+    &:hover {
+        background-color: var(--vi-background-color-deep);
+    }
 }
 
 .vi-input-button.is-focus {
@@ -10,4 +14,14 @@
 
 .vi-input-button.is-round {
     border-radius: var(--vi-round-radius);
+}
+
+.vi-form-item-invalid {
+    .vi-input-button {
+        box-shadow: inset 0 0 0 1px var(--vi-red-color1);
+
+        &:hover {
+            box-shadow: none;
+        }
+    }
 }

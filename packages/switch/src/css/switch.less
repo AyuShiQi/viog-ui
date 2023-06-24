@@ -7,7 +7,6 @@
         position: relative;
         display: inline-block;
         box-sizing: border-box;
-        margin: 0 4px;
         background-color: var(--vi-background-color);
         box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.1);
         transition: all .2s linear 0s;
@@ -41,6 +40,14 @@
         display: inline-flex;
         height: 100%;
         align-items: center;
+    }
+
+    .vi-switch-slot:first-child {
+        margin-right: 4px;
+    }
+
+    .vi-switch-slot:last-child {
+        margin-left: 4px;
     }
 }
 

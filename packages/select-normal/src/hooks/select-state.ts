@@ -5,6 +5,8 @@ import searchState from './search-state'
 import aliasState from './alias-state'
 import multiState from './multi-state'
 
+import { formTargetStateRef, formTargetStateReactive } from '@/hooks/form-target-state'
+
 export default function (props: any, ctx: SetupContext, useAlias = true) {
   const dropdown = ref()
   const choosed = computed(() => props.modelValue)
@@ -55,6 +57,7 @@ export default function (props: any, ctx: SetupContext, useAlias = true) {
   provide('update:choosed', changeSelect)
   provide('delete:choosed', deleteSelect)
   provide('choose-type', props.chooseType)
+  if (props.name) props.multi ? formTargetStateReactive(props.name, props.modelValue) : formTargetStateRef(props.name, choosed)
 
   return {
     isEmpty,

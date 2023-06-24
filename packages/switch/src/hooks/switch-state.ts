@@ -1,9 +1,15 @@
-import { onMounted, computed } from 'vue'
+import { onMounted, computed, useSlots } from 'vue'
 import type { SetupContext } from 'vue'
 
 import { SwitchProps } from '@/types/switch-types'
 
+import { formTargetStateRef } from '@/hooks/form-target-state'
+
 export default function (props: SwitchProps, context: SetupContext) {
+  const slots = useSlots()
+
+  const leftChoice = slots.leftChoice
+  const rightChoice = slots.rightChoice
   const nowColor = computed((): string => {
     return props.modelValue ? props.rightColor : props.leftColor
   })
@@ -40,10 +46,14 @@ export default function (props: SwitchProps, context: SetupContext) {
     else toOff()
   })
 
+  formTargetStateRef(props.name, computed(() => props.modelValue))
+
   return {
     toChange,
     toOn,
     toOff,
-    nowColor
+    nowColor,
+    leftChoice,
+    rightChoice
   }
 }

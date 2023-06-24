@@ -1,19 +1,21 @@
 <template>
   <div class="vi-form">
-    <slot></slot>
+    <slot :submit="submit"></slot>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, provide } from 'vue'
+import type { SetupContext } from 'vue'
 
+import formState from './hooks/form-state'
 import props from './props/form'
 
 export default defineComponent({
   name: 'ViForm',
   props,
-  setup (props: any) {
-    provide('labelWidth', props.labelWidth)
+  setup (props: any, ctx: SetupContext) {
+    return formState(ctx)
   }
 })
 </script>

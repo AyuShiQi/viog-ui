@@ -3,14 +3,16 @@
 
 .vi-form-item {
     display: flex;
-    margin-bottom: 16px;
-    color: @grey;
-    font-size: @font-size;
-    align-items: start;
+    color: var(--vi-link-color);
+    font-size: var(--vi-font-size);
+    align-items: center;
+    justify-content: start;
 
     .vi-form-label {
-        padding: 8px;
-        padding-left: 0;
+        width: 4em;
+        padding: 0;
+        margin: 0;
+        margin-right: var(--vi-form-lable-gap);
         text-align: right;
         box-sizing: border-box;
         flex-wrap: wrap;
@@ -19,7 +21,7 @@
     .vi-form-input {
         position: relative;
         display: flex;
-        height: 100%;
+        // height: 100%;
         flex: 1;
         align-items: center;
         box-sizing: border-box;
@@ -33,76 +35,62 @@
 
         .vi-form-attention {
             position: absolute;
+            bottom: -1em;
+            color: var(--vi-red-color1);
+            transform: scale(60%);
+            transform-origin: left center;
         }
     }
 }
 
-.vi-form-item.default {
+.vi-form-item-invalid {
+    .vi-form-input {
+        .vi-form-attention {
+            color: var(--vi-red-color1);
+        }
+    }
+}
+
+.vi-form-item-type-default {
     display: flex;
 }
 
-.vi-form-item.is-inline {
+.vi-form-item-type-inline {
     display: inline-flex;
 }
 
-.vi-form-item.is-middle {
-    margin-bottom: @font-size;
-    font-size: @font-size;
-    .vi-form-input {
-        .vi-form-attention {
-            position: absolute;
-            left: -8px;
-            bottom: -18px;
-            transform: scale(80%);
-        }
-    }
+.vi-form-item-size-middle {
+    margin-bottom: var(--vi-font-size);
+    font-size: var(--vi-font-size);
 }
 
-.vi-form-item.is-big {
-    margin-bottom: @big-font-size;
-    font-size: @big-font-size;
-    .vi-form-input {
-        .vi-form-attention {
-            position: absolute;
-            left: -10px;
-            bottom: -20px;
-            transform: scale(80%);
-        }
-    }
+.vi-form-item-size-big {
+    margin-bottom: var(--vi-big-font-size);
+    font-size: var(--vi-big-font-size);
 }
 
-.vi-form-item.is-small{
-    margin-bottom: @small-font-size;
-    font-size: @small-font-size;
-    .vi-form-input {
-        .vi-form-attention {
-            position: absolute;
-            left: -8px;
-            bottom: -16px;
-            transform: scale(80%);
-        }
-    }
+.vi-form-item-size-small{
+    margin-bottom: var(--vi-small-font-size);
+    font-size: var(--vi-small-font-size);
 }
 
-.vi-form-item.is-dark {
-    color: @black-background-hover
-}
-
-.vi-form-item.align-right {
+.vi-form-item-align-right {
     .vi-form-label {
         text-align: right;
     }
 }
 
-.vi-form-item.align-left {
+.vi-form-item-align-left {
     .vi-form-label {
         text-align: left;
     }
 }
 
-.vi-form-item.align-updown {
+.vi-form-item-align-updown {
     flex-direction: column;
     .vi-form-label {
         text-align: left;
     }
 }
+
+@import './transition.less';
