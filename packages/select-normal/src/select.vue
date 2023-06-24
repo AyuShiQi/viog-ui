@@ -28,7 +28,7 @@
             @compositionend="handleCompositionAfter"
             ref="input">
           </span>
-          <span class="vi-select-choose" v-else>
+          <span class="vi-select-choose" v-else :class="{ 'show-placeholder': isEmpty }">
             <!-- 渲染为多选节点 -->
             <template v-if="chooseShow instanceof Array">
               <selectItem v-for="item in chooseShow" :key="item">{{ aliasShow(item) }}</selectItem>

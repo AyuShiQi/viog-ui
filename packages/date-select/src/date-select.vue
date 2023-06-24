@@ -18,13 +18,13 @@
           'is-open': open
         }
       ]">
-        <span class="vi-date-select-choose">
+        <span class="vi-date-select-choose" :class="{ 'show-placeholder': formatDateTime === placeholder }">
           {{formatDateTime}}
         </span>
         <span class="vi-date-select-choose__gap" v-if="range">
           {{ separate }}
         </span>
-        <span class="vi-date-select-choose" v-if="range">
+        <span class="vi-date-select-choose" v-if="range" :class="{ 'show-placeholder': formatDateTimeEnd === placeholder }">
           {{formatDateTimeEnd}}
         </span>
         <svg

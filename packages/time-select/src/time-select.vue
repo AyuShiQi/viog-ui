@@ -9,11 +9,11 @@
     }
   ]">
     <span class="vi-time-select-input">
-      <span class="vi-time-select-choose">
+      <span class="vi-time-select-choose" :class="{ 'show-placeholder': formatTime === placeholder }">
         {{formatTime}}
       </span>
       <span class="vi-time-select-choose-gap" v-if="range">{{ separate }}</span>
-      <span class="vi-time-select-choose" v-if="range">
+      <span class="vi-time-select-choose" v-if="range" :class="{ 'show-placeholder': formatTimeEnd === placeholder }">
         {{formatTimeEnd}}
       </span>
       <svg

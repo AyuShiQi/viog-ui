@@ -16,7 +16,7 @@
           'be-open': open
         }
       ]">
-        <span class="vi-select-choose">
+        <span class="vi-select-choose" :class="{ 'show-placeholder': isEmpty }">
             <!-- 渲染为多选节点 -->
             <template v-if="chooseShow instanceof Array">
               <selectItem v-for="item in chooseShow" :key="item">{{ aliasShow(item) }}</selectItem>

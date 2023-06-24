@@ -36,7 +36,7 @@ export default function (props: any, ctx: SetupContext, useAlias = true) {
   // 显现的选择
   const chooseShow = computed(() => {
     // 没有选择就返回placeholder
-    if (isEmpty()) return props.placeholder
+    if (isEmpty.value) return props.placeholder
 
     // 多选直接返回选择列表
     if (props.multi) return props.modelValue
@@ -44,12 +44,12 @@ export default function (props: any, ctx: SetupContext, useAlias = true) {
   })
 
   // 判断是否有选择
-  function isEmpty () {
+  const isEmpty = computed(() => {
     if (props.multi) {
       return props.modelValue.length === 0
     }
     return !props.modelValue
-  }
+  })
 
   provide('choosed', choosed)
   provide('update:choosed', changeSelect)
