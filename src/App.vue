@@ -16,6 +16,7 @@
       <vi-input name="nickname" placeholder="输入昵称" v-model="val"></vi-input>
       <vi-input name="nickname" placeholder="输入昵称" v-model="val" type="button"></vi-input>
       <vi-input name="nickname" placeholder="输入昵称" v-model="val" type="plain"></vi-input>
+      <vi-select name="place" v-model="ar" multi type="plain"></vi-select><vi-button>Nihao</vi-button>
     </vi-form-item>
     <vi-form-item label="性别">
       <vi-radio-group name="sex" v-model="value">
