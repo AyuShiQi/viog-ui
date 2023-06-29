@@ -1,6 +1,12 @@
 <template>
-  <div class="vi-upload-choose" @click="handleClick">
-    <slot></slot>
+  <div class="vi-upload-choose" @click="handleClick" @drop="handleDrop" @dragover="e=>e.preventDefault()">
+    <slot>
+      <div class="vi-upload-choose__drag-default" v-if="drag">
+        <vi-icon type="wenjianjia" style="font-size: 48px; color: var(--vi-background-color-deep)"></vi-icon>
+        通过拖拽或点击上传文件
+      </div>
+      <vi-upload-list v-if="drag"></vi-upload-list>
+    </slot>
   </div>
 </template>
 
@@ -17,7 +23,7 @@ export default defineComponent({
   name: 'ViUploadChoose',
   props,
   setup (props: any, ctx: SetupContext) {
-    const optionChoose = optionChooseState()
+    const optionChoose = optionChooseState(props)
 
     return optionChoose
   }

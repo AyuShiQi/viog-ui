@@ -24,9 +24,14 @@ export default function (props: any, ctx: SetupContext) {
   }
 
   function handleFileChange (e: Event) {
-    const _prevent = eventPrevent()
     const { files } = e.target as HTMLInputElement
+    addFileList(files)
+  }
+  // 方法
+  function addFileList (files: FileList | null) {
+    const _prevent = eventPrevent()
     let flag = false
+
     for (const file of files!) {
       if (props.limit && file.size > props.limit) {
         ctx.emit('LimitAttention', file)
@@ -52,7 +57,7 @@ export default function (props: any, ctx: SetupContext) {
       if (flag) ctx.emit('change', [...fileList])
     }
   }
-  // 方法
+
   function toDelete (file: File) {
     const _prevent = eventPrevent()
     ctx.emit('beforedelete', file, _prevent.preventDefault)
@@ -66,6 +71,7 @@ export default function (props: any, ctx: SetupContext) {
   // 普通function函数
   // provide
   provide('upload-choose-file', toChooseFile)
+  provide('upload-add-files', addFileList)
   provide('upload-file-list', fileList)
   provide('upload-delete-file', toDelete)
   // 生命周期

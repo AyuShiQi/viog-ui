@@ -1,3 +1,21 @@
 .vi-upload-choose {
     width: 100%;
+
+    .vi-upload-choose__drag-default {
+        display: flex;
+        width: 100%;
+        min-height: 200px;
+        border: 2px dashed var(--vi-background-color-deep);
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        flex-direction: column;
+        user-select: none;
+        transition: var(--vi-transition);
+        cursor: pointer;
+
+        &:hover {
+            border: 2px dashed var(--vi-main-color3);
+        }
+    }
 }

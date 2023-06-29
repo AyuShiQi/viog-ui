@@ -28,7 +28,8 @@ export default function (props: any, ctx: SetupContext) {
   const toDelete = inject('upload-delete-file', undefined) as ((file: File) => void) | undefined
   // computed
   // 事件方法
-  function handleDelete () {
+  function handleDelete (e: Event) {
+    e.stopPropagation()
     if (toDelete) toDelete(file as File)
   }
   // 方法

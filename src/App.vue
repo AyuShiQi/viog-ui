@@ -58,6 +58,10 @@
      <vi-button @click="submit">121</vi-button>
     </template>
   </vi-form>
+  <vi-upload>
+    <vi-upload-choose drag>
+    </vi-upload-choose>
+  </vi-upload>
   <!-- <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
   <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
   <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
