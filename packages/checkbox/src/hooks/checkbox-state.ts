@@ -19,7 +19,18 @@ export default function (props: CheckboxProps, context: SetupContext) {
   // computed
   // 该checkbox是否包含于结果之中
   const containsValue = computed((): boolean => {
-    return nowPick instanceof Array ? nowPick.includes(props.value) : false
+    if (nowPick instanceof Array) {
+      // 检查是否每一个都在
+      if (props.value instanceof Array) {
+        let res = true
+        for (const item of props.value) {
+          res &&= nowPick.includes(item)
+        }
+        return res
+      }
+      return nowPick.includes(props.value)
+    }
+    return false
   })
   // 事件方法
   /**
@@ -38,12 +49,25 @@ export default function (props: CheckboxProps, context: SetupContext) {
   // 普通function函数
   function valueChange (target: any[]): boolean {
     if (containsValue.value) {
-      const index = target.indexOf(props.value)
-      target.splice(index, 1)
+      if (props.value instanceof Array) {
+        for (const item of props.value) {
+          const index = target.indexOf(item)
+          target.splice(index, 1)
+        }
+      } else {
+        const index = target.indexOf(props.value)
+        target.splice(index, 1)
+      }
       return true
     } else {
+      if (props.value instanceof Array) {
+        for (const item of props.value) {
+          if (target.indexOf(item) === -1) target.push(item)
+        }
+      } else {
+        target.push(props.value)
+      }
       // 没有就加进去
-      target.push(props.value)
       return false
     }
   }

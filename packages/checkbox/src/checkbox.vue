@@ -25,7 +25,7 @@
         <path class="vi-gougou-path" stroke="#fff" stroke-width="2" fill="none" d="M2.6 8.5l7 8 7.6-13"/>
       </svg>
     </span>
-    <span class="vi-checkbox-text" @click="toPick">
+    <span class="vi-checkbox-text" @click="toPick" v-if="!hidden">
         <slot>{{value}}</slot>
     </span>
   </span>

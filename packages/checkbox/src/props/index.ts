@@ -3,7 +3,7 @@ export default {
     type: Array,
     default: []
   },
-  value: [String, Number, Boolean],
+  value: [String, Number, Boolean, Array],
   name: {
     type: String,
     default: ''
@@ -29,6 +29,10 @@ export default {
     default: false
   },
   checked: {
+    type: Boolean,
+    default: false
+  },
+  hidden: {
     type: Boolean,
     default: false
   }

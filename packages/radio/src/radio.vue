@@ -21,7 +21,7 @@
     @click="handleChange"
     type="radio">
     <span class="vi-radio-circle" @click="toPick"><span class="vi-radio-ball"></span></span>
-    <span class="vi-radio-text" @click="toPick">
+    <span class="vi-radio-text" @click="toPick" v-if="!hidden">
         <slot>{{ value }}</slot>
     </span>
   </span>

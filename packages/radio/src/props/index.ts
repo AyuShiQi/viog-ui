@@ -25,5 +25,9 @@ export default {
   checked: {
     type: Boolean,
     default: false
+  },
+  hidden: {
+    type: Boolean,
+    default: false
   }
 }
