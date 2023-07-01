@@ -2,8 +2,15 @@
     position: relative;
     --vi-scroll-width: var(--vi-table-width);
     --vi-scroll-height: var(--vi-table-height);
+    width: var(--vi-table-width);
+    height: var(--vi-table-height);
     transition: none;
     user-select: none;
+    overflow: hidden;
+
+    .vi-table-editor__scroll {
+        position: relative;
+    }
 
     .vi-table-editor__view {
         color: var(--vi-link-color);
