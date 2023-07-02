@@ -1,0 +1,43 @@
+.vi-table-type-default {
+    .vi-table__body__tr-box {
+        border-bottom: 1px solid var(--vi-background-color-deep);
+    }
+}
+
+.vi-table-type-three-line {
+    border-top: 2px solid var(--vi-background-color-deep);
+    border-bottom: 2px solid var(--vi-background-color-deep);
+}
+
+.vi-table-type-border {
+    border-top: 1px solid var(--vi-background-color-deep);
+    border-right: 1px solid var(--vi-background-color-deep);
+    .vi-table__head__tr {
+        th {
+            border-left: 1px solid var(--vi-background-color-deep);
+        }
+    }
+
+    .vi-table__body__tr {
+        border-bottom: 1px solid var(--vi-background-color-deep);
+        td {
+            border-left: 1px solid var(--vi-background-color-deep);
+        }
+    }
+}
+
+.vi-table-stripe {
+    .vi-table__body__tr-box:nth-child(even) {
+        .vi-table__body__tr {
+            background-color: var(--vi-background-color);
+        }
+    }
+}
+
+.vi-table-hover {
+    .vi-table__body__tr-box {
+        .vi-table__body__tr:hover {
+            background-color: var(--vi-main-color5);
+        }
+    }
+}

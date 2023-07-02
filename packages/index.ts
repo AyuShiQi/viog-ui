@@ -41,6 +41,7 @@ import ViDateSelect from './date-select'
 import ViTimeSelect from './time-select'
 import ViUpload from './upload'
 
+import ViTable from './table'
 import ViTableEditor from './table-editor'
 // type
 export * from '@/types'
@@ -77,7 +78,8 @@ const components = [
   ViAvater,
   ViBreadcrumb,
   ViUpload,
-  ViTableEditor
+  ViTableEditor,
+  ViTable
 ]
 
 export {
