@@ -1,6 +1,6 @@
 export interface CheckboxProps {
-  modelValue: unknown[],
-  value: string | number | boolean | undefined,
+  modelValue: any[],
+  value: any[] | string | number | boolean | undefined,
   name: string,
   size: string,
   type: string,

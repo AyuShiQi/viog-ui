@@ -1,6 +1,8 @@
 # 后续
 
 - 增添tag等组件的router模式to属性
+- 优化scroll组件scroll-bar展示
+- 新增list组件
 
 # 0.12.0
 
@@ -46,10 +48,12 @@
 
 # 0.7.0
 
-- 新增list组件
-- 新增表格组件
-
-# 0.6.13
+- 新增table组件
+- 新增chexkbox、radio组件hidden属性
+- 新增checkbox组件value确认组
+- 优化table-editor组件固定头部展示效果
+- 新增scroll组件overlay属性
+- 优化虚拟滚动，支持动态改变参数，调整样式传入方式
 
 # 0.6.12（当前迭代开发版本）
 

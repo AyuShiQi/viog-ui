@@ -1,5 +1,5 @@
 <template>
-  <vi-form @submit="look">
+  <!-- <vi-form @submit="look">
     <template v-slot="{ submit }">
       <vi-form-item label="昵称" :rules="[
       {
@@ -62,7 +62,32 @@
   <vi-upload>
     <vi-upload-choose drag>
     </vi-upload-choose>
-  </vi-upload>
+  </vi-upload> -->
+  <br>
+  <br>
+  <vi-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px" overlay>
+    <vi-table :datas="table.slice(1)" align="center" stripe hover pick :pickValue="choose" @update:pickValue="(v: any) => choose = v">
+      <vi-table-column value="0">销量</vi-table-column>
+      <vi-table-column value="1">领先销量</vi-table-column>
+      <vi-table-column value="2">全球销量</vi-table-column>
+    </vi-table>
+  </vi-scroll>
+  <vi-virtual-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px" :datas="info" overlay>
+    <template v-slot="{ data }">
+      <div>{{ data }}</div>
+    </template>
+  </vi-virtual-scroll>
+  <vi-button @click="handleAddInfo">点击</vi-button>
+  <vi-table :datas="table.slice(1)" type="border" align="center" pick multi :pickValue="ar">
+    <vi-table-column value="0" style="width: 70px;">销量</vi-table-column>
+    <vi-table-column value="1" style="width: 140px;">领先销量</vi-table-column>
+    <vi-table-column value="2" style="width: 70px;">全球销量</vi-table-column>
+  </vi-table>
+  <vi-table :datas="table.slice(1)" type="three-line" align="center">
+    <vi-table-column value="0" style="width: 70px;">销量</vi-table-column>
+    <vi-table-column value="1" style="width: 140px;">领先销量</vi-table-column>
+    <vi-table-column value="2" style="width: 70px;">全球销量</vi-table-column>
+  </vi-table>
   <!-- <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
   <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
   <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
@@ -123,7 +148,7 @@
     </template>
   </vi-bubble>
   <vi-table-editor v-model="ar"></vi-table-editor> -->
-  <!-- <vi-table-editor v-model="ar"></vi-table-editor> -->
+  <!-- <vi-table-editor v-model="table"></vi-table-editor> -->
   <!-- <vi-drawer v-model="open" teleport direction="bottom">
     <vi-table-editor style="width: 100%"></vi-table-editor>
   </vi-drawer> -->
@@ -192,7 +217,11 @@ export default defineComponent({
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
     const obj = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 }]
     const table = [['销量', '领先销量', '全球销量'], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]
+    const info = reactive([] as string[])
 
+    function handleAddInfo () {
+      info.push('xinde')
+    }
     watch(ar, () => {
       console.log(ar)
     })
@@ -222,7 +251,9 @@ export default defineComponent({
       optionList,
       handleSearch,
       append,
-      look
+      look,
+      handleAddInfo,
+      info
     }
   },
   mounted () {
