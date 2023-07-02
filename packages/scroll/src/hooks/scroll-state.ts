@@ -1,6 +1,7 @@
 import { ref } from 'vue'
 
 import lazyState from './lazy-state'
+import scrollBarState from './scroll-bar-state'
 
 export default function (props: any) {
   const content = ref()
@@ -9,9 +10,11 @@ export default function (props: any) {
     content.value.scrollTo(x, y)
   }
 
+  const scrollBar = scrollBarState(content)
   lazyState(props, content)
 
   return {
+    ...scrollBar,
     content,
     scrollTo
   }

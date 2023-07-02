@@ -1,0 +1,39 @@
+.vi-scroll,
+.vi-virtual-scroll {
+    position: relative;
+    div[class^=vi-scroll-bar] {
+        display: none;
+        position: absolute;
+        z-index: 60;
+        background-color: var(--vi-bg-color-deep-alpha);
+        border-radius: 3px;
+    }
+
+    .vi-scroll-bar-vertical {
+        top: 0;
+        right: 0;
+        width: 6px;
+    }
+
+    .vi-scroll-bar-horizontal {
+        left: 0;
+        bottom: 0;
+        height: 6px;
+    }
+}
+
+.vi-scroll-overlay {
+    div[class^=vi-scroll-bar] {
+        display: block;
+    }
+
+    .vi-scroll-view-content {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+.vi-scroll-start-scroll {
+    user-select: none;
+}

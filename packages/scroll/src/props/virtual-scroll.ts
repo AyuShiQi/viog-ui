@@ -18,5 +18,9 @@ export default {
   datas: {
     type: Array,
     defualt: []
+  },
+  overlay: {
+    type: Boolean,
+    default: false
   }
 }

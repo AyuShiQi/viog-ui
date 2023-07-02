@@ -3,18 +3,33 @@
   :class="[
   `scroll-${color}`,{
     'is-hidden': hidden,
-  }]"
-  ref="content">
-    <div class="list-brace" :style="{
-      height: `${totalHeight}px`
-    }"></div>
-    <div class="list"
+    'vi-scroll-overlay': overlay,
+    'vi-scroll-start-scroll': beginScroll
+  }]">
+    <div class="vi-scroll-bar-vertical"
+    @mousedown="handleMousedown($event, 0)"
     :style="{
-      transform: `translateY(${nowHeight}px)`
-    }">
-    <template v-for="data in datas!.slice(beginIndex,endIndex + 1)" :key="data.scrollTop">
-      <slot :data="data"></slot>
-    </template>
+      height: `${barHeight}px`,
+      transform: `translateY(${barTop}px)`
+    }"></div>
+    <div class="vi-scroll-bar-horizontal"
+    @mousedown="handleMousedown($event, 1)"
+    :style="{
+      width: `${barWidth}px`,
+      transform: `translateX(${barLeft}px)`
+    }"></div>
+    <div class="vi-scroll-content-view" ref="content">
+      <div class="list-brace" :style="{
+        height: `${totalHeight}px`
+      }"></div>
+      <div class="list"
+      :style="{
+        transform: `translateY(${nowHeight}px)`
+      }">
+      <template v-for="data in useDatas.slice(beginIndex,endIndex + 1)" :key="data.scrollTop">
+        <slot :data="data.value"></slot>
+      </template>
+      </div>
     </div>
   </div>
 </template>

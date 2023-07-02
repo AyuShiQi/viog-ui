@@ -26,5 +26,9 @@ export default {
   finish: {
     type: Boolean,
     default: false
+  },
+  overlay: {
+    type: Boolean,
+    default: false
   }
 }

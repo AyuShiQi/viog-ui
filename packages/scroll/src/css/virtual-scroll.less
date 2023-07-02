@@ -1,5 +1,5 @@
 .vi-virtual-scroll {
-    overflow: auto;
+    overflow: hidden;
     position: relative;
     // 可自控
     width: var(--vi-scroll-width);
@@ -7,82 +7,148 @@
     min-height: var(--vi-scroll-min-height);
     max-height: var(--vi-scroll-max-height);
 
-    .list {
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
-
-    &::-webkit-scrollbar {
-        width: 6px;
-        height: 100%;
-        opacity: 1;
-        transition: all 0.2s;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        border-radius: 3px;
-        transition: all .2s ease-in-out
-    }
-
-    &:-webkit-window-inactive::-webkit-scrollbar-thumb {
-        background-color: transparent;
+    .vi-scroll-content-view {
+        overflow: auto;
+        position: relative;
+        width: var(--vi-scroll-width);
+        height: var(--vi-scroll-height);
+        min-height: var(--vi-scroll-min-height);
+        max-height: var(--vi-scroll-max-height);
+        .list {
+            position: absolute;
+            top: 0;
+            width: 100%;
+    
+            > * {
+                height: var(--vi-scroll-item-height);
+            }
+        }
+    
+        &::-webkit-scrollbar {
+            width: 6px;
+            height: 100%;
+            opacity: 1;
+            transition: all 0.2s;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            border-radius: 3px;
+            transition: all .2s ease-in-out
+        }
+    
+        &:-webkit-window-inactive::-webkit-scrollbar-thumb {
+            background-color: transparent;
+        }
     }
 }
 
 .vi-virtual-scroll.scroll-white {
-    &::-webkit-scrollbar-thumb {
-        background-color: #fff;
+    .vi-scroll-content-view {
+        &::-webkit-scrollbar-thumb {
+            background-color: #fff;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: var(--vi-background-color);
+        }
     }
 
-    &::-webkit-scrollbar-thumb:hover {
-        background-color: var(--vi-background-color);
+    div[class^=vi-scroll-bar] {
+        background-color: #fff;
+
+        &:hover {
+            background-color: var(--vi-background-color);
+        }
     }
 }
 
 .vi-virtual-scroll.scroll-grey {
-    &::-webkit-scrollbar-thumb {
-        background-color: var(--vi-background-color-deep);
+    .vi-scroll-content-view {
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--vi-background-color-deep);
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: var(--vi-background-color-deeper);
+        }
     }
 
-    &::-webkit-scrollbar-thumb:hover {
-        background-color: var(--vi-background-color-deeper);
+    div[class^=vi-scroll-bar] {
+        background-color: var(--vi-bg-color-deep-alpha);
+
+        &:hover {
+            background-color: var(--vi-bg-color-deeper-alpha);   
+        }
     }
 }
 
 .vi-virtual-scroll.scroll-black {
-    &::-webkit-scrollbar-thumb {
-        background-color: var(--vi-link-color);
+    .vi-scroll-content-view {
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--vi-link-color);
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: var(--vi-font-color);
+        }
     }
 
-    &::-webkit-scrollbar-thumb:hover {
-        background-color: var(--vi-font-color);
+    div[class^=vi-scroll-bar] {
+        background-color: var(--vi-link-color);
+
+        &:hover {
+            background-color: var(--vi-font-color);
+        }
     }
 }
 
 .vi-virtual-scroll.scroll-purple {
-    &::-webkit-scrollbar-thumb {
-        background-color: var(--vi-purple-color3);
+    .vi-scroll-content-view {
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--vi-purple-color3);
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: var(--vi-purple-color1);
+        }
     }
 
-    &::-webkit-scrollbar-thumb:hover {
-        background-color: var(--vi-purple-color1);
+    div[class^=vi-scroll-bar] {
+        background-color: var(--vi-purple-color3);
+
+        &:hover {
+            background-color: var(--vi-purple-color1);
+        }
     }
 }
 
 .vi-virtual-scroll.scroll-golden {
-    &::-webkit-scrollbar-thumb {
-        background-color: var(--vi-golden-color2);
+    .vi-scroll-content-view {
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--vi-golden-color2);
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: var(--vi-golden-color1);
+        }
     }
 
-    &::-webkit-scrollbar-thumb:hover {
-        background-color: var(--vi-golden-color1);
+    div[class^=vi-scroll-bar] {
+        background-color: var(--vi-golden-color2);
+
+        &:hover {
+            background-color: var(--vi-golden-color1);
+        }
     }
 }
 
 .vi-virtual-scroll.is-hidden {
     &::-webkit-scrollbar {
-        width: 0px;
+        display: none;
+    }
+
+    div[class^=vi-scroll-bar] {
+        display: none;
     }
 }
 

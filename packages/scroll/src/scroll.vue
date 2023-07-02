@@ -1,12 +1,28 @@
 <template>
   <div class="vi-scroll"
   :class="[
-  `scroll-${color}`,{
+  `scroll-${color}`,
+  {
     'is-hidden': hidden,
-    'is-smooth': smooth
-  }]"
-  ref="content">
-    <slot></slot>
+    'is-smooth': smooth,
+    'vi-scroll-overlay': overlay,
+    'vi-scroll-start-scroll': beginScroll
+  }]">
+    <div class="vi-scroll-bar-vertical"
+    @mousedown="handleMousedown($event, 0)"
+    :style="{
+      height: `${barHeight}px`,
+      transform: `translateY(${barTop}px)`
+    }"></div>
+    <div class="vi-scroll-bar-horizontal"
+    @mousedown="handleMousedown($event, 1)"
+    :style="{
+      width: `${barWidth}px`,
+      transform: `translateX(${barLeft}px)`
+    }"></div>
+      <div class="vi-scroll-view-content" ref="content">
+        <slot></slot>
+      </div>
     <div v-if="lazy!==null&&wait!=='none'" v-show="!finish" class="lazy-loading">
       <div class="loading-animation">
         <ViLoading :type="wait" color="grey" size="35px"></ViLoading>
