@@ -37,6 +37,8 @@
     </div>
     <scroll
     class="vi-table-editor__scroll"
+    @scroll="scrollListener"
+    overlay
     ref="table">
       <div class="vi-table-editor__view" draggable="false">
         <!-- body部分 -->

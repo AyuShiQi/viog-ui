@@ -166,7 +166,7 @@ export default function (props: any, ctx: SetupContext) {
   // provide
   // 生命周期
   const tableValue = tableValueState(props, ctx, value)
-  const boxSize = boxSizeState(table)
+  const boxSize = boxSizeState(table, value)
   const pickBox = pickBoxState(props, ctx, boxSize, tableValue.chooseTarget, value)
   const contextMenu = contextMenuState(props, ctx, tableValue.chooseTarget, pickBox.pickTarget, tableValue.entireTarget, value, table)
   const scroll = scrollState(table, pickBox.needPick, pickBox.needChange, boxSize)

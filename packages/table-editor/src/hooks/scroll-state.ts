@@ -22,9 +22,9 @@ export default function (table: Ref, needPick: Ref<boolean>, needChange: Ref<boo
   // inject
   // computed
   // 事件方法
-  function scrollListener () {
-    tableLeft.value = table.value.$el.scrollLeft
-    tableTop.value = table.value.$el.scrollTop
+  function scrollListener (e: Event) {
+    tableLeft.value = (e.target as any)?.scrollLeft
+    tableTop.value = (e.target as any)?.scrollTop
   }
 
   // 开启拖动模式
@@ -40,9 +40,9 @@ export default function (table: Ref, needPick: Ref<boolean>, needChange: Ref<boo
     scrollDrag.value = true
 
     if (timer !== -1) return
-    ({ scrollLeft, scrollTop } = table.value.$el)
+    ({ scrollLeft, scrollTop } = table.value.$el.children[2])
 
-    const { x, y, width, height } = table.value.$el.getBoundingClientRect()
+    const { x, y, width, height } = table.value.$el.children[2].getBoundingClientRect()
     // console.log(x, y, width, height)
     timer = requestAnimationFrame(step)
 
@@ -81,14 +81,12 @@ export default function (table: Ref, needPick: Ref<boolean>, needChange: Ref<boo
   // provide
   // 生命周期
   onMounted(() => {
-    table.value.$el.addEventListener('scroll', scrollListener)
     tableBody.value.addEventListener('mouseleave', handleMouseleave)
     tableBody.value.addEventListener('mouseenter', handleMouseEnter)
     document.addEventListener('mousemove', handleMouseMove)
   })
 
   onBeforeUnmount(() => {
-    table.value.$el.removeEventListener('scroll', scrollListener)
     tableBody.value.removeEventListener('mouseleave', handleMouseleave)
     tableBody.value.removeEventListener('mouseenter', handleMouseEnter)
     document.removeEventListener('mousemove', handleMouseMove)
@@ -96,6 +94,7 @@ export default function (table: Ref, needPick: Ref<boolean>, needChange: Ref<boo
   return {
     tableBody,
     tableLeft,
-    tableTop
+    tableTop,
+    scrollListener
   }
 }

@@ -92,6 +92,10 @@
         }
     }
 
+    .vi-table-editor__view {
+        position: relative;
+    }
+
     .vi-table-editor__body {
         position: absolute;
         top: var(--vi-table-header-height);
@@ -99,6 +103,7 @@
         color: var(--vi-font-color);
         .vi-table-editor__body__tr {
             display: flex;
+            flex-wrap: nowrap;
         }
         user-select: none;
     }

@@ -1,5 +1,5 @@
 // vue
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 // vue type
 import type { Ref } from 'vue'
 // 组件type
@@ -7,7 +7,7 @@ import type { Ref } from 'vue'
 // 内部hooks
 // 外部模块
 const pxreg = /px$/
-export default function (table: Ref) {
+export default function (table: Ref, value: any) {
   // 普通常量
   // DOM ref
   // ref
@@ -15,6 +15,9 @@ export default function (table: Ref) {
   const siderWidth = ref(0)
   const tdWidth = ref(0)
   const tdHeight = ref(0)
+  /**
+   * table body部分的宽度和高度
+   */
   // reactive
   // inject
   // computed
