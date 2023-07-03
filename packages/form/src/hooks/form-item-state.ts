@@ -59,11 +59,6 @@ export default function (props: any) {
       if (!res) showInfo.value = props.errorInfo
     }
 
-    /**
-     * 临时的，要改回来
-     */
-    showInfo.value = props.errorInfo
-    isValid.value = false
     return res
   }
 
