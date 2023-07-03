@@ -45,7 +45,7 @@ export default function (props: any) {
    */
   function checkValue (): boolean {
     let res = true
-    const value = String(valueMap[1])
+    const value = valueMap[1]
     // 自定义规则检测
     if (props.rules instanceof Array) {
       for (const rule of props.rules) {
@@ -59,6 +59,7 @@ export default function (props: any) {
       if (!res) showInfo.value = props.errorInfo
     }
 
+    isValid.value = res
     return res
   }
 
@@ -73,12 +74,12 @@ export default function (props: any) {
    * @param value 对应值
    * @returns 是否通过检测
    */
-  function execCheck (rule: any, value: string): boolean {
+  function execCheck (rule: any, value: any): boolean {
     if (rule instanceof Function) {
       return rule(value)
     } else if (typeof rule === 'string' || rule instanceof RegExp) {
       // 正则表达匹配区
-      return RegExp(rule).test(value)
+      return RegExp(rule).test(String(value))
     }
     return true
   }
