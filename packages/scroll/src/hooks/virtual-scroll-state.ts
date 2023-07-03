@@ -1,9 +1,11 @@
 import { ref, computed, onMounted, onUpdated } from 'vue'
 
+import type { SetupContext } from 'vue'
+
 import { VirtualScrollProps } from '@/types/scroll-types'
 import scrollBarState from './scroll-bar-state'
 
-export default function (props: VirtualScrollProps) {
+export default function (props: VirtualScrollProps, ctx: SetupContext) {
   // item list相关数据
   const useDatas = computed(packageArray)
   // 渲染开始下标
@@ -48,7 +50,7 @@ export default function (props: VirtualScrollProps) {
     if (/px$/.test(height)) {
       itemHeight.value = Number(height.slice(0, -2))
     }
-    console.log(itemHeight.value)
+    // console.log(itemHeight.value)
   }
 
   /**
@@ -76,6 +78,7 @@ export default function (props: VirtualScrollProps) {
     // 计算到当前应该渲染的节点高度，重新渲染结点
     renderScrollNode()
     // console.log(scrollTop, nowHeight.value, totalHeight.value, begin, end)
+    ctx.emit('scroll', e)
   }
 
   /**
@@ -97,7 +100,7 @@ export default function (props: VirtualScrollProps) {
     // 计算第一次结尾高度
     const end = Math.ceil(contentHeight.value / itemHeight.value)
     endIndex.value = end < useDatas.value.length ? end : useDatas.value.length
-    console.log(itemHeight.value, contentHeight.value, endIndex.value)
+    // console.log(itemHeight.value, contentHeight.value, endIndex.value)
   })
 
   onUpdated(() => {

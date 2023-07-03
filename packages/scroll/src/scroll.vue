@@ -23,7 +23,7 @@
       width: `${barWidth}px`,
       transform: `translateX(${barLeft}px)`
     }"></div>
-      <div class="vi-scroll-view-content" ref="content">
+      <div class="vi-scroll-view-content" ref="content" @scroll="lookScroll">
         <slot></slot>
       </div>
     <div v-if="lazy!==null&&wait!=='none'" v-show="!finish" class="lazy-loading">
@@ -36,7 +36,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { SetupContext, defineComponent } from 'vue'
 
 import props from './props/scroll'
 
@@ -52,8 +52,8 @@ export default defineComponent({
     ViLoading: loading
   },
   props,
-  setup (props: ScrollProps) {
-    const scroll = scrollState(props)
+  setup (props: ScrollProps, ctx: SetupContext) {
+    const scroll = scrollState(props, ctx)
 
     return scroll
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="vi-virtual-scroll vi-scroll" @scroll="lookScroll"
+  <div class="vi-virtual-scroll vi-scroll"
   :class="[
   `scroll-${color}`,{
     'is-hidden': hidden,
@@ -21,7 +21,7 @@
       width: `${barWidth}px`,
       transform: `translateX(${barLeft}px)`
     }"></div>
-    <div class="vi-scroll-view-content" ref="content">
+    <div class="vi-scroll-view-content" ref="content" @scroll="lookScroll">
       <div class="list-brace" :style="{
         height: `${totalHeight}px`
       }"></div>
@@ -38,7 +38,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { SetupContext, defineComponent } from 'vue'
 
 import props from './props/virtual-scroll'
 
@@ -49,8 +49,8 @@ import { virtualScrollState } from './hooks'
 export default defineComponent({
   name: 'ViVirtualScroll',
   props,
-  setup (props: VirtualScrollProps) {
-    const mainVirtualScroll = virtualScrollState(props)
+  setup (props: VirtualScrollProps, ctx: SetupContext) {
+    const mainVirtualScroll = virtualScrollState(props, ctx)
 
     return {
       ...mainVirtualScroll
