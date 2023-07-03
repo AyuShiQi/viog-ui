@@ -10,7 +10,7 @@ export default function (props: any) {
     content.value.scrollTo(x, y)
   }
 
-  const scrollBar = scrollBarState(content)
+  const scrollBar = scrollBarState(content, props)
   lazyState(props, content)
 
   return {

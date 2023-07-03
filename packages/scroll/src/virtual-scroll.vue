@@ -4,8 +4,11 @@
   `scroll-${color}`,{
     'is-hidden': hidden,
     'vi-scroll-overlay': overlay,
-    'vi-scroll-start-scroll': beginScroll
-  }]">
+    'vi-scroll-start-scroll': beginScroll,
+    'vi-scroll-mouse-in': mousein
+  }]"
+  @mouseenter="handleContentMouseenter"
+  @mouseleave="handleContentMouseleave">
     <div class="vi-scroll-bar-vertical"
     @mousedown="handleMousedown($event, 0)"
     :style="{
@@ -18,7 +21,7 @@
       width: `${barWidth}px`,
       transform: `translateX(${barLeft}px)`
     }"></div>
-    <div class="vi-scroll-content-view" ref="content">
+    <div class="vi-scroll-view-content" ref="content">
       <div class="list-brace" :style="{
         height: `${totalHeight}px`
       }"></div>

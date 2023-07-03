@@ -160,7 +160,20 @@
     }
 
     div[class^=vi-scroll-bar] {
-        display: none;
+        opacity: 0;
+        transition: opacity .3s linear 0s;
+    }
+}
+
+.vi-scroll-mouse-in.is-hidden {
+    div[class^=vi-scroll-bar] {
+        opacity: 1;
+    }
+}
+
+.vi-scroll-start-scroll.is-hidden {
+    div[class^=vi-scroll-bar] {
+        opacity: 1;
     }
 }
 

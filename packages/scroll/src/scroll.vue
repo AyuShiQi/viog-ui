@@ -6,8 +6,11 @@
     'is-hidden': hidden,
     'is-smooth': smooth,
     'vi-scroll-overlay': overlay,
-    'vi-scroll-start-scroll': beginScroll
-  }]">
+    'vi-scroll-start-scroll': beginScroll,
+    'vi-scroll-mouse-in': mousein
+  }]"
+  @mouseenter="handleContentMouseenter"
+  @mouseleave="handleContentMouseleave">
     <div class="vi-scroll-bar-vertical"
     @mousedown="handleMousedown($event, 0)"
     :style="{

@@ -1,5 +1,5 @@
 <template>
-  <!-- <vi-form @submit="look">
+  <vi-form @submit="look">
     <template v-slot="{ submit }">
       <vi-form-item label="昵称" :rules="[
       {
@@ -44,7 +44,7 @@
       </vi-select>
     </vi-form-item>
     <vi-form-item label="出生日期">
-      <vi-date-select name="birthday" v-model="o"></vi-date-select>
+      <vi-date-select name="birthday" v-model="o" unit="month"></vi-date-select>
       <vi-date-select name="birthday" v-model="o" type="button"></vi-date-select>
       <vi-date-select name="birthday" v-model="o" type="plain"></vi-date-select>
     </vi-form-item>
@@ -62,17 +62,17 @@
   <vi-upload>
     <vi-upload-choose drag>
     </vi-upload-choose>
-  </vi-upload> -->
+  </vi-upload>
   <br>
   <br>
-  <vi-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px" overlay>
+  <vi-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px" overlay hidden>
     <vi-table :datas="table.slice(1)" align="center" stripe hover pick :pickValue="choose" @update:pickValue="(v: any) => choose = v">
       <vi-table-column value="0">销量</vi-table-column>
       <vi-table-column value="1">领先销量</vi-table-column>
       <vi-table-column value="2">全球销量</vi-table-column>
     </vi-table>
   </vi-scroll>
-  <vi-virtual-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px" :datas="info" overlay>
+  <vi-virtual-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px" :datas="info" hidden>
     <template v-slot="{ data }">
       <div>{{ data }}</div>
     </template>

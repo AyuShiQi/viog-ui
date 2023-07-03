@@ -34,7 +34,7 @@
       </span>
     </template>
     <template v-slot:content>
-      <vi-virtual-scroll class="vi-select-box vi-select-box-normal" :datas="datas" hidden>
+      <vi-virtual-scroll class="vi-select-box vi-select-box-normal" :datas="datas" hidden overlay>
         <template v-slot="{data}">
           <vi-option class="vi-select-box__virtual-scroll-item" :value="data"></vi-option>
         </template>

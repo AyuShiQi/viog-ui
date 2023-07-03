@@ -23,14 +23,6 @@ export default function (props: VirtualScrollProps) {
   const contentHeight = ref(0)
   // 容器节点
   const content = ref()
-  onMounted(() => {
-    getItemHeight()
-    getContentHeight()
-    // 计算第一次结尾高度
-    const end = Math.ceil(contentHeight.value / itemHeight.value)
-    endIndex.value = end < useDatas.value.length ? end : useDatas.value.length
-  })
-
   // 工具函数
   /**
    * 如果数组封装
@@ -56,7 +48,7 @@ export default function (props: VirtualScrollProps) {
     if (/px$/.test(height)) {
       itemHeight.value = Number(height.slice(0, -2))
     }
-    // console.log(itemHeight.value)
+    console.log(itemHeight.value)
   }
 
   /**
@@ -99,13 +91,22 @@ export default function (props: VirtualScrollProps) {
     nowHeight.value = useDatas.value[begin]?.scrollTop
   }
 
+  onMounted(() => {
+    getItemHeight()
+    getContentHeight()
+    // 计算第一次结尾高度
+    const end = Math.ceil(contentHeight.value / itemHeight.value)
+    endIndex.value = end < useDatas.value.length ? end : useDatas.value.length
+    console.log(itemHeight.value, contentHeight.value, endIndex.value)
+  })
+
   onUpdated(() => {
     getContentHeight()
     // 重新渲染节点
     renderScrollNode()
   })
 
-  const scrollBar = scrollBarState(content)
+  const scrollBar = scrollBarState(content, props)
 
   return {
     useDatas,

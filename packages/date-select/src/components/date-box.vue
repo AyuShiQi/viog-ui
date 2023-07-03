@@ -20,12 +20,10 @@
       <vi-virtual-select
       class="vi-date-show_year"
       type="button"
-      style="--vi-select-height: 1.6em"
       :datas="selectYears"
       v-model="viewYear"></vi-virtual-select>年
       <vi-virtual-select
       class="vi-date-show_month"
-      style="--vi-select-height: 1.6em"
       type="button"
       :datas="selectMonths"
       v-model="viewMonth"></vi-virtual-select>月
