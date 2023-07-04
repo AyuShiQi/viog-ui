@@ -88,7 +88,7 @@
   </vi-virtual-scroll>
   <vi-button @click="handleAddInfo">点击</vi-button>
   <vi-table :datas="table.slice(1)" type="border" align="center" pick multi :pickValue="ar">
-    <vi-table-column value="0" style="width: 70px;">销量</vi-table-column>
+    <vi-table-column value="0" style="--vi-table-td-width: 200px;">销量</vi-table-column>
     <vi-table-column value="1" style="width: 140px;">领先销量</vi-table-column>
     <vi-table-column value="2" style="width: 70px;">全球销量</vi-table-column>
   </vi-table>
