@@ -7,9 +7,8 @@ import { formTargetStateRef } from '@/hooks/form-target-state'
 
 export default function (props: SwitchProps, context: SetupContext) {
   const slots = useSlots()
-
-  const leftChoice = slots.leftChoice
-  const rightChoice = slots.rightChoice
+  const leftChoice = slots['left-choice']
+  const rightChoice = slots['right-choice']
   const nowColor = computed((): string => {
     return props.modelValue ? props.rightColor : props.leftColor
   })

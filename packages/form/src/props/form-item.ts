@@ -5,7 +5,7 @@ export default {
   },
   type: {
     type: String,
-    default: 'inline'// inline
+    default: 'default'// inline
   },
   size: {
     type: String,

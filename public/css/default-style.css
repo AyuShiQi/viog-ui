@@ -29,7 +29,9 @@
     --vi-scroll-min-height: ;
     --vi-scroll-item-height: 40px;
 
-    --vi-form-lable-gap: 8px;
+    --vi-form-label-width: 4em;
+    --vi-form-label-gap: 8px;
+    --vi-form-item-width: ;
     --vi-form-item-gap: 2px;
 
     --vi-select-width: 200px;
@@ -120,6 +122,7 @@
     --vi-table-sider-width: 40px;
     --vi-table-td-width: 70px;
     --vi-table-td-height: 25px;
+    --vi-table-td-padding: .6em 0;
 
     --vi-upload-width: 100%;
     --vi-upload-height: ;

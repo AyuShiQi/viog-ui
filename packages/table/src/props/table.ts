@@ -1,6 +1,6 @@
 export default {
   datas: {
-    type: Object,
+    type: [Array, Object],
     default: {}
   },
   type: {

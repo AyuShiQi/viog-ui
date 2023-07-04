@@ -115,6 +115,7 @@ export default function (content: Ref, props: any) {
     window.addEventListener('mouseup', handleMouseup)
     window.addEventListener('mouseleave', handleMouseup)
     window.addEventListener('mousemove', handleMousemove)
+    window.addEventListener('resize', calcScrollBarSize)
   })
 
   onUpdated(() => {
@@ -126,6 +127,7 @@ export default function (content: Ref, props: any) {
     window.removeEventListener('mouseup', handleMouseup)
     window.removeEventListener('mouseleave', handleMouseup)
     window.removeEventListener('mousemove', handleMousemove)
+    window.removeEventListener('resize', calcScrollBarSize)
   })
 
   return {

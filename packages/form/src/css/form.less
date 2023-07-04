@@ -1,5 +1,9 @@
 .vi-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--vi-form-item-gap);
+    > .vi-form-item {
+        margin-top: var(--vi-form-item-gap);
+    }
+
+    > .vi-form-item:first-child {
+        margin-top: 0;
+    }
 }

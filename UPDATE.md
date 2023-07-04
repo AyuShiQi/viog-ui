@@ -40,13 +40,39 @@
 - 新增page-controller分页器组件
 - 新增tab组件
 
-# 0.7.3（当前迭代开发版本）
+# 0.7.8
 
 - 新增可编辑表格组件撤回功能（增加撤销栈）
 - 新增可编辑表格组件快捷键操作功能
 - 新增可编辑表格自定义拖拉表格长宽功能
+- 新增upload组件照片墙功能
 
-# 0.7.2
+# 0.7.7（当前迭代开发版本）
+
+- 新增form-item组件--vi-form-item-width变量
+- 修改form-item组件updown样式
+- 修改table组件td由height操控变为由padding操控
+- 修复switch slot消失不见的情况
+
+# 0.7.6
+
+- 修复scroll在resize情况下长宽没有正确变换的情况
+- 修复form组件type属性
+
+# 0.7.5
+
+- 修复table组件类型检测错误
+- 更改scroll组件overlay滚动条z-index
+- 修复table-editor滚动条消失的情况
+- 修复scroll组件scroll
+
+# 0.7.4
+
+- 新增form组件控制width css变量
+- 调整form组件样式
+- 修复form组件rule规则下对象类型不适配函数匹配的问题
+
+# 0.7.2-0.7.3
 
 - 删除form组件开发遗留测试代码
 

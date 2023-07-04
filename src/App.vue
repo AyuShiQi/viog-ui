@@ -12,20 +12,23 @@
         },
         info: '您需要输入杨诗绮'
       }
-    ]">
+    ]"
+    type="inline">
       <vi-input name="nickname" placeholder="输入昵称" v-model="val"></vi-input>
       <vi-input name="nickname" placeholder="输入昵称" v-model="val" type="button"></vi-input>
       <vi-input name="nickname" placeholder="输入昵称" v-model="val" type="plain"></vi-input>
       <vi-select name="place" v-model="ar" multi type="plain"></vi-select><vi-button>Nihao</vi-button>
     </vi-form-item>
-    <vi-form-item label="性别">
+    <vi-form-item label="性别"
+    type="inline">
       <vi-radio-group name="sex" v-model="value">
         <vi-radio value="male">男</vi-radio>
         <vi-radio value="female">女</vi-radio>
         <vi-radio value="unknown">未知</vi-radio>
       </vi-radio-group>
     </vi-form-item>
-    <vi-form-item label="爱好">
+    <vi-form-item label="爱好"
+    type="inline">
       <vi-checkbox-group name="like" v-model="ar">
         <vi-checkbox value="eating">吃饭</vi-checkbox>
         <vi-checkbox value="sleep">睡觉</vi-checkbox>
@@ -54,7 +57,11 @@
       <vi-time-select name="time" type="plain"></vi-time-select>
     </vi-form-item>
     <vi-form-item label="虚拟数据">
-      <vi-switch name="vd" v-model="res"></vi-switch>
+      <vi-switch name="vd" v-model="res">
+        <template v-slot:left-choice>
+          kai
+        </template>
+      </vi-switch>
     </vi-form-item>
      <vi-button @click="submit">121</vi-button>
     </template>
@@ -65,13 +72,15 @@
   </vi-upload>
   <br>
   <br>
-  <vi-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px" overlay hidden>
-    <vi-table :datas="table.slice(1)" align="center" stripe hover pick :pickValue="choose" @update:pickValue="(v: any) => choose = v">
-      <vi-table-column value="0">销量</vi-table-column>
-      <vi-table-column value="1">领先销量</vi-table-column>
-      <vi-table-column value="2">全球销量</vi-table-column>
-    </vi-table>
-  </vi-scroll>
+  <vi-virtual-select :datas="arr">
+  </vi-virtual-select>
+  <!-- <vi-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px"> -->
+  <vi-table :datas="table.slice(1)" align="center" stripe hover pick :pickValue="choose" @update:pickValue="(v: any) => choose = v">
+    <vi-table-column value="0">销量</vi-table-column>
+    <vi-table-column value="1">领先销量</vi-table-column>
+    <vi-table-column value="2">全球销量</vi-table-column>
+  </vi-table>
+  <!-- </vi-scroll> -->
   <vi-virtual-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px" :datas="info" hidden>
     <template v-slot="{ data }">
       <div>{{ data }}</div>
@@ -148,7 +157,7 @@
     </template>
   </vi-bubble>
   <vi-table-editor v-model="ar"></vi-table-editor> -->
-  <!-- <vi-table-editor v-model="table"></vi-table-editor> -->
+  <vi-table-editor v-model="table"></vi-table-editor>
   <!-- <vi-drawer v-model="open" teleport direction="bottom">
     <vi-table-editor style="width: 100%"></vi-table-editor>
   </vi-drawer> -->
