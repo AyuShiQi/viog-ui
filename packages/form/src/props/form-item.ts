@@ -1,8 +1,5 @@
 export default {
-  label: {
-    type: String,
-    default: ''
-  },
+  label: String,
   type: {
     type: String,
     default: 'default'// inline

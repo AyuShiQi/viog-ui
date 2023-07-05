@@ -10,8 +10,8 @@
     }
   ]">
     <div
-    class="vi-form-label">
-      {{label}}
+    class="vi-form-label" v-if="label">
+      {{ label }}
     </div>
     <div class="vi-form-input">
       <slot></slot>
