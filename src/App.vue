@@ -17,9 +17,19 @@
       <vi-input name="nickname" placeholder="输入昵称" v-model="val"></vi-input>
       <vi-input name="nickname" placeholder="输入昵称" v-model="val" type="button"></vi-input>
       <vi-input name="nickname" placeholder="输入昵称" v-model="val" type="plain"></vi-input>
-      <vi-select name="place" v-model="ar" multi type="plain"></vi-select><vi-button>Nihao</vi-button>
     </vi-form-item>
-    <vi-form-item label="性别"
+    <vi-form-item label="性别" :rules="[
+      {
+        rule: /杨/,
+        info: '您没有输入正确的昵称'
+      },
+      {
+        rule(vals: string) {
+          return vals.length === 6
+        },
+        info: '您需要输入杨诗绮'
+      }
+    ]"
     type="inline">
       <vi-radio-group name="sex" v-model="value">
         <vi-radio value="male">男</vi-radio>
@@ -241,6 +251,9 @@ export default defineComponent({
 
     function look (...args: any[]) {
       console.log(...args)
+      const map = new Map()
+      map.set('nickname', '此账号不存在')
+      args[2].getSubmitFeedback(map)
     }
 
     return {

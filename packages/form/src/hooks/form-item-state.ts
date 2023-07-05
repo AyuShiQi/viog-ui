@@ -10,6 +10,7 @@ import type { CollectFormSet, ResArray } from '../type/form'
 
 export default function (props: any) {
   // 普通常量
+  let first = true
   // DOM ref
   /**
    * 下标0存储name，下标1存储value
@@ -35,8 +36,11 @@ export default function (props: any) {
   function updateMap (name: string, value: any) {
     valueMap[0] = name
     valueMap[1] = value
-    // console.log(valueMap)
-    if (props.auto) checkValue()
+    if (first) {
+      if (collectFormSet) collectFormSet(valueMap[0], getValueMap, getFeedback)
+      if (props.immediate) checkValue()
+      first = !first
+    } else if (props.auto) checkValue()
   }
 
   /**
@@ -65,7 +69,12 @@ export default function (props: any) {
 
   function getValueMap (): ResArray {
     const res = checkValue()
-    return [...valueMap, res]
+    return [...valueMap, res, props.trunc]
+  }
+
+  function getFeedback (info: string) {
+    isValid.value = false
+    showInfo.value = info
   }
   // 普通function函数
   /**
@@ -86,7 +95,6 @@ export default function (props: any) {
   // provide
   provide('form-item-update-map', updateMap)
   // 生命周期
-  if (collectFormSet) collectFormSet(getValueMap)
 
   return {
     isValid,
