@@ -1,6 +1,6 @@
 <template>
   <div class="vi-form">
-    <slot :submit="submit"></slot>
+    <slot :submit="submit" :getSubmitFeedback="getSubmitFeedback"></slot>
   </div>
 </template>
 

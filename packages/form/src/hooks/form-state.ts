@@ -65,6 +65,7 @@ export default function (ctx: SetupContext) {
   provide('form-collect-form-set', collectFormSet)
   // 生命周期
   return {
-    submit
+    submit,
+    getSubmitFeedback
   }
 }
