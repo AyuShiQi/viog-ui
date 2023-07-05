@@ -72,9 +72,11 @@ export default function (props: any) {
     return [...valueMap, res, props.trunc]
   }
 
-  function getFeedback (info: string) {
-    isValid.value = false
-    showInfo.value = info
+  function getFeedback (info?: string) {
+    if (info) {
+      showInfo.value = info
+      isValid.value = false
+    } else isValid.value = true
   }
   // 普通function函数
   /**

@@ -54,11 +54,11 @@ export default function (ctx: SetupContext) {
    * @param infoMap 反馈来的错误信息map<表单名，错误提示信息>
    */
   function getSubmitFeedback (infoMap: Map<string, string>) {
-    for (const [name, info] of infoMap.entries()) {
-      const feedbackFn = feedbackMap.get(name)
-      console.log(feedbackMap)
-      console.log(name, info)
-      if (feedbackFn) feedbackFn(info)
+    for (const [name, feedbackFn] of feedbackMap.entries()) {
+      /**
+       * 传过去先判断有没有，有错误信息就显示，没有就不显示
+       */
+      feedbackFn(infoMap.get(name))
     }
   }
   // provide

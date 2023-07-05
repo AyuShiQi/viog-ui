@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, provide } from 'vue'
+import { defineComponent } from 'vue'
 import type { SetupContext } from 'vue'
 
 import formState from './hooks/form-state'
