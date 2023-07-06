@@ -1,5 +1,5 @@
 <template>
-  <svg class="vi-circle" viewBox="0 0 24 24" :width="size" :height="size">
+  <svg class="vi-circle" viewBox="0 0 24 24">
     <circle
     class="normal-circle"
     :class="[`is-${color}`]"
@@ -34,6 +34,7 @@ export default defineComponent({
  @import '../../../../public/css/basecolor.less';
 
  .vi-circle {
+    width: var(--vi-loading-width);
     display: inline-block;
      .normal-circle {
         stroke-dasharray: 62;

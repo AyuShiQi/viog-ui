@@ -76,6 +76,7 @@
      <vi-button @click="submit">121</vi-button>
     </template>
   </vi-form>
+  <vi-loading type="round"></vi-loading>
   <vi-upload>
     <vi-upload-choose drag>
     </vi-upload-choose>

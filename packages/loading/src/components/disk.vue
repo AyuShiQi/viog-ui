@@ -1,5 +1,5 @@
 <template>
-  <svg class="vi-disk" :width="size" viewBox="0 0 580 580" fill="none">
+  <svg class="vi-disk" viewBox="0 0 580 580" fill="none">
     <circle :class="[`is-${color}`]" cx="290" cy="290" r="271" stroke-width="5"/>
     <circle :class="[`is-${color}`]" cx="290" cy="290" r="254" stroke-width="3"/>
     <circle class="bigger-ball" :class="[`is-${color}-fill`]" cx="40" cy="212" r="18"/>
@@ -49,6 +49,7 @@ export default defineComponent({
 }
 
 .vi-disk {
+    width: var(--vi-loading-width);
     display: inline-block;
 
     .bigger-ball {

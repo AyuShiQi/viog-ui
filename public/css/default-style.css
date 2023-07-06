@@ -87,8 +87,6 @@
     --vi-time-select-list-height: ;
     --vi-time-select-list-max-height: ;
 
-    --vi-message-width: 240px;
-
     --vi-dropdown-width: 100%;
     --vi-dropdown-height: ;
     --vi-dropdown-max-height: ;
@@ -128,8 +126,12 @@
     --vi-upload-height: ;
     --vi-upload-list-width: 100%;
 
+    --vi-message-width: 240px;
     --vi-message-top: 5vh;
-    --vi-message-right: 10px; 
+    --vi-message-right: 10px;
+
+    --vi-loading-width: 50px;
+    --vi-loading-height: 50px;
 
     /* 颜色样式们 */
     /* 字体样式 */

@@ -1,5 +1,5 @@
 <template>
-  <svg class="vi-star" :width="size" viewBox="0 0 867 867" fill="none">
+  <svg class="vi-star" viewBox="0 0 867 867" fill="none">
     <circle :class="[`is-${color}`]" cx="433.624" cy="433.042" r="324.725" stroke-width="10"/>
     <path class="big-star" :class="[`is-${color}`]" d="M165.539 587.363L433.333 123.53L701.128 587.363H165.539Z" stroke-width="8"/>
     <path class="big-star" :class="[`is-${color}`]" d="M165.539 278.722L701.128 278.722L433.333 742.555L165.539 278.722Z" stroke-width="8"/>
@@ -49,6 +49,7 @@ export default defineComponent({
 }
 
 .vi-star {
+    width: var(--vi-loading-width);
     display: inline-block;
 
     .moon-circle {
