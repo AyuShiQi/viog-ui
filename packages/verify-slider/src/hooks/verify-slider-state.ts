@@ -4,10 +4,11 @@ import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import type { SetupContext } from 'vue'
 // 组件type
 // 外部hooks
+import { formTargetStateRef } from '@/hooks/form-target-state'
 // 内部hooks
 // 外部模块
 
-export default function (ctx: SetupContext) {
+export default function (props: any, ctx: SetupContext) {
   // 普通常量
   let startX = 0
   let sliderWidth = 0
@@ -77,6 +78,8 @@ export default function (ctx: SetupContext) {
     window.removeEventListener('touchmove', handleMousemove)
     window.removeEventListener('touchend', handleMouseup)
   })
+
+  formTargetStateRef(props.name, finish)
 
   return {
     verifySlider,
