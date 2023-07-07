@@ -1,5 +1,5 @@
 // vue
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
@@ -20,6 +20,9 @@ export default function (ctx: SetupContext) {
   // reactive
   // inject
   // computed
+  watch(finish, () => {
+    if (!finish.value) boxLeft.value = 0
+  })
   // 事件方法
   function handleMousedown (e: any) {
     if (finish.value) return
@@ -49,10 +52,13 @@ export default function (ctx: SetupContext) {
     if (boxLeft.value < sliderWidth) boxLeft.value = 0
     else {
       finish.value = true
-      ctx.emit('access')
+      ctx.emit('access', handleError)
     }
   }
   // 方法
+  function handleError () {
+    finish.value = false
+  }
   // 普通function函数
   // provide
   // 生命周期
