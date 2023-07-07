@@ -28,6 +28,7 @@ import ViToast from './toast'
 import ViMessage from './message'
 import ViDrawer from './drawer'
 import ViBubble from './bubble'
+import ViVerifySlider from './verify-slider'
 // scroll 组
 import ViScroll from './scroll'
 // 表单组
@@ -79,7 +80,8 @@ const components = [
   ViBreadcrumb,
   ViUpload,
   ViTableEditor,
-  ViTable
+  ViTable,
+  ViVerifySlider
 ]
 
 export {

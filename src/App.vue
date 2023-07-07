@@ -92,6 +92,7 @@
     <vi-table-column value="2">全球销量</vi-table-column>
   </vi-table>
   <!-- </vi-scroll> -->
+  <vi-verify-slider @access="look"></vi-verify-slider>
   <vi-virtual-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px" :datas="info" hidden>
     <template v-slot="{ data }">
       <div>{{ data }}</div>
