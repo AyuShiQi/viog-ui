@@ -7,9 +7,12 @@
     :style="{
       transform: `translateX(${boxLeft}px)`
     }">
-      <slot name="slider">
-        <vi-icon></vi-icon>
-      </slot>
+      <div class="vi-verify-slider-box__line"></div>
+      <div class="vi-verify-slider-box__view">
+        <slot name="slider">
+          <vi-icon></vi-icon>
+        </slot>
+      </div>
     </div>
   </div>
 </template>
