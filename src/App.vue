@@ -1,7 +1,7 @@
 <template>
   <vi-form @submit="look">
     <template v-slot="{ submit }">
-      <vi-form-item label="昵称" :rules="[
+      <!-- <vi-form-item label="昵称" :rules="[
       {
         rule: /杨/,
         info: '您没有输入正确的昵称'
@@ -72,28 +72,46 @@
           kai
         </template>
       </vi-switch>
+    </vi-form-item> -->
+    <vi-form-item label="真的" :rules="[
+      {
+        rule: /true/,
+        info: '请完成验证'
+      }
+     ]">
+      <vi-verify-slider @access="console.log(1)" name="verify"></vi-verify-slider>
     </vi-form-item>
      <vi-button @click="submit">121</vi-button>
     </template>
   </vi-form>
-  <vi-loading type="round"></vi-loading>
-  <vi-upload>
+  <vi-result v-model="open"></vi-result>
+  <vi-result state="danger" v-model="open"></vi-result>
+  <vi-result state="warning" v-model="open"></vi-result>
+  <vi-result type="plain" v-model="open"></vi-result>
+  <vi-result type="plain" state="danger" v-model="open"></vi-result>
+  <vi-result type="plain" state="warning" v-model="open"></vi-result>
+  <vi-result type="transparent" v-model="open"></vi-result>
+  <vi-result type="transparent" state="danger" v-model="open"></vi-result>
+  <vi-result type="transparent" state="warning" v-model="open"></vi-result>
+  <vi-button @click="open = !open">打开提示符</vi-button>
+  <!-- <vi-loading type="round"></vi-loading> -->
+  <!-- <vi-upload>
     <vi-upload-choose drag>
     </vi-upload-choose>
-  </vi-upload>
+  </vi-upload> -->
+  <vi-steps></vi-steps>
   <br>
   <br>
-  <vi-virtual-select :datas="arr">
-  </vi-virtual-select>
+  <!-- <vi-virtual-select :datas="arr"> -->
+  <!-- </vi-virtual-select> -->
   <!-- <vi-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px"> -->
-  <vi-table :datas="table.slice(1)" align="center" stripe hover pick :pickValue="choose" @update:pickValue="(v: any) => choose = v">
+  <!-- <vi-table :datas="table.slice(1)" align="center" stripe hover pick :pickValue="choose" @update:pickValue="(v: any) => choose = v">
     <vi-table-column value="0">销量</vi-table-column>
     <vi-table-column value="1">领先销量</vi-table-column>
     <vi-table-column value="2">全球销量</vi-table-column>
-  </vi-table>
+  </vi-table> -->
   <!-- </vi-scroll> -->
-  <vi-verify-slider @access="look"></vi-verify-slider>
-  <vi-virtual-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px" :datas="info" hidden>
+  <!-- <vi-virtual-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px" :datas="info" hidden>
     <template v-slot="{ data }">
       <div>{{ data }}</div>
     </template>
@@ -108,7 +126,7 @@
     <vi-table-column value="0" style="width: 70px;">销量</vi-table-column>
     <vi-table-column value="1" style="width: 140px;">领先销量</vi-table-column>
     <vi-table-column value="2" style="width: 70px;">全球销量</vi-table-column>
-  </vi-table>
+  </vi-table> -->
   <!-- <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
   <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
   <vi-checkbox v-model="ar" value="nihao">你好</vi-checkbox>
@@ -169,7 +187,7 @@
     </template>
   </vi-bubble>
   <vi-table-editor v-model="ar"></vi-table-editor> -->
-  <vi-table-editor v-model="table"></vi-table-editor>
+  <!-- <vi-table-editor v-model="table"></vi-table-editor> -->
   <!-- <vi-drawer v-model="open" teleport direction="bottom">
     <vi-table-editor style="width: 100%"></vi-table-editor>
   </vi-drawer> -->
@@ -253,9 +271,9 @@ export default defineComponent({
 
     function look (...args: any[]) {
       console.log(...args)
-      const map = new Map()
-      map.set('nickname', '此账号不存在')
-      args[2].getSubmitFeedback(map)
+      // const map = new Map()
+      // map.set('nickname', '此账号不存在')
+      // args[2].getSubmitFeedback(map)
     }
 
     return {

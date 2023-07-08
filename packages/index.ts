@@ -28,7 +28,7 @@ import ViToast from './toast'
 import ViMessage from './message'
 import ViDrawer from './drawer'
 import ViBubble from './bubble'
-import ViVerifySlider from './verify-slider'
+import ViSteps from './steps'
 // scroll 组
 import ViScroll from './scroll'
 // 表单组
@@ -41,9 +41,14 @@ import ViSelectN from './select-normal'
 import ViDateSelect from './date-select'
 import ViTimeSelect from './time-select'
 import ViUpload from './upload'
+import ViVerifySlider from './verify-slider'
 
+// 表格组
 import ViTable from './table'
 import ViTableEditor from './table-editor'
+
+// 信息展示组
+import ViResult from './result'
 // type
 export * from '@/types'
 
@@ -81,7 +86,9 @@ const components = [
   ViUpload,
   ViTableEditor,
   ViTable,
-  ViVerifySlider
+  ViVerifySlider,
+  ViResult,
+  ViSteps
 ]
 
 export {

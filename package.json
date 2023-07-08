@@ -1,6 +1,6 @@
 {
   "name": "viog-ui",
-  "version": "0.8.1",
+  "version": "0.8.3",
   "description": "an ui library with style of metaverse",
   "private": false,
   "main": "dist/viog-ui.umd.min.js",

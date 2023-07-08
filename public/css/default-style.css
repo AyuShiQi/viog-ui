@@ -137,6 +137,8 @@
     --vi-verify-slider-height: 2.4em;
     --vi-verify-slider-color: linear-gradient(to right,#31cf58 0%, #6bea8b 20%, #75ff98 50%, #6bea8b 70%, #31cf58 100%);
 
+    --vi-result-size: 50px;
+
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */
