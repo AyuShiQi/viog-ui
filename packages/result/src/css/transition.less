@@ -1,0 +1,156 @@
+.vi-result-animate-enter-from {
+    transform: scale(0%);
+    .vi-result-success {
+        .vi-gougou-path {
+            stroke-dasharray: 0 34;
+        }
+    }
+
+    .vi-result-danger {
+        path {
+            stroke-dasharray: 0 18;
+        }
+    }
+
+    .vi-result-warning {
+        opacity: 0;
+        transform: scale(80%);
+    }
+}
+
+.vi-result-animate-enter-to {
+    transform: scale(100%);
+    .vi-result-success {
+        .vi-gougou-path {
+            stroke-dasharray: 34 34;
+        }
+    }
+
+    .vi-result-danger {
+        path {
+            stroke-dasharray: 18 18;
+        }
+    }
+
+    .vi-result-warning {
+        transform: scale(100%);
+    }
+}
+
+.vi-result-animate-enter-active {
+    transition: all .5s ease 0s;
+    .vi-result-success {
+        .vi-gougou-path {
+            transition: all .3s ease .3s;
+        }
+    }
+
+    .vi-result-danger {
+        path {
+            transition: all .3s ease .3s;
+        }
+    }
+
+    .vi-result-warning {
+        transition: all .3s ease .3s;
+    }
+}
+
+// 离开
+.vi-result-animate-leave {
+    transform: scale(100%);
+    .vi-result-success {
+        .vi-gougou-path {
+            stroke-dasharray: 34 34;
+        }
+    }
+
+    .vi-result-danger {
+        path {
+            stroke-dasharray: 18 18;
+        }
+    }
+
+    .vi-result-warning {
+        transform: scale(100%);
+    }
+}
+
+.vi-result-animate-leave-to {
+    transform: scale(0%);
+    .vi-result-success {
+        .vi-gougou-path {
+            stroke-dasharray: 0 34;
+        }
+    }
+
+    .vi-result-danger {
+        path {
+            stroke-dasharray: 0 18;
+        }
+    }
+
+    .vi-result-warning {
+        opacity: 0;
+        transform: scale(80%);
+    }
+}
+
+.vi-result-animate-leave-active {
+    transition: all .3s ease .3s;
+    .vi-result-success {
+        .vi-gougou-path {
+            transition: all .3s ease 0s;
+        }
+    }
+
+    .vi-result-danger {
+        path {
+            transition: all .3s ease 0s;
+        }
+    }
+
+    .vi-result-warning {
+        transition: all .3s ease 0s;
+    }
+}
+
+.vi-result-type-transparent {
+    .vi-result-animate-enter-active {
+        transition: all .2s ease 0s;
+        .vi-result-success {
+            .vi-gougou-path {
+                transition: all .3s ease 0s;
+            }
+        }
+    
+        .vi-result-danger {
+            path {
+                transition: all .3s ease 0s;
+            }
+        }
+    
+        .vi-result-warning {
+            transition: all .3s ease 0s;
+        }
+    }
+
+    .vi-result-animate-leave-active {
+        transition: all .3s ease 0s;
+        .vi-result-success {
+            .vi-gougou-path {
+                transition: all .3s ease 0s;
+            }
+        }
+    
+        .vi-result-danger {
+            path {
+                transition: all .3s ease 0s;
+            }
+        }
+    
+        .vi-result-warning {
+            transition: all .3s ease 0s;
+        }
+    }
+}

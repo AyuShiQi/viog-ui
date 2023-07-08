@@ -1,0 +1,63 @@
+.vi-result {
+    width: var(--vi-result-size);
+    height: var(--vi-result-size);
+    user-select: none;
+}
+
+// 不要拖进.vi-result中，否则vue动画无法匹配
+.vi-result-view {
+    overflow: hidden;
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 50%;
+
+    .vi-result-success {
+        width: calc(var(--vi-result-size) - 20px);
+
+        .vi-gougou-path {
+            stroke: #fff;
+            // stroke-opacity: 0;
+            stroke-width: 3;
+            stroke-dashoffset: 1;
+            stroke-dasharray: 34 34;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all .2s ease-in 0s;
+        }
+    }
+
+    .vi-result-danger {
+        width: calc(var(--vi-result-size) - 20px);
+        path {
+            stroke: #fff;
+            // stroke-opacity: 0;
+            stroke-width: 3;
+            stroke-dashoffset: 1;
+            stroke-dasharray: 18 18;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    }
+
+    .vi-result-warning {
+        height: calc(var(--vi-result-size) - 20px);
+        path {
+            fill: #fff;
+            // stroke: #fff;
+            // stroke-opacity: 0;
+            // stroke-width: 3;
+            // stroke-dashoffset: 1;
+            // stroke-dasharray: 34 34;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    }
+}
+
+@import './state.less';
+@import './type.less';
+@import './transition.less';
