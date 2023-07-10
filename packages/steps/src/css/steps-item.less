@@ -1,0 +1,76 @@
+.vi-steps-item {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    user-select: none;
+
+    .vi-steps-item__line {
+        width: var(--vi-steps-item-line);
+        height: 4px;
+        margin-right: var(--vi-steps-gap);
+        border-radius: 2px;
+        background-color: var(--vi-background-color);
+    }
+
+    .vi-steps-item__content {
+        overflow: visible;
+        position: relative;
+        // display: flex;
+        width: var(--vi-steps-item-size);
+        height: var(--vi-steps-item-size);
+        // background-color: var(--vi-background-color);
+        border-radius: 50%;
+        box-sizing: border-box;
+        // flex-direction: column;
+        align-items: center;
+
+        .vi-steps-item__content__circle {
+            overflow: hidden;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: inset 0 0 0 4px var(--vi-background-color);
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vi-steps-item__content__title {
+            padding-top: 4px;
+            text-align: center;
+            color: var(--vi-icon-color)
+        }
+
+        .vi-steps-item__content__desc {
+            position: relative;
+            left: 50%;
+            width: var(--vi-steps-item-desc-width);
+            color: var(--vi-background-color-deep);
+            margin-left: calc(0px - (var(--vi-steps-item-desc-width) / 2));
+            padding-top: 4px;
+            // text-align: center;
+            // white-space: nowrap;
+        }
+    }
+}
+
+.vi-steps-item-choosed {
+    .vi-steps-item__line {
+        background-color: var(--vi-green-color3);
+    }
+
+    .vi-steps-item__content {
+        .vi-steps-item__content__circle {
+            box-shadow: inset 0 0 0 4px var(--vi-green-color3);
+        }
+
+        .vi-steps-item__content__title {
+            color: var(--vi-link-color);
+        }
+
+        .vi-steps-item__content__desc {
+            color: var(--vi-icon-color)
+        }
+    }
+}

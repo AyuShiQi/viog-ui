@@ -1,5 +1,6 @@
 <template>
   <div class="vi-steps">
+    <slot></slot>
   </div>
 </template>
 
@@ -16,7 +17,7 @@ export default defineComponent({
   name: 'ViSteps',
   props,
   setup (props: any, ctx: SetupContext) {
-    const steps = stepsState()
+    const steps = stepsState(props)
 
     return steps
   }

@@ -1,5 +1,29 @@
 <template>
-  <div class="vi-steps-item">
+  <div
+  class="vi-steps-item"
+  :class="[
+    {
+      'vi-steps-item-choosed': choosed
+    }
+  ]">
+    <div class="vi-steps-item__line"></div>
+    <div class="vi-steps-item__content">
+      <div class="vi-steps-item__content__circle">
+        <slot name="content">
+          <vi-result type="transparent" v-model="choosed"></vi-result>
+        </slot>
+      </div>
+      <div class="vi-steps-item__content__title">
+        <slot>
+          {{ '步骤' + (id + 1) }}
+        </slot>
+      </div>
+      <div class="vi-steps-item__content__desc">
+        <slot name="description">
+          这是一段描述hhahahahahah
+        </slot>
+      </div>
+    </div>
   </div>
 </template>
 

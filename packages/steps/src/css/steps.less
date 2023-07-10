@@ -1,5 +1,14 @@
 .vi-steps {
-    width: 100%;
+    display: inline-flex;
+    width: auto;
     height: 40px;
-    background-color: pink;
+    background-color: transparent;
+    align-items: center;
+    gap: var(--vi-steps-gap);
+
+    .vi-steps-item:first-child {
+        .vi-steps-item__line {
+            display: none;
+        }
+    }
 }

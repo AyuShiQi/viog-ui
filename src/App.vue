@@ -99,7 +99,12 @@
     <vi-upload-choose drag>
     </vi-upload-choose>
   </vi-upload> -->
-  <vi-steps></vi-steps>
+  <vi-steps v-model="id">
+    <vi-steps-item></vi-steps-item>
+    <vi-steps-item></vi-steps-item>
+    <vi-steps-item></vi-steps-item>
+  </vi-steps>
+  <vi-button @click="id++">111</vi-button>
   <br>
   <br>
   <!-- <vi-virtual-select :datas="arr"> -->
@@ -257,10 +262,16 @@ export default defineComponent({
     const obj = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 }]
     const table = [['销量', '领先销量', '全球销量'], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]
     const info = reactive([] as string[])
+    const id = ref(0)
 
     function handleAddInfo () {
       info.push('xinde')
     }
+
+    watch(id, () => {
+      console.log(id)
+    })
+
     watch(ar, () => {
       console.log(ar)
     })
@@ -277,6 +288,7 @@ export default defineComponent({
     }
 
     return {
+      id,
       o,
       val,
       ar,
