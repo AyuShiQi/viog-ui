@@ -99,7 +99,7 @@
     <vi-upload-choose drag>
     </vi-upload-choose>
   </vi-upload> -->
-  <vi-steps v-model="id">
+  <vi-steps v-model="id" style="--vi-steps-item-size: 40px;">
     <vi-steps-item></vi-steps-item>
     <vi-steps-item></vi-steps-item>
     <vi-steps-item></vi-steps-item>

@@ -3,13 +3,17 @@
   class="vi-steps-item"
   :class="[
     {
-      'vi-steps-item-choosed': choosed
+      'vi-steps-item-choosed': choosed,
+      'vi-steps-item-now-choose': nowChoose
     }
   ]">
     <div class="vi-steps-item__line"></div>
     <div class="vi-steps-item__content">
       <div class="vi-steps-item__content__circle">
-        <slot name="content">
+        <slot name="doing" v-if="nowChoose">
+          {{ id + 1 }}
+        </slot>
+        <slot name="finish" v-if="choosed">
           <vi-result type="transparent" v-model="choosed"></vi-result>
         </slot>
       </div>
@@ -19,9 +23,7 @@
         </slot>
       </div>
       <div class="vi-steps-item__content__desc">
-        <slot name="description">
-          这是一段描述hhahahahahah
-        </slot>
+        <slot name="description"></slot>
       </div>
     </div>
   </div>

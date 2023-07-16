@@ -18,7 +18,11 @@ export default function () {
   const step = inject('vi-steps-step', undefined) as Ref<number> | undefined
   // computed
   const choosed = computed(() => {
-    return id <= (step ? step.value : -1)
+    return id < (step ? step.value : -1)
+  })
+
+  const nowChoose = computed(() => {
+    return id === (step ? step.value : -1)
   })
   // 事件方法
   // 方法
@@ -28,6 +32,7 @@ export default function () {
   return {
     id,
     step,
-    choosed
+    choosed,
+    nowChoose
   }
 }
