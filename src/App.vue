@@ -107,6 +107,33 @@
   <vi-button @click="id++">111</vi-button>
   <br>
   <br>
+  <vi-tabbar>
+    <vi-tabbar-item to="/user">
+      <template v-slot:icon>
+        <vi-icon style="font-size: 32px"></vi-icon>
+      </template>
+      首页
+    </vi-tabbar-item>
+    <vi-tabbar-item>
+      <template v-slot:icon>
+        <vi-icon style="font-size: 32px"></vi-icon>
+      </template>
+      项目
+    </vi-tabbar-item>
+    <div style="width: 60px; height: 60px; background-color: pink; border-radius: 50%; position: relative; top: -10px;"></div>
+    <vi-tabbar-item>
+      <template v-slot:icon>
+        <vi-icon style="font-size: 32px"></vi-icon>
+      </template>
+      模板
+    </vi-tabbar-item>
+    <vi-tabbar-item>
+      <template v-slot:icon>
+        <vi-icon style="font-size: 32px"></vi-icon>
+      </template>
+      设置
+    </vi-tabbar-item>
+  </vi-tabbar>
   <!-- <vi-virtual-select :datas="arr"> -->
   <!-- </vi-virtual-select> -->
   <!-- <vi-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px"> -->

@@ -22,6 +22,7 @@ import ViAvater from './avater'
 import ViNav from './nav'
 import ViMenu from './menu'
 import ViBreadcrumb from './breadcrumb'
+import ViTabbar from './tabbar'
 // 交互组件
 import ViDialog from './dialog'
 import ViToast from './toast'
@@ -88,7 +89,8 @@ const components = [
   ViTable,
   ViVerifySlider,
   ViResult,
-  ViSteps
+  ViSteps,
+  ViTabbar
 ]
 
 export {

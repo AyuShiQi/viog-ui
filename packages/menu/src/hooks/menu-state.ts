@@ -1,4 +1,4 @@
-import { getCurrentInstance, provide, ref } from 'vue'
+import { getCurrentInstance, provide, ref, watch } from 'vue'
 import type { SetupContext } from 'vue'
 import type { Router, RouteLocationNormalized } from 'vue-router'
 import IdDistributor from '../../../utils/communication/IdDistributor'
@@ -39,9 +39,15 @@ export default function (props: any, ctx: SetupContext) {
     }
 
     try {
-      router.afterEach((to: RouteLocationNormalized, from) => {
-        if (routerMap.has(to.path)) nowPick.value = routerMap.get(to.path)
-      })
+      // 初始化路由
+      if (routerMap.has(router.currentRoute.value.path)) nowPick.value = routerMap.get(router.currentRoute.value.path)
+      /**
+       * 监听当前路由
+       */
+      watch(router.currentRoute, () => {
+        console.log('menu', router.currentRoute.value.path)
+        if (routerMap.has(router.currentRoute.value.path)) nowPick.value = routerMap.get(router.currentRoute.value.path)
+      }, { immediate: true })
     } catch (e) {
       if (e instanceof TypeError) console.error('[viog-ui]: 你并没有在项目中引入vue-router，menu无法正确跳转！')
       else console.error(e)
