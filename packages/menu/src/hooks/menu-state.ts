@@ -1,6 +1,6 @@
-import { getCurrentInstance, provide, ref, watch } from 'vue'
+import { getCurrentInstance, provide, ref, watch, reactive } from 'vue'
 import type { SetupContext } from 'vue'
-import type { Router, RouteLocationNormalized } from 'vue-router'
+import type { Router } from 'vue-router'
 import IdDistributor from '../../../utils/communication/IdDistributor'
 
 export default function (props: any, ctx: SetupContext) {
@@ -32,20 +32,21 @@ export default function (props: any, ctx: SetupContext) {
   // router 相关操作
   if (props.router) {
     // 用于收集id对应的router跳转地址
-    const routerMap = new Map<string, number>()
+    const routerMap = reactive(new Map<string, number>())
     provide('menu-router-linker', routerLink)
     function routerLink (id: number, to: string) {
       routerMap.set(to, id)
     }
 
     try {
-      // 初始化路由
-      if (routerMap.has(router.currentRoute.value.path)) nowPick.value = routerMap.get(router.currentRoute.value.path)
+      watch(routerMap, () => {
+        if (routerMap.has(router.currentRoute.value.path)) nowPick.value = routerMap.get(router.currentRoute.value.path)
+      }, { immediate: true })
       /**
        * 监听当前路由
        */
       watch(router.currentRoute, () => {
-        console.log('menu', router.currentRoute.value.path)
+        console.log('menu', router.currentRoute.value.path, routerMap.get(router.currentRoute.value.path))
         if (routerMap.has(router.currentRoute.value.path)) nowPick.value = routerMap.get(router.currentRoute.value.path)
       }, { immediate: true })
     } catch (e) {

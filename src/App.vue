@@ -1,4 +1,7 @@
 <template>
+  <vi-menu router>
+    <vi-menu-item to="/">nihao</vi-menu-item>
+  </vi-menu>
   <vi-form @submit="look">
     <template v-slot="{ submit }">
       <!-- <vi-form-item label="昵称" :rules="[
@@ -108,7 +111,7 @@
   <br>
   <br>
   <vi-tabbar>
-    <vi-tabbar-item to="/user">
+    <vi-tabbar-item to="/home/new-project">
       <template v-slot:icon>
         <vi-icon style="font-size: 32px"></vi-icon>
       </template>

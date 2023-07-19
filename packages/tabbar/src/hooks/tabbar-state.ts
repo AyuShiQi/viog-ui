@@ -1,5 +1,5 @@
 // vue
-import { ref, provide, watch, getCurrentInstance } from 'vue'
+import { ref, provide, watch, getCurrentInstance, reactive } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
@@ -11,7 +11,7 @@ import IdDistributor from '../../../utils/communication/IdDistributor'
 
 export default function (props: any, ctx: SetupContext) {
   // 普通常量
-  const routerMap = new Map<string, number>()
+  const routerMap = reactive(new Map<string, number>())
   const instance = getCurrentInstance()
   const router = instance ? instance.appContext.config.globalProperties.$router as Router : null
   // DOM ref
@@ -43,6 +43,9 @@ export default function (props: any, ctx: SetupContext) {
   provide('tabbar-push-state', pushState)
 
   if (router) {
+    watch(routerMap, () => {
+      if (routerMap.has(router.currentRoute.value.path)) nowPick.value = routerMap.get(router.currentRoute.value.path) as number
+    }, { immediate: true })
     watch(router.currentRoute, () => {
       console.log('tabbar', router.currentRoute.value.path)
       if (routerMap.has(router.currentRoute.value.path)) nowPick.value = routerMap.get(router.currentRoute.value.path) as number
