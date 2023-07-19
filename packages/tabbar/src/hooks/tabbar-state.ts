@@ -47,8 +47,8 @@ export default function (props: any, ctx: SetupContext) {
       if (routerMap.has(router.currentRoute.value.path)) nowPick.value = routerMap.get(router.currentRoute.value.path) as number
     }, { immediate: true })
     watch(router.currentRoute, () => {
-      console.log('tabbar', router.currentRoute.value.path)
-      if (routerMap.has(router.currentRoute.value.path)) nowPick.value = routerMap.get(router.currentRoute.value.path) as number
+      // console.log('tabbar', router.currentRoute.value.path)
+      if (routerMap && routerMap.has(router.currentRoute.value.path)) nowPick.value = routerMap.get(router.currentRoute.value.path) as number
     }, { immediate: true })
   }
   // 生命周期

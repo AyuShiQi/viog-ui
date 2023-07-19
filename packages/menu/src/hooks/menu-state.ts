@@ -46,8 +46,8 @@ export default function (props: any, ctx: SetupContext) {
        * 监听当前路由
        */
       watch(router.currentRoute, () => {
-        console.log('menu', router.currentRoute.value.path, routerMap.get(router.currentRoute.value.path))
-        if (routerMap.has(router.currentRoute.value.path)) nowPick.value = routerMap.get(router.currentRoute.value.path)
+        // console.log('menu', router.currentRoute.value.path, routerMap.get(router.currentRoute.value.path))
+        if (routerMap && routerMap.has(router.currentRoute.value.path)) nowPick.value = routerMap.get(router.currentRoute.value.path)
       }, { immediate: true })
     } catch (e) {
       if (e instanceof TypeError) console.error('[viog-ui]: 你并没有在项目中引入vue-router，menu无法正确跳转！')
