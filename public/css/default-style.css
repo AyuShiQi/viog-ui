@@ -125,6 +125,7 @@
     --vi-upload-width: 100%;
     --vi-upload-height: ;
     --vi-upload-list-width: 100%;
+    --vi-upload-choose-photo-size: 64px;
 
     --vi-message-width: 240px;
     --vi-message-top: 5vh;

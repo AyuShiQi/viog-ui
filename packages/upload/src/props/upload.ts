@@ -4,11 +4,6 @@ export default {
   limit: [Number, Object],
   // 最多几份
   maximum: Number,
-  // 控制是否为可拖拽组件（未做）
-  drag: {
-    type: Boolean,
-    default: false
-  },
   // 当规定maximum参数前提下将replace置为true，新加载的文件将覆盖最早加载的文件
   replace: {
     type: Boolean,

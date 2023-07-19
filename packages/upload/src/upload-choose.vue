@@ -1,11 +1,17 @@
 <template>
   <div class="vi-upload-choose" @click="handleClick" @drop="handleDrop" @dragover="e=>e.preventDefault()">
     <slot>
-      <div class="vi-upload-choose__drag-default" v-if="drag">
+      <div class="vi-upload-choose__drag-default" v-if="drag && !photo">
         <vi-icon type="wenjianjia" style="font-size: 48px; color: var(--vi-background-color-deep)"></vi-icon>
         通过拖拽或点击上传文件
       </div>
-      <vi-upload-list v-if="drag"></vi-upload-list>
+      <vi-upload-list v-if="drag && !photo"></vi-upload-list>
+      <div class="vi-uplaod-choose__photo-default" v-if="photo">
+        <div class="vi-uplaod-choose__photo-default__mask"></div>
+        <div class="vi-uplaod-choose__photo-default__img">
+          <img :src="imgsrc" alt="头像">
+        </div>
+      </div>
     </slot>
   </div>
 </template>

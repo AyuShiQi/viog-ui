@@ -14,12 +14,14 @@ export default function (props: any, ctx: SetupContext) {
   // DOM ref
   const fileUploaderInput = ref()
   // ref
+  const fileMode = ref('normal')
   // reactive
   const fileList = reactive([] as File[])
   // inject
   // computed
   // 事件方法
-  function toChooseFile () {
+  function toChooseFile (mode?: string) {
+    if (mode) fileMode.value = mode
     fileUploaderInput.value.click()
   }
 
@@ -45,13 +47,17 @@ export default function (props: any, ctx: SetupContext) {
           break
         }
       }
-      console.log(file)
+      // console.log(file)
       // 这个可能有bug,先试一下
       ctx.emit('beforeadd', file, _prevent.preventDefault)
       if (_prevent.defaultEvent) {
         flag = true
         fileList.push(file)
         ctx.emit('afteradd', file)
+        // 照片头像上传功能
+        if (fileMode.value === 'img') {
+          ctx.emit('addphoto', file)
+        }
       }
       // change事件触发
       if (flag) ctx.emit('change', [...fileList])

@@ -87,7 +87,7 @@
      <vi-button @click="submit">121</vi-button>
     </template>
   </vi-form>
-  <vi-result v-model="open"></vi-result>
+  <!-- <vi-result v-model="open"></vi-result>
   <vi-result state="danger" v-model="open"></vi-result>
   <vi-result state="warning" v-model="open"></vi-result>
   <vi-result type="plain" v-model="open"></vi-result>
@@ -96,7 +96,7 @@
   <vi-result type="transparent" v-model="open"></vi-result>
   <vi-result type="transparent" state="danger" v-model="open"></vi-result>
   <vi-result type="transparent" state="warning" v-model="open"></vi-result>
-  <vi-button @click="open = !open">打开提示符</vi-button>
+  <vi-button @click="open = !open">打开提示符</vi-button> -->
   <!-- <vi-loading type="round"></vi-loading> -->
   <!-- <vi-upload>
     <vi-upload-choose drag>
@@ -108,8 +108,9 @@
     <vi-steps-item></vi-steps-item>
   </vi-steps>
   <vi-button @click="id++">111</vi-button>
-  <br>
-  <br>
+  <vi-upload>
+    <vi-upload-choose drag photo imgsrc="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F62627729-e947-4a05-a7b5-687b32d8cff2%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1692340421&t=8dd3b415552637a12c7ae55d4672c5f0"></vi-upload-choose>
+  </vi-upload>
   <vi-tabbar>
     <vi-tabbar-item to="/home/new-project">
       <template v-slot:icon>

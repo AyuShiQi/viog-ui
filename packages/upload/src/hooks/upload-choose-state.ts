@@ -13,13 +13,13 @@ export default function (props: any) {
   // reactive
   // inject
   // 用于触发打开input file框
-  const toChooseFile = inject('upload-choose-file', undefined) as (() => void) | undefined
+  const toChooseFile = inject('upload-choose-file', undefined) as ((mode?: string) => void) | undefined
   const addFileList = inject('upload-add-files', undefined) as ((f: FileList | null) => void) | undefined
   // computed
   // 事件方法
   function handleClick (e: Event) {
     e.stopPropagation()
-    if (toChooseFile) toChooseFile()
+    if (toChooseFile) toChooseFile('img')
   }
 
   function handleDrop (e: DragEvent) {
