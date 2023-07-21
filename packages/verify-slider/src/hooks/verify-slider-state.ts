@@ -27,6 +27,8 @@ export default function (props: any, ctx: SetupContext) {
   // 事件方法
   function handleMousedown (e: any) {
     if (finish.value) return
+    e.preventDefault()
+    e.stopPropagation()
     isMoving.value = true
     if (e.x) {
       startX = e.x
@@ -38,6 +40,8 @@ export default function (props: any, ctx: SetupContext) {
   function handleMousemove (e: any) {
     if (finish.value) return
     if (!isMoving.value) return
+    e.preventDefault()
+    e.stopPropagation()
     if (e.x) {
       boxLeft.value = Math.max(e.x - startX, 0)
       boxLeft.value = Math.min(boxLeft.value, sliderWidth)
@@ -47,8 +51,10 @@ export default function (props: any, ctx: SetupContext) {
     }
   }
 
-  function handleMouseup () {
+  function handleMouseup (e: Event) {
     if (finish.value) return
+    e.preventDefault()
+    e.stopPropagation()
     isMoving.value = false
     if (boxLeft.value < sliderWidth) boxLeft.value = 0
     else {
