@@ -138,6 +138,9 @@
       设置
     </vi-tabbar-item>
   </vi-tabbar>
+  <vi-scroll style="--vi-scroll-width: 70px;" overlay hidden>
+    1111111111111111111111111111111111111111111111111111111111111111
+  </vi-scroll>
   <!-- <vi-virtual-select :datas="arr"> -->
   <!-- </vi-virtual-select> -->
   <!-- <vi-scroll style="--vi-scroll-width: 200px; --vi-scroll-height: 100px"> -->

@@ -23,7 +23,7 @@
       width: `${barWidth}px`,
       transform: `translateX(${barLeft}px)`
     }"></div>
-      <div class="vi-scroll-view-content" ref="content" @scroll="lookScroll">
+      <div class="vi-scroll-view-content" ref="content" @scroll="lookScroll" @touchstart="handleTouchStart">
         <slot></slot>
       </div>
     <div v-if="lazy!==null&&wait!=='none'" v-show="!finish" class="lazy-loading">

@@ -21,7 +21,7 @@
       width: `${barWidth}px`,
       transform: `translateX(${barLeft}px)`
     }"></div>
-    <div class="vi-scroll-view-content" ref="content" @scroll="lookScroll">
+    <div class="vi-scroll-view-content" ref="content" @scroll="lookScroll" @touchstart="handleTouchStart">
       <div class="list-brace" :style="{
         height: `${totalHeight}px`
       }"></div>

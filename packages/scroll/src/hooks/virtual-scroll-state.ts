@@ -81,6 +81,10 @@ export default function (props: VirtualScrollProps, ctx: SetupContext) {
     ctx.emit('scroll', e)
   }
 
+  function handleTouchStart (e: Event) {
+    e.stopPropagation()
+  }
+
   /**
    * 计算渲染节点
    */
@@ -115,6 +119,7 @@ export default function (props: VirtualScrollProps, ctx: SetupContext) {
     useDatas,
     scrollTo,
     lookScroll,
+    handleTouchStart,
     nowHeight,
     totalHeight,
     beginIndex,

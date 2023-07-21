@@ -14,10 +14,15 @@ export default function (props: any, ctx: SetupContext) {
     ctx.emit('scroll', e)
   }
 
+  function handleTouchStart (e: Event) {
+    e.stopPropagation()
+  }
+
   const scrollBar = scrollBarState(content, props)
   lazyState(props, content)
 
   return {
+    handleTouchStart,
     lookScroll,
     ...scrollBar,
     content,
