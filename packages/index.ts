@@ -43,6 +43,7 @@ import ViDateSelect from './date-select'
 import ViTimeSelect from './time-select'
 import ViUpload from './upload'
 import ViVerifySlider from './verify-slider'
+import ViColorSelect from './color-select'
 
 // 表格组
 import ViTable from './table'
@@ -90,7 +91,8 @@ const components = [
   ViVerifySlider,
   ViResult,
   ViSteps,
-  ViTabbar
+  ViTabbar,
+  ViColorSelect
 ]
 
 export {
