@@ -1,5 +1,5 @@
 // vue
-import { reactive, computed, watch, ref, toRef } from 'vue'
+import { reactive, computed, watch, ref } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
@@ -25,7 +25,8 @@ export default function (props: any, ctx: SetupContext) {
   /**
    * 表格的输入内容
    */
-  const value = reactive(props.modelValue ? props.modelValue : [])
+  const originValue = reactive(props.modelValue ? props.modelValue : [])
+  const value = reactive([] as any[])
   // 普通常量
   // DOM ref
   /**
@@ -84,7 +85,40 @@ export default function (props: any, ctx: SetupContext) {
     }
     generateHeader(newVal, oldVal)
   }, { immediate: true })
-
+  /**
+   * 操作数组监控
+   */
+  watch(value, () => {
+    for (let i = 0; i < value.length; i++) {
+      for (let j = 0; j < value[i].length; j++) {
+        // 此处证明需要填充原数组
+        if (value[i][j]) {
+          // 填充行数
+          while (originValue.length < i + 1) {
+            originValue.push([])
+          }
+          // 寻找列数
+          originValue[i][j] = value[i][j]
+        }
+      }
+    }
+  })
+  /**
+   * 原数组监控
+   */
+  watch(originValue, () => {
+    console.log('1')
+    for (let i = 0; i < originValue.length; i++) {
+      for (let j = 0; j < originValue[i].length; j++) {
+        // 填充行数
+        while (value.length < i + 1) {
+          value.push([])
+        }
+        // 寻找列数
+        value[i][j] = originValue[i][j]
+      }
+    }
+  }, { immediate: true })
   // 事件方法
   // 方法
   // 普通function函数
@@ -165,6 +199,7 @@ export default function (props: any, ctx: SetupContext) {
   }
   // provide
   // 生命周期
+
   const tableValue = tableValueState(props, ctx, value)
   const boxSize = boxSizeState(table, value)
   const pickBox = pickBoxState(props, ctx, boxSize, tableValue.chooseTarget, value)
