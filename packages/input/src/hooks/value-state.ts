@@ -51,11 +51,12 @@ export default function (props: InputProps, ctx: SetupContext, search: Ref) {
   function handleInput (E: Event): void {
     // console.log('ok')
     const e = E as unknown as InputEvent
+    const curValue = parseValidValue(e.target.value)
     if (toUpdateValue(e)) {
-      ctx.emit('update:modelValue', e.target.value)
-      ctx.emit('input')
+      ctx.emit('update:modelValue', curValue)
+      ctx.emit('input', curValue)
       // search搜索
-      if (props.search && search.value) ctx.emit('search', props.modelValue)
+      if (props.search && search.value) ctx.emit('search', curValue)
     }
   }
 
@@ -64,6 +65,21 @@ export default function (props: InputProps, ctx: SetupContext, search: Ref) {
     if (toUpdateValue(e)) {
       ctx.emit('change')
     }
+  }
+
+  /**
+   * 将数据转化为有效的input数据
+   * @param value 目标转化数据
+   * @returns 有效数据
+   */
+  function parseValidValue (value: string) {
+    if (props.number) {
+      const newValue = strToNumstr(String(value))
+      return newValue
+    } else if (isMaxLength(String(value))) {
+      return value.slice(0, props.maxlength)
+    }
+    return value
   }
 
   return {

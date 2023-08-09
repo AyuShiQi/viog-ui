@@ -75,7 +75,7 @@ export default defineComponent({
     }
 
     watch(id, () => {
-      console.log(id)
+      console.log(id.value)
     })
 
     watch(ar, () => {

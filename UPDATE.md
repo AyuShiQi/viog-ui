@@ -52,12 +52,12 @@
 
 - 新增选色器color-select组件
 
-# 0.10.10
+# 0.10.10（当前迭代开发版本）
 
-# 0.10.9（当前迭代开发版本）
+# 0.10.9
 
-- 修复table-editor组件data操作bug*
-- 修复select组件别名首次显示不成功的问题*
+- 修复table-editor组件data操作bug
+- 修复select组件别名首次显示不成功的问题
 - 优化input组件modelValue传入数据类型报错问题
 - 修复input组件number属性开启后的报错问题
 
