@@ -1,6 +1,6 @@
 export default {
   modelValue: {
-    type: String,
+    type: [String, Number, Boolean],
     default: ''
   },
   // 已弃用

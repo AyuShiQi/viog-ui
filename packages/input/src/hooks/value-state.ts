@@ -11,10 +11,10 @@ export default function (props: InputProps, ctx: SetupContext, search: Ref) {
   const value = computed(() => {
     // console.log(props.modelValue)
     if (props.number) {
-      const newValue = strToNumstr(props.modelValue)
+      const newValue = strToNumstr(String(props.modelValue))
       if (props.modelValue !== newValue) ctx.emit('update:modelValue', newValue)
-    } else if (isMaxLength(props.modelValue)) {
-      ctx.emit('update:modelValue', props.modelValue.slice(0, props.maxlength))
+    } else if (isMaxLength(String(props.modelValue))) {
+      ctx.emit('update:modelValue', String(props.modelValue).slice(0, props.maxlength))
     }
     return props.modelValue
   })

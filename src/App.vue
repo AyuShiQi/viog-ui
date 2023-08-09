@@ -6,6 +6,8 @@
     <vi-option value="ysq">杨诗绮</vi-option>
     <vi-option value="scs">你好</vi-option>
   </vi-select>
+
+  <vi-input v-model="id" number></vi-input>
 </template>
 
 <script lang="ts">
