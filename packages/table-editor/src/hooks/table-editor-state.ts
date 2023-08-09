@@ -115,7 +115,7 @@ export default function (props: any, ctx: SetupContext) {
     }
     // 清除多余行
     if (originValue.length > validRow) originValue.length = validRow
-    console.log(originValue)
+    // console.log(originValue)
   })
   /**
    * 原数组监控
