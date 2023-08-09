@@ -57,7 +57,7 @@ export default function (props: any, ctx: SetupContext) {
   const cols = computed(() => {
     let max = 0
     for (const arr of value) {
-      max = Math.max(arr.length, max)
+      max = Math.max(arr?.length ?? 0, max)
     }
     return Math.max(max, props.defaultCol)
   })
@@ -86,13 +86,21 @@ export default function (props: any, ctx: SetupContext) {
     generateHeader(newVal, oldVal)
   }, { immediate: true })
   /**
-   * 操作数组监控
+   * 操作数组监控，此操作用于在操作数组变化时，修改原数组
    */
   watch(value, () => {
+    // 记录有效行
+    let validRow = 0
     for (let i = 0; i < value.length; i++) {
+      // 记录有效列
+      let validCol = 0
+      // 有效行标志
+      let rowFlag = false
       for (let j = 0; j < value[i].length; j++) {
         // 此处证明需要填充原数组
         if (value[i][j]) {
+          rowFlag = true
+          validCol = j + 1
           // 填充行数
           while (originValue.length < i + 1) {
             originValue.push([])
@@ -102,10 +110,12 @@ export default function (props: any, ctx: SetupContext) {
         }
       }
       // 清除多余列数据
-      if (originValue[i] && originValue[i].length > value[i].length) originValue[i].length = value[i].length
+      if (originValue[i] && originValue[i].length > validCol) originValue[i].length = validCol
+      if (rowFlag) validRow = i + 1
     }
     // 清除多余行
-    if (originValue.length > value.length) originValue.length = value.length
+    if (originValue.length > validRow) originValue.length = validRow
+    console.log(originValue)
   })
   /**
    * 原数组监控

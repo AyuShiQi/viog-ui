@@ -74,7 +74,9 @@ export default function (props: any, ctx: SetupContext, chooseTarget: Target, pi
     } else if (mode.value === 'row') {
       const row = entireTarget[0]
       value.splice(row, 1)
-      if (value.length < props.defaultRow) value.length = props.defaultRow
+      while (value.length < props.defaultRow) {
+        value.push([])
+      }
     } else if (mode.value === 'col') {
       const col = entireTarget[1]
       // 此方法无法触发响应式
