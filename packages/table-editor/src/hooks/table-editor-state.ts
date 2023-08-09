@@ -101,13 +101,16 @@ export default function (props: any, ctx: SetupContext) {
           originValue[i][j] = value[i][j]
         }
       }
+      // 清除多余列数据
+      if (originValue[i] && originValue[i].length > value[i].length) originValue[i].length = value[i].length
     }
+    // 清除多余行
+    if (originValue.length > value.length) originValue.length = value.length
   })
   /**
    * 原数组监控
    */
   watch(originValue, () => {
-    console.log('1')
     for (let i = 0; i < originValue.length; i++) {
       for (let j = 0; j < originValue[i].length; j++) {
         // 填充行数
@@ -116,6 +119,17 @@ export default function (props: any, ctx: SetupContext) {
         }
         // 寻找列数
         value[i][j] = originValue[i][j]
+      }
+      // 多余的行数据清除
+      for (let j = originValue[i].length; j < value[i].length; j++) {
+        value[i][j] = undefined
+      }
+    }
+
+    // 操作数据数组多余的行清除
+    for (let i = originValue.length; i < value.length; i++) {
+      for (let j = 0; j < value[i].length; j++) {
+        value[i][j] = undefined
       }
     }
   }, { immediate: true })
