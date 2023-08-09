@@ -34,6 +34,7 @@
               <selectItem v-for="item in chooseShow" :key="item">{{ aliasShow(item) }}</selectItem>
             </template>
             <template v-else>
+              <!-- 单选显示 -->
               {{ chooseShow }}
             </template>
           </span>

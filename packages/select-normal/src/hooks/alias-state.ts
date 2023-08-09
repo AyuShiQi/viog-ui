@@ -1,5 +1,5 @@
 // vue
-import { provide } from 'vue'
+import { provide, reactive } from 'vue'
 // vue type
 // 组件type
 // 外部hooks
@@ -8,7 +8,7 @@ import { provide } from 'vue'
 
 export default function (useAlias = true) {
   // 普通常量
-  const aliasMap = new Map<string, string>()
+  const aliasMap = reactive(new Map<string, string>())
   // DOM ref
   // ref
   // reactive
@@ -16,6 +16,11 @@ export default function (useAlias = true) {
   // computed
   // 事件方法
   // 方法
+  /**
+   * 返回某个value的别名，没有别名则返回value
+   * @param value 选中value
+   * @returns 别名
+   */
   function aliasShow (value: string) {
     return aliasMap.has(value) ? aliasMap.get(value) : value
   }

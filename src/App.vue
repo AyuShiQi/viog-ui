@@ -2,6 +2,10 @@
   <vi-button @click="table[0][120] = '233'">111111111</vi-button>
   <vi-color-select></vi-color-select>
   <vi-table-editor v-model="table"></vi-table-editor>
+  <vi-select v-model="data">
+    <vi-option value="ysq">杨诗绮</vi-option>
+    <vi-option value="scs">你好</vi-option>
+  </vi-select>
 </template>
 
 <script lang="ts">
@@ -56,6 +60,7 @@ export default defineComponent({
     const ar = reactive([])
     const o = ref({})
     const open = ref(false)
+    const data = ref('scs')
     const nav = ['吃饭', '睡觉', '长个子', '好']
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
     const obj = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 }]
@@ -87,6 +92,7 @@ export default defineComponent({
     }
 
     return {
+      data,
       id,
       o,
       val,
