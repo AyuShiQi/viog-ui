@@ -145,6 +145,9 @@
     --vi-steps-gap: 8px;
 
     --vi-tabbar-height: 64px;
+
+    --vi-color-select-width: auto;
+    --vi-color-select-height: 20px;
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */
