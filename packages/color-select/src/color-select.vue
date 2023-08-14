@@ -23,10 +23,20 @@
         <div class="vi-color-select__list__color-choose"
         :style="{
           background: colorSliderView
-        }"></div>
+        }">
+          <div class="vi-color-select__list__color-choose__thumb"
+          @mousedown="handleBoardMousedown"
+          :style="{
+            transform: `translate(${boardPos[0]}px, ${boardPos[1]}px)`
+          }"></div>
+        </div>
         <div class="vi-color__list__else">
           <div class="vi-color__list__option">
-            <div class="vi-color-choose"></div>
+            <!-- 选中颜色展示 -->
+            <div class="vi-color-choose"
+            :style="{
+              backgroundColor: colorView
+            }"></div>
             <div class="vi-color-slider">
               <!-- 透明度条 -->
               <div class="vi-color__list__alpha" v-if="alpha">
@@ -49,8 +59,8 @@
           <!-- 颜色信息 -->
           <div class="vi-color-select__list__info">
             <vi-input type="button"
-            number
-            :maxlength="6"
+            v-model="hexColor"
+            :maxlength="8"
             class="vi-color-select__list__info__input">
               <template v-slot:prefix>
                 #

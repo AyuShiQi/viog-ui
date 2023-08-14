@@ -1,6 +1,6 @@
 <template>
   <vi-button @click="table[0][120] = '233'">111111111</vi-button>
-  <vi-color-select></vi-color-select>
+  <vi-color-select v-model="value"></vi-color-select>
   <vi-table-editor v-model="table"></vi-table-editor>
   <vi-select v-model="data">
     <vi-option value="ysq">杨诗绮</vi-option>
