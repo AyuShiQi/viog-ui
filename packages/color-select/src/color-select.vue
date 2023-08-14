@@ -25,26 +25,38 @@
           background: colorSliderView
         }"></div>
         <div class="vi-color__list__else">
-          <!-- 透明度条 -->
-          <div class="vi-color__list__alpha" v-if="alpha">
-            <div class="vi-color__list__alpha__thumb"
-            @mousedown="handleAlphaMousedown"
-            :style="{
-              transform: `translateX(${alphaPos[0]}px)`
-            }"></div>
-          </div>
-          <!-- 色条盘 -->
-          <div class="vi-color-select__list__info__slider">
-            <div class="vi-color__list__info__slider__thumb"
-            @mousedown="handleColorSliderMousedown"></div>
+          <div class="vi-color__list__option">
+            <div class="vi-color-choose"></div>
+            <div class="vi-color-slider">
+              <!-- 透明度条 -->
+              <div class="vi-color__list__alpha" v-if="alpha">
+                <div class="vi-color__list__alpha__thumb"
+                @mousedown="handleAlphaMousedown"
+                :style="{
+                  transform: `translateX(${alphaPos[0]}px)`
+                }"></div>
+              </div>
+              <!-- 色条盘 -->
+              <div class="vi-color-select__list__info__slider">
+                <div class="vi-color__list__info__slider__thumb"
+                @mousedown="handleColorSliderMousedown"
+                :style="{
+                  transform: `translateX(${colorSliderPos[0]}px)`
+                }"></div>
+              </div>
+            </div>
           </div>
           <!-- 颜色信息 -->
           <div class="vi-color-select__list__info">
-            <vi-input type="button" number class="vi-color-select__list__info__input">
+            <vi-input type="button"
+            number
+            :maxlength="6"
+            class="vi-color-select__list__info__input">
               <template v-slot:prefix>
                 #
               </template>
             </vi-input>
+            <vi-button @click="handleSure">确认</vi-button>
           </div>
         </div>
       </div>

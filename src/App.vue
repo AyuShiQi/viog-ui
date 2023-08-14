@@ -8,7 +8,7 @@
   </vi-select>
 
   <vi-input v-model="id" number></vi-input>
-  <!-- <input type="color"> -->
+  <input type="color">
 </template>
 
 <script lang="ts">
