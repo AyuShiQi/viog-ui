@@ -1,5 +1,5 @@
 // vue
-import { ref, reactive, computed, onMounted, onBeforeUnmount, watch, h } from 'vue'
+import { ref, reactive, computed, onMounted, onBeforeUnmount, watch } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
@@ -8,8 +8,8 @@ import type { SetupContext } from 'vue'
 // 外部模块
 import { RGBtoHSV, HSVtoRGB, RGBtoHex, HextoRGB } from './rgb-hsv'
 // const colorCalMap = [[0, 1, 0], [-1, 0, 0], [0, 0, 1], [0, -1, 0], [1, 0, 0], [1, 0, 1]]
-const colorCalPoint = [[255, 0, 0], [255, 255, 0], [0, 255, 0], [0, 255, 255], [0, 0, 255], [255, 0, 255], [255, 0, 0]]
-const colorSliderUnit = 200 / 6
+// const colorCalPoint = [[255, 0, 0], [255, 255, 0], [0, 255, 0], [0, 255, 255], [0, 0, 255], [255, 0, 255], [255, 0, 0]]
+// const colorSliderUnit = 200 / 6
 
 export default function (props: any, ctx: SetupContext) {
   // 普通常量
@@ -44,7 +44,7 @@ export default function (props: any, ctx: SetupContext) {
   /**
    * 选中颜色rgba
    */
-  const colorChoose = reactive([0, 0, 0, 1])
+  const colorChoose = reactive([255, 0, 0, 1])
   const hsvChoose = reactive({
     h: 0,
     s: 0,
