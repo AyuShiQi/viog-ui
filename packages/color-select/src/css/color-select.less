@@ -30,7 +30,7 @@
             position: relative;
             width: 280px;
             height: 180px;
-            background-color: red;
+            // background-color: red;
 
             &::before {
                 // 白色
@@ -87,10 +87,21 @@
             gap: 16px;
 
             .vi-color-choose {
+                overflow: hidden;
+                position: relative;
                 width: 32px;
                 height: 32px;
                 border-radius: 5px;
-                background-color: #000;
+                background: url(../imgs/bg.png);
+                background-size: cover;
+
+                .vi-color__list__option__color {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 32px;
+                    height: 32px;
+                }
             }
 
             .vi-color-slider {

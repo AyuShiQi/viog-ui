@@ -56,7 +56,6 @@ export function HSVtoRGB (h: number, s: number, v: number, a = 1) {
       b = p2
       break
   }
-
   return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255), a]
 }
 
@@ -111,9 +110,11 @@ export function HextoRGB (hex: string): number[] {
   for (let i = 0; i < 4 && hex.length >= 2; i++) {
     const now = parseInt(hex.slice(0, 2), 16)
     hex = hex.slice(2)
-    console.log(now)
     rgb[i] = now
+    if (rgb[i] > 255) rgb[i] = 255
   }
+
+  rgb[3] = Number((rgb[3] / 255).toFixed(2))
   return rgb
 }
 

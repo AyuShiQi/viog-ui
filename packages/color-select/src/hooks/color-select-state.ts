@@ -1,5 +1,5 @@
 // vue
-import { ref, reactive, computed, onMounted, onBeforeUnmount, watch } from 'vue'
+import { ref, reactive, computed, onMounted, onBeforeUnmount, watch, h } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
@@ -13,6 +13,9 @@ const colorSliderUnit = 200 / 6
 
 export default function (props: any, ctx: SetupContext) {
   // 普通常量
+  const sliderLen = 200
+  const boardWidth = 280
+  const boardHeight = 180
   /**
    * 透明度的
    */
@@ -33,6 +36,7 @@ export default function (props: any, ctx: SetupContext) {
   const boardDrag = ref(false)
   const alphaSlider = ref(1)
   const hexColor = ref('000')
+  const colorSliderH = ref(0)
   // reactive
   const colorSliderPos = reactive([0, 0])
   const alphaPos = reactive([0, 0])
@@ -64,94 +68,36 @@ export default function (props: any, ctx: SetupContext) {
   const colorView = computed(() => {
     return `rgba(${colorChoose[0]}, ${colorChoose[1]}, ${colorChoose[2]}, ${colorChoose[3]})`
   })
+
   // watch
-  watch(hexColor, () => {
-    // console.log(hexColor.value)
-  })
-  /**
-   * 用于在坐标发生变化时重新计算选域色块颜色
-   */
+  // 在选色条坐标发生变化后变化调色板颜色(色相改变)
   watch(colorSliderPos, () => {
-    if (colorSliderPos[0] === 0) {
-      [colorSlider[0], colorSlider[1], colorSlider[2]] = colorCalPoint[0]
-    } else if (colorSliderPos[0] < colorSliderUnit) {
-      [colorSlider[0],, colorSlider[2]] = colorCalPoint[1]
-      // 计算第一区域
-      colorSlider[1] = Math.floor(colorSliderPos[0] / colorSliderUnit * 255)
-      // console.log('第一区域')
-    } else if (colorSliderPos[0] < colorSliderUnit * 2) {
-      [, colorSlider[1], colorSlider[2]] = colorCalPoint[2]
-      // 计算第二区域
-      colorSlider[0] = Math.floor(255 - (colorSliderPos[0] - colorSliderUnit) / colorSliderUnit * 255)
-      // console.log('第二区域')
-    } else if (colorSliderPos[0] < colorSliderUnit * 3) {
-      [colorSlider[0], colorSlider[1]] = colorCalPoint[3]
-      // 计算第三区域
-      colorSlider[2] = Math.floor((colorSliderPos[0] - (colorSliderUnit * 2)) / colorSliderUnit * 255)
-      // console.log('第三区域')
-      // console.log(colorSlider)
-    } else if (colorSliderPos[0] < colorSliderUnit * 4) {
-      [colorSlider[0],, colorSlider[2]] = colorCalPoint[4]
-      // 计算第四区域
-      colorSlider[1] = Math.floor(255 - (colorSliderPos[0] - (colorSliderUnit * 3)) / colorSliderUnit * 255)
-      // console.log('第四区域')
-    } else if (colorSliderPos[0] < colorSliderUnit * 5) {
-      [, colorSlider[1], colorSlider[2]] = colorCalPoint[5]
-      // 计算第五区域
-      colorSlider[0] = Math.floor((colorSliderPos[0] - (colorSliderUnit * 4)) / colorSliderUnit * 255)
-      // console.log('第五区域')
-    } else if (colorSliderPos[0] < colorSliderUnit * 6) {
-      [colorSlider[0], colorSlider[1]] = colorCalPoint[6]
-      // 计算第六区域
-      colorSlider[2] = Math.floor(255 - (colorSliderPos[0] - (colorSliderUnit * 5)) / colorSliderUnit * 255)
-      // console.log('第六区域')
-    } else {
-      // console.log('第七区域');
-      [colorSlider[0], colorSlider[1], colorSlider[2]] = colorCalPoint[6]
-    }
+    getColorSliderHsv()
+    changeColorSlider()
   }, { immediate: true })
-  /**
-   * 计算当前色相
-   */
-  watch(colorSlider, () => {
-    // hsvChoose.h = Math.floor(colorSliderPos[0] / 200 * 360)
-    const res = RGBtoHSV(colorSlider[0], colorSlider[1], colorSlider[2], colorSlider[3])
-    // console.log(res)
-    hsvChoose.h = res.h
-  }, { immediate: true })
-  /**
-   * 计算当前透明度
-   */
+
+  // 就算当前透明度并更改
   watch(alphaPos, () => {
     alphaSlider.value = 1 - alphaPos[0] / 200
-  }, { immediate: true })
-  // 透明度变换
-  watch(alphaSlider, () => {
     colorChoose[3] = alphaSlider.value
-  })
-  /**
-   * 计算当前选择颜色饱和度与明度
-   */
-  watch(boardPos, () => {
-    // 280 and 180
-    // console.log('进入')
-    hsvChoose.s = Math.round(boardPos[0] / 280 * 100)
-    hsvChoose.v = 100 - Math.round(boardPos[1] / 180 * 100)
-    // console.log(hsvChoose)
   }, { immediate: true })
-  /**
-   * 计算当前十六进制
-   */
+
+  // 调色板坐标发生改变时，计算当前选择颜色饱和度与明度
+  watch(boardPos, () => {
+    changeChooseSV()
+  }, { immediate: true })
+
+  // choose color 改变时，计算当前的16进制表示
   watch(colorChoose, () => {
     hexColor.value = RGBtoHex(colorChoose)
   })
-  /**
-   * 计算当前选择颜色RGB
-   */
+
+  // 计算选中颜色RGB
   watch(hsvChoose, () => {
     // console.log(temp)
     [colorChoose[0], colorChoose[1], colorChoose[2]] = HSVtoRGB(hsvChoose.h, hsvChoose.s, hsvChoose.v)
   }, { immediate: true })
+
   // 事件方法
   function handleColorSliderMousedown (e: MouseEvent) {
     if (colorSliderDrag.value) return
@@ -209,12 +155,45 @@ export default function (props: any, ctx: SetupContext) {
     if (RGBtoHex(colorChoose) === hexColor.value) ctx.emit('update:modelValue', '#' + hexColor.value)
     else {
       // input计算更改
-      // console.log('enter')
-      [colorChoose[0], colorChoose[1], colorChoose[2], colorChoose[3]] = HextoRGB(hexColor.value)
-      ctx.emit('update:modelValue', '#' + hexColor.value)
+      const rgb = HextoRGB(hexColor.value)
+      const hsv = RGBtoHSV(rgb[0], rgb[1], rgb[2], rgb[3])
+      // console.log(rgb, hsv, hex)
+      // 反向计算colorSliderPos和alphaSliderPos
+      // 计算colorSliderPos
+      colorSliderPos[0] = hsv.h * sliderLen / 360
+      // 计算alphaPos
+      alphaPos[0] = sliderLen - hsv.a * sliderLen
+      // 计算色盘坐标
+      boardPos[0] = hsv.s * boardWidth / 100
+      boardPos[1] = (100 - hsv.v) * boardHeight / 100
+      // console.log(boardPos)
     }
   }
   // 方法
+  /**
+   * 获取调色板色相
+   */
+  function getColorSliderHsv () {
+    colorSliderH.value = Math.round(colorSliderPos[0] / sliderLen * 360)
+  }
+
+  /**
+   * 通过h色相转换调色板颜色
+   */
+  function changeColorSlider () {
+    // console.log(colorSliderH.value)
+    [colorSlider[0], colorSlider[1], colorSlider[2]] = HSVtoRGB(colorSliderH.value, 100, 100)
+    // 改变选中颜色色相
+    hsvChoose.h = colorSliderH.value
+  }
+
+  /**
+   * 改变饱和度和明度
+   */
+  function changeChooseSV () {
+    hsvChoose.s = Math.round(boardPos[0] / boardWidth * 100)
+    hsvChoose.v = 100 - Math.round(boardPos[1] / boardHeight * 100)
+  }
   // 普通function函数
   // provide
   // 生命周期

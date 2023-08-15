@@ -33,10 +33,12 @@
         <div class="vi-color__list__else">
           <div class="vi-color__list__option">
             <!-- 选中颜色展示 -->
-            <div class="vi-color-choose"
-            :style="{
-              backgroundColor: colorView
-            }"></div>
+            <div class="vi-color-choose">
+              <div class="vi-color__list__option__color"
+              :style="{
+                backgroundColor: colorView
+              }"></div>
+            </div>
             <div class="vi-color-slider">
               <!-- 透明度条 -->
               <div class="vi-color__list__alpha" v-if="alpha">
