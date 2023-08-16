@@ -99,20 +99,23 @@ export default function (props: any, ctx: SetupContext) {
   }, { immediate: true })
 
   // 事件方法
-  function handleColorSliderMousedown (e: MouseEvent) {
+  function handleColorSliderMousedown (e: Event) {
     if (colorSliderDrag.value) return
+    e.stopPropagation()
     colorSliderDrag.value = true
     cbegin = (e.target as any).parentNode.getBoundingClientRect().x
   }
 
-  function handleAlphaMousedown (e: MouseEvent) {
+  function handleAlphaMousedown (e: Event) {
     if (alphaDrag.value) return
+    e.stopPropagation()
     alphaDrag.value = true
     abegin = (e.target as any).parentNode.getBoundingClientRect().x
   }
 
-  function handleBoardMousedown (e: MouseEvent) {
+  function handleBoardMousedown (e: Event) {
     if (boardDrag.value) return
+    e.stopPropagation()
     boardDrag.value = true
     const temp = (e.target as any).parentNode.getBoundingClientRect()
     bbeginx = temp.x
@@ -122,20 +125,42 @@ export default function (props: any, ctx: SetupContext) {
   function handleAlphaMousemove (e: MouseEvent) {
     if (!alphaDrag.value) return
     // console.log(e)
-    alphaPos[0] = Math.max(Math.min(e.x - abegin, 200), 0)
+    alphaPos[0] = Math.max(Math.min(e.x - abegin, sliderLen), 0)
+  }
+
+  function handleAlphaTouchmove (e: TouchEvent) {
+    if (!alphaDrag.value) return
+    e.stopPropagation()
+    // console.log(e)
+    alphaPos[0] = Math.max(Math.min(e.changedTouches[0]?.clientX - abegin, sliderLen), 0)
   }
 
   function handleColorSliderMousemove (e: MouseEvent) {
     if (!colorSliderDrag.value) return
     // console.log(e)
-    colorSliderPos[0] = Math.max(Math.min(e.x - cbegin, 200), 0)
+    colorSliderPos[0] = Math.max(Math.min(e.x - cbegin, sliderLen), 0)
+  }
+
+  function handleColorSliderTouchmove (e: TouchEvent) {
+    if (!colorSliderDrag.value) return
+    e.stopPropagation()
+    // console.log(e)
+    colorSliderPos[0] = Math.max(Math.min(e.changedTouches[0]?.clientX - cbegin, sliderLen), 0)
   }
 
   function handleBoardMousemove (e: MouseEvent) {
     if (!boardDrag.value) return
     // console.log(e)
-    boardPos[0] = Math.max(Math.min(e.x - bbeginx, 280), 0)
-    boardPos[1] = Math.max(Math.min(e.y - bbeginy, 180), 0)
+    boardPos[0] = Math.max(Math.min(e.x - bbeginx, boardWidth), 0)
+    boardPos[1] = Math.max(Math.min(e.y - bbeginy, boardHeight), 0)
+  }
+
+  function handleBoardTouchmove (e: TouchEvent) {
+    if (!boardDrag.value) return
+    e.stopPropagation()
+    // console.log(e)
+    boardPos[0] = Math.max(Math.min(e.changedTouches[0]?.clientX - bbeginx, boardWidth), 0)
+    boardPos[1] = Math.max(Math.min(e.changedTouches[0]?.clientY - bbeginy, boardHeight), 0)
   }
   /**
    * 鼠标弹起
@@ -188,6 +213,24 @@ export default function (props: any, ctx: SetupContext) {
   }
 
   /**
+   * 初始化操作
+   */
+  function init () {
+    // 首次颜色选中
+    const rgb = HextoRGB(props.modelValue.slice(1))
+    const hsv = RGBtoHSV(rgb[0], rgb[1], rgb[2], rgb[3])
+    // console.log(rgb, hsv)
+    // 反向计算colorSliderPos和alphaSliderPos
+    // 计算colorSliderPos
+    colorSliderPos[0] = hsv.h * sliderLen / 360
+    // 计算alphaPos
+    alphaPos[0] = sliderLen - hsv.a * sliderLen
+    // 计算色盘坐标
+    boardPos[0] = hsv.s * boardWidth / 100
+    boardPos[1] = (100 - hsv.v) * boardHeight / 100
+  }
+
+  /**
    * 改变饱和度和明度
    */
   function changeChooseSV () {
@@ -198,17 +241,26 @@ export default function (props: any, ctx: SetupContext) {
   // provide
   // 生命周期
   onMounted(() => {
+    init()
     window.addEventListener('mouseup', handleMouseup)
+    window.addEventListener('touchend', handleMouseup)
     window.addEventListener('mousemove', handleAlphaMousemove)
     window.addEventListener('mousemove', handleColorSliderMousemove)
     window.addEventListener('mousemove', handleBoardMousemove)
+    window.addEventListener('touchmove', handleAlphaTouchmove)
+    window.addEventListener('touchmove', handleColorSliderTouchmove)
+    window.addEventListener('touchmove', handleBoardTouchmove)
   })
 
   onBeforeUnmount(() => {
     window.removeEventListener('mouseup', handleMouseup)
+    window.removeEventListener('touchend', handleMouseup)
     window.removeEventListener('mousemove', handleAlphaMousemove)
     window.removeEventListener('mousemove', handleColorSliderMousemove)
     window.removeEventListener('mousemove', handleBoardMousemove)
+    window.removeEventListener('touchmove', handleAlphaTouchmove)
+    window.removeEventListener('touchmove', handleColorSliderTouchmove)
+    window.removeEventListener('touchmove', handleBoardTouchmove)
   })
 
   return {

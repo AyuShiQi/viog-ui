@@ -26,6 +26,7 @@
         }">
           <div class="vi-color-select__list__color-choose__thumb"
           @mousedown="handleBoardMousedown"
+          @touchstart="handleBoardMousedown"
           :style="{
             transform: `translate(${boardPos[0]}px, ${boardPos[1]}px)`
           }"></div>
@@ -44,6 +45,7 @@
               <div class="vi-color__list__alpha" v-if="alpha">
                 <div class="vi-color__list__alpha__thumb"
                 @mousedown="handleAlphaMousedown"
+                @touchstart="handleAlphaMousedown"
                 :style="{
                   transform: `translateX(${alphaPos[0]}px)`
                 }"></div>
@@ -52,6 +54,7 @@
               <div class="vi-color-select__list__info__slider">
                 <div class="vi-color__list__info__slider__thumb"
                 @mousedown="handleColorSliderMousedown"
+                @touchstart="handleColorSliderMousedown"
                 :style="{
                   transform: `translateX(${colorSliderPos[0]}px)`
                 }"></div>

@@ -59,7 +59,7 @@ export default defineComponent({
     })
     const choose = ref(0)
     const res = ref(false)
-    const value = ref('')
+    const value = ref('#fff')
     const val = ref('')
     const ar = reactive([])
     const o = ref({})

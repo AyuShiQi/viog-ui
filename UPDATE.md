@@ -4,6 +4,7 @@
 - 优化scroll组件scroll-bar展示
 - 新增list组件
 - 新增滑块slider组件
+- 优化color-select组件颜色精确控制
 
 # 0.20.0
 
@@ -50,9 +51,8 @@
 
 # 0.11.1（当前迭代开发版本）
 
-- 新增color-select组件移动端适配
-- 新增color-select组件初始化颜色
-- 优化color-select组件颜色精确控制
+- 新增color-select组件移动端适配*
+- 新增color-select组件初始化颜色*
 - 优化collapse组件高度控制适配*
 
 # 0.11.0
