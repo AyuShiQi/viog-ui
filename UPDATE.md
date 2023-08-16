@@ -53,8 +53,7 @@
 - 新增color-select组件移动端适配
 - 新增color-select组件初始化颜色
 - 优化color-select组件颜色精确控制
-- 优化collapse组件高度控制适配
-- 增加collapse y轴overflow控制
+- 优化collapse组件高度控制适配*
 
 # 0.11.0
 

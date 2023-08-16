@@ -106,7 +106,7 @@
     --vi-nav-font-size: 16px;
 
     --vi-collapse-width: 200px;
-    --vi-collapse-overflow-x: hidden;
+    --vi-collapse-overflow-x: visible;
 
     --vi-menu-width: 200px;
 
