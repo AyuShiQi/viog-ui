@@ -19,9 +19,9 @@
         </svg>
     </div>
     <div class="vi-collapse__content">
-      <vi-scroll class="vi-collapse__content-view">
+      <div class="vi-collapse__content-view">
         <slot></slot>
-      </vi-scroll>
+      </div>
     </div>
   </div>
 </template>

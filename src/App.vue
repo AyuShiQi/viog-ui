@@ -1,11 +1,12 @@
 <template>
-  <vi-button @click="table[0][120] = '233'">111111111</vi-button>
-  <vi-color-select v-model="value"></vi-color-select>
-  <vi-table-editor v-model="table"></vi-table-editor>
   <vi-select v-model="data">
     <vi-option value="ysq">杨诗绮</vi-option>
     <vi-option value="scs">你好</vi-option>
   </vi-select>
+  <vi-collapse title="标题">
+    <vi-table-editor v-model="table"></vi-table-editor>
+    <vi-color-select v-model="value"></vi-color-select>
+  </vi-collapse>
 
   <vi-input v-model="id" number></vi-input>
   <input type="color">
