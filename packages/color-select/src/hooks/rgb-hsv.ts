@@ -121,7 +121,7 @@ export function HextoRGB (hex: string): number[] {
 export function RGBtoHex (rgb: number[]): string {
   let strHex = ''
   for (let i = 0; i < 3; i++) {
-    let hex = rgb[i].toString(16)
+    let hex = rgb[i].toString(16).padStart(2, '0')
     if (hex === '0') {
       hex += hex
     }
@@ -129,7 +129,7 @@ export function RGBtoHex (rgb: number[]): string {
   }
 
   if (rgb[3]) {
-    let hex = Math.round(rgb[3] * 255).toString(16)
+    let hex = Math.round(rgb[3] * 255).toString(16).padStart(2, '0')
     if (hex === '0') {
       hex += hex
     }

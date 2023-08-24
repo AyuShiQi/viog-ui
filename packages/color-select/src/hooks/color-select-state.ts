@@ -162,6 +162,10 @@ export default function (props: any, ctx: SetupContext) {
     boardPos[0] = Math.max(Math.min(e.changedTouches[0]?.clientX - bbeginx, boardWidth), 0)
     boardPos[1] = Math.max(Math.min(e.changedTouches[0]?.clientY - bbeginy, boardHeight), 0)
   }
+
+  function handleTransparent () {
+    ctx.emit('update:modelValue', 'transparent')
+  }
   /**
    * 鼠标弹起
    */
@@ -277,6 +281,7 @@ export default function (props: any, ctx: SetupContext) {
     handleColorSliderMousedown,
     handleAlphaMousedown,
     handleBoardMousedown,
+    handleTransparent,
     handleSure
   }
 }

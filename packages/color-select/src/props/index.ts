@@ -14,6 +14,6 @@ export default {
   },
   alpha: {
     type: Boolean,
-    default: true
+    default: false
   }
 }

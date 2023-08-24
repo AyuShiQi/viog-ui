@@ -13,7 +13,7 @@
       :style="{
         background: modelValue
       }"></div>
-      <div number class="vi-color-select__view__number" v-if="!number">
+      <div number class="vi-color-select__view__number" v-if="number">
         {{ modelValue }}
       </div>
     </div>
@@ -71,6 +71,7 @@
                 #
               </template>
             </vi-input>
+            <div class="transparent-color" @click="handleTransparent"></div>
             <vi-button @click="handleSure">确认</vi-button>
           </div>
         </div>
