@@ -1,4 +1,8 @@
 export default {
+  name: {
+    type: String,
+    default: ''
+  },
   modelValue: {
     type: String,
     default: '#000'

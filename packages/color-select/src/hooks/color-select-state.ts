@@ -4,6 +4,7 @@ import { ref, reactive, computed, onMounted, onBeforeUnmount, watch } from 'vue'
 import type { SetupContext } from 'vue'
 // 组件type
 // 外部hooks
+import { formTargetStateRef } from '@/hooks/form-target-state'
 // 内部hooks
 // 外部模块
 import { RGBtoHSV, HSVtoRGB, RGBtoHex, HextoRGB } from './rgb-hsv'
@@ -68,6 +69,8 @@ export default function (props: any, ctx: SetupContext) {
   const colorView = computed(() => {
     return `rgba(${colorChoose[0]}, ${colorChoose[1]}, ${colorChoose[2]}, ${colorChoose[3]})`
   })
+
+  const pickValue = computed(() => props.modelValue)
 
   // watch
   // 在选色条坐标发生变化后变化调色板颜色(色相改变)
@@ -266,6 +269,8 @@ export default function (props: any, ctx: SetupContext) {
     window.removeEventListener('touchmove', handleColorSliderTouchmove)
     window.removeEventListener('touchmove', handleBoardTouchmove)
   })
+
+  if (props.name) formTargetStateRef(props.name, pickValue)
 
   return {
     hexColor,
