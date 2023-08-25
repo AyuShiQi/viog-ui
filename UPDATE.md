@@ -49,11 +49,18 @@
 - 新增可编辑表格自定义拖拉表格长宽功能
 - 新增upload组件照片墙功能
 
-# 0.11.1（当前迭代开发版本）
+# 0.11.3（当前迭代开发版本）
 
-- 新增color-select组件移动端适配*
-- 新增color-select组件初始化颜色*
-- 优化collapse组件高度控制适配*
+# 0.11.2
+
+- 修复color-select组件十六进制计算错误问题
+- 新增color-select组件透明取色
+
+# 0.11.1
+
+- 新增color-select组件移动端适配
+- 新增color-select组件初始化颜色
+- 优化collapse组件高度控制适配
 
 # 0.11.0
 
@@ -91,7 +98,7 @@
 
 - 优化menu组件与tabbar组件路由匹配体验
 
-# 0.10.0
+# 0.10.0！！！
 
 - 新增tabbar组件
 
@@ -138,8 +145,8 @@
 # 0.7.10
 
 - 新增form组件submit事件反馈信息功能
-- 新增form组件trunc属性，支持表单匹配截断功能
-- 新增form组件immediate属性，支持立即匹配功能
+- 新增form-item组件trunc属性，支持表单匹配截断功能
+- 新增form-item组件immediate属性，支持立即匹配功能
 
 # 0.7.9
 
