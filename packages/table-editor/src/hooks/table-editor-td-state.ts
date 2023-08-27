@@ -59,12 +59,12 @@ export default function (props: any, ctx: SetupContext) {
     pickTarget.colLen = 1
     pickTarget.rowLen = 1
     // 右键后属于那个框内
-    if (e.button === 2) {
-      if (pickTarget.rowStart <= row &&
-      pickTarget.rowEnd >= row &&
-      pickTarget.colStart <= col &&
-      pickTarget.colEnd >= col) return
-    }
+    // if (e.button === 2) {
+    //   if (pickTarget.rowStart <= row &&
+    //   pickTarget.rowEnd >= row &&
+    //   pickTarget.colStart <= col &&
+    //   pickTarget.colEnd >= col) return
+    // }
     // 选中命中
     needPick.value = true
     // 选择当前位置
