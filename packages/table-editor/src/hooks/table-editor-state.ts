@@ -1,5 +1,5 @@
 // vue
-import { reactive, computed, watch, ref } from 'vue'
+import { reactive, computed, watch, ref, onMounted, provide } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
@@ -10,6 +10,7 @@ import scrollState from './scroll-state'
 import tableValueState from './table-value-state'
 import pickBoxState from './pick-box-state'
 import contextMenuState from './context-menu-state'
+import resizeState from './resize-state'
 // 外部模块
 
 // 横向标头生成
@@ -27,6 +28,11 @@ export default function (props: any, ctx: SetupContext) {
    */
   const originValue = reactive(props.modelValue ? props.modelValue : [])
   const value = reactive([] as any[])
+  /**
+   * 用于存放表格每行每列的长度信息
+   */
+  const rowOption = reactive(new Array<number>(props.defaultRow))
+  const colOption = reactive(new Array<number>(props.defaultCol))
   // 普通常量
   // DOM ref
   /**
@@ -60,6 +66,26 @@ export default function (props: any, ctx: SetupContext) {
       max = Math.max(arr?.length ?? 0, max)
     }
     return Math.max(max, props.defaultCol)
+  })
+
+  const preCol = computed(() => {
+    const temp = [0] as number[]
+    let now = 0
+    for (const item of colOption) {
+      now += item
+      temp.push(now)
+    }
+    return temp
+  })
+
+  const preRow = computed(() => {
+    const temp = [0] as number[]
+    let now = 0
+    for (const item of rowOption) {
+      now += item
+      temp.push(now)
+    }
+    return temp
   })
 
   // watch
@@ -223,15 +249,27 @@ export default function (props: any, ctx: SetupContext) {
   }
   // provide
   // 生命周期
-
   const tableValue = tableValueState(props, ctx, value)
   const boxSize = boxSizeState(table, value)
-  const pickBox = pickBoxState(props, ctx, boxSize, tableValue.chooseTarget, value)
+  const pickBox = pickBoxState(props, ctx, boxSize, tableValue.chooseTarget, value, preRow, preCol)
   const contextMenu = contextMenuState(props, ctx, tableValue.chooseTarget, pickBox.pickTarget, tableValue.entireTarget, value, table)
   const scroll = scrollState(table, pickBox.needPick, pickBox.needChange, boxSize)
+  const resize = resizeState(props, rowOption, colOption)
+
+  onMounted(() => {
+    rowOption.fill(boxSize.tdHeight.value)
+    colOption.fill(boxSize.tdWidth.value)
+  })
+
+  provide('table-editor-row-option', rowOption)
+  provide('table-editor-col-option', colOption)
+  // provide('table-editor-pre-row', preRow)
+  // provide('table-editor-pre-col', preCol)
 
   return {
     value,
+    rowOption,
+    colOption,
     table,
     rows,
     cols,
@@ -241,6 +279,7 @@ export default function (props: any, ctx: SetupContext) {
     ...scroll,
     ...tableValue,
     ...pickBox,
-    ...contextMenu
+    ...contextMenu,
+    ...resize
   }
 }

@@ -12,10 +12,14 @@
       :key="item"
       @mousedown="handleSiderClick($event, i)"
       @contextmenu="handleOpenContextMenu($event, 'row')"
+      :style="{
+        height: `${rowOption[i]}px`
+      }"
       :class="{
         'is-entire': entireTarget[0] === i || chooseTarget[0] === i
       }">
         {{ item }}
+        <div class="vi-table-editor__side-header__th__resize" @mousedown="handleRowResizeMousedown($event, i)"></div>
       </span>
     </div>
     <!-- 头部 -->
@@ -29,10 +33,14 @@
       :key="item"
       @mousedown="handleHeaderClick($event, j)"
       @contextmenu="handleOpenContextMenu($event, 'col')"
+      :style="{
+        width: `${colOption[j]}px`
+      }"
       :class="{
         'is-entire': entireTarget[1] === j || chooseTarget[1] === j
       }">
         {{ item }}
+        <div class="vi-table-editor__header__th__resize" @mousedown="handleColResizeMousedown($event, j)"></div>
       </span>
     </div>
     <scroll
@@ -43,7 +51,13 @@
       <div class="vi-table-editor__view" draggable="false">
         <!-- body部分 -->
         <div class="vi-table-editor__body" draggable="false" ref="tableBody">
-          <div class="vi-table-editor__body__tr" v-for="(arr, i) in value" :key="arr">
+          <div
+          class="vi-table-editor__body__tr"
+          v-for="(arr, i) in value"
+          :key="arr"
+          :style="{
+            height: `${rowOption[i]}px`
+          }">
             <tableEditorTd
             v-for="(item, j) in arr"
             :key="`${item}$${i}$${j}`"

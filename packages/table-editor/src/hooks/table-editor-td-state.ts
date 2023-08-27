@@ -24,6 +24,8 @@ export default function (props: any, ctx: SetupContext) {
   const needChange = inject('table-editor-need-change') as Ref<boolean>
   const pickTarget = inject('table-editor-pick-target') as PickTarget
   const changeTarget = inject('table-editor-change-target') as ChangeTarget
+  const rowOption = inject('table-editor-row-option') as number[]
+  const colOption = inject('table-editor-col-option') as number[]
   // computed
   /**
    * 该格子是否单击选中（第一次选中）
@@ -49,6 +51,13 @@ export default function (props: any, ctx: SetupContext) {
   function handleMouseDown (e: MouseEvent, row: number, col: number) {
     // 拒绝滚动键
     if (e.button === 1) return
+    // 重置pick内容
+    pickTarget.rowStart = row
+    pickTarget.rowEnd = row
+    pickTarget.colStart = col
+    pickTarget.colEnd = col
+    pickTarget.colLen = 1
+    pickTarget.rowLen = 1
     // 右键后属于那个框内
     if (e.button === 2) {
       if (pickTarget.rowStart <= row &&
@@ -91,6 +100,10 @@ export default function (props: any, ctx: SetupContext) {
     if (needPick.value) {
       pickTarget.rowLen = props.row - pickTarget!.row
       pickTarget.colLen = props.col - pickTarget!.col
+      pickTarget.rowStart = Math.min(pickTarget.row, pickTarget.row + pickTarget.rowLen)
+      pickTarget.rowEnd = Math.max(pickTarget.row, pickTarget.row + pickTarget.rowLen)
+      pickTarget.colStart = Math.min(pickTarget.col, pickTarget.col + pickTarget.colLen)
+      pickTarget.colEnd = Math.max(pickTarget.col, pickTarget.col + pickTarget.colLen)
     } else if (needChange!.value) {
       changeTarget.row = props.row
       changeTarget.col = props.col
@@ -106,6 +119,8 @@ export default function (props: any, ctx: SetupContext) {
   // provide
   // 生命周期
   return {
+    rowOption,
+    colOption,
     editInput,
     handleMouseDown,
     handleDoubleClick,

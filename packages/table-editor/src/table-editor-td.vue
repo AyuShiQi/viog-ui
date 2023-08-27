@@ -5,6 +5,10 @@
     'vi-table-editor-td-entire': isEntire,
     'vi-table-editor-td-choose': beChoosed
   }"
+  :style="{
+    width: `${colOption[col as number]}px`,
+    height: `${rowOption[row as number]}px`,
+  }"
   @mousedown="handleMouseDown($event, row!, col!)"
   @dblclick="handleDoubleClick"
   @mouseenter="handleMouseEnter">
@@ -13,7 +17,7 @@
     class="vi-table-editor-td__text">
       {{ inputValue }}
     </span>
-    <input
+    <textarea
     name="vi-editor-table-value"
     type="text"
     autocomplete="off"

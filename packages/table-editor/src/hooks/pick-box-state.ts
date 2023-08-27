@@ -1,7 +1,7 @@
 // vue
 import { ref, reactive, provide, onMounted, computed, watch, onBeforeUnmount } from 'vue'
 // vue type
-import type { SetupContext } from 'vue'
+import type { SetupContext, Ref } from 'vue'
 // 组件type
 import type { BoxSizeState } from '../types/box-size-types'
 // 外部hooks
@@ -16,7 +16,15 @@ import type { BoxSizeState } from '../types/box-size-types'
  * @param chooseTarget 选中的目标格子
  * @param value 表格的数据
  */
-export default function (props: any, ctx: SetupContext, boxSize: BoxSizeState, chooseTarget: [number, number], value: any) {
+export default function (
+  props: any,
+  ctx: SetupContext,
+  boxSize: BoxSizeState,
+  chooseTarget: [number, number],
+  value: any,
+  preRow: Ref<number[]>,
+  preCol: Ref<number[]>
+) {
   // 普通常量
   // DOM ref
   // ref
@@ -47,53 +55,53 @@ export default function (props: any, ctx: SetupContext, boxSize: BoxSizeState, c
   })
 
   const pickTop = computed(() => {
+    // 代表是往下衍生的
     if (pickTarget.rowLen >= 0) {
-      return `${hh.value + pickTarget.row * th.value}px`
+      // 头部高度+前半段高度
+      return `${hh.value + preRow.value[pickTarget.row]}px`
     }
-    return `${hh.value + (pickTarget.row + pickTarget.rowLen) * th.value}px`
+    return `${hh.value + preRow.value[pickTarget.row + pickTarget.rowLen]}px`
   })
 
   const pickLeft = computed(() => {
     if (pickTarget.colLen >= 0) {
-      return `${sw.value + pickTarget.col * tw.value}px`
+      return `${sw.value + preCol.value[pickTarget.col]}px`
     }
-    return `${sw.value + (pickTarget.col + pickTarget.colLen) * tw.value}px`
+    return `${sw.value + preCol.value[pickTarget.col + pickTarget.colLen]}px`
   })
 
   const pickWidth = computed(() => {
-    if (pickTarget.colLen < 0) return `${(-pickTarget.colLen + 1) * tw.value - 1}px`
-    return `${(pickTarget.colLen + 1) * tw.value - 1}px`
+    return `${preCol.value[pickTarget.colEnd + 1] - preCol.value[pickTarget.colStart] - 1}px`
   })
 
   const pickHeight = computed(() => {
-    if (pickTarget.rowLen < 0) return `${(-pickTarget.rowLen + 1) * th.value - 1}px`
-    return `${(pickTarget.rowLen + 1) * th.value - 1}px`
+    return `${preRow.value[pickTarget.rowEnd + 1] - preRow.value[pickTarget.rowStart] - 1}px`
   })
 
   const changeTop = computed(() => {
-    if (changeTarget.row < pickTarget.rowStart) return `${hh.value + changeTarget.row * th.value}px`
-    return `${hh.value + pickTarget.rowStart * th.value}px`
+    if (changeTarget.row < pickTarget.rowStart) return `${hh.value + preRow.value[changeTarget.row]}px`
+    return `${hh.value + preRow.value[pickTarget.rowStart]}px`
   })
 
   const changeLeft = computed(() => {
-    if (changeTarget.col < pickTarget.colStart) return `${sw.value + changeTarget.col * tw.value}px`
-    return `${sw.value + pickTarget.colStart * tw.value}px`
+    if (changeTarget.col < pickTarget.colStart) return `${sw.value + preCol.value[changeTarget.col]}px`
+    return `${sw.value + preCol.value[pickTarget.colStart]}px`
   })
 
   const changeWidth = computed(() => {
-    if (changeTarget.col < pickTarget.colStart) return `${tw.value * (pickTarget.colEnd - changeTarget.col + 1) - 1}px`
+    if (changeTarget.col < pickTarget.colStart) return `${preCol.value[pickTarget.colEnd + 1] - preCol.value[changeTarget.col] - 1}px`
     else if (pickTarget.colStart <= changeTarget.col && changeTarget.col <= pickTarget.colEnd) {
-      return `${tw.value * (pickTarget.colEnd - pickTarget.colStart + 1) - 1}px`
+      return `${preCol.value[pickTarget.colEnd + 1] - preCol.value[pickTarget.colStart] - 1}px`
     }
-    return `${tw.value * (changeTarget.col - pickTarget.colStart + 1) - 1}px`
+    return `${preCol.value[changeTarget.col + 1] - preCol.value[pickTarget.colStart] - 1}px`
   })
 
   const changeHeight = computed(() => {
-    if (changeTarget.row < pickTarget.rowStart) return `${th.value * (pickTarget.rowEnd - changeTarget.row + 1) - 1}px`
+    if (changeTarget.row < pickTarget.rowStart) return `${preRow.value[pickTarget.rowEnd + 1] - preRow.value[changeTarget.row] - 1}px`
     else if (pickTarget.rowStart <= changeTarget.row && changeTarget.row <= pickTarget.rowEnd) {
-      return `${th.value * (pickTarget.rowEnd - pickTarget.rowStart + 1) - 1}px`
+      return `${preRow.value[pickTarget.rowEnd + 1] - preRow.value[pickTarget.rowStart] - 1}px`
     }
-    return `${th.value * (changeTarget.row - pickTarget.rowStart + 1) - 1}px`
+    return `${preRow.value[changeTarget.row + 1] - preRow.value[pickTarget.rowStart] - 1}px`
   })
   // watch
   watch(chooseTarget, (newVal) => {
@@ -111,10 +119,6 @@ export default function (props: any, ctx: SetupContext, boxSize: BoxSizeState, c
   function handlePointerMouseUp (e: Event) {
     if (needPick.value) {
       needPick.value = false
-      pickTarget.rowStart = Math.min(pickTarget.row, pickTarget.row + pickTarget.rowLen)
-      pickTarget.rowEnd = Math.max(pickTarget.row, pickTarget.row + pickTarget.rowLen)
-      pickTarget.colStart = Math.min(pickTarget.col, pickTarget.col + pickTarget.colLen)
-      pickTarget.colEnd = Math.max(pickTarget.col, pickTarget.col + pickTarget.colLen)
     }
     if (needChange.value) {
       needChange.value = false

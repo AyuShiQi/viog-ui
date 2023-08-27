@@ -1,15 +1,16 @@
 <template>
-  <vi-select v-model="data">
+  <!-- <vi-select v-model="data">
     <vi-option value="ysq">杨诗绮</vi-option>
     <vi-option value="scs">你好</vi-option>
   </vi-select>
   <vi-collapse title="标题">
-    <vi-table-editor v-model="table"></vi-table-editor>
     <vi-color-select v-model="value"></vi-color-select>
   </vi-collapse>
-
   <vi-input v-model="id" number></vi-input>
-  <input type="color">
+  <input type="color"> -->
+  <div style="width: 100%; height: 100vh;">
+    <vi-table-editor v-model="table" style="--vi-table-width: 100%; --vi-table-height: 100%;"></vi-table-editor>
+  </div>
 </template>
 
 <script lang="ts">
