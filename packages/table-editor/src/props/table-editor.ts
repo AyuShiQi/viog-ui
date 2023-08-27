@@ -3,12 +3,12 @@ export default {
   // 默认最小行数
   defaultRow: {
     type: Number,
-    default: 60
+    default: 15
   },
   // 默认最小列数
   defaultCol: {
     type: Number,
-    default: 30
+    default: 15
   },
   minWidth: {
     type: Number,
