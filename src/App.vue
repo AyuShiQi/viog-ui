@@ -17,6 +17,24 @@
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
   </vi-rate>
+  <vi-rate type="love">
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+  </vi-rate>
+  <vi-rate type="smile">
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+  </vi-rate>
+  <vi-rate type="flower">
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+  </vi-rate>
 </template>
 
 <script lang="ts">

@@ -148,6 +148,9 @@
 
     --vi-color-select-width: auto;
     --vi-color-select-height: 20px;
+
+    --vi-rate-default-color: var(--vi-background-color-deep);
+    --vi-rate-active-color: var(--vi-yellow-color2);
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */

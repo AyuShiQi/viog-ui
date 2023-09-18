@@ -1,5 +1,8 @@
 <template>
-  <div class="vi-rate">
+  <div class="vi-rate"
+  :class="[
+    `vi-rate-type-${type}`
+  ]">
     <slot></slot>
   </div>
 </template>
@@ -9,11 +12,13 @@ import { defineComponent } from 'vue'
 import type { SetupContext } from 'vue'
 // 组件type
 // 组件props
+import props from './props/rate'
 // 组件引用components
 import rateState from './hooks/rate-state'
 
 export default defineComponent({
   name: 'ViRate',
+  props,
   setup (props: any, ctx: SetupContext) {
     const rate = rateState()
   }

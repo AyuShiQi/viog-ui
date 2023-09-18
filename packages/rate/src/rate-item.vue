@@ -1,9 +1,9 @@
 <template>
-  <div
-  class="vi-rate-item"
-  :class="[
-    `vi-rate-item-type-${type}`
-  ]"></div>
+  <div class="vi-rate-item"
+  @mousemove="handleMousemove"
+  :style="{
+    'background': `linear-gradient(to right, var(--vi-rate-active-color) 0%, var(--vi-rate-active-color) ${endColor}%, var(--vi-rate-default-color) ${endColor}%)`
+  }"></div>
 </template>
 
 <script lang="ts">
@@ -20,6 +20,8 @@ export default defineComponent({
   props,
   setup (props: any, ctx: SetupContext) {
     const rateItem = rateItemState()
+
+    return rateItem
   }
 })
 </script>
