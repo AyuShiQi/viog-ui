@@ -30,6 +30,7 @@ import ViMessage from './message'
 import ViDrawer from './drawer'
 import ViBubble from './bubble'
 import ViSteps from './steps'
+import ViRate from './rate'
 // scroll 组
 import ViScroll from './scroll'
 // 表单组
@@ -92,7 +93,8 @@ const components = [
   ViResult,
   ViSteps,
   ViTabbar,
-  ViColorSelect
+  ViColorSelect,
+  ViRate
 ]
 
 export {

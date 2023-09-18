@@ -8,9 +8,15 @@
   </vi-collapse>
   <vi-input v-model="id" number></vi-input>
   <input type="color"> -->
-  <div style="width: 100%; height: 100vh;">
+  <!-- <div style="width: 100%; height: 100vh;">
     <vi-table-editor v-model="table" style="--vi-table-width: 100%; --vi-table-height: 100%;"></vi-table-editor>
-  </div>
+  </div> -->
+  <vi-rate>
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+  </vi-rate>
 </template>
 
 <script lang="ts">

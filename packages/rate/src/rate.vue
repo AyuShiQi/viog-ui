@@ -1,4 +1,7 @@
 <template>
+  <div class="vi-rate">
+    <slot></slot>
+  </div>
 </template>
 
 <script lang="ts">
@@ -10,7 +13,7 @@ import type { SetupContext } from 'vue'
 import rateState from './hooks/rate-state'
 
 export default defineComponent({
-  name: 'Vi',
+  name: 'ViRate',
   setup (props: any, ctx: SetupContext) {
     const rate = rateState()
   }
