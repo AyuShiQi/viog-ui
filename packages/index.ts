@@ -14,6 +14,7 @@ import ViDropDown from './dropdown'
 import ViAffix from './affix'
 import ViCollapse from './collapse'
 import ViDivider from './divider'
+import ViFlex from './flex'
 // 模块组
 import ViHeader from './header'
 import ViSkeleton from './skeleton'
@@ -94,7 +95,8 @@ const components = [
   ViSteps,
   ViTabbar,
   ViColorSelect,
-  ViRate
+  ViRate,
+  ViFlex
 ]
 
 export {
