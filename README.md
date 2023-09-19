@@ -1,4 +1,4 @@
-# viog-ui 0.2.4
+# viog-ui
 
 https://ayushiqi.github.io/viog-ui/
 
