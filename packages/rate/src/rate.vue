@@ -3,6 +3,7 @@
   :class="[
     `vi-rate-type-${type}`
   ]">
+    <div class="vi-rate-zero" @mousemove="changePick(-1)"></div>
     <slot></slot>
   </div>
 </template>
@@ -20,7 +21,9 @@ export default defineComponent({
   name: 'ViRate',
   props,
   setup (props: any, ctx: SetupContext) {
-    const rate = rateState()
+    const rate = rateState(props)
+
+    return rate
   }
 })
 </script>

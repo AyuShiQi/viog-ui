@@ -1,6 +1,7 @@
 <template>
   <div class="vi-rate-item"
   @mousemove="handleMousemove"
+  @click="hanldeClick"
   :style="{
     'background': `linear-gradient(to right, var(--vi-rate-active-color) 0%, var(--vi-rate-active-color) ${endColor}%, var(--vi-rate-default-color) ${endColor}%)`
   }"></div>

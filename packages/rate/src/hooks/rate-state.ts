@@ -7,7 +7,7 @@ import { provide, ref } from 'vue'
 // 外部模块
 import idGetter from '../../../utils/communication/IdDistributor'
 
-export default function () {
+export default function (props: any) {
   // 普通常量
   // DOM ref
   const nowPick = ref(-1)
@@ -25,5 +25,10 @@ export default function () {
   provide('vi-rate-id-getter', idGetter())
   provide('vi-rate-now-pick', nowPick)
   provide('vi-rate-change-pick', changePick)
+  provide('vi-rate-trigger', props.trigger)
+  provide('vi-rate-mode', props.mode)
   // 生命周期
+  return {
+    changePick
+  }
 }
