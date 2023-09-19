@@ -11,7 +11,7 @@
   <!-- <div style="width: 100%; height: 100vh;">
     <vi-table-editor v-model="table" style="--vi-table-width: 100%; --vi-table-height: 100%;"></vi-table-editor>
   </div> -->
-  <vi-rate>
+  <vi-rate v-model="choose">
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
@@ -19,7 +19,7 @@
     <vi-rate-item></vi-rate-item>
   </vi-rate>
   <br>
-  <vi-rate type="love">
+  <vi-rate type="love" v-model="choose">
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
@@ -27,7 +27,7 @@
     <vi-rate-item></vi-rate-item>
   </vi-rate>
   <br>
-  <vi-rate type="smile">
+  <vi-rate type="smile" v-model="choose">
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
@@ -35,7 +35,7 @@
     <vi-rate-item></vi-rate-item>
   </vi-rate>
   <br>
-  <vi-rate type="flower">
+  <vi-rate type="flower" v-model="choose">
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>

@@ -1,6 +1,7 @@
 export default {
   modelValue: {
-    type: Number
+    type: Number,
+    default: -1
   },
   type: {
     type: String,
@@ -8,7 +9,7 @@ export default {
   },
   mode: {
     type: String,
-    default: 'free' // total free
+    default: 'total' // total half free
   },
   trigger: {
     type: String,

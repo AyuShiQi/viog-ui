@@ -21,7 +21,7 @@ export default defineComponent({
   name: 'ViRate',
   props,
   setup (props: any, ctx: SetupContext) {
-    const rate = rateState(props)
+    const rate = rateState(props, ctx)
 
     return rate
   }
