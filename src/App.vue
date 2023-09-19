@@ -42,6 +42,11 @@
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
   </vi-rate>
+  <vi-flex style="--vi-flex-min-width: 50px; --vi-flex-max-width: 180px; background-color: pink;"></vi-flex>
+  <vi-flex
+  vertical="left"
+  horizontal="none"
+  style="position: absolute; right: 0px; bottom: 0px; --vi-flex-min-width: 50px; --vi-flex-max-width: 180px; background-color: pink;"></vi-flex>
 </template>
 
 <script lang="ts">

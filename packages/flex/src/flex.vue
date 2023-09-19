@@ -1,5 +1,31 @@
 <template>
-  <div class="vi-flex"></div>
+  <div
+  class="vi-flex"
+  ref="flexBox"
+  :style="{
+    width: `${width}px`,
+    height: `${height}px`
+  }">
+    <!-- 纵向拖拽仪 -->
+    <div
+    class="vi-flex-drag-vertical vi-flex-drag"
+    @mousedown="handleVerticalMousedown"
+    :class="[
+      `vi-flex-drag-${vertical}`,
+      {
+        'vi-flex-drag_active': isVertical
+      }
+    ]"></div>
+    <!-- 横向拖拽仪 -->
+    <div class="vi-flex-drag-horizontal vi-flex-drag"
+    @mousedown="handleHorizontalMousedown"
+    :class="[
+      `vi-flex-drag-${horizontal}`,
+      {
+        'vi-flex-drag_active': isHorizontal
+      }
+    ]"></div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -15,7 +41,9 @@ export default defineComponent({
   name: 'ViFlex',
   props,
   setup (props: any, ctx: SetupContext) {
-    const flex = flexState()
+    const flex = flexState(props)
+
+    return flex
   }
 })
 </script>

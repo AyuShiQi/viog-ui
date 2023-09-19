@@ -151,6 +151,14 @@
 
     --vi-rate-default-color: var(--vi-background-color-deep);
     --vi-rate-active-color: var(--vi-yellow-color2);
+
+    --vi-flex-drag-active-color: var(--vi-purple-color3);
+    --vi-flex-default-width: 50px;
+    --vi-flex-min-width: var(--vi-flex-default-width);
+    --vi-flex-max-width: var(--vi-flex-default-width);
+    --vi-flex-default-height: 50px;
+    --vi-flex-min-height: var(--vi-flex-default-height);
+    --vi-flex-max-height: var(--vi-flex-default-height);
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */
