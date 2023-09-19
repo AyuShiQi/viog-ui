@@ -6,6 +6,7 @@
     width: `${width}px`,
     height: `${height}px`
   }">
+    <slot></slot>
     <!-- 纵向拖拽仪 -->
     <div
     class="vi-flex-drag-vertical vi-flex-drag"
