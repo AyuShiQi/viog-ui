@@ -47,6 +47,13 @@
   vertical="left"
   horizontal="none"
   style="position: absolute; right: 0px; bottom: 0px; --vi-flex-min-width: 50px; --vi-flex-max-width: 180px; background-color: pink;"></vi-flex>
+  <vi-context-menu>
+    <vi-button style="position: absolute; right: 0;">菜单栏</vi-button>
+    <template v-slot:content>
+      <div style="width: 100%; height: 100%; background-color: pink;">
+      </div>
+    </template>
+  </vi-context-menu>
 </template>
 
 <script lang="ts">

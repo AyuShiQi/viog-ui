@@ -15,6 +15,7 @@ import ViAffix from './affix'
 import ViCollapse from './collapse'
 import ViDivider from './divider'
 import ViFlex from './flex'
+import ViContextMenu from './context-menu'
 // 模块组
 import ViHeader from './header'
 import ViSkeleton from './skeleton'
@@ -96,7 +97,8 @@ const components = [
   ViTabbar,
   ViColorSelect,
   ViRate,
-  ViFlex
+  ViFlex,
+  ViContextMenu
 ]
 
 export {

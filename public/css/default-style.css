@@ -159,6 +159,10 @@
     --vi-flex-default-height: 50px;
     --vi-flex-min-height: var(--vi-flex-default-height);
     --vi-flex-max-height: var(--vi-flex-default-height);
+
+    --vi-context-menu-width: 200px;
+    --vi-context-menu-height: 400px;
+    --vi-context-menu-z-index: ;
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */
