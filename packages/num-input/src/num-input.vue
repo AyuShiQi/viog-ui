@@ -9,7 +9,7 @@
         <path d="M3 10 L17 10"/>
       </svg>
     </div>
-    <input type="text" class="vi-num-input__input" v-model="value"/>
+    <input type="text" class="vi-num-input__input" v-model="value" @blur="handleInputBlur"/>
     <div class="vi-num-input__add" @click="addNum">
       <svg viewBox="0 0 20 20" class="vi-num-input__icon">
         <path d="M3 10 L17 10 M10 3 L10 17"/>

@@ -22,8 +22,11 @@ export default function (props: any, ctx: SetupContext) {
   })
 
   watch(value, () => {
-    const now = Number(value.value)
-    if (Number.isNaN(now)) {
+    const target = delZero(String(value.value))
+    const now = Number(target)
+    if (target === '-' || /[0-9]\.$/.test(target)) {
+      value.value = target
+    } else if (Number.isNaN(now)) {
       if (Number.isNaN(Number(props.modelValue))) {
         ctx.emit('update:modelValue', 0)
         value.value = 0
@@ -44,13 +47,33 @@ export default function (props: any, ctx: SetupContext) {
     const now = Number(value.value)
     value.value = props.min ? Math.max(now - props.unit, props.min) : now - props.unit
   }
+
+  function handleInputBlur () {
+    const now = Number(value.value)
+    if (Number.isNaN(now)) {
+      if (Number.isNaN(Number(props.modelValue))) {
+        ctx.emit('update:modelValue', 0)
+        value.value = 0
+      }
+      value.value = props.modelValue
+    } else {
+      value.value = now
+      ctx.emit('update:modelValue', now)
+    }
+  }
   // 方法
   // 普通function函数
+  function delZero (str: string): string {
+    let i = 0
+    while (i < str.length - 1 && str[i] === '0') i++
+    return str.slice(i)
+  }
   // provide
   // 生命周期
   return {
     value,
     addNum,
-    delNum
+    delNum,
+    handleInputBlur
   }
 }
