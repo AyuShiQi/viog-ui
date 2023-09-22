@@ -1,4 +1,4 @@
-import inputTable from './src/inputTable.vue'
+import inputTable from './src/input-table.vue'
 import { toInstall } from '../utils/component'
 
 export default toInstall({}, inputTable)

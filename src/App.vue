@@ -4,6 +4,7 @@
     <vi-table-column value="1">列2</vi-table-column>
     <vi-table-column value="2">列3</vi-table-column>
   </vi-table>
+  <vi-num-input></vi-num-input>
   <!-- <vi-select v-model="data">
     <vi-option value="ysq">杨诗绮</vi-option>
     <vi-option value="scs">你好</vi-option>
