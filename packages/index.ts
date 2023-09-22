@@ -25,6 +25,7 @@ import ViNav from './nav'
 import ViMenu from './menu'
 import ViBreadcrumb from './breadcrumb'
 import ViTabbar from './tabbar'
+import ViTabCard from './tab-card'
 // 交互组件
 import ViDialog from './dialog'
 import ViToast from './toast'
@@ -51,6 +52,7 @@ import ViColorSelect from './color-select'
 // 表格组
 import ViTable from './table'
 import ViTableEditor from './table-editor'
+import ViInputTable from './input-table'
 
 // 信息展示组
 import ViResult from './result'
@@ -98,7 +100,9 @@ const components = [
   ViColorSelect,
   ViRate,
   ViFlex,
-  ViContextMenu
+  ViContextMenu,
+  ViInputTable,
+  ViTabCard
 ]
 
 export {

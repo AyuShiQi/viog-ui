@@ -1,4 +1,9 @@
 <template>
+  <vi-table :datas="table" align="center" type="border" style="--vi-table-td-width: 120px">
+    <vi-table-column value="0">列1</vi-table-column>
+    <vi-table-column value="1">列2</vi-table-column>
+    <vi-table-column value="2">列3</vi-table-column>
+  </vi-table>
   <!-- <vi-select v-model="data">
     <vi-option value="ysq">杨诗绮</vi-option>
     <vi-option value="scs">你好</vi-option>
@@ -11,7 +16,7 @@
   <!-- <div style="width: 100%; height: 100vh;">
     <vi-table-editor v-model="table" style="--vi-table-width: 100%; --vi-table-height: 100%;"></vi-table-editor>
   </div> -->
-  <vi-rate v-model="choose">
+  <!-- <vi-rate v-model="choose">
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
@@ -53,7 +58,7 @@
       <div style="width: 100%; height: 100%; background-color: pink;">
       </div>
     </template>
-  </vi-context-menu>
+  </vi-context-menu> -->
 </template>
 
 <script lang="ts">
