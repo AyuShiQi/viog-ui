@@ -48,6 +48,7 @@ import ViTimeSelect from './time-select'
 import ViUpload from './upload'
 import ViVerifySlider from './verify-slider'
 import ViColorSelect from './color-select'
+import ViNumInput from './num-input'
 
 // 表格组
 import ViTable from './table'
@@ -102,7 +103,8 @@ const components = [
   ViFlex,
   ViContextMenu,
   ViInputTable,
-  ViTabCard
+  ViTabCard,
+  ViNumInput
 ]
 
 export {
