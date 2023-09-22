@@ -68,6 +68,9 @@
     --vi-input-prefix-width: auto;
     --vi-input-suffix-width: auto;
 
+    --vi-num-input-width: 200px;
+    --vi-num-input-heigth: 2.2em;
+
     --vi-switch-left-color: var(--vi-background-color); 
     --vi-switch-right-color: var(--vi-main-color3);
 

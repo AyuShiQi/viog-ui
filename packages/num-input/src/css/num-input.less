@@ -1,0 +1,136 @@
+.vi-num-input {
+  display: inline-flex;
+  width: var(--vi-num-input-width);
+  height: var(--vi-num-input-height);
+  box-sizing: border-box;
+  user-select: none;
+
+  .vi-num-input__del {
+    display: flex;
+    height: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    transition: var(--vi-transition);
+    cursor: pointer;
+  }
+
+  .vi-num-input__input {
+    width: 100px;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    flex: 1;
+    box-sizing: border-box;
+  }
+
+  .vi-num-input__add {
+    display: flex;
+    height: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    transition: var(--vi-transition);
+    cursor: pointer;
+  }
+
+  .vi-num-input__icon {
+    width: 1em;
+    height: 1em;
+
+    path {
+      stroke-width: 3px;
+      stroke: var(--vi-link-color);
+      stroke-linecap: round;
+    }
+  }
+}
+
+.vi-num-input-default {
+  padding: var(--vi-card-padding);
+  border-bottom: 1px solid var(--vi-background-color-deep);
+  .vi-num-input__del {
+    padding-right: .6em;
+    border-right: 1px solid var(--vi-background-color-deep);
+
+    &:hover {
+      .vi-num-input__icon {
+        path {
+          stroke: var(--vi-font-color);
+        }
+      }
+    }
+  }
+
+  .vi-num-input__input {
+    padding: 0 .6em;
+  }
+
+  .vi-num-input__add {
+    padding-left: .6em;
+    border-left: 1px solid var(--vi-background-color-deep);
+
+    &:hover {
+      .vi-num-input__icon {
+        path {
+          stroke: var(--vi-font-color);
+        }
+      }
+    }
+  }
+}
+
+.vi-num-input-plain {
+  border-radius: var(--vi-card-radius);
+  box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
+  .vi-num-input__del {
+    padding: var(--vi-card-padding);
+    border-right: 1px solid var(--vi-background-color-deep);
+
+    &:hover {
+      background-color: var(--vi-background-color);
+    }
+  }
+
+  .vi-num-input__input {
+    padding: var(--vi-card-padding);
+  }
+
+  .vi-num-input__add {
+    padding: var(--vi-card-padding);
+    border-left: 1px solid var(--vi-background-color-deep);
+
+    &:hover {
+      background-color: var(--vi-background-color);
+    }
+  }
+}
+
+.vi-num-input-button {
+  overflow: hidden;
+  border-radius: var(--vi-card-radius);
+  gap: 1px;
+  .vi-num-input__del {
+    background-color: var(--vi-background-color);
+    padding: var(--vi-card-padding);
+
+    &:hover {
+      background-color: var(--vi-background-color-deep);
+    }
+  }
+
+  .vi-num-input__input {
+    padding: var(--vi-card-padding);
+    background-color: var(--vi-background-color);
+  }
+
+  .vi-num-input__add {
+    background-color: var(--vi-background-color);
+    padding: var(--vi-card-padding);
+
+    &:hover {
+      background-color: var(--vi-background-color-deep);
+    }
+  }
+}
