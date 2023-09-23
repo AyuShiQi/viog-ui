@@ -7,6 +7,11 @@
   <vi-num-input v-model="choose"></vi-num-input>
   <vi-num-input v-model="choose" type="default"></vi-num-input>
   <vi-num-input v-model="choose" type="button"></vi-num-input>
+  <vi-input-table v-model="table">
+    <vi-input-table-col>领先</vi-input-table-col>
+    <vi-input-table-col>销量</vi-input-table-col>
+    <vi-input-table-col>持久</vi-input-table-col>
+  </vi-input-table>
   <!-- <vi-select v-model="data">
     <vi-option value="ysq">杨诗绮</vi-option>
     <vi-option value="scs">你好</vi-option>
