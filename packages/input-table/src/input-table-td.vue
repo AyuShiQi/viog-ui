@@ -1,6 +1,15 @@
 <template>
-  <td class="vi-input-table__td">
-    {{ value }}
+  <td class="vi-input-table__td" @click="handleClick">
+    <input
+    v-if="editShow"
+    ref="inputDOM"
+    type="text"
+    @blur="handleBlur"
+    v-model="viewValue"
+    class="vi-input-table__td__input"/>
+    <template v-else>
+      {{ value }}
+    </template>
   </td>
 </template>
 
@@ -17,7 +26,7 @@ export default defineComponent({
   name: 'ViInputTableTd',
   props,
   setup (props: any, ctx: SetupContext) {
-    const tableTd = tableTdState()
+    const tableTd = tableTdState(props, ctx)
 
     return tableTd
   }

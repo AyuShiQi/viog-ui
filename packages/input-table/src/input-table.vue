@@ -6,7 +6,7 @@
         </slot>
       </tr>
       <tr class="vi-input-table__tr" v-for="(line, i) of viewValue" :key="i">
-        <inputTd class="vi-input-table__td" v-for="(item, j) of line" :key="`${i}+${j}`" :value="item"/>
+        <inputTd class="vi-input-table__td" v-for="(item, j) of line" :key="`${i}+${j}`" :value="item" :i="i" :j="j"/>
       </tr>
     </table>
   </vi-scroll>

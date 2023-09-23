@@ -38,6 +38,7 @@ export default function (props: any, ctx: SetupContext) {
   }
 
   function editValue (val: any, i: number, j: number) {
+    // console.log(i, j, value, value[i])
     value[i][j] = val
   }
   // provide
