@@ -11,6 +11,12 @@ export default {
     type: Number,
     default: 1
   },
-  min: Number,
-  max: Number
+  min: {
+    type: Number,
+    default: -999999999999999
+  },
+  max: {
+    type: Number,
+    default: 999999999999999
+  }
 }

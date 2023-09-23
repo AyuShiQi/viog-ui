@@ -33,8 +33,9 @@ export default function (props: any, ctx: SetupContext) {
       }
       value.value = props.modelValue
     } else {
-      value.value = now
-      ctx.emit('update:modelValue', now)
+      const cur = Math.min(Math.max(props.min, now), props.max)
+      value.value = cur
+      ctx.emit('update:modelValue', cur)
     }
   })
   // 事件方法
@@ -57,8 +58,9 @@ export default function (props: any, ctx: SetupContext) {
       }
       value.value = props.modelValue
     } else {
-      value.value = now
-      ctx.emit('update:modelValue', now)
+      const cur = Math.min(Math.max(props.min, now), props.max)
+      value.value = cur
+      ctx.emit('update:modelValue', cur)
     }
   }
   // 方法
