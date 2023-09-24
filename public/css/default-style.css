@@ -166,6 +166,11 @@
     --vi-context-menu-width: 200px;
     --vi-context-menu-height: 400px;
     --vi-context-menu-z-index: ;
+
+    --vi-tab-card-width: 160px;
+    --vi-tab-card-height: 2.2em;
+    --vi-tab-card-padding: var(--vi-card-padding);
+    --vi-tab-card-group-width: auto;
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */

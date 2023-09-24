@@ -1,2 +1,100 @@
 .vi-tab-card {
+    position: relative;
+    display: inline-flex;
+    width: var(--vi-tab-card-width);
+    height: var(--vi-tab-card-height);
+    padding: var(--vi-tab-card-padding);
+    border-bottom: 1px solid var(--vi-background-color-deep);
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    cursor: pointer;
+
+    // .vi-tab-card__icon {
+        // height: 100%;
+    // }
+
+    .vi-tab-card__text {
+        overflow: hidden;
+        white-space: nowrap;
+        flex: 1;
+    }
+
+    .vi-tab-card__del {
+        visibility: hidden;
+        height: 100%;
+        border-radius: 2px;
+        path {
+            stroke-linecap: round;
+            stroke-width: 2px;
+            stroke: var(--vi-link-color);
+        }
+
+        &:hover {
+            display: flex;
+            background-color: var(--vi-background-color-deep);
+        }
+    }
+
+    &:hover {
+        .vi-tab-card__del {
+            visibility: visible;
+        } 
+    }
+}
+
+.vi-tab-card.is-choosed {
+    .vi-tab-card__del {
+        visibility: visible;
+    }
+}
+
+.vi-tab-card-group-type-default {
+    // .vi-tab-card {
+
+    // }
+    .vi-tab-card.is-choosed {
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--vi-main-color1);
+        }
+    }
+}
+
+
+.vi-tab-card-group-type-plain {
+    .vi-tab-card {
+        border: none;
+        box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
+        border-radius: 5px 5px 0 0;
+    }
+    .vi-tab-card.is-choosed {
+        background-color: var(--vi-background-color-solid);
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            z-index: 1;
+            background-color: var(--vi-background-color-solid);
+        }
+    }
+}
+
+.vi-tab-card-group-type-button {
+    .vi-tab-card {
+        border: none;
+        background-color: var(--vi-background-color-solid);
+    }
+    .vi-tab-card.is-choosed {
+        background-color: var(--vi-background-color-deep);
+    }
 }

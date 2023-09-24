@@ -1,5 +1,77 @@
 <template>
-  <vi-table :datas="table" align="center" type="border" style="--vi-table-td-width: 120px">
+  <vi-tab-card-group>
+    <vi-tab-card title="App.vue">
+      <template v-slot:icon>
+        <span style="font-weight: 600; color: var(--vi-yellow-color1);">POST</span>
+      </template>
+    </vi-tab-card>
+    <vi-tab-card title="你知道的">
+      <template v-slot:icon>
+        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
+      </template>
+    </vi-tab-card>
+    <vi-tab-card title="你知道的">
+      <template v-slot:icon>
+        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
+      </template>
+    </vi-tab-card>
+    <vi-tab-card title="App.vue"></vi-tab-card>
+    <vi-tab-card title="你知道的">
+      <template v-slot:icon>
+        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
+      </template>
+    </vi-tab-card>
+    <vi-tab-card title="App.vue"></vi-tab-card>
+  </vi-tab-card-group>
+  <vi-tab-card-group type="plain">
+    <vi-tab-card title="App.vue">
+      <template v-slot:icon>
+        <span style="font-weight: 600; color: var(--vi-yellow-color1);">POST</span>
+      </template>
+    </vi-tab-card>
+    <vi-tab-card title="你知道的">
+      <template v-slot:icon>
+        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
+      </template>
+    </vi-tab-card>
+    <vi-tab-card title="你知道的">
+      <template v-slot:icon>
+        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
+      </template>
+    </vi-tab-card>
+    <vi-tab-card title="App.vue"></vi-tab-card>
+    <vi-tab-card title="你知道的">
+      <template v-slot:icon>
+        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
+      </template>
+    </vi-tab-card>
+    <vi-tab-card title="App.vue"></vi-tab-card>
+  </vi-tab-card-group>
+  <vi-tab-card-group type="button">
+    <vi-tab-card title="App.vue">
+      <template v-slot:icon>
+        <span style="font-weight: 600; color: var(--vi-yellow-color1);">POST</span>
+      </template>
+    </vi-tab-card>
+    <vi-tab-card title="你知道的">
+      <template v-slot:icon>
+        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
+      </template>
+    </vi-tab-card>
+    <vi-tab-card title="你知道的">
+      <template v-slot:icon>
+        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
+      </template>
+    </vi-tab-card>
+    <vi-tab-card title="App.vue"></vi-tab-card>
+    <vi-tab-card title="你知道的">
+      <template v-slot:icon>
+        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
+      </template>
+    </vi-tab-card>
+    <vi-tab-card title="App.vue"></vi-tab-card>
+  </vi-tab-card-group>
+  <!-- <vi-table :datas="table" align="center" type="border" style="--vi-table-td-width: 120px">
     <vi-table-column value="0">列1</vi-table-column>
     <vi-table-column value="1">列2</vi-table-column>
     <vi-table-column value="2">列3</vi-table-column>
@@ -11,7 +83,7 @@
     <vi-input-table-col>领先</vi-input-table-col>
     <vi-input-table-col>销量</vi-input-table-col>
     <vi-input-table-col>持久</vi-input-table-col>
-  </vi-input-table>
+  </vi-input-table> -->
   <!-- <vi-select v-model="data">
     <vi-option value="ysq">杨诗绮</vi-option>
     <vi-option value="scs">你好</vi-option>

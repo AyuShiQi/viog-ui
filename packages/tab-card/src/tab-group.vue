@@ -1,5 +1,14 @@
 <template>
-  <div class="vi-tab-group"></div>
+  <vi-scroll
+  :class="[
+    `vi-tab-card-group-type-${type}`
+  ]"
+  class="vi-tab-card-group"
+  overlay>
+    <div class="vi-tab-card-group__view">
+      <slot></slot>
+    </div>
+  </vi-scroll>
 </template>
 
 <script lang="ts">
@@ -12,10 +21,10 @@ import props from './props/tab-group'
 import tabGroupState from './hooks/tab-group-state'
 
 export default defineComponent({
-  name: 'ViTabGroup',
+  name: 'ViTabCardGroup',
   props,
   setup (props: any, ctx: SetupContext) {
-    const tabGroup = tabGroupState()
+    const tabGroup = tabGroupState(props, ctx)
     return tabGroup
   }
 })

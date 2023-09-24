@@ -1,2 +1,14 @@
-.vi-tab-group {
+.vi-tab-card-group {
+    --vi-scroll-width: var(--vi-tab-card-group-width);
+    --vi-scroll-height: auto;
+
+    .vi-tab-card-group__view {
+        width: auto;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        .vi-tab-card {
+            flex: 0;
+        }
+    }
 }
