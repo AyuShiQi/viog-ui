@@ -1,5 +1,6 @@
 .vi-input-table {
-    --vi-table-td-padding: .4em .6em;
+    --vi-table-sider-width: 32px;
+    --vi-table-td-padding: .3em .4em;
     --vi-scroll-width: var(--vi-table-width);
     --vi-scroll-height: var(--vi-table-height);
 
@@ -8,6 +9,10 @@
         .vi-input-table__tr {
             // display: block;
             height: var(--vi-table-td-height);
+        }
+
+        .vi-input-table__sider-td {
+            width: var(--vi-table-sider-width);
         }
     }
 }

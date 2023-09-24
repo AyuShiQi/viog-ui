@@ -2,11 +2,13 @@
   <vi-scroll class="vi-input-table">
     <table>
       <tr class="vi-input-table__tr">
+        <th class="vi-input-table__th vi-input-table__sider-td"></th>
         <slot>
         </slot>
       </tr>
-      <tr class="vi-input-table__tr" v-for="(line, i) of viewValue" :key="i">
-        <inputTd class="vi-input-table__td" v-for="(item, j) of line" :key="`${i}+${j}`" :value="item" :i="i" :j="j"/>
+      <tr class="vi-input-table__tr" v-for="(line, i) of value" :key="i">
+        <td class="vi-input-table__td vi-input-table__sider-td"></td>
+        <inputTd class="vi-input-table__td" v-for="value of colMap" :key="`${i}+${value}`" :value="line[value]" :i="i" :j="value"/>
       </tr>
     </table>
   </vi-scroll>

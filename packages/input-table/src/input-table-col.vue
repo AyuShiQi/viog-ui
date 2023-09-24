@@ -17,7 +17,7 @@ export default defineComponent({
   name: 'ViInputTableCol',
   props,
   setup (props: any, ctx: SetupContext) {
-    const inputTableCol = inputTableColState()
+    const inputTableCol = inputTableColState(props)
 
     return inputTableCol
   }

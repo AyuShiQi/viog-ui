@@ -6,7 +6,7 @@ import { inject } from 'vue'
 // 内部hooks
 // 外部模块
 
-export default function () {
+export default function (props: any) {
   // 普通常量
   // DOM ref
   // ref
@@ -14,6 +14,7 @@ export default function () {
   // inject
   const id = (inject('vi-input-table-id-getter', () => 0) as () => number)()
   const idCollector = inject('vi-input-table-id-collector', undefined) as ((t: number) => void) | undefined
+  const collectCol = inject('vi-collect-col') as ((id: number, val: any) => void) | undefined
   // computed
   // 事件方法
   // 方法
@@ -21,4 +22,5 @@ export default function () {
   // provide
   // 生命周期
   if (idCollector) idCollector(id)
+  if (collectCol) collectCol(id, props.value || id)
 }

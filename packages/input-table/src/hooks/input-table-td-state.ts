@@ -28,6 +28,10 @@ export default function (props: any, ctx: SetupContext) {
     editShow.value = false
     if (editValue) editValue(viewValue.value, props.i, props.j)
   }
+
+  function handleInput (e: any) {
+    viewValue.value = e.target.innerText
+  }
   // 方法
   // 普通function函数
   // provide
@@ -37,6 +41,8 @@ export default function (props: any, ctx: SetupContext) {
     viewValue,
     editShow,
     handleClick,
-    handleBlur
+    // handleFocus,
+    handleBlur,
+    handleInput
   }
 }

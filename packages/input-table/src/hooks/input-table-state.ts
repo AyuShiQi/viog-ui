@@ -14,43 +14,36 @@ export default function (props: any, ctx: SetupContext) {
   // 普通常量
   // DOM ref
   // ref
-  const value = reactive(props.modelValue || []) as any[]
-  const viewValue = reactive([]) as any[]
   // reactive
+  const value = reactive(props.modelValue || []) as any[]
+  const colMap = reactive([]) as any[]
   // inject
   // computed
-  watch(value, () => {
-    changeViewValue()
-  })
   // 事件方法
   // 方法
   // 普通function函数
-  function changeViewValue () {
-    for (let i = 0; i < value.length; i++) {
-      if (!viewValue[i]) viewValue.push([])
-      const now = value[i]
-      viewValue[i].length = Math.min(idDistributor.maxId.value + 1, now.length)
-      for (let j = 0; j < now.length && j <= idDistributor.maxId.value; j++) {
-        viewValue[i][j] = now[j]
-      }
-    }
-    viewValue.length = value.length
-  }
-
+  /**
+   * 编辑内容
+   * @param val 值
+   * @param i 横轴
+   * @param j 纵轴
+   */
   function editValue (val: any, i: number, j: number) {
     // console.log(i, j, value, value[i])
     value[i][j] = val
   }
+
+  function collectCol (id: number, value: any) {
+    colMap[id] = value
+  }
   // provide
   provide('vi-input-table-id-getter', idGetter())
   provide('vi-input-table-editor', editValue)
+  provide('vi-collect-col', collectCol)
   // 生命周期
-  onMounted(() => {
-    changeViewValue()
-  })
   return {
     value,
-    viewValue,
+    colMap,
     ...idDistributor
   }
 }

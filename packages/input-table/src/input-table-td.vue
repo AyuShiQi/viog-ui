@@ -1,15 +1,18 @@
 <template>
   <td class="vi-input-table__td" @click="handleClick">
-    <input
+    <div
+    contenteditable
     v-if="editShow"
     ref="inputDOM"
     type="text"
     @blur="handleBlur"
-    v-model="viewValue"
-    class="vi-input-table__td__input"/>
-    <template v-else>
+    @input="handleInput"
+    v-text="viewValue"
+    class="vi-input-table__td__input"></div>
+    <div v-else
+    class="vi-input-table__td__text">
       {{ value }}
-    </template>
+    </div>
   </td>
 </template>
 

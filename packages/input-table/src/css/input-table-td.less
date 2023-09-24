@@ -2,27 +2,47 @@
     table {
         .vi-input-table__tr {
             .vi-input-table__td {
-                overflow: hidden;
-                width: var(--vi-table-td-width);
-                height: var(--vi-table-td-height);
-                padding: var(--vi-table-td-padding);
+                position: relative;
                 border: 1px solid var(--vi-background-color-deep);
                 box-sizing: border-box;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                cursor: text;
+
+                .vi-input-table__td__text {
+                    overflow: hidden;
+                    width: var(--vi-table-td-width);
+                    height: var(--vi-table-td-height);
+                    padding: var(--vi-table-td-padding);
+                    box-sizing: border-box;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    cursor: text;
+                }
 
                 .vi-input-table__td__input {
-                    width: 100%;
-                    height: 100%;
-                    border: none;
-                    background-color: transparent;
+                    position: absolute;
+                    z-index: 1;
+                    top: 0;
+                    left: 0;
+                    border: 1px solid var(--vi-background-color-deep);
+                    width: var(--vi-table-td-width);
+                    height: auto;
+                    padding: var(--vi-table-td-padding);
+                    box-sizing: border-box;
+                    background-color: var(--vi-background-color-solid);
                     outline: none;
+                    resize: none;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
                 }
 
                 &:hover {
-
+                    background-color: var(--vi-background-color);
                 }
+            }
+
+            .vi-input-table__sider-td {
+                width: var(--vi-table-sider-width);
             }
         }
     }
