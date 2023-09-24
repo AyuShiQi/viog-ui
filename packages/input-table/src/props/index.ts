@@ -17,5 +17,9 @@ export default {
   pickValue: {
     type: Array,
     default: []
+  },
+  extension: {
+    type: Boolean,
+    default: false
   }
 }

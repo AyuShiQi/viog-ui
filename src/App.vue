@@ -7,7 +7,7 @@
   <vi-num-input v-model="choose"></vi-num-input>
   <vi-num-input v-model="choose" type="default"></vi-num-input>
   <vi-num-input v-model="choose" type="button"></vi-num-input>
-  <vi-input-table v-model="table" multi>
+  <vi-input-table v-model="table" multi extension>
     <vi-input-table-col>领先</vi-input-table-col>
     <vi-input-table-col>销量</vi-input-table-col>
     <vi-input-table-col>持久</vi-input-table-col>

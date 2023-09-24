@@ -13,7 +13,14 @@
           <vi-radio v-if="pick" :value="i" v-model="pickViewValue"></vi-radio>
           <vi-checkbox v-else :value="i" v-model="originPickValue"></vi-checkbox>
         </td>
-        <inputTd class="vi-input-table__td" v-for="value of colMap" :key="`${i}+${value}`" :value="line[value]" :i="i" :j="value"/>
+        <inputTd class="vi-input-table__td" v-for="val of colMap" :key="`${i}+${val}`" :value="line[val]" :i="i" :j="val"/>
+      </tr>
+      <tr class="vi-input-table__tr" v-if="extension">
+        <td class="vi-input-table__td vi-input-table__sider-td" v-if="pick || multi">
+          <vi-radio v-if="pick" :value="value.length" v-model="pickViewValue" disabled></vi-radio>
+          <vi-checkbox v-else :value="value.length" v-model="originPickValue" disabled></vi-checkbox>
+        </td>
+        <inputTd class="vi-input-table__td" v-for="val of colMap" :key="`${value.length}+${val}`" value="" :i="value.length" :j="val"/>
       </tr>
     </table>
   </vi-scroll>
