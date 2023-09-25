@@ -32,7 +32,7 @@ export default defineComponent({
   name: 'ViTabCard',
   props,
   setup (props: any, ctx: SetupContext) {
-    const tabCard = tabCardState()
+    const tabCard = tabCardState(props, ctx)
     return tabCard
   }
 })

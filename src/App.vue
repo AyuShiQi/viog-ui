@@ -1,6 +1,6 @@
 <template>
-  <vi-tab-card-group>
-    <vi-tab-card title="App.vue">
+  <vi-tab-card-group v-model="choose">
+    <vi-tab-card title="App.vue" value="App.vue">
       <template v-slot:icon>
         <span style="font-weight: 600; color: var(--vi-yellow-color1);">POST</span>
       </template>
@@ -23,8 +23,8 @@
     </vi-tab-card>
     <vi-tab-card title="App.vue"></vi-tab-card>
   </vi-tab-card-group>
-  <vi-tab-card-group type="plain">
-    <vi-tab-card title="App.vue">
+  <vi-tab-card-group type="plain" v-model="choose">
+    <vi-tab-card title="App.vue" value="App.vue">
       <template v-slot:icon>
         <span style="font-weight: 600; color: var(--vi-yellow-color1);">POST</span>
       </template>
@@ -47,8 +47,8 @@
     </vi-tab-card>
     <vi-tab-card title="App.vue"></vi-tab-card>
   </vi-tab-card-group>
-  <vi-tab-card-group type="button">
-    <vi-tab-card title="App.vue">
+  <vi-tab-card-group type="button" v-model="choose">
+    <vi-tab-card title="App.vue" value="App.vue">
       <template v-slot:icon>
         <span style="font-weight: 600; color: var(--vi-yellow-color1);">POST</span>
       </template>

@@ -1,3 +1,4 @@
 export default {
-  title: String
+  title: String,
+  value: [String, Boolean, Number]
 }
