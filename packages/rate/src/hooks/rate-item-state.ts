@@ -57,7 +57,7 @@ export default function () {
           break
         case 'free':
           ({ left, width } = e.target!.getBoundingClientRect())
-          changePick(id + (e.x - left) / width + 0.12)
+          changePick(id + (e.x - left) / width)
           break
       }
     }
