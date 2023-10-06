@@ -43,7 +43,18 @@ export default function (props: any, ctx: SetupContext) {
    */
   function editValue (val: any, i: number, j: number) {
     // console.log(i, j, value, value[i])
-    if (!value[i] && val) value[i] = []
+    if (!value[i] && val) {
+      // 判断是对象还是数组
+      if (i > 0) {
+        if (value[0] instanceof Array) {
+          value[i] = []
+        } else value[i] = {}
+      } else {
+        if (typeof val === 'number') {
+          value[i] = []
+        } else value[i] = {}
+      }
+    }
     if (val) value[i][j] = val
   }
 

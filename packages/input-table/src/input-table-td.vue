@@ -2,15 +2,18 @@
   <td class="vi-input-table__td" @click="handleClick">
     <div
     contenteditable
-    v-if="editShow"
+    v-show="editShow"
     ref="inputDOM"
     type="text"
     @blur="handleBlur"
     @input="handleInput"
     v-text="viewValue"
     class="vi-input-table__td__input"></div>
-    <div v-else
-    class="vi-input-table__td__text">
+    <div
+    class="vi-input-table__td__text"
+    :style="{
+      visibility: editShow ? 'hidden' : 'visible'
+    }">
       {{ value }}
     </div>
   </td>

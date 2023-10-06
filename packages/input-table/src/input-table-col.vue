@@ -1,6 +1,6 @@
 <template>
   <th class="vi-input-table__th">
-    <slot></slot>
+    <slot>{{ value }}</slot>
   </th>
 </template>
 
