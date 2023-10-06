@@ -5,15 +5,15 @@
   @mousedown="handleMousedown"
   @contextmenu="handleContextMenu">
     <slot></slot>
-  </div>
-  <div class="vi-context-menu-view"
-  ref="contextMenu"
-  v-show="isVisible"
-  :style="{
-    transform: `translate(${listLeft}px, ${listTop}px)`
-  }"
-  @contextmenu="handleContextMenu">
-    <slot name="content"></slot>
+    <div class="vi-context-menu-view"
+    ref="contextMenu"
+    v-show="isVisible"
+    :style="{
+      transform: `translate(${listLeft}px, ${listTop}px)`
+    }"
+    @contextmenu="handleContextMenu">
+      <slot name="content"></slot>
+    </div>
   </div>
 </template>
 

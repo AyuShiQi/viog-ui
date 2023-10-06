@@ -16,6 +16,14 @@
   </vi-form>
   <vi-num-input v-model="choose" type="default"></vi-num-input>
   <vi-num-input v-model="choose" type="button"></vi-num-input>
+  <vi-scroll style="--vi-scroll-width: 100px; --vi-scroll-height: 100px">
+    <vi-context-menu>
+      <vi-button>nihao</vi-button>
+      <template v-slot:content>
+        <div style="width: 100%; height: 100%; background-color: pink;"></div>
+      </template>
+    </vi-context-menu>
+  </vi-scroll>
 </template>
 
 <script lang="ts">

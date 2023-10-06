@@ -40,6 +40,10 @@ export default function () {
     if (contextMenu.value.contains(e.target) || triggerBox.value.contains(e.target)) return
     isVisible.value = false
   }
+
+  function disappear () {
+    isVisible.value = false
+  }
   // 普通function函数
   /**
    * 调整list框所在方位
@@ -76,10 +80,12 @@ export default function () {
       optionListSize.height = pxToNum(styles.getPropertyValue('--vi-context-menu-height'))
     }
     window.addEventListener('mousedown', handleBlur)
+    window.addEventListener('scroll', disappear)
   })
 
   onBeforeUnmount(() => {
     window.removeEventListener('mousedown', handleBlur)
+    window.removeEventListener('scroll', disappear)
   })
 
   return {
@@ -89,6 +95,7 @@ export default function () {
     listTop,
     isVisible,
     handleMousedown,
-    handleContextMenu
+    handleContextMenu,
+    disappear
   }
 }
