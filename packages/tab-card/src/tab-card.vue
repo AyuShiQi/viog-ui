@@ -11,9 +11,9 @@
       <slot name="icon"></slot>
     </div>
     <div class="vi-tab-card__text">
-      {{ title }}
+      <slot>{{ value }}</slot>
     </div>
-    <svg class="vi-tab-card__del" viewBox="0 0 20 20" @clcik="handleDelete">
+    <svg class="vi-tab-card__del" viewBox="0 0 20 20" @click="handleDelete">
       <path d="M6 6 L14 14 M14 6 L6 14"/>
     </svg>
   </div>

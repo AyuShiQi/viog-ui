@@ -1,5 +1,5 @@
 <template>
-  <vi-tab-card-group v-model="choose">
+  <vi-tab-card-group v-model="choose" @delete="handleDelete">
     <vi-tab-card title="App.vue" value="App.vue">
       <template v-slot:icon>
         <span style="font-weight: 600; color: var(--vi-yellow-color1);">POST</span>
@@ -224,6 +224,10 @@ export default defineComponent({
       // args[2].getSubmitFeedback(map)
     }
 
+    function handleDelete (val: any) {
+      alert(val)
+    }
+
     return {
       data,
       id,
@@ -245,7 +249,8 @@ export default defineComponent({
       append,
       look,
       handleAddInfo,
-      info
+      info,
+      handleDelete
     }
   }
 })
