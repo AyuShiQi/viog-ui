@@ -6,6 +6,7 @@ import type { SetupContext } from 'vue'
 // 外部hooks
 // 内部hooks
 // 外部模块
+import { formTargetStateRef } from '@/hooks/form-target-state'
 
 export default function (props: any, ctx: SetupContext) {
   // 普通常量
@@ -16,6 +17,7 @@ export default function (props: any, ctx: SetupContext) {
   // inject
   // computed
   const origin = computed(() => props.modelValue)
+  formTargetStateRef(props.name, value)
 
   watch(origin, () => {
     value.value = Number(origin.value)

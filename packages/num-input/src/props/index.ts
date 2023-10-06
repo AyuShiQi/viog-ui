@@ -18,5 +18,6 @@ export default {
   max: {
     type: Number,
     default: 999999999999999
-  }
+  },
+  name: String
 }
