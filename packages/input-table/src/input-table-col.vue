@@ -1,5 +1,5 @@
 <template>
-  <th class="vi-input-table__th">
+  <th class="vi-input-table__th" ref="tableCol">
     <slot>{{ value }}</slot>
   </th>
 </template>

@@ -20,6 +20,7 @@ export default function (props: any, ctx: SetupContext) {
   // reactive
   const value = reactive(props.modelValue || []) as any[]
   const colMap = reactive([]) as any[]
+  const widthMap = reactive({}) as any
   const originPickValue = reactive(props.pickValue)
 
   formTargetStateReactive(props.name, value)
@@ -65,15 +66,21 @@ export default function (props: any, ctx: SetupContext) {
   function collectCol (id: number, value: any) {
     colMap[id] = value
   }
+
+  function collectColWidth (value: any, width: string) {
+    widthMap[value] = width
+  }
   // provide
   provide('vi-input-table-id-getter', idGetter())
   provide('vi-input-table-editor', editValue)
   provide('vi-collect-col', collectCol)
+  provide('vi-collect-col-width', collectColWidth)
   // 生命周期
   return {
     pickViewValue,
     value,
     colMap,
+    widthMap,
     multiValue,
     originPickValue,
     ...idDistributor
