@@ -1,58 +1,56 @@
 .vi-input-table {
-    table {
-        .vi-input-table__tr {
-            .vi-input-table__td {
-                position: relative;
-                border: 1px solid var(--vi-background-color-deep);
-                box-sizing: border-box;
+    .vi-input-table__tr {
+        .vi-input-table__td {
+            position: relative;
+            border: 1px solid var(--vi-background-color-deep);
+            box-sizing: border-box;
 
-                .vi-input-table__td__text {
-                    overflow: hidden;
-                    width: var(--vi-table-td-width);
-                    height: var(--vi-table-td-height);
-                    padding: var(--vi-table-td-padding);
-                    box-sizing: border-box;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    cursor: text;
-                }
-
-                .vi-input-table__td__input {
-                    position: absolute;
-                    z-index: 1;
-                    top: -1px;
-                    left: -1px;
-                    border: 1px solid var(--vi-background-color-deep);
-                    width: calc(var(--vi-table-td-width) + 2px);
-                    height: auto;
-                    padding: var(--vi-table-td-padding);
-                    box-sizing: border-box;
-                    background-color: var(--vi-background-color-solid);
-                    outline: none;
-                    resize: none;
-
-                    &::-webkit-scrollbar {
-                        display: none;
-                    }
-                }
-
-                &:hover {
-                    background-color: var(--vi-background-color);
-                }
-            }
-
-            .vi-input-table__sider-td {
+            .vi-input-table__td__text {
+                overflow: hidden;
+                width: var(--vi-table-td-width);
+                height: var(--vi-table-td-height);
                 padding: var(--vi-table-td-padding);
-                width: var(--vi-table-sider-width);
+                box-sizing: border-box;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                cursor: text;
             }
 
-            .vi-radio-text {
-                display: none;
+            .vi-input-table__td__input {
+                position: absolute;
+                z-index: 1;
+                top: -1px;
+                left: -1px;
+                border: 1px solid var(--vi-background-color-deep);
+                width: calc(var(--vi-table-td-width) + 1px);
+                height: auto;
+                padding: var(--vi-table-td-padding);
+                box-sizing: border-box;
+                background-color: var(--vi-background-color-solid);
+                outline: none;
+                resize: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
             }
 
-            .vi-checkbox-text {
-                display: none;
+            &:hover {
+                background-color: var(--vi-background-color);
             }
+        }
+
+        .vi-input-table__sider-td {
+            padding: var(--vi-table-td-padding);
+            width: var(--vi-table-sider-width);
+        }
+
+        .vi-radio-text {
+            display: none;
+        }
+
+        .vi-checkbox-text {
+            display: none;
         }
     }
 }
