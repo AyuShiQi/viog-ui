@@ -9,6 +9,8 @@ import { inject, computed } from 'vue'
 export default function () {
   // 普通常量
   const id = inject('vi-rate-id-getter', () => 0)() as number
+  const randomId = `${Math.floor(Math.random() * 1000000)}-${id}`
+  const randomUrl = `url(#${randomId})`
   // DOM ref
   // ref
   // reactive
@@ -66,6 +68,8 @@ export default function () {
   // provide
   // 生命周期
   return {
+    randomId,
+    randomUrl,
     handleMousemove,
     hanldeClick,
     endColor

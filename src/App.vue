@@ -24,6 +24,14 @@
       </template>
     </vi-context-menu>
   </vi-scroll>
+  <vi-rate v-model="choose">
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+    <vi-rate-item></vi-rate-item>
+  </vi-rate>
 </template>
 
 <script lang="ts">

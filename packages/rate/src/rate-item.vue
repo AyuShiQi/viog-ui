@@ -1,10 +1,22 @@
 <template>
   <div class="vi-rate-item"
   @mousemove="handleMousemove"
-  @click="hanldeClick"
-  :style="{
-    'background': `linear-gradient(to right, var(--vi-rate-active-color) 0%, var(--vi-rate-active-color) ${endColor}%, var(--vi-rate-default-color) ${endColor}%)`
-  }"></div>
+  @click="hanldeClick">
+    <slot>
+      <svg class="vi-rate-item__svg" viewBox="0 0 20 20">
+        <linearGradient :id="randomId" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:var(--vi-rate-active-color); stop-opacity:1"/>
+          <stop :offset="`${endColor}%`" style="stop-color:var(--vi-rate-active-color); stop-opacity:1"/>
+          <stop :offset="`${endColor}%`" style="stop-color:var(--vi-rate-default-color); stop-opacity:1"/>
+          <stop offset="100%" style="stop-color:var(--vi-rate-default-color); stop-opacity:1"/>
+        </linearGradient>
+        <path
+        :style="{
+          fill: randomUrl
+        }"/>
+      </svg>
+    </slot>
+  </div>
 </template>
 
 <script lang="ts">

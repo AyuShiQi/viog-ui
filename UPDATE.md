@@ -56,7 +56,7 @@
 # 0.14.2（当前迭代开发版本）
 
 - 新增num-input组件表单组件附带功能*
-- 修复rate组件click下归零方式
+- 修复rate组件表现方式*
 - 新增context-menu滚动消失*
 - 修复context-menu无法使用style在根节点上增添css的情况*
 - 新增input-table组件表单组件附带功能*
