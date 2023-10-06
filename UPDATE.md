@@ -59,7 +59,7 @@
 - 修复rate组件click下归零方式
 - 新增context-menu滚动消失
 - 修复context-menu无法使用style在根节点上增添css的情况
-- 新增input-table组件表单组件附带功能
+- 新增input-table组件表单组件附带功能*
 - 修复input-table中td-input移位问题*
 - 修复input-table extension扩展功能添加新对象或者新列表的功能bug*
 - 更改input-table组件css样式宽度高度为auto*

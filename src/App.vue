@@ -1,144 +1,21 @@
 <template>
-  <vi-tab-card-group v-model="choose" @delete="handleDelete">
-    <vi-tab-card title="App.vue" value="App.vue">
-      <template v-slot:icon>
-        <span style="font-weight: 600; color: var(--vi-yellow-color1);">POST</span>
-      </template>
-    </vi-tab-card>
-    <vi-tab-card title="你知道的">
-      <template v-slot:icon>
-        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
-      </template>
-    </vi-tab-card>
-    <vi-tab-card title="你知道的">
-      <template v-slot:icon>
-        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
-      </template>
-    </vi-tab-card>
-    <vi-tab-card title="App.vue"></vi-tab-card>
-    <vi-tab-card title="你知道的">
-      <template v-slot:icon>
-        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
-      </template>
-    </vi-tab-card>
-    <vi-tab-card title="App.vue"></vi-tab-card>
-  </vi-tab-card-group>
-  <vi-tab-card-group type="plain" v-model="choose">
-    <vi-tab-card title="App.vue" value="App.vue">
-      <template v-slot:icon>
-        <span style="font-weight: 600; color: var(--vi-yellow-color1);">POST</span>
-      </template>
-    </vi-tab-card>
-    <vi-tab-card title="你知道的">
-      <template v-slot:icon>
-        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
-      </template>
-    </vi-tab-card>
-    <vi-tab-card title="你知道的">
-      <template v-slot:icon>
-        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
-      </template>
-    </vi-tab-card>
-    <vi-tab-card title="App.vue"></vi-tab-card>
-    <vi-tab-card title="你知道的">
-      <template v-slot:icon>
-        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
-      </template>
-    </vi-tab-card>
-    <vi-tab-card title="App.vue"></vi-tab-card>
-  </vi-tab-card-group>
-  <vi-tab-card-group type="button" v-model="choose">
-    <vi-tab-card title="App.vue" value="App.vue">
-      <template v-slot:icon>
-        <span style="font-weight: 600; color: var(--vi-yellow-color1);">POST</span>
-      </template>
-    </vi-tab-card>
-    <vi-tab-card title="你知道的">
-      <template v-slot:icon>
-        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
-      </template>
-    </vi-tab-card>
-    <vi-tab-card title="你知道的">
-      <template v-slot:icon>
-        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
-      </template>
-    </vi-tab-card>
-    <vi-tab-card title="App.vue"></vi-tab-card>
-    <vi-tab-card title="你知道的">
-      <template v-slot:icon>
-        <div style="font-weight: 600; color: var(--vi-yellow-color1);">POST</div>
-      </template>
-    </vi-tab-card>
-    <vi-tab-card title="App.vue"></vi-tab-card>
-  </vi-tab-card-group>
-  <vi-table :datas="table" align="center" type="border" style="--vi-table-td-width: 120px">
-    <vi-table-column value="0">列1</vi-table-column>
-    <vi-table-column value="1">列2</vi-table-column>
-    <vi-table-column value="2">列3</vi-table-column>
-  </vi-table>
-  <vi-num-input v-model="choose"></vi-num-input>
+  <vi-form @submit="look">
+    <template v-slot="{ submit }">
+      <vi-form-item>
+        <vi-num-input v-model="choose" name="no-zuo"></vi-num-input>
+      </vi-form-item>
+      <vi-form-item>
+        <vi-input-table v-model="table" multi extension name="nihao">
+          <vi-input-table-col>领先</vi-input-table-col>
+          <vi-input-table-col>销量</vi-input-table-col>
+          <vi-input-table-col>持久</vi-input-table-col>
+        </vi-input-table>
+      </vi-form-item>
+      <vi-button @click="submit">nihao</vi-button>
+    </template>
+  </vi-form>
   <vi-num-input v-model="choose" type="default"></vi-num-input>
   <vi-num-input v-model="choose" type="button"></vi-num-input>
-  <vi-input-table v-model="table" multi extension>
-    <vi-input-table-col>领先</vi-input-table-col>
-    <vi-input-table-col>销量</vi-input-table-col>
-    <vi-input-table-col>持久</vi-input-table-col>
-  </vi-input-table>
-  <!-- <vi-select v-model="data">
-    <vi-option value="ysq">杨诗绮</vi-option>
-    <vi-option value="scs">你好</vi-option>
-  </vi-select>
-  <vi-collapse title="标题">
-    <vi-color-select v-model="value"></vi-color-select>
-  </vi-collapse>
-  <vi-input v-model="id" number></vi-input>
-  <input type="color"> -->
-  <!-- <div style="width: 100%; height: 100vh;">
-    <vi-table-editor v-model="table" style="--vi-table-width: 100%; --vi-table-height: 100%;"></vi-table-editor>
-  </div> -->
-  <!-- <vi-rate v-model="choose">
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-  </vi-rate>
-  <br>
-  <vi-rate type="love" v-model="choose">
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-  </vi-rate>
-  <br>
-  <vi-rate type="smile" v-model="choose">
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-  </vi-rate>
-  <br>
-  <vi-rate type="flower" v-model="choose">
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-  </vi-rate>
-  <vi-flex style="--vi-flex-min-width: 50px; --vi-flex-max-width: 180px; background-color: pink;"></vi-flex>
-  <vi-flex
-  vertical="left"
-  horizontal="none"
-  style="position: absolute; right: 0px; bottom: 0px; --vi-flex-min-width: 50px; --vi-flex-max-width: 180px; background-color: pink;"></vi-flex>
-  <vi-context-menu>
-    <vi-button style="position: absolute; right: 0;">菜单栏</vi-button>
-    <template v-slot:content>
-      <div style="width: 100%; height: 100%; background-color: pink;">
-      </div>
-    </template>
-  </vi-context-menu> -->
 </template>
 
 <script lang="ts">

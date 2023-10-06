@@ -21,5 +21,6 @@ export default {
   extension: {
     type: Boolean,
     default: false
-  }
+  },
+  name: String
 }

@@ -9,6 +9,8 @@ import type { SetupContext } from 'vue'
 import idGetter from '../../../utils/communication/IdDistributor'
 import idCollectorState from '@/hooks/id-collector-state'
 
+import { formTargetStateReactive } from '@/hooks/form-target-state'
+
 export default function (props: any, ctx: SetupContext) {
   const idDistributor = idCollectorState(0, 'vi-input-table')
   // 普通常量
@@ -19,6 +21,8 @@ export default function (props: any, ctx: SetupContext) {
   const value = reactive(props.modelValue || []) as any[]
   const colMap = reactive([]) as any[]
   const originPickValue = reactive(props.pickValue)
+
+  formTargetStateReactive(props.name, value)
   // inject
   // computed
   const multiValue = computed(() => {
