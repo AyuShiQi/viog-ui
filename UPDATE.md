@@ -49,11 +49,11 @@
 
 - 新增点赞组件
 
-# 0.14.5
+# 0.14.6
 
 - 更新文档
 
-# 0.14.4
+# 0.14.4-0.14.5（当前迭代开发版本）
 
 - 修复input-table样式
 
@@ -61,19 +61,19 @@
 
 - 删除input-table组件scroll
 
-# 0.14.2（当前迭代开发版本）
+# 0.14.2
 
-- 新增num-input组件表单组件附带功能*
-- 修复rate组件表现方式*
-- 新增context-menu滚动消失*
-- 修复context-menu无法使用style在根节点上增添css的情况*
-- 新增input-table组件表单组件附带功能*
-- 修复input-table中td-input移位问题*
-- 修复input-table extension扩展功能添加新对象或者新列表的功能bug*
-- 更改input-table组件css样式宽度高度为auto*
-- 更改input-table组件col组件value显示标题逻辑*
-- 添加tab-card value别名功能*
-- 修复tab-card delete事件*
+- 新增num-input组件表单组件附带功能
+- 修复rate组件表现方式
+- 新增context-menu滚动消失
+- 修复context-menu无法使用style在根节点上增添css的情况
+- 新增input-table组件表单组件附带功能
+- 修复input-table中td-input移位问题
+- 修复input-table extension扩展功能添加新对象或者新列表的功能bug
+- 更改input-table组件css样式宽度高度为auto
+- 更改input-table组件col组件value显示标题逻辑
+- 添加tab-card value别名功能
+- 修复tab-card delete事件
 
 # 0.14.1
 

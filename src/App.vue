@@ -6,7 +6,7 @@
       </vi-form-item>
       <vi-form-item>
         <vi-input-table v-model="table" multi extension name="nihao">
-          <vi-input-table-col style="--vi-table-td-width: 300px;">领先</vi-input-table-col>
+          <vi-input-table-col style="--vi-table-td-width: 10px;">领先</vi-input-table-col>
           <vi-input-table-col>销量</vi-input-table-col>
           <vi-input-table-col>持久</vi-input-table-col>
         </vi-input-table>

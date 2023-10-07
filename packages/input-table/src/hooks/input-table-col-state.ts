@@ -11,6 +11,7 @@ export default function (props: any) {
   // DOM ref
   const tableCol = ref()
   // ref
+  const targetWidth = ref('')
   // reactive
   // inject
   const id = (inject('vi-input-table-id-getter', () => 0) as () => number)()
@@ -27,10 +28,12 @@ export default function (props: any) {
   if (collectCol) collectCol(id, props.value || id)
 
   onMounted(() => {
-    if (collectColWidth) collectColWidth(props.value || id, window.getComputedStyle(tableCol.value).getPropertyValue('--vi-table-td-width'))
+    targetWidth.value = window.getComputedStyle(tableCol.value).getPropertyValue('--vi-table-td-width')
+    if (collectColWidth) collectColWidth(props.value || id, targetWidth.value)
   })
 
   return {
-    tableCol
+    tableCol,
+    targetWidth
   }
 }

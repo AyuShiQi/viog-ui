@@ -1,6 +1,10 @@
 <template>
-  <th class="vi-input-table__th" ref="tableCol">
-    <slot>{{ value }}</slot>
+  <th
+  class="vi-input-table__th"
+  ref="tableCol">
+    <div class="vi-input-table__th__view">
+      <slot>{{ value }}</slot>
+    </div>
   </th>
 </template>
 

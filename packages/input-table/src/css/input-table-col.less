@@ -5,7 +5,6 @@
             // display: block;
             width: var(--vi-table-td-width);
             height: var(--vi-table-header-height);
-            padding: var(--vi-table-td-padding);
             border: 1px solid var(--vi-background-color-deep);
             text-align: left;
             // border-bottom: 1px solid var(--vi-background-color-deep);
@@ -17,6 +16,14 @@
 
         .vi-input-table__sider-td {
             width: var(--vi-table-sider-width);
+        }
+
+        .vi-input-table__th__view {
+            overflow: hidden;
+            width: var(--vi-table-td-width);
+            height: var(--vi-table-header-height);
+            padding: var(--vi-table-td-padding);
+            box-sizing: border-box;
         }
     }
 }
