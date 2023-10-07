@@ -1,3 +1,6 @@
 export default {
-  value: [Number, String, Boolean]
+  value: {
+    type: [Number, String, Boolean],
+    default: undefined
+  }
 }

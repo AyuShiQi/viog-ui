@@ -33,6 +33,7 @@ export default function (props: any) {
   })
 
   return {
+    id,
     tableCol,
     targetWidth
   }

@@ -3,7 +3,7 @@
   class="vi-input-table__th"
   ref="tableCol">
     <div class="vi-input-table__th__view">
-      <slot>{{ value }}</slot>
+      <slot>{{ value === undefined ? id : value }}</slot>
     </div>
   </th>
 </template>
