@@ -49,6 +49,11 @@
 
 - 新增点赞组件
 
+# 0.14.7
+
+- 修改tab-card del样式
+- 优化dropdown 失焦表现
+
 # 0.14.6
 
 - 修复input-table类型别名错误

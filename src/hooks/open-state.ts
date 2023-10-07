@@ -62,12 +62,12 @@ export default function (needBlur = true, openMode = 'click') {
 
   onMounted(() => {
     if (needBlur && openMode !== 'hover') {
-      document.addEventListener(openMode, blurOption)
+      document.addEventListener('mousedown', blurOption)
     }
   })
 
   onBeforeUnmount(() => {
-    document.removeEventListener(openMode, blurOption)
+    document.removeEventListener('mousedown', blurOption)
   })
 
   return {
