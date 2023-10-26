@@ -1,5 +1,5 @@
 export default {
   i: Number,
-  j: Number,
+  j: [String, Boolean, Number],
   value: [String, Boolean, Number]
 }
