@@ -16,6 +16,9 @@ export default function (props: InputProps, ctx: SetupContext, search: Ref) {
     } else if (isMaxLength(String(props.modelValue))) {
       ctx.emit('update:modelValue', String(props.modelValue).slice(0, props.maxlength))
     }
+    if (!props.modelValue) {
+      return String(props.modelValue)
+    }
     return props.modelValue
   })
 
