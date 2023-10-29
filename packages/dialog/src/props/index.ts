@@ -72,5 +72,13 @@ export default {
     default: (): boolean => {
       return true
     }
+  },
+  class: {
+    type: [Object, Number, String, Array, Boolean],
+    default: null
+  },
+  style: {
+    type: [Object, Number, String, Array, Boolean],
+    default: null
   }
 }

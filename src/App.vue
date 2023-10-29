@@ -32,6 +32,16 @@
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
   </vi-rate>
+  <vi-dialog v-model="open"
+  :class="[
+    {
+      hello: true
+    },
+    'hello2'
+  ]">
+    ni1
+  </vi-dialog>
+  <vi-button @click="open = true"></vi-button>
 </template>
 
 <script lang="ts">

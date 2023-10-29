@@ -20,7 +20,9 @@ export interface DialogProps {
   title: string,
   toSure: Function,
   toUnSure: Function,
-  toShutDown: Function
+  toShutDown: Function,
+  class: any,
+  style: any
 }
 
 export interface DialogColor {

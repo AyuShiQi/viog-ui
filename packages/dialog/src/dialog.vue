@@ -7,7 +7,9 @@
           'vi-dialog-dark': dark,
           [`vi-dialog-mask-${maskColor}`]: !noMask,
           'is-blur': blur
-        }
+        },
+        objClass,
+        ...arrClass
       ]"
       v-show="modelValue">
         <div class="vi-dialog__content">
