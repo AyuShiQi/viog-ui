@@ -53,6 +53,7 @@
 
 - 更改dialog组件展示方式，css变量可正确修改
 - 修复input组件placeholder展示内容
+- 修复select组件placeholder展示内容
 
 # 0.14.8
 
