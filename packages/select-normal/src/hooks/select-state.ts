@@ -51,7 +51,7 @@ export default function (props: any, ctx: SetupContext, useAlias = true) {
       return props.modelValue.length === 0
     }
     // 单选显示
-    return alias.aliasMap?.has(props.modelValue)
+    return !alias.aliasMap?.has(props.modelValue)
   })
 
   provide('choosed', choosed)

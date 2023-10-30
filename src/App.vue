@@ -32,6 +32,19 @@
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
   </vi-rate>
+  <vi-select
+    v-model="searchInfo"
+    class="neko-input-select">
+      <vi-option class="get" :value="null">未知</vi-option>
+      <vi-option class="get" :value="0">GET</vi-option>
+      <vi-option class="put" :value="1">PUT</vi-option>
+      <vi-option class="post" :value="2">POST</vi-option>
+      <vi-option class="head" :value="3">HEAD</vi-option>
+      <vi-option class="patch" :value="4">PATCH</vi-option>
+      <vi-option class="delete" :value="5">DELETE</vi-option>
+      <vi-option class="options" :value="6">OPTIONS</vi-option>
+      <vi-option class="connect" :value="7">CONNECT</vi-option>
+    </vi-select>
   <vi-dialog v-model="open"
   :class="[
     {
@@ -68,7 +81,7 @@ interface ViInputType {
   toBlur: () => void
 }
 
-const searchInfo = ref()
+const searchInfo = ref(null)
 const optionList: any[] = reactive([])
 
 function handleSearch (key: string, { finish }: any) {
