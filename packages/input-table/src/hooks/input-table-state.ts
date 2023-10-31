@@ -60,10 +60,10 @@ export default function (props: any, ctx: SetupContext) {
         } else value[i] = {}
       }
     }
-    if (val) {
-      value[i][j] = val
-      ctx.emit('input', val, i, j)
-    }
+    // if (val) {
+    value[i][j] = val
+    ctx.emit('input', val, i, j)
+    // }
   }
 
   function collectCol (id: number, value: any) {
