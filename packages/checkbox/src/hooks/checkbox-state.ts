@@ -53,7 +53,7 @@ export default function (props: CheckboxProps, context: SetupContext) {
   /**
    * value是否改变了
    * @param target 目标列表
-   * @returns 
+   * @returns
    */
   function valueChange (target: any[]): boolean {
     // 包含结果则去除

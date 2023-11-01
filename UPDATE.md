@@ -49,7 +49,12 @@
 - 新增点赞组件
 - 新增多级选择器
 
-# 0.14.13（当前迭代开发版本）
+# 0.14.14（当前迭代开发版本）
+
+- 新增input-table pick事件
+- 新增checkbox update事件
+
+# 0.14.13
 
 - 修复input-table modelValue更换问题
 - 修复input-table 未改变就触发input事件的问题
