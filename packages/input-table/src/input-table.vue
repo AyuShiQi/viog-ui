@@ -2,15 +2,16 @@
   <table class="vi-input-table">
     <tr class="vi-input-table__tr">
       <th class="vi-input-table__th vi-input-table__sider-td" v-if="multi || pick">
-        <vi-checkbox v-if="multi" :value="multiValue" v-model="originPickValue"></vi-checkbox>
+        <vi-checkbox v-if="multi" :value="multiValue" v-model="originPickValue" @change="handleCheckBoxChange"></vi-checkbox>
       </th>
       <slot>
       </slot>
     </tr>
     <tr class="vi-input-table__tr" v-for="(line, i) of value" :key="i">
+      <!-- 选择部分 -->
       <td class="vi-input-table__td vi-input-table__sider-td" v-if="pick || multi">
         <vi-radio v-if="pick" :value="i" v-model="pickViewValue"></vi-radio>
-        <vi-checkbox v-else :value="i" v-model="originPickValue"></vi-checkbox>
+        <vi-checkbox v-else :value="i" v-model="originPickValue" @change="handleCheckBoxChange"></vi-checkbox>
       </td>
       <inputTd
       class="vi-input-table__td"

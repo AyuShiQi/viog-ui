@@ -17,7 +17,9 @@ export default function (props: CheckboxProps, context: SetupContext) {
   // reactive
   // inject
   // computed
-  // 该checkbox是否包含于结果之中
+  /**
+   * 该checkbox是否包含于结果之中
+   */
   const containsValue = computed((): boolean => {
     if (nowPick instanceof Array) {
       // 检查是否每一个都在
@@ -37,9 +39,10 @@ export default function (props: CheckboxProps, context: SetupContext) {
    * 监听改变
    */
   function handleChange (): void {
-    // 当前是否在数组中
+    // 当前（曾经）是否在数组中
     const res = valueChange(nowPick)
     context.emit('change', props.value, res)
+    context.emit('update:modelValue', props.value, res)
   }
 
   function toPick (): void {
@@ -47,7 +50,13 @@ export default function (props: CheckboxProps, context: SetupContext) {
   }
   // 方法
   // 普通function函数
+  /**
+   * value是否改变了
+   * @param target 目标列表
+   * @returns 
+   */
   function valueChange (target: any[]): boolean {
+    // 包含结果则去除
     if (containsValue.value) {
       if (props.value instanceof Array) {
         for (const item of props.value) {
@@ -59,6 +68,7 @@ export default function (props: CheckboxProps, context: SetupContext) {
         target.splice(index, 1)
       }
       return true
+    // 不包含结果则添加
     } else {
       if (props.value instanceof Array) {
         for (const item of props.value) {

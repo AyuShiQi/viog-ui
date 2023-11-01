@@ -1,4 +1,4 @@
-import { provide, reactive } from 'vue'
+import { provide } from 'vue'
 
 import type { GroupValueProps } from '@/types/checkbox-types'
 import { formTargetStateReactive } from '@/hooks/form-target-state'

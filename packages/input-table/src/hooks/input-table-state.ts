@@ -21,7 +21,7 @@ export default function (props: any, ctx: SetupContext) {
   const value = computed(() => (props.modelValue || []) as any[])
   const colMap = reactive([]) as any[]
   const widthMap = reactive({}) as any
-  const originPickValue = reactive(props.pickValue)
+  const originPickValue = reactive(computed(() => props.pickValue).value)
 
   formTargetStateReactive(props.name, value)
   // inject
@@ -36,6 +36,7 @@ export default function (props: any, ctx: SetupContext) {
 
   watch(pickViewValue, () => {
     originPickValue[0] = pickViewValue.value
+    ctx.emit('pick', originPickValue[0], false)
   })
   // 事件方法
   // 方法
@@ -73,6 +74,10 @@ export default function (props: any, ctx: SetupContext) {
   function collectColWidth (value: any, width: string) {
     widthMap[value] = width
   }
+
+  function handleCheckBoxChange (value: any, res: boolean) {
+    ctx.emit('pick', value, false)
+  }
   // provide
   provide('vi-input-table-id-getter', idGetter())
   provide('vi-input-table-editor', editValue)
@@ -86,6 +91,7 @@ export default function (props: any, ctx: SetupContext) {
     widthMap,
     multiValue,
     originPickValue,
+    handleCheckBoxChange,
     ...idDistributor
   }
 }
