@@ -52,8 +52,9 @@
 # 0.14.13（当前迭代开发版本）
 
 - 修复input-table modelValue更换问题
+- 修复input-table 未改变就触发input事件的问题
 
-# 0.14.12（当前迭代开发版本）
+# 0.14.12
 
 - 修复input-table输入为空时不变bug
 

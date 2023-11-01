@@ -26,7 +26,7 @@ export default function (props: any, ctx: SetupContext) {
 
   function handleBlur () {
     editShow.value = false
-    if (editValue) editValue(viewValue.value, props.i, props.j)
+    if (editValue && viewValue.value !== props.value) editValue(viewValue.value, props.i, props.j)
   }
 
   function handleInput (e: any) {
