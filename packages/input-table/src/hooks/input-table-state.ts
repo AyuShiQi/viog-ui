@@ -18,7 +18,7 @@ export default function (props: any, ctx: SetupContext) {
   // ref
   const pickViewValue = ref()
   // reactive
-  const value = reactive(props.modelValue || []) as any[]
+  const value = computed(() => (props.modelValue || []) as any[])
   const colMap = reactive([]) as any[]
   const widthMap = reactive({}) as any
   const originPickValue = reactive(props.pickValue)
@@ -28,7 +28,7 @@ export default function (props: any, ctx: SetupContext) {
   // computed
   const multiValue = computed(() => {
     const res = []
-    for (let i = 0; i < value.length; i++) {
+    for (let i = 0; i < value.value.length; i++) {
       res.push(i)
     }
     return res
@@ -48,20 +48,20 @@ export default function (props: any, ctx: SetupContext) {
    */
   function editValue (val: any, i: number, j: number) {
     // console.log(i, j, value, value[i])
-    if (!value[i] && val) {
+    if (!value.value[i] && val) {
       // 判断是对象还是数组
       if (i > 0) {
-        if (value[0] instanceof Array) {
-          value[i] = []
-        } else value[i] = {}
+        if (value.value[0] instanceof Array) {
+          value.value[i] = []
+        } else value.value[i] = {}
       } else {
         if (typeof val === 'number') {
-          value[i] = []
-        } else value[i] = {}
+          value.value[i] = []
+        } else value.value[i] = {}
       }
     }
     // if (val) {
-    value[i][j] = val
+    value.value[i][j] = val
     ctx.emit('input', val, i, j)
     // }
   }
