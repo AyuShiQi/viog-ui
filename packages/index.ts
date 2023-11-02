@@ -16,6 +16,7 @@ import ViCollapse from './collapse'
 import ViDivider from './divider'
 import ViFlex from './flex'
 import ViContextMenu from './context-menu'
+import ViCascader from './cascader'
 // 模块组
 import ViHeader from './header'
 import ViSkeleton from './skeleton'
@@ -49,6 +50,7 @@ import ViUpload from './upload'
 import ViVerifySlider from './verify-slider'
 import ViColorSelect from './color-select'
 import ViNumInput from './num-input'
+import ViCascaderSelect from './cascader-select'
 
 // 表格组
 import ViTable from './table'
@@ -104,7 +106,9 @@ const components = [
   ViContextMenu,
   ViInputTable,
   ViTabCard,
-  ViNumInput
+  ViNumInput,
+  ViCascader,
+  ViCascaderSelect
 ]
 
 export {
