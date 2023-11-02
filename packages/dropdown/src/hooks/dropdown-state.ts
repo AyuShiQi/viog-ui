@@ -1,12 +1,11 @@
 // vue
-import { ref, watch } from 'vue'
+import { ref, watch, onUpdated } from 'vue'
 import type { SetupContext } from 'vue'
 // vue type
 // 组件type
 // 外部hooks
 import openState from '@/hooks/open-state'
 import boxPositionState from '@/hooks/box-position-state'
-import { onUpdated } from 'vue'
 // 内部hooks
 // 外部模块
 
@@ -16,6 +15,9 @@ export default function (props: any, ctx: SetupContext) {
 
   const isUpdating = ref(false)
 
+  /**
+   * 自控开关
+   */
   watch(open.open, () => {
     if (isUpdating.value) {
       isUpdating.value = false
@@ -70,6 +72,9 @@ export default function (props: any, ctx: SetupContext) {
     })
   }
 
+  /**
+   * 自控开关
+   */
   onUpdated(() => {
     isUpdating.value = true
     open.open.value = props.modelValue
