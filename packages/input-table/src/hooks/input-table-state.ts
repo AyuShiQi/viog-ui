@@ -23,13 +23,8 @@ export default function (props: any, ctx: SetupContext) {
   const widthMap = reactive({}) as any
   const originPickValue = reactive({ value: [] as any[] })
   computed(() => {
-    console.log(props.pickValue)
     return (originPickValue.value = props.pickValue ?? [])
   })
-
-  watch(originPickValue, () => {
-    console.log(originPickValue)
-  }, { immediate: true })
 
   formTargetStateRef(props.name, value)
   // inject
