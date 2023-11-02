@@ -1,66 +1,11 @@
 <template>
-  <vi-form @submit="look">
-    <template v-slot="{ submit }">
-      <vi-form-item>
-        <vi-num-input v-model="choose" name="no-zuo"></vi-num-input>
-      </vi-form-item>
-      <vi-form-item>
-      </vi-form-item>
-      <vi-button @click="submit">nihao</vi-button>
+  <vi-dropdown v-model="open">
+    <vi-button>点击展开</vi-button>
+    <template v-slot:content>
+      <div style="width: 200px; height: 200px; background-color: #000;"></div>
     </template>
-  </vi-form>
-  <vi-num-input v-model="choose" type="default"></vi-num-input>
-  <vi-num-input v-model="choose" type="button"></vi-num-input>
-  <vi-scroll style="--vi-scroll-width: 100px; --vi-scroll-height: 100px">
-    <vi-context-menu>
-      <vi-button>nihao</vi-button>
-      <template v-slot:content>
-        <div style="width: 100%; height: 100%; background-color: pink;"></div>
-      </template>
-    </vi-context-menu>
-  </vi-scroll>
-  <vi-input-table
-  v-model="table"
-  multi
-  extension
-  name="nihao"
-  :pickValue="infoTable.pickValue">
-    <vi-input-table-col style="--vi-table-td-width: 10px;">领先</vi-input-table-col>
-    <vi-input-table-col>销量</vi-input-table-col>
-    <vi-input-table-col>持久</vi-input-table-col>
-  </vi-input-table>
-  <vi-button @click="changePickValue">点击更换</vi-button>
-  <vi-rate v-model="choose">
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-    <vi-rate-item></vi-rate-item>
-  </vi-rate>
-  <vi-select
-    v-model="searchInfo"
-    class="neko-input-select">
-      <vi-option class="get" :value="null">未知</vi-option>
-      <vi-option class="get" :value="0">GET</vi-option>
-      <vi-option class="put" :value="1">PUT</vi-option>
-      <vi-option class="post" :value="2">POST</vi-option>
-      <vi-option class="head" :value="3">HEAD</vi-option>
-      <vi-option class="patch" :value="4">PATCH</vi-option>
-      <vi-option class="delete" :value="5">DELETE</vi-option>
-      <vi-option class="options" :value="6">OPTIONS</vi-option>
-      <vi-option class="connect" :value="7">CONNECT</vi-option>
-    </vi-select>
-  <vi-dialog v-model="open"
-  :class="[
-    {
-      hello: true
-    },
-    'hello2'
-  ]">
-    ni1
-  </vi-dialog>
-  <vi-button @click="open = true"></vi-button>
+  </vi-dropdown>
+  <vi-button @click="open = !open">点击变换</vi-button>
 </template>
 
 <script lang="ts">

@@ -1,5 +1,5 @@
 // vue
-import { ref, watch, onUpdated } from 'vue'
+import { ref, watch, onUpdated, computed } from 'vue'
 import type { SetupContext } from 'vue'
 // vue type
 // 组件type
@@ -10,21 +10,8 @@ import boxPositionState from '@/hooks/box-position-state'
 // 外部模块
 
 export default function (props: any, ctx: SetupContext) {
-  const open = openState(true, 'click', props.modelValue)
+  const open = openState()
   const boxPosition = boxPositionState(props.mode, props.scrollTarget)
-
-  const isUpdating = ref(false)
-
-  /**
-   * 自控开关
-   */
-  watch(open.open, () => {
-    if (isUpdating.value) {
-      isUpdating.value = false
-    } else {
-      ctx.emit('update:modelValue', open.open.value)
-    }
-  })
 
   // 针对hover的方法
   function mouseClose () {
@@ -71,14 +58,6 @@ export default function (props: any, ctx: SetupContext) {
       afterCb: boxPosition.toChangeViewPosition
     })
   }
-
-  /**
-   * 自控开关
-   */
-  onUpdated(() => {
-    isUpdating.value = true
-    open.open.value = props.modelValue
-  })
 
   return {
     ...open,
