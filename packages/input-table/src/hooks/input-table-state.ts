@@ -18,10 +18,15 @@ export default function (props: any, ctx: SetupContext) {
   // ref
   const pickViewValue = ref()
   // reactive
-  const value = computed(() => (props.modelValue || []) as any[])
+  const value = computed(() => (props.modelValue ?? []) as any[])
   const colMap = reactive([]) as any[]
   const widthMap = reactive({}) as any
-  const originPickValue = reactive(computed(() => props.pickValue).value)
+  const originPickValue = reactive({ value: [] as any[] })
+  computed(() => (originPickValue.value = props.pickValue ?? []))
+
+  watch(originPickValue, () => {
+    console.log(originPickValue.value)
+  }, { immediate: true })
 
   formTargetStateReactive(props.name, value)
   // inject
@@ -35,8 +40,8 @@ export default function (props: any, ctx: SetupContext) {
   })
 
   watch(pickViewValue, () => {
-    originPickValue[0] = pickViewValue.value
-    ctx.emit('pick', originPickValue[0], false)
+    originPickValue.value[0] = pickViewValue.value
+    ctx.emit('pick', originPickValue.value[0], false)
   })
   // 事件方法
   // 方法

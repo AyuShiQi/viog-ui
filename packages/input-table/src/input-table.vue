@@ -2,7 +2,7 @@
   <table class="vi-input-table">
     <tr class="vi-input-table__tr">
       <th class="vi-input-table__th vi-input-table__sider-td" v-if="multi || pick">
-        <vi-checkbox v-if="multi" :value="multiValue" v-model="originPickValue" @change="handleCheckBoxChange"></vi-checkbox>
+        <vi-checkbox v-if="multi" :value="multiValue" v-model="originPickValue.value" @change="handleCheckBoxChange"></vi-checkbox>
       </th>
       <slot>
       </slot>
@@ -11,7 +11,7 @@
       <!-- 选择部分 -->
       <td class="vi-input-table__td vi-input-table__sider-td" v-if="pick || multi">
         <vi-radio v-if="pick" :value="i" v-model="pickViewValue"></vi-radio>
-        <vi-checkbox v-else :value="i" v-model="originPickValue" @change="handleCheckBoxChange"></vi-checkbox>
+        <vi-checkbox v-else :value="i" v-model="originPickValue.value" @change="handleCheckBoxChange"></vi-checkbox>
       </td>
       <inputTd
       class="vi-input-table__td"
@@ -27,7 +27,7 @@
     <tr class="vi-input-table__tr" v-if="extension">
       <td class="vi-input-table__td vi-input-table__sider-td" v-if="pick || multi">
         <vi-radio v-if="pick" :value="value.length" v-model="pickViewValue" disabled></vi-radio>
-        <vi-checkbox v-else :value="value.length" v-model="originPickValue" disabled></vi-checkbox>
+        <vi-checkbox v-else :value="value.length" v-model="originPickValue.value" disabled></vi-checkbox>
       </td>
       <inputTd
       class="vi-input-table__td"

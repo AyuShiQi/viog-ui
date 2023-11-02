@@ -15,7 +15,7 @@
     ref="checkbox"
     class="vi-checkbox__origin"
     :value="value"
-    :name="groupName ? groupName : name"
+    :name="checkboxGroup.name"
     :checked="containsValue"
     :disabled="disabled"
     @click="handleChange"
@@ -44,7 +44,7 @@ export default defineComponent({
   name: 'ViCheckbox',
   emits: ['change', 'update:modelValue'] as string[],
   inject: {
-    'checkbox-group-value': {
+    'checkbox-group': {
       default: []
     }
   },

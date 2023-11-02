@@ -1,4 +1,4 @@
-import { ref, inject, computed } from 'vue'
+import { ref, inject, computed, reactive } from 'vue'
 import type { SetupContext } from 'vue'
 
 import { RadioDOM } from '@/types/vue-types'
@@ -6,31 +6,31 @@ import { CheckboxProps } from '@/types/checkbox-types'
 
 export default function (props: CheckboxProps, context: SetupContext) {
   // 普通常量
-  const groupName = inject('checkbox-group-name', props.name)
   // DOM ref
   const checkbox = ref()
   // ref
-  /**
-   * 当前选择
-   */
-  const nowPick: any[] = inject('checkbox-group-value', props.modelValue)
   // reactive
+  const checkboxGroup = inject('checkbox-group', reactive({
+    name: props.name as string,
+    // 选中值
+    value: props.modelValue as any[]
+  }))
   // inject
   // computed
   /**
    * 该checkbox是否包含于结果之中
    */
   const containsValue = computed((): boolean => {
-    if (nowPick instanceof Array) {
+    if (checkboxGroup.value instanceof Array) {
       // 检查是否每一个都在
       if (props.value instanceof Array) {
         let res = true
         for (const item of props.value) {
-          res &&= nowPick.includes(item)
+          res &&= checkboxGroup.value.includes(item)
         }
         return res
       }
-      return nowPick.includes(props.value)
+      return checkboxGroup.value.includes(props.value)
     }
     return false
   })
@@ -40,7 +40,7 @@ export default function (props: CheckboxProps, context: SetupContext) {
    */
   function handleChange (): void {
     // 当前（曾经）是否在数组中
-    const res = valueChange(nowPick)
+    const res = valueChange(checkboxGroup.value)
     context.emit('change', props.value, res)
     context.emit('update:modelValue', props.value, res)
   }
@@ -51,9 +51,9 @@ export default function (props: CheckboxProps, context: SetupContext) {
   // 方法
   // 普通function函数
   /**
-   * value是否改变了
+   * 添加删除value
    * @param target 目标列表
-   * @returns
+   * @returns 返回value是否存在于目标中
    */
   function valueChange (target: any[]): boolean {
     // 包含结果则去除
@@ -84,15 +84,14 @@ export default function (props: CheckboxProps, context: SetupContext) {
   // provide
   // 生命周期
   if (props.checked) {
-    if (!containsValue.value) nowPick.push(props.value)
+    if (!containsValue.value) checkboxGroup.value.push(props.value)
   }
 
   return {
-    nowPick,
+    checkboxGroup,
     handleChange,
     toPick,
     containsValue,
-    checkbox,
-    groupName
+    checkbox
   }
 }
