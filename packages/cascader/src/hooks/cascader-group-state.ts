@@ -9,6 +9,7 @@ import { ref, reactive, computed, onUpdated } from 'vue'
 
 export default function (props: any) {
   // 普通常量
+  let first = true
   // DOM ref
   // ref
   // reactive
@@ -22,17 +23,19 @@ export default function (props: any) {
   // 事件方法
   function handleItemPick (index: number) {
     choose.target = index < props.options.length ? props.options[index] : null
-    if (choose.target) choose.nextValue = choose.target.value
+    if (choose.target) choose.targetValue = choose.target.value
   }
   // 方法
   // 普通function函数
   // provide
   // 生命周期
   onUpdated(() => {
-    if (choose.targetValue !== props.nextValue) {
-      choose.targetValue = props.nextValue
-      choose.nextValue = null
-      choose.target = null
+    if (choose.nextValue !== props.nextValue) {
+      choose.nextValue = props.nextValue
+      if (!first) {
+        choose.targetValue = null
+        choose.target = null
+      } else first = false
     }
   })
   return {
