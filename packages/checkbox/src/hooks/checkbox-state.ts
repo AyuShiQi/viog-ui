@@ -15,6 +15,8 @@ export default function (props: CheckboxProps, context: SetupContext) {
     // 选中值
     value: props.modelValue as any[]
   }))
+  computed(() => (checkboxGroup.value = props.modelValue))
+  computed(() => (checkboxGroup.name = props.name))
   // inject
   // computed
   /**
@@ -42,7 +44,7 @@ export default function (props: CheckboxProps, context: SetupContext) {
     // 当前（曾经）是否在数组中
     const res = valueChange(checkboxGroup.value)
     context.emit('change', props.value, res)
-    context.emit('update:modelValue', props.value, res)
+    context.emit('update:modelValue', checkboxGroup.value)
   }
 
   function toPick (): void {

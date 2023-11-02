@@ -9,7 +9,7 @@ import type { SetupContext } from 'vue'
 import idGetter from '../../../utils/communication/IdDistributor'
 import idCollectorState from '@/hooks/id-collector-state'
 
-import { formTargetStateReactive } from '@/hooks/form-target-state'
+import { formTargetStateRef } from '@/hooks/form-target-state'
 
 export default function (props: any, ctx: SetupContext) {
   const idDistributor = idCollectorState(0, 'vi-input-table')
@@ -22,13 +22,16 @@ export default function (props: any, ctx: SetupContext) {
   const colMap = reactive([]) as any[]
   const widthMap = reactive({}) as any
   const originPickValue = reactive({ value: [] as any[] })
-  computed(() => (originPickValue.value = props.pickValue ?? []))
+  computed(() => {
+    console.log(props.pickValue)
+    return (originPickValue.value = props.pickValue ?? [])
+  })
 
   watch(originPickValue, () => {
-    console.log(originPickValue.value)
+    console.log(originPickValue)
   }, { immediate: true })
 
-  formTargetStateReactive(props.name, value)
+  formTargetStateRef(props.name, value)
   // inject
   // computed
   const multiValue = computed(() => {

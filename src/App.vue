@@ -5,11 +5,6 @@
         <vi-num-input v-model="choose" name="no-zuo"></vi-num-input>
       </vi-form-item>
       <vi-form-item>
-        <vi-input-table v-model="table" multi extension name="nihao">
-          <vi-input-table-col style="--vi-table-td-width: 10px;">领先</vi-input-table-col>
-          <vi-input-table-col>销量</vi-input-table-col>
-          <vi-input-table-col>持久</vi-input-table-col>
-        </vi-input-table>
       </vi-form-item>
       <vi-button @click="submit">nihao</vi-button>
     </template>
@@ -24,6 +19,11 @@
       </template>
     </vi-context-menu>
   </vi-scroll>
+  <vi-input-table v-model="table" multi extension name="nihao">
+          <vi-input-table-col style="--vi-table-td-width: 10px;">领先</vi-input-table-col>
+          <vi-input-table-col>销量</vi-input-table-col>
+          <vi-input-table-col>持久</vi-input-table-col>
+        </vi-input-table>
   <vi-rate v-model="choose">
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
