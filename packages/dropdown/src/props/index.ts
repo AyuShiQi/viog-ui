@@ -1,4 +1,8 @@
 export default {
+  modelValue: {
+    type: Boolean,
+    default: false
+  },
   trigger: {
     type: String,
     // hover

@@ -12,9 +12,9 @@ type openOption = {
  * @param openMode 打开方式(必须是一个有效的事件)
  * @returns {}
  */
-export default function (needBlur = true, openMode = 'click') {
+export default function (needBlur = true, openMode = 'click', defaultValue = false) {
   const openDOM = ref()
-  const open = ref(false)
+  const open = ref(defaultValue)
 
   function toSelect (option: openOption = {}) {
     const { preCb, afterCb } = option

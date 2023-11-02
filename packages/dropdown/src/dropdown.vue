@@ -26,6 +26,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import type { SetupContext } from 'vue'
 
 import props from './props'
 
@@ -34,8 +35,8 @@ import dropdownState from './hooks/dropdown-state'
 export default defineComponent({
   name: 'ViDropdown',
   props,
-  setup (props: any) {
-    const dropdown = dropdownState(props)
+  setup (props: any, ctx: SetupContext) {
+    const dropdown = dropdownState(props, ctx)
 
     return dropdown
   }
