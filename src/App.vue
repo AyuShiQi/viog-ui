@@ -19,11 +19,17 @@
       </template>
     </vi-context-menu>
   </vi-scroll>
-  <vi-input-table v-model="table" multi extension name="nihao">
-          <vi-input-table-col style="--vi-table-td-width: 10px;">领先</vi-input-table-col>
-          <vi-input-table-col>销量</vi-input-table-col>
-          <vi-input-table-col>持久</vi-input-table-col>
-        </vi-input-table>
+  <vi-input-table
+  v-model="table"
+  multi
+  extension
+  name="nihao"
+  :pickValue="infoTable.pickValue">
+    <vi-input-table-col style="--vi-table-td-width: 10px;">领先</vi-input-table-col>
+    <vi-input-table-col>销量</vi-input-table-col>
+    <vi-input-table-col>持久</vi-input-table-col>
+  </vi-input-table>
+  <vi-button @click="changePickValue">点击更换</vi-button>
   <vi-rate v-model="choose">
     <vi-rate-item></vi-rate-item>
     <vi-rate-item></vi-rate-item>
@@ -116,6 +122,13 @@ export default defineComponent({
     const table = reactive([['销量', '领先销量11111111111111', '全球销量'], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]])
     const info = reactive([] as string[])
     const id = ref(0)
+    const infoTable = reactive({
+      pickValue: [0, 1, 2]
+    })
+
+    function changePickValue () {
+      infoTable.pickValue = [2, 5, 6]
+    }
 
     function handleAddInfo () {
       info.push('xinde')
@@ -166,7 +179,9 @@ export default defineComponent({
       look,
       handleAddInfo,
       info,
-      handleDelete
+      handleDelete,
+      infoTable,
+      changePickValue
     }
   }
 })

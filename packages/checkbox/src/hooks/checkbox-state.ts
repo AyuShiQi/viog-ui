@@ -1,4 +1,4 @@
-import { ref, inject, computed, reactive } from 'vue'
+import { ref, inject, computed, reactive, onUpdated } from 'vue'
 import type { SetupContext } from 'vue'
 
 import { RadioDOM } from '@/types/vue-types'
@@ -15,8 +15,6 @@ export default function (props: CheckboxProps, context: SetupContext) {
     // 选中值
     value: props.modelValue as any[]
   }))
-  computed(() => (checkboxGroup.value = props.modelValue))
-  computed(() => (checkboxGroup.name = props.name))
   // inject
   // computed
   /**
@@ -85,6 +83,10 @@ export default function (props: CheckboxProps, context: SetupContext) {
   }
   // provide
   // 生命周期
+  onUpdated(() => {
+    checkboxGroup.value = props.modelValue
+    checkboxGroup.name = props.name
+  })
   if (props.checked) {
     if (!containsValue.value) checkboxGroup.value.push(props.value)
   }

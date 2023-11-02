@@ -1,5 +1,5 @@
 // vue
-import { ref, reactive, provide, watch, computed } from 'vue'
+import { ref, reactive, provide, watch, computed, onUpdated } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
@@ -21,10 +21,7 @@ export default function (props: any, ctx: SetupContext) {
   const value = computed(() => (props.modelValue ?? []) as any[])
   const colMap = reactive([]) as any[]
   const widthMap = reactive({}) as any
-  const originPickValue = reactive({ value: [] as any[] })
-  computed(() => {
-    return (originPickValue.value = props.pickValue ?? [])
-  })
+  const originPickValue = reactive({ value: props.pickValue as any[] })
 
   formTargetStateRef(props.name, value)
   // inject
@@ -87,6 +84,10 @@ export default function (props: any, ctx: SetupContext) {
   provide('vi-collect-col', collectCol)
   provide('vi-collect-col-width', collectColWidth)
   // 生命周期
+  onUpdated(() => {
+    originPickValue.value = props.pickValue ?? []
+    // console.log(props.pickValue, originPickValue.value, 'pickValue')
+  })
   return {
     pickViewValue,
     value,
