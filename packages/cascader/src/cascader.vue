@@ -1,6 +1,12 @@
 <template>
-  <div class="vi-cascader">
-    <vi-cascader-group v-if="choose.options" :options="choose.options"></vi-cascader-group>
+  <div class="vi-cascader" ref="cascader">
+    <vi-cascader-group
+    v-if="choose.options"
+    :options="choose.options"
+    :nextValue="null"
+    :width="choose.width"
+    :height="choose.height"
+    ></vi-cascader-group>
   </div>
 </template>
 

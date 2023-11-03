@@ -3,7 +3,8 @@
   class="vi-cascader-item"
   :class="[
     {
-      'vi-cascader-item_has-children': hasChildren
+      'vi-cascader-item_has-children': hasChildren,
+      'vi-cascader-item_picked': picked
     }
   ]">
     <div class="vi-cascader-item__title">

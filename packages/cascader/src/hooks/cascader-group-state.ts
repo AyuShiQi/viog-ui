@@ -20,6 +20,14 @@ export default function (props: any) {
   })
   // inject
   // computed
+  const nowWidth = computed(() => {
+    const len = props.width.length
+    return props.width[props.step % len]
+  })
+  const nowHeight = computed(() => {
+    const len = props.height.length
+    return props.height[props.step % len]
+  })
   const nextValue = computed(() => props.nextValue)
   watch(nextValue, listenPrevValueChange, { immediate: true })
   // 事件方法
@@ -49,6 +57,8 @@ export default function (props: any) {
   // 生命周期
   return {
     choose,
+    nowWidth,
+    nowHeight,
     handleItemPick
   }
 }

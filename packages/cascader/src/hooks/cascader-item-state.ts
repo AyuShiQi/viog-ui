@@ -14,12 +14,14 @@ export default function (props: any) {
   // inject
   // computed
   const hasChildren = computed(() => props.option?.children && props.option?.children instanceof Array && props.option?.children.length > 0)
+  const picked = computed(() => props.option?.value === props.targetValue)
   // 事件方法
   // 方法
   // 普通function函数
   // provide
   // 生命周期
   return {
-    hasChildren
+    hasChildren,
+    picked
   }
 }

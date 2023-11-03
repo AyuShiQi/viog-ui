@@ -2,18 +2,19 @@
     display: flex;
     width: 100%;
     height: auto;
-    padding: var(--vi-card-padding);
-    border-radius: 5px;
+    padding: var(--vi-cascader-item-padding);
+    border-radius: var(--vi-cascader-border-radius);
     box-sizing: border-box;
     align-items: center;
     justify-content: space-between;
 
-    .vi-cascader-item__title {
+    > .vi-cascader-item__title {
+        overflow: hidden;
         flex: 1;
         color: var(--vi-cascader-font-color);
     }
 
-    .vi-cascader-item__next-btn {
+    > .vi-cascader-item__next-btn {
         overflow: hidden;
         width: 0;
 
@@ -31,7 +32,12 @@
 }
 
 .vi-cascader-item_has-children {
-    .vi-cascader-item__next-btn {
+    > .vi-cascader-item__next-btn {
         width: calc(var(--vi-font-size) - 2px);
     }
+}
+
+
+.vi-cascader-item_picked {
+    background-color: var(--vi-purple-color5);
 }

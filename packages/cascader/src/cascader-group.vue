@@ -1,17 +1,27 @@
 <template>
-  <div class="vi-cascader-group">
-    <vi-cascader-item
-    v-for="(option, index) of (options as any[])"
-    :key="option"
-    :option="option"
-    @click="handleItemPick(index)">
-      {{ option.label }}
-    </vi-cascader-item>
+  <div class="vi-cascader-group"
+  :style="{
+    width: nowWidth,
+    height: nowHeight
+  }">
+    <div class="vi-cascader-group__item-list">
+      <vi-cascader-item
+      v-for="(option, index) of (options as any[])"
+      :key="option"
+      :option="option"
+      :targetValue="choose.targetValue"
+      @click="handleItemPick(index)">
+        {{ option.label }}
+      </vi-cascader-item>
+    </div>
     <div class="vi-cascader-group__next-group">
       <vi-cascader-group
       v-if="choose.target?.children"
       :options="choose.target?.children"
-      :nextValue="(choose.targetValue as any)"></vi-cascader-group>
+      :nextValue="(choose.targetValue as any)"
+      :step="step + 1"
+      :width="width"
+      :height="height"></vi-cascader-group>
     </div>
   </div>
 </template>
