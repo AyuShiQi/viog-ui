@@ -1,5 +1,9 @@
 <template>
-  <div class="vi-cascader" ref="cascader">
+  <div class="vi-cascader" ref="cascader"
+  :style="{
+    width: choose.width[0],
+    height: choose.height[0]
+  }">
     <vi-cascader-group
     v-if="choose.options"
     :options="choose.options"

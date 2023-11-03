@@ -1,16 +1,16 @@
 <template>
-  <!-- <vi-dropdown v-model="open">
-    <vi-button>点击展开</vi-button>
+  <vi-dropdown v-model="open">
+    <template v-slot="{ open }">
+      <vi-button>点击展开</vi-button>
+    </template>
     <template v-slot:content>
-      <div style="width: 200px; height: 200px; background-color: #000;"></div>
+      <vi-cascader
+      @pick="look"
+      :options="options"
+      style="--vi-cascader-width: 200px 400px 100px; --vi-cascader-height: 200px 400px 100px;"/>
     </template>
   </vi-dropdown>
-  <vi-button @click="open = !open">点击变换</vi-button> -->
-
-  <vi-cascader
-  @pick="look"
-  :options="options"
-  style="--vi-cascader-width: 200px 400px 100px; --vi-cascader-height: 200px 400px 100px;"/>
+  <vi-button @click="open = !open">点击变换</vi-button>
 </template>
 
 <script lang="ts">
