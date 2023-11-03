@@ -7,7 +7,7 @@
     <vi-cascader-group
     v-if="choose.options"
     :options="choose.options"
-    :nextValue="undefined"
+    :pick="pick"
     :width="choose.width"
     :height="choose.height"
     ></vi-cascader-group>

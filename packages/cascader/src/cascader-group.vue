@@ -18,7 +18,7 @@
       <vi-cascader-group
       v-if="choose.target?.children"
       :options="choose.target?.children"
-      :nextValue="(choose.targetValue as any)"
+      :pick="pick"
       :step="step + 1"
       :width="width"
       :height="height"></vi-cascader-group>

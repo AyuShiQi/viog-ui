@@ -1,5 +1,5 @@
 // vue
-import { reactive, onUpdated, onMounted, ref, provide } from 'vue'
+import { reactive, onUpdated, onMounted, ref, provide, computed } from 'vue'
 // vue type
 import type { SetupContext } from 'vue'
 // 组件type
@@ -17,19 +17,19 @@ export default function (props: any, ctx: SetupContext) {
    * 选项信息
    */
   const choose = reactive({
-    pick: [] as string[],
     options: props.options,
     width: ['200px'],
     height: ['auto']
   })
   // inject
   // computed
+  const pick = computed(() => props.modelValue)
   // 事件方法
   // 方法
   function changePick (step: number, value: string) {
-    choose.pick.length = step + 1
-    choose.pick[step] = value
-    ctx.emit('pick', [...choose.pick], step)
+    pick.value.length = step + 1
+    pick.value[step] = value
+    ctx.emit('pick', [...pick.value], step)
   }
   // 普通function函数
   function listenChooseChange () {
@@ -56,6 +56,7 @@ export default function (props: any, ctx: SetupContext) {
   })
   return {
     cascader,
+    pick,
     choose
   }
 }

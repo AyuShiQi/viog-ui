@@ -29,7 +29,7 @@ export default function (props: any) {
     const len = props.height.length
     return props.height[props.step % len]
   })
-  const nextValue = computed(() => props.nextValue)
+  const nextValue = computed(() => props.pick[props.step])
   watch(nextValue, listenPrevValueChange, { immediate: true })
   // 事件方法
   /**

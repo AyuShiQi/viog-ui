@@ -1,6 +1,7 @@
 export default {
   options: Array,
-  nextValue: String,
+  // nextValue: String,
+  pick: Array,
   step: {
     type: Number,
     default: 0
