@@ -7,7 +7,10 @@
   </vi-dropdown>
   <vi-button @click="open = !open">点击变换</vi-button> -->
 
-  <vi-cascader :options="options" style="--vi-cascader-width: 200px 400px 100px; --vi-cascader-height: 200px 400px 100px;"/>
+  <vi-cascader
+  @pick="look"
+  :options="options"
+  style="--vi-cascader-width: 200px 400px 100px; --vi-cascader-height: 200px 400px 100px;"/>
 </template>
 
 <script lang="ts">

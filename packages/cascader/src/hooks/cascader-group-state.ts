@@ -1,5 +1,5 @@
 // vue
-import { reactive, computed, watch } from 'vue'
+import { reactive, computed, watch, inject } from 'vue'
 // vue type
 // 组件type
 // 外部hooks
@@ -19,6 +19,7 @@ export default function (props: any) {
     targetValue: null
   })
   // inject
+  const changePick = inject('vi-cascader-change-pick') as (step: number, value: any) => void
   // computed
   const nowWidth = computed(() => {
     const len = props.width.length
@@ -37,7 +38,10 @@ export default function (props: any) {
    */
   function handleItemPick (index: number) {
     choose.target = index < props.options.length ? props.options[index] : null
-    if (choose.target) choose.targetValue = choose.target.value
+    if (choose.target) {
+      choose.targetValue = choose.target.value
+      changePick(props.step, choose.targetValue)
+    }
   }
   // 方法
   // 普通function函数

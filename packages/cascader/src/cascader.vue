@@ -23,11 +23,12 @@ import cascaderState from './hooks/cascader-state'
 export default defineComponent({
   name: 'ViCascader',
   props,
+  // emits: ['pick'],
   components: {
     ViCascaderGroup
   },
   setup (props: any, ctx: SetupContext) {
-    const cascader = cascaderState(props)
+    const cascader = cascaderState(props, ctx)
     return cascader
   }
 })
