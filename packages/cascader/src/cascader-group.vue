@@ -9,7 +9,7 @@
       v-for="(option, index) of (options as any[])"
       :key="option"
       :option="option"
-      :targetValue="choose.targetValue"
+      :targetValue="(choose.targetValue as any)"
       @click="handleItemPick(index)">
         {{ option.label }}
       </vi-cascader-item>
@@ -33,11 +33,15 @@ import type { SetupContext } from 'vue'
 // 组件props
 import props from './props/cascader-group'
 // 组件引用components
+import ViCascaderItem from './cascader-item.vue'
 import cascaderGroupState from './hooks/cascader-group-state'
 
 export default defineComponent({
   name: 'ViCascaderGroup',
   props,
+  components: {
+    ViCascaderItem
+  },
   setup (props: any, ctx: SetupContext) {
     const cascader = cascaderGroupState(props)
     return cascader
