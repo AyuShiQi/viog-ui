@@ -1,8 +1,5 @@
 export default {
-  value: {
-    type: String
-  },
-  index: {
-    type: Number
+  option: {
+    type: Object
   }
 }

@@ -1,6 +1,5 @@
 // vue
-import props from 'packages/button/src/props'
-import { ref, reactive, computed, onUpdated } from 'vue'
+import { reactive, computed, watch } from 'vue'
 // vue type
 // 组件type
 // 外部hooks
@@ -9,35 +8,45 @@ import { ref, reactive, computed, onUpdated } from 'vue'
 
 export default function (props: any) {
   // 普通常量
-  let first = true
   // DOM ref
   // ref
   // reactive
   const choose = reactive({
     target: null as any,
-    nextValue: null,
+    // 上一阶级目标value
+    prevValue: null,
+    // 当前阶级目标value
     targetValue: null
   })
   // inject
   // computed
+  const nextValue = computed(() => props.nextValue)
+  watch(nextValue, listenPrevValueChange, { immediate: true })
   // 事件方法
+  /**
+   * 处理item改变
+   * @param index 下标
+   */
   function handleItemPick (index: number) {
     choose.target = index < props.options.length ? props.options[index] : null
     if (choose.target) choose.targetValue = choose.target.value
   }
   // 方法
   // 普通function函数
-  // provide
-  // 生命周期
-  onUpdated(() => {
-    if (choose.nextValue !== props.nextValue) {
-      choose.nextValue = props.nextValue
-      if (!first) {
+  /**
+   * 监听上一阶级value改变
+   */
+  function listenPrevValueChange () {
+    if (choose.prevValue !== nextValue.value) {
+      if (choose.prevValue !== null) {
         choose.targetValue = null
         choose.target = null
-      } else first = false
+      }
+      choose.prevValue = nextValue.value
     }
-  })
+  }
+  // provide
+  // 生命周期
   return {
     choose,
     handleItemPick

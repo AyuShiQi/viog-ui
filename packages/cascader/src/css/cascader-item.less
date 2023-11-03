@@ -1,0 +1,37 @@
+.vi-cascader-item {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: var(--vi-card-padding);
+    border-radius: 5px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+
+    .vi-cascader-item__title {
+        flex: 1;
+        color: var(--vi-cascader-font-color);
+    }
+
+    .vi-cascader-item__next-btn {
+        overflow: hidden;
+        width: 0;
+
+        svg {
+            width: 100%;
+            stroke: var(--vi-cascader-arrow-color);
+            fill: none;
+            stroke-width: 2px;
+        }
+    }
+
+    &:hover {
+        background-color: var(--vi-purple-color5);
+    }
+}
+
+.vi-cascader-item_has-children {
+    .vi-cascader-item__next-btn {
+        width: calc(var(--vi-font-size) - 2px);
+    }
+}

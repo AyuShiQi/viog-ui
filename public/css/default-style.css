@@ -171,6 +171,9 @@
     --vi-tab-card-height: 2.2em;
     --vi-tab-card-padding: var(--vi-card-padding);
     --vi-tab-card-group-width: auto;
+
+    --vi-cascader-font-color: var(--vi-font-color);
+    --vi-cascader-arrow-color: var(--vi-link-color);
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */

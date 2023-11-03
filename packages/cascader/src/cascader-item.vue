@@ -1,6 +1,19 @@
 <template>
-  <div class="vi-cascader-item">
-    <slot></slot>
+  <div
+  class="vi-cascader-item"
+  :class="[
+    {
+      'vi-cascader-item_has-children': hasChildren
+    }
+  ]">
+    <div class="vi-cascader-item__title">
+      <slot></slot>
+    </div>
+    <div class="vi-cascader-item__next-btn">
+      <svg viewBox="0 0 20 20">
+        <path d="M5 2 L15 10 L5 18"/>
+      </svg>
+    </div>
   </div>
 </template>
 
@@ -17,7 +30,7 @@ export default defineComponent({
   name: 'ViCascaderItem',
   props,
   setup (props: any, ctx: SetupContext) {
-    const cascaderItem = cascaderItemState()
+    const cascaderItem = cascaderItemState(props)
     return cascaderItem
   }
 })

@@ -3,8 +3,7 @@
     <vi-cascader-item
     v-for="(option, index) of (options as any[])"
     :key="option"
-    :index="index"
-    :value="option.value"
+    :option="option"
     @click="handleItemPick(index)">
       {{ option.label }}
     </vi-cascader-item>
