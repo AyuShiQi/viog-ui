@@ -9,7 +9,7 @@
       style="--vi-cascader-width: 200px 400px 100px; --vi-cascader-height: 200px 400px 100px;"/>
     </template>
   </vi-dropdown>
-  <vi-button @click="ar.length = 0">点击变换</vi-button>
+  <vi-button @click="ar.length = 1">点击变换</vi-button>
 </template>
 
 <script lang="ts">

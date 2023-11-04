@@ -13,10 +13,8 @@ export default function (props: any) {
   // reactive
   const choose = reactive({
     target: undefined as any,
-    // 上一阶级目标value
-    prevValue: undefined,
-    // 当前阶级目标value
-    targetValue: undefined
+    // 上一阶级目标value(pre value)
+    prevValue: undefined
   })
   // inject
   const changePick = inject('vi-cascader-change-pick') as (step: number, value: any) => void
@@ -52,10 +50,9 @@ export default function (props: any) {
    * 监听当前阶级value改变
    */
   function listenTargetValueChange () {
-    console.log(props.step, targetValue.value)
+    // console.log(props.step, targetValue.value)
     // 如果这一段的targetValue不见了，那么target置为undefined
     if (targetValue.value === undefined) {
-      choose.targetValue = undefined
       choose.target = undefined
     }
   }
@@ -63,11 +60,9 @@ export default function (props: any) {
    * 监听上一阶级value改变
    */
   function listenPrevValueChange () {
-    console.log(props.step, prevValue.value, choose.prevValue)
+    // console.log(props.step, prevValue.value, choose.prevValue)
     if (choose.prevValue !== prevValue.value) {
       if (choose.prevValue !== undefined) {
-        // 这个地方要改
-        choose.targetValue = undefined
         choose.target = undefined
       }
       choose.prevValue = prevValue.value
