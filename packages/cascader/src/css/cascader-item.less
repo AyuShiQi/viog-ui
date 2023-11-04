@@ -27,7 +27,17 @@
     }
 
     &:hover {
-        background-color: var(--vi-purple-color5);
+        background-color: var(--vi-cascader-item-hover-bg-color);
+
+        > .vi-cascader-item__title {
+            color: var(--vi-cascader-hover-font-color);
+        }
+    
+        > .vi-cascader-item__next-btn {
+            svg {
+                stroke: var(--vi-cascader-hover-arrow-color);
+            }
+        }
     }
 }
 
@@ -39,5 +49,29 @@
 
 
 .vi-cascader-item_picked {
-    background-color: var(--vi-purple-color5);
+    background-color: var(--vi-cascader-item-picked-bg-color);
+
+    > .vi-cascader-item__title {
+        color: var(--vi-cascader-picked-font-color);
+    }
+
+    > .vi-cascader-item__next-btn {
+        svg {
+            stroke: var(--vi-cascader-picked-arrow-color);
+        }
+    }
+
+    &:hover {
+        background-color: var(--vi-cascader-item-picked-bg-color);
+
+        > .vi-cascader-item__title {
+            color: var(--vi-cascader-picked-font-color);
+        }
+    
+        > .vi-cascader-item__next-btn {
+            svg {
+                stroke: var(--vi-cascader-picked-arrow-color);
+            }
+        }
+    }
 }

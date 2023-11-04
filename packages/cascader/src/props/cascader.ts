@@ -6,5 +6,9 @@ export default {
   options: {
     type: Array,
     default: []
+  },
+  type: {
+    type: String,
+    default: 'default' // plain button
   }
 }

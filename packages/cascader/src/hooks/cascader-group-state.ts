@@ -39,10 +39,7 @@ export default function (props: any) {
    * @param index 下标
    */
   function handleItemPick (index: number) {
-    choose.target = index < props.options.length ? props.options[index] : null
-    if (choose.target) {
-      changePick(props.step, choose.target.value)
-    }
+    changeTarget(index < props.options.length ? props.options[index] : undefined)
   }
   // 方法
   // 普通function函数
@@ -54,6 +51,9 @@ export default function (props: any) {
     // 如果这一段的targetValue不见了，那么target置为undefined
     if (targetValue.value === undefined) {
       choose.target = undefined
+    } else {
+      // 说明有新的值，寻找值
+      changeTarget(findTargetWithValue(targetValue.value))
     }
   }
   /**
@@ -67,6 +67,19 @@ export default function (props: any) {
       }
       choose.prevValue = prevValue.value
     }
+  }
+
+  function findTargetWithValue (val: any) {
+    for (const option of props.options) {
+      if (option.value === val) return option
+    }
+    return undefined
+  }
+
+  function changeTarget (newTarget: any) {
+    if (choose.target === newTarget) return
+    choose.target = newTarget
+    changePick(props.step, choose.target.value)
   }
   // provide
   // 生命周期

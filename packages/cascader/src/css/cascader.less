@@ -2,3 +2,25 @@
   position: relative;
   z-index: var(--vi-cascader-z-index);
 }
+
+.vi-cascader-type-plain {
+  --vi-scrollbar-thumb-color: var(--vi-background-color);
+  --vi-scrollbar-thumb-color-hover: var(--vi-background-color-middle);
+  --vi-cascader-bg-color: var(--vi-background-color-base);
+  --vi-cascader-box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
+  --vi-cascader-picked-font-color: var(--vi-purple-color1);
+  --vi-cascader-hover-font-color: var(--vi-purple-color2);
+  --vi-cascader-picked-arrow-color: var(--vi-purple-color2);
+  --vi-cascader-hover-arrow-color: var(--vi-purple-color3);
+  --vi-cascader-item-picked-bg-color: transparent;
+  --vi-cascader-item-hover-bg-color: transparent;
+}
+
+.vi-cascader-type-button {
+  --vi-scrollbar-thumb-color: var(--vi-background-color-solid);
+  --vi-scrollbar-thumb-color-hover: var(--vi-background-color-middle);
+  --vi-cascader-bg-color: var(--vi-background-color);
+  --vi-cascader-box-shadow: none;
+  --vi-cascader-item-picked-bg-color: var(--vi-purple-color5);
+  --vi-cascader-item-hover-bg-color: var(--vi-background-color);
+}

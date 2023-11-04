@@ -9,7 +9,7 @@
       style="--vi-cascader-width: 200px 400px 100px; --vi-cascader-height: 200px 400px 100px;"/>
     </template>
   </vi-dropdown>
-  <vi-button @click="ar.length = 1">点击变换</vi-button>
+  <vi-button @click="changeAr">点击变换</vi-button>
 </template>
 
 <script lang="ts">
@@ -343,6 +343,10 @@ export default defineComponent({
       }
     ]
 
+    function changeAr () {
+      (ar as any[])[0] = 'guide'
+    }
+
     function changePickValue () {
       infoTable.pickValue = [2, 5, 6]
     }
@@ -399,7 +403,8 @@ export default defineComponent({
       handleDelete,
       infoTable,
       changePickValue,
-      options
+      options,
+      changeAr
     }
   }
 })

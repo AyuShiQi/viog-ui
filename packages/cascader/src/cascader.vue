@@ -3,7 +3,10 @@
   :style="{
     width: choose.width[0],
     height: choose.height[0]
-  }">
+  }"
+  :class="[
+    `vi-cascader-type-${type}`
+  ]">
     <vi-cascader-group
     v-if="choose.options"
     :options="choose.options"
