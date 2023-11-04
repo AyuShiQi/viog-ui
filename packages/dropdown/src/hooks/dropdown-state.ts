@@ -13,6 +13,15 @@ export default function (props: any, ctx: SetupContext) {
   const open = openState()
   const boxPosition = boxPositionState(props.mode, props.scrollTarget)
 
+  const originOpen = computed(() => props.modelValue)
+  watch(open.open, () => {
+    if (open.open.value !== originOpen.value) ctx.emit('update:modelValue', open.open.value)
+  })
+
+  watch(originOpen, () => {
+    if (originOpen.value !== open.open.value) open.open.value = originOpen.value
+  })
+
   // 针对hover的方法
   function mouseClose () {
     if (props.trigger !== 'hover') return

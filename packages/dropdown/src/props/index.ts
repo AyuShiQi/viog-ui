@@ -16,5 +16,9 @@ export default {
     type: String,
     default: 'auto'
   },
-  scrollTarget: [Object, String]
+  scrollTarget: [Object, String],
+  modelValue: {
+    type: Boolean,
+    default: false
+  }
 }
