@@ -3,13 +3,13 @@
     <vi-button>点击展开</vi-button>
     <template v-slot:content>
       <vi-cascader
-      v-model="arr"
+      v-model="ar"
       @pick="look"
       :options="options"
       style="--vi-cascader-width: 200px 400px 100px; --vi-cascader-height: 200px 400px 100px;"/>
     </template>
   </vi-dropdown>
-  <vi-button @click="arr.length = 0">点击变换</vi-button>
+  <vi-button @click="ar.length = 0">点击变换</vi-button>
 </template>
 
 <script lang="ts">

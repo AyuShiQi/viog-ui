@@ -9,7 +9,7 @@
       v-for="(option, index) of (options as any[])"
       :key="option"
       :option="option"
-      :targetValue="(choose.targetValue as any)"
+      :targetValue="targetValue"
       @click="handleItemPick(index)">
         {{ option.label }}
       </vi-cascader-item>
@@ -19,6 +19,7 @@
       v-if="choose.target?.children"
       :options="choose.target?.children"
       :pick="pick"
+      :nextValue="targetValue"
       :step="step + 1"
       :width="width"
       :height="height"></vi-cascader-group>

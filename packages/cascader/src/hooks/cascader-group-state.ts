@@ -12,11 +12,11 @@ export default function (props: any) {
   // ref
   // reactive
   const choose = reactive({
-    target: null as any,
+    target: undefined as any,
     // 上一阶级目标value
-    prevValue: null,
+    prevValue: undefined,
     // 当前阶级目标value
-    targetValue: null
+    targetValue: undefined
   })
   // inject
   const changePick = inject('vi-cascader-change-pick') as (step: number, value: any) => void
@@ -29,8 +29,12 @@ export default function (props: any) {
     const len = props.height.length
     return props.height[props.step % len]
   })
-  const nextValue = computed(() => props.pick[props.step])
-  watch(nextValue, listenPrevValueChange, { immediate: true })
+  // 当前阶级目标value
+  const targetValue = computed(() => props.pick[props.step])
+  // 上一阶级目标value
+  const prevValue = computed(() => props.nextValue)
+  watch(prevValue, listenPrevValueChange, { immediate: true })
+  watch(targetValue, listenTargetValueChange)
   // 事件方法
   /**
    * 处理item改变
@@ -39,22 +43,34 @@ export default function (props: any) {
   function handleItemPick (index: number) {
     choose.target = index < props.options.length ? props.options[index] : null
     if (choose.target) {
-      choose.targetValue = choose.target.value
-      changePick(props.step, choose.targetValue)
+      changePick(props.step, choose.target.value)
     }
   }
   // 方法
   // 普通function函数
   /**
+   * 监听当前阶级value改变
+   */
+  function listenTargetValueChange () {
+    console.log(props.step, targetValue.value)
+    // 如果这一段的targetValue不见了，那么target置为undefined
+    if (targetValue.value === undefined) {
+      choose.targetValue = undefined
+      choose.target = undefined
+    }
+  }
+  /**
    * 监听上一阶级value改变
    */
   function listenPrevValueChange () {
-    if (choose.prevValue !== nextValue.value) {
-      if (choose.prevValue !== null) {
-        choose.targetValue = null
-        choose.target = null
+    console.log(props.step, prevValue.value, choose.prevValue)
+    if (choose.prevValue !== prevValue.value) {
+      if (choose.prevValue !== undefined) {
+        // 这个地方要改
+        choose.targetValue = undefined
+        choose.target = undefined
       }
-      choose.prevValue = nextValue.value
+      choose.prevValue = prevValue.value
     }
   }
   // provide
@@ -63,6 +79,7 @@ export default function (props: any) {
     choose,
     nowWidth,
     nowHeight,
+    targetValue,
     handleItemPick
   }
 }

@@ -18,22 +18,23 @@ export default function (props: any, ctx: SetupContext) {
    */
   const choose = reactive({
     options: props.options,
+    pick: props.modelValue,
     width: ['200px'],
     height: ['auto']
   })
   // inject
   // computed
-  const pick = computed(() => props.modelValue)
   // 事件方法
   // 方法
   function changePick (step: number, value: string) {
-    pick.value.length = step + 1
-    pick.value[step] = value
-    ctx.emit('pick', [...pick.value], step)
+    choose.pick.length = step + 1
+    choose.pick[step] = value
+    ctx.emit('pick', [...choose.pick], step)
   }
   // 普通function函数
   function listenChooseChange () {
     if (props.options !== undefined) choose.options = props.options
+    if (props.modelValue !== undefined) choose.pick = props.modelValue
   }
 
   function getWidthAndHeight () {
@@ -56,7 +57,6 @@ export default function (props: any, ctx: SetupContext) {
   })
   return {
     cascader,
-    pick,
     choose
   }
 }
