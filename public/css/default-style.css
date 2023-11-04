@@ -192,6 +192,17 @@
     --vi-cascader-item-padding: var(--vi-card-padding);
     --vi-cascader-item-picked-bg-color: var(--vi-purple-color6);
     --vi-cascader-item-hover-bg-color: var(--vi-purple-color5);
+
+    --vi-cascader-select-width: 200px;
+    --vi-cascader-select-height: 2.2em;
+    --vi-cascader-select-padding: var(--vi-card-padding);
+    --vi-cascader-select-border: ;
+    --vi-cascader-select-box-shadow: ;
+    --vi-cascader-select-arrow-color: var(--vi-link-color);
+    --vi-cascader-select-border-radius: ;
+    --vi-cascader-select-bg-color: ;
+    --vi-cascader-select-font-color: var(--vi-font-color);
+    --vi-cascader-select-placeholder-color: var(--vi-icon-color);
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */

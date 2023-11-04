@@ -10,6 +10,15 @@
     </template>
   </vi-dropdown>
   <vi-button @click="changeAr">点击变换</vi-button>
+  <vi-cascader
+  v-model="ar"
+  :options="options"/>
+  <vi-cascader-select type="default" v-model="ar" @pick="look" :options="options"></vi-cascader-select>
+  <vi-cascader-select type="plain" v-model="ar" @pick="look" :options="options"></vi-cascader-select>
+  <vi-cascader-select type="button" v-model="ar" @pick="look" :options="options"></vi-cascader-select>
+  <vi-select></vi-select>
+  <vi-select type="plain"></vi-select>
+  <vi-select type="button"></vi-select>
 </template>
 
 <script lang="ts">

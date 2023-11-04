@@ -1,0 +1,71 @@
+.vi-cascader-select {
+    display: inline-block;
+    --vi-cascader-z-index: 20;
+    .vi-cascader-select__view {
+        position: relative;
+        display: flex;
+        color: var(--vi-cascader-select-font-color);
+        width: var(--vi-cascader-select-width);
+        height: var(--vi-cascader-select-height);
+        padding: var(--vi-cascader-select-padding);
+        border: var(--vi-cascader-select-border);
+        box-shadow: var(--vi-cascader-select-box-shadow);
+        border-radius: var(--vi-cascader-select-border-radius);
+        background-color: var(--vi-cascader-select-bg-color);
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+
+        .vi-cascader-select__view__res {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-wrap: none;
+            text-wrap: nowrap;
+        }
+
+        .vi-cascader-select__view__arrow {
+            width: 1em;
+            fill: var(--vi-cascader-select-arrow-color);
+            transform: scale(64%) rotateX(180deg);
+            transition: var(--vi-transition);
+        }
+    }
+
+    .vi-cascader-select__view_open {
+        .vi-cascader-select__view__arrow {
+            transform: scale(64%) rotateX(0deg);
+        }
+    }
+}
+
+.vi-cascader-select-need-placeholder {
+    .vi-cascader-select__view__res {
+        color: var(--vi-cascader-select-placeholder-color);
+    }
+}
+
+.vi-cascader-select-type-default {
+    .vi-cascader-select__view {
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--vi-background-color-deep);
+            transition: all 0.3s ease 0s;
+        }
+    }
+}
+
+.vi-cascader-select-type-plain {
+    --vi-cascader-select-box-shadow: inset 0 0 0 1px var(--vi-background-color-deep);
+    --vi-cascader-select-border-radius: 5px;
+}
+
+.vi-cascader-select-type-button {
+    --vi-cascader-select-border-radius: 5px;
+    --vi-cascader-select-bg-color: var(--vi-background-color-solid);
+}
