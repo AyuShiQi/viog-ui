@@ -48,6 +48,7 @@
 # 0.15.2（当前迭代开发版本）
 
 - 新增cascader css变量
+- 新增cascader-select 表单检验
 
 # 0.15.1
 
