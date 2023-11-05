@@ -179,6 +179,8 @@
     --vi-cascader-padding: .4em .3em;
     --vi-cascader-border-radius: 5px;
     --vi-cascader-gap: 4px;
+    --vi-cascader-backdrop-filter: ;
+    --vi-cascader-border-radius: 5px;
     --vi-scrollbar-thumb-color: var(--vi-background-color);
     --vi-scrollbar-thumb-color-hover: var(--vi-background-color-middle);
     --vi-cascader-bg-color: var(--vi-background-color-base);
