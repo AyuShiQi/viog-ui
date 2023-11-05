@@ -5,8 +5,10 @@ import { computed } from 'vue'
 // 外部hooks
 // 内部hooks
 // 外部模块
+import { formTargetStateReactive } from '@/hooks/form-target-state'
 
 export default function (props: any) {
+  formTargetStateReactive(props.name, props.modelValue)
   // 普通常量
   // DOM ref
   // ref

@@ -1,5 +1,5 @@
 <template>
-  <vi-dropdown v-model="open">
+  <!-- <vi-dropdown v-model="open">
     <vi-button>点击展开</vi-button>
     <template v-slot:content>
       <vi-cascader
@@ -8,8 +8,8 @@
       :options="options"
       style="--vi-cascader-width: 200px 400px 100px; --vi-cascader-height: 200px 400px 100px;"/>
     </template>
-  </vi-dropdown>
-  <vi-button @click="open = !open">点击切换开关状态</vi-button>
+  </vi-dropdown> -->
+  <!-- <vi-button @click="open = !open">点击切换开关状态</vi-button> -->
   <!-- <vi-button @click="changeAr">点击变换</vi-button>
   <vi-cascader
   v-model="ar"
@@ -20,6 +20,24 @@
   <vi-select></vi-select>
   <vi-select type="plain"></vi-select>
   <vi-select type="button"></vi-select> -->
+  <vi-form @submit="look">
+    <vi-form-item :rules="[
+      {
+        rule: /./,
+        info: '不可为空',
+      },
+      {
+        rule: '123',
+        info: '没有123'
+      }
+    ]"
+    auto
+    immediate>
+      <vi-cascader-select
+      name="cascader"
+      type="default" v-model="ar" @pick="look" :options="options"></vi-cascader-select>
+    </vi-form-item>
+  </vi-form>
 </template>
 
 <script lang="ts">
