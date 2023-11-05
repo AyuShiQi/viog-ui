@@ -27,6 +27,22 @@ export default function (props: any) {
     const len = props.height.length
     return props.height[props.step % len]
   })
+  const nowMinWidth = computed(() => {
+    const len = props.minWidth.length
+    return props.minWidth[props.step % len]
+  })
+  const nowMinHeight = computed(() => {
+    const len = props.minHeight.length
+    return props.minHeight[props.step % len]
+  })
+  const nowMaxWidth = computed(() => {
+    const len = props.maxWidth.length
+    return props.maxWidth[props.step % len]
+  })
+  const nowMaxHeight = computed(() => {
+    const len = props.maxHeight.length
+    return props.maxHeight[props.step % len]
+  })
   // 当前阶级目标value
   const targetValue = computed(() => props.pick[props.step])
   // 上一阶级目标value
@@ -87,6 +103,10 @@ export default function (props: any) {
     choose,
     nowWidth,
     nowHeight,
+    nowMinWidth,
+    nowMinHeight,
+    nowMaxWidth,
+    nowMaxHeight,
     targetValue,
     handleItemPick
   }

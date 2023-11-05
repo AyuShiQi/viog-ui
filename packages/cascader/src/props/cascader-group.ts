@@ -11,5 +11,9 @@ export default {
     default: 0
   },
   width: Array,
-  height: Array
+  height: Array,
+  minWidth: Array,
+  minHeight: Array,
+  maxWidth: Array,
+  maxHeight: Array
 }

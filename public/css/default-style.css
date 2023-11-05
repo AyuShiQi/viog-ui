@@ -173,7 +173,11 @@
     --vi-tab-card-group-width: auto;
 
     --vi-cascader-width: 200px;
+    --vi-cascader-max-width: var(--vi-cascader-width);
+    --vi-cascader-min-width: var(--vi-cascader-width);
     --vi-cascader-height: auto;
+    --vi-cascader-max-height: var(--vi-cascader-height);
+    --vi-cascader-min-height: var(--vi-cascader-height);
     --vi-cascader-z-index: ;
     --vi-cascader-border: ;
     --vi-cascader-padding: .4em .3em;

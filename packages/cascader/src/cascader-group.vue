@@ -2,7 +2,11 @@
   <div class="vi-cascader-group"
   :style="{
     width: nowWidth,
-    height: nowHeight
+    height: nowHeight,
+    minWidth: nowMinWidth,
+    minHeight: nowMinHeight,
+    maxWidth: nowMaxWidth,
+    maxHeight: nowMaxHeight
   }">
     <div class="vi-cascader-group__item-list">
       <vi-cascader-item
@@ -22,7 +26,11 @@
       :nextValue="targetValue"
       :step="step + 1"
       :width="width"
-      :height="height"></vi-cascader-group>
+      :height="height"
+      :min-height="minHeight"
+      :max-height="maxHeight"
+      :min-width="minWidth"
+      :max-width="maxWidth"></vi-cascader-group>
     </div>
   </div>
 </template>

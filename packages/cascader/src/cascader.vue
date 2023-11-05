@@ -13,6 +13,10 @@
     :pick="choose.pick"
     :width="choose.width"
     :height="choose.height"
+    :min-height="choose.minHeight"
+    :max-height="choose.maxHeight"
+    :min-width="choose.minWidth"
+    :max-width="choose.maxWidth"
     ></vi-cascader-group>
   </div>
 </template>
