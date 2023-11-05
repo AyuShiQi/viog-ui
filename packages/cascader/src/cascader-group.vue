@@ -8,7 +8,15 @@
     maxWidth: nowMaxWidth,
     maxHeight: nowMaxHeight
   }">
-    <div class="vi-cascader-group__item-list">
+    <div class="vi-cascader-group__item-list"
+    :style="{
+      width: nowWidth,
+      height: nowHeight,
+      minWidth: nowMinWidth,
+      minHeight: nowMinHeight,
+      maxWidth: nowMaxWidth,
+      maxHeight: nowMaxHeight
+    }">
       <vi-cascader-item
       v-for="(option, index) of (options as any[])"
       :key="option"
