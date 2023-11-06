@@ -93,7 +93,7 @@ export default function (props: any) {
   }
 
   function changeTarget (newTarget: any) {
-    if (choose.target === newTarget) return
+    // if (choose.target === newTarget) return
     choose.target = newTarget
     changePick(props.step, choose.target.value)
   }
