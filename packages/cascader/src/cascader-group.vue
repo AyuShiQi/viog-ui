@@ -23,7 +23,7 @@
       :option="option"
       :targetValue="targetValue"
       @click="handleItemPick(index)">
-        {{ option.label }}
+        {{ option.label === undefined ? option.value : option.label }}
       </vi-cascader-item>
     </div>
     <div class="vi-cascader-group__next-group">
