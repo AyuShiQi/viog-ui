@@ -78,6 +78,9 @@ export default function (props: any) {
           width.value = e.x - startX
         } else width.value = option.minWidth
         break
+      default:
+        width.value = undefined as any as number
+        break
     }
   }
   function handleHorizontalMousemove (e: MouseEvent) {
@@ -96,6 +99,9 @@ export default function (props: any) {
         } else if (e.y - startY > option.minHeight) {
           height.value = e.y - startY
         } else height.value = option.minHeight
+        break
+      default:
+        height.value = undefined as any as number
         break
     }
   }
