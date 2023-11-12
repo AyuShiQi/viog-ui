@@ -133,7 +133,7 @@ export default function (props: any) {
     // 获取元素属性
     getStyle()
     width.value = props.vertical === 'none' ? undefined : option.width
-    height.value = props.horizontal === 'none' ? undefined : option.height 
+    height.value = props.horizontal === 'none' ? undefined : option.height
   })
 
   onBeforeUnmount(() => {
