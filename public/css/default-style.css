@@ -28,6 +28,8 @@
     --vi-scroll-max-height: ;
     --vi-scroll-min-height: ;
     --vi-scroll-item-height: 40px;
+    --vi-scroll-bar-color: var(--vi-background-color-deep);
+    --vi-scroll-bar-color-hover: var(--vi-background-color-deeper);
 
     --vi-form-label-width: 4em;
     --vi-form-label-gap: 8px;
