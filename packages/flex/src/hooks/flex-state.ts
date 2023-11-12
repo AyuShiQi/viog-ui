@@ -21,8 +21,8 @@ export default function (props: any) {
   // ref
   const isVertical = ref(false)
   const isHorizontal = ref(false)
-  const width = ref(0)
-  const height = ref(0)
+  const width = ref()
+  const height = ref()
   // reactive
   // inject
   // computed
@@ -79,7 +79,7 @@ export default function (props: any) {
         } else width.value = option.minWidth
         break
       default:
-        width.value = undefined as any as number
+        width.value = undefined
         break
     }
   }
@@ -101,7 +101,7 @@ export default function (props: any) {
         } else height.value = option.minHeight
         break
       default:
-        height.value = undefined as any as number
+        height.value = undefined
         break
     }
   }
@@ -132,8 +132,8 @@ export default function (props: any) {
     window.addEventListener('mousemove', handleVerticalMousemove)
     // 获取元素属性
     getStyle()
-    width.value = option.width
-    height.value = option.height
+    width.value = props.vertical === 'none' ? undefined : option.width
+    height.value = props.horizontal === 'none' ? undefined : option.height 
   })
 
   onBeforeUnmount(() => {
