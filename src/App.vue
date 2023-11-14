@@ -46,6 +46,19 @@
     11111111111111111111111111111111111 <br/>
     11111111111111111111111111111111111 <br/>
   </div>
+  你的性别
+  <vi-radio-group name="sex" v-model="choose" @change="look">
+    <vi-radio value="male" color="blue">男</vi-radio>
+    <vi-radio value="femal" color="pink">女</vi-radio>
+    <vi-radio value="wallmart bag" color="green">沃尔玛购物袋</vi-radio>
+  </vi-radio-group>
+  你的爱好
+  <vi-checkbox-group name="sex" v-model="info" @change="look">
+    <vi-checkbox value="tea" color="blue">茶</vi-checkbox>
+    <vi-checkbox value="coffe" color="pink">咖啡</vi-checkbox>
+    <vi-checkbox value="water" color="green">水</vi-checkbox>
+  </vi-checkbox-group>
+
   <!-- <vi-form @submit="look">
     <vi-form-item :rules="[
       {
@@ -64,34 +77,14 @@
       type="default" v-model="ar" @pick="look" :options="options"></vi-cascader-select>
     </vi-form-item>
   </vi-form> -->
-  <vi-cascader
+  <!-- <vi-cascader
   v-model="ar"
-  :options="options"/>
+  :options="options"/> -->
 </template>
 
 <script lang="ts">
 import { defineComponent, getCurrentInstance, ref, ComponentInternalInstance, reactive, watch } from 'vue'
 import { ViToast, ViMessage } from '../packages/index'
-
-type ViDialogType = {
-  open: (time?: number) => void,
-  close: (time?: number) => void
-}
-
-interface scrollType {
-    scrollTo: (x: number, y: number) => void
-    finish: boolean
-}
-
-interface VirtualScrollType {
-    scrollTo: (x: number, y: number) => void
-}
-
-interface ViInputType {
-  toClear: () => void,
-  toFocus: () => void,
-  toBlur: () => void
-}
 
 const searchInfo = ref(null)
 const optionList: any[] = reactive([])
@@ -126,7 +119,7 @@ export default defineComponent({
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
     const obj = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 }]
     const table = reactive([['销量', '领先销量11111111111111', '全球销量'], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]])
-    const info = reactive([] as string[])
+    const info = reactive([] as any[])
     const id = ref(0)
     const infoTable = reactive({
       pickValue: [0, 1, 2]

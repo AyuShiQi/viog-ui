@@ -21,7 +21,7 @@ export default function (props: RadioProps, context: SetupContext) {
       if (props.modelValue === props.value) context.emit('update:modelValue', undefined)
       else context.emit('update:modelValue', props.value)
     }
-    context.emit('change')
+    context.emit('change', props.modelValue)
   }
 
   // radio DOM

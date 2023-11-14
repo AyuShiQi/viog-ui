@@ -1,9 +1,11 @@
 <template>
-  <slot></slot>
+  <div class="vi-checkbox-group">
+    <slot></slot>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { SetupContext, defineComponent } from 'vue'
 
 import props from './props/group'
 
@@ -14,8 +16,8 @@ import { groupValueState } from './hooks'
 export default defineComponent({
   name: 'ViCheckboxGroup',
   props,
-  setup (props: GroupValueProps) {
-    groupValueState(props)
+  setup (props: GroupValueProps, ctx: SetupContext) {
+    groupValueState(props, ctx)
   }
 })
 </script>

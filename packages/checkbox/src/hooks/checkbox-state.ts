@@ -15,6 +15,7 @@ export default function (props: CheckboxProps, context: SetupContext) {
     // 选中值
     value: props.modelValue as any[]
   }))
+  const checkboxChange = inject('checkbox-change') as any
   // inject
   // computed
   /**
@@ -43,6 +44,7 @@ export default function (props: CheckboxProps, context: SetupContext) {
     const res = valueChange(checkboxGroup.value)
     context.emit('change', props.value, res)
     context.emit('update:modelValue', checkboxGroup.value)
+    checkboxChange(props.value)
   }
 
   function toPick (): void {
@@ -72,7 +74,9 @@ export default function (props: CheckboxProps, context: SetupContext) {
     } else {
       if (props.value instanceof Array) {
         for (const item of props.value) {
-          if (target.indexOf(item) === -1) target.push(item)
+          if (target.indexOf(item) === -1) {
+            target.push(item)
+          }
         }
       } else {
         target.push(props.value)

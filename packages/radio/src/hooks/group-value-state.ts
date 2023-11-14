@@ -10,6 +10,7 @@ export default function (props: GroupValueProps, context: SetupContext, valueNam
       return props.modelValue
     },
     set: (newPick: number | string | boolean | undefined) => {
+      context.emit('change', newPick)
       context.emit('update:modelValue', newPick)
     }
   })

@@ -1,5 +1,7 @@
 <template>
-  <slot></slot>
+  <div class="vi-radio-group">
+    <slot></slot>
+  </div>
 </template>
 
 <script lang="ts">
@@ -15,6 +17,7 @@ import groupValueState from './hooks/group-value-state'
 export default defineComponent({
   name: 'ViRadioGroup',
   props,
+  // emits: ['change', 'update:modelValue'],
   setup (props: GroupValueProps, context: SetupContext) {
     groupValueState(props, context, 'radio-group-value')
   }
