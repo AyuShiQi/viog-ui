@@ -4,8 +4,23 @@
 
     border-collapse: collapse;
     .vi-input-table__tr {
+        position: relative;
         // display: block;
         height: var(--vi-table-td-height);
+
+        .vi-input-table__tr-del {
+            position: absolute;
+            top: 50%;
+            right: .3em;
+            width: 1.2em;
+            margin-top: -0.6em;
+            cursor: pointer;
+            fill: var(--vi-table-del-color);
+
+            &:hover {
+                fill: var(--vi-table-del-hover-color);
+            }
+        }
     }
 
     .vi-input-table__sider-td {

@@ -78,6 +78,11 @@ export default function (props: any, ctx: SetupContext) {
   function handleCheckBoxChange (value: any, res: boolean) {
     ctx.emit('pick', value, false)
   }
+
+  function handleDelLine (index: string | number) {
+    index = Number(index)
+    value.value.splice(index, 1)
+  }
   // provide
   provide('vi-input-table-id-getter', idGetter())
   provide('vi-input-table-editor', editValue)
@@ -96,6 +101,7 @@ export default function (props: any, ctx: SetupContext) {
     multiValue,
     originPickValue,
     handleCheckBoxChange,
+    handleDelLine,
     ...idDistributor
   }
 }

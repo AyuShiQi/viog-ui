@@ -70,6 +70,14 @@
     --vi-input-prefix-width: auto;
     --vi-input-suffix-width: auto;
 
+    --vi-table-del-color: var(--vi-background-color-deeper);
+    --vi-table-del-hover-color: var(--vi-background-color-deepest);
+    --vi-table-border-color: var(--vi-background-color-deep);
+    --vi-table-td-bg-color: var(--vi-background-color-solid);
+    --vi-table-td-hover-bg-color: var(--vi-background-color);
+    --vi-table-th-color: var(--vi-link-color); 
+    --vi-table-td-color: var(--vi-font-color);
+
     --vi-num-input-width: 200px;
     --vi-num-input-heigth: 2.2em;
 

@@ -2,8 +2,9 @@
     .vi-input-table__tr {
         .vi-input-table__td {
             position: relative;
-            border: 1px solid var(--vi-background-color-deep);
+            border: 1px solid var(--vi-table-border-color);
             box-sizing: border-box;
+            color: var(--vi-table-td-color);
 
             .vi-input-table__td__text {
                 overflow: hidden;
@@ -21,12 +22,12 @@
                 z-index: 1;
                 top: -1px;
                 left: -1px;
-                border: 1px solid var(--vi-background-color-deep);
+                border: 1px solid var(--vi-table-border-color);
                 width: calc(var(--vi-table-td-width) + 1px);
                 height: auto;
                 padding: var(--vi-table-td-padding);
                 box-sizing: border-box;
-                background-color: var(--vi-background-color-solid);
+                background-color: var(--vi-table-td-bg-color);
                 outline: none;
                 resize: none;
 
@@ -36,7 +37,7 @@
             }
 
             &:hover {
-                background-color: var(--vi-background-color);
+                background-color: var(--vi-table-td-hover-bg-color);
             }
         }
 

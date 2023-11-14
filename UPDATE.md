@@ -45,11 +45,12 @@
 - 新增可编辑表格组件快捷键操作功能（兼容难）
 - 新增upload组件照片墙功能
 
-# 0.15.11
+# 0.15.11（当前迭代开发版本）
 
 - 新增input-table组件删除行功能
+- 新增radio-group checkbox-group组件change事件
 
-# 0.15.10（当前迭代开发版本）
+# 0.15.10
 
 - 优化vi-scroll-bar class设定样式
 

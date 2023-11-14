@@ -1,4 +1,9 @@
 <template>
+  <vi-input-table v-model="table" multi>
+    <vi-input-table-col></vi-input-table-col>
+    <vi-input-table-col></vi-input-table-col>
+    <vi-input-table-col></vi-input-table-col>
+  </vi-input-table>
   <!-- <vi-dropdown v-model="open">
     <vi-button>点击展开</vi-button>
     <template v-slot:content>
@@ -47,7 +52,7 @@
     11111111111111111111111111111111111 <br/>
   </div>
   你的性别
-  <vi-radio-group name="sex" v-model="choose" @change="look">
+  <!-- <vi-radio-group name="sex" v-model="choose" @change="look">
     <vi-radio value="male" color="blue">男</vi-radio>
     <vi-radio value="femal" color="pink">女</vi-radio>
     <vi-radio value="wallmart bag" color="green">沃尔玛购物袋</vi-radio>
@@ -57,7 +62,7 @@
     <vi-checkbox value="tea" color="blue">茶</vi-checkbox>
     <vi-checkbox value="coffe" color="pink">咖啡</vi-checkbox>
     <vi-checkbox value="water" color="green">水</vi-checkbox>
-  </vi-checkbox-group>
+  </vi-checkbox-group> -->
 
   <!-- <vi-form @submit="look">
     <vi-form-item :rules="[

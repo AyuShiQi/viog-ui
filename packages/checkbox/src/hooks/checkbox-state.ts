@@ -15,7 +15,7 @@ export default function (props: CheckboxProps, context: SetupContext) {
     // 选中值
     value: props.modelValue as any[]
   }))
-  const checkboxChange = inject('checkbox-change') as any
+  const checkboxChange = inject('checkbox-change', undefined) as any
   // inject
   // computed
   /**
@@ -44,7 +44,7 @@ export default function (props: CheckboxProps, context: SetupContext) {
     const res = valueChange(checkboxGroup.value)
     context.emit('change', props.value, res)
     context.emit('update:modelValue', checkboxGroup.value)
-    checkboxChange(props.value)
+    if (checkboxChange) checkboxChange(props.value)
   }
 
   function toPick (): void {
