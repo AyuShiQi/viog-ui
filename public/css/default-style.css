@@ -116,7 +116,9 @@
     --vi-nav-width: ;
     --vi-nav-height: ;
     --vi-nav-gap: 1em;
-    --vi-nav-font-size: 16px;
+    /* --vi-nav-font-size: 16px; */
+    --vi-nav-color: var(--vi-main-color1);
+    --vi-nav-font-color: var(--vi-font-color);
 
     --vi-collapse-width: 200px;
     --vi-collapse-overflow-x: visible;
