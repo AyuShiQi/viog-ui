@@ -414,6 +414,10 @@ export default defineComponent({
       }
     ]
 
+    watch(choose, () => {
+      console.log(choose.value)
+    })
+
     function changeAr () {
       (ar as any[])[0] = 'guide'
     }

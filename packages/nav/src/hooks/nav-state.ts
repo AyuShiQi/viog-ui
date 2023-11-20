@@ -20,7 +20,7 @@ export default function (props: any, ctx: SetupContext) {
   })
   watch(choose, () => {
     if (originPick.value !== choose.value) {
-      if (props.modelValue) ctx.emit('update:modelValue', choose.value)
+      if (props.modelValue !== undefined) ctx.emit('update:modelValue', choose.value)
     }
   })
 

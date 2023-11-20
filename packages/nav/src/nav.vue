@@ -29,7 +29,7 @@ import navState from './hooks/nav-state'
 export default defineComponent({
   name: 'ViNav',
   props,
-  emits: ['change'] as string[],
+  emits: ['change', 'update:modelValue'] as string[],
   setup (props: any, ctx: SetupContext) {
     const nav = navState(props, ctx)
 
