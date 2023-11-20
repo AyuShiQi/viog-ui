@@ -4,6 +4,12 @@
     <vi-input-table-col></vi-input-table-col>
     <vi-input-table-col></vi-input-table-col>
   </vi-input-table>
+  <vi-nav v-model="choose">
+    <vi-nav-item>123</vi-nav-item>
+    <vi-nav-item>123</vi-nav-item>
+    <vi-nav-item>123</vi-nav-item>
+  </vi-nav>
+  <vi-button @click="choose = 2"></vi-button>
   <!-- <vi-dropdown v-model="open">
     <vi-button>点击展开</vi-button>
     <template v-slot:content>

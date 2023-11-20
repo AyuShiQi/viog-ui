@@ -8,21 +8,22 @@ export default function (props: any, ctx: SetupContext) {
   const listEvent: EventListener[] = []
   const nav = ref()
   // hover 双分支处理
-  const choose = ref(props.trigger === 'click' ? props.defaultId : -1)
+  // const choose = ref(props.trigger === 'click' ? props.defaultId : -1)
   const listLen = reactive([] as number[])
   const listOffset = reactive([] as number[])
 
   const nowWidth = computed(() => {
-    if (choose.value === -1) return 0
-    return listLen[choose.value]
+    if (props.modelValue === -1) return 0
+    return listLen[props.modelValue]
   })
 
   const nowLeft = computed(() => {
-    return listOffset[choose.value]
+    return listOffset[props.modelValue]
   })
 
   const toChoose = (index: number) => {
-    choose.value = index
+    // choose.value = index
+    ctx.emit('update:modelValue', index)
     ctx.emit('change', index)
   }
 
@@ -30,7 +31,7 @@ export default function (props: any, ctx: SetupContext) {
   const verticalCalc = () => {
     const { y: contentTop } = nav.value.getBoundingClientRect()
     let i = 0
-    if (props.trigger === 'hover') nav.value.addEventListener('mouseleave', () => { choose.value = -1 })
+    if (props.trigger === 'hover') nav.value.addEventListener('mouseleave', () => { ctx.emit('update:modelValue', -1) })
     for (const navChild of nav.value.children) {
       if (props.trigger === 'click') listEvent.push(navChild.addEventListener('click', toChoose.bind(undefined, i)))
       else if (props.trigger === 'hover') listEvent.push(navChild.addEventListener('mouseover', toChoose.bind(undefined, i)))
@@ -44,7 +45,7 @@ export default function (props: any, ctx: SetupContext) {
   const horizontalCalc = () => {
     const { x: contentLeft } = nav.value.getBoundingClientRect()
     let i = 0
-    if (props.trigger === 'hover') nav.value.addEventListener('mouseleave', () => { choose.value = -1 })
+    if (props.trigger === 'hover') nav.value.addEventListener('mouseleave', () => { ctx.emit('update:modelValue', -1) })
     for (const navChild of nav.value.children) {
       if (props.trigger === 'click') listEvent.push(navChild.addEventListener('click', toChoose.bind(undefined, i)))
       else if (props.trigger === 'hover') listEvent.push(navChild.addEventListener('mouseover', toChoose.bind(undefined, i)))
@@ -60,13 +61,17 @@ export default function (props: any, ctx: SetupContext) {
 
   onMounted(() => {
     props.direction === 'horizontal' ? horizontalCalc() : verticalCalc()
+    if (props.trigger === 'click') {
+      if (props.defaultId) ctx.emit('update:modelValue', props.defaultId)
+    } else {
+      if (props.modelValue !== -1) ctx.emit('update:modelValue', -1)
+    }
   })
 
   return {
     boxUnit,
     offsetUnit,
     nav,
-    choose,
     listLen,
     listOffset,
     nowWidth,

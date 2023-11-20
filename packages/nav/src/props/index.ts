@@ -1,4 +1,8 @@
 export default {
+  modelValue: {
+    type: Number,
+    default: 0
+  },
   direction: {
     type: String,
     // 'vertical'
@@ -10,7 +14,7 @@ export default {
     default: 'click'
   },
   defaultId: {
-    type: Number,
-    default: 0
+    type: Number
+    // default: 0
   }
 }
