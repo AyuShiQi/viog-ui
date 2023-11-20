@@ -123,7 +123,7 @@
     --vi-collapse-width: 200px;
     --vi-collapse-overflow-x: visible;
     --vi-collapse-bg-color: transparent;
-    --vi-collapse-bg-color: transparent;
+    --vi-collapse-title-bg-color: transparent;
     --vi-collapse-border: none;
     --vi-collapse-title-color: var(--vi-font-color);
     --vi-collapse-arrow-color: var(--vi-link-color);
