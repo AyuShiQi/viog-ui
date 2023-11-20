@@ -19,6 +19,14 @@
     <vi-nav-item>123</vi-nav-item>
     <vi-nav-item>123</vi-nav-item>
   </vi-nav>
+  <vi-collapse title="content">
+    1
+    1
+    1
+    1
+    1
+    1
+  </vi-collapse>
   <vi-button @click="choose = 2"></vi-button>
   <!-- <vi-dropdown v-model="open">
     <vi-button>点击展开</vi-button>

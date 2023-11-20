@@ -2,21 +2,26 @@
   overflow: hidden;
   width: var(--vi-collapse-width);
   color: var(--vi-font-color);
-  background-color: transparent;
+  border: var(--vi-collapse-border);
+  background-color: var(--vi-collapse-bg-color);
   box-sizing: border-box;
 
   >.vi-collapse__title {
     display: flex;
     width: 100%;
     padding: .6em 0;
+    color: var(--vi-collapse-title-color);
+    background-color: var(--vi-collapse-bg-color);
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    box-sizing: border-box;
 
     > span {
       display: block;
       text-align: left;
       flex: 1;
+      font-weight: var(--vi-collapse-title-font-weight);
     }
 
     .vi-collapse__title-arrow {
@@ -24,7 +29,7 @@
         transform: rotate(90deg);
         transition: var(--vi-transition);
         path {
-            fill: var(--vi-link-color);
+            fill: var(--vi-collapse-arrow-color);
         }
     }
   }
