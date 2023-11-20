@@ -9,6 +9,16 @@
     <vi-nav-item>123</vi-nav-item>
     <vi-nav-item>123</vi-nav-item>
   </vi-nav>
+  <vi-nav trigger="hover">
+    <vi-nav-item>123</vi-nav-item>
+    <vi-nav-item>123</vi-nav-item>
+    <vi-nav-item>123</vi-nav-item>
+  </vi-nav>
+  <vi-nav>
+    <vi-nav-item>123</vi-nav-item>
+    <vi-nav-item>123</vi-nav-item>
+    <vi-nav-item>123</vi-nav-item>
+  </vi-nav>
   <vi-button @click="choose = 2"></vi-button>
   <!-- <vi-dropdown v-model="open">
     <vi-button>点击展开</vi-button>
