@@ -39,8 +39,9 @@ export default function (props: any, ctx: SetupContext) {
   }
 
   // 针对click的方法
-  function changeOpen () {
+  function changeOpen (e: Event) {
     if (props.trigger !== 'click') return
+    e.stopPropagation()
     if (props.disabled) return
     // 当此次操作时打开时，仅做重新计算处理
     if (!open.open.value) {

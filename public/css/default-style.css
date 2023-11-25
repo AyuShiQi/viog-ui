@@ -128,7 +128,7 @@
     --vi-collapse-title-color: var(--vi-font-color);
     --vi-collapse-arrow-color: var(--vi-link-color);
     --vi-collapse-title-font-weight: 500;
-    --vi-collapse-title-pdding: .6em 0;
+    --vi-collapse-title-padding: .6em 0;
     --vi-collapse-title-border-color: none;
 
     --vi-menu-width: 200px;
