@@ -146,6 +146,13 @@
     --vi-bubble-width: 100px;
     --vi-bubble-height: ;
     --vi-bubble-gap: 8px;
+    --vi-bubble-padding: var(--vi-card-padding);
+    --vi-bubble-color: var(--vi-link-color);
+    --vi-bubble-bg-color: var(--vi-background-color-base);
+    --vi-bubble-title-color: var(--vi-font-color);
+    --vi-bubble-shadow-color: var(--vi-background-color-deep);
+    --vi-bubble-filter: ;
+    --vi-bubble-border-radius: var(--vi-card-radius);
 
     --vi-table-width: 500px;
     --vi-table-height: 200px;

@@ -12,32 +12,33 @@
             z-index: 20;
             width: var(--vi-bubble-width);
             height: var(--vi-bubble-height);
-            padding: var(--vi-card-padding);
-            color: var(--vi-font-color);
-            background-color: #fff;
-            border-radius: var(--vi-card-radius);
+            padding: var(--vi-bubble-padding);
+            background-color: var(--vi-bubble-bg-color);
+            border-radius: var(--vi-bubble-border-radius);
             box-sizing: border-box;
-            filter: drop-shadow(0 0 .5px var(--vi-background-color-deep))
-            drop-shadow(0 0 .5px var(--vi-background-color-deep))
-            drop-shadow(0 0 .5px var(--vi-background-color-deep));
+            backdrop-filter: var(--vi-bubble-filter);
+            filter: drop-shadow(0 0 .5px var(--vi-bubble-shadow-color))
+            drop-shadow(0 0 .5px var(--vi-bubble-shadow-color))
+            drop-shadow(0 0 .5px var(--vi-bubble-shadow-color));
             
             &::after {
                 content: "";
                 position: absolute;
                 width: 8px;
                 height: 8px;
-                background-color: #fff;
+                background-color: var(--vi-bubble-bg-color);
                 transform: rotate(45deg);
             }
 
             .vi-bubble__title {
+                color: var(--vi-bubble-title-color);
                 font-size: var(--vi-font-size);
                 margin-bottom: .5em;
             }
 
             .vi-bubble__text {
                 min-height: 1em;
-                color: var(--vi-link-color);
+                color: var(--vi-bubble-color);
                 font-size: var(--vi-font-size)
             }
         }
