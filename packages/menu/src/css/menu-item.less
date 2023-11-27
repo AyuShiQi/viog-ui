@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     padding: .6em .8em;
-    color: var(--vi-font-color);
+    color: var(--vi-menu-color);
     list-style: none;
     user-select: none;
     cursor: pointer;
@@ -18,13 +18,13 @@
         left: -0.6em;
         width: 4px;
         height: 100%;
-        background-color: var(--vi-main-color1);
+        background-color: var(--vi-menu-pick-label-color);
         opacity: 0;
         transition: var(--vi-transition);
     }
 
     &:hover {
-        background-color: var(--vi-main-color5);
+        background-color: var(--vi-menu-hover-bg-color);
     }
 
     >.vi-menu-item__prefix {
@@ -33,7 +33,7 @@
 }
 
 .vi-menu-item.be-choose {
-    color: var(--vi-main-color1);
+    color: var(--vi-menu-pick-color);
     transform: translateX(.6em);
 
     &:hover {

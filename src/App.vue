@@ -28,6 +28,22 @@
     1
   </vi-collapse>
   <vi-button @click="choose = 2"></vi-button>
+  <vi-menu shadow>
+    <vi-menu-group title="选项1-3">
+      <vi-menu-item>菜单选项1</vi-menu-item>
+      <vi-menu-group title="选项2-3">
+        <vi-menu-item>菜单选项2</vi-menu-item>
+        <vi-menu-item>菜单选项3</vi-menu-item>
+      </vi-menu-group>
+    </vi-menu-group>
+    <vi-menu-group title="选项4-6">
+      <vi-menu-item>菜单选项4</vi-menu-item>
+      <vi-menu-item>菜单选项5</vi-menu-item>
+      <vi-menu-item>菜单选项6</vi-menu-item>
+    </vi-menu-group>
+    <vi-divider/>
+    <vi-menu-item>菜单选项7</vi-menu-item>
+  </vi-menu>
   <!-- <vi-dropdown v-model="open">
     <vi-button>点击展开</vi-button>
     <template v-slot:content>

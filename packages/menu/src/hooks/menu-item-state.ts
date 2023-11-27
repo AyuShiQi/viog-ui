@@ -13,7 +13,7 @@ export default function (props: any, ctx: SetupContext) {
   const superIdCollector = inject('menu-group-id-collector', undefined) as MenuGroupIdCollector
   if (superIdCollector) superIdCollector(id)
   // router default
-  if (nowPick.value === id) toPick(id, props.to)
+  if (nowPick.value === id) toPick(id, props.value, props.to)
 
   // menu跳转路由收集
   const routerLinker = inject('menu-router-linker', undefined) as MenuRouterLinker
@@ -24,7 +24,7 @@ export default function (props: any, ctx: SetupContext) {
   })
 
   function toChoose () {
-    toPick(id, props.to)
+    toPick(id, props.value, props.to)
   }
 
   return {

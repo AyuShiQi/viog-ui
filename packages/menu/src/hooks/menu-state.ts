@@ -13,9 +13,9 @@ export default function (props: any, ctx: SetupContext) {
   provide('menu-now-pick', nowPick) // 当前选择
   provide('menu-router', props.router) // 是否是router模式
 
-  function toPick (newId: number, to?: string) {
+  function toPick (newId: number, value: any, to?: string) {
     nowPick.value = newId
-    ctx.emit('select', newId)
+    ctx.emit('select', newId, value)
     // router 跳转
     if (props.router && to) {
       try {

@@ -4,6 +4,9 @@ export default {
     type: Boolean,
     default: false
   },
+  value: {
+    type: [String, Object, Number, Boolean]
+  },
   title: {
     type: String
   },

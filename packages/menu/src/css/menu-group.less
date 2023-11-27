@@ -4,7 +4,7 @@
     box-sizing: border-box;
 
     >.vi-menu-group__title {
-        color: var(--vi-link-color);
+        color: var(--vi-menu-title-color);
         user-select: none;
         padding: .6em .8em;
         box-sizing: border-box;
@@ -25,14 +25,14 @@
         box-sizing: border-box;
         transition: var(--vi-transition);
 
-        ::after {
+        &::after {
             position: absolute;
             content: "";
             top: 0;
             left: -0.6em;
             width: 4px;
             height: 100%;
-            background-color: var(--vi-main-color1);
+            background-color: var(--vi-menu-pick-label-color);
             transition: var(--vi-transition);
             opacity: 0;
         }
@@ -48,7 +48,7 @@
 .vi-menu-group.be-choose {
     >.vi-collapse__title {
         padding-left: 1.4em;
-        color: var(--vi-main-color3);
+        color: var(--vi-menu-pick-title-color);
 
         ::after {
             opacity: 1;

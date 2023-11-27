@@ -132,6 +132,16 @@
     --vi-collapse-title-border-color: none;
 
     --vi-menu-width: 200px;
+    --vi-menu-padding: var(--vi-card-padding);
+    --vi-menu-bg-color: var(--vi-background-color-base);
+    --vi-menu-box-shadow: var(--vi-box-shadow);
+    --vi-menu-border-radius: 5px;
+    --vi-menu-title-color: var(--vi-link-color);
+    --vi-menu-color: var(--vi-font-color);
+    --vi-menu-hover-bg-color: var(--vi-main-color5);
+    --vi-menu-pick-color: var(--vi-main-color1);
+    --vi-menu-pick-title-color: var(--vi-main-color3);
+    --vi-menu-pick-label-color: var(--vi-main-color1);
 
     --vi-bubble-width: 100px;
     --vi-bubble-height: ;
