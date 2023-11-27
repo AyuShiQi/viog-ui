@@ -8,12 +8,17 @@
     'be-choose': option ? isChoose : false
   }"
   :title="title">
+    <template v-slot:title>
+      <slot name="title">{{ title }}</slot>
+    </template>
     <slot></slot>
   </collapseLi>
   <li
   v-else
   class="vi-menu-group">
-    <div class="vi-menu-group__title">{{ title }}</div>
+    <div class="vi-menu-group__title">
+      <slot name="title">{{ title }}</slot>
+    </div>
     <div class="vi-menu-group__content">
       <slot></slot>
     </div>

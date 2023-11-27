@@ -9,7 +9,11 @@
     }
   ]">
     <div class="vi-collapse__title" @click="toChoose">
-        <span>{{ title }}</span>
+        <span>
+          <slot name="title">
+            {{ title }}
+          </slot>
+        </span>
         <svg
         class="vi-collapse__title-arrow"
         viewBox="0 0 40 35"
