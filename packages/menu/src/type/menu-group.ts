@@ -1,1 +1,1 @@
-export type MenuGroupIdCollector = ((id: number) => void) | undefined
+export type MenuGroupIdCollector = ((...ids: number[]) => void) | undefined

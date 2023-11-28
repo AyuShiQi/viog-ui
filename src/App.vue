@@ -28,16 +28,17 @@
     1
   </vi-collapse>
   <vi-button @click="choose = 2"></vi-button>
-  <vi-menu shadow>
-    <vi-menu-group title="选项1-4 菜单选项1" scalable option>
-      <vi-menu-item>菜单选项2</vi-menu-item>
+  <vi-menu shadow v-model="val">
+    <vi-menu-group title="选项1-4 菜单选项1" scalable option value="0">
+      <vi-menu-item value="1">菜单选项2</vi-menu-item>
       <vi-menu-group title="选项3-4">
-        <vi-menu-item>菜单选项3</vi-menu-item>
-        <vi-menu-item>菜单选项4</vi-menu-item>
+        <vi-menu-item value="2">菜单选项3</vi-menu-item>
+        <vi-menu-item value="3">菜单选项4</vi-menu-item>
       </vi-menu-group>
     </vi-menu-group>
-      <vi-menu-item>菜单选项5</vi-menu-item>
+      <vi-menu-item value="4">菜单选项5</vi-menu-item>
   </vi-menu>
+  <vi-button @click="val = '3'">点击切换{{ val }}</vi-button>
   <!-- <vi-dropdown v-model="open">
     <vi-button>点击展开</vi-button>
     <template v-slot:content>

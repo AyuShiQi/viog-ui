@@ -1,4 +1,4 @@
-import { inject, computed, useSlots } from 'vue'
+import { inject, computed, useSlots, onUpdated } from 'vue'
 import type { SetupContext } from 'vue'
 
 import type { MenuId, ToPick, NowPick, MenuRouterLinker } from '../type/menu'
@@ -11,7 +11,9 @@ export default function (props: any, ctx: SetupContext) {
   const prefix = useSlots().prefix
 
   const superIdCollector = inject('menu-group-id-collector', undefined) as MenuGroupIdCollector
+  const menuValueCollector = inject('menu-value-collector', undefined) as ((id: number, value: string) => void) | undefined
   if (superIdCollector) superIdCollector(id)
+  if (menuValueCollector) menuValueCollector(id, props.value ?? id)
   // router default
   if (nowPick.value === id) toPick(id, props.value, props.to)
 
@@ -26,6 +28,10 @@ export default function (props: any, ctx: SetupContext) {
   function toChoose () {
     toPick(id, props.value, props.to)
   }
+
+  onUpdated(() => {
+    if (menuValueCollector) menuValueCollector(id, props.value ?? id)
+  })
 
   return {
     isChoose,

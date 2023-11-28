@@ -1,4 +1,4 @@
-import { getCurrentInstance, provide, ref, watch, reactive } from 'vue'
+import { getCurrentInstance, provide, ref, watch, reactive, computed } from 'vue'
 import type { SetupContext } from 'vue'
 import type { Router } from 'vue-router'
 import IdDistributor from '../../../utils/communication/IdDistributor'
@@ -7,8 +7,11 @@ export default function (props: any, ctx: SetupContext) {
   const instance = getCurrentInstance()!
   const router = instance.appContext.config.globalProperties.$router as Router
   const nowPick = ref(props.defaultId)
+  // 这里是id对应value的收集
+  const valueMap = reactive([]) as any
 
   provide('menu-id', IdDistributor()) // id分发器
+  provide('menu-value-collector', valueCollector) // value收集
   provide('menu-to-pick', toPick) // 去选择
   provide('menu-now-pick', nowPick) // 当前选择
   provide('menu-router', props.router) // 是否是router模式
@@ -27,6 +30,34 @@ export default function (props: any, ctx: SetupContext) {
         else console.error(e)
       }
     }
+  }
+
+  function valueCollector (id: number, value: string) {
+    valueMap[id] = value
+  }
+
+  const originModelValue = computed(() => props.modelValue)
+
+  watch(originModelValue, () => {
+    if (originModelValue.value === valueMap[nowPick.value]) return
+    nowPick.value = findValueId(originModelValue.value)
+  })
+
+  watch(nowPick, () => {
+    if (originModelValue.value === valueMap[nowPick.value]) return
+    ctx.emit('update:modelValue', nowPick.value === -1 ? undefined : valueMap[nowPick.value])
+  })
+
+  watch(valueMap, () => {
+    nowPick.value = findValueId(originModelValue.value)
+  })
+
+  function findValueId (value: any): number {
+    for (let i = 0; i < valueMap.length; i++) {
+      const cur = valueMap[i]
+      if (cur === value) return i
+    }
+    return -1
   }
 
   // router 相关操作
