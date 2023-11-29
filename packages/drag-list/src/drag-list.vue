@@ -1,5 +1,9 @@
 <template>
-  <div class="vi-drag-list"></div>
+  <div class="vi-drag-list">
+    <vi-drag-list-item v-for="(item, index) of modelValue" :key="item" :index="index">
+      <slot :data="item"></slot>
+    </vi-drag-list-item>
+  </div>
 </template>
 
 <script lang="ts">

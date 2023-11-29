@@ -17,6 +17,7 @@ import ViDivider from './divider'
 import ViFlex from './flex'
 import ViContextMenu from './context-menu'
 import ViCascader from './cascader'
+import ViDragList from './drag-list'
 // 模块组
 import ViHeader from './header'
 import ViSkeleton from './skeleton'
@@ -108,7 +109,8 @@ const components = [
   ViTabCard,
   ViNumInput,
   ViCascader,
-  ViCascaderSelect
+  ViCascaderSelect,
+  ViDragList
 ]
 
 export {

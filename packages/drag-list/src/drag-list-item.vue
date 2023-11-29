@@ -1,5 +1,17 @@
 <template>
-  <div class="vi-drag-list-item"></div>
+  <div class="vi-drag-list-item"
+  @mousedown="handleMousedown"
+  @mousemove="handleMousemove"
+  @mouseup="handleMouseup"
+  ref="dragItem"
+  :class="{
+    'vi-drag-list-item_is-drag': isDrag
+  }"
+  :style="{
+    transform: `translateY(${offset}px)`
+  }">
+    <slot></slot>
+  </div>
 </template>
 
 <script lang="ts">
@@ -15,7 +27,7 @@ export default defineComponent({
   name: 'ViDragListItem',
   props,
   setup (props: any, ctx: SetupContext) {
-    const drag = dragState()
+    const drag = dragState(props, ctx)
     return drag
   }
 })

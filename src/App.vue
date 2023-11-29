@@ -1,5 +1,13 @@
 <template>
-  <vi-input-table v-model="table" multi>
+  <vi-drag-list v-model="obj">
+    <template v-slot="{ data }">
+      <div style="width: 200px; background-color: pink; border: 1px solid #000;"
+      :style="{ height: `${data.number * 20}px`}">
+        {{ data.number }}
+      </div>
+    </template>
+  </vi-drag-list>
+  <!-- <vi-input-table v-model="table" multi>
     <vi-input-table-col></vi-input-table-col>
     <vi-input-table-col></vi-input-table-col>
     <vi-input-table-col></vi-input-table-col>
@@ -44,7 +52,7 @@
     <vi-breadcrumb-item>456</vi-breadcrumb-item>
     <vi-breadcrumb-item>789</vi-breadcrumb-item>
     <vi-breadcrumb-item>101112</vi-breadcrumb-item>
-  </vi-breadcrumb>
+  </vi-breadcrumb> -->
   <!-- <vi-dropdown v-model="open">
     <vi-button>点击展开</vi-button>
     <template v-slot:content>
@@ -63,7 +71,7 @@
   <vi-select></vi-select>
   <vi-select type="plain"></vi-select>
   <vi-select type="button"></vi-select> -->
-  <div class="vi-scroll-bar" style="width: 50px; height: 100px;">
+  <!-- <div class="vi-scroll-bar" style="width: 50px; height: 100px;">
     11111111111111111111111111111111111 <br/>
     11111111111111111111111111111111111 <br/>
     11111111111111111111111111111111111 <br/>
@@ -91,8 +99,7 @@
     11111111111111111111111111111111111 <br/>
     11111111111111111111111111111111111 <br/>
     11111111111111111111111111111111111 <br/>
-  </div>
-  你的性别
+  </div> -->
   <!-- <vi-radio-group name="sex" v-model="choose" @change="look">
     <vi-radio value="male" color="blue">男</vi-radio>
     <vi-radio value="femal" color="pink">女</vi-radio>
@@ -161,9 +168,9 @@ export default defineComponent({
     const o = ref({})
     const open = ref(false)
     const data = ref('scs')
-    const nav = ['吃饭', '睡觉', '长个子', '好']
+    const nav = reactive(['吃饭', '睡觉', '长个子', '好'])
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
-    const obj = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 }]
+    const obj = reactive([{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 }])
     const table = reactive([['销量', '领先销量11111111111111', '全球销量'], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]])
     const info = reactive([] as any[])
     const id = ref(0)
