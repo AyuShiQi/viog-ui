@@ -42,7 +42,7 @@ export default defineComponent({
   name: 'ViCollapseLi',
   props,
   setup (props: any, ctx: SetupContext) {
-    const collapse = collapseState(props)
+    const collapse = collapseState(props, ctx)
     return {
       ...collapse
     }

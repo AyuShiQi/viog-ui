@@ -31,7 +31,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { SetupContext, defineComponent } from 'vue'
 
 import props from './props/collapse'
 
@@ -40,8 +40,8 @@ import collapseState from './hooks/collapse-state'
 export default defineComponent({
   name: 'ViCollapse',
   props,
-  setup (props: any) {
-    const collapse = collapseState(props)
+  setup (props: any, ctx: SetupContext) {
+    const collapse = collapseState(props, ctx)
     return {
       ...collapse
     }

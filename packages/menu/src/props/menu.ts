@@ -9,9 +9,9 @@ export default {
   shadow: {
     type: Boolean,
     default: false
-  },
-  defaultId: {
-    type: Number,
-    default: -1
   }
+  // defaultId: {
+  //   type: Number,
+  //   default: -1
+  // }
 }

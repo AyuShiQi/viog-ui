@@ -1,4 +1,7 @@
 export default {
+  modelValue: {
+    type: Boolean
+  },
   title: {
     type: String,
     default: ''

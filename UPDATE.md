@@ -45,6 +45,11 @@
 - 新增可编辑表格组件快捷键操作功能（兼容难）
 - 新增upload组件照片墙功能
 
+# 0.15.25（当前迭代开发版本）
+
+- 新增menu-group menu-item value属性
+- 新增menu mdoelValue属性，废弃default-id属性
+
 # 0.15.24（当前迭代开发版本）
 
 - 新增menu-group title插槽

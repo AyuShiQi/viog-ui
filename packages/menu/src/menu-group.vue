@@ -4,6 +4,7 @@
   ref="collapse"
   class="vi-menu-group"
   :needChange="option ? toChoose : () => true"
+  :modelValue="isChoose"
   :class="{
     'be-choose': option ? isChoose : false
   }"
