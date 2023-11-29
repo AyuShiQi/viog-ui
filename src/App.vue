@@ -39,6 +39,12 @@
       <vi-menu-item value="4">菜单选项5</vi-menu-item>
   </vi-menu>
   <vi-button @click="val = '3'">点击切换{{ val }}</vi-button>
+  <vi-breadcrumb>
+    <vi-breadcrumb-item>123</vi-breadcrumb-item>
+    <vi-breadcrumb-item>456</vi-breadcrumb-item>
+    <vi-breadcrumb-item>789</vi-breadcrumb-item>
+    <vi-breadcrumb-item>101112</vi-breadcrumb-item>
+  </vi-breadcrumb>
   <!-- <vi-dropdown v-model="open">
     <vi-button>点击展开</vi-button>
     <template v-slot:content>

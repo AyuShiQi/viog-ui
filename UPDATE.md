@@ -39,18 +39,27 @@
 - 新增page-controller分页器组件
 - 新增tab组件
 
-# 0.15.26
+# 0.15.45
 
 - 新增可编辑表格组件撤回功能（增加撤销栈）
 - 新增可编辑表格组件快捷键操作功能（兼容难）
 - 新增upload组件照片墙功能
 
-# 0.15.25（当前迭代开发版本）
+# 0.15.27（当前迭代开发版本）
+
+- 优化breadcrumb组件分割符生成方法
+
+# 0.15.26
+
+- 新增collapse组件双向绑定
+- 优化menu组件双向绑定表现
+
+# 0.15.25
 
 - 新增menu-group menu-item value属性
-- 新增menu mdoelValue属性，废弃default-id属性
+- 新增menu modelValue属性，废弃default-id属性
 
-# 0.15.24（当前迭代开发版本）
+# 0.15.24
 
 - 新增menu-group title插槽
 

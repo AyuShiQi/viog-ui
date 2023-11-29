@@ -16,6 +16,7 @@ export default function (props: any, ctx: SetupContext) {
   // inject
   const superColor = inject('breadcrumb-color', undefined) as Color
   const toPick = inject('breadcrumb-to-pick', undefined) as ToPick
+  const separator = inject('breadcrumb-separator', '/')
   // computed
   /**
    * 当前面包屑的颜色
@@ -36,6 +37,7 @@ export default function (props: any, ctx: SetupContext) {
   // 生命周期
   return {
     curColor,
+    separator,
     handleClick
   }
 }

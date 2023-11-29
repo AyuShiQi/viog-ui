@@ -10,6 +10,9 @@
   @click="handleClick">
     <slot></slot>
   </li>
+  <span class="vi-breadcrumb__separator">
+    {{ separator }}
+  </span>
 </template>
 
 <script lang="ts">

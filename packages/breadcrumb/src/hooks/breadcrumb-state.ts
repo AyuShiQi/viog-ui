@@ -41,24 +41,25 @@ export default function (props: any, ctx: SetupContext) {
   /**
    * 生成分隔符
    */
-  function generateSeparator (): void {
-    const { children } = breadcrumb.value
-    if (!children) return
-    for (let i = children.length - 2; i >= 0; i--) {
-      // 原生操作，生成separator分隔符
-      const separator = document.createElement('span')
-      separator.className = 'vi-breadcrumb__separator'
-      separator.innerText = props.separator
-      breadcrumb.value.insertBefore(separator, children[i].nextSibling)
-    }
-  }
+  // function generateSeparator (): void {
+  //   const { children } = breadcrumb.value
+  //   if (!children) return
+  //   for (let i = children.length - 2; i >= 0; i--) {
+  //     // 原生操作，生成separator分隔符
+  //     const separator = document.createElement('span')
+  //     separator.className = 'vi-breadcrumb__separator'
+  //     separator.innerText = props.separator
+  //     breadcrumb.value.insertBefore(separator, children[i].nextSibling)
+  //   }
+  // }
   // provide
   provide('breadcrumb-color', props.color) // 提供面包屑的全局颜色
   provide('breadcrumb-to-pick', toPick) // 提供面包屑的跳转函数，通过该函数进行所有跳转操作
+  provide('breadcrumb-separator', props.separator)
   // 生命周期
-  onMounted(() => {
-    generateSeparator()
-  })
+  // onMounted(() => {
+  //   generateSeparator()
+  // })
 
   return {
     breadcrumb
