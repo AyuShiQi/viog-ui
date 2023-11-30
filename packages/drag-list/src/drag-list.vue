@@ -1,8 +1,20 @@
 <template>
-  <div class="vi-drag-list">
-    <vi-drag-list-item v-for="(item, index) of modelValue" :key="item" :index="index">
+  <div class="vi-drag-list"
+  :class="{
+    'vi-drag-list_drag': isDrag
+  }">
+    <vi-drag-list-item v-for="(item, index) of modelValue" :key="item"
+    :index="index"
+    @updatemask="updateMaskTop"
+    @listdrag="handleDrag">
       <slot :data="item"></slot>
     </vi-drag-list-item>
+    <div class="vi-drag-list__mask"
+    :style="{
+      display: isDrag ? 'block' : 'none',
+      height: `${maskHeight}px`,
+      transform: `translateY(${maskTop}px)`
+    }"></div>
   </div>
 </template>
 
@@ -19,7 +31,7 @@ export default defineComponent({
   name: 'ViDragList',
   props,
   setup (props: any, ctx: SetupContext) {
-    const drag = dragState()
+    const drag = dragState(props, ctx)
 
     return drag
   }

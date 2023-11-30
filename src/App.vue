@@ -3,7 +3,7 @@
     <template v-slot="{ data }">
       <div style="width: 200px; background-color: pink; border: 1px solid #000;"
       :style="{ height: `${data.number * 20}px`}">
-        {{ data.number }}
+        {{ data.number - 1 }}
       </div>
     </template>
   </vi-drag-list>

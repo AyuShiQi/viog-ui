@@ -3,4 +3,18 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    .vi-drag-list__mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: yellow;
+    }
+}
+
+.vi-drag-list_drag {
+    .vi-drag-list-item {
+        transition: all .3s ease 0s;
+    }
 }

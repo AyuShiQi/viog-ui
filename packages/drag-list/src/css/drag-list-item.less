@@ -3,10 +3,11 @@
     width: auto;
     height: auto;
     user-select: none;
-    transition: all 0.3s ease 0s;
 }
 
-.vi-drag-list-item_is-drag {
-    z-index: 999;
-    transition: none;
+.vi-drag-list {
+    .vi-drag-list-item.vi-drag-list-item_is-drag {
+        z-index: 999;
+        transition: none;
+    }
 }
