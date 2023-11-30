@@ -1,8 +1,7 @@
 <template>
   <div class="vi-drag-list-item"
   @mousedown="handleMousedown"
-  @mousemove="handleMousemove"
-  @mouseup="handleMouseup"
+  @mouseleave="handleMouseup"
   ref="dragItem"
   :class="{
     'vi-drag-list-item_is-drag': isDrag
@@ -26,6 +25,7 @@ import dragState from './hooks/drag-list-item-state'
 export default defineComponent({
   name: 'ViDragListItem',
   props,
+  emits: ['updatemask', 'listdrag'] as string[],
   setup (props: any, ctx: SetupContext) {
     const drag = dragState(props, ctx)
     return drag

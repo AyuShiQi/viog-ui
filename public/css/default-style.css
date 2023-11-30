@@ -246,6 +246,9 @@
     --vi-cascader-select-bg-color: ;
     --vi-cascader-select-font-color: var(--vi-font-color);
     --vi-cascader-select-placeholder-color: var(--vi-icon-color);
+
+    --vi-drag-mask-color: var(--vi-background-color);
+    --vi-drag-mask-border-radius: 0px;
     /* 颜色样式们 */
     /* 字体样式 */
     /* default */

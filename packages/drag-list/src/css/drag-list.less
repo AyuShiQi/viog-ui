@@ -4,12 +4,25 @@
     flex-direction: column;
     gap: 10px;
 
+    @keyframes maskGo {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: .4;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
     .vi-drag-list__mask {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        background-color: yellow;
+        background-color: var(--vi-drag-mask-color);
+        animation: maskGo 1s ease-in-out 0s infinite;
     }
 }
 

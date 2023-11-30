@@ -43,6 +43,13 @@ export default function (props: any, ctx: SetupContext) {
     }
   }
 
+  // 用于重置list内容，当item发生更新后，去使用这个
+  function reset (...index: number[]) {
+    for (const i of index) {
+      list[i]?.changeOffset(0, false)
+    }
+  }
+
   function deleteList (index: number) {
     list.length = index
   }
@@ -62,6 +69,7 @@ export default function (props: any, ctx: SetupContext) {
     maskTop,
     maskHeight,
     handleDrag,
-    updateMaskTop
+    updateMaskTop,
+    reset
   }
 }

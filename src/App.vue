@@ -7,6 +7,7 @@
       </div>
     </template>
   </vi-drag-list>
+  <vi-button @click="obj[0].number = 3"></vi-button>
   <!-- <vi-input-table v-model="table" multi>
     <vi-input-table-col></vi-input-table-col>
     <vi-input-table-col></vi-input-table-col>
