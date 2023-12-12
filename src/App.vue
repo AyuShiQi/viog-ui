@@ -1,13 +1,14 @@
 <template>
-  <vi-drag-list v-model="obj">
+  <vi-date-select></vi-date-select>
+  <!-- <vi-drag-list v-model="obj">
     <template v-slot="{ data }">
       <div style="width: 200px; background-color: pink; border: 1px solid #000;"
       :style="{ height: `${data.number * 20}px`}">
         {{ data.number - 1 }}
       </div>
     </template>
-  </vi-drag-list>
-  <vi-button @click="obj[0].number = 3"></vi-button>
+  </vi-drag-list> -->
+  <!-- <vi-button @click="obj[0].number = 3"></vi-button> -->
   <!-- <vi-input-table v-model="table" multi>
     <vi-input-table-col></vi-input-table-col>
     <vi-input-table-col></vi-input-table-col>

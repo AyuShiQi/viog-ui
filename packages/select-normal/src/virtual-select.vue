@@ -17,8 +17,8 @@
         }
       ]">
         <span class="vi-select-choose" :class="{ 'show-placeholder': isEmpty }">
-            <!-- 渲染为多选节点 -->
             <template v-if="chooseShow instanceof Array">
+              <!-- 渲染为多选节点 -->
               <selectItem v-for="item in chooseShow" :key="item">{{ aliasShow(item) }}</selectItem>
             </template>
             <template v-else>
@@ -35,7 +35,7 @@
     </template>
     <template v-slot:content>
       <vi-virtual-scroll class="vi-select-box vi-select-box-normal" :datas="datas" hidden overlay>
-        <template v-slot="{data}">
+        <template v-slot="{ data }">
           <vi-option class="vi-select-box__virtual-scroll-item" :value="data"></vi-option>
         </template>
       </vi-virtual-scroll>
@@ -44,7 +44,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 import type { SetupContext } from 'vue'
 
 import props from './props/virtual-select'

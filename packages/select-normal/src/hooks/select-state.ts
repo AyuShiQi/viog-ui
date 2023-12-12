@@ -42,16 +42,16 @@ export default function (props: any, ctx: SetupContext, useAlias = true) {
 
     // 多选直接返回选择列表
     if (props.multi) return props.modelValue
-    return alias.aliasShow(props.modelValue)
+    return useAlias ? alias.aliasShow(props.modelValue) : choosed.value
   })
 
   // 判断是否有选择
   const isEmpty = computed(() => {
     if (props.multi) {
-      return props.modelValue.length === 0
+      return choosed.value.length === 0
     }
     // 单选显示
-    return !alias.aliasMap?.has(props.modelValue)
+    return useAlias ? !alias.aliasMap?.has(choosed.value) : choosed.value === undefined
   })
 
   provide('choosed', choosed)

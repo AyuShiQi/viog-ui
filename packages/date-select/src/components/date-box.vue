@@ -21,12 +21,14 @@
       class="vi-date-show_year"
       type="button"
       :datas="selectYears"
-      v-model="viewYear"></vi-virtual-select>年
+      v-model="viewYear"
+      placeholder=""></vi-virtual-select>年
       <vi-virtual-select
       class="vi-date-show_month"
       type="button"
       :datas="selectMonths"
-      v-model="viewMonth"></vi-virtual-select>月
+      v-model="viewMonth"
+      placeholder=""></vi-virtual-select>月
     </span>
     <!-- 月份前进 -->
     <svg
